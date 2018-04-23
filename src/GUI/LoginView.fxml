@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="232.0" prefWidth="193.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="GUI.LoginViewController">
+<AnchorPane id="AnchorPane" prefHeight="232.0" prefWidth="193.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.LoginViewController">
    <children>
       <JFXButton layoutX="14.0" layoutY="146.0" onAction="#login" text="Login" />
       <Label layoutX="71.0" layoutY="14.0" prefHeight="30.0" prefWidth="54.0" text="Login" textAlignment="CENTER">
@@ -19,7 +18,7 @@
       </Label>
       <JFXTextField fx:id="userNameID" layoutX="21.0" layoutY="61.0" prefHeight="26.0" prefWidth="155.0" promptText="User name / email" />
       <JFXPasswordField fx:id="userPassword" layoutX="21.0" layoutY="113.0" prefHeight="26.0" prefWidth="155.0" promptText="Password" />
-      <JFXCheckBox fx:id="rememberUser" layoutX="67.0" layoutY="150.0" prefHeight="18.0" prefWidth="111.0" text="Remember me" />
-      <JFXButton fx:id="forgotPassword" layoutX="15.0" layoutY="184.0" text="Forgot Password" />
+      <JFXCheckBox fx:id="rememberUser" layoutX="73.0" layoutY="150.0" prefHeight="18.0" prefWidth="105.0" text="Remember me" />
+      <JFXButton layoutX="15.0" layoutY="184.0" onAction="#forgotPassword" text="Forgot Password" />
    </children>
 </AnchorPane>

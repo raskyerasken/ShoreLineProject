@@ -18,6 +18,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
 /**
@@ -34,8 +35,6 @@ public class LoginViewController implements Initializable
     private JFXPasswordField userPassword;
     @FXML
     private JFXCheckBox rememberUser;
-    @FXML
-    private JFXButton forgotPassword;
 
     /**
      * Initializes the controller class.
@@ -56,6 +55,21 @@ public class LoginViewController implements Initializable
         Scene scene = new Scene(root);
         newStage.setScene(scene);
         newStage.show();
+    }
+    
+        private void showErrorDialog(String title, String header, String message) 
+    {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setHeaderText(header);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
+    @FXML
+    private void forgotPassword(ActionEvent event) 
+    {
+        showErrorDialog("You sure?", null, "Well, if yes than that's because you are an idiot.");
     }
     
 }
