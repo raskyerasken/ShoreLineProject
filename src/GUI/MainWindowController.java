@@ -16,9 +16,10 @@ import javafx.scene.control.ListView;
 
 /**
  *
- * @author kasper
+ * @author Jason and Freddy Kruger
  */
-public class MainWindowController implements Initializable {
+public class MainWindowController implements Initializable 
+{
     
     @FXML
     private Label label;
@@ -39,14 +40,15 @@ public class MainWindowController implements Initializable {
     @FXML
     private ListView<?> taskField;
     
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
+    private void handleButtonAction(ActionEvent event) 
+    {
+
     }
     
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+    public void initialize(URL url, ResourceBundle rb) 
+    {
+
     }    
     
 }
