@@ -14,14 +14,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-<<<<<<< HEAD
 import javafx.scene.control.MenuBar;
-=======
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
->>>>>>> be63f12d2b6c5d0113320364ad773d493c331e61
 
 /**
  *
@@ -55,7 +52,6 @@ public class MainWindowController implements Initializable
     }   
 
     @FXML
-<<<<<<< HEAD
     private void importData(ActionEvent event) {
     }
 
@@ -76,16 +72,17 @@ public class MainWindowController implements Initializable
     }
 
     @FXML
-    private void stopTask(ActionEvent event) {
-    }
-=======
-    private void importDataClick(MouseEvent event) {
+    private void stopTask(ActionEvent event) 
+    {
         
+    }
+    private void importDataClick(MouseEvent event) 
+    {
        
     }
 
-    @FXML
-    private void importDataClick(ActionEvent event) {
+    private void importDataClick(ActionEvent event) 
+    {
         
         JFileChooser chooser = new JFileChooser();
         chooser.setCurrentDirectory(new java.io.File("."));
@@ -107,14 +104,6 @@ public class MainWindowController implements Initializable
     
     void stageToFront()
     {
-        Stage stage = (Stage) startTask.getScene().getWindow();
-        stage.toFront();
+
     }
-    
-    
->>>>>>> be63f12d2b6c5d0113320364ad773d493c331e61
-   
-    
-    
-  
 }
