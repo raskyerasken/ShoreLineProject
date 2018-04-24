@@ -13,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.MenuBar;
 
 /**
  *
@@ -24,32 +25,47 @@ public class MainWindowController implements Initializable
     @FXML
     private Label label;
     @FXML
-    private Button importData;
-    @FXML
-    private Button convertData;
-    @FXML
-    private Button exportData;
-    @FXML
-    private Button startTask;
-    @FXML
-    private Button pauseTask;
-    @FXML
-    private Button stopTask;
-    @FXML
     private Label taskXRun;
     @FXML
     private ListView<?> taskField;
+    @FXML
+    private MenuBar menuBar;
     
    
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
+    private void handleButtonAction(ActionEvent event) 
+    {
+        
     }
     
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+    public void initialize(URL url, ResourceBundle rb) 
+    {
+        menuBar.setId("MenuBar");
     }   
+
+    @FXML
+    private void importData(ActionEvent event) {
+    }
+
+    @FXML
+    private void convertData(ActionEvent event) {
+    }
+
+    @FXML
+    private void exportData(ActionEvent event) {
+    }
+
+    @FXML
+    private void startTask(ActionEvent event) {
+    }
+
+    @FXML
+    private void pauseTask(ActionEvent event) {
+    }
+
+    @FXML
+    private void stopTask(ActionEvent event) {
+    }
    
     
     
