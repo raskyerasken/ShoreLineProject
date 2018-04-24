@@ -58,7 +58,6 @@ public class LoginViewController implements Initializable
         
         if (ul.getAccess(userLogin)) 
         {
-            System.out.println("sad");
             Stage newStage = new Stage();
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
             Parent root = fxLoader.load();
