@@ -48,13 +48,18 @@ public class LoginViewController implements Initializable
     @FXML
     private void login(ActionEvent event) throws IOException 
     {
-        Stage newStage = new Stage();
-        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
-        Parent root = fxLoader.load();
-        MainWindowController controller = fxLoader.getController();
-        Scene scene = new Scene(root);
-        newStage.setScene(scene);
-        newStage.show();
+        if (userPassword.getLength() == 4) 
+        {
+            Stage newStage = new Stage();
+            FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
+            Parent root = fxLoader.load();
+            MainWindowController controller = fxLoader.getController();
+            Scene scene = new Scene(root);
+            newStage.setScene(scene);
+            newStage.show();
+        }
+        else
+            showErrorDialog("Wrong Password", null, "Please insert correct password");
     }
     
         private void showErrorDialog(String title, String header, String message) 
@@ -69,7 +74,7 @@ public class LoginViewController implements Initializable
     @FXML
     private void forgotPassword(ActionEvent event) 
     {
-        showErrorDialog("You sure?", null, "Well, if yes than that's because you are an idiot.");
+        showErrorDialog("You sure?", null, "Well, if yes then that's because you are an idiot.");
     }
     
 }
