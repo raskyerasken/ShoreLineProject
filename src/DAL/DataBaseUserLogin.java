@@ -8,6 +8,7 @@ package DAL;
 import BE.UserLogin;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -48,7 +49,7 @@ public class DataBaseUserLogin
         try(Connection con = cm.getConnection())
         {
             String query
-                    = "SELECT * FROM UserLogin"
+                    = "SELECT * FROM UserLogin "
                     + "WHERE Username LIKE ?";
             
             PreparedStatement pstmt = con.prepareStatement(query);
@@ -69,4 +70,53 @@ public class DataBaseUserLogin
         }
         return userLogin.getPassword().equals(ul.getPassword());
     }
+
+    public boolean usernameAvaible(String Username) throws SQLException {
+   UserLogin ul = new UserLogin();
+        try(Connection con = cm.getConnection())
+        {
+            String query
+                    = "SELECT * FROM UserLogin "
+                    + "WHERE Username LIKE ?";
+            
+            PreparedStatement pstmt = con.prepareStatement(query);
+            pstmt.setString(1, Username);
+            
+            ResultSet rs = pstmt.executeQuery();
+            
+            while(rs.next())
+            {
+                return false;
+            }
+        } 
+        
+        catch (SQLServerException ex) 
+        {
+            Logger.getLogger(DataBaseUserLogin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return true;
+    }
+
+    public void createNewUser(UserLogin newUser) throws SQLServerException, SQLException {
+        try (Connection con = cm.getConnection())
+        {
+            String sql
+                    = "INSERT INTO UserLogin "
+                    + "(Username, Password, Email, Accesslevel) "
+                    + "VALUES(?,?,?,?)";
+            
+            PreparedStatement pstmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            pstmt.setString(1, newUser.getUserName());
+            pstmt.setString(2, newUser.getPassword());
+            pstmt.setString(3, newUser.getEmail());
+            pstmt.setBoolean(4,  newUser.isAccessLevel());
+           
+            int affected = pstmt.executeUpdate();
+            if (affected<1)
+            {
+                throw new SQLException("User not added");
+            }
+            
+    }
+}
 }

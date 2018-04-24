@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
 <?import com.jfoenix.controls.JFXProgressBar?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
+<<<<<<< HEAD
 <AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="571.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.MainWindowController">
     <children>
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
@@ -19,9 +22,14 @@
       <Button fx:id="startTask" layoutX="166.0" layoutY="377.0" mnemonicParsing="false" text="Start" />
       <Button fx:id="pauseTask" layoutX="256.0" layoutY="377.0" mnemonicParsing="false" text="Pause" />
       <Button fx:id="stopTask" layoutX="367.0" layoutY="377.0" mnemonicParsing="false" text="Stop" />
+=======
+<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="571.0" stylesheets="@CSSShoreLines.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.MainWindowController">
+    <children>
+        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+      <JFXProgressBar layoutX="157.0" layoutY="414.0" prefHeight="18.0" prefWidth="400.0" />
+>>>>>>> e99be7bcd207ac2c74ef032bd93a2aa26f75c146
       <Label fx:id="taskXRun" layoutX="238.0" layoutY="351.0" text="Task X Running" />
-      <ListView fx:id="taskField" layoutX="156.0" layoutY="46.0" prefHeight="293.0" prefWidth="392.0" />
-      <MenuBar prefHeight="29.0" prefWidth="576.0">
+      <MenuBar prefHeight="29.0" prefWidth="576.0" stylesheets="@CSSShoreLines.css">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
@@ -40,5 +48,17 @@
           </Menu>
         </menus>
       </MenuBar>
+      <JFXButton layoutX="13.0" layoutY="107.0" onAction="#importData" prefHeight="26.0" prefWidth="106.0" text="Import Data" />
+      <JFXListView fx:id="taskField" layoutX="111.0" layoutY="100.0" prefHeight="246.0" prefWidth="444.0" />
+      <JFXButton layoutX="23.0" layoutY="138.0" onAction="#convertData" text="Convert Data" />
+      <JFXButton layoutX="26.0" layoutY="170.0" onAction="#exportData" text="Export Data" />
+      <JFXButton layoutX="155.0" layoutY="369.0" onAction="#startTask" text="Start Task" />
+      <JFXButton layoutX="238.0" layoutY="369.0" onAction="#pauseTask" text="Pause Task" />
+      <JFXButton layoutX="335.0" layoutY="369.0" onAction="#stopTask" text="Stop" />
+      <ImageView fitHeight="67.0" fitWidth="325.0" layoutX="6.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/ShoreLineLogo.jpg" />
+         </image>
+      </ImageView>
     </children>
 </AnchorPane>

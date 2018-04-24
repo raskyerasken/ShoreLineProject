@@ -53,12 +53,11 @@ public class LoginViewController implements Initializable
     private void login(ActionEvent event) throws IOException, SQLException 
     {
         UserLogin userLogin = new UserLogin();
-        userLogin.setPassword("Jacob");
-        userLogin.setUserName("Jacob");
+        userLogin.setPassword(userPassword.getText());
+        userLogin.setUserName(userNameID.getText());
         
         if (ul.getAccess(userLogin)) 
         {
-            System.out.println("sad");
             Stage newStage = new Stage();
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
             Parent root = fxLoader.load();
