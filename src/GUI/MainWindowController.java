@@ -36,7 +36,6 @@ public class MainWindowController implements Initializable
     
     public String selectedDocument;
     
-    XmlToJava xtj = new XmlToJava();
    
     private void handleButtonAction(ActionEvent event) 
     {
@@ -78,7 +77,7 @@ public class MainWindowController implements Initializable
         
     
     private void importDataClick(ActionEvent event) {
-        
+            XmlToJava xtj = new XmlToJava();
         JFileChooser chooser = new JFileChooser();
         chooser.setCurrentDirectory(new java.io.File("."));
 //        FileNameExtensionFilter filter = new FileNameExtensionFilter();
