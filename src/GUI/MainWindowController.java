@@ -40,7 +40,6 @@ public class MainWindowController implements Initializable
     @FXML
     private ListView<?> taskField;
     
-<<<<<<< HEAD
    
     private void handleButtonAction(ActionEvent event) {
         System.out.println("You clicked me!");
@@ -51,18 +50,7 @@ public class MainWindowController implements Initializable
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }   
-=======
-    private void handleButtonAction(ActionEvent event) 
-    {
-
-    }
-    
-    @Override
-    public void initialize(URL url, ResourceBundle rb) 
-    {
-
-    }    
->>>>>>> 799c4e02f70612a394a446281e85b734b4842e01
+   
     
     
   
