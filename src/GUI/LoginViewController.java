@@ -63,8 +63,11 @@ public class LoginViewController implements Initializable
             Parent root = fxLoader.load();
             MainWindowController controller = fxLoader.getController();
             Scene scene = new Scene(root);
+            newStage.setResizable(false);
             newStage.setScene(scene);
             newStage.show();
+            Stage stage = (Stage) rememberUser.getScene().getWindow();
+            stage.close();
         }
         else
             showErrorDialog("Wrong Password", null, "Please insert correct password");
