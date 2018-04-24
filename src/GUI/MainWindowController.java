@@ -59,13 +59,7 @@ public class MainWindowController implements Initializable
         // TODO
     }   
 
-    @FXML
-    private void importDataClick(MouseEvent event) {
-        
-       
-    }
 
-    @FXML
     private void importDataClick(ActionEvent event) {
         
         JFileChooser chooser = new JFileChooser();
@@ -90,6 +84,30 @@ public class MainWindowController implements Initializable
     {
         Stage stage = (Stage) startTask.getScene().getWindow();
         stage.toFront();
+    }
+
+    @FXML
+    private void importData(ActionEvent event) {
+    }
+
+    @FXML
+    private void convertData(ActionEvent event) {
+    }
+
+    @FXML
+    private void exportData(ActionEvent event) {
+    }
+
+    @FXML
+    private void startTask(ActionEvent event) {
+    }
+
+    @FXML
+    private void pauseTask(ActionEvent event) {
+    }
+
+    @FXML
+    private void stopTask(ActionEvent event) {
     }
     
     
