@@ -5,6 +5,8 @@
  */
 package BE;
 
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -17,7 +19,39 @@ public class UserLogin
 
     private final StringProperty userName = new SimpleStringProperty();
     private final StringProperty password = new SimpleStringProperty();
+    private final StringProperty Email = new SimpleStringProperty();
+    private final BooleanProperty AccessLevel = new SimpleBooleanProperty();
 
+    public boolean isAccessLevel() 
+    {
+        return AccessLevel.get();
+    }
+
+    public void setAccessLevel(boolean value) 
+    {
+        AccessLevel.set(value);
+    }
+
+    public BooleanProperty AccessLevelProperty() 
+    {
+        return AccessLevel;
+    }
+    
+    public String getEmail() 
+    {
+        return Email.get();
+    }
+
+    public void setEmail(String value) 
+    {
+        Email.set(value);
+    }
+
+    public StringProperty EmailProperty() 
+    {
+        return Email;
+    }
+    
     public String getPassword() 
     {
         return password.get();
@@ -33,17 +67,17 @@ public class UserLogin
         return password;
     }
     
-    private String getUserName() 
+    public String getUserName() 
     {
         return userName.get();
     }
 
-    private void setUserName(String value) 
+    public void setUserName(String value) 
     {
         userName.set(value);
     }
 
-    private StringProperty userNameProperty() 
+    public StringProperty userNameProperty() 
     {
         return userName;
     }
