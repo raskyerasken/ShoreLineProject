@@ -48,7 +48,7 @@ public class DataBaseUserLogin
         try(Connection con = cm.getConnection())
         {
             String query
-                    = "SELECT * FROM UserLogin"
+                    = "SELECT * FROM UserLogin "
                     + "WHERE Username LIKE ?";
             
             PreparedStatement pstmt = con.prepareStatement(query);
