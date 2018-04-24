@@ -41,7 +41,7 @@ public class SAXLocalNameCount extends DefaultHandler {
        
         
         
-        
+        //sets up the command-line arguments, gets the name of the file to process
         for (int i = 0; i < arghs.length; i++) {
             filename = arghs[i];
             
@@ -56,6 +56,8 @@ public class SAXLocalNameCount extends DefaultHandler {
         }
     }
     
+    
+    //defines the command-line options, tells the application the name of the XML file to be processed
     private static String convertToFileURL(String filename) 
     {
         String path = new File(filename).getAbsolutePath();
@@ -70,6 +72,7 @@ public class SAXLocalNameCount extends DefaultHandler {
         return "file:" + path;
     }
     
+    //used if the incorrect command-line arguments are specificed
     private static void usage() 
     {
      System.err.println("Usage: SAXLocalNameCount <file.xml>");
@@ -77,12 +80,17 @@ public class SAXLocalNameCount extends DefaultHandler {
      System.exit(1);
     }
     
-    private void startdocument() throws SAXException
+    //Defines what to do when the parser finds the start point of the document
+    //it sets up a hashtable where the information will be stored
+    public void startDocument() throws SAXException
     {
         tags = new Hashtable();
     }
     
-    
+    //Defines what to do when the parser finds the end point of the document
+    //checks to see whether or not there are any more keys in the document
+    //it also gets the names and counts of the elements contained in the hashtable
+    //prints out a message onscreen teo tell the user how many incidences of each element were found
     public void endDocument() throws SAXException 
     {
         Enumeration e = tags.keys();
@@ -95,7 +103,10 @@ public class SAXLocalNameCount extends DefaultHandler {
         }
     }
     
-    public void startelement(String namespaceURI, String localName, String qName, Attributes atts) throws SAXException
+    
+    //populates the hashtable created by the startDocument()
+    //
+    public void startElement(String namespaceURI, String localName, String qName, Attributes atts) throws SAXException
     {
         String key = localName;
         Object value = tags.get(key);
