@@ -5,11 +5,15 @@
  */
 package BLL;
 
+import DAL.DataBaseUserLogin;
+
 /**
  *
  * @author ander
  */
 public class BLLManagerUserLogin 
 {
+    DataBaseUserLogin ul = new DataBaseUserLogin();
+    
     
 }
