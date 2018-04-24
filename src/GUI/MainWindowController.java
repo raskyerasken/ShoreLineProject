@@ -51,11 +51,9 @@ public class MainWindowController implements Initializable
         menuBar.setId("MenuBar");
     }   
 
-<<<<<<< HEAD
     private void importDataClick(MouseEvent event) {
-=======
-<<<<<<< HEAD
-=======
+    
+    }
     @FXML
     private void importData(ActionEvent event) {
     }
@@ -78,21 +76,10 @@ public class MainWindowController implements Initializable
 
     @FXML
     private void stopTask(ActionEvent event) 
-    {
->>>>>>> d628d8bc7e2674ed864cdde23f1ba8091dc8990e
+    {}
         
-    }
-    private void importDataClick(MouseEvent event) 
-    {
-       
-    }
-
-<<<<<<< HEAD
-    private void importDataClick(ActionEvent event) 
-    {
-=======
+    
     private void importDataClick(ActionEvent event) {
->>>>>>> 2f2c7e63414b033cfef782eeff7ddfa7f835d917
         
         JFileChooser chooser = new JFileChooser();
         chooser.setCurrentDirectory(new java.io.File("."));
@@ -114,42 +101,9 @@ public class MainWindowController implements Initializable
     
     void stageToFront()
     {
-<<<<<<< HEAD
         Stage stage = (Stage) taskField.getScene().getWindow();
         stage.toFront();
-=======
 
     }
-<<<<<<< HEAD
-=======
 
-    @FXML
-    private void importData(ActionEvent event) {
-    }
-
-    @FXML
-    private void convertData(ActionEvent event) {
-    }
-
-    @FXML
-    private void exportData(ActionEvent event) {
-    }
-
-    @FXML
-    private void startTask(ActionEvent event) {
-    }
->>>>>>> d628d8bc7e2674ed864cdde23f1ba8091dc8990e
-
-    
-<<<<<<< HEAD
-    }
-=======
-    
->>>>>>> be63f12d2b6c5d0113320364ad773d493c331e61
-   
-    
-    
-  
->>>>>>> 2f2c7e63414b033cfef782eeff7ddfa7f835d917
->>>>>>> d628d8bc7e2674ed864cdde23f1ba8091dc8990e
 }

@@ -8,41 +8,11 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-<<<<<<< HEAD
-    <jar href="ShoreLine.jar" size="33123" download="eager" />
-=======
-<<<<<<< HEAD
-    <jar href="ShoreLine.jar" size="33156" download="eager" />
-=======
-<<<<<<< HEAD
-    <jar href="ShoreLine.jar" size="32222" download="eager" />
-=======
-<<<<<<< HEAD
-    <jar href="ShoreLine.jar" size="22122" download="eager" />
->>>>>>> 5f071107377ba4a8290135f2f10c863cdf4854e3
+    <jar href="ShoreLine.jar" size="33246" download="eager" />
     <jar href="lib/java-json.jar" size="84697" download="eager" />
     <jar href="lib/jaxp-api.jar" size="27052" download="eager" />
     <jar href="lib/jfoenix-8.0.1.jar" size="2405715" download="eager" />
     <jar href="lib/sqljdbc42.jar" size="891490" download="eager" />
-<<<<<<< HEAD
-=======
-=======
-<<<<<<< HEAD
-    <jar href="ShoreLine.jar" size="30358" download="eager" />
-=======
-    <jar href="ShoreLine.jar" size="23091" download="eager" />
->>>>>>> cd5eec3ef216dbfd34c67e718e99212701680a43
->>>>>>> be63f12d2b6c5d0113320364ad773d493c331e61
->>>>>>> 2f2c7e63414b033cfef782eeff7ddfa7f835d917
-    <jar href="lib\java-json.jar" size="84697" download="eager" />
-    <jar href="lib\jaxp-api.jar" size="27052" download="eager" />
-    <jar href="lib\jfoenix-8.0.1.jar" size="2405715" download="eager" />
-    <jar href="lib\sqljdbc42.jar" size="891490" download="eager" />
-<<<<<<< HEAD
-=======
->>>>>>> e99be7bcd207ac2c74ef032bd93a2aa26f75c146
->>>>>>> 5f071107377ba4a8290135f2f10c863cdf4854e3
->>>>>>> 2f2c7e63414b033cfef782eeff7ddfa7f835d917
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="ShoreLine" >
     <param name="requiredFXVersion" value="8.0+"/>
