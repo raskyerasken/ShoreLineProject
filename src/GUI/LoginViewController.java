@@ -74,7 +74,7 @@ public class LoginViewController implements Initializable
     @FXML
     private void forgotPassword(ActionEvent event) 
     {
-        showErrorDialog("You sure?", null, "Well, if yes than that's because you are an idiot.");
+        showErrorDialog("You sure?", null, "Well, if yes then that's because you are an idiot.");
     }
     
 }
