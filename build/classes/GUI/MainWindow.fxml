@@ -9,10 +9,10 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="571.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="GUI.MainWindowController">
+<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="571.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.MainWindowController">
     <children>
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
-      <Button fx:id="importData" layoutX="35.0" layoutY="46.0" mnemonicParsing="false" text="Import Data" />
+      <Button fx:id="importData" layoutX="35.0" layoutY="46.0" mnemonicParsing="false" onAction="#importDataClick" onMouseClicked="#importDataClick" text="Import Data" />
       <Button fx:id="convertData" layoutX="34.0" layoutY="93.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="105.0" text="Convert Data" />
       <Button fx:id="exportData" layoutX="35.0" layoutY="137.0" mnemonicParsing="false" text="Export Data" />
       <JFXProgressBar layoutX="195.0" layoutY="414.0" prefHeight="17.0" />

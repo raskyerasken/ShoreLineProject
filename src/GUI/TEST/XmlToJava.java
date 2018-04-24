@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package GUI.TEST;
+import GUI.MainWindowController;
 import javax.xml.parsers.*;
 import org.xml.sax.*;
 import org.xml.sax.helpers.*;
@@ -21,8 +22,11 @@ import static oracle.jrockit.jfr.tools.ConCatRepository.usage;
 public class XmlToJava extends DefaultHandler {
     
     private Hashtable tags;
-    String filename = null;
 
+    
+    MainWindowController mwc = new MainWindowController();
+    
+    String filename = mwc.selectedDocument;
     public void main(String[] arghs) throws ParserConfigurationException, SAXException, IOException {
         
         //sets up the parser that analyses the text
@@ -37,7 +41,6 @@ public class XmlToJava extends DefaultHandler {
         
        //sets up error handling
        xmlReader.setErrorHandler((ErrorHandler) new MyErrorHandler(System.err));
-       
        
         
         
@@ -58,7 +61,7 @@ public class XmlToJava extends DefaultHandler {
     
     
     //defines the command-line options, tells the application the name of the XML file to be processed
-    private static String convertToFileURL(String filename) 
+    public static String convertToFileURL(String filename) 
     {
         String path = new File(filename).getAbsolutePath();
         if (File.separatorChar != '/') {

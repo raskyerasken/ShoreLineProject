@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import GUI.TEST.XmlToJava;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -13,6 +14,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
@@ -40,6 +45,9 @@ public class MainWindowController implements Initializable
     @FXML
     private ListView<?> taskField;
     
+    public String selectedDocument;
+    
+    XmlToJava xtj = new XmlToJava();
    
     private void handleButtonAction(ActionEvent event) {
         System.out.println("You clicked me!");
@@ -50,6 +58,41 @@ public class MainWindowController implements Initializable
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }   
+
+    @FXML
+    private void importDataClick(MouseEvent event) {
+        
+       
+    }
+
+    @FXML
+    private void importDataClick(ActionEvent event) {
+        
+        JFileChooser chooser = new JFileChooser();
+        chooser.setCurrentDirectory(new java.io.File("."));
+//        FileNameExtensionFilter filter = new FileNameExtensionFilter();
+//        FileNameExtensionFilter filter2 = new FileNameExtensionFilter();
+//        chooser.setFileFilter(filter);
+//        chooser.setFileFilter(filter2);
+        chooser.setAcceptAllFileFilterUsed(false);
+        chooser.setDialogTitle("choosertitle");
+        
+        if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) 
+        { 
+            stageToFront();
+        } 
+        selectedDocument=""+chooser.getSelectedFile();
+        stageToFront();
+        
+    }
+    
+    void stageToFront()
+    {
+        Stage stage = (Stage) startTask.getScene().getWindow();
+        stage.toFront();
+    }
+    
+    
    
     
     
