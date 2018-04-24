@@ -13,10 +13,10 @@ public class TestThread {
     
     public static void main(String args[])
     {
-        RunnableDemo R1 = new RunnableDemo();
+        ThreadDemo R1 = new ThreadDemo();
         R1.start();
         
-        RunnableDemo R2 = new RunnableDemo();
+        ThreadDemo R2 = new ThreadDemo();
         R2.start();
     }
 }
