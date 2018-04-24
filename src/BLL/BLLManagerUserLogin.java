@@ -5,7 +5,11 @@
  */
 package BLL;
 
+import BE.UserLogin;
 import DAL.DataBaseUserLogin;
+import com.microsoft.sqlserver.jdbc.SQLServerException;
+import java.sql.SQLException;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -15,5 +19,13 @@ public class BLLManagerUserLogin
 {
     DataBaseUserLogin ul = new DataBaseUserLogin();
     
-    
+    public void getPassword(UserLogin userLogin) throws SQLServerException, SQLException 
+    {
+        ul.setPassword(userLogin);
+    }
+
+    public boolean getAccess(UserLogin userLogin) throws SQLException 
+    {
+        return ul.getAccess(userLogin);
+    }
 }

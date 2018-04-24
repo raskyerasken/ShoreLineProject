@@ -8,11 +8,18 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+<<<<<<< HEAD
     <jar href="ShoreLine.jar" size="19704" download="eager" />
     <jar href="lib/java-json.jar" size="84697" download="eager" />
     <jar href="lib/jaxp-api.jar" size="27052" download="eager" />
     <jar href="lib/jfoenix-8.0.1.jar" size="2405715" download="eager" />
     <jar href="lib/sqljdbc42.jar" size="891490" download="eager" />
+=======
+    <jar href="ShoreLine.jar" size="15735" download="eager" />
+    <jar href="lib\java-json.jar" size="84697" download="eager" />
+    <jar href="lib\jfoenix-8.0.1.jar" size="2405715" download="eager" />
+    <jar href="lib\sqljdbc42.jar" size="891490" download="eager" />
+>>>>>>> 9e67a460e532f7d5f77c83c89f5659da6d949eab
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="ShoreLine" >
     <param name="requiredFXVersion" value="8.0+"/>

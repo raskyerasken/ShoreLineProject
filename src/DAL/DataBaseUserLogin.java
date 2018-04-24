@@ -9,6 +9,7 @@ import BE.UserLogin;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
@@ -22,14 +23,14 @@ public class DataBaseUserLogin
 {
     private ConnectionManagerSLProject cm = new ConnectionManagerSLProject();
     
-    public void getPassword(UserLogin userLogin) throws SQLException
+    public void setPassword(UserLogin userLogin) throws SQLException
     {
         try(Connection con = cm.getConnection())
         {
             String sql
                     = "SELECT * FROM UserLogin"
                     + "(Username, Password)"
-                    + "VALUES (?, ?)";
+                    + "VALUES (?, ?, ?, ?)";
             
             PreparedStatement pstmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             
@@ -39,5 +40,33 @@ public class DataBaseUserLogin
         {
             Logger.getLogger(DataBaseUserLogin.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    public boolean getAccess(UserLogin userLogin) throws SQLException
+    {
+        UserLogin ul = new UserLogin();
+        try(Connection con = cm.getConnection())
+        {
+            String query
+                    = "SELECT * FROM UserLogin"
+                    + "WHERE Username LIKE ?";
+            
+            PreparedStatement pstmt = con.prepareStatement(query);
+            pstmt.setString(1, userLogin.getUserName());
+            
+            ResultSet rs = pstmt.executeQuery();
+            
+            while(rs.next())
+            {
+                ul.setUserName(rs.getString("Username"));
+                ul.setPassword(rs.getString("Password"));
+            }
+        } 
+        
+        catch (SQLServerException ex) 
+        {
+            Logger.getLogger(DataBaseUserLogin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return userLogin.getPassword().equals(ul.getPassword());
     }
 }
