@@ -9,7 +9,7 @@ package GUI.TEST;
  *
  * @author kasper
  */
-public class RunnableDemo {
+public class ThreadDemo {
     
     private Thread t;
     private String threadName;

@@ -18,7 +18,7 @@ import static oracle.jrockit.jfr.tools.ConCatRepository.usage;
  *
  * @author kasper
  */
-public class SAXLocalNameCount extends DefaultHandler {
+public class XmlToJava extends DefaultHandler {
     
     private Hashtable tags;
     String filename = null;
@@ -32,7 +32,7 @@ public class SAXLocalNameCount extends DefaultHandler {
         
         //sets up the XMLReader
         XMLReader xmlReader = saxParser.getXMLReader();
-        xmlReader.setContentHandler(new SAXLocalNameCount());
+        xmlReader.setContentHandler(new XmlToJava());
         xmlReader.parse(convertToFileURL(filename));
         
        //sets up error handling
