@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package GUI.TEST;
 
 /**
  *
@@ -19,7 +19,8 @@ public class RunnableDemo {
     {
         System.out.println("Creating" + threadName );
         try {
-            for (int i = 4; i > 0; i--) {
+            for (int i = 4; i > 0; i--) 
+            {
                 System.out.println("Thread: " + threadName + ", " + i);
                 Thread.sleep(50);
             }
