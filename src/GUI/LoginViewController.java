@@ -9,18 +9,25 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
  *
  * @author ander
  */
-public class LoginViewController implements Initializable {
+public class LoginViewController implements Initializable 
+{
 
     @FXML
     private JFXTextField userNameID;
@@ -28,19 +35,41 @@ public class LoginViewController implements Initializable {
     private JFXPasswordField userPassword;
     @FXML
     private JFXCheckBox rememberUser;
-    @FXML
-    private JFXButton forgotPassword;
 
     /**
      * Initializes the controller class.
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+    public void initialize(URL url, ResourceBundle rb) 
+    {
+        
     }    
 
     @FXML
-    private void login(ActionEvent event) {
+    private void login(ActionEvent event) throws IOException 
+    {
+        Stage newStage = new Stage();
+        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
+        Parent root = fxLoader.load();
+        MainWindowController controller = fxLoader.getController();
+        Scene scene = new Scene(root);
+        newStage.setScene(scene);
+        newStage.show();
+    }
+    
+        private void showErrorDialog(String title, String header, String message) 
+    {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setHeaderText(header);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
+    @FXML
+    private void forgotPassword(ActionEvent event) 
+    {
+        showErrorDialog("You sure?", null, "Well, if yes than that's because you are an idiot.");
     }
     
 }
