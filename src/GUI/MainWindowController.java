@@ -28,8 +28,6 @@ public class MainWindowController implements Initializable
 {
     
     @FXML
-    private Label label;
-    @FXML
     private Label taskXRun;
     @FXML
     private ListView<?> taskField;
