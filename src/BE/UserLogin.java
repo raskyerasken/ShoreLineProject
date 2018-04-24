@@ -5,10 +5,37 @@
  */
 package BE;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 /**
  *
  * @author ander
  */
-public class UserLogin {
+public class UserLogin 
+{
+
+    private final StringProperty userName = new SimpleStringProperty();
+    private final StringProperty password = new SimpleStringProperty();
+
+    private String getPassword() 
+    {
+        return password.get();
+    }
+
+    private StringProperty passwordProperty() 
+    {
+        return password;
+    }
+    
+    private String getUserName() 
+    {
+        return userName.get();
+    }
+
+    private StringProperty userNameProperty() 
+    {
+        return userName;
+    }
     
 }
