@@ -18,12 +18,17 @@ public class UserLogin
     private final StringProperty userName = new SimpleStringProperty();
     private final StringProperty password = new SimpleStringProperty();
 
-    private String getPassword() 
+    public String getPassword() 
     {
         return password.get();
     }
 
-    private StringProperty passwordProperty() 
+    public void setPassword(String value) 
+    {
+        password.set(value);
+    }
+
+    public StringProperty passwordProperty() 
     {
         return password;
     }
@@ -31,6 +36,11 @@ public class UserLogin
     private String getUserName() 
     {
         return userName.get();
+    }
+
+    private void setUserName(String value) 
+    {
+        userName.set(value);
     }
 
     private StringProperty userNameProperty() 

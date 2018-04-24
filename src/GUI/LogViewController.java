@@ -5,8 +5,11 @@
  */
 package GUI;
 
+import com.jfoenix.controls.JFXListView;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 /**
@@ -14,14 +17,43 @@ import javafx.fxml.Initializable;
  *
  * @author ander
  */
-public class LogViewController implements Initializable {
+public class LogViewController implements Initializable 
+{
+
+    @FXML
+    private JFXListView<?> LogView;
 
     /**
      * Initializes the controller class.
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL url, ResourceBundle rb) 
+    {
         // TODO
     }    
+
+    @FXML
+    private void searchLogView(ActionEvent event) 
+    {
+        
+    }
+
+    @FXML
+    private void closeMenu(ActionEvent event) 
+    {
+        
+    }
+
+    @FXML
+    private void deleteItem(ActionEvent event) 
+    {
+        
+    }
+
+    @FXML
+    private void edit(ActionEvent event) 
+    {
+        
+    }
     
 }
