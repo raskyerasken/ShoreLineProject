@@ -51,6 +51,8 @@ public class MainWindowController implements Initializable
         menuBar.setId("MenuBar");
     }   
 
+<<<<<<< HEAD
+=======
     @FXML
     private void importData(ActionEvent event) {
     }
@@ -80,9 +82,14 @@ public class MainWindowController implements Initializable
     {
        
     }
+>>>>>>> 5f071107377ba4a8290135f2f10c863cdf4854e3
 
+<<<<<<< HEAD
     private void importDataClick(ActionEvent event) 
     {
+=======
+    private void importDataClick(ActionEvent event) {
+>>>>>>> 2f2c7e63414b033cfef782eeff7ddfa7f835d917
         
         JFileChooser chooser = new JFileChooser();
         chooser.setCurrentDirectory(new java.io.File("."));
@@ -106,4 +113,38 @@ public class MainWindowController implements Initializable
     {
 
     }
+<<<<<<< HEAD
+=======
+
+    @FXML
+    private void importData(ActionEvent event) {
+    }
+
+    @FXML
+    private void convertData(ActionEvent event) {
+    }
+
+    @FXML
+    private void exportData(ActionEvent event) {
+    }
+
+    @FXML
+    private void startTask(ActionEvent event) {
+    }
+
+    @FXML
+    private void pauseTask(ActionEvent event) {
+    }
+
+    @FXML
+    private void stopTask(ActionEvent event) {
+    }
+    
+    
+>>>>>>> be63f12d2b6c5d0113320364ad773d493c331e61
+   
+    
+    
+  
+>>>>>>> 2f2c7e63414b033cfef782eeff7ddfa7f835d917
 }
