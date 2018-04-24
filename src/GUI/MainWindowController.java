@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import GUI.TEST.XmlToJava;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -13,7 +14,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+<<<<<<< HEAD
 import javafx.scene.control.MenuBar;
+=======
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
+>>>>>>> be63f12d2b6c5d0113320364ad773d493c331e61
 
 /**
  *
@@ -31,6 +39,9 @@ public class MainWindowController implements Initializable
     @FXML
     private MenuBar menuBar;
     
+    public String selectedDocument;
+    
+    XmlToJava xtj = new XmlToJava();
    
     private void handleButtonAction(ActionEvent event) 
     {
@@ -44,6 +55,7 @@ public class MainWindowController implements Initializable
     }   
 
     @FXML
+<<<<<<< HEAD
     private void importData(ActionEvent event) {
     }
 
@@ -66,6 +78,41 @@ public class MainWindowController implements Initializable
     @FXML
     private void stopTask(ActionEvent event) {
     }
+=======
+    private void importDataClick(MouseEvent event) {
+        
+       
+    }
+
+    @FXML
+    private void importDataClick(ActionEvent event) {
+        
+        JFileChooser chooser = new JFileChooser();
+        chooser.setCurrentDirectory(new java.io.File("."));
+//        FileNameExtensionFilter filter = new FileNameExtensionFilter();
+//        FileNameExtensionFilter filter2 = new FileNameExtensionFilter();
+//        chooser.setFileFilter(filter);
+//        chooser.setFileFilter(filter2);
+        chooser.setAcceptAllFileFilterUsed(false);
+        chooser.setDialogTitle("choosertitle");
+        
+        if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) 
+        { 
+            stageToFront();
+        } 
+        selectedDocument=""+chooser.getSelectedFile();
+        stageToFront();
+        
+    }
+    
+    void stageToFront()
+    {
+        Stage stage = (Stage) startTask.getScene().getWindow();
+        stage.toFront();
+    }
+    
+    
+>>>>>>> be63f12d2b6c5d0113320364ad773d493c331e61
    
     
     
