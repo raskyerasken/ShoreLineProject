@@ -19,7 +19,7 @@ public class ConnectionManagerSLProject
     
     public ConnectionManagerSLProject() 
     {
-        ds.setDatabaseName("CS2017B_13_Attendance");
+        ds.setDatabaseName("CS2017B_13_ShoreLine");
         ds.setUser("CS2017B_13_java");
         ds.setPassword("javajava");
         ds.setPortNumber(1433);

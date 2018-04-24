@@ -5,12 +5,15 @@
  */
 package GUI;
 
+import BE.UserLogin;
+import BLL.BLLManagerUserLogin;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -35,6 +38,7 @@ public class LoginViewController implements Initializable
     private JFXPasswordField userPassword;
     @FXML
     private JFXCheckBox rememberUser;
+    BLL.BLLManagerUserLogin ul = new BLLManagerUserLogin();
 
     /**
      * Initializes the controller class.
@@ -46,10 +50,15 @@ public class LoginViewController implements Initializable
     }    
 
     @FXML
-    private void login(ActionEvent event) throws IOException 
+    private void login(ActionEvent event) throws IOException, SQLException 
     {
-        if (userPassword.getLength() == 4) 
+        UserLogin userLogin = new UserLogin();
+        userLogin.setPassword("Jacob");
+        userLogin.setUserName("Jacob");
+        
+        if (ul.getAccess(userLogin)) 
         {
+<<<<<<< HEAD
 //            Stage newStage = new Stage();
 //            FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
 //            Parent root = fxLoader.load();
@@ -57,6 +66,16 @@ public class LoginViewController implements Initializable
 //            Scene scene = new Scene(root);
 //            newStage.setScene(scene);
 //            newStage.show();
+=======
+            System.out.println("sad");
+            Stage newStage = new Stage();
+            FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
+            Parent root = fxLoader.load();
+            MainWindowController controller = fxLoader.getController();
+            Scene scene = new Scene(root);
+            newStage.setScene(scene);
+            newStage.show();
+>>>>>>> b9b438ee654179f453c3909e19fceac53a69f644
         }
         else
             showErrorDialog("Wrong Password", null, "Please insert correct password");
