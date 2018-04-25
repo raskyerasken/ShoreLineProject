@@ -1,3 +1,1 @@
-The user logged in: 
-kris
-kris
+Remember me is not selected

@@ -42,6 +42,7 @@ public class LoginViewController implements Initializable
     private JFXTextField userNameID;
     @FXML
     private JFXPasswordField userPassword;
+    @FXML
     private JFXCheckBox rememberUser;
     BLL.BLLManagerUserLogin ul = new BLLManagerUserLogin();
     UserLogin userLogin = new UserLogin();
@@ -56,17 +57,24 @@ public class LoginViewController implements Initializable
         
     }    
     
-    
-
     @FXML
     private void login(ActionEvent event) throws IOException, SQLException 
     {
-        
         userLogin.setPassword(userPassword.getText());
         userLogin.setUserName(userNameID.getText());
         
         if (ul.getAccess(userLogin)) 
         {
+            if (rememberUser.isSelected()) 
+            {
+                writeUserLoginTxt();
+                readUserLoginTxt();
+                System.out.println("from txt file: " + lines);
+            }
+            else
+            {
+                writeNothingTxt();
+            }
             //System.out.println("User is logged in: " + userLogin.getUserName());
             Stage newStage = new Stage();
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
@@ -78,7 +86,6 @@ public class LoginViewController implements Initializable
             newStage.show();
             Stage stage = (Stage) userNameID.getScene().getWindow();
             stage.close();
-            writeUserLoginTxt();
         }
         else
             showErrorDialog("Wrong Password", null, "Please insert correct password");
@@ -104,6 +111,14 @@ public class LoginViewController implements Initializable
         writer.close(); 
     }
     
+    private void writeNothingTxt() throws FileNotFoundException, UnsupportedEncodingException
+    {
+        //writes the user and pw to a txt file, but overwrites it everytime
+        PrintWriter writer = new PrintWriter("UserLog.txt", "UTF-8");
+        writer.println("Remember me is not selected");
+        writer.close(); 
+    }
+    
     //reads the userlogin text file
     private void readUserLoginTxt() throws FileNotFoundException, IOException
     {            
@@ -115,8 +130,6 @@ public class LoginViewController implements Initializable
             lines.add(line);
             line = br.readLine();
         }
-        
-        
     }
         
     @FXML
@@ -125,11 +138,4 @@ public class LoginViewController implements Initializable
         showErrorDialog("You sure?", null, "Well, if yes then that's because you are an idiot.");
     }
 
-    @FXML
-    private void rememberUser(ActionEvent event) throws FileNotFoundException, UnsupportedEncodingException, IOException 
-    {
-        readUserLoginTxt();
-        System.out.println("from txt file: " + lines);
-    }
-    
 }
