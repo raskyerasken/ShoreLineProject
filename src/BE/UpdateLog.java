@@ -9,6 +9,7 @@ package BE;
  *
  * @author jacob
  */
-public class UpdateLog {
+public class UpdateLog 
+{
     
 }

@@ -32,12 +32,14 @@ public class BLLManagerUserLogin
 
     
     
-    public boolean usernameAvaible(String Username) throws SQLException {
-    return ul.usernameAvaible(Username); 
+    public boolean usernameAvaible(String Username) throws SQLException 
+    {
+        return ul.usernameAvaible(Username); 
     }
 
 
-    public void createNewUser(UserLogin newUser) throws SQLException {
-    ul.createNewUser(newUser);
+    public void createNewUser(UserLogin newUser) throws SQLException 
+    {
+        ul.createNewUser(newUser);
     }
 }
