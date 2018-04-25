@@ -21,6 +21,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -54,7 +56,44 @@ public class LoginViewController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
+        BufferedReader br = null;
+        try 
+        {
+            br = new BufferedReader(new FileReader("UserLog.txt"));
+            String line = br.readLine();
+            while (line != null)
+            {
+                lines.add(line);
+                line = br.readLine();
+            }
+        } 
         
+        catch (FileNotFoundException ex) 
+        {
+            Logger.getLogger(LoginViewController.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+        
+        catch (IOException ex) 
+        {
+            Logger.getLogger(LoginViewController.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+        
+        finally 
+        {
+            try 
+            {
+                br.close();
+            } 
+            catch (IOException ex) 
+            {
+                Logger.getLogger(LoginViewController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        if (lines != null) 
+        {
+            userNameID.setText(lines.get(1));
+            userPassword.setText(lines.get(2));
+        }
     }    
     
     @FXML
