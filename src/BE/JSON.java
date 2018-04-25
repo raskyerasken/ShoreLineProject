@@ -15,7 +15,8 @@ import javafx.beans.property.StringProperty;
  *
  * @author jacob
  */
-public class JSON {
+public class JSON 
+{
 
     private final IntegerProperty assetSerialNumber = new SimpleIntegerProperty();
     private final StringProperty type = new SimpleStringProperty();
@@ -34,7 +35,8 @@ public class JSON {
      *
      * @return the value of planning
      */
-    public Planning getPlanning() {
+    public Planning getPlanning() 
+    {
         return planning;
     }
 
@@ -43,31 +45,38 @@ public class JSON {
      *
      * @param planning new value of planning
      */
-    public void setPlanning(Planning planning) {
+    public void setPlanning(Planning planning) 
+    {
         this.planning = planning;
     }
 
-    public String getName() {
+    public String getName() 
+    {
         return name.get();
     }
 
-    public void setName(String value) {
+    public void setName(String value) 
+    {
         name.set(value);
     }
 
-    public StringProperty nameProperty() {
+    public StringProperty nameProperty() 
+    {
         return name;
     }
 
-    public String getCreatedBy() {
+    public String getCreatedBy() 
+    {
         return createdBy.get();
     }
 
-    public void setCreatedBy(String value) {
+    public void setCreatedBy(String value) 
+    {
         createdBy.set(value);
     }
 
-    public StringProperty createdByProperty() {
+    public StringProperty createdByProperty() 
+    {
         return createdBy;
     }
 
@@ -77,7 +86,8 @@ public class JSON {
      *
      * @return the value of createdOn
      */
-    public Date getCreatedOn() {
+    public Date getCreatedOn() 
+    {
         return createdOn;
     }
 
@@ -86,79 +96,98 @@ public class JSON {
      *
      * @param createdOn new value of createdOn
      */
-    public void setCreatedOn(Date createdOn) {
+    public void setCreatedOn(Date createdOn)
+    {
         this.createdOn = createdOn;
     }
 
-    public String getUserStatus() {
+    public String getUserStatus() 
+    {
         return userStatus.get();
     }
 
-    public void setUserStatus(String value) {
+    public void setUserStatus(String value) 
+    {
         userStatus.set(value);
     }
 
-    public StringProperty userStatusProperty() {
+    public StringProperty userStatusProperty() 
+    {
         return userStatus;
     }
 
-    public String getSiteName() {
+    public String getSiteName() 
+    {
         return siteName.get();
     }
 
-    public void setSiteName(String value) {
+    public void setSiteName(String value) 
+    {
         siteName.set(value);
     }
 
-    public StringProperty siteNameProperty() {
+    public StringProperty siteNameProperty() 
+    {
         return siteName;
     }
 
-    public String getSystemStatus() {
+    public String getSystemStatus() 
+    {
         return systemStatus.get();
     }
 
-    public void setSystemStatus(String value) {
+    public void setSystemStatus(String value) 
+    {
         systemStatus.set(value);
     }
 
-    public StringProperty systemStatusProperty() {
+    public StringProperty systemStatusProperty() 
+    {
         return systemStatus;
     }
 
-    public int getExternalWorkOrderId() {
+    public int getExternalWorkOrderId() 
+    {
         return externalWorkOrderId.get();
     }
 
-    public void setExternalWorkOrderId(int value) {
+    public void setExternalWorkOrderId(int value) 
+    {
         externalWorkOrderId.set(value);
     }
 
-    public IntegerProperty externalWorkOrderIdProperty() {
+    public IntegerProperty externalWorkOrderIdProperty()
+    {
         return externalWorkOrderId;
     }
 
-    public String getType() {
+    public String getType() 
+    {
         return type.get();
     }
 
-    public void setType(String value) {
+    public void setType(String value) 
+    {
         type.set(value);
     }
 
-    public StringProperty typeProperty() {
+    public StringProperty typeProperty() 
+    {
         return type;
     }
 
-    public int getAssetSerialNumber() {
+    public int getAssetSerialNumber() 
+    {
         return assetSerialNumber.get();
     }
 
-    public void setAssetSerialNumber(int value) {
+    public void setAssetSerialNumber(int value) 
+    {
         assetSerialNumber.set(value);
     }
 
-    public IntegerProperty assetSerialNumberProperty() {
+    public IntegerProperty assetSerialNumberProperty() 
+    {
         return assetSerialNumber;
     }
  

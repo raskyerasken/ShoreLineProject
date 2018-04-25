@@ -16,20 +16,22 @@ import javafx.beans.property.SimpleIntegerProperty;
 public class Planning {
     
     private Date latestFinishDate;
-
     private Date earliestStartDate;
-
     private Date latestStartDate;
     private final IntegerProperty estimatedTime = new SimpleIntegerProperty();
-    public int getEstimatedTime() {
+    
+    public int getEstimatedTime() 
+    {
         return estimatedTime.get();
     }
 
-    public void setEstimatedTime(int value) {
+    public void setEstimatedTime(int value) 
+    {
         estimatedTime.set(value);
     }
 
-    public IntegerProperty estimatedTimeProperty() {
+    public IntegerProperty estimatedTimeProperty() 
+    {
         return estimatedTime;
     }
 
@@ -38,7 +40,8 @@ public class Planning {
      *
      * @return the value of latestStartDate
      */
-    public Date getLatestStartDate() {
+    public Date getLatestStartDate() 
+    {
         return latestStartDate;
     }
 
@@ -47,7 +50,8 @@ public class Planning {
      *
      * @param latestStartDate new value of latestStartDate
      */
-    public void setLatestStartDate(Date latestStartDate) {
+    public void setLatestStartDate(Date latestStartDate) 
+    {
         this.latestStartDate = latestStartDate;
     }
 
@@ -56,7 +60,8 @@ public class Planning {
      *
      * @return the value of earliestStartDate
      */
-    public Date getEarliestStartDate() {
+    public Date getEarliestStartDate() 
+    {
         return earliestStartDate;
     }
 
@@ -65,7 +70,8 @@ public class Planning {
      *
      * @param earliestStartDate new value of earliestStartDate
      */
-    public void setEarliestStartDate(Date earliestStartDate) {
+    public void setEarliestStartDate(Date earliestStartDate) 
+    {
         this.earliestStartDate = earliestStartDate;
     }
 
@@ -74,7 +80,8 @@ public class Planning {
      *
      * @return the value of latestFinishDate
      */
-    public Date getLatestFinishDate() {
+    public Date getLatestFinishDate() 
+    {
         return latestFinishDate;
     }
 
@@ -83,7 +90,8 @@ public class Planning {
      *
      * @param latestFinishDate new value of latestFinishDate
      */
-    public void setLatestFinishDate(Date latestFinishDate) {
+    public void setLatestFinishDate(Date latestFinishDate) 
+    {
         this.latestFinishDate = latestFinishDate;
     }
 
