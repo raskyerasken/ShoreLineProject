@@ -89,7 +89,7 @@ public class LoginViewController implements Initializable
                 Logger.getLogger(LoginViewController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        if (lines != null) 
+        if (lines.size() > 2) 
         {
             userNameID.setText(lines.get(1));
             userPassword.setText(lines.get(2));
