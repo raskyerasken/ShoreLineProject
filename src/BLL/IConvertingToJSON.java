@@ -5,6 +5,8 @@
  */
 package BLL;
 
+import BE.JSON;
+
 /**
  *
  * @author jacob
@@ -13,5 +15,6 @@ public interface IConvertingToJSON {
     /*
    "type": "SAP import field -> 'Order Type'"
     */
+    public JSON convertedToJSON();
   
 }
