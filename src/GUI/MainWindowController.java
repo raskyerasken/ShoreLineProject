@@ -53,6 +53,21 @@ public class MainWindowController implements Initializable
     }
     @FXML
     private void importData(ActionEvent event) {
+        JFileChooser chooser = new JFileChooser();
+        chooser.setCurrentDirectory(new java.io.File("."));
+//        FileNameExtensionFilter filter = new FileNameExtensionFilter();
+//        FileNameExtensionFilter filter2 = new FileNameExtensionFilter();
+//        chooser.setFileFilter(filter);
+//        chooser.setFileFilter(filter2);
+//        chooser.setAcceptAllFileFilterUsed(false);
+        chooser.setDialogTitle("choosertitle");
+        
+        if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) 
+        { 
+            stageToFront();
+        } 
+        selectedDocument=""+chooser.getSelectedFile();
+        stageToFront();
     }
 
     @FXML
@@ -75,26 +90,7 @@ public class MainWindowController implements Initializable
     private void stopTask(ActionEvent event) 
     {}
         
-    
-    private void importDataClick(ActionEvent event) {
-            XmlToJava xtj = new XmlToJava();
-        JFileChooser chooser = new JFileChooser();
-        chooser.setCurrentDirectory(new java.io.File("."));
-//        FileNameExtensionFilter filter = new FileNameExtensionFilter();
-//        FileNameExtensionFilter filter2 = new FileNameExtensionFilter();
-//        chooser.setFileFilter(filter);
-//        chooser.setFileFilter(filter2);
-        chooser.setAcceptAllFileFilterUsed(false);
-        chooser.setDialogTitle("choosertitle");
-        
-        if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) 
-        { 
-            stageToFront();
-        } 
-        selectedDocument=""+chooser.getSelectedFile();
-        stageToFront();
-        
-    }
+ 
     
     void stageToFront()
     {
