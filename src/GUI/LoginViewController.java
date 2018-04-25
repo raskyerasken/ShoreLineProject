@@ -11,14 +11,15 @@ import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.io.Reader;
+import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -44,6 +45,7 @@ public class LoginViewController implements Initializable
     @FXML
     private JFXCheckBox rememberUser;
     BLL.BLLManagerUserLogin ul = new BLLManagerUserLogin();
+    UserLogin userLogin = new UserLogin();
     
     /**
      * Initializes the controller class.
@@ -59,7 +61,6 @@ public class LoginViewController implements Initializable
     @FXML
     private void login(ActionEvent event) throws IOException, SQLException 
     {
-        UserLogin userLogin = new UserLogin();
         userLogin.setPassword(userPassword.getText());
         userLogin.setUserName(userNameID.getText());
         
@@ -77,34 +78,47 @@ public class LoginViewController implements Initializable
             Stage stage = (Stage) rememberUser.getScene().getWindow();
             stage.close();
             
-            //writes the user and pw to a txt file, but overwrites it everytime
-            PrintWriter writer = new PrintWriter("UserLog.txt", "UTF-8");
-            writer.println("The user logged in: ");
-            writer.println(userLogin.getUserName());
-            writer.println(userLogin.getPassword());
-            writer.close(); 
-            
-            //Should read the file
-            File file = new File ("W:\\Skóli\\ShoreLineProject\\UserLog.txt");
-            String encoding = "UTF-8"; 
-            Reader reader = new BufferedReader (new InputStreamReader (
-            new FileInputStream (file), encoding));
-            reader.read();
-            reader.close();
-            
-            System.out.println("from txt file: " + reader);
+            writeUserLoginTxt();
+            readUserLoginTxt();
         }
         else
             showErrorDialog("Wrong Password", null, "Please insert correct password");
     }
     
-        private void showErrorDialog(String title, String header, String message) 
+    private void showErrorDialog(String title, String header, String message) 
     {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
         alert.setHeaderText(header);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+    
+    //writes the login to a text file that we later can read
+    private void writeUserLoginTxt() throws FileNotFoundException, UnsupportedEncodingException
+    {
+        //writes the user and pw to a txt file, but overwrites it everytime
+        PrintWriter writer = new PrintWriter("UserLog.txt", "UTF-8");
+        writer.println("The user logged in: ");
+        writer.println(userLogin.getUserName());
+        writer.println(userLogin.getPassword());
+        writer.close(); 
+    }
+    
+    //reads the userlogin text file
+    private void readUserLoginTxt() throws FileNotFoundException, IOException
+    {            
+        //Should read the file
+        List<String> lines = new ArrayList<String>();
+        BufferedReader br = new BufferedReader(new FileReader("UserLog.txt"));
+        String line = br.readLine();
+        while (line != null)
+        {
+            lines.add(line);
+            line = br.readLine();
+        }
+
+        System.out.println("from txt file: " + lines);
     }
         
     @FXML
