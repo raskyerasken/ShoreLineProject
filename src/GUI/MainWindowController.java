@@ -6,7 +6,9 @@
 package GUI;
 
 import GUI.TEST.XmlToJava;
+import java.io.File;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,6 +18,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuBar;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -26,7 +29,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  */
 public class MainWindowController implements Initializable 
 {
-    
+    List<File> files ;
     @FXML
     private Label taskXRun;
     @FXML
@@ -53,21 +56,15 @@ public class MainWindowController implements Initializable
     }
     @FXML
     private void importData(ActionEvent event) {
-        JFileChooser chooser = new JFileChooser();
-        chooser.setCurrentDirectory(new java.io.File("."));
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Open Image File");
+         files = fileChooser.showOpenMultipleDialog(new Stage());
 //        FileNameExtensionFilter filter = new FileNameExtensionFilter();
 //        FileNameExtensionFilter filter2 = new FileNameExtensionFilter();
 //        chooser.setFileFilter(filter);
 //        chooser.setFileFilter(filter2);
 //        chooser.setAcceptAllFileFilterUsed(false);
-        chooser.setDialogTitle("choosertitle");
-        
-        if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) 
-        { 
-            stageToFront();
-        } 
-        selectedDocument=""+chooser.getSelectedFile();
-        stageToFront();
+     
     }
 
     @FXML
