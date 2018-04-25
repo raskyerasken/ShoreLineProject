@@ -90,7 +90,7 @@ public class LoginViewController implements Initializable
             Reader reader = new BufferedReader (new InputStreamReader (
             new FileInputStream (file), encoding));
             reader.read();
-            reader.close ();
+            reader.close();
             
             System.out.println("from txt file: " + reader);
         }
