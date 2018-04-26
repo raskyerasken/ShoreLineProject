@@ -39,7 +39,11 @@ public class MainWindowController implements Initializable
     
     public String selectedDocument="C:\\Users\\jacob\\Desktop\\Import_data.xlsx";
     
+<<<<<<< HEAD
   
+=======
+//    XmlToJava xtj = new XmlToJava();
+>>>>>>> 36d6e1a7c3e5a9408e90a133903c8b407665a09f
    
     private void activateXmlReader() 
     { 
