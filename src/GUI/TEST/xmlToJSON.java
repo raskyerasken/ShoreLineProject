@@ -22,7 +22,7 @@ public class xmlToJSON {
   "<?xml version=\"1.0\" ?><test attrib=\"moretest\">Turn this to JSON</test>";
 
     
-    public static void main(String[] args) throws JSONException
+    public static void main() throws JSONException
     {
         try {
             JSONObject xmlJSONObj = XML.toJSONObject(TEST_XML_STRING);

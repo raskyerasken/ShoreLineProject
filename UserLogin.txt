@@ -6,3 +6,7 @@ The user has logged inThu Apr 26 14:40:29 CEST 2018
 =======
 2018-04-26
 >>>>>>> 4699d8452bbcaa2b537db35932ebe24bab88cd44
+The user has logged in Thu Apr 26 14:53:32 CEST 2018
+The user has logged in Thu Apr 26 15:03:48 CEST 2018
+The user has logged in Thu Apr 26 15:04:27 CEST 2018
+The user has logged in Thu Apr 26 15:26:55 CEST 2018

@@ -5,6 +5,7 @@
  */
 package BLL;
 
+import BE.JSON;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -23,25 +24,30 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  * @author jacob
  */
 public class ReadingXLSX {
-String excelFilePath ;
-FileInputStream inputStream;
+
+    String excelFilePath;
+    FileInputStream inputStream;
+    int row;
+    int colum;
+    String[][] allRows;  
+    Workbook workbook;
+    org.apache.poi.ss.usermodel.Sheet firstSheet;
+    List ColumNames = new ArrayList();
     public ReadingXLSX(String exString) throws FileNotFoundException, IOException {
-        excelFilePath=exString; 
-       inputStream = new FileInputStream(new File(excelFilePath));
+        excelFilePath = exString;
+        inputStream = new FileInputStream(new File(excelFilePath));
 
         workbook = new XSSFWorkbook(inputStream);
         firstSheet = workbook.getSheetAt(0);
     }
-    
-      Workbook workbook;
-        org.apache.poi.ss.usermodel.Sheet firstSheet;
-        List ColumNames = new ArrayList();
-       public List getColumsNames()
-       { 
-           
+
+  
+
+    public List getColumsNames() {
+
         Iterator<Row> iterator = firstSheet.iterator();
-      
-           while (iterator.hasNext()) {
+
+        while (iterator.hasNext()) {
             Row nextRow = iterator.next();
             Iterator<Cell> cellIterator = nextRow.cellIterator();
 
@@ -53,35 +59,49 @@ FileInputStream inputStream;
                         ColumNames.add(cell.getStringCellValue());
                         break;
                     case Cell.CELL_TYPE_BOOLEAN:
-                        
-                        
+
                         break;
                     case Cell.CELL_TYPE_NUMERIC:
                         break;
                 }
 
             }
-          break;
-          
+            break;
+
         }
-           
-       return ColumNames;
-       }
-       public String[][]  allRows()
-       {
-           
-           int row=workbook.getNumberOfNames();
-           int colum=ColumNames.size();
-           String[][] allRows = new String[row][colum];
-           for (int i = 0; i < row; i++) {
-               for (int j = 0; j < colum; j++) {
-                   allRows[i][j]=firstSheet.getRow(i).getCell(j).toString();
-                   
-               }
-           }
-           
-           
-      return allRows;
-       
-       }
+
+        return ColumNames;
+    }
+   
+
+    public String[][] allRows() {
+
+        row = workbook.getNumberOfNames();
+        colum = ColumNames.size();
+        allRows = new String[row][colum];
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < colum; j++) {
+                allRows[i][j] = firstSheet.getRow(i).getCell(j).toString();
+
+            }
+        }
+
+        return allRows;
+
+    }
+
+    public JSON[] allJSONObjectInFile() {
+        for (int i = 1; i < row; i++) {
+            JSON newJSON= new JSON();
+            newJSON.setSiteName("");
+            newJSON.setAssetSerialNumber(0);
+            newJSON.setType(firstSheet.getRow(i).getCell( ColumNames.indexOf("Order Type")).toString());
+            newJSON.setExternalWorkOrderId(Integer.parseInt(
+                    firstSheet.getRow(i).getCell( ColumNames.indexOf("Order")).toString()));
+            newJSON.setSystemStatus(firstSheet.getRow(i).getCell( ColumNames.indexOf("System status")).toString());
+            newJSON.setUserStatus(firstSheet.getRow(i).getCell( ColumNames.indexOf("User status'")).toString());
+            //newJSON.setCreatedOn();
+        }
+        return null;
+    }
 }
