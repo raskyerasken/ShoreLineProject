@@ -92,6 +92,7 @@ public class LoginViewController implements Initializable
         
         if (lines.size() > rememberMeLineNr) 
         {
+            rememberUser.setSelected(true);
             userNameID.setText(lines.get(1));
             userPassword.setText(lines.get(2));
         }
