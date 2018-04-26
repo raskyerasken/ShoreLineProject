@@ -20,13 +20,16 @@ import static oracle.jrockit.jfr.tools.ConCatRepository.usage;
  * @author kasper
  */
 public class XmlToJava extends DefaultHandler {
+    boolean company = false;
+    boolean site = false;
+    
     
     private Hashtable tags;
 
     
     MainWindowController mwc = new MainWindowController();
     
-    String filename = mwc.selectedDocument;
+    public String filename = mwc.selectedDocument;
     public void main(String[] arghs) throws ParserConfigurationException, SAXException, IOException {
         
         //sets up the parser that analyses the text
@@ -124,6 +127,16 @@ public class XmlToJava extends DefaultHandler {
             int count = ((Integer)value).intValue();
             count++;
             tags.put(key, new Integer(count));
+        }
+        
+        if (qName.equalsIgnoreCase("COMPANY"))
+        {
+            company = true;
+        }
+        
+        if (qName.equalsIgnoreCase("SITE"))
+        {
+            site = true;        
         }
     }
     
