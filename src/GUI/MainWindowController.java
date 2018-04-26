@@ -55,7 +55,8 @@ public class MainWindowController implements Initializable
     
     }
     @FXML
-    private void importData(ActionEvent event) {
+    private void importData(ActionEvent event) 
+    {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Image File");
          files = fileChooser.showOpenMultipleDialog(new Stage());
@@ -68,7 +69,9 @@ public class MainWindowController implements Initializable
     }
 
     @FXML
-    private void convertData(ActionEvent event) {
+    private void convertData(ActionEvent event) 
+    {
+        
     }
 
     @FXML
