@@ -18,6 +18,8 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -152,9 +154,29 @@ public class LoginViewController implements Initializable
         //writes the user and pw to a txt file, but overwrites it everytime
         PrintWriter writer = new PrintWriter("UserLog.txt", "UTF-8");
         writer.println("The user logged in: ");
+        
+        timeLog();
+        
         writer.println(userLogin.getUserName());
         writer.println(userLogin.getPassword());
+        
         writer.close(); 
+    }
+    
+    private void timeLog() throws FileNotFoundException, UnsupportedEncodingException
+    {
+        PrintWriter writer = new PrintWriter("UserLogin.txt", "UTF-8");
+        writer.println("The user logged in: ");
+        
+        LocalDate date = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy MM dd");
+        String text = date.format(formatter);
+        LocalDate parsedDate = LocalDate.parse(text, formatter);
+        
+        writer.println(date);
+        writer.close(); 
+        
+        System.out.println(date);
     }
     
     private void writeNothingTxt() throws FileNotFoundException, UnsupportedEncodingException
