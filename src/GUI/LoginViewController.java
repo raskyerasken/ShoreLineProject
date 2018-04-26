@@ -56,9 +56,6 @@ public class LoginViewController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
-<<<<<<< HEAD
-       
-=======
         BufferedReader br = null;
         try 
         {
@@ -99,7 +96,6 @@ public class LoginViewController implements Initializable
             userNameID.setText(lines.get(1));
             userPassword.setText(lines.get(2));
         }
->>>>>>> ca3091afb4607d981c7a453615ca6317a817654a
     }    
     
     @FXML
