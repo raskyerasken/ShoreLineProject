@@ -183,9 +183,10 @@ public class LoginViewController implements Initializable
         {
          try
          {
-        String filename= "UserLogin.txt";
-        FileWriter writer = new FileWriter(filename,true);
-        writer.write("The user has logged in" + date + "\n");
+        String filename= filePathString;
+        FileWriter writer = new FileWriter(filePathString,true);
+        writer.write("The user has logged in " + date + "\n");
+        writer.close();
         
                 
         

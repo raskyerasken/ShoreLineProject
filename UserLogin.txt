@@ -1,2 +1,8 @@
 The user logged in: 
+<<<<<<< HEAD
+Thu Apr 26 14:39:26 CEST 2018
+The user has logged inThu Apr 26 14:40:07 CEST 2018
+The user has logged inThu Apr 26 14:40:29 CEST 2018
+=======
 2018-04-26
+>>>>>>> 4699d8452bbcaa2b537db35932ebe24bab88cd44
