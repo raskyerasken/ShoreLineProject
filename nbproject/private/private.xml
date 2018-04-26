@@ -22,5 +22,18 @@
             <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/BLL/IConvertingToJSON.java</file>
             <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/BE/UserLogin.java</file>
         </group>
+        <group name="Alt">
+            <file>file:/Users/kasper/Desktop/DATAMATIKER/ShoreLine/ShoreLineProject/ShoreLineProject/src/DAL/DAL.java</file>
+            <file>file:/Users/kasper/Desktop/DATAMATIKER/ShoreLine/ShoreLineProject/ShoreLineProject/src/DAL/DataBaseUserLogin.java</file>
+            <file>file:/Users/kasper/Desktop/DATAMATIKER/ShoreLine/ShoreLineProject/ShoreLineProject/src/GUI/MainWindowController.java</file>
+            <file>file:/Users/kasper/Desktop/DATAMATIKER/ShoreLine/ShoreLineProject/ShoreLineProject/src/GUI/LogViewController.java</file>
+            <file>file:/Users/kasper/Desktop/DATAMATIKER/ShoreLine/ShoreLineProject/ShoreLineProject/src/GUI/LoginViewController.java</file>
+            <file>file:/Users/kasper/Desktop/DATAMATIKER/ShoreLine/ShoreLineProject/ShoreLineProject/src/BLL/BLLManagerUserLogin.java</file>
+            <file>file:/Users/kasper/Desktop/DATAMATIKER/ShoreLine/ShoreLineProject/ShoreLineProject/src/GUI/TEST/XmlToJava.java</file>
+            <file>file:/Users/kasper/Desktop/DATAMATIKER/ShoreLine/ShoreLineProject/ShoreLineProject/src/GUI/TEST/DoesntWorkCheckForTipsToRealXMLClass.java</file>
+            <file>file:/Users/kasper/Desktop/DATAMATIKER/ShoreLine/ShoreLineProject/ShoreLineProject/src/BE/UserLogin.java</file>
+            <file>file:/Users/kasper/Desktop/DATAMATIKER/ShoreLine/ShoreLineProject/ShoreLineProject/src/Main/ShoreLine.java</file>
+            <file>file:/Users/kasper/Desktop/DATAMATIKER/ShoreLine/ShoreLineProject/ShoreLineProject/src/DAL/ConnectionManagerSLProject.java</file>
+        </group>
     </open-files>
 </project-private>
