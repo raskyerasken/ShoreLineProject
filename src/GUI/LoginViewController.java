@@ -182,6 +182,7 @@ public class LoginViewController implements Initializable
             {
                 String filename= filePathString;
                 FileWriter writer = new FileWriter(filePathString,true);
+                writer.write(System.getProperty( "line.separator" ));
                 writer.write("The user " + userLogin.getUserName() + " logged in: " );
                 writer.write(System.getProperty( "line.separator" ));
                 writer.write("Date: " + date);
@@ -201,12 +202,7 @@ public class LoginViewController implements Initializable
             writer.println("The user "+ userLogin.getUserName() +" logged in: " + "\n");
 
             writer.println("Date: " + date);
-            writer.println(" ");
             writer.close(); 
-
-            System.out.println(dateFormat.format(date));
-            System.out.println(dateFormat.format(cal.getTime()));
-            System.out.println(date);
         }
         
        
