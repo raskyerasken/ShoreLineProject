@@ -56,7 +56,12 @@ public class MainWindowController implements Initializable
     
     }
     @FXML
+<<<<<<< HEAD
     private void importData(ActionEvent event) throws SAXException {
+=======
+    private void importData(ActionEvent event) 
+    {
+>>>>>>> ca3091afb4607d981c7a453615ca6317a817654a
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Image File");
          files = fileChooser.showOpenMultipleDialog(new Stage());
@@ -72,7 +77,9 @@ xml.startElement(selectedDocument, "hasd", selectedDocument, null);
     }
 
     @FXML
-    private void convertData(ActionEvent event) {
+    private void convertData(ActionEvent event) 
+    {
+        
     }
 
     @FXML

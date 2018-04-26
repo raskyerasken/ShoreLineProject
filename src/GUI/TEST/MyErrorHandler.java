@@ -14,7 +14,8 @@ import org.xml.sax.SAXParseException;
  *
  * @author kasper
  */
-public class MyErrorHandler implements ErrorHandler {
+public class MyErrorHandler implements ErrorHandler 
+{
     private PrintStream out;
     
     MyErrorHandler(PrintStream out) 
@@ -53,8 +54,7 @@ public class MyErrorHandler implements ErrorHandler {
     public void fatalError(SAXParseException spe) throws SAXException 
     {
         String message = "Fatal Error: " + getParseExceptionInfo(spe);
-        throw new SAXException(message);
-        
+        throw new SAXException(message); 
     }
     
 }

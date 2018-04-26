@@ -21,6 +21,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -47,14 +49,56 @@ public class LoginViewController implements Initializable
     BLL.BLLManagerUserLogin ul = new BLLManagerUserLogin();
     UserLogin userLogin = new UserLogin();
     List<String> lines = new ArrayList<String>();
-    
+    int rememberMeLineNr = 2;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
+<<<<<<< HEAD
        
+=======
+        BufferedReader br = null;
+        try 
+        {
+            br = new BufferedReader(new FileReader("UserLog.txt"));
+            String line = br.readLine();
+            while (line != null)
+            {
+                lines.add(line);
+                line = br.readLine();
+            }
+        } 
+        
+        catch (FileNotFoundException ex) 
+        {
+            Logger.getLogger(LoginViewController.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+        
+        catch (IOException ex) 
+        {
+            Logger.getLogger(LoginViewController.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+        
+        finally 
+        {
+            try 
+            {
+                br.close();
+            } 
+            catch (IOException ex) 
+            {
+                Logger.getLogger(LoginViewController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        if (lines.size() > rememberMeLineNr) 
+        {
+            userNameID.setText(lines.get(1));
+            userPassword.setText(lines.get(2));
+        }
+>>>>>>> ca3091afb4607d981c7a453615ca6317a817654a
     }    
     
     @FXML
@@ -65,6 +109,10 @@ public class LoginViewController implements Initializable
         
         if (ul.getAccess(userLogin)) 
         {
+            /**  
+             * Writes in to a file if the remember me box is checked, 
+                if not it writes nothing
+             */
             if (rememberUser.isSelected()) 
             {
                 writeUserLoginTxt();
@@ -75,6 +123,7 @@ public class LoginViewController implements Initializable
             {
                 writeNothingTxt();
             }
+            
             //System.out.println("User is logged in: " + userLogin.getUserName());
             Stage newStage = new Stage();
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
