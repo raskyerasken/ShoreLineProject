@@ -5,8 +5,10 @@
  */
 package GUI;
 
+import BLL.ReadingXLSX;
 import GUI.TEST.XmlToJava;
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -37,7 +39,7 @@ public class MainWindowController implements Initializable
     
     public String selectedDocument="C:\\Users\\jacob\\Desktop\\Import_data.xlsx";
     
-    XmlToJava xtj = new XmlToJava();
+  
    
     private void activateXmlReader() 
     { 
@@ -60,7 +62,7 @@ public class MainWindowController implements Initializable
     }
     
     @FXML
-    private void importData(ActionEvent event) throws SAXException 
+    private void importData(ActionEvent event) throws SAXException, IOException 
     {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Image File");
@@ -70,9 +72,15 @@ public class MainWindowController implements Initializable
 //        chooser.setFileFilter(filter);
 //        chooser.setFileFilter(filter2);
 //        chooser.setAcceptAllFileFilterUsed(false);
-        XmlToJava xml =new XmlToJava();
-        xml.startDocument();
-        xml.startElement(selectedDocument, "hasd", selectedDocument, null);
+        ReadingXLSX XLSX= new ReadingXLSX(files.get(0).getAbsolutePath());
+        System.out.println(XLSX.getColumsNames());
+        XLSX.allRows();
+        for (String[] allRow : XLSX.allRows()) {
+            for (String string : allRow) {
+                System.out.print(string+"\t|\t");
+            }
+            System.out.println();
+        }
      
     }
 
