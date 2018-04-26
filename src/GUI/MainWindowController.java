@@ -39,7 +39,13 @@ public class MainWindowController implements Initializable
     
     public String selectedDocument;
     
+    XmlToJava xtj = new XmlToJava();
    
+    private void activateXmlReader() 
+    { 
+        
+    }
+    
     private void handleButtonAction(ActionEvent event) 
     {
         
