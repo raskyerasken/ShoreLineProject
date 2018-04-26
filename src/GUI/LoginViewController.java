@@ -11,7 +11,6 @@ import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -23,8 +22,6 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -181,40 +178,35 @@ public class LoginViewController implements Initializable
 
         if (f.exists() && !f.isDirectory())
         {
-         try
-         {
-        String filename= filePathString;
-        FileWriter writer = new FileWriter(filePathString,true);
-        writer.write("The user has logged in " + date + "\n");
-        writer.close();
-        
-                
-        
-        System.out.println(date);
-        System.out.println(dateFormat.format(date));
-        System.out.println(dateFormat.format(cal.getTime()));
-
-         }
+            try
+            {
+                String filename= filePathString;
+                FileWriter writer = new FileWriter(filePathString,true);
+                writer.write("The user " + userLogin.getUserName() + " logged in: " );
+                writer.write(System.getProperty( "line.separator" ));
+                writer.write("Date: " + date);
+                writer.write(System.getProperty( "line.separator" ));
+                writer.close();
+            }
             
-        catch (IOException ioe)
-        {
-            System.err.println("IOException: " + ioe.getMessage());
-        }
-
+            catch (IOException ioe)
+            {
+                System.err.println("IOException: " + ioe.getMessage());
+            }
         }
         
-        else 
-            
+        else  
         {
-        PrintWriter writer = new PrintWriter("UserLogin.txt", "UTF-8");
-        writer.println("The user logged in: ");
-        
-        writer.println(date);
-        writer.close(); 
-        
-        System.out.println(dateFormat.format(date));
-        System.out.println(dateFormat.format(cal.getTime()));
-        System.out.println(date);
+            PrintWriter writer = new PrintWriter("UserLogin.txt", "UTF-8");
+            writer.println("The user "+ userLogin.getUserName() +" logged in: " + "\n");
+
+            writer.println("Date: " + date);
+            writer.println(" ");
+            writer.close(); 
+
+            System.out.println(dateFormat.format(date));
+            System.out.println(dateFormat.format(cal.getTime()));
+            System.out.println(date);
         }
         
        
