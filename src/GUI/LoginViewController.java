@@ -11,8 +11,11 @@ import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
@@ -56,6 +59,7 @@ public class LoginViewController implements Initializable
     UserLogin userLogin = new UserLogin();
     List<String> lines = new ArrayList<String>();
     int rememberMeLineNr = 2;
+    private String filePathString = "UserLogin.txt";
     /**
      * Initializes the controller class.
      */
@@ -153,7 +157,7 @@ public class LoginViewController implements Initializable
     }
     
     //writes the login to a text file that we later can read
-    private void writeUserLoginTxt() throws FileNotFoundException, UnsupportedEncodingException
+    private void writeUserLoginTxt() throws FileNotFoundException, UnsupportedEncodingException, IOException
     {
         //writes the user and pw to a txt file, but overwrites it everytime
         PrintWriter writer = new PrintWriter("UserLog.txt", "UTF-8");
@@ -167,24 +171,53 @@ public class LoginViewController implements Initializable
         writer.close(); 
     }
     
-    private void timeLog() throws FileNotFoundException, UnsupportedEncodingException
+    private void timeLog() throws FileNotFoundException, UnsupportedEncodingException, IOException
     {
-        PrintWriter writer = new PrintWriter("UserLogin.txt", "UTF-8");
-        writer.println("The user logged in: ");
         
+        File f = new File(filePathString);
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date date = new Date();
-        System.out.println(dateFormat.format(date));
-        
         Calendar cal = Calendar.getInstance();
-        System.out.println(dateFormat.format(cal.getTime()));
-        
 
+        if (f.exists() && !f.isDirectory())
+        {
+         try
+         {
+        String filename= "UserLogin.txt";
+        FileWriter writer = new FileWriter(filename,true);
+        writer.write("The user has logged in" + date + "\n");
+        
+                
+        
+        System.out.println(date);
+        System.out.println(dateFormat.format(date));
+        System.out.println(dateFormat.format(cal.getTime()));
+
+         }
+            
+        catch (IOException ioe)
+        {
+            System.err.println("IOException: " + ioe.getMessage());
+        }
+
+        }
+        
+        else 
+            
+        {
+        PrintWriter writer = new PrintWriter("UserLogin.txt", "UTF-8");
+        writer.println("The user logged in: ");
         
         writer.println(date);
         writer.close(); 
         
+        System.out.println(dateFormat.format(date));
+        System.out.println(dateFormat.format(cal.getTime()));
         System.out.println(date);
+        }
+        
+       
+       
     }
     
     private void writeNothingTxt() throws FileNotFoundException, UnsupportedEncodingException
