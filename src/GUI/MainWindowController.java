@@ -13,15 +13,13 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuBar;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import javax.swing.JFileChooser;
-import javax.swing.filechooser.FileNameExtensionFilter;
+import org.xml.sax.SAXException;
 
 /**
  *
@@ -37,7 +35,7 @@ public class MainWindowController implements Initializable
     @FXML
     private MenuBar menuBar;
     
-    public String selectedDocument;
+    public String selectedDocument="C:\\Users\\jacob\\Desktop\\Import_data.xlsx";
     
     XmlToJava xtj = new XmlToJava();
    
@@ -60,8 +58,10 @@ public class MainWindowController implements Initializable
     private void importDataClick(MouseEvent event) {
     
     }
+    
     @FXML
-    private void importData(ActionEvent event) {
+    private void importData(ActionEvent event) throws SAXException 
+    {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Image File");
          files = fileChooser.showOpenMultipleDialog(new Stage());
@@ -70,11 +70,16 @@ public class MainWindowController implements Initializable
 //        chooser.setFileFilter(filter);
 //        chooser.setFileFilter(filter2);
 //        chooser.setAcceptAllFileFilterUsed(false);
+        XmlToJava xml =new XmlToJava();
+        xml.startDocument();
+        xml.startElement(selectedDocument, "hasd", selectedDocument, null);
      
     }
 
     @FXML
-    private void convertData(ActionEvent event) {
+    private void convertData(ActionEvent event) 
+    {
+        
     }
 
     @FXML

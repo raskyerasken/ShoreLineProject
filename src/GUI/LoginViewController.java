@@ -49,7 +49,7 @@ public class LoginViewController implements Initializable
     BLL.BLLManagerUserLogin ul = new BLLManagerUserLogin();
     UserLogin userLogin = new UserLogin();
     List<String> lines = new ArrayList<String>();
-    
+    int rememberMeLineNr = 2;
     /**
      * Initializes the controller class.
      */
@@ -89,8 +89,10 @@ public class LoginViewController implements Initializable
                 Logger.getLogger(LoginViewController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        if (lines.size() > 2) 
+        
+        if (lines.size() > rememberMeLineNr) 
         {
+            rememberUser.setSelected(true);
             userNameID.setText(lines.get(1));
             userPassword.setText(lines.get(2));
         }
@@ -104,6 +106,10 @@ public class LoginViewController implements Initializable
         
         if (ul.getAccess(userLogin)) 
         {
+            /**  
+             * Writes in to a file if the remember me box is checked, 
+                if not it writes nothing
+             */
             if (rememberUser.isSelected()) 
             {
                 writeUserLoginTxt();
@@ -114,6 +120,7 @@ public class LoginViewController implements Initializable
             {
                 writeNothingTxt();
             }
+            
             //System.out.println("User is logged in: " + userLogin.getUserName());
             Stage newStage = new Stage();
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
