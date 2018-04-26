@@ -63,6 +63,137 @@ public class LoginViewController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
+        rememberMeFunction();
+    }    
+    
+    @FXML
+    private void login(ActionEvent event) throws IOException, SQLException 
+    {
+        userLogin.setPassword(userPassword.getText());
+        userLogin.setUserName(userNameID.getText());
+        
+        if (ul.getAccess(userLogin)) 
+        {
+            /**  
+             * Writes in to a file if the remember me box is checked, 
+                if not it writes nothing
+             */
+            if (rememberUser.isSelected()) 
+            {
+                writeUserLoginTxt();
+                readUserLoginTxt();
+                System.out.println("from txt file: " + lines);
+            }
+            else
+            {
+                writeNothingTxt();
+            }
+            
+            //System.out.println("User is logged in: " + userLogin.getUserName());
+            openMainWindow();
+        }
+        else
+            showErrorDialog("Wrong Password", null, "Please insert correct password");
+    }
+    
+    private void openMainWindow() throws IOException
+    {
+        Stage newStage = new Stage();
+        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
+        Parent root = fxLoader.load();
+        MainWindowController controller = fxLoader.getController();
+        Scene scene = new Scene(root);
+        newStage.setResizable(false);
+        newStage.setScene(scene);
+        newStage.show();
+        Stage stage = (Stage) userNameID.getScene().getWindow();
+        stage.close();
+    }
+    
+    private void showErrorDialog(String title, String header, String message) 
+    {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setHeaderText(header);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+    
+    //writes the login to a text file that we later can read
+    private void writeUserLoginTxt() throws FileNotFoundException, UnsupportedEncodingException, IOException
+    {
+        //writes the user and pw to a txt file, but overwrites it everytime
+        PrintWriter writer = new PrintWriter("UserLog.txt", "UTF-8");
+        writer.println("The user logged in: ");
+        
+        timeLog();
+        
+        writer.println(userLogin.getUserName());
+        writer.println(userLogin.getPassword());
+        
+        writer.close(); 
+    }
+    
+    private void timeLog() throws FileNotFoundException, UnsupportedEncodingException, IOException
+    {
+        File f = new File(filePathString);
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Date date = new Date();
+        Calendar cal = Calendar.getInstance();
+
+        if (f.exists() && !f.isDirectory())
+        {
+            try
+            {
+                String filename= filePathString;
+                FileWriter writer = new FileWriter(filePathString,true);
+                writer.write(System.getProperty( "line.separator" ));
+                writer.write("The user " + userLogin.getUserName() + " logged in: " );
+                writer.write(System.getProperty( "line.separator" ));
+                writer.write("Date: " + date);
+                writer.write(System.getProperty( "line.separator" ));
+                writer.close();
+            }
+            
+            catch (IOException ioe)
+            {
+                System.err.println("IOException: " + ioe.getMessage());
+            }
+        }
+        
+        else  
+        {
+            PrintWriter writer = new PrintWriter("UserLogin.txt", "UTF-8");
+            writer.println("The user "+ userLogin.getUserName() +" logged in: " + "\n");
+
+            writer.println("Date: " + date);
+            writer.close(); 
+        }
+    }
+    
+    private void writeNothingTxt() throws FileNotFoundException, UnsupportedEncodingException
+    {
+        //writes the user and pw to a txt file, but overwrites it everytime
+        PrintWriter writer = new PrintWriter("UserLog.txt", "UTF-8");
+        writer.println("Remember me is not selected");
+        writer.close(); 
+    }
+    
+    //reads the userlogin text file
+    private void readUserLoginTxt() throws FileNotFoundException, IOException
+    {            
+        //Should read the file
+        BufferedReader br = new BufferedReader(new FileReader("UserLog.txt"));
+        String line = br.readLine();
+        while (line != null)
+        {
+            lines.add(line);
+            line = br.readLine();
+        }
+    }
+    
+    private void rememberMeFunction()
+    {
         BufferedReader br = null;
         try 
         {
@@ -102,131 +233,6 @@ public class LoginViewController implements Initializable
             rememberUser.setSelected(true);
             userNameID.setText(lines.get(1));
             userPassword.setText(lines.get(2));
-        }
-    }    
-    
-    @FXML
-    private void login(ActionEvent event) throws IOException, SQLException 
-    {
-        userLogin.setPassword(userPassword.getText());
-        userLogin.setUserName(userNameID.getText());
-        
-        if (ul.getAccess(userLogin)) 
-        {
-            /**  
-             * Writes in to a file if the remember me box is checked, 
-                if not it writes nothing
-             */
-            if (rememberUser.isSelected()) 
-            {
-                writeUserLoginTxt();
-                readUserLoginTxt();
-                System.out.println("from txt file: " + lines);
-            }
-            else
-            {
-                writeNothingTxt();
-            }
-            
-            //System.out.println("User is logged in: " + userLogin.getUserName());
-            Stage newStage = new Stage();
-            FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
-            Parent root = fxLoader.load();
-            MainWindowController controller = fxLoader.getController();
-            Scene scene = new Scene(root);
-            newStage.setResizable(false);
-            newStage.setScene(scene);
-            newStage.show();
-            Stage stage = (Stage) userNameID.getScene().getWindow();
-            stage.close();
-        }
-        else
-            showErrorDialog("Wrong Password", null, "Please insert correct password");
-    }
-    
-    private void showErrorDialog(String title, String header, String message) 
-    {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle(title);
-        alert.setHeaderText(header);
-        alert.setContentText(message);
-        alert.showAndWait();
-    }
-    
-    //writes the login to a text file that we later can read
-    private void writeUserLoginTxt() throws FileNotFoundException, UnsupportedEncodingException, IOException
-    {
-        //writes the user and pw to a txt file, but overwrites it everytime
-        PrintWriter writer = new PrintWriter("UserLog.txt", "UTF-8");
-        writer.println("The user logged in: ");
-        
-        timeLog();
-        
-        writer.println(userLogin.getUserName());
-        writer.println(userLogin.getPassword());
-        
-        writer.close(); 
-    }
-    
-    private void timeLog() throws FileNotFoundException, UnsupportedEncodingException, IOException
-    {
-        
-        File f = new File(filePathString);
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-        Date date = new Date();
-        Calendar cal = Calendar.getInstance();
-
-        if (f.exists() && !f.isDirectory())
-        {
-            try
-            {
-                String filename= filePathString;
-                FileWriter writer = new FileWriter(filePathString,true);
-                writer.write(System.getProperty( "line.separator" ));
-                writer.write("The user " + userLogin.getUserName() + " logged in: " );
-                writer.write(System.getProperty( "line.separator" ));
-                writer.write("Date: " + date);
-                writer.write(System.getProperty( "line.separator" ));
-                writer.close();
-            }
-            
-            catch (IOException ioe)
-            {
-                System.err.println("IOException: " + ioe.getMessage());
-            }
-        }
-        
-        else  
-        {
-            PrintWriter writer = new PrintWriter("UserLogin.txt", "UTF-8");
-            writer.println("The user "+ userLogin.getUserName() +" logged in: " + "\n");
-
-            writer.println("Date: " + date);
-            writer.close(); 
-        }
-        
-       
-       
-    }
-    
-    private void writeNothingTxt() throws FileNotFoundException, UnsupportedEncodingException
-    {
-        //writes the user and pw to a txt file, but overwrites it everytime
-        PrintWriter writer = new PrintWriter("UserLog.txt", "UTF-8");
-        writer.println("Remember me is not selected");
-        writer.close(); 
-    }
-    
-    //reads the userlogin text file
-    private void readUserLoginTxt() throws FileNotFoundException, IOException
-    {            
-        //Should read the file
-        BufferedReader br = new BufferedReader(new FileReader("UserLog.txt"));
-        String line = br.readLine();
-        while (line != null)
-        {
-            lines.add(line);
-            line = br.readLine();
         }
     }
         
