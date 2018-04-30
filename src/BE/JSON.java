@@ -27,6 +27,33 @@ public class JSON
     private Date createdOn;
     private final StringProperty createdBy = new SimpleStringProperty();
     private final StringProperty name = new SimpleStringProperty();
+    private final StringProperty priority = new SimpleStringProperty();
+    private final StringProperty status = new SimpleStringProperty();
+
+    public String getStatus() {
+        return status.get();
+    }
+
+    public void setStatus(String value) {
+        status.set(value);
+    }
+
+    public StringProperty statusProperty() {
+        return status;
+    }
+
+    public String getPriority() {
+        return priority.get();
+    }
+
+    public void setPriority(String value) {
+        priority.set(value);
+    }
+
+    public StringProperty priorityProperty() {
+        return priority;
+    }
+    
 
     private Planning planning;
 

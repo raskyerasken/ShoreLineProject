@@ -11,6 +11,7 @@ import GUI.TEST.xmlToJSON;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.text.ParseException;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -71,7 +72,7 @@ public class MainWindowController implements Initializable
     }
     
     @FXML
-    private void importData(ActionEvent event) throws SAXException, IOException 
+    private void importData(ActionEvent event) throws SAXException, IOException, ParseException 
     {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Image File");
@@ -90,8 +91,9 @@ public class MainWindowController implements Initializable
                 System.out.print(string+"\t|\t");
             }
             System.out.println();
+           
         }
-     
+      XLSX.allJSONObjectInFile();
     }
 
     @FXML

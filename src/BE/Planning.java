@@ -6,7 +6,9 @@
 package BE;
 
 import java.util.Date;
+import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 
 /**
@@ -18,22 +20,20 @@ public class Planning {
     private Date latestFinishDate;
     private Date earliestStartDate;
     private Date latestStartDate;
-    private final IntegerProperty estimatedTime = new SimpleIntegerProperty();
-    
-    public int getEstimatedTime() 
-    {
+    private final DoubleProperty estimatedTime = new SimpleDoubleProperty();
+
+    public double getEstimatedTime() {
         return estimatedTime.get();
     }
 
-    public void setEstimatedTime(int value) 
-    {
+    public void setEstimatedTime(double value) {
         estimatedTime.set(value);
     }
 
-    public IntegerProperty estimatedTimeProperty() 
-    {
+    public DoubleProperty estimatedTimeProperty() {
         return estimatedTime;
     }
+    
 
     /**
      * Get the value of latestStartDate

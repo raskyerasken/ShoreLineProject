@@ -6,10 +6,14 @@
 package BLL;
 
 import BE.JSON;
+import BE.Planning;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -33,6 +37,7 @@ public class ReadingXLSX {
     Workbook workbook;
     org.apache.poi.ss.usermodel.Sheet firstSheet;
     List ColumNames = new ArrayList();
+    DateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy");
     public ReadingXLSX(String exString) throws FileNotFoundException, IOException {
         excelFilePath = exString;
         inputStream = new FileInputStream(new File(excelFilePath));
@@ -90,7 +95,7 @@ public class ReadingXLSX {
 
     }
 
-    public JSON[] allJSONObjectInFile() {
+    public List<JSON> allJSONObjectInFile() throws ParseException {
         for (int i = 1; i < row; i++) {
             JSON newJSON= new JSON();
             newJSON.setSiteName("");
@@ -99,9 +104,34 @@ public class ReadingXLSX {
             newJSON.setExternalWorkOrderId(Integer.parseInt(
                     firstSheet.getRow(i).getCell( ColumNames.indexOf("Order")).toString()));
             newJSON.setSystemStatus(firstSheet.getRow(i).getCell( ColumNames.indexOf("System status")).toString());
-            newJSON.setUserStatus(firstSheet.getRow(i).getCell( ColumNames.indexOf("User status'")).toString());
-            //newJSON.setCreatedOn();
+            newJSON.setUserStatus(firstSheet.getRow(i).getCell( ColumNames.indexOf("User status")).toString());
+           newJSON.setCreatedBy("sap");
+           if(firstSheet.getRow(i).getCell(ColumNames.indexOf("Opr. short text")).toString().isEmpty())
+           {
+               newJSON.setName(firstSheet.getRow(i).getCell(ColumNames.indexOf("Description2")).toString());
+           }
+           else{
+           newJSON.setName(firstSheet.getRow(i).getCell(ColumNames.indexOf("Opr. short text")).toString());
+           }
+           if(firstSheet.getRow(i).getCell(ColumNames.indexOf("Priority")).toString().isEmpty())
+           {
+           newJSON.setPriority("Low");
+           }
+           else{
+           newJSON.setPriority(firstSheet.getRow(i).getCell(ColumNames.indexOf("Priority")).toString());
+           }
+           newJSON.setStatus("New");
+           Planning planning =new Planning();
+            System.out.println(""+dateFormat.parse(firstSheet.getRow(i).getCell(ColumNames.indexOf("Lat.finish date")).toString()));
+           planning.setLatestFinishDate(
+                   dateFormat.parse(firstSheet.getRow(i).getCell(ColumNames.indexOf("Lat.finish date")).toString()));
+           planning.setEarliestStartDate(
+                   dateFormat.parse(firstSheet.getRow(i).getCell(ColumNames.indexOf("Earl.start date")).toString()));
+           planning.setLatestStartDate(
+           dateFormat.parse(firstSheet.getRow(i).getCell(ColumNames.indexOf("Latest start")).toString()));
+           planning.setEstimatedTime(Double.parseDouble(
+                    firstSheet.getRow(i).getCell( ColumNames.indexOf("Normal duration")).toString()));
         }
-        return null;
+        return null; 
     }
 }

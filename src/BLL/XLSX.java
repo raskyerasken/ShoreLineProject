@@ -36,6 +36,7 @@ public class XLSX implements IConvertingToJSON{
         JSON.setType("SAP import field -> 'Order Type'");
         JSON.setUserStatus("SAP import field -> 'User status'");
         
+        
     return JSON;
     }
 
