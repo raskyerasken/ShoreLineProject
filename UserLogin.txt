@@ -65,3 +65,27 @@ Date: Mon Apr 30 16:42:36 CEST 2018
 
 The user Jacob logged in: 
 Date: Mon Apr 30 16:43:06 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 16:57:52 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 16:59:21 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 17:00:15 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 17:01:25 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 17:03:29 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 17:05:25 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 17:07:22 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 17:07:46 CEST 2018

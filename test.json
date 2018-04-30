@@ -1,0 +1,686 @@
+{n
+0
+ZCS5
+12345678
+REL  CCOK NMAT PRC  SETC
+ZBNQ PERF RECV ZBCC
+null
+sap
+A9B10196358 Retrofit non-phys Fix earth
+Low
+New
+{
+}
+}
+{n
+0
+ZCS5
+12345679
+CRTD MANC NMAT NTUP PRC
+ZBNQ
+null
+sap
+DT56: UPS battery exchange
+Low
+New
+{
+}
+}
+{n
+0
+ZCS5
+12345680
+CRTD MANC NMAT NTUP PRC
+ZBNQ
+null
+sap
+DT35: UPS battery exchange
+Low
+New
+{
+}
+}
+{n
+0
+ZCS5
+12345681
+REL  CCOK NMAT PRC  SETC
+ZBNQ PERF RFCO
+null
+sap
+exchange rubber bellows
+Low
+New
+{
+}
+}
+{n
+0
+ZCS5
+12345682
+REL  PCNF CCOK NMAT PRC  RESA SETC
+ZBNQ CLAR PERF ZBMC
+null
+sap
+SB64 TS Outlet socket in tower
+Low
+New
+{
+}
+}
+{n
+0
+ZCS5
+12345683
+REL  CCOK NMAT PRC  SETC
+ZBNQ PERF RFCO ZBMC
+null
+sap
+Exchange Rubber Bellow
+Low
+New
+{
+}
+}
+{n
+0
+ZCS5
+12345684
+REL  CCOK NMAT PRC  SETC
+ZBNQ PERF RFCO ZBMC
+null
+sap
+Exchange Rubber Bellow
+Low
+New
+{
+}
+}
+{n
+0
+ZCS5
+12345685
+REL  CCOK NMAT PRC  SETC
+ZBNQ PERF RFCO ZBMC
+null
+sap
+Water Ingress Tower Ligth
+2
+New
+{
+}
+}
+{n
+0
+ZCS5
+12345686
+REL  CCOK NMAT PRC  SETC
+ZBNQ CLAR PERF
+null
+sap
+SB56: broke plugs on Hiab Crane
+Low
+New
+{
+}
+}
+{n
+0
+ZCS5
+12345687
+REL  CCOK NMAT PRC  SETC
+ZBNQ PERF RFCO
+null
+sap
+exchange rubber bellows
+Low
+New
+{
+}
+}
+{n
+0
+ZCS5
+12345688
+REL  CCOK MSPT PRC  SETC
+ZBNQ CLAR PERF ZBA1 ZBPO
+null
+sap
+Boom Extension on Hiab Crane
+2
+New
+{
+}
+}
+{n
+0
+ZCS5
+12345689
+REL  CCOK NMAT PRC  SETC
+ZBNQ PERF RFCO ZBMC
+null
+sap
+Exchange Rubber Bellow
+Low
+New
+{
+}
+}
+{n
+0
+ZCS5
+12345690
+REL  CCOK GMPS NMAT PRC  RESA SETC
+ZBNQ PERF RFCO ZBCC
+null
+sap
+10000 : No connection
+Low
+New
+{
+}
+}
+{n
+0
+ZCS3
+12345691
+REL  CCOK NMAT PRC  SETC
+ZBNQ ZBMC
+null
+sap
+SB39 Remote stop - Owner
+Low
+New
+{
+}
+}
+{n
+0
+ZCS5
+12345692
+REL  CCOK MACM PRC  SETC
+ZBNQ PERF RECV RFCO ZBCC
+null
+sap
+A9B10191123 - Retrofit, yaw software 201
+Low
+New
+{
+}
+}
+{n
+0
+ZCS5
+12345693
+REL  CCOK NMAT PRC  SETC
+ZBNQ PERF RFCO ZBMC
+null
+sap
+exchange rubber bellows
+1
+New
+{
+}
+}
+{n
+0
+ZCS5
+12345694
+REL  CCOK NMAT PRC  SETC
+ZBNQ PERF RFCO
+null
+sap
+HIAB Crane: Troubleshooting
+2
+New
+{
+}
+}
+{n
+0
+ZCS3
+12345695
+REL  CCOK NMAT PRC  SETC
+ZBNQ PERF ZBMC
+null
+sap
+Krima-2439613: Sabik UPS battery replace
+2
+New
+{
+}
+}
+{n
+0
+ZCS3
+12345696
+REL  CCOK NMAT PRC  SETC
+ZBNQ PERF RFCO ZBMC
+null
+sap
+Krima-2439613: UPS batteries replacement
+2
+New
+{
+}
+}
+{n
+0
+ZCS1
+12345697
+REL  NMAT SETC
+ZBNQ PERF RFCO ZBCC
+null
+sap
+Crane inspection
+Low
+New
+{
+}
+}
+{n
+0
+ZCS1
+12345698
+REL  NMAT SETC
+ZBNQ PERF RFCO ZBCC
+null
+sap
+3,00_WT-BS01 3601259 Yearly Crane Inspec
+Low
+New
+{
+}
+}
+{n
+0
+ZCS1
+12345699
+REL  NMAT SETC
+ZBNQ PERF RFCO
+null
+sap
+Lift inspection
+Low
+New
+{
+}
+}
+{n
+0
+ZCS1
+12345700
+REL  NMAT SETC
+ZBNQ PERF RFCO
+null
+sap
+3,00_WT-BS01 3601221 Yearly Lift Inspect
+Low
+New
+{
+}
+}
+{n
+0
+ZCS1
+12345701
+REL  NMAT SETC
+ZBNQ PERF RFCO
+null
+sap
+Crane inspection
+Low
+New
+{
+}
+}
+{n
+0
+ZCS1
+12345702
+REL  NMAT SETC
+ZBNQ PERF RFCO
+null
+sap
+3,00_WT-BS01 3601221 Yearly Crane Inspec
+Low
+New
+{
+}
+}
+{n
+0
+ZCS5
+12345703
+REL  CCOK GMPS MACM PRC  RESA SETC
+ZBNQ PERF RECV RFCO ZBCC
+null
+sap
+A9B10170721 Retrofit Power Supply G4
+Low
+New
+{
+}
+}
+{n
+0
+ZCS5
+12345704
+REL  CCOK GMPS NMAT PRC  RESA SETC
+ZBNQ PERF RFCO ZBCC
+null
+sap
+A9B10196140  Retrofit, sign f dehumidifi
+Low
+New
+{
+}
+}
+{n
+0
+ZCS5
+12345705
+REL  CCOK NMAT PRC  SETC
+ZBNQ PERF RFCO ZBCC ZBMC
+null
+sap
+0 : Damaged fiber optic cable
+2
+New
+{
+}
+}
+{n
+0
+ZCS5
+12345706
+REL  CCOK NMAT PRC  SETC
+ZBNQ CLAR PERF RFCO ZBCC ZBMC
+null
+sap
+0 : Hiab Crane Slow
+3
+New
+{
+}
+}
+{n
+0
+ZCS3
+12345707
+REL  CCOK NMAT PRC  SETC
+ZBNQ PERF RFCO
+null
+sap
+Switching support Vattenfall
+Low
+New
+{
+}
+}
+{n
+0
+ZCS5
+12345708
+REL  CCOK NMAT PRC  SETC
+ZBNQ PERF RFCO ZBMC
+null
+sap
+Inspection on Water Ingress
+2
+New
+{
+}
+}
+{n
+0
+ZCS5
+12345709
+REL  CCOK NMAT PRC  SETC
+ZBNQ RFCO ZBCC ZBMC
+null
+sap
+Inspection on Water Ingress
+2
+New
+{
+}
+}
+{n
+0
+ZCS5
+12345710
+REL  CCOK NMAT PRC  SETC
+ZBNQ PERF RFCO
+null
+sap
+Inspection on Water Ingress
+2
+New
+{
+}
+}
+{n
+0
+ZCS5
+12345711
+REL  CCOK MACM PRC  SETC
+ZBNQ PERF RECV ZBCC
+null
+sap
+A9B10191123 - Retrofit, yaw software 201
+Low
+New
+{
+}
+}
+{n
+0
+ZCS5
+12345712
+REL  CCOK NMAT PRC  SETC
+ZBNQ PERF RFCO ZBMC
+null
+sap
+No Connection
+3
+New
+{
+}
+}
+{n
+0
+ZCS1
+12345713
+REL  NMAT SETC
+ZBNQ PERF RFCO ZBCC
+null
+sap
+Crane inspection
+Low
+New
+{
+}
+}
+{n
+0
+ZCS1
+12345714
+REL  NMAT SETC
+ZBNQ PERF RFCO ZBCC
+null
+sap
+3,00_WT-BS01 3601245 Yearly Crane Inspec
+Low
+New
+{
+}
+}
+{n
+0
+ZCS1
+12345715
+REL  NMAT SETC
+ZBNQ PERF RFCO ZBCC
+null
+sap
+Turbine mounted safety equipment
+Low
+New
+{
+}
+}
+{n
+0
+ZCS1
+12345716
+REL  NMAT SETC
+ZBNQ PERF RFCO ZBCC
+null
+sap
+3,00_WT-BS01 3601245 TMSE
+Low
+New
+{
+}
+}
+{n
+0
+ZCS1
+12345717
+REL  NMAT SETC
+ZBNQ PERF RECV RFCO
+null
+sap
+Crane inspection
+Low
+New
+{
+}
+}
+{n
+0
+ZCS1
+12345718
+REL  NMAT SETC
+ZBNQ PERF RECV RFCO
+null
+sap
+3,00_WT-BS01 3601201 Yearly Crane Inspec
+Low
+New
+{
+}
+}
+{n
+0
+ZCS5
+12345719
+REL  CCOK MACM PRC  SETC
+ZBNQ PERF RECV ZBCC
+null
+sap
+A9B10191123 - Retrofit, yaw software 201
+Low
+New
+{
+}
+}
+{n
+0
+ZCS5
+12345720
+REL  CCOK GMPS MACM PRC  RESA SETC
+ZBNQ PERF RFCO ZBCC
+null
+sap
+A9B10196140  Retrofit, sign f dehumidifi
+Low
+New
+{
+}
+}
+{n
+0
+ZCS5
+12345721
+REL  CCOK MACM PRC  SETC
+ZBNQ PERF ZBA1 ZBPO
+null
+sap
+A# Broken hose holder on pitch stat.tank
+2
+New
+{
+}
+}
+{n
+0
+ZCS1
+12345722
+REL  NMAT SETC
+ZBNQ
+null
+sap
+TMSE: Exchange Fire Extinguishers
+3
+New
+{
+}
+}
+{n
+0
+ZCS5
+12345723
+REL  CCOK NMAT PRC  SETC
+ZBNQ PERF RFCO
+null
+sap
+PT100 sensors possible swapped
+2
+New
+{
+}
+}
+{n
+0
+ZCS1
+12345724
+CRTD MANC NTUP SETC
+ZBNQ
+null
+sap
+Jährlich
+Low
+New
+{
+}
+}
+{n
+0
+ZCS1
+12345725
+CRTD MANC NTUP SETC
+ZBNQ
+null
+sap
+12 Monate (nur zur ersten jahreswartung)
+Low
+New
+{
+}
+}
+{n
+0
+ZCS1
+12345726
+REL  NMAT SETC
+ZBNQ
+null
+sap
+TMSE: Echange Fire extinguisher
+3
+New
+{
+}
+}

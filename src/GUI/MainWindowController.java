@@ -5,6 +5,8 @@
  */
 package GUI;
 
+import BE.JSON;
+import BLL.CreateJSONFile;
 import BLL.ReadingXLSX;
 import GUI.TEST.XmlToJava;
 import GUI.TEST.xmlToJSON;
@@ -25,6 +27,7 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import static jdk.nashorn.internal.objects.NativeRegExp.test;
 import org.json.JSONException;
 import org.xml.sax.SAXException;
 
@@ -93,7 +96,10 @@ public class MainWindowController implements Initializable
             System.out.println();
            
         }
-      XLSX.allJSONObjectInFile();
+       
+        CreateJSONFile createJSON = new CreateJSONFile();
+        createJSON.createJSON(XLSX.allJSONObjectInFile(), "test");
+      
     }
 
     @FXML
