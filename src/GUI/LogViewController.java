@@ -75,7 +75,7 @@ public class LogViewController implements Initializable
                 return true;
             }
 
-            // Compare first name and last name of every person with filter text.
+            // Compare input text to all log.
             String lowerCaseFilter = newValue.toLowerCase();
 
             if (lines.toLowerCase().contains(lowerCaseFilter)) 
