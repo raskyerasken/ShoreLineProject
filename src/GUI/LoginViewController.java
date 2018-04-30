@@ -124,7 +124,7 @@ public class LoginViewController implements Initializable
     {
         //writes the user and pw to a txt file, but overwrites it everytime
         PrintWriter writer = new PrintWriter("UserLog.txt", "UTF-8");
-        writer.println("The user logged in: ");
+        writer.println("The logged in: ");
         
         timeLog();
         

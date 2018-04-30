@@ -14,7 +14,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
-
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -43,7 +42,7 @@ public class LogViewController implements Initializable
     boolean search = false;
     @FXML
     private JFXButton searchButton;
-    FilteredList<String> filteredData 
+    FilteredList<String> searchData 
             = new FilteredList<>(lines, p -> true);
     
     public void initialize(URL url, ResourceBundle rb) 
@@ -68,9 +67,9 @@ public class LogViewController implements Initializable
     private void searchLogView()
     {
         searchTxt.textProperty().addListener((observable, oldValue, newValue) -> {
-        filteredData.setPredicate(lines -> 
+        searchData.setPredicate(lines -> 
         {
-            // If filter text is empty, display all persons.
+            // If filter text is empty, display all logs.
             if (newValue == null || newValue.isEmpty()) 
             {
                 return true;
@@ -81,32 +80,20 @@ public class LogViewController implements Initializable
 
             if (lines.toLowerCase().contains(lowerCaseFilter)) 
             {
-                return true; // Filter matches first name.
+                return true; 
             } 
-            
-            else if (lines.toLowerCase().contains(lowerCaseFilter)) 
-            {
-                return true; // Filter matches last name.
-            }
+
             return false; // Does not match.
         });
         });
 
         // 3. Wrap the FilteredList in a SortedList. 
-        SortedList<String> sortedData = new SortedList<>(filteredData);
-
-        // 4. Bind the SortedList comparator to the TableView comparator.
-        //sortedData.comparatorProperty().bind(LogView.comparatorProperty());
+        SortedList<String> sortedData = new SortedList<>(searchData);
 
         // 5. Add sorted (and filtered) data to the table.
         LogView.setItems(sortedData);
     }
-    
-    @FXML
-    private void searchLogView(ActionEvent event) 
-    {
-        
-    }
+
 
     @FXML
     private void closeMenu(ActionEvent event) 
@@ -137,7 +124,6 @@ public class LogViewController implements Initializable
         {
             Logger.getLogger(LogViewController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        System.out.println(lines);
     }
     
 }
