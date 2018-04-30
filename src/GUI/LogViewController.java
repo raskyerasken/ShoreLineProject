@@ -5,7 +5,10 @@
  */
 package GUI;
 
+import static GUI.LogViewController.lines;
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
+import com.jfoenix.controls.JFXTextField;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -17,6 +20,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -32,12 +37,20 @@ public class LogViewController implements Initializable
     FXCollections.observableArrayList();
     @FXML
     private JFXListView<String> LogView;
-    
+    int fileLinesNumber = 2;
+    @FXML
+    private JFXTextField searchTxt;
+    boolean search = false;
+    @FXML
+    private JFXButton searchButton;
+    FilteredList<String> filteredData 
+            = new FilteredList<>(lines, p -> true);
     
     public void initialize(URL url, ResourceBundle rb) 
     {
         displayLoginText();
-    }    
+        searchLogView();
+    }   
     
     private void readUserLoginTxt() throws FileNotFoundException, IOException
     {            
@@ -51,7 +64,44 @@ public class LogViewController implements Initializable
             LogView.setItems(lines);
         }
     }
+    
+    private void searchLogView()
+    {
+        searchTxt.textProperty().addListener((observable, oldValue, newValue) -> {
+        filteredData.setPredicate(lines -> 
+        {
+            // If filter text is empty, display all persons.
+            if (newValue == null || newValue.isEmpty()) 
+            {
+                return true;
+            }
 
+            // Compare first name and last name of every person with filter text.
+            String lowerCaseFilter = newValue.toLowerCase();
+
+            if (lines.toLowerCase().contains(lowerCaseFilter)) 
+            {
+                return true; // Filter matches first name.
+            } 
+            
+            else if (lines.toLowerCase().contains(lowerCaseFilter)) 
+            {
+                return true; // Filter matches last name.
+            }
+            return false; // Does not match.
+        });
+        });
+
+        // 3. Wrap the FilteredList in a SortedList. 
+        SortedList<String> sortedData = new SortedList<>(filteredData);
+
+        // 4. Bind the SortedList comparator to the TableView comparator.
+        //sortedData.comparatorProperty().bind(LogView.comparatorProperty());
+
+        // 5. Add sorted (and filtered) data to the table.
+        LogView.setItems(sortedData);
+    }
+    
     @FXML
     private void searchLogView(ActionEvent event) 
     {
