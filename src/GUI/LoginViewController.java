@@ -164,6 +164,7 @@ public class LoginViewController implements Initializable
         else  
         {
             PrintWriter writer = new PrintWriter("UserLogin.txt", "UTF-8");
+            writer.println(" ");
             writer.println("The user "+ userLogin.getUserName() +" logged in: " + "\n");
 
             writer.println("Date: " + date);

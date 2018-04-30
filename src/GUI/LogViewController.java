@@ -11,7 +11,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
-import static java.nio.file.Files.lines;
 
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -31,24 +30,13 @@ public class LogViewController implements Initializable
 {
     public static final ObservableList lines = 
     FXCollections.observableArrayList();
-    //*List<String> lines = new ArrayList<String>();
     @FXML
     private JFXListView<String> LogView;
     
     
     public void initialize(URL url, ResourceBundle rb) 
     {
-        try 
-        {
-            readUserLoginTxt();
-        } 
-        
-        catch (IOException ex) 
-        {
-            Logger.getLogger(LogViewController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        System.out.println(lines);
-        
+        displayLoginText();
     }    
     
     private void readUserLoginTxt() throws FileNotFoundException, IOException
@@ -86,6 +74,20 @@ public class LogViewController implements Initializable
     private void edit(ActionEvent event) 
     {
         
+    }
+    
+    private void displayLoginText()
+    {
+        try 
+        {
+            readUserLoginTxt();
+        } 
+        
+        catch (IOException ex) 
+        {
+            Logger.getLogger(LogViewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        System.out.println(lines);
     }
     
 }
