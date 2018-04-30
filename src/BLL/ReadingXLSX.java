@@ -98,6 +98,7 @@ public class ReadingXLSX {
     public List<JSON> allJSONObjectInFile() throws ParseException {
         List<JSON> JSONList = new ArrayList<>();
         for (int i = 1; i < row; i++) {
+          
             JSON newJSON= new JSON();
             newJSON.setSiteName("");
             newJSON.setAssetSerialNumber(0);
@@ -134,7 +135,8 @@ public class ReadingXLSX {
            dateFormat.parse(firstSheet.getRow(i).getCell(ColumNames.indexOf("Latest start")).toString()));
            planning.setEstimatedTime(Double.parseDouble(
                     firstSheet.getRow(i).getCell( ColumNames.indexOf("Normal duration")).toString()));
-        JSONList.add(newJSON);
+        newJSON.setPlanning(planning);
+           JSONList.add(newJSON);
         }
         return JSONList; 
     }

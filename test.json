@@ -1,4 +1,4 @@
-{n
+{
 0
 ZCS5
 12345678
@@ -10,9 +10,14 @@ A9B10196358 Retrofit non-phys Fix earth
 Low
 New
 {
+Mon Oct 10 00:00:00 CEST 2016
+Mon Oct 10 00:00:00 CEST 2016
+Mon Oct 10 00:00:00 CEST 2016
+DoubleProperty [value: 0.0]
 }
 }
-{n
+
+{
 0
 ZCS5
 12345679
@@ -24,9 +29,14 @@ DT56: UPS battery exchange
 Low
 New
 {
+Tue Jun 13 00:00:00 CEST 2017
+Wed Jun 14 00:00:00 CEST 2017
+Tue Jun 13 00:00:00 CEST 2017
+DoubleProperty [value: 2.0]
 }
 }
-{n
+
+{
 0
 ZCS5
 12345680
@@ -38,9 +48,14 @@ DT35: UPS battery exchange
 Low
 New
 {
+Tue Jun 13 00:00:00 CEST 2017
+Wed Jun 14 00:00:00 CEST 2017
+Tue Jun 13 00:00:00 CEST 2017
+DoubleProperty [value: 2.0]
 }
 }
-{n
+
+{
 0
 ZCS5
 12345681
@@ -52,9 +67,14 @@ exchange rubber bellows
 Low
 New
 {
+Mon Jul 03 00:00:00 CEST 2017
+Mon Jul 03 00:00:00 CEST 2017
+Mon Jul 03 00:00:00 CEST 2017
+DoubleProperty [value: 2.0]
 }
 }
-{n
+
+{
 0
 ZCS5
 12345682
@@ -66,9 +86,14 @@ SB64 TS Outlet socket in tower
 Low
 New
 {
+Fri Jul 07 00:00:00 CEST 2017
+Fri Jul 07 00:00:00 CEST 2017
+Fri Jul 07 00:00:00 CEST 2017
+DoubleProperty [value: 2.0]
 }
 }
-{n
+
+{
 0
 ZCS5
 12345683
@@ -80,9 +105,14 @@ Exchange Rubber Bellow
 Low
 New
 {
+Sat Jul 15 00:00:00 CEST 2017
+Fri Jul 14 00:00:00 CEST 2017
+Fri Jul 14 00:00:00 CEST 2017
+DoubleProperty [value: 2.0]
 }
 }
-{n
+
+{
 0
 ZCS5
 12345684
@@ -94,9 +124,14 @@ Exchange Rubber Bellow
 Low
 New
 {
+Sat Jul 15 00:00:00 CEST 2017
+Fri Jul 14 00:00:00 CEST 2017
+Fri Jul 14 00:00:00 CEST 2017
+DoubleProperty [value: 2.0]
 }
 }
-{n
+
+{
 0
 ZCS5
 12345685
@@ -108,9 +143,14 @@ Water Ingress Tower Ligth
 2
 New
 {
+Fri Jul 21 00:00:00 CEST 2017
+Fri Jul 21 00:00:00 CEST 2017
+Fri Jul 21 00:00:00 CEST 2017
+DoubleProperty [value: 2.0]
 }
 }
-{n
+
+{
 0
 ZCS5
 12345686
@@ -122,9 +162,14 @@ SB56: broke plugs on Hiab Crane
 Low
 New
 {
+Tue Jul 25 00:00:00 CEST 2017
+Tue Jul 25 00:00:00 CEST 2017
+Tue Jul 25 00:00:00 CEST 2017
+DoubleProperty [value: 2.0]
 }
 }
-{n
+
+{
 0
 ZCS5
 12345687
@@ -136,9 +181,14 @@ exchange rubber bellows
 Low
 New
 {
+Mon Jul 31 00:00:00 CEST 2017
+Mon Jul 31 00:00:00 CEST 2017
+Mon Jul 31 00:00:00 CEST 2017
+DoubleProperty [value: 2.0]
 }
 }
-{n
+
+{
 0
 ZCS5
 12345688
@@ -150,9 +200,14 @@ Boom Extension on Hiab Crane
 2
 New
 {
+Mon Aug 07 00:00:00 CEST 2017
+Tue Jun 20 00:00:00 CEST 2017
+Tue Jun 20 00:00:00 CEST 2017
+DoubleProperty [value: 3.0]
 }
 }
-{n
+
+{
 0
 ZCS5
 12345689
@@ -164,9 +219,14 @@ Exchange Rubber Bellow
 Low
 New
 {
+Tue Aug 15 00:00:00 CEST 2017
+Fri Jul 14 00:00:00 CEST 2017
+Fri Jul 14 00:00:00 CEST 2017
+DoubleProperty [value: 2.0]
 }
 }
-{n
+
+{
 0
 ZCS5
 12345690
@@ -178,9 +238,14 @@ sap
 Low
 New
 {
+Tue Aug 15 00:00:00 CEST 2017
+Tue Aug 15 00:00:00 CEST 2017
+Tue Aug 15 00:00:00 CEST 2017
+DoubleProperty [value: 2.0]
 }
 }
-{n
+
+{
 0
 ZCS3
 12345691
@@ -192,9 +257,14 @@ SB39 Remote stop - Owner
 Low
 New
 {
+Thu Aug 24 00:00:00 CEST 2017
+Thu Aug 24 00:00:00 CEST 2017
+Thu Aug 24 00:00:00 CEST 2017
+DoubleProperty [value: 0.5]
 }
 }
-{n
+
+{
 0
 ZCS5
 12345692
@@ -206,9 +276,14 @@ A9B10191123 - Retrofit, yaw software 201
 Low
 New
 {
+Fri Aug 25 00:00:00 CEST 2017
+Fri Aug 25 00:00:00 CEST 2017
+Fri Aug 25 00:00:00 CEST 2017
+DoubleProperty [value: 0.0]
 }
 }
-{n
+
+{
 0
 ZCS5
 12345693
@@ -220,9 +295,14 @@ exchange rubber bellows
 1
 New
 {
+Mon Aug 28 00:00:00 CEST 2017
+Wed Jun 28 00:00:00 CEST 2017
+Wed Jun 28 00:00:00 CEST 2017
+DoubleProperty [value: 2.0]
 }
 }
-{n
+
+{
 0
 ZCS5
 12345694
@@ -234,9 +314,14 @@ HIAB Crane: Troubleshooting
 2
 New
 {
+Tue Aug 29 00:00:00 CEST 2017
+Tue Aug 29 00:00:00 CEST 2017
+Tue Aug 29 00:00:00 CEST 2017
+DoubleProperty [value: 2.0]
 }
 }
-{n
+
+{
 0
 ZCS3
 12345695
@@ -248,9 +333,14 @@ Krima-2439613: Sabik UPS battery replace
 2
 New
 {
+Wed Aug 30 00:00:00 CEST 2017
+Fri Jun 30 00:00:00 CEST 2017
+Fri Jun 30 00:00:00 CEST 2017
+DoubleProperty [value: 2.0]
 }
 }
-{n
+
+{
 0
 ZCS3
 12345696
@@ -262,9 +352,14 @@ Krima-2439613: UPS batteries replacement
 2
 New
 {
+Wed Aug 30 00:00:00 CEST 2017
+Fri Jun 30 00:00:00 CEST 2017
+Fri Jun 30 00:00:00 CEST 2017
+DoubleProperty [value: 2.0]
 }
 }
-{n
+
+{
 0
 ZCS1
 12345697
@@ -276,9 +371,14 @@ Crane inspection
 Low
 New
 {
+Thu Aug 31 00:00:00 CEST 2017
+Sat Aug 19 00:00:00 CEST 2017
+Sat Aug 19 00:00:00 CEST 2017
+DoubleProperty [value: 3.0]
 }
 }
-{n
+
+{
 0
 ZCS1
 12345698
@@ -290,9 +390,14 @@ sap
 Low
 New
 {
+Thu Aug 31 00:00:00 CEST 2017
+Sat Aug 19 00:00:00 CEST 2017
+Sat Aug 19 00:00:00 CEST 2017
+DoubleProperty [value: 3.0]
 }
 }
-{n
+
+{
 0
 ZCS1
 12345699
@@ -304,9 +409,14 @@ Lift inspection
 Low
 New
 {
+Thu Aug 31 00:00:00 CEST 2017
+Fri Aug 18 00:00:00 CEST 2017
+Fri Aug 18 00:00:00 CEST 2017
+DoubleProperty [value: 3.0]
 }
 }
-{n
+
+{
 0
 ZCS1
 12345700
@@ -318,9 +428,14 @@ sap
 Low
 New
 {
+Thu Aug 31 00:00:00 CEST 2017
+Fri Aug 18 00:00:00 CEST 2017
+Fri Aug 18 00:00:00 CEST 2017
+DoubleProperty [value: 3.0]
 }
 }
-{n
+
+{
 0
 ZCS1
 12345701
@@ -332,9 +447,14 @@ Crane inspection
 Low
 New
 {
+Thu Aug 31 00:00:00 CEST 2017
+Fri Aug 18 00:00:00 CEST 2017
+Fri Aug 18 00:00:00 CEST 2017
+DoubleProperty [value: 3.0]
 }
 }
-{n
+
+{
 0
 ZCS1
 12345702
@@ -346,9 +466,14 @@ sap
 Low
 New
 {
+Thu Aug 31 00:00:00 CEST 2017
+Fri Aug 18 00:00:00 CEST 2017
+Fri Aug 18 00:00:00 CEST 2017
+DoubleProperty [value: 3.0]
 }
 }
-{n
+
+{
 0
 ZCS5
 12345703
@@ -360,9 +485,14 @@ A9B10170721 Retrofit Power Supply G4
 Low
 New
 {
+Thu Aug 31 00:00:00 CEST 2017
+Thu Aug 31 00:00:00 CEST 2017
+Thu Aug 31 00:00:00 CEST 2017
+DoubleProperty [value: 0.0]
 }
 }
-{n
+
+{
 0
 ZCS5
 12345704
@@ -374,9 +504,14 @@ A9B10196140  Retrofit, sign f dehumidifi
 Low
 New
 {
+Thu Aug 31 00:00:00 CEST 2017
+Thu Aug 31 00:00:00 CEST 2017
+Thu Aug 31 00:00:00 CEST 2017
+DoubleProperty [value: 0.0]
 }
 }
-{n
+
+{
 0
 ZCS5
 12345705
@@ -388,9 +523,14 @@ sap
 2
 New
 {
+Fri Sep 01 00:00:00 CEST 2017
+Mon Jul 24 00:00:00 CEST 2017
+Mon Jul 24 00:00:00 CEST 2017
+DoubleProperty [value: 2.0]
 }
 }
-{n
+
+{
 0
 ZCS5
 12345706
@@ -402,9 +542,14 @@ sap
 3
 New
 {
+Fri Sep 01 00:00:00 CEST 2017
+Thu Jul 27 00:00:00 CEST 2017
+Thu Jul 27 00:00:00 CEST 2017
+DoubleProperty [value: 1.0]
 }
 }
-{n
+
+{
 0
 ZCS3
 12345707
@@ -416,9 +561,14 @@ Switching support Vattenfall
 Low
 New
 {
+Fri Sep 01 00:00:00 CEST 2017
+Fri Sep 01 00:00:00 CEST 2017
+Fri Sep 01 00:00:00 CEST 2017
+DoubleProperty [value: 2.0]
 }
 }
-{n
+
+{
 0
 ZCS5
 12345708
@@ -430,9 +580,14 @@ Inspection on Water Ingress
 2
 New
 {
+Fri Sep 01 00:00:00 CEST 2017
+Fri Sep 01 00:00:00 CEST 2017
+Fri Sep 01 00:00:00 CEST 2017
+DoubleProperty [value: 0.5]
 }
 }
-{n
+
+{
 0
 ZCS5
 12345709
@@ -444,9 +599,14 @@ Inspection on Water Ingress
 2
 New
 {
+Fri Sep 01 00:00:00 CEST 2017
+Fri Sep 01 00:00:00 CEST 2017
+Fri Sep 01 00:00:00 CEST 2017
+DoubleProperty [value: 0.5]
 }
 }
-{n
+
+{
 0
 ZCS5
 12345710
@@ -458,9 +618,14 @@ Inspection on Water Ingress
 2
 New
 {
+Mon Sep 04 00:00:00 CEST 2017
+Mon Sep 04 00:00:00 CEST 2017
+Mon Sep 04 00:00:00 CEST 2017
+DoubleProperty [value: 1.0]
 }
 }
-{n
+
+{
 0
 ZCS5
 12345711
@@ -472,9 +637,14 @@ A9B10191123 - Retrofit, yaw software 201
 Low
 New
 {
+Mon Sep 18 00:00:00 CEST 2017
+Mon Sep 18 00:00:00 CEST 2017
+Mon Sep 18 00:00:00 CEST 2017
+DoubleProperty [value: 0.0]
 }
 }
-{n
+
+{
 0
 ZCS5
 12345712
@@ -486,9 +656,14 @@ No Connection
 3
 New
 {
+Tue Sep 19 00:00:00 CEST 2017
+Tue Sep 19 00:00:00 CEST 2017
+Tue Sep 19 00:00:00 CEST 2017
+DoubleProperty [value: 1.0]
 }
 }
-{n
+
+{
 0
 ZCS1
 12345713
@@ -500,9 +675,14 @@ Crane inspection
 Low
 New
 {
+Sat Sep 30 00:00:00 CEST 2017
+Fri Aug 25 00:00:00 CEST 2017
+Fri Aug 25 00:00:00 CEST 2017
+DoubleProperty [value: 3.0]
 }
 }
-{n
+
+{
 0
 ZCS1
 12345714
@@ -514,9 +694,14 @@ sap
 Low
 New
 {
+Sat Sep 30 00:00:00 CEST 2017
+Fri Aug 25 00:00:00 CEST 2017
+Fri Aug 25 00:00:00 CEST 2017
+DoubleProperty [value: 3.0]
 }
 }
-{n
+
+{
 0
 ZCS1
 12345715
@@ -528,9 +713,14 @@ Turbine mounted safety equipment
 Low
 New
 {
+Sat Sep 30 00:00:00 CEST 2017
+Fri Aug 25 00:00:00 CEST 2017
+Fri Aug 25 00:00:00 CEST 2017
+DoubleProperty [value: 3.0]
 }
 }
-{n
+
+{
 0
 ZCS1
 12345716
@@ -542,9 +732,14 @@ sap
 Low
 New
 {
+Sat Sep 30 00:00:00 CEST 2017
+Fri Aug 25 00:00:00 CEST 2017
+Fri Aug 25 00:00:00 CEST 2017
+DoubleProperty [value: 3.0]
 }
 }
-{n
+
+{
 0
 ZCS1
 12345717
@@ -556,9 +751,14 @@ Crane inspection
 Low
 New
 {
+Sat Sep 30 00:00:00 CEST 2017
+Fri Sep 01 00:00:00 CEST 2017
+Fri Sep 01 00:00:00 CEST 2017
+DoubleProperty [value: 3.0]
 }
 }
-{n
+
+{
 0
 ZCS1
 12345718
@@ -570,9 +770,14 @@ sap
 Low
 New
 {
+Sat Sep 30 00:00:00 CEST 2017
+Fri Sep 01 00:00:00 CEST 2017
+Fri Sep 01 00:00:00 CEST 2017
+DoubleProperty [value: 3.0]
 }
 }
-{n
+
+{
 0
 ZCS5
 12345719
@@ -584,9 +789,14 @@ A9B10191123 - Retrofit, yaw software 201
 Low
 New
 {
+Sat Sep 30 00:00:00 CEST 2017
+Sat Sep 30 00:00:00 CEST 2017
+Sat Sep 30 00:00:00 CEST 2017
+DoubleProperty [value: 0.0]
 }
 }
-{n
+
+{
 0
 ZCS5
 12345720
@@ -598,9 +808,14 @@ A9B10196140  Retrofit, sign f dehumidifi
 Low
 New
 {
+Sat Sep 30 00:00:00 CEST 2017
+Sat Sep 30 00:00:00 CEST 2017
+Sat Sep 30 00:00:00 CEST 2017
+DoubleProperty [value: 0.0]
 }
 }
-{n
+
+{
 0
 ZCS5
 12345721
@@ -612,9 +827,14 @@ A# Broken hose holder on pitch stat.tank
 2
 New
 {
+Sun Oct 15 00:00:00 CEST 2017
+Mon Jul 17 00:00:00 CEST 2017
+Mon Jul 17 00:00:00 CEST 2017
+DoubleProperty [value: 2.0]
 }
 }
-{n
+
+{
 0
 ZCS1
 12345722
@@ -626,9 +846,14 @@ TMSE: Exchange Fire Extinguishers
 3
 New
 {
+Wed Oct 25 00:00:00 CEST 2017
+Fri Aug 25 00:00:00 CEST 2017
+Fri Aug 25 00:00:00 CEST 2017
+DoubleProperty [value: 0.5]
 }
 }
-{n
+
+{
 0
 ZCS5
 12345723
@@ -640,9 +865,14 @@ PT100 sensors possible swapped
 2
 New
 {
+Wed Oct 25 00:00:00 CEST 2017
+Fri Aug 25 00:00:00 CEST 2017
+Fri Aug 25 00:00:00 CEST 2017
+DoubleProperty [value: 2.0]
 }
 }
-{n
+
+{
 0
 ZCS1
 12345724
@@ -654,9 +884,14 @@ Jährlich
 Low
 New
 {
+Fri Oct 27 00:00:00 CEST 2017
+Fri Oct 27 00:00:00 CEST 2017
+Fri Oct 27 00:00:00 CEST 2017
+DoubleProperty [value: 59.0]
 }
 }
-{n
+
+{
 0
 ZCS1
 12345725
@@ -668,9 +903,14 @@ sap
 Low
 New
 {
+Fri Oct 27 00:00:00 CEST 2017
+Fri Oct 27 00:00:00 CEST 2017
+Fri Oct 27 00:00:00 CEST 2017
+DoubleProperty [value: 0.0]
 }
 }
-{n
+
+{
 0
 ZCS1
 12345726
@@ -682,5 +922,10 @@ TMSE: Echange Fire extinguisher
 3
 New
 {
+Mon Nov 06 00:00:00 CET 2017
+Wed Sep 06 00:00:00 CEST 2017
+Wed Sep 06 00:00:00 CEST 2017
+DoubleProperty [value: 1.0]
 }
 }
+

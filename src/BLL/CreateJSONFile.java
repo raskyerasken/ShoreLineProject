@@ -37,13 +37,14 @@ public class CreateJSONFile {
                     + json.getName() + "\n"
                     + json.getPriority() + "\n"
                     + json.getStatus() + "\n{\n"
-//                    + json.getPlanning().getLatestFinishDate().toString() + "\n"
-//                    + json.getPlanning().getEarliestStartDate().toString()+ "\n"
-//                    + json.getPlanning().getLatestStartDate().toString()+ "\n"
-//                    + json.getPlanning().estimatedTimeProperty()+ "\n"
+                    + json.getPlanning().getLatestFinishDate().toString() + "\n"
+                    + json.getPlanning().getEarliestStartDate().toString()+ "\n"
+                    + json.getPlanning().getLatestStartDate().toString()+ "\n"
+                    + json.getPlanning().estimatedTimeProperty()+ "\n"
                     + "}\n}\n\n"
             );
         }
+        
 
         fileWriter.flush();
         fileWriter.close();
