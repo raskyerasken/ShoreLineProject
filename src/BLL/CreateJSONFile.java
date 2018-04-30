@@ -9,6 +9,7 @@ import BE.JSON;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 /**
@@ -16,7 +17,7 @@ import java.util.List;
  * @author jacob
  */
 public class CreateJSONFile {
-
+SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
     /*
     Create json file with the name of the second argument "fileName"
     The JSON file contains the JSON files
@@ -37,9 +38,9 @@ public class CreateJSONFile {
                     + json.getName() + "\n"
                     + json.getPriority() + "\n"
                     + json.getStatus() + "\n{\n"
-                    + json.getPlanning().getLatestFinishDate().toString() + "\n"
-                    + json.getPlanning().getEarliestStartDate().toString()+ "\n"
-                    + json.getPlanning().getLatestStartDate().toString()+ "\n"
+                    + formatter.format(json.getPlanning().getLatestFinishDate()) + "\n"
+                    + formatter.format(json.getPlanning().getEarliestStartDate())+ "\n"
+                    + formatter.format(json.getPlanning().getLatestStartDate())+ "\n"
                     + json.getPlanning().estimatedTimeProperty()+ "\n"
                     + "}\n}\n\n"
             );

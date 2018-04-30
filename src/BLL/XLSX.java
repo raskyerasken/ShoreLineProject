@@ -19,6 +19,7 @@ public class XLSX implements IConvertingToJSON{
  java.util.Date utilDate = new java.util.Date();
     java.sql.Date toDayDate = new java.sql.Date(utilDate.getTime());
     private Planning planning;
+    
     @Override
     public JSON convertedToJSON() {
         JSON.setAssetSerialNumber(0);
