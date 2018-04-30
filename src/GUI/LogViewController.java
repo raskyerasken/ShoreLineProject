@@ -6,8 +6,18 @@
 package GUI;
 
 import com.jfoenix.controls.JFXListView;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.net.URL;
+import static java.nio.file.Files.lines;
+
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -19,18 +29,40 @@ import javafx.fxml.Initializable;
  */
 public class LogViewController implements Initializable 
 {
-
+    public static final ObservableList lines = 
+    FXCollections.observableArrayList();
+    //*List<String> lines = new ArrayList<String>();
     @FXML
-    private JFXListView<?> LogView;
-
-    /**
-     * Initializes the controller class.
-     */
-    @Override
+    private JFXListView<String> LogView;
+    
+    
     public void initialize(URL url, ResourceBundle rb) 
     {
-        // TODO
+        try 
+        {
+            readUserLoginTxt();
+        } 
+        
+        catch (IOException ex) 
+        {
+            Logger.getLogger(LogViewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        System.out.println(lines);
+        
     }    
+    
+    private void readUserLoginTxt() throws FileNotFoundException, IOException
+    {            
+        //Should read the file
+        BufferedReader br = new BufferedReader(new FileReader("UserLogin.txt"));
+        String line = br.readLine();
+        while (line != null)
+        {
+            lines.add(line);
+            line = br.readLine();
+            LogView.setItems(lines);
+        }
+    }
 
     @FXML
     private void searchLogView(ActionEvent event) 
