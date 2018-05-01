@@ -79,6 +79,7 @@ public class MainWindowController implements Initializable
     {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Image File");
+        fileChooser.setInitialDirectory(new File ("..."));
          files = fileChooser.showOpenMultipleDialog(new Stage());
         
 //        FileNameExtensionFilter filter = new FileNameExtensionFilter();

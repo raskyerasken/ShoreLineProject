@@ -140,3 +140,18 @@ Date: Tue May 01 12:34:16 CEST 2018
 
 The user Jacob logged in: 
 Date: Tue May 01 12:38:32 CEST 2018
+
+The user Jacob logged in: 
+Date: Tue May 01 12:54:59 CEST 2018
+
+The user Jacob logged in: 
+Date: Tue May 01 13:05:44 CEST 2018
+
+The user Jacob logged in: 
+Date: Tue May 01 13:06:20 CEST 2018
+
+The user Jacob logged in: 
+Date: Tue May 01 13:06:34 CEST 2018
+
+The user Jacob logged in: 
+Date: Tue May 01 13:07:00 CEST 2018
