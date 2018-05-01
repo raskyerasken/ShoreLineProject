@@ -33,7 +33,7 @@ SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
                     + json.getExternalWorkOrderId() + "\n"
                     + json.getSystemStatus() + "\n"
                     + json.getUserStatus() + "\n"
-                    + json.getCreatedOn() + "\n"
+                    + formatter.format(json.getCreatedOn()) + "\n"
                     + json.getCreatedBy() + "\n"
                     + json.getName() + "\n"
                     + json.getPriority() + "\n"

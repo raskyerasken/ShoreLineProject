@@ -15,6 +15,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import org.apache.poi.sl.usermodel.Sheet;
@@ -38,7 +39,9 @@ public class ReadingXLSX {
     org.apache.poi.ss.usermodel.Sheet firstSheet;
     List ColumNames = new ArrayList();
     DateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy");
-    public ReadingXLSX(String exString) throws FileNotFoundException, IOException {
+    Date today = new Date(); 
+    
+    public ReadingXLSX(String exString) throws FileNotFoundException, IOException, ParseException {
         excelFilePath = exString;
         inputStream = new FileInputStream(new File(excelFilePath));
 
@@ -107,6 +110,7 @@ public class ReadingXLSX {
                     firstSheet.getRow(i).getCell( ColumNames.indexOf("Order")).toString()));
             newJSON.setSystemStatus(firstSheet.getRow(i).getCell( ColumNames.indexOf("System status")).toString());
             newJSON.setUserStatus(firstSheet.getRow(i).getCell( ColumNames.indexOf("User status")).toString());
+            newJSON.setCreatedOn(today);
            newJSON.setCreatedBy("sap");
            if(firstSheet.getRow(i).getCell(ColumNames.indexOf("Opr. short text")).toString().isEmpty())
            {
