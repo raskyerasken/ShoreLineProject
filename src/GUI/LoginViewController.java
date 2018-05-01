@@ -139,7 +139,6 @@ public class LoginViewController implements Initializable
         File f = new File(filePathString);
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date date = new Date();
-        Calendar cal = Calendar.getInstance();
 
         if (f.exists() && !f.isDirectory())
         {
@@ -148,9 +147,9 @@ public class LoginViewController implements Initializable
                 String filename= filePathString;
                 FileWriter writer = new FileWriter(filePathString,true);
                 writer.write(System.getProperty( "line.separator" ));
-                writer.write("The user " + userLogin.getUserName() + " logged in: " );
+                writer.write("The user " + userLogin.getUserName() + " logged in.    " + "Date: " + dateFormat.format(date));
                 writer.write(System.getProperty( "line.separator" ));
-                writer.write("Date: " + date);
+                //writer.write("Date: " + dateFormat.format(date));
                 writer.write(System.getProperty( "line.separator" ));
                 writer.close();
             }
@@ -165,9 +164,9 @@ public class LoginViewController implements Initializable
         {
             PrintWriter writer = new PrintWriter("UserLogin.txt", "UTF-8");
             writer.println(" ");
-            writer.println("The user "+ userLogin.getUserName() +" logged in: " + "\n");
+            writer.println("The user "+ userLogin.getUserName() +" logged in.   " + "Date: " + dateFormat.format(date));
 
-            writer.println("Date: " + date);
+            //writer.println("Date: " + dateFormat.format(date));
             writer.close(); 
         }
     }
