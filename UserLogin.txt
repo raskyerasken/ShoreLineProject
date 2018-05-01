@@ -3,3 +3,158 @@ The user kris logged in: Date: 2018/05/01 13:13:00
 
 The user kris logged in: Date: 2018/05/01 13:13:17
 
+<<<<<<< HEAD
+=======
+The user kasper logged in: 
+Date: Mon Apr 30 14:24:45 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 14:24:54 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 15:25:06 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 16:15:40 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 16:16:18 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 16:16:56 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 16:17:43 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 16:19:10 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 16:20:08 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 16:26:10 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 16:26:46 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 16:29:05 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 16:29:43 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 16:32:10 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 16:34:22 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 16:36:58 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 16:38:06 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 16:39:16 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 16:40:35 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 16:42:36 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 16:43:06 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 16:57:52 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 16:59:21 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 17:00:15 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 17:01:25 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 17:03:29 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 17:05:25 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 17:07:22 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 17:07:46 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 17:14:58 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 17:15:27 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 17:16:37 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 17:19:17 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 17:19:40 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 17:20:26 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 17:21:35 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 19:07:06 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 19:08:13 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 19:09:41 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 19:10:35 CEST 2018
+
+The user Jacob logged in: 
+Date: Mon Apr 30 19:11:36 CEST 2018
+
+The user Jacob logged in: 
+Date: Tue May 01 12:27:42 CEST 2018
+
+The user Jacob logged in: 
+Date: Tue May 01 12:30:27 CEST 2018
+
+The user Jacob logged in: 
+Date: Tue May 01 12:31:45 CEST 2018
+
+The user Jacob logged in: 
+Date: Tue May 01 12:34:16 CEST 2018
+
+The user Jacob logged in: 
+Date: Tue May 01 12:38:32 CEST 2018
+
+The user Jacob logged in: 
+Date: Tue May 01 12:54:59 CEST 2018
+
+The user Jacob logged in: 
+Date: Tue May 01 13:05:44 CEST 2018
+
+The user Jacob logged in: 
+Date: Tue May 01 13:06:20 CEST 2018
+
+The user Jacob logged in: 
+Date: Tue May 01 13:06:34 CEST 2018
+
+The user Jacob logged in: 
+Date: Tue May 01 13:07:00 CEST 2018
+>>>>>>> f06788707b03f9f766030787602573e54faed0b8
