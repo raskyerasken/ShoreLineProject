@@ -65,7 +65,10 @@ public class MainWindowController implements Initializable
         xmlToJSON  hey = new xmlToJSON();
         try {
             hey.main();
-        } catch (JSONException ex) {
+        } 
+        
+        catch (JSONException ex)
+        {
             Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }   

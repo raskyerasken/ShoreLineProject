@@ -146,10 +146,7 @@ public class LoginViewController implements Initializable
             {
                 String filename= filePathString;
                 FileWriter writer = new FileWriter(filePathString,true);
-                writer.write(System.getProperty( "line.separator" ));
                 writer.write("The user " + userLogin.getUserName() + " logged in.    " + "Date: " + dateFormat.format(date));
-                writer.write(System.getProperty( "line.separator" ));
-                //writer.write("Date: " + dateFormat.format(date));
                 writer.write(System.getProperty( "line.separator" ));
                 writer.close();
             }
@@ -163,7 +160,6 @@ public class LoginViewController implements Initializable
         else  
         {
             PrintWriter writer = new PrintWriter("UserLogin.txt", "UTF-8");
-            writer.println(" ");
             writer.println("The user "+ userLogin.getUserName() +" logged in.   " + "Date: " + dateFormat.format(date));
 
             //writer.println("Date: " + dateFormat.format(date));
