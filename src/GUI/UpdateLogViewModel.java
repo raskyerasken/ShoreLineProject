@@ -25,7 +25,7 @@ public class UpdateLogViewModel
     
     UpdateLog ul = new UpdateLog();
     
-    List<UpdateLog> getAllLogUpdates()
+    List<UpdateLog> getAllLogUpdates() throws SQLException
     {
         genreToMovies();
         return updateLogToList;

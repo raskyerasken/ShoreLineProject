@@ -15,6 +15,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -51,8 +52,12 @@ public class LogViewController implements Initializable
     
     public void initialize(URL url, ResourceBundle rb) 
     {
-//        displayLoginText();
-        LogView.setItems((ObservableList<UpdateLog>)model.getAllLogUpdates());
+        try {
+            //        displayLoginText();
+            LogView.setItems((ObservableList<UpdateLog>)model.getAllLogUpdates());
+        } catch (SQLException ex) {
+            Logger.getLogger(LogViewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         searchLogView();
     }   
     
