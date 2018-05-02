@@ -24,7 +24,6 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -71,14 +70,15 @@ public class LoginViewController implements Initializable
     }    
     
     @FXML
-    private void login(ActionEvent event) throws IOException, SQLException 
+    private void login(ActionEvent event) throws IOException, SQLException
     {
         userLogin.setPassword(userPassword.getText());
         userLogin.setUserName(userNameID.getText());
-        
+        java.util.Date utilDate = new java.util.Date();
+        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
         updateLog.setUsername(userNameID.getText());
         updateLog.setAdjustment(userNameID.getText());
-        updateLog.setDatelog(Date.from(Instant.MIN));
+        updateLog.setDatelog(sqlDate);
         
         up.setUpdateLog(updateLog);
         

@@ -12,6 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -28,13 +29,13 @@ public class DataBaseUpdateLog
         try (Connection con = cm.getConnection()) 
         {
             String sql
-                    = "INSERT * INTO UpdateLog"
+                    = "INSERT INTO UpdateLog"
                     + "(Username, UploadDate, Adjustment)"
                     + "VALUES (?, ?, ?)";
 
             PreparedStatement pstmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             pstmt.setString(1, updateLog.getUsername());
-            pstmt.setDate(2, (java.sql.Date) updateLog.getDatelog());
+            pstmt.setDate(2, (java.sql.Date) (Date) updateLog.getDatelog());
             pstmt.setString(3, updateLog.getAdjustment());
             
             int affected = pstmt.executeUpdate();

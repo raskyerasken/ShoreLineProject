@@ -18,7 +18,7 @@ public class UpdateLog
 
     private final StringProperty Username = new SimpleStringProperty();
     private final StringProperty Adjustment = new SimpleStringProperty();
-    private Date Datelog;
+    Date Datelog;
 
     /**
      * Get the value of Datelog
