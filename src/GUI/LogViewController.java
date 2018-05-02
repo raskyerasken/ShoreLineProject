@@ -52,10 +52,14 @@ public class LogViewController implements Initializable
     
     public void initialize(URL url, ResourceBundle rb) 
     {
-        try {
+        try 
+        {
             //        displayLoginText();
             LogView.setItems((ObservableList<UpdateLog>)model.getAllLogUpdates());
-        } catch (SQLException ex) {
+        } 
+        
+        catch (SQLException ex) 
+        {
             Logger.getLogger(LogViewController.class.getName()).log(Level.SEVERE, null, ex);
         }
         searchLogView();
