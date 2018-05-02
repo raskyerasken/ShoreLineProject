@@ -12,7 +12,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -52,32 +54,33 @@ public class DataBaseUpdateLog
         }
     }
     
-    public void getUpdateLog(UpdateLog updateLog) throws SQLException 
+    public List<UpdateLog> getUpdateLog() 
     {
-        UpdateLog ul = new UpdateLog();
+        
+            List<UpdateLog> AllupdateLog 
+                = new ArrayList<>();
+        
         try (Connection con = cm.getConnection()) 
         {
-            String query
-                    = "SELECT * FROM UpdateLog"
-                    + "WHERE Username LIKE ?";
-
-            PreparedStatement pstmt = con.prepareStatement(query);
-            pstmt.setString(1, updateLog.getUsername());
-            pstmt.setDate(2, (java.sql.Date) updateLog.getDatelog());
+            PreparedStatement pstmt 
+                    = con.prepareStatement("SELECT * FROM UpdateLog");
             
             ResultSet rs = pstmt.executeQuery();
-            if (rs.next()) 
+            while (rs.next()) 
             {
+                UpdateLog ul = new UpdateLog();
                 ul.setUsername(rs.getString("Username"));
                 ul.setDatelog(rs.getDate("UploadDate"));
+                AllupdateLog.add(ul);
             }
             
         } 
-        
-        catch (SQLServerException ex) 
+        catch (SQLException ex) 
         {
-            Logger.getLogger(DataBaseUserLogin.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DataBaseUpdateLog.class.getName()).
+                    log(Level.SEVERE, null, ex);
         }
+        return AllupdateLog;
     }
     
     
