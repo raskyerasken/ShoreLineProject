@@ -5,7 +5,9 @@
  */
 package GUI;
 
+import BE.UpdateLog;
 import BE.UserLogin;
+import BLL.BLLManagerUpdateLog;
 import BLL.BLLManagerUserLogin;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXPasswordField;
@@ -23,7 +25,6 @@ import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -45,7 +46,7 @@ import javafx.stage.Stage;
  */
 public class LoginViewController implements Initializable 
 {
-
+    
     @FXML
     private JFXTextField userNameID;
     @FXML
@@ -53,6 +54,8 @@ public class LoginViewController implements Initializable
     @FXML
     private JFXCheckBox rememberUser;
     BLL.BLLManagerUserLogin ul = new BLLManagerUserLogin();
+    BLL.BLLManagerUpdateLog up = new BLLManagerUpdateLog();
+    UpdateLog updateLog = new UpdateLog();
     UserLogin userLogin = new UserLogin();
     List<String> lines = new ArrayList<String>();
     int rememberMeLineNr = 2;
@@ -71,6 +74,8 @@ public class LoginViewController implements Initializable
     {
         userLogin.setPassword(userPassword.getText());
         userLogin.setUserName(userNameID.getText());
+        
+        up.setUpdateLog(updateLog);
         
         if (ul.getAccess(userLogin)) 
         {
