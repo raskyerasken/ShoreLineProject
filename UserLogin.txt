@@ -149,3 +149,5 @@ The user kris logged in.    Date: 2018/05/03 16:26:15
 The user kasper logged in.    Date: 2018/05/03 16:27:11
 The user Jacob logged in.    Date: 2018/05/03 16:27:47
 The user Jacob logged in.    Date: 2018/05/03 16:35:52
+The user Jacob logged in.    Date: 2018/05/03 17:02:36
+The user Jacob logged in.    Date: 2018/05/03 17:06:06

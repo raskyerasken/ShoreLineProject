@@ -70,7 +70,7 @@ public class DataBaseUpdateLog
             {
                 UpdateLog ul = new UpdateLog();
                 ul.setUsername(rs.getString("Username"));
-                ul.setDatelog(rs.getDate("UploadDate"));
+                ul.setDatelog(rs.getTimestamp("UploadDate"));
                 AllupdateLog.add(ul);
             }
             
