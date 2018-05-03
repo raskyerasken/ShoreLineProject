@@ -79,7 +79,6 @@ public class LoginViewController implements Initializable
         updateLog.setUsername(userNameID.getText());
         updateLog.setAdjustment(userNameID.getText());
         updateLog.setDatelog(sqlDate);
-        
         up.setUpdateLog(updateLog);
         
         if (ul.getAccess(userLogin)) 
