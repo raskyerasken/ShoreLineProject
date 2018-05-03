@@ -13,6 +13,7 @@ import GUI.TEST.xmlToJSON;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
 import java.text.ParseException;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -42,8 +43,8 @@ import org.xml.sax.SAXException;
  * @author Jason and Freddy Kruger
  */
 public class MainWindowController implements Initializable {
-
-    String[] acceptetFiles= new String[1];
+boolean acceptfile=false;
+    String[] acceptetFiles= {".xlsx"};
     List<File> files;
     @FXML
     private Label taskXRun;
@@ -72,28 +73,44 @@ public class MainWindowController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-//        menuBar.setId("MenuBar");
        
     }
 
     private void importDataClick(MouseEvent event) {
 
     }
-
+List<File> filesAcceptet ;
     @FXML
     private void importData(ActionEvent event) throws SAXException, IOException, ParseException, IllegalArgumentException, IllegalAccessException {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Image File");
         fileChooser.setInitialDirectory(new File("..."));
         files = fileChooser.showOpenMultipleDialog(new Stage());
-      
-        for (int i = 0; i < files.size(); i++) {
-            ReadingXLSX XLSX = new ReadingXLSX(files.get(i).getAbsolutePath());
+        
+        for (File file : files) {
+            for (String acceptetFile : acceptetFiles) {
+                if(file.getAbsolutePath().endsWith(acceptetFile))
+                {
+                    filesAcceptet.add(file);
+                    acceptfile=true;
+                    
+                }
+                if (!acceptfile) {
+                    
+    AlertWindow alertWindow= 
+            new AlertWindow("File not support yet", null, "This file "+file.getAbsolutePath()+" can be added");
+                }
+            }
+            
+        }
+        if(!filesAcceptet.isEmpty()){
+        for (int i = 0; i < filesAcceptet.size(); i++) {
+            ReadingXLSX XLSX = new ReadingXLSX(filesAcceptet.get(i).getAbsolutePath());
             XLSX.allRows();
             XLSX.getColumsNames();
             CreateJSONFile createJSON = new CreateJSONFile();
-            createJSON.createJSON(XLSX.allJSONObjectInFile(), files.get(i).getName());
-        }
+            createJSON.createJSON(XLSX.allJSONObjectInFile(), filesAcceptet.get(i).getName());
+        }}
 
     }
 
