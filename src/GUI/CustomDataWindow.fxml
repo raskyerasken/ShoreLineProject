@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXListView?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TreeView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -12,10 +13,6 @@
 <AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="571.0" stylesheets="@CSSShoreLines.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.MainWindowController">
     <children>
       <Label fx:id="taskXRun" layoutX="238.0" layoutY="351.0" text="Task X Running" />
-      <JFXButton layoutX="107.0" layoutY="50.0" onAction="#importData" prefHeight="27.0" prefWidth="96.0" text="Import Data" />
-      <JFXListView fx:id="taskField" layoutX="111.0" layoutY="100.0" prefHeight="246.0" prefWidth="444.0" />
-      <JFXButton layoutX="275.0" layoutY="50.0" onAction="#convertData" prefHeight="27.0" prefWidth="105.0" text="Convert Data" />
-      <JFXButton layoutX="390.0" layoutY="50.0" onAction="#saveData" text="Save File" />
       <JFXButton layoutX="155.0" layoutY="369.0" onAction="#startTask" text="Start Task" />
       <JFXButton layoutX="238.0" layoutY="369.0" onAction="#pauseTask" text="Pause Task" />
       <JFXButton layoutX="335.0" layoutY="369.0" onAction="#stopTask" text="Stop" />
@@ -24,7 +21,7 @@
             <Image url="@../Image/ShoreLineLogo.jpg" />
          </image>
       </ImageView>
-      <TabPane layoutX="293.0" layoutY="-3.0" prefHeight="35.0" prefWidth="279.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutX="293.0" prefHeight="35.0" prefWidth="279.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Import">
             <content>
@@ -48,5 +45,11 @@
             </Tab>
         </tabs>
       </TabPane>
+      <ListView fx:id="CustomDataSelect" layoutX="126.0" layoutY="85.0" prefHeight="235.0" prefWidth="139.0" />
+      <JFXButton layoutX="286.0" layoutY="149.0" text="Add -&gt;" />
+      <JFXButton layoutX="283.0" layoutY="176.0" text="Remove" />
+      <JFXButton layoutX="1.0" layoutY="149.0" text="Add Custom Data" />
+      <JFXButton layoutX="1.0" layoutY="176.0" text="Edit Custom Data" />
+      <TreeView layoutX="355.0" layoutY="85.0" prefHeight="235.0" prefWidth="155.0" />
     </children>
 </AnchorPane>
