@@ -7,8 +7,6 @@ package GUI;
 
 import BE.UpdateLog;
 import static GUI.LogViewController.lines;
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -16,8 +14,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -28,6 +25,9 @@ import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
  * FXML Controller class
@@ -39,22 +39,26 @@ public class LogViewController implements Initializable
     UpdateLogViewModel model = new UpdateLogViewModel();
     public static final ObservableList lines = 
     FXCollections.observableArrayList();
-    @FXML
-    private JFXListView<UpdateLog> LogView;
     int fileLinesNumber = 2;
     @FXML
     private JFXTextField searchTxt;
     boolean search = false;
-    @FXML
-    private JFXButton searchButton;
     FilteredList<String> searchData 
             = new FilteredList<>(lines, p -> true);
+    @FXML
+    private TableView<UpdateLog> LogView;
+    @FXML
+    private TableColumn<UpdateLog, String> userNameTable;
+    @FXML
+    private TableColumn<UpdateLog, Date> timeTable;
+    @FXML
+    private TableColumn<UpdateLog, String> adjustment;
     
     public void initialize(URL url, ResourceBundle rb) 
     {
+        addItemsToList();
         try 
         {
-            //        displayLoginText();
             LogView.setItems((ObservableList<UpdateLog>)model.getAllLogUpdates());
         } 
         
@@ -78,34 +82,64 @@ public class LogViewController implements Initializable
         }
     }
     
+    private void addItemsToList()
+    {
+        userNameTable.setCellValueFactory(new PropertyValueFactory("Username"));
+        timeTable.setCellValueFactory(new PropertyValueFactory("Datelog"));
+        adjustment.setCellValueFactory(new PropertyValueFactory("Adjustment"));
+    }
+    
+    private void filterTableView() throws SQLException
+    {
+        FilteredList<UpdateLog> filteredData 
+                = new FilteredList<>(model.getAllLogUpdates(), p -> true);
+        searchTxt.textProperty().addListener((observable, oldValue, newValue) ->
+        {
+            filteredData.setPredicate(updateLog ->
+            {
+                if (newValue == null || newValue.isEmpty()) 
+                {
+                    return true;
+                }
+                
+                String lowerCaseFilter = newValue.toLowerCase();
+                
+                if (updateLog.getUsername().toLowerCase().contains(lowerCaseFilter)) 
+                {
+                    return true;
+                }
+                else if (updateLog.getDatelog().toString().contains(lowerCaseFilter)) 
+                {
+                    return true; // Filter matches last name.
+                }
+                
+                return false;
+                
+            });
+            
+        });
+        
+                // 3. Wrap the FilteredList in a SortedList. 
+        SortedList<UpdateLog> sortedData = new SortedList<>(filteredData);
+
+        // 4. Bind the SortedList comparator to the TableView comparator.
+        sortedData.comparatorProperty().bind(LogView.comparatorProperty());
+
+        // 5. Add sorted (and filtered) data to the table.
+        LogView.setItems(sortedData);
+    }
+    
     private void searchLogView()
     {
-//        searchTxt.textProperty().addListener((observable, oldValue, newValue) -> {
-//        searchData.setPredicate(lines -> 
-//        {
-//            // If filter text is empty, display all logs.
-//            if (newValue == null || newValue.isEmpty()) 
-//            {
-//                return true;
-//            }
-//
-//            // Compare input text to all log.
-//            String lowerCaseFilter = newValue.toLowerCase();
-//
-//            if (lines.toLowerCase().contains(lowerCaseFilter)) 
-//            {
-//                return true; 
-//            } 
-//
-//            return false; // Does not match.
-//        });
-//        });
-//
-//        // 3. Wrap the FilteredList in a SortedList. 
-//        SortedList<String> sortedData = new SortedList<>(searchData);
-//
-//        // 5. Add sorted (and filtered) data to the table.
-//        LogView.setItems(sortedData);
+        try 
+        {
+            filterTableView();
+        } 
+        
+        catch (SQLException ex) 
+        {
+            Logger.getLogger(LogViewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 

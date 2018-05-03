@@ -9,13 +9,12 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="571.0" stylesheets="@CSSShoreLines.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.MainWindowController">
+<AnchorPane id="AnchorPane" fx:id="importWindow" prefHeight="452.0" prefWidth="571.0" stylesheets="@CSSShoreLines.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.MainWindowController">
     <children>
       <Label fx:id="taskXRun" layoutX="238.0" layoutY="351.0" text="Task X Running" />
       <JFXButton layoutX="107.0" layoutY="50.0" onAction="#importData" prefHeight="27.0" prefWidth="96.0" text="Import Data" />
       <JFXListView fx:id="taskField" layoutX="111.0" layoutY="100.0" prefHeight="246.0" prefWidth="444.0" />
       <JFXButton layoutX="275.0" layoutY="50.0" onAction="#convertData" prefHeight="27.0" prefWidth="105.0" text="Convert Data" />
-      <JFXButton layoutX="390.0" layoutY="50.0" onAction="#saveData" text="Save File" />
       <JFXButton layoutX="155.0" layoutY="369.0" onAction="#startTask" text="Start Task" />
       <JFXButton layoutX="238.0" layoutY="369.0" onAction="#pauseTask" text="Pause Task" />
       <JFXButton layoutX="335.0" layoutY="369.0" onAction="#stopTask" text="Stop" />
@@ -26,22 +25,22 @@
       </ImageView>
       <TabPane layoutX="293.0" layoutY="-3.0" prefHeight="35.0" prefWidth="279.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab text="Import">
+          <Tab fx:id="importMenu" onSelectionChanged="#importMenuSelect" text="Import">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
             </content>
           </Tab>
-            <Tab text="Export">
+            <Tab fx:id="exportMenuSelect" onSelectionChanged="#exportMenuSelect" text="Export">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                </content>
             </Tab>
-            <Tab text="Custom Data">
+            <Tab fx:id="customDataMenuSelect" onSelectionChanged="#customDataMenuSelect" text="Custom Data">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                </content>
             </Tab>
-            <Tab text="Log">
+            <Tab fx:id="logMenuSelect" onSelectionChanged="#logMenuSelect" text="Log">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                </content>
