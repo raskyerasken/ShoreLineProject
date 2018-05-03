@@ -27,22 +27,22 @@ SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
         File file = new File(fileName + ".json");
         FileWriter fileWriter = new FileWriter(file);
         for (JSON json : JSONsInThisDocument) {
-            fileWriter.write("{\n"
-                    + json.getAssetSerialNumber() + "\n"
-                    + json.getType() + "\n"
-                    + json.getExternalWorkOrderId() + "\n"
-                    + json.getSystemStatus() + "\n"
-                    + json.getUserStatus() + "\n"
-                    + formatter.format(json.getCreatedOn()) + "\n"
-                    + json.getCreatedBy() + "\n"
-                    + json.getName() + "\n"
-                    + json.getPriority() + "\n"
-                    + json.getStatus() + "\n{\n"
-                    + formatter.format(json.getPlanning().getLatestFinishDate()) + "\n"
-                    + formatter.format(json.getPlanning().getEarliestStartDate())+ "\n"
-                    + formatter.format(json.getPlanning().getLatestStartDate())+ "\n"
-                    + json.getPlanning().estimatedTimeProperty()+ "\n"
-                    + "}\n}\n\n"
+            fileWriter.write("{\n\t\"siteNamee\":\"\"\n\t\"assetSerialNumber\":\""
+                    + json.getAssetSerialNumber() + "\"\n\t\"type\":\""
+                    + json.getType() + "\"\n\t\"externalWorkOrderId\":\""
+                    + json.getExternalWorkOrderId() + "\"\n\t\"systemStatus\":\""
+                    + json.getSystemStatus() + "\"\n\t\"userStatus\":\""
+                    + json.getUserStatus() + "\"\n\t\"createdOn\":\""
+                    + formatter.format(json.getCreatedOn()) + "\"\n\t\"createdBy\":\""
+                    + json.getCreatedBy() +  "\"\n\t\"name\":\""
+                    + json.getName() +  "\"\n\t\"priority\":\""
+                    + json.getPriority() +  "\"\n\t\"status\":\""
+                    + json.getStatus() +  "\"\n\t\"planning\":{\n\t     \"latestFinishDate\":\""
+                    + formatter.format(json.getPlanning().getLatestFinishDate()) +  "\"\n\t\"earliestStartDate\":\""
+                    + formatter.format(json.getPlanning().getEarliestStartDate())+  "\"\n\t\"latestStartDate\":\""
+                    + formatter.format(json.getPlanning().getLatestStartDate())+  "\"\n\t\"estimatedTime\":\""
+                    + json.getPlanning().estimatedTimeProperty()+  "\"\n\t}\n}"
+                    
             );
         }
         
