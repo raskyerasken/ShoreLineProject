@@ -14,6 +14,7 @@
             <file>file:/Users/kasper/Desktop/DATAMATIKER/ShoreLine/ShoreLineProject/ShoreLineProject/src/BE/UserLogin.java</file>
             <file>file:/Users/kasper/Desktop/DATAMATIKER/ShoreLine/ShoreLineProject/ShoreLineProject/src/Main/ShoreLine.java</file>
             <file>file:/Users/kasper/Desktop/DATAMATIKER/ShoreLine/ShoreLineProject/ShoreLineProject/src/DAL/ConnectionManagerSLProject.java</file>
+<<<<<<< HEAD
         </group>
         <group>
             <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/GUI/MainWindowController.java</file>
@@ -39,6 +40,14 @@
             <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/BLL/IConvertingToJSON.java</file>
             <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/BE/UserLogin.java</file>
             <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/DAL/DataBaseUserLogin.java</file>
+=======
+>>>>>>> 3c2fc543d5322bef4014d6c495147b35ffd425b7
+        </group>
+        <group>
+            <file>file:/C:/EASVprj/ShoreLineProject/src/Main/ShoreLine.java</file>
+            <file>file:/C:/EASVprj/ShoreLineProject/src/GUI/LoginViewController.java</file>
+            <file>file:/C:/EASVprj/ShoreLineProject/src/GUI/LogViewController.java</file>
+            <file>file:/C:/EASVprj/ShoreLineProject/src/GUI/AddUserViewController.java</file>
         </group>
     </open-files>
 </project-private>

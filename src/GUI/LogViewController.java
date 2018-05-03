@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import BE.UpdateLog;
 import static GUI.LogViewController.lines;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
@@ -14,6 +15,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -32,10 +36,11 @@ import javafx.fxml.Initializable;
  */
 public class LogViewController implements Initializable 
 {
+    UpdateLogViewModel model = new UpdateLogViewModel();
     public static final ObservableList lines = 
     FXCollections.observableArrayList();
     @FXML
-    private JFXListView<String> LogView;
+    private JFXListView<UpdateLog> LogView;
     int fileLinesNumber = 2;
     @FXML
     private JFXTextField searchTxt;
@@ -47,7 +52,16 @@ public class LogViewController implements Initializable
     
     public void initialize(URL url, ResourceBundle rb) 
     {
-        displayLoginText();
+        try 
+        {
+            //        displayLoginText();
+            LogView.setItems((ObservableList<UpdateLog>)model.getAllLogUpdates());
+        } 
+        
+        catch (SQLException ex) 
+        {
+            Logger.getLogger(LogViewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         searchLogView();
     }   
     
@@ -66,32 +80,32 @@ public class LogViewController implements Initializable
     
     private void searchLogView()
     {
-        searchTxt.textProperty().addListener((observable, oldValue, newValue) -> {
-        searchData.setPredicate(lines -> 
-        {
-            // If filter text is empty, display all logs.
-            if (newValue == null || newValue.isEmpty()) 
-            {
-                return true;
-            }
-
-            // Compare input text to all log.
-            String lowerCaseFilter = newValue.toLowerCase();
-
-            if (lines.toLowerCase().contains(lowerCaseFilter)) 
-            {
-                return true; 
-            } 
-
-            return false; // Does not match.
-        });
-        });
-
-        // 3. Wrap the FilteredList in a SortedList. 
-        SortedList<String> sortedData = new SortedList<>(searchData);
-
-        // 5. Add sorted (and filtered) data to the table.
-        LogView.setItems(sortedData);
+//        searchTxt.textProperty().addListener((observable, oldValue, newValue) -> {
+//        searchData.setPredicate(lines -> 
+//        {
+//            // If filter text is empty, display all logs.
+//            if (newValue == null || newValue.isEmpty()) 
+//            {
+//                return true;
+//            }
+//
+//            // Compare input text to all log.
+//            String lowerCaseFilter = newValue.toLowerCase();
+//
+//            if (lines.toLowerCase().contains(lowerCaseFilter)) 
+//            {
+//                return true; 
+//            } 
+//
+//            return false; // Does not match.
+//        });
+//        });
+//
+//        // 3. Wrap the FilteredList in a SortedList. 
+//        SortedList<String> sortedData = new SortedList<>(searchData);
+//
+//        // 5. Add sorted (and filtered) data to the table.
+//        LogView.setItems(sortedData);
     }
 
 
