@@ -39,31 +39,47 @@ public class CustomDataWindowController {
     private void stopTask(ActionEvent event) {
     }
 
+//    @FXML
+//    private void importMenuSelect(Event event) throws IOException {
+//        
+//        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/ImportWindow.fxml"));
+//                customDataWindow.getChildren().setAll(pane);
+//    }
+//
+//    @FXML
+//    private void exportMenuSelect(Event event) throws IOException {
+//        
+//        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/ExportWindow.fxml"));
+//                customDataWindow.getChildren().setAll(pane);
+//    }
+//
+//    @FXML
+//    private void customDataMenuSelect(Event event) throws IOException {
+//        
+//              
+//    }
+//
+//    @FXML
+//    private void logMenuSelect(Event event) throws IOException {
+//        
+//                AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/LogView.fxml"));
+//                customDataWindow.getChildren().setAll(pane);
+//    }
+//    
+
     @FXML
-    private void importMenuSelect(Event event) throws IOException {
-        
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/ImportWindow.fxml"));
-                customDataWindow.getChildren().setAll(pane);
+    private void importMenuSelect(Event event) {
     }
 
     @FXML
-    private void exportMenuSelect(Event event) throws IOException {
-        
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/ExportWindow.fxml"));
-                customDataWindow.getChildren().setAll(pane);
+    private void exportMenuSelect(Event event) {
     }
 
     @FXML
-    private void customDataMenuSelect(Event event) throws IOException {
-        
-              
+    private void customDataMenuSelect(Event event) {
     }
 
     @FXML
-    private void logMenuSelect(Event event) throws IOException {
-        
-                AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/LogView.fxml"));
-                customDataWindow.getChildren().setAll(pane);
+    private void logMenuSelect(Event event) {
     }
-    
 }

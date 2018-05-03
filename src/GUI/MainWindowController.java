@@ -136,33 +136,46 @@ List<File> filesAcceptet ;
 
     }
 
+//
+//    @FXML
+//    private void exportMenuSelect(Event event) throws IOException {
+//                AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/ExportWindow.fxml"));
+//                importWindow.getChildren().setAll(pane);
+//
+//    }
+//
+//    @FXML
+//    private void customDataMenuSelect(Event event) throws IOException {
+//        
+//        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/CustomDataWindow.fxml"));
+//                importWindow.getChildren().setAll(pane);
+//    }
+//
+//    @FXML
+//    private void logMenuSelect(Event event) throws IOException {
+//        
+//        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/Logview.fxml"));
+//                importWindow.getChildren().setAll(pane);
+//    }
+//    
+
     @FXML
     private void importMenuSelect(Event event) throws IOException {
-           
-        
+         
     }
 
     @FXML
-    private void exportMenuSelect(Event event) throws IOException {
-                AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/ExportWindow.fxml"));
-                importWindow.getChildren().setAll(pane);
-
+    private void exportMenuSelect(Event event) {
+        System.out.println("hey");
     }
 
     @FXML
-    private void customDataMenuSelect(Event event) throws IOException {
-        
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/CustomDataWindow.fxml"));
-                importWindow.getChildren().setAll(pane);
+    private void customDataMenuSelect(Event event) {
     }
 
     @FXML
-    private void logMenuSelect(Event event) throws IOException {
-        
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/Logview.fxml"));
-                importWindow.getChildren().setAll(pane);
+    private void logMenuSelect(Event event) {
     }
-    
 
 
 }
