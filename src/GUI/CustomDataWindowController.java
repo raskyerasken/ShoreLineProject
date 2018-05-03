@@ -68,11 +68,15 @@ public class CustomDataWindowController {
 //    
 
     @FXML
-    private void importMenuSelect(Event event) {
+    private void importMenuSelect(Event event) throws IOException {
+              AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/ImportWindow.fxml"));
+                customDataWindow.getChildren().setAll(pane);
     }
 
     @FXML
-    private void exportMenuSelect(Event event) {
+    private void exportMenuSelect(Event event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/ExportWindow.fxml"));
+                customDataWindow.getChildren().setAll(pane);
     }
 
     @FXML

@@ -78,7 +78,9 @@ public class ExportWindowController {
     }
 
     @FXML
-    private void customDataMenuSelect(Event event) {
+    private void customDataMenuSelect(Event event) throws IOException {
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/CustomDataWindow.fxml"));
+                exportWindow.getChildren().setAll(pane); 
     }
 
     @FXML
