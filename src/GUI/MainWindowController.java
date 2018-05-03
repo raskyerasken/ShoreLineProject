@@ -37,6 +37,7 @@ import org.xml.sax.SAXException;
  */
 public class MainWindowController implements Initializable {
 
+    String[] acceptetFiles= new String[1];
     List<File> files;
     @FXML
     private Label taskXRun;
@@ -71,12 +72,16 @@ public class MainWindowController implements Initializable {
     }
 
     @FXML
-    private void importData(ActionEvent event) throws SAXException, IOException, ParseException {
+    private void importData(ActionEvent event) throws SAXException, IOException, ParseException, IllegalArgumentException, IllegalAccessException {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Image File");
         fileChooser.setInitialDirectory(new File("..."));
         files = fileChooser.showOpenMultipleDialog(new Stage());
-
+        for (File file : files) {
+            for (String acceptetFile : acceptetFiles) {
+                
+            }
+        }
         for (int i = 0; i < files.size(); i++) {
             ReadingXLSX XLSX = new ReadingXLSX(files.get(i).getAbsolutePath());
             XLSX.allRows();

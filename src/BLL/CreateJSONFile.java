@@ -38,10 +38,10 @@ SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
                     + json.getName() +  "\"\n\t\"priority\":\""
                     + json.getPriority() +  "\"\n\t\"status\":\""
                     + json.getStatus() +  "\"\n\t\"planning\":{\n\t     \"latestFinishDate\":\""
-                    + formatter.format(json.getPlanning().getLatestFinishDate()) +  "\"\n\t\"earliestStartDate\":\""
-                    + formatter.format(json.getPlanning().getEarliestStartDate())+  "\"\n\t\"latestStartDate\":\""
-                    + formatter.format(json.getPlanning().getLatestStartDate())+  "\"\n\t\"estimatedTime\":\""
-                    + json.getPlanning().estimatedTimeProperty()+  "\"\n\t}\n}"
+                    + formatter.format(json.getPlanning().getLatestFinishDate()) +  "\"\n\t\t\"earliestStartDate\":\""
+                    + formatter.format(json.getPlanning().getEarliestStartDate())+  "\"\n\t\t\"latestStartDate\":\""
+                    + formatter.format(json.getPlanning().getLatestStartDate())+  "\"\n\t\t\"estimatedTime\":\""
+                    + json.getPlanning().estimatedTimeProperty()+  "\"\n\t}\n}\n\n"
                     
             );
         }
