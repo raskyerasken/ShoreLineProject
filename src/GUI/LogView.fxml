@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane id="AnchorPane" fx:id="exportWindow" prefHeight="452.0" prefWidth="571.0" stylesheets="@CSSShoreLines.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ExportWindowController">
+<AnchorPane id="AnchorPane" fx:id="exportWindow" prefHeight="452.0" prefWidth="571.0" stylesheets="@CSSShoreLines.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.LogViewController">
     <children>
       <Label fx:id="taskXRun" layoutX="273.0" layoutY="392.0" text="Task X Running" />
       <JFXButton layoutX="107.0" layoutY="50.0" onAction="#importData" prefHeight="27.0" prefWidth="96.0" text="Import Data" />

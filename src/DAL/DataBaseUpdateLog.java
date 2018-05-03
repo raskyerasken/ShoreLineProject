@@ -37,7 +37,8 @@ public class DataBaseUpdateLog
 
             PreparedStatement pstmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             pstmt.setString(1, updateLog.getUsername());
-            pstmt.setDate(2, (java.sql.Date) (Date) updateLog.getDatelog());
+            pstmt.setTimestamp(2, (java.sql.Timestamp)updateLog.getDatelog());
+            //pstmt.setDate(2, (java.sql.Date) (Date) updateLog.getDatelog());
             pstmt.setString(3, updateLog.getAdjustment());
             
             int affected = pstmt.executeUpdate();

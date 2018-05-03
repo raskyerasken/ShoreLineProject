@@ -22,9 +22,11 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -74,8 +76,11 @@ public class LoginViewController implements Initializable
     {
         userLogin.setPassword(userPassword.getText());
         userLogin.setUserName(userNameID.getText());
-        java.util.Date utilDate = new java.util.Date();
-        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+        
+        //java.util.Date utilDate = new java.util.Date();
+        Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
+        java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
+        
         updateLog.setUsername(userNameID.getText());
         updateLog.setAdjustment(userNameID.getText());
         updateLog.setDatelog(sqlDate);

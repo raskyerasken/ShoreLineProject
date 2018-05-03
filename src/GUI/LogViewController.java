@@ -25,9 +25,11 @@ import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
@@ -53,6 +55,10 @@ public class LogViewController implements Initializable
     private TableColumn<UpdateLog, Date> timeTable;
     @FXML
     private TableColumn<UpdateLog, String> adjustment;
+    @FXML
+    private AnchorPane exportWindow;
+    @FXML
+    private Label taskXRun;
     
     public void initialize(URL url, ResourceBundle rb) 
     {
@@ -143,23 +149,6 @@ public class LogViewController implements Initializable
     }
 
 
-    @FXML
-    private void closeMenu(ActionEvent event) 
-    {
-        
-    }
-
-    @FXML
-    private void deleteItem(ActionEvent event) 
-    {
-        
-    }
-
-    @FXML
-    private void edit(ActionEvent event) 
-    {
-        
-    }
     
     private void displayLoginText()
     {
@@ -172,6 +161,42 @@ public class LogViewController implements Initializable
         {
             Logger.getLogger(LogViewController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    @FXML
+    private void importData(ActionEvent event) {
+    }
+
+    @FXML
+    private void startTask(ActionEvent event) {
+    }
+
+    @FXML
+    private void pauseTask(ActionEvent event) {
+    }
+
+    @FXML
+    private void stopTask(ActionEvent event) {
+    }
+
+    @FXML
+    private void importMenuSelect(ActionEvent event) {
+    }
+
+    @FXML
+    private void exportMenuSelect(ActionEvent event) {
+    }
+
+    @FXML
+    private void customDataMenuSelect(ActionEvent event) {
+    }
+
+    @FXML
+    private void logMenuSelect(ActionEvent event) {
+    }
+
+    @FXML
+    private void adminMenuSelect(ActionEvent event) {
     }
     
 }
