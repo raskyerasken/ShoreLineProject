@@ -54,14 +54,6 @@ boolean acceptfile=false;
     public String selectedDocument = "C:\\Users\\jacob\\Desktop\\Import_data.xlsx";
     @FXML
     private AnchorPane importWindow;
-    @FXML
-    private Tab exportMenuSelect;
-    @FXML
-    private Tab customDataMenuSelect;
-    @FXML
-    private Tab logMenuSelect;
-    @FXML
-    private Tab importMenu;
 
     private void activateXmlReader() {
 
@@ -174,11 +166,8 @@ List<File> filesAcceptet ;
     @FXML
     private void customDataMenuSelect(Event event) {
     }
-
-    @FXML
-<<<<<<< HEAD
-    private void logMenuSelect(Event event) {
-=======
+    
+   @FXML
     private void logMenuSelect(Event event) throws IOException 
     {
         Stage newStage = new Stage();
@@ -187,7 +176,10 @@ List<File> filesAcceptet ;
         Scene scene = new Scene(root);
         newStage.setScene(scene);
         newStage.showAndWait();
->>>>>>> 36dacabda9ec252a529d5e3c9a6746777457e61a
+    }
+
+    @FXML
+    private void adminMenuSelect(ActionEvent event) {
     }
 
 

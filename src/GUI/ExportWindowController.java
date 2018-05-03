@@ -51,11 +51,6 @@ public class ExportWindowController {
     private void stopTask(ActionEvent event) {
     }
 
-    @FXML
-    private void exportWindowSelect(Event event) throws IOException {
-                
-
-    }
 
 //    @FXML
 //    private void importMenuSelect(Event event) throws IOException {
@@ -88,6 +83,14 @@ public class ExportWindowController {
 
     @FXML
     private void logMenuSelect(Event event) {
+    }
+
+    @FXML
+    private void exportMenuSelect(ActionEvent event) {
+    }
+
+    @FXML
+    private void adminMenuSelect(ActionEvent event) {
     }
     
 }

@@ -82,4 +82,8 @@ public class CustomDataWindowController {
     @FXML
     private void logMenuSelect(Event event) {
     }
+
+    @FXML
+    private void adminMenuSelect(ActionEvent event) {
+    }
 }
