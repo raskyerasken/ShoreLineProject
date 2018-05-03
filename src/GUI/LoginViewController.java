@@ -84,6 +84,7 @@ public class LoginViewController implements Initializable
         
         if (ul.getAccess(userLogin)) 
         {
+            
             /**  
              * Writes in to a file if the remember me box is checked, 
                 if not it writes nothing

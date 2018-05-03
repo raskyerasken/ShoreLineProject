@@ -77,11 +77,6 @@ public class MainWindowController implements Initializable {
         fileChooser.setInitialDirectory(new File("..."));
         files = fileChooser.showOpenMultipleDialog(new Stage());
 
-//        FileNameExtensionFilter filter = new FileNameExtensionFilter();
-//        FileNameExtensionFilter filter2 = new FileNameExtensionFilter();
-//        chooser.setFileFilter(filter);
-//        chooser.setFileFilter(filter2);
-//        chooser.setAcceptAllFileFilterUsed(false);
         for (int i = 0; i < files.size(); i++) {
             ReadingXLSX XLSX = new ReadingXLSX(files.get(i).getAbsolutePath());
             XLSX.allRows();
@@ -90,13 +85,6 @@ public class MainWindowController implements Initializable {
             createJSON.createJSON(XLSX.allJSONObjectInFile(), files.get(i).getName());
         }
 
-//        for (String[] allRow : XLSX.allRows()) {
-//            for (String string : allRow) {
-//                System.out.print(string+"\t|\t");
-//            }
-//            System.out.println();
-//           
-//        }
     }
 
     @FXML
