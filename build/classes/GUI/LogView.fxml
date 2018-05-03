@@ -10,7 +10,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="687.0" prefWidth="886.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.LogViewController">
    <children>
-      <MenuBar prefHeight="26.0" prefWidth="601.0">
+      <MenuBar prefHeight="26.0" prefWidth="886.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
@@ -26,7 +26,7 @@
           </Menu>
         </menus>
       </MenuBar>
-      <JFXTextField fx:id="searchTxt" layoutX="105.0" layoutY="77.0" />
+      <JFXTextField fx:id="searchTxt" layoutX="72.0" layoutY="98.0" promptText="Search for User or Date" />
       <TableView fx:id="LogView" layoutX="72.0" layoutY="143.0" prefHeight="511.0" prefWidth="741.0">
         <columns>
           <TableColumn fx:id="userNameTable" prefWidth="128.800048828125" text="User Name" />
