@@ -54,14 +54,6 @@ boolean acceptfile=false;
     public String selectedDocument = "C:\\Users\\jacob\\Desktop\\Import_data.xlsx";
     @FXML
     private AnchorPane importWindow;
-    @FXML
-    private Tab exportMenuSelect;
-    @FXML
-    private Tab customDataMenuSelect;
-    @FXML
-    private Tab logMenuSelect;
-    @FXML
-    private Tab importMenu;
 
     private void activateXmlReader() {
 
@@ -139,28 +131,55 @@ List<File> filesAcceptet ;
 
     }
 
+//
+//    @FXML
+//    private void exportMenuSelect(Event event) throws IOException {
+//                AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/ExportWindow.fxml"));
+//                importWindow.getChildren().setAll(pane);
+//
+//    }
+//
+//    @FXML
+//    private void customDataMenuSelect(Event event) throws IOException {
+//        
+//        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/CustomDataWindow.fxml"));
+//                importWindow.getChildren().setAll(pane);
+//    }
+//
+//    @FXML
+//    private void logMenuSelect(Event event) throws IOException {
+//        
+//        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/Logview.fxml"));
+//                importWindow.getChildren().setAll(pane);
+//    }
+//    
+
     @FXML
     private void importMenuSelect(Event event) throws IOException {
-           
-        
+         
     }
 
     @FXML
+<<<<<<< HEAD
     private void exportMenuSelect(Event event) throws IOException 
     {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/ExportWindow.fxml"));
         importWindow.getChildren().setAll(pane);
 
+=======
+    private void exportMenuSelect(Event event) throws IOException {
+         AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/ExportWindow.fxml"));
+                importWindow.getChildren().setAll(pane);
+>>>>>>> 8cc551688f4541f74b994b6f891bcf4c07a46465
     }
 
     @FXML
     private void customDataMenuSelect(Event event) throws IOException {
-        
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/CustomDataWindow.fxml"));
+                AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/CustomDataWindow.fxml"));
                 importWindow.getChildren().setAll(pane);
     }
-
-    @FXML
+    
+   @FXML
     private void logMenuSelect(Event event) throws IOException 
     {
         Stage newStage = new Stage();
@@ -171,4 +190,13 @@ List<File> filesAcceptet ;
         newStage.setResizable(false);
         newStage.showAndWait();
     }
+<<<<<<< HEAD
+=======
+
+    @FXML
+    private void adminMenuSelect(ActionEvent event) {
+    }
+
+
+>>>>>>> 8cc551688f4541f74b994b6f891bcf4c07a46465
 }

@@ -78,7 +78,30 @@ The user kris logged in.    Date: 2018/05/03 13:40:37
 The user kris logged in.    Date: 2018/05/03 13:41:23
 =======
 >>>>>>> 03c1caf0af155ae0f939392e28c0cabff827f654
+<<<<<<< HEAD
+The user kasper logged in.    Date: 2018/05/03 13:32:15
+The user kasper logged in.    Date: 2018/05/03 13:32:42
+The user kasper logged in.    Date: 2018/05/03 13:33:12
+The user kasper logged in.    Date: 2018/05/03 13:34:41
+The user kasper logged in.    Date: 2018/05/03 13:36:53
+The user kasper logged in.    Date: 2018/05/03 13:37:20
+The user kasper logged in.    Date: 2018/05/03 13:38:04
+The user kasper logged in.    Date: 2018/05/03 13:38:47
+The user kasper logged in.    Date: 2018/05/03 13:39:24
+The user kasper logged in.    Date: 2018/05/03 13:40:19
+The user kasper logged in.    Date: 2018/05/03 13:41:27
+The user kasper logged in.    Date: 2018/05/03 13:42:54
+The user kasper logged in.    Date: 2018/05/03 13:44:24
+The user kasper logged in.    Date: 2018/05/03 13:44:43
+The user kasper logged in.    Date: 2018/05/03 13:44:56
+The user kasper logged in.    Date: 2018/05/03 13:48:40
+The user kasper logged in.    Date: 2018/05/03 13:49:08
+The user kasper logged in.    Date: 2018/05/03 13:49:40
+The user kasper logged in.    Date: 2018/05/03 13:59:14
+The user kasper logged in.    Date: 2018/05/03 13:59:44
+=======
 >>>>>>> 4c1b2d5b7cf44a83cfe59d129912be3033391c00
+<<<<<<< HEAD
 The user kris logged in.    Date: 2018/05/03 13:42:04
 The user kris logged in.    Date: 2018/05/03 13:44:08
 The user kris logged in.    Date: 2018/05/03 13:48:05
@@ -87,3 +110,11 @@ The user kris logged in.    Date: 2018/05/03 14:02:29
 The user kris logged in.    Date: 2018/05/03 14:03:00
 The user kris logged in.    Date: 2018/05/03 14:13:54
 The user kris logged in.    Date: 2018/05/03 14:34:41
+=======
+>>>>>>> 36dacabda9ec252a529d5e3c9a6746777457e61a
+The user kris logged in.    Date: 2018/05/03 14:26:23
+The user kris logged in.    Date: 2018/05/03 14:29:10
+The user kris logged in.    Date: 2018/05/03 14:31:00
+The user kris logged in.    Date: 2018/05/03 14:31:45
+The user kris logged in.    Date: 2018/05/03 14:32:13
+>>>>>>> 8cc551688f4541f74b994b6f891bcf4c07a46465

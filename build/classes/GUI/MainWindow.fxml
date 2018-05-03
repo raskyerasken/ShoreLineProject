@@ -4,8 +4,6 @@
 <?import com.jfoenix.controls.JFXListView?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -24,30 +22,10 @@
             <Image url="@../Image/ShoreLineLogo.jpg" />
          </image>
       </ImageView>
-      <TabPane layoutX="293.0" layoutY="-3.0" prefHeight="35.0" prefWidth="279.0" tabClosingPolicy="UNAVAILABLE">
-        <tabs>
-          <Tab fx:id="importMenu" onSelectionChanged="#importMenuSelect" text="Import">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-            </content>
-          </Tab>
-            <Tab fx:id="exportMenuSelect" onSelectionChanged="#exportMenuSelect" text="Export">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-               </content>
-            </Tab>
-            <Tab fx:id="customDataMenuSelect" onSelectionChanged="#customDataMenuSelect" text="Custom Data">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-               </content>
-            </Tab>
-            <Tab fx:id="logMenuSelect" onSelectionChanged="#logMenuSelect" text="Log">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-               </content>
-            </Tab>
-        </tabs>
-      </TabPane>
-      <Button layoutX="14.0" layoutY="100.0" mnemonicParsing="false" onAction="#importData" prefHeight="99.0" prefWidth="96.0" text="remeber to delete" />
+      <Button layoutY="100.0" mnemonicParsing="false" onAction="#importMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Import" />
+      <Button layoutY="167.0" mnemonicParsing="false" onAction="#exportMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Export" />
+      <Button layoutY="234.0" mnemonicParsing="false" onAction="#customDataMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Custom &#10;   Data" />
+      <Button layoutY="301.0" mnemonicParsing="false" onAction="#logMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Log" />
+      <Button layoutY="369.0" mnemonicParsing="false" onAction="#adminMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Admin" />
     </children>
 </AnchorPane>
