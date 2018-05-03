@@ -24,6 +24,8 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuBar;
@@ -174,7 +176,18 @@ List<File> filesAcceptet ;
     }
 
     @FXML
+<<<<<<< HEAD
     private void logMenuSelect(Event event) {
+=======
+    private void logMenuSelect(Event event) throws IOException 
+    {
+        Stage newStage = new Stage();
+        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("LogView.fxml"));
+        Parent root = fxLoader.load();
+        Scene scene = new Scene(root);
+        newStage.setScene(scene);
+        newStage.showAndWait();
+>>>>>>> 36dacabda9ec252a529d5e3c9a6746777457e61a
     }
 
 
