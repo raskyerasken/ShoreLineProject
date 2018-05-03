@@ -6,12 +6,15 @@
 package GUI;
 
 import com.jfoenix.controls.JFXListView;
+import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 
 /**
@@ -23,21 +26,22 @@ public class ExportWindowController {
     @FXML
     private Label taskXRun;
     @FXML
-    private JFXListView<?> taskField;
-    @FXML
     private AnchorPane exportWindow;
+    @FXML
+    private TableView<?> LogView;
+    @FXML
+    private TableColumn<?, ?> userNameTable;
+    @FXML
+    private TableColumn<?, ?> timeTable;
+    @FXML
+    private TableColumn<?, ?> adjustment;
+    @FXML
+    private JFXTextField searchTxt;
 
     @FXML
     private void importData(ActionEvent event) {
     }
 
-    @FXML
-    private void convertData(ActionEvent event) {
-    }
-
-    @FXML
-    private void saveData(ActionEvent event) {
-    }
 
     @FXML
     private void startTask(ActionEvent event) {
