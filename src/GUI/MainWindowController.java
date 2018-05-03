@@ -35,81 +35,73 @@ import org.xml.sax.SAXException;
  *
  * @author Jason and Freddy Kruger
  */
-public class MainWindowController implements Initializable 
-{
-    List<File> files ;
+public class MainWindowController implements Initializable {
+
+    List<File> files;
     @FXML
     private Label taskXRun;
     @FXML
     private ListView<?> taskField;
     @FXML
     private MenuBar menuBar;
-    
-    public String selectedDocument="C:\\Users\\jacob\\Desktop\\Import_data.xlsx";
-  
-   
-    private void activateXmlReader() 
-    { 
-        
+
+    public String selectedDocument = "C:\\Users\\jacob\\Desktop\\Import_data.xlsx";
+
+    private void activateXmlReader() {
+
     }
-    
-    private void handleButtonAction(ActionEvent event) 
-    {
-        
+
+    private void handleButtonAction(ActionEvent event) {
+
     }
-    
+
     @Override
-    public void initialize(URL url, ResourceBundle rb) 
-    {
+    public void initialize(URL url, ResourceBundle rb) {
         menuBar.setId("MenuBar");
-        xmlToJSON  hey = new xmlToJSON();
+        xmlToJSON hey = new xmlToJSON();
         try {
             hey.main();
-        } 
-        
-        catch (JSONException ex)
-        {
+        } catch (JSONException ex) {
             Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }   
+    }
 
     private void importDataClick(MouseEvent event) {
-    
+
     }
-    
+
     @FXML
-    private void importData(ActionEvent event) throws SAXException, IOException, ParseException 
-    {
+    private void importData(ActionEvent event) throws SAXException, IOException, ParseException {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Image File");
-        fileChooser.setInitialDirectory(new File ("..."));
-         files = fileChooser.showOpenMultipleDialog(new Stage());
-        
+        fileChooser.setInitialDirectory(new File("..."));
+        files = fileChooser.showOpenMultipleDialog(new Stage());
+
 //        FileNameExtensionFilter filter = new FileNameExtensionFilter();
 //        FileNameExtensionFilter filter2 = new FileNameExtensionFilter();
 //        chooser.setFileFilter(filter);
 //        chooser.setFileFilter(filter2);
 //        chooser.setAcceptAllFileFilterUsed(false);
-        ReadingXLSX XLSX= new ReadingXLSX(files.get(0).getAbsolutePath());
-        System.out.println(XLSX.getColumsNames());
-        XLSX.allRows();
-        for (String[] allRow : XLSX.allRows()) {
-            for (String string : allRow) {
-                System.out.print(string+"\t|\t");
-            }
-            System.out.println();
-           
+        for (int i = 0; i < files.size(); i++) {
+            ReadingXLSX XLSX = new ReadingXLSX(files.get(i).getAbsolutePath());
+            XLSX.allRows();
+            XLSX.getColumsNames();
+            CreateJSONFile createJSON = new CreateJSONFile();
+            createJSON.createJSON(XLSX.allJSONObjectInFile(), files.get(i).getName());
         }
-       
-        CreateJSONFile createJSON = new CreateJSONFile();
-        createJSON.createJSON(XLSX.allJSONObjectInFile(), "test");
-      
+
+//        for (String[] allRow : XLSX.allRows()) {
+//            for (String string : allRow) {
+//                System.out.print(string+"\t|\t");
+//            }
+//            System.out.println();
+//           
+//        }
     }
 
     @FXML
-    private void convertData(ActionEvent event) 
-    {
-        
+    private void convertData(ActionEvent event) {
+
     }
 
     @FXML
@@ -125,13 +117,10 @@ public class MainWindowController implements Initializable
     }
 
     @FXML
-    private void stopTask(ActionEvent event) 
-    {}
-        
- 
-    
-    void stageToFront()
-    {
+    private void stopTask(ActionEvent event) {
+    }
+
+    void stageToFront() {
         Stage stage = (Stage) taskField.getScene().getWindow();
         stage.toFront();
 
