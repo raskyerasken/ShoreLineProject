@@ -61,3 +61,7 @@ The user kasper logged in.    Date: 2018/05/03 13:21:14
 The user kasper logged in.    Date: 2018/05/03 13:22:13
 The user kasper logged in.    Date: 2018/05/03 13:26:45
 >>>>>>> 37195888b30492076e54a5abac886dcdfb062d77
+The user kris logged in.    Date: 2018/05/03 13:37:48
+The user kris logged in.    Date: 2018/05/03 13:38:11
+The user kris logged in.    Date: 2018/05/03 13:40:37
+The user kris logged in.    Date: 2018/05/03 13:41:23
