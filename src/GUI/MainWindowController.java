@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -71,7 +72,7 @@ boolean acceptfile=false;
     private void importDataClick(MouseEvent event) {
 
     }
-List<File> filesAcceptet ;
+List<File> filesAcceptet = new ArrayList<>();
     @FXML
     private void importData(ActionEvent event) throws SAXException, IOException, ParseException, IllegalArgumentException, IllegalAccessException {
         FileChooser fileChooser = new FileChooser();
@@ -96,20 +97,18 @@ List<File> filesAcceptet ;
             
         }
         if(!filesAcceptet.isEmpty()){
-        for (int i = 0; i < filesAcceptet.size(); i++) {
-            ReadingXLSX XLSX = new ReadingXLSX(filesAcceptet.get(i).getAbsolutePath());
-            XLSX.allRows();
-            XLSX.getColumsNames();
-            CreateJSONFile createJSON = new CreateJSONFile();
-            createJSON.createJSON(XLSX.allJSONObjectInFile(), filesAcceptet.get(i).getName());
-        }}
+//        for (int i = 0; i < filesAcceptet.size(); i++) {
+//            ReadingXLSX XLSX = new ReadingXLSX(filesAcceptet.get(i).getAbsolutePath());
+//            XLSX.allRows();
+//            XLSX.getColumsNames();
+//            CreateJSONFile createJSON = new CreateJSONFile();
+//            createJSON.createJSON(XLSX.allJSONObjectInFile(), filesAcceptet.get(i).getName());
+//        }
+System.out.println("hey");
+    }
 
     }
 
-    @FXML
-    private void convertData(ActionEvent event) {
-
-    }
 
 
     @FXML
