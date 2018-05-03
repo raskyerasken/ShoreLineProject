@@ -14,6 +14,34 @@
             <file>file:/Users/kasper/Desktop/DATAMATIKER/ShoreLine/ShoreLineProject/ShoreLineProject/src/BE/UserLogin.java</file>
             <file>file:/Users/kasper/Desktop/DATAMATIKER/ShoreLine/ShoreLineProject/ShoreLineProject/src/Main/ShoreLine.java</file>
             <file>file:/Users/kasper/Desktop/DATAMATIKER/ShoreLine/ShoreLineProject/ShoreLineProject/src/DAL/ConnectionManagerSLProject.java</file>
+<<<<<<< HEAD
+        </group>
+        <group>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/GUI/MainWindowController.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/GUI/LogViewController.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/GUI/TEST/TestThread.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/GUI/TEST/ThreadDemo.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/GUI/AddUserViewController.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/GUI/LoginViewController.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/BE/JSON.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/GUI/TEST/XmlToJava.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/GUI/TEST/xmlToJSON.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/BLL/XLSX.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/GUI/TEST/DoesntWorkCheckForTipsToRealXMLClass.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/GUI/TEST/MyErrorHandler.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/BE/Planning.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/Main/ShoreLine.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/BLL/BLLManagerUserLogin.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/GUI/MainWindow.fxml</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/BE/UpdateLog.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/BLL/CreateJSONFile.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/GUI/LoginView.fxml</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/BLL/ReadingXLSX.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/BLL/IConvertingToJSON.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/BE/UserLogin.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/DAL/DataBaseUserLogin.java</file>
+=======
+>>>>>>> 3c2fc543d5322bef4014d6c495147b35ffd425b7
         </group>
         <group>
             <file>file:/C:/EASVprj/ShoreLineProject/src/Main/ShoreLine.java</file>
