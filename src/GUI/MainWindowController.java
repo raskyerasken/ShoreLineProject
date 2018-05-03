@@ -159,17 +159,11 @@ System.out.println("hey");
     }
 
     @FXML
-<<<<<<< HEAD
     private void exportMenuSelect(Event event) throws IOException 
     {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/ExportWindow.fxml"));
         importWindow.getChildren().setAll(pane);
 
-=======
-    private void exportMenuSelect(Event event) throws IOException {
-         AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/ExportWindow.fxml"));
-                importWindow.getChildren().setAll(pane);
->>>>>>> 8cc551688f4541f74b994b6f891bcf4c07a46465
     }
 
     @FXML
@@ -189,13 +183,11 @@ System.out.println("hey");
         newStage.setResizable(false);
         newStage.showAndWait();
     }
-<<<<<<< HEAD
-=======
+
 
     @FXML
     private void adminMenuSelect(ActionEvent event) {
     }
 
 
->>>>>>> 8cc551688f4541f74b994b6f891bcf4c07a46465
 }

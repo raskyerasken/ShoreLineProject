@@ -10,10 +10,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> dee962ec876ddf24ad2b1fb0e5c842c410f05b3c
+
 <AnchorPane id="AnchorPane" fx:id="exportWindow" prefHeight="452.0" prefWidth="571.0" stylesheets="@CSSShoreLines.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ExportWindowController">
     <children>
       <Label fx:id="taskXRun" layoutX="273.0" layoutY="392.0" text="Task X Running" />
@@ -26,11 +23,7 @@
             <Image url="@../Image/ShoreLineLogo.jpg" />
          </image>
       </ImageView>
-<<<<<<< HEAD
-      <Button layoutY="100.0" mnemonicParsing="false" onAction="#importMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Import" />
-=======
       <Button layoutY="100.0" mnemonicParsing="false" onAction="#importMenuSelect" prefHeight="67.0" prefWidth="96.0" style="-fx-background-color: ;" text="Import" />
->>>>>>> dee962ec876ddf24ad2b1fb0e5c842c410f05b3c
       <Button layoutY="167.0" mnemonicParsing="false" onAction="#exportMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Export" />
       <Button layoutY="234.0" mnemonicParsing="false" onAction="#customDataMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Custom &#10;   Data" />
       <Button layoutY="301.0" mnemonicParsing="false" onAction="#logMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Log" />
@@ -41,36 +34,6 @@
             <TableColumn fx:id="timeTable" prefWidth="95.0" text="Time" />
             <TableColumn fx:id="adjustment" maxWidth="500.0" prefWidth="222.0" text="Action (Not implemented)" />
          </columns>
-<<<<<<< HEAD
-=======
-=======
-<AnchorPane id="AnchorPane" prefHeight="687.0" prefWidth="886.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.LogViewController">
-   <children>
-      <MenuBar prefHeight="26.0" prefWidth="886.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" onAction="#closeMenu" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" onAction="#deleteItem" text="Delete" />
-
-                  <MenuItem mnemonicParsing="false" onAction="#edit" text="Edit" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-      <JFXTextField fx:id="searchTxt" layoutX="72.0" layoutY="98.0" promptText="Search for User or Date" />
-      <TableView fx:id="LogView" layoutX="72.0" layoutY="143.0" prefHeight="511.0" prefWidth="741.0">
-        <columns>
-          <TableColumn fx:id="userNameTable" prefWidth="128.800048828125" text="User Name" />
-          <TableColumn fx:id="timeTable" prefWidth="140.8000030517578" text="Time" />
-            <TableColumn fx:id="adjustment" prefWidth="469.5999755859375" text="What did this user do? (Not implemented)" />
-        </columns>
->>>>>>> 134b67872364169724d6db616c84286e64a668d6
->>>>>>> dee962ec876ddf24ad2b1fb0e5c842c410f05b3c
       </TableView>
       <JFXTextField fx:id="searchTxt" layoutX="378.0" layoutY="64.0" promptText="Search" />
     </children>
