@@ -37,6 +37,7 @@ import org.xml.sax.SAXException;
  */
 public class MainWindowController implements Initializable {
 
+    String[] acceptetFiles= new String[1];
     List<File> files;
     @FXML
     private Label taskXRun;
@@ -56,13 +57,8 @@ public class MainWindowController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        menuBar.setId("MenuBar");
-        xmlToJSON hey = new xmlToJSON();
-        try {
-            hey.main();
-        } catch (JSONException ex) {
-            Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        menuBar.setId("MenuBar");
+       
     }
 
     private void importDataClick(MouseEvent event) {
@@ -75,7 +71,7 @@ public class MainWindowController implements Initializable {
         fileChooser.setTitle("Open Image File");
         fileChooser.setInitialDirectory(new File("..."));
         files = fileChooser.showOpenMultipleDialog(new Stage());
-
+      
         for (int i = 0; i < files.size(); i++) {
             ReadingXLSX XLSX = new ReadingXLSX(files.get(i).getAbsolutePath());
             XLSX.allRows();
@@ -108,6 +104,10 @@ public class MainWindowController implements Initializable {
         Stage stage = (Stage) taskField.getScene().getWindow();
         stage.toFront();
 
+    }
+
+    @FXML
+    private void saveData(ActionEvent event) {
     }
 
 }
