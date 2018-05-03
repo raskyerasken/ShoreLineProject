@@ -45,7 +45,6 @@ public class DataBaseUpdateLog
             {
                 throw new SQLException("Username, adjustments and date not added");
             }
-            
         } 
         
         catch (SQLServerException ex) 

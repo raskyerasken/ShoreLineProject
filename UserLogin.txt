@@ -19,3 +19,11 @@ The user kris logged in.    Date: 2018/05/03 01:41:21
 The user kris logged in.    Date: 2018/05/03 01:41:28
 The user kris logged in.    Date: 2018/05/03 01:41:40
 >>>>>>> 3c2fc543d5322bef4014d6c495147b35ffd425b7
+The user Jacob logged in.    Date: 2018/05/03 11:45:47
+The user kasper logged in.    Date: 2018/05/03 11:46:22
+The user kris logged in.    Date: 2018/05/03 11:49:08
+The user kris logged in.    Date: 2018/05/03 11:49:49
+The user kris logged in.    Date: 2018/05/03 11:53:42
+The user kasper logged in.    Date: 2018/05/03 12:20:37
+The user kasper logged in.    Date: 2018/05/03 12:21:49
+The user kasper logged in.    Date: 2018/05/03 12:44:48

@@ -25,7 +25,7 @@ public class UpdateLogViewModel
     
     UpdateLog ul = new UpdateLog();
     
-    List<UpdateLog> getAllLogUpdates() throws SQLException
+    ObservableList<UpdateLog> getAllLogUpdates() throws SQLException
     {
         genreToMovies();
         return updateLogToList;
@@ -36,12 +36,6 @@ public class UpdateLogViewModel
         updateLogToList.clear();
         for (UpdateLog updateLog : bllManagerUL.getAllUpdateLogsToList()) 
         {
-            String user = "";
-//            for (CatMovieBE genre  : bllManager.getMoviesGenre(privateMovieCollection.getTitle())) 
-//            {
-//                genrer=genrer+genre.getCategoryName()+",";
-//            }
-            ul.setUsername(user);
             updateLogToList.add(updateLog);
         }
     }
