@@ -3,9 +3,8 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXListView?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -13,36 +12,41 @@
 <AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="571.0" stylesheets="@CSSShoreLines.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.MainWindowController">
     <children>
       <Label fx:id="taskXRun" layoutX="238.0" layoutY="351.0" text="Task X Running" />
-      <MenuBar fx:id="menuBar" prefHeight="29.0" prefWidth="576.0" stylesheets="@CSSShoreLines.css">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-      <JFXButton layoutX="3.0" layoutY="107.0" onAction="#importData" prefHeight="27.0" prefWidth="96.0" text="Import Data" />
+      <JFXButton layoutX="107.0" layoutY="50.0" onAction="#importData" prefHeight="27.0" prefWidth="96.0" text="Import Data" />
       <JFXListView fx:id="taskField" layoutX="111.0" layoutY="100.0" prefHeight="246.0" prefWidth="444.0" />
-      <JFXButton layoutX="-2.0" layoutY="138.0" onAction="#convertData" prefHeight="27.0" prefWidth="105.0" text="Convert Data" />
-      <JFXButton layoutX="5.0" layoutY="165.0" onAction="#exportData" text="Export Data" />
+      <JFXButton layoutX="275.0" layoutY="50.0" onAction="#convertData" prefHeight="27.0" prefWidth="105.0" text="Convert Data" />
+      <JFXButton layoutX="390.0" layoutY="50.0" onAction="#saveData" text="Save File" />
       <JFXButton layoutX="155.0" layoutY="369.0" onAction="#startTask" text="Start Task" />
       <JFXButton layoutX="238.0" layoutY="369.0" onAction="#pauseTask" text="Pause Task" />
       <JFXButton layoutX="335.0" layoutY="369.0" onAction="#stopTask" text="Stop" />
-      <ImageView fitHeight="67.0" fitWidth="325.0" layoutX="6.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="67.0" fitWidth="325.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Image/ShoreLineLogo.jpg" />
          </image>
       </ImageView>
+      <TabPane layoutX="293.0" layoutY="-3.0" prefHeight="35.0" prefWidth="279.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Import">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+            <Tab text="Export">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+            <Tab text="Custom Data">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+            <Tab text="Log">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
     </children>
 </AnchorPane>
