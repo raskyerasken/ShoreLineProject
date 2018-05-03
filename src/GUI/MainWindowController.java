@@ -43,7 +43,6 @@ public class MainWindowController implements Initializable {
     private Label taskXRun;
     @FXML
     private ListView<?> taskField;
-    @FXML
     private MenuBar menuBar;
 
     public String selectedDocument = "C:\\Users\\jacob\\Desktop\\Import_data.xlsx";
@@ -58,13 +57,8 @@ public class MainWindowController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        menuBar.setId("MenuBar");
-        xmlToJSON hey = new xmlToJSON();
-        try {
-            hey.main();
-        } catch (JSONException ex) {
-            Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        menuBar.setId("MenuBar");
+       
     }
 
     private void importDataClick(MouseEvent event) {
@@ -77,11 +71,7 @@ public class MainWindowController implements Initializable {
         fileChooser.setTitle("Open Image File");
         fileChooser.setInitialDirectory(new File("..."));
         files = fileChooser.showOpenMultipleDialog(new Stage());
-        for (File file : files) {
-            for (String acceptetFile : acceptetFiles) {
-                
-            }
-        }
+      
         for (int i = 0; i < files.size(); i++) {
             ReadingXLSX XLSX = new ReadingXLSX(files.get(i).getAbsolutePath());
             XLSX.allRows();
@@ -97,9 +87,6 @@ public class MainWindowController implements Initializable {
 
     }
 
-    @FXML
-    private void exportData(ActionEvent event) {
-    }
 
     @FXML
     private void startTask(ActionEvent event) {
@@ -117,6 +104,10 @@ public class MainWindowController implements Initializable {
         Stage stage = (Stage) taskField.getScene().getWindow();
         stage.toFront();
 
+    }
+
+    @FXML
+    private void saveData(ActionEvent event) {
     }
 
 }
