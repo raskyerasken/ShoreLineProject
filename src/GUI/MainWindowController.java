@@ -42,7 +42,6 @@ public class MainWindowController implements Initializable {
     private Label taskXRun;
     @FXML
     private ListView<?> taskField;
-    @FXML
     private MenuBar menuBar;
 
     public String selectedDocument = "C:\\Users\\jacob\\Desktop\\Import_data.xlsx";
@@ -71,7 +70,7 @@ public class MainWindowController implements Initializable {
     }
 
     @FXML
-    private void importData(ActionEvent event) throws SAXException, IOException, ParseException {
+    private void importData(ActionEvent event) throws SAXException, IOException, ParseException, IllegalArgumentException, IllegalAccessException {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Image File");
         fileChooser.setInitialDirectory(new File("..."));
@@ -92,9 +91,6 @@ public class MainWindowController implements Initializable {
 
     }
 
-    @FXML
-    private void exportData(ActionEvent event) {
-    }
 
     @FXML
     private void startTask(ActionEvent event) {

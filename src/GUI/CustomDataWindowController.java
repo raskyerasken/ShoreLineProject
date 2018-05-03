@@ -5,33 +5,21 @@
  */
 package GUI;
 
-import com.jfoenix.controls.JFXListView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 
 /**
  *
  * @author kasper
  */
-public class ExportWindowController {
+public class CustomDataWindowController {
 
     @FXML
     private Label taskXRun;
     @FXML
-    private JFXListView<?> taskField;
-
-    @FXML
-    private void importData(ActionEvent event) {
-    }
-
-    @FXML
-    private void convertData(ActionEvent event) {
-    }
-
-    @FXML
-    private void saveData(ActionEvent event) {
-    }
+    private ListView<?> CustomDataSelect;
 
     @FXML
     private void startTask(ActionEvent event) {
