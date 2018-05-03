@@ -43,7 +43,6 @@ public class MainWindowController implements Initializable {
     private Label taskXRun;
     @FXML
     private ListView<?> taskField;
-    private MenuBar menuBar;
 
     public String selectedDocument = "C:\\Users\\jacob\\Desktop\\Import_data.xlsx";
 
