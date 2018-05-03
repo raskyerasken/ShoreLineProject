@@ -124,7 +124,8 @@ List<File> filesAcceptet ;
     private void stopTask(ActionEvent event) {
     }
 
-    void stageToFront() {
+    void stageToFront() 
+    {
         Stage stage = (Stage) taskField.getScene().getWindow();
         stage.toFront();
 
@@ -159,9 +160,17 @@ List<File> filesAcceptet ;
     }
 
     @FXML
+<<<<<<< HEAD
+    private void exportMenuSelect(Event event) throws IOException 
+    {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/ExportWindow.fxml"));
+        importWindow.getChildren().setAll(pane);
+
+=======
     private void exportMenuSelect(Event event) throws IOException {
          AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/ExportWindow.fxml"));
                 importWindow.getChildren().setAll(pane);
+>>>>>>> 8cc551688f4541f74b994b6f891bcf4c07a46465
     }
 
     @FXML
@@ -178,12 +187,16 @@ List<File> filesAcceptet ;
         Parent root = fxLoader.load();
         Scene scene = new Scene(root);
         newStage.setScene(scene);
+        newStage.setResizable(false);
         newStage.showAndWait();
     }
+<<<<<<< HEAD
+=======
 
     @FXML
     private void adminMenuSelect(ActionEvent event) {
     }
 
 
+>>>>>>> 8cc551688f4541f74b994b6f891bcf4c07a46465
 }

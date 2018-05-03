@@ -10,6 +10,33 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
+<<<<<<< HEAD
+<AnchorPane id="AnchorPane" prefHeight="687.0" prefWidth="886.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.LogViewController">
+   <children>
+      <MenuBar prefHeight="26.0" prefWidth="886.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#closeMenu" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#deleteItem" text="Delete" />
+
+                  <MenuItem mnemonicParsing="false" onAction="#edit" text="Edit" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <JFXTextField fx:id="searchTxt" layoutX="72.0" layoutY="98.0" promptText="Search for User or Date" />
+      <TableView fx:id="LogView" layoutX="72.0" layoutY="143.0" prefHeight="511.0" prefWidth="741.0">
+        <columns>
+          <TableColumn fx:id="userNameTable" prefWidth="128.800048828125" text="User Name" />
+          <TableColumn fx:id="timeTable" prefWidth="140.8000030517578" text="Time" />
+            <TableColumn fx:id="adjustment" prefWidth="469.5999755859375" text="What did this user do? (Not implemented)" />
+        </columns>
+=======
 <AnchorPane id="AnchorPane" fx:id="exportWindow" prefHeight="452.0" prefWidth="571.0" stylesheets="@CSSShoreLines.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ExportWindowController">
     <children>
       <Label fx:id="taskXRun" layoutX="273.0" layoutY="392.0" text="Task X Running" />
@@ -33,6 +60,7 @@
             <TableColumn fx:id="timeTable" prefWidth="95.0" text="Time" />
             <TableColumn fx:id="adjustment" maxWidth="500.0" prefWidth="222.0" text="Action (Not implemented)" />
          </columns>
+>>>>>>> 8cc551688f4541f74b994b6f891bcf4c07a46465
       </TableView>
       <JFXTextField fx:id="searchTxt" layoutX="378.0" layoutY="64.0" promptText="Search" />
     </children>
