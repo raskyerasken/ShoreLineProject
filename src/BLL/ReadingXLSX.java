@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -98,10 +99,19 @@ public class ReadingXLSX {
 
     }
 
-    public List<JSON> allJSONObjectInFile() throws ParseException {
+    public List<JSON> allJSONObjectInFile() throws ParseException, IllegalArgumentException, IllegalAccessException {
         List<JSON> JSONList = new ArrayList<>();
         for (int i = 1; i < row; i++) {
-          
+         
+           JSON newJSON = setJSON(i);
+           
+           JSONList.add(newJSON);
+        }
+        return JSONList; 
+    }
+    private JSON setJSON(int i) throws ParseException
+    {
+     
             JSON newJSON= new JSON();
             newJSON.setSiteName("");
             newJSON.setAssetSerialNumber(0);
@@ -140,8 +150,7 @@ public class ReadingXLSX {
            planning.setEstimatedTime(Double.parseDouble(
                     firstSheet.getRow(i).getCell( ColumNames.indexOf("Normal duration")).toString()));
         newJSON.setPlanning(planning);
-           JSONList.add(newJSON);
-        }
-        return JSONList; 
+        return newJSON;
     }
+    
 }

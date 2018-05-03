@@ -19,6 +19,7 @@ The user kris logged in.    Date: 2018/05/03 01:41:21
 The user kris logged in.    Date: 2018/05/03 01:41:28
 The user kris logged in.    Date: 2018/05/03 01:41:40
 >>>>>>> 3c2fc543d5322bef4014d6c495147b35ffd425b7
+<<<<<<< HEAD
 The user Jacob logged in.    Date: 2018/05/03 11:45:47
 The user kasper logged in.    Date: 2018/05/03 11:46:22
 The user kris logged in.    Date: 2018/05/03 11:49:08
@@ -27,3 +28,36 @@ The user kris logged in.    Date: 2018/05/03 11:53:42
 The user kasper logged in.    Date: 2018/05/03 12:20:37
 The user kasper logged in.    Date: 2018/05/03 12:21:49
 The user kasper logged in.    Date: 2018/05/03 12:44:48
+=======
+<<<<<<< HEAD
+The user kris logged in.    Date: 2018/05/03 12:40:43
+=======
+The user kris logged in.    Date: 2018/05/03 11:19:42
+The user kris logged in.    Date: 2018/05/03 12:15:41
+The user kris logged in.    Date: 2018/05/03 12:26:01
+<<<<<<< HEAD
+The user kris logged in.    Date: 2018/05/03 12:37:22
+The user kris logged in.    Date: 2018/05/03 12:37:53
+The user kris logged in.    Date: 2018/05/03 12:38:24
+=======
+>>>>>>> 3db6e7bd5687c36c642ce11bb0da376497fa9f4a
+<<<<<<< HEAD
+The user kris logged in.    Date: 2018/05/03 12:42:09
+The user kasper logged in.    Date: 2018/05/03 12:44:09
+The user kasper logged in.    Date: 2018/05/03 12:45:44
+The user kasper logged in.    Date: 2018/05/03 12:49:34
+The user kasper logged in.    Date: 2018/05/03 12:49:34
+=======
+>>>>>>> db623d6885c727dd2e04f79027b395c8e10526a8
+The user kris logged in.    Date: 2018/05/03 12:47:47
+The user kris logged in.    Date: 2018/05/03 12:48:29
+The user kris logged in.    Date: 2018/05/03 12:49:22
+The user kris logged in.    Date: 2018/05/03 12:49:43
+>>>>>>> 280da824f9910a4a27aa52118c3c027a627a503b
+The user kasper logged in.    Date: 2018/05/03 12:54:40
+The user kasper logged in.    Date: 2018/05/03 13:07:51
+The user kasper logged in.    Date: 2018/05/03 13:16:29
+The user kasper logged in.    Date: 2018/05/03 13:21:14
+The user kasper logged in.    Date: 2018/05/03 13:22:13
+The user kasper logged in.    Date: 2018/05/03 13:26:45
+>>>>>>> 37195888b30492076e54a5abac886dcdfb062d77
