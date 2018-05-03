@@ -9,7 +9,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="571.0" stylesheets="@CSSShoreLines.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ExportWindowController">
+<AnchorPane id="AnchorPane" fx:id="exportWindow" prefHeight="452.0" prefWidth="571.0" stylesheets="@CSSShoreLines.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ExportWindowController">
     <children>
       <Label fx:id="taskXRun" layoutX="238.0" layoutY="351.0" text="Task X Running" />
       <JFXButton layoutX="107.0" layoutY="50.0" onAction="#importData" prefHeight="27.0" prefWidth="96.0" text="Import Data" />
@@ -26,22 +26,22 @@
       </ImageView>
       <TabPane layoutX="293.0" prefHeight="35.0" prefWidth="279.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab text="Import">
+          <Tab onSelectionChanged="#importMenuSelect" text="Import">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
             </content>
           </Tab>
-            <Tab text="Export">
+            <Tab onSelectionChanged="#exportWindowSelect" text="Export">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                </content>
             </Tab>
-          <Tab text="Custom Data">
+          <Tab onSelectionChanged="#customDataMenuSelect" text="Custom Data">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
             </content>
           </Tab>
-            <Tab text="Log">
+            <Tab onSelectionChanged="#logMenuSelect" text="Log">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                </content>

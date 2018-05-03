@@ -6,9 +6,13 @@
 package GUI;
 
 import com.jfoenix.controls.JFXListView;
+import java.io.IOException;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 
 /**
  *
@@ -20,6 +24,8 @@ public class ExportWindowController {
     private Label taskXRun;
     @FXML
     private JFXListView<?> taskField;
+    @FXML
+    private AnchorPane exportWindow;
 
     @FXML
     private void importData(ActionEvent event) {
@@ -43,6 +49,31 @@ public class ExportWindowController {
 
     @FXML
     private void stopTask(ActionEvent event) {
+    }
+
+    @FXML
+    private void exportWindowSelect(Event event) throws IOException {
+                
+
+    }
+
+    @FXML
+    private void importMenuSelect(Event event) throws IOException {
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/ImportWindow.fxml"));
+            exportWindow.getChildren().setAll(pane);     
+    }
+
+    @FXML
+    private void customDataMenuSelect(Event event) throws IOException {
+           AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/CustomDataWindow.fxml"));
+                exportWindow.getChildren().setAll(pane);     
+    }
+
+    @FXML
+    private void logMenuSelect(Event event) throws IOException {
+        
+                AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/LogView.fxml"));
+                exportWindow.getChildren().setAll(pane);     
     }
     
 }
