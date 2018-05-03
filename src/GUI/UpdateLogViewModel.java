@@ -36,12 +36,12 @@ public class UpdateLogViewModel
         updateLogToList.clear();
         for (UpdateLog updateLog : bllManagerUL.getAllUpdateLogsToList()) 
         {
-            String genrer="";
+            String user = "";
 //            for (CatMovieBE genre  : bllManager.getMoviesGenre(privateMovieCollection.getTitle())) 
 //            {
 //                genrer=genrer+genre.getCategoryName()+",";
 //            }
-//            privateMovieCollection.setCategoryName(genrer);
+            ul.setUsername(user);
             updateLogToList.add(updateLog);
         }
     }
