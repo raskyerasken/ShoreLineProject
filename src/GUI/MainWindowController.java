@@ -96,16 +96,15 @@ List<File> filesAcceptet = new ArrayList<>();
             }
             
         }
-        if(!filesAcceptet.isEmpty()){
-//        for (int i = 0; i < filesAcceptet.size(); i++) {
-//            ReadingXLSX XLSX = new ReadingXLSX(filesAcceptet.get(i).getAbsolutePath());
-//            XLSX.allRows();
-//            XLSX.getColumsNames();
-//            CreateJSONFile createJSON = new CreateJSONFile();
-//            createJSON.createJSON(XLSX.allJSONObjectInFile(), filesAcceptet.get(i).getName());
-//        }
-System.out.println("hey");
-    }
+      
+        for (int i = 0; i < filesAcceptet.size(); i++) {
+            ReadingXLSX XLSX = new ReadingXLSX(filesAcceptet.get(i).getAbsolutePath());
+            XLSX.allRows();
+            XLSX.getColumsNames();
+            CreateJSONFile createJSON = new CreateJSONFile();
+            createJSON.createJSON(XLSX.allJSONObjectInFile(), filesAcceptet.get(i).getName());
+        }
+
 
     }
 
