@@ -22,7 +22,7 @@
             <Image url="@../Image/ShoreLineLogo.jpg" />
          </image>
       </ImageView>
-      <Button layoutY="100.0" mnemonicParsing="false" onAction="#importMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Import" />
+      <Button layoutY="100.0" mnemonicParsing="false" onAction="#importMenuSelect" prefHeight="67.0" prefWidth="96.0" style="-fx-background-color: ;" text="Import" />
       <Button layoutY="167.0" mnemonicParsing="false" onAction="#exportMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Export" />
       <Button layoutY="234.0" mnemonicParsing="false" onAction="#customDataMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Custom &#10;   Data" />
       <Button layoutY="301.0" mnemonicParsing="false" onAction="#logMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Log" />
