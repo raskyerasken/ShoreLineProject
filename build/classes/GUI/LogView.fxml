@@ -10,8 +10,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane id="AnchorPane" fx:id="exportWindow" prefHeight="452.0" prefWidth="571.0" stylesheets="@CSSShoreLines.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.LogViewController">
+<AnchorPane id="AnchorPane" fx:id="exportWindow" prefHeight="452.0" prefWidth="571.0" stylesheets="@CSSShoreLines.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.LogViewController">
     <children>
       <Label fx:id="taskXRun" layoutX="273.0" layoutY="392.0" text="Task X Running" />
       <JFXButton layoutX="107.0" layoutY="50.0" onAction="#importData" prefHeight="27.0" prefWidth="96.0" text="Import Data" />
@@ -30,9 +29,9 @@
       <Button layoutY="367.0" mnemonicParsing="false" onAction="#adminMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Admin" />
       <TableView fx:id="LogView" layoutX="126.0" layoutY="100.0" prefHeight="232.0" prefWidth="403.0">
          <columns>
-            <TableColumn fx:id="userNameTable" prefWidth="85.0" text="User Name" />
-            <TableColumn fx:id="timeTable" prefWidth="95.0" text="Time" />
-            <TableColumn fx:id="adjustment" maxWidth="500.0" prefWidth="222.0" text="Action (Not implemented)" />
+            <TableColumn fx:id="userNameTable" prefWidth="100.00000762939453" text="User Name" />
+            <TableColumn fx:id="timeTable" prefWidth="147.20001220703125" text="Time" />
+            <TableColumn fx:id="adjustment" maxWidth="500.0" prefWidth="156.00003051757812" text="Action (Not implemented)" />
          </columns>
       </TableView>
       <JFXTextField fx:id="searchTxt" layoutX="378.0" layoutY="64.0" promptText="Search" />

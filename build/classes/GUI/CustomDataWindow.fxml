@@ -28,7 +28,7 @@
       <TreeView layoutX="355.0" layoutY="85.0" prefHeight="235.0" prefWidth="155.0" />
       <Button layoutY="100.0" mnemonicParsing="false" onAction="#importMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Import" />
       <Button layoutY="167.0" mnemonicParsing="false" onAction="#exportMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Export" />
-      <Button layoutY="234.0" mnemonicParsing="false" onAction="#customDataMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Custom &#10;   Data" />
+      <Button fx:id="btnCustumData" layoutY="234.0" mnemonicParsing="false" onAction="#customDataMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Custom &#10;   Data" />
       <Button layoutY="300.0" mnemonicParsing="false" onAction="#logMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Log" />
       <Button layoutY="367.0" mnemonicParsing="false" onAction="#adminMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Admin" />
     </children>

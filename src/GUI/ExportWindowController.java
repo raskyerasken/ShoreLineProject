@@ -8,10 +8,14 @@ package GUI;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -21,22 +25,16 @@ import javafx.scene.layout.AnchorPane;
  *
  * @author kasper
  */
-public class ExportWindowController {
+public class ExportWindowController implements Initializable{
 
     @FXML
     private Label taskXRun;
     @FXML
     private AnchorPane exportWindow;
     @FXML
-    private TableView<?> LogView;
+    private JFXListView<?> taskField;
     @FXML
-    private TableColumn<?, ?> userNameTable;
-    @FXML
-    private TableColumn<?, ?> timeTable;
-    @FXML
-    private TableColumn<?, ?> adjustment;
-    @FXML
-    private JFXTextField searchTxt;
+    private Button btnExport;
 
     @FXML
     private void importData(ActionEvent event) {
@@ -98,5 +96,17 @@ public class ExportWindowController {
     @FXML
     private void adminMenuSelect(ActionEvent event) {
     }
+
+    @FXML
+    private void convertData(ActionEvent event) {
+    }
+
+    @FXML
+    private void saveData(ActionEvent event) {
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+    btnExport.setStyle("-fx-background-color: #588fe8;");}
     
 }

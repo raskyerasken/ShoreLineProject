@@ -6,6 +6,7 @@
 package GUI;
 
 import BE.JSON;
+import BE.UpdateLog;
 import BLL.CreateJSONFile;
 import BLL.ReadingXLSX;
 import GUI.TEST.XmlToJava;
@@ -20,6 +21,8 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -27,6 +30,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuBar;
@@ -44,17 +48,20 @@ import org.xml.sax.SAXException;
  * @author Jason and Freddy Kruger
  */
 public class MainWindowController implements Initializable {
-boolean acceptfile=false;
-    String[] acceptetFiles= {".xlsx"};
+
+    boolean acceptfile = false;
+    String[] acceptetFiles = {".xlsx"};
     List<File> files;
     @FXML
     private Label taskXRun;
     @FXML
-    private ListView<?> taskField;
+    private ListView<File> taskField;
 
     public String selectedDocument = "C:\\Users\\jacob\\Desktop\\Import_data.xlsx";
     @FXML
     private AnchorPane importWindow;
+    @FXML
+    private Button importbtn;
 
     private void activateXmlReader() {
 
@@ -66,37 +73,38 @@ boolean acceptfile=false;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       
+importbtn.setStyle("-fx-background-color: #588fe8;");
     }
 
     private void importDataClick(MouseEvent event) {
 
     }
-List<File> filesAcceptet = new ArrayList<>();
+     private final ObservableList<File> filesAcceptet 
+            = FXCollections.observableArrayList();
+
     @FXML
     private void importData(ActionEvent event) throws SAXException, IOException, ParseException, IllegalArgumentException, IllegalAccessException {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Image File");
         fileChooser.setInitialDirectory(new File("..."));
         files = fileChooser.showOpenMultipleDialog(new Stage());
-        
+
         for (File file : files) {
             for (String acceptetFile : acceptetFiles) {
-                if(file.getAbsolutePath().endsWith(acceptetFile))
-                {
+                if (file.getAbsolutePath().endsWith(acceptetFile)) {
                     filesAcceptet.add(file);
-                    acceptfile=true;
-                    
+                    acceptfile = true;
+
                 }
                 if (!acceptfile) {
-                    
-    AlertWindow alertWindow= 
-            new AlertWindow("File not support yet", null, "This file "+file.getAbsolutePath()+" can be added");
+
+                    AlertWindow alertWindow
+                            = new AlertWindow("File not support yet", null, "This file " + file.getAbsolutePath() + " can be added");
                 }
             }
-            
+            taskField.setItems((ObservableList<File>) filesAcceptet);
         }
-      
+
         for (int i = 0; i < filesAcceptet.size(); i++) {
             ReadingXLSX XLSX = new ReadingXLSX(filesAcceptet.get(i).getAbsolutePath());
             XLSX.allRows();
@@ -105,10 +113,7 @@ List<File> filesAcceptet = new ArrayList<>();
             createJSON.createJSON(XLSX.allJSONObjectInFile(), filesAcceptet.get(i).getName());
         }
 
-
     }
-
-
 
     @FXML
     private void startTask(ActionEvent event) {
@@ -122,8 +127,7 @@ List<File> filesAcceptet = new ArrayList<>();
     private void stopTask(ActionEvent event) {
     }
 
-    void stageToFront() 
-    {
+    void stageToFront() {
         Stage stage = (Stage) taskField.getScene().getWindow();
         stage.toFront();
 
@@ -151,15 +155,13 @@ List<File> filesAcceptet = new ArrayList<>();
 //                importWindow.getChildren().setAll(pane);
 //    }
 //    
-
     @FXML
     private void importMenuSelect(Event event) throws IOException {
-         
+
     }
 
     @FXML
-    private void exportMenuSelect(Event event) throws IOException 
-    {
+    private void exportMenuSelect(Event event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/ExportWindow.fxml"));
         importWindow.getChildren().setAll(pane);
 
@@ -167,13 +169,12 @@ List<File> filesAcceptet = new ArrayList<>();
 
     @FXML
     private void customDataMenuSelect(Event event) throws IOException {
-                AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/CustomDataWindow.fxml"));
-                importWindow.getChildren().setAll(pane);
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/CustomDataWindow.fxml"));
+        importWindow.getChildren().setAll(pane);
     }
-    
-   @FXML
-    private void logMenuSelect(Event event) throws IOException 
-    {
+
+    @FXML
+    private void logMenuSelect(Event event) throws IOException {
         Stage newStage = new Stage();
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("LogView.fxml"));
         Parent root = fxLoader.load();
@@ -183,10 +184,8 @@ List<File> filesAcceptet = new ArrayList<>();
         newStage.showAndWait();
     }
 
-
     @FXML
     private void adminMenuSelect(ActionEvent event) {
     }
-
 
 }
