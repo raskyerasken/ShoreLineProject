@@ -6,10 +6,14 @@
 package GUI;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
@@ -18,7 +22,7 @@ import javafx.scene.layout.AnchorPane;
  *
  * @author kasper
  */
-public class CustomDataWindowController {
+public class CustomDataWindowController  implements Initializable{
 
     @FXML
     private Label taskXRun;
@@ -26,6 +30,8 @@ public class CustomDataWindowController {
     private ListView<?> CustomDataSelect;
     @FXML
     private AnchorPane customDataWindow;
+    @FXML
+    private Button btnCustumData;
 
     @FXML
     private void startTask(ActionEvent event) {
@@ -69,7 +75,7 @@ public class CustomDataWindowController {
 
     @FXML
     private void importMenuSelect(Event event) throws IOException {
-              AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/ImportWindow.fxml"));
+              AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/MainWindow.fxml"));
                 customDataWindow.getChildren().setAll(pane);
     }
 
@@ -89,5 +95,10 @@ public class CustomDataWindowController {
 
     @FXML
     private void adminMenuSelect(ActionEvent event) {
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+    btnCustumData.setStyle("-fx-background-color: #588fe8;");
     }
 }
