@@ -71,6 +71,7 @@ public class DataBaseUpdateLog
                 UpdateLog ul = new UpdateLog();
                 ul.setUsername(rs.getString("Username"));
                 ul.setDatelog(rs.getTimestamp("UploadDate"));
+                ul.setAdjustment(rs.getString("Adjustment"));
                 AllupdateLog.add(ul);
             }
             

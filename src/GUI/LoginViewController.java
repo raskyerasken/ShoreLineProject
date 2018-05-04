@@ -50,9 +50,9 @@ public class LoginViewController implements Initializable
 {
     
     @FXML
-    private JFXTextField userNameID;
+     JFXTextField userNameID;
     @FXML
-    private JFXPasswordField userPassword;
+    public JFXPasswordField userPassword;
     @FXML
     private JFXCheckBox rememberUser;
     BLL.BLLManagerUserLogin ul = new BLLManagerUserLogin();
@@ -78,13 +78,13 @@ public class LoginViewController implements Initializable
         userLogin.setUserName(userNameID.getText());
         
         //java.util.Date utilDate = new java.util.Date();
-        Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
-        java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
-        
-        updateLog.setUsername(userNameID.getText());
-        updateLog.setAdjustment(userNameID.getText());
-        updateLog.setDatelog(sqlDate);
-        up.setUpdateLog(updateLog);
+//        Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
+//        java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
+//        
+//        updateLog.setUsername(userNameID.getText());
+//        updateLog.setAdjustment(userNameID.getText());
+//        updateLog.setDatelog(sqlDate);
+//        up.setUpdateLog(updateLog);
         
         if (ul.getAccess(userLogin)) 
         {

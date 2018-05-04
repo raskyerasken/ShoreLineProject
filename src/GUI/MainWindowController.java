@@ -6,6 +6,8 @@
 package GUI;
 
 import BE.JSON;
+import BE.UpdateLog;
+import BLL.BLLManagerUpdateLog;
 import BLL.CreateJSONFile;
 import BLL.ReadingXLSX;
 import GUI.TEST.XmlToJava;
@@ -14,8 +16,11 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
+import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -44,8 +49,10 @@ import org.xml.sax.SAXException;
  * @author Jason and Freddy Kruger
  */
 public class MainWindowController implements Initializable {
-boolean acceptfile=false;
-    String[] acceptetFiles= {".xlsx"};
+    
+    LoginViewController loginID;
+    boolean acceptfile = false;
+    String[] acceptetFiles = {".xlsx"};
     List<File> files;
     @FXML
     private Label taskXRun;
@@ -66,37 +73,49 @@ boolean acceptfile=false;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       
+
     }
 
     private void importDataClick(MouseEvent event) {
 
     }
-List<File> filesAcceptet = new ArrayList<>();
+    List<File> filesAcceptet = new ArrayList<>();
+
     @FXML
-    private void importData(ActionEvent event) throws SAXException, IOException, ParseException, IllegalArgumentException, IllegalAccessException {
+    private void importData(ActionEvent event) throws SAXException, IOException, ParseException, IllegalArgumentException, IllegalAccessException, SQLException {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Image File");
         fileChooser.setInitialDirectory(new File("..."));
         files = fileChooser.showOpenMultipleDialog(new Stage());
+        UpdateLog updateLog = new UpdateLog();
+        BLL.BLLManagerUpdateLog up = new BLLManagerUpdateLog();
         
         for (File file : files) {
             for (String acceptetFile : acceptetFiles) {
-                if(file.getAbsolutePath().endsWith(acceptetFile))
-                {
+                if (file.getAbsolutePath().endsWith(acceptetFile)) {
                     filesAcceptet.add(file);
-                    acceptfile=true;
+                    acceptfile = true;
                     
+                    Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
+                    java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
+        
+                    updateLog.setUsername(loginID.userNameID.getText());
+                    updateLog.setAdjustment("Exported files " + files);
+                    updateLog.setDatelog(sqlDate);
+                    up.setUpdateLog(updateLog);
+                    
+                    System.out.println("writes");
+
                 }
                 if (!acceptfile) {
-                    
-    AlertWindow alertWindow= 
-            new AlertWindow("File not support yet", null, "This file "+file.getAbsolutePath()+" can be added");
+
+                    AlertWindow alertWindow
+                            = new AlertWindow("File not support yet", null, "This file " + file.getAbsolutePath() + " can be added");
                 }
             }
-            
+
         }
-      
+
         for (int i = 0; i < filesAcceptet.size(); i++) {
             ReadingXLSX XLSX = new ReadingXLSX(filesAcceptet.get(i).getAbsolutePath());
             XLSX.allRows();
@@ -105,10 +124,7 @@ List<File> filesAcceptet = new ArrayList<>();
             createJSON.createJSON(XLSX.allJSONObjectInFile(), filesAcceptet.get(i).getName());
         }
 
-
     }
-
-
 
     @FXML
     private void startTask(ActionEvent event) {
@@ -122,8 +138,7 @@ List<File> filesAcceptet = new ArrayList<>();
     private void stopTask(ActionEvent event) {
     }
 
-    void stageToFront() 
-    {
+    void stageToFront() {
         Stage stage = (Stage) taskField.getScene().getWindow();
         stage.toFront();
 
@@ -151,15 +166,13 @@ List<File> filesAcceptet = new ArrayList<>();
 //                importWindow.getChildren().setAll(pane);
 //    }
 //    
-
     @FXML
     private void importMenuSelect(Event event) throws IOException {
-         
+
     }
 
     @FXML
-    private void exportMenuSelect(Event event) throws IOException 
-    {
+    private void exportMenuSelect(Event event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/ExportWindow.fxml"));
         importWindow.getChildren().setAll(pane);
 
@@ -167,13 +180,12 @@ List<File> filesAcceptet = new ArrayList<>();
 
     @FXML
     private void customDataMenuSelect(Event event) throws IOException {
-                AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/CustomDataWindow.fxml"));
-                importWindow.getChildren().setAll(pane);
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/CustomDataWindow.fxml"));
+        importWindow.getChildren().setAll(pane);
     }
-    
-   @FXML
-    private void logMenuSelect(Event event) throws IOException 
-    {
+
+    @FXML
+    private void logMenuSelect(Event event) throws IOException {
         Stage newStage = new Stage();
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("LogView.fxml"));
         Parent root = fxLoader.load();
@@ -183,10 +195,8 @@ List<File> filesAcceptet = new ArrayList<>();
         newStage.showAndWait();
     }
 
-
     @FXML
     private void adminMenuSelect(ActionEvent event) {
     }
-
 
 }
