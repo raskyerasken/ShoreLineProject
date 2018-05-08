@@ -49,6 +49,7 @@ import javafx.stage.Stage;
 public class LoginViewController implements Initializable 
 {
     
+    FilesConvertionModel fcModel = new FilesConvertionModel();
     @FXML
      JFXTextField userNameID;
     @FXML
@@ -117,6 +118,7 @@ public class LoginViewController implements Initializable
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
         Parent root = fxLoader.load();
         MainWindowController controller = fxLoader.getController();
+        controller.setModel(fcModel);
         Scene scene = new Scene(root);
         newStage.setResizable(false);
         newStage.setScene(scene);

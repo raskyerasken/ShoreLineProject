@@ -5,8 +5,11 @@
  */
 package GUI;
 
+import BLL.CreateJSONFile;
+import BLL.ReadingXLSX;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,6 +18,7 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -32,9 +36,10 @@ public class ExportWindowController implements Initializable{
     @FXML
     private AnchorPane exportWindow;
     @FXML
-    private JFXListView<?> taskField;
+    private JFXListView<File> taskField;
     @FXML
     private Button btnExport;
+    private FilesConvertionModel fcModel;
 
     @FXML
     private void importData(ActionEvent event) {
@@ -75,14 +80,23 @@ public class ExportWindowController implements Initializable{
 
     @FXML
     private void importMenuSelect(Event event) throws IOException {
-         AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/MainWindow.fxml"));
-            exportWindow.getChildren().setAll(pane);    
+    
+            
+             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/MainWindow.fxml"));
+        Parent root = fxLoader.load();
+        MainWindowController controller = fxLoader.getController();
+        controller.setmodel(fcModel);
+        exportWindow.getChildren().setAll(root);
     }
 
     @FXML
     private void customDataMenuSelect(Event event) throws IOException {
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/CustomDataWindow.fxml"));
-                exportWindow.getChildren().setAll(pane); 
+   
+             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/CustomDataWindow.fxml"));
+        Parent root = fxLoader.load();
+        CustomDataWindowController controller = fxLoader.getController();
+        controller.setmodel(fcModel);
+        exportWindow.getChildren().setAll(root);
     }
 
     @FXML
@@ -99,6 +113,14 @@ public class ExportWindowController implements Initializable{
 
     @FXML
     private void convertData(ActionEvent event) {
+        
+//        for (int i = 0; i < filesAcceptet.size(); i++) {
+//            ReadingXLSX XLSX = new ReadingXLSX(filesAcceptet.get(i).getAbsolutePath());
+//            XLSX.allRows();
+//            XLSX.getColumsNames();
+//            CreateJSONFile createJSON = new CreateJSONFile();
+//            createJSON.createJSON(XLSX.allJSONObjectInFile(), filesAcceptet.get(i).getName());
+//        }
     }
 
     @FXML
@@ -107,6 +129,13 @@ public class ExportWindowController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-    btnExport.setStyle("-fx-background-color: #588fe8;");}
+    btnExport.setStyle("-fx-background-color: #588fe8;");
+    
+    }
+
+
+    void setmodel(FilesConvertionModel fcModel) {
+     this.fcModel=fcModel;
+    taskField.setItems(fcModel.getFiles());}
     
 }

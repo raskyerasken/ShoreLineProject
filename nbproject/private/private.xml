@@ -3,10 +3,38 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/W:/Skóli/ShoreLineProject/src/BE/UpdateLog.java</file>
-            <file>file:/W:/Skóli/ShoreLineProject/src/GUI/LogViewController.java</file>
-            <file>file:/W:/Skóli/ShoreLineProject/src/GUI/UpdateLogViewModel.java</file>
-            <file>file:/W:/Skóli/ShoreLineProject/src/Main/ShoreLine.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/GUI/TEST/ThreadDemo.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/GUI/LoginViewController.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/GUI/CustomDataWindowController.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/GUI/TEST/XmlToJava.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/GUI/TEST/xmlToJSON.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/GUI/LogView.fxml</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/GUI/FilesConvertionModel.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/GUI/TEST/DoesntWorkCheckForTipsToRealXMLClass.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/GUI/TEST/MyErrorHandler.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/Main/ShoreLine.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/BLL/BLLManagerUserLogin.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/GUI/AlertWindow.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/GUI/LoginView.fxml</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/BLL/ReadingXLSX.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/BLL/IConvertingToJSON.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/BE/UserLogin.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/DAL/DataBaseUserLogin.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/GUI/MainWindowController.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/GUI/LogViewController.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/GUI/UpdateLogViewModel.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/GUI/TEST/TestThread.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/GUI/AddUserViewController.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/BE/JSON.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/GUI/CSSShoreLines.css</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/BLL/XLSX.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/GUI/ExportWindowController.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/BE/Planning.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/GUI/MainWindow.fxml</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/BE/UpdateLog.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/DAL/DataBaseUpdateLog.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/BLL/CreateJSONFile.java</file>
+            <file>file:/C:/Users/jacob/Desktop/ShoreLineProject/src/BLL/BLLManagerUpdateLog.java</file>
         </group>
     </open-files>
 </project-private>

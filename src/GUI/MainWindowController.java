@@ -70,6 +70,7 @@ public class MainWindowController implements Initializable
     private Button importbtn;
     private final ObservableList<File> filesAcceptet
             = FXCollections.observableArrayList();
+    private FilesConvertionModel fcModel;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) 
@@ -102,16 +103,16 @@ public class MainWindowController implements Initializable
                 if (file.getAbsolutePath().endsWith(acceptetFile)) {
                     filesAcceptet.add(file);
                     acceptfile = true;
-                    
-                    Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
-                    java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
-        
-                    updateLog.setUsername(loginID.userNameID.getText());
-                    updateLog.setAdjustment("Exported files " + files);
-                    updateLog.setDatelog(sqlDate);
-                    up.setUpdateLog(updateLog);
-                    
-                    System.out.println("writes");
+//                    
+//                    Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
+//                    java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
+//        
+//                    updateLog.setUsername(loginID.userNameID.getText());
+//                    updateLog.setAdjustment("Exported files " + files);
+//                    updateLog.setDatelog(sqlDate);
+//                    up.setUpdateLog(updateLog);
+//                    
+//                    System.out.println("writes");
 
                 }
                 if (!acceptfile) {
@@ -120,7 +121,8 @@ public class MainWindowController implements Initializable
                             = new AlertWindow("File not support yet", null, "This file " + file.getAbsolutePath() + " can be added");
                 }
             }
-            taskField.setItems((ObservableList<File>) filesAcceptet);
+            fcModel.setFiles(filesAcceptet);
+     
         }
     }
 
@@ -171,15 +173,24 @@ public class MainWindowController implements Initializable
 
     @FXML
     private void exportMenuSelect(Event event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/ExportWindow.fxml"));
-        importWindow.getChildren().setAll(pane);
+        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/ExportWindow.fxml"));
+        Parent root = fxLoader.load();
+        ExportWindowController controller = fxLoader.getController();
+        controller.setmodel(fcModel);
+        importWindow.getChildren().setAll(root);
+
 
     }
 
     @FXML
     private void customDataMenuSelect(Event event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/CustomDataWindow.fxml"));
-        importWindow.getChildren().setAll(pane);
+     
+          FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/CustomDataWindow.fxml"));
+        Parent root = fxLoader.load();
+        CustomDataWindowController controller = fxLoader.getController();
+        controller.setmodel(fcModel);
+        importWindow.getChildren().setAll(root);
+        
     }
 
     @FXML
@@ -196,5 +207,16 @@ public class MainWindowController implements Initializable
     @FXML
     private void adminMenuSelect(ActionEvent event) {
     }
+
+    void setModel(FilesConvertionModel fcModel) {
+   this.fcModel=fcModel;
+    
+       taskField.setItems(fcModel.getFiles());
+    }
+
+    void setmodel(FilesConvertionModel fcModel) {
+      this.fcModel=fcModel;
+    
+       taskField.setItems(fcModel.getFiles());}
 
 }
