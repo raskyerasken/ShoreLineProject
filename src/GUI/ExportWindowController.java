@@ -13,6 +13,8 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -79,24 +81,36 @@ public class ExportWindowController implements Initializable{
 //    }
 
     @FXML
-    private void importMenuSelect(Event event) throws IOException {
+    private void importMenuSelect(Event event)  {
     
             
              FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/MainWindow.fxml"));
-        Parent root = fxLoader.load();
-        MainWindowController controller = fxLoader.getController();
+        Parent root;
+        try {
+            root = fxLoader.load();
+              MainWindowController controller = fxLoader.getController();
         controller.setmodel(fcModel);
         exportWindow.getChildren().setAll(root);
+        } catch (IOException ex) {
+              AlertWindow  alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
+        }
+      
     }
 
     @FXML
-    private void customDataMenuSelect(Event event) throws IOException {
+    private void customDataMenuSelect(Event event) {
    
              FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/CustomDataWindow.fxml"));
-        Parent root = fxLoader.load();
-        CustomDataWindowController controller = fxLoader.getController();
+        Parent root;
+        try {
+            root = fxLoader.load();
+            CustomDataWindowController controller = fxLoader.getController();
         controller.setmodel(fcModel);
         exportWindow.getChildren().setAll(root);
+        } catch (IOException ex) {
+            AlertWindow  alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
+        }
+        
     }
 
     @FXML

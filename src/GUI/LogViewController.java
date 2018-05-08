@@ -75,17 +75,26 @@ public class LogViewController implements Initializable
         searchLogView();
     }   
     
-    private void readUserLoginTxt() throws FileNotFoundException, IOException
+    private void readUserLoginTxt() 
     {            
         //Should read the file
-        BufferedReader br = new BufferedReader(new FileReader("UserLogin.txt"));
-        String line = br.readLine();
-        while (line != null)
+        BufferedReader br;
+        try {
+            br = new BufferedReader(new FileReader("UserLogin.txt"));
+             String line = br.readLine();
+                while (line != null)
         {
             lines.add(line);
             line = br.readLine();
             LogView.setItems(lines);
         }
+        } catch (FileNotFoundException ex) {
+               AlertWindow  alert = new AlertWindow("File not found", null, "Can find file Userlogin");
+        } catch (IOException ex) {
+           AlertWindow  alert = new AlertWindow("Can not read the file", null, "It can not read the file");
+        }
+       
+       
     }
     
     private void addItemsToList()
@@ -95,11 +104,12 @@ public class LogViewController implements Initializable
         adjustment.setCellValueFactory(new PropertyValueFactory("Adjustment"));
     }
     
-    private void filterTableView() throws SQLException
+    private void filterTableView() 
     {
-        FilteredList<UpdateLog> filteredData 
-                = new FilteredList<>(model.getAllLogUpdates(), p -> true);
-        searchTxt.textProperty().addListener((observable, oldValue, newValue) ->
+        FilteredList<UpdateLog> filteredData;
+        try {
+            filteredData = new FilteredList<>(model.getAllLogUpdates(), p -> true);
+             searchTxt.textProperty().addListener((observable, oldValue, newValue) ->
         {
             filteredData.setPredicate(updateLog ->
             {
@@ -124,8 +134,7 @@ public class LogViewController implements Initializable
             });
             
         });
-        
-                // 3. Wrap the FilteredList in a SortedList. 
+                 // 3. Wrap the FilteredList in a SortedList. 
         SortedList<UpdateLog> sortedData = new SortedList<>(filteredData);
 
         // 4. Bind the SortedList comparator to the TableView comparator.
@@ -133,34 +142,24 @@ public class LogViewController implements Initializable
 
         // 5. Add sorted (and filtered) data to the table.
         LogView.setItems(sortedData);
+        } catch (SQLException ex) {
+         AlertWindow  alert = new AlertWindow("SQL exception", null, "Something wrong with the database connection");
+        }
+       
+        
+            
     }
     
     private void searchLogView()
     {
-        try 
-        {
-            filterTableView();
-        } 
-        
-        catch (SQLException ex) 
-        {
-            Logger.getLogger(LogViewController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        filterTableView();
     }
 
 
     
     private void displayLoginText()
     {
-        try 
-        {
-            readUserLoginTxt();
-        } 
-        
-        catch (IOException ex) 
-        {
-            Logger.getLogger(LogViewController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        readUserLoginTxt();
     }
 
     @FXML
