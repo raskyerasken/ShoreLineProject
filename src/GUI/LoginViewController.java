@@ -73,12 +73,13 @@ public class LoginViewController implements Initializable
     }    
     
     @FXML
-    private void login(ActionEvent event) throws IOException, SQLException
+    private void login(ActionEvent event) 
     {
-        userLogin.setPassword(userPassword.getText());
-        userLogin.setUserName(userNameID.getText());
-        
-        //java.util.Date utilDate = new java.util.Date();
+        try {
+            userLogin.setPassword(userPassword.getText());
+            userLogin.setUserName(userNameID.getText());
+            
+            //java.util.Date utilDate = new java.util.Date();
 //        Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
 //        java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
 //        
@@ -86,45 +87,52 @@ public class LoginViewController implements Initializable
 //        updateLog.setAdjustment(userNameID.getText());
 //        updateLog.setDatelog(sqlDate);
 //        up.setUpdateLog(updateLog);
-        
-        if (ul.getAccess(userLogin)) 
-        {
-            
-            /**  
-             * Writes in to a file if the remember me box is checked, 
-                if not it writes nothing
-             */
-            if (rememberUser.isSelected()) 
-            {
-                writeUserLoginTxt();
-                readUserLoginTxt();
-                System.out.println("from txt file: " + lines);
-            }
-            else
-            {
-                writeNothingTxt();
-            }
-            
-            //System.out.println("User is logged in: " + userLogin.getUserName());
-            openMainWindow();
-        }
-        else
-            showErrorDialog("Wrong Password", null, "Please insert correct password");
+
+if (ul.getAccess(userLogin))
+{
+    
+    /**
+     * Writes in to a file if the remember me box is checked,
+     * if not it writes nothing
+     */
+    if (rememberUser.isSelected())
+    {
+        writeUserLoginTxt();
+        readUserLoginTxt();
+        System.out.println("from txt file: " + lines);
+    }
+    else
+    {
+        writeNothingTxt();
     }
     
-    private void openMainWindow() throws IOException
+    //System.out.println("User is logged in: " + userLogin.getUserName());
+    openMainWindow();
+}
+else
+    showErrorDialog("Wrong Password", null, "Please insert correct password");
+        } catch (SQLException ex) {
+         AlertWindow  alert = new AlertWindow("Database connection error", null, "Database connection error, check your connection");
+        }
+    }
+    
+    private void openMainWindow() 
     {
-        Stage newStage = new Stage();
-        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
-        Parent root = fxLoader.load();
-        MainWindowController controller = fxLoader.getController();
-        controller.setModel(fcModel);
-        Scene scene = new Scene(root);
-        newStage.setResizable(false);
-        newStage.setScene(scene);
-        newStage.show();
-        Stage stage = (Stage) userNameID.getScene().getWindow();
-        stage.close();
+        try {
+            Stage newStage = new Stage();
+            FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
+            Parent root = fxLoader.load();
+            MainWindowController controller = fxLoader.getController();
+            controller.setmodel(fcModel);
+            Scene scene = new Scene(root);
+            newStage.setResizable(false);
+            newStage.setScene(scene);
+            newStage.show();
+            Stage stage = (Stage) userNameID.getScene().getWindow();
+            stage.close();
+        } catch (IOException ex) {
+           AlertWindow  alert = new AlertWindow("MainWindow error", null, "It can not show MainWindow view");
+        }
     }
     
     private void showErrorDialog(String title, String header, String message) 
@@ -137,18 +145,26 @@ public class LoginViewController implements Initializable
     }
     
     //writes the login to a text file that we later can read
-    private void writeUserLoginTxt() throws FileNotFoundException, UnsupportedEncodingException, IOException
+    private void writeUserLoginTxt()
     {
-        //writes the user and pw to a txt file, but overwrites it everytime
-        PrintWriter writer = new PrintWriter("UserLog.txt", "UTF-8");
-        writer.println("The logged in: ");
-        
-        timeLog();
-        
-        writer.println(userLogin.getUserName());
-        writer.println(userLogin.getPassword());
-        
-        writer.close(); 
+        PrintWriter writer = null;
+        try {
+            //writes the user and pw to a txt file, but overwrites it everytime
+            writer = new PrintWriter("UserLog.txt", "UTF-8");
+            writer.println("The logged in: ");
+            timeLog();
+            writer.println(userLogin.getUserName());
+            writer.println(userLogin.getPassword());
+            writer.close();
+        } catch (FileNotFoundException ex) { 
+              AlertWindow  alert = new AlertWindow("File not found", null, "File not found");
+        } catch (UnsupportedEncodingException ex) {
+             AlertWindow  alert = new AlertWindow("Unstuppoerted encoding", null, "UnsupportEncoding");
+        } catch (IOException ex) {
+              AlertWindow  alert = new AlertWindow("IOException", null, "IO Exception");
+        } finally {
+            writer.close();
+        }
     }
     
     private void timeLog() throws FileNotFoundException, UnsupportedEncodingException, IOException
@@ -170,7 +186,7 @@ public class LoginViewController implements Initializable
             
             catch (IOException ioe)
             {
-                System.err.println("IOException: " + ioe.getMessage());
+                  AlertWindow  alert = new AlertWindow("IOException", null, "IOException");
             }
         }
         
@@ -184,24 +200,46 @@ public class LoginViewController implements Initializable
         }
     }
     
-    private void writeNothingTxt() throws FileNotFoundException, UnsupportedEncodingException
+    private void writeNothingTxt() 
     {
-        //writes the user and pw to a txt file, but overwrites it everytime
-        PrintWriter writer = new PrintWriter("UserLog.txt", "UTF-8");
-        writer.println("Remember me is not selected");
-        writer.close(); 
+        PrintWriter writer = null;
+        try {
+            //writes the user and pw to a txt file, but overwrites it everytime
+            writer = new PrintWriter("UserLog.txt", "UTF-8"); 
+            writer.println("Remember me is not selected");
+            writer.close();
+        } catch (FileNotFoundException ex) {
+            AlertWindow  alert = new AlertWindow("FileNotFoundException", null, "FileNotFoundException");
+        } catch (UnsupportedEncodingException ex) {
+           AlertWindow  alert = new AlertWindow("UnsupportedEncodingException", null, "UnsupportedEncodingException");
+        } finally {
+            writer.close();
+        }
     }
     
     //reads the userlogin text file
-    private void readUserLoginTxt() throws FileNotFoundException, IOException
+    private void readUserLoginTxt() 
     {            
-        //Should read the file
-        BufferedReader br = new BufferedReader(new FileReader("UserLog.txt"));
-        String line = br.readLine();
-        while (line != null)
-        {
-            lines.add(line);
-            line = br.readLine();
+        BufferedReader br = null;
+        try {
+            //Should read the file
+            br = new BufferedReader(new FileReader("UserLog.txt"));
+            String line = br.readLine();
+            while (line != null)
+            {
+                lines.add(line);
+                line = br.readLine();
+            }
+        } catch (FileNotFoundException ex) {
+           AlertWindow  alert = new AlertWindow("FileNotFoundException", null, "FileNotFoundException");
+        } catch (IOException ex) {
+          AlertWindow  alert = new AlertWindow("IOException", null, "IOException");
+        } finally {
+            try {
+                br.close();
+            } catch (IOException ex) {
+                AlertWindow  alert = new AlertWindow("IOException", null, "IOException");
+            }
         }
     }
     
@@ -221,12 +259,12 @@ public class LoginViewController implements Initializable
         
         catch (FileNotFoundException ex) 
         {
-            Logger.getLogger(LoginViewController.class.getName()).log(Level.SEVERE, null, ex);
+            AlertWindow  alert = new AlertWindow("FileNotFoundException", null, "FileNotFoundException");
         } 
         
         catch (IOException ex) 
         {
-            Logger.getLogger(LoginViewController.class.getName()).log(Level.SEVERE, null, ex);
+            AlertWindow  alert = new AlertWindow("IOException", null, "IOException");
         } 
         
         finally 

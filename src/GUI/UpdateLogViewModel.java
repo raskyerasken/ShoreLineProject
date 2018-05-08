@@ -31,7 +31,7 @@ public class UpdateLogViewModel
         return updateLogToList;
     }
     
-    void genreToMovies() throws SQLException
+    void genreToMovies() 
     { 
         updateLogToList.clear();
         for (UpdateLog updateLog : bllManagerUL.getAllUpdateLogsToList()) 

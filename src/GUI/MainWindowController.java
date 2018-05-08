@@ -90,7 +90,7 @@ public class MainWindowController implements Initializable
 
 
     @FXML
-    private void importData(ActionEvent event) throws SAXException, IOException, ParseException, IllegalArgumentException, IllegalAccessException, SQLException {
+    private void importData(ActionEvent event) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Image File");
         fileChooser.setInitialDirectory(new File("..."));
@@ -101,6 +101,7 @@ public class MainWindowController implements Initializable
         for (File file : files) {
             for (String acceptetFile : acceptetFiles) {
                 if (file.getAbsolutePath().endsWith(acceptetFile)) {
+                    filesAcceptet.clear();
                     filesAcceptet.add(file);
                     acceptfile = true;
 //                    
@@ -120,6 +121,7 @@ public class MainWindowController implements Initializable
                     AlertWindow alertWindow
                             = new AlertWindow("File not support yet", null, "This file " + file.getAbsolutePath() + " can be added");
                 }
+                acceptfile=false;
             }
             fcModel.setFiles(filesAcceptet);
      
@@ -167,56 +169,64 @@ public class MainWindowController implements Initializable
 //    }
 //    
     @FXML
-    private void importMenuSelect(Event event) throws IOException {
+    private void importMenuSelect(Event event) {
 
     }
 
     @FXML
-    private void exportMenuSelect(Event event) throws IOException {
-        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/ExportWindow.fxml"));
-        Parent root = fxLoader.load();
-        ExportWindowController controller = fxLoader.getController();
-        controller.setmodel(fcModel);
-        importWindow.getChildren().setAll(root);
+    private void exportMenuSelect(Event event)  {
+        try {
+            FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/ExportWindow.fxml"));
+            Parent root = fxLoader.load();
+            ExportWindowController controller = fxLoader.getController();
+            controller.setmodel(fcModel);
+            importWindow.getChildren().setAll(root);
+        } catch (IOException ex) {
+            AlertWindow  alert = new AlertWindow("IOException", null, "IOException");
+        }
 
 
     }
 
     @FXML
-    private void customDataMenuSelect(Event event) throws IOException {
+    private void customDataMenuSelect(Event event) {
      
-          FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/CustomDataWindow.fxml"));
-        Parent root = fxLoader.load();
-        CustomDataWindowController controller = fxLoader.getController();
-        controller.setmodel(fcModel);
-        importWindow.getChildren().setAll(root);
+        try {
+            FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/CustomDataWindow.fxml"));
+            Parent root = fxLoader.load();
+            CustomDataWindowController controller = fxLoader.getController();
+            controller.setmodel(fcModel);
+            importWindow.getChildren().setAll(root);
+        } catch (IOException ex) {
+            AlertWindow  alert = new AlertWindow("IOException", null, "IOException");
+        }
         
     }
 
     @FXML
-    private void logMenuSelect(Event event) throws IOException {
-        Stage newStage = new Stage();
-        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("LogView.fxml"));
-        Parent root = fxLoader.load();
-        Scene scene = new Scene(root);
-        newStage.setScene(scene);
-        newStage.setResizable(false);
-        newStage.showAndWait();
+    private void logMenuSelect(Event event)  {
+        try {
+            Stage newStage = new Stage();
+            FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("LogView.fxml"));
+            Parent root = fxLoader.load();
+            Scene scene = new Scene(root);
+            newStage.setScene(scene);
+            newStage.setResizable(false);
+            newStage.showAndWait();
+        } catch (IOException ex) {
+            AlertWindow  alert = new AlertWindow("IOException", null, "IOException");
+        }
     }
 
     @FXML
     private void adminMenuSelect(ActionEvent event) {
     }
 
-    void setModel(FilesConvertionModel fcModel) {
-   this.fcModel=fcModel;
-    
-       taskField.setItems(fcModel.getFiles());
-    }
+   
 
     void setmodel(FilesConvertionModel fcModel) {
       this.fcModel=fcModel;
-    
+    taskField.getItems().clear();
        taskField.setItems(fcModel.getFiles());}
 
 }

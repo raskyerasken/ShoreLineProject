@@ -18,7 +18,7 @@ public class FilesConvertionModel {
  private final ObservableList<File> allFiles 
             = FXCollections.observableArrayList();
     void setFiles(ObservableList<File> filesAcceptet) {
-        
+       
     allFiles.addAll(filesAcceptet);
        
         

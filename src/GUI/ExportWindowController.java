@@ -12,6 +12,7 @@ import com.jfoenix.controls.JFXTextField;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.text.ParseException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -128,13 +129,23 @@ public class ExportWindowController implements Initializable{
     @FXML
     private void convertData(ActionEvent event) {
         
-//        for (int i = 0; i < filesAcceptet.size(); i++) {
-//            ReadingXLSX XLSX = new ReadingXLSX(filesAcceptet.get(i).getAbsolutePath());
-//            XLSX.allRows();
-//            XLSX.getColumsNames();
-//            CreateJSONFile createJSON = new CreateJSONFile();
-//            createJSON.createJSON(XLSX.allJSONObjectInFile(), filesAcceptet.get(i).getName());
-//        }
+        for (int i = 0; i < fcModel.getFiles().size(); i++) {
+            try {
+                ReadingXLSX XLSX = new ReadingXLSX(fcModel.getFiles().get(i).getAbsolutePath());
+                XLSX.allRows();
+                XLSX.getColumsNames();
+                CreateJSONFile createJSON = new CreateJSONFile();
+                createJSON.createJSON(XLSX.allJSONObjectInFile(), fcModel.getFiles().get(i).getName());
+            } catch (IOException ex) {
+                AlertWindow  alert = new AlertWindow("IOException", null, "IOException");
+            } catch (ParseException ex) {
+                AlertWindow  alert = new AlertWindow("ParseException", null, "ParseException");
+            } catch (IllegalArgumentException ex) {
+                 AlertWindow  alert = new AlertWindow("IllegalArgumentException", null, "IllegalArgumentException");
+            } catch (IllegalAccessException ex) {
+                  AlertWindow  alert = new AlertWindow("IllegalAccessException", null, "IllegalAccessException");
+            }
+        }
     }
 
     @FXML
