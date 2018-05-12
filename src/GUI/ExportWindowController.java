@@ -146,6 +146,7 @@ public class ExportWindowController implements Initializable{
                   AlertWindow  alert = new AlertWindow("IllegalAccessException", null, "IllegalAccessException");
             }
         }
+        fcModel.clearFiles();
     }
 
     @FXML

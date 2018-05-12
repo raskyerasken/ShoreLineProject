@@ -8,13 +8,12 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="231.0" prefWidth="191.0" stylesheets="@CSSShoreLines.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.LoginViewController">
+<AnchorPane id="AnchorPane" prefHeight="231.0" prefWidth="191.0" stylesheets="@CSSShoreLines.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.LoginViewController">
    <children>
       <JFXTextField fx:id="userNameID" layoutX="21.0" layoutY="76.0" prefHeight="26.0" prefWidth="155.0" promptText="User name / email" />
       <JFXPasswordField fx:id="userPassword" layoutX="21.0" layoutY="118.0" prefHeight="26.0" prefWidth="155.0" promptText="Password" />
       <JFXButton layoutX="21.0" layoutY="154.0" onAction="#login" text="Login" />
       <JFXCheckBox fx:id="rememberUser" layoutX="76.0" layoutY="157.0" prefHeight="18.0" prefWidth="105.0" text="Remember me" />
-      <JFXButton layoutX="14.0" layoutY="199.0" onAction="#forgotPassword" text="Forgot Password" />
       <ImageView fitHeight="97.0" fitWidth="193.0" layoutX="2.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Image/ShoreLineLogo.jpg" />

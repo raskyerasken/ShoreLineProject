@@ -27,6 +27,10 @@ public class FilesConvertionModel {
     {
     return allFiles;
     }
+
+    void clearFiles() {
+   allFiles.clear();
+    }
     
     
 }
