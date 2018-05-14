@@ -22,11 +22,9 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -48,10 +46,11 @@ import javafx.stage.Stage;
  */
 public class LoginViewController implements Initializable 
 {
-    
+
+    LoginDataModel modelData = new LoginDataModel();
     FilesConvertionModel fcModel = new FilesConvertionModel();
     @FXML
-     JFXTextField userNameID;
+    JFXTextField userNameID;
     @FXML
     public JFXPasswordField userPassword;
     @FXML
@@ -63,6 +62,8 @@ public class LoginViewController implements Initializable
     List<String> lines = new ArrayList<String>();
     int rememberMeLineNr = 2;
     private String filePathString = "UserLogin.txt";
+    
+    
     /**
      * Initializes the controller class.
      */
@@ -73,8 +74,12 @@ public class LoginViewController implements Initializable
     }    
     
     @FXML
-    private void login(ActionEvent event) 
+    private void login(ActionEvent event) throws IOException 
     {
+        userLogin.setPassword(userPassword.getText());
+        userLogin.setUserName(userNameID.getText());
+        
+        //java.util.Date utilDate = new java.util.Date();
         try {
             userLogin.setPassword(userPassword.getText());
             userLogin.setUserName(userNameID.getText());
@@ -82,8 +87,9 @@ public class LoginViewController implements Initializable
             //java.util.Date utilDate = new java.util.Date();
 //        Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
 //        java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
-//        
-//        updateLog.setUsername(userNameID.getText());
+        
+        modelData.addLoginData(userNameID.getText());
+        
 //        updateLog.setAdjustment(userNameID.getText());
 //        updateLog.setDatelog(sqlDate);
 //        up.setUpdateLog(updateLog);
@@ -116,23 +122,19 @@ else
         }
     }
     
-    private void openMainWindow() 
+    private void openMainWindow() throws IOException 
     {
-        try {
-            Stage newStage = new Stage();
-            FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
-            Parent root = fxLoader.load();
-            MainWindowController controller = fxLoader.getController();
-            controller.setmodel(fcModel);
-            Scene scene = new Scene(root);
-            newStage.setResizable(false);
-            newStage.setScene(scene);
-            newStage.show();
-            Stage stage = (Stage) userNameID.getScene().getWindow();
-            stage.close();
-        } catch (IOException ex) {
-           AlertWindow  alert = new AlertWindow("MainWindow error", null, "It can not show MainWindow view");
-        }
+        Stage newStage = new Stage();
+        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
+        Parent root = fxLoader.load();
+        MainWindowController controller = fxLoader.getController();
+        controller.modelData(modelData);
+        Scene scene = new Scene(root);
+        newStage.setResizable(false);
+        newStage.setScene(scene);
+        newStage.show();
+        Stage stage = (Stage) userNameID.getScene().getWindow();
+        stage.close();
     }
     
     private void showErrorDialog(String title, String header, String message) 
