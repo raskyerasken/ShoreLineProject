@@ -146,18 +146,19 @@ public class CustomDataWindowController  implements Initializable{
    
       TreeItem<String> hey = new TreeItem<String> ("hey");
         TreeItem<String> hey2 = new TreeItem<String> ("hey2");
-        rootItem.setExpanded(true);
-        for (int i = 1; i < 6; i++) {
-            TreeItem<String> item = new TreeItem<String> ("Message" + i);            
-            hey.getChildren().add(item);
+            rootItem.setExpanded(true);
+                for (int i = 1; i < 6; i++) {
+                    TreeItem<String> item = new TreeItem<String> ("Message" + i);            
+                    hey.getChildren().add(item);
         }   
+                
          for (int i = 1; i < 6; i++) {
             TreeItem<String> item = new TreeItem<String> ("Message" + i);            
             hey2.getChildren().add(item);
         }   
          
          rootItem.getChildren().add(hey);
-    rootItem.getChildren().add(hey2);
+         rootItem.getChildren().add(hey2);
    
     CustomDataAdded.setRoot(rootItem);
    }
@@ -189,15 +190,4 @@ public class CustomDataWindowController  implements Initializable{
     }
     
     
-    @FXML
-    private void treeview() 
-    {
-        TreeItem<String> root = new TreeItem<String>("Root Node");
-        root.setExpanded(true);
-        root.getChildren().addAll(
-        new TreeItem<String>("Item 1"),
-        new TreeItem<String>("Item 2"),
-        new TreeItem<String>("Item 3")
-        );
-    }
 }
