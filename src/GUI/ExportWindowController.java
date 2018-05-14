@@ -7,10 +7,7 @@ package GUI;
 
 import BLL.CreateJSONFile;
 import BLL.ReadingXLSX;
-<<<<<<< HEAD
 import static GUI.Converter.xmlToJSON.PRETTY_PRINT_INDENT_FACTOR;
-=======
->>>>>>> a6f312eec1c2cdeb0fc08ea1d063e925912ab5cf
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
 import java.io.File;

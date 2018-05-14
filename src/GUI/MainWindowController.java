@@ -124,80 +124,45 @@ public class MainWindowController implements Initializable
         
         for (File file : files) 
         {
-<<<<<<< HEAD
             //root.getScene().setCursor(Cursor.WAIT);
-            for (String acceptetFile : acceptetFiles) 
-=======
             for (String acceptetFile : acceptedFiles) 
->>>>>>> a6f312eec1c2cdeb0fc08ea1d063e925912ab5cf
             {
                 
                 if (file.getAbsolutePath().endsWith(acceptetFile)) 
                 {
-<<<<<<< HEAD
-                    filesAcceptet.clear();
-                    filesAcceptet.add(file);
-                    acceptfile = true;
-
-=======
                     filesAccepted.clear();
                     filesAccepted.add(file);
                     acceptFile = true;
                     
->>>>>>> a6f312eec1c2cdeb0fc08ea1d063e925912ab5cf
                     Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
                     java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
 
                     updateLog.setUsername(modelData.getUserLogin());
                     updateLog.setAdjustment("Exported files " + files);
                     updateLog.setDatelog(sqlDate);
-<<<<<<< HEAD
+                    
                     try 
                     {
                         up.setUpdateLog(updateLog);
-                    } catch (SQLException ex) 
+                    } 
+                    catch (SQLException ex) 
                     {
                         Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
                     }
-=======
                     up.setUpdateLog(updateLog);
-//                    
-
-//                    System.out.println("what i am trying to do: "+modelData.getUserLogin());
-//                    
-//                    Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
-//                    java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
-//        
-//                    updateLog.setUsername(loginID.userNameID.getText());
-//                    updateLog.setAdjustment("Exported files " + files);
-//                    updateLog.setDatelog(sqlDate);
-//                    up.setUpdateLog(updateLog);
-//                    
-//                    System.out.println("writes");
-
->>>>>>> a6f312eec1c2cdeb0fc08ea1d063e925912ab5cf
                 }
                 if (!acceptFile) 
                 {
                     AlertWindow alertWindow
                             = new AlertWindow("File not support yet", null, "This file " + file.getAbsolutePath() + " can be added");
                 }
-<<<<<<< HEAD
-                acceptfile=false;
-                }
-                fcModel.setFiles(filesAcceptet);
-
 //                startTaskThead.setDisable(files.isEmpty());
 //                stopTaskThread.setDisable(files.isEmpty());
 //                pauseTaskThread.setDisable(files.isEmpty());
 //                root.getScene().setCursor(Cursor.DEFAULT);
-
-            
-=======
                 acceptFile=false;
             }
             fcModel.setFiles(filesAccepted);
->>>>>>> a6f312eec1c2cdeb0fc08ea1d063e925912ab5cf
         }
     }
 
@@ -281,12 +246,8 @@ public class MainWindowController implements Initializable
     }
 
     @FXML
-<<<<<<< HEAD
-    private void customDataMenuSelect(Event event) 
+    private void customDataMenuSelect(Event event) throws FileNotFoundException, ParseException 
     {
-=======
-    private void customDataMenuSelect(Event event) throws FileNotFoundException, ParseException {
->>>>>>> a6f312eec1c2cdeb0fc08ea1d063e925912ab5cf
      
         try 
         {
