@@ -303,3 +303,7 @@ The user kris logged in.    Date: 2018/05/14 12:23:35
 The user kris logged in.    Date: 2018/05/14 12:24:02
 The user kris logged in.    Date: 2018/05/14 12:24:46
 The user kris logged in.    Date: 2018/05/14 12:27:16
+The user kris logged in.    Date: 2018/05/14 12:50:25
+The user kris logged in.    Date: 2018/05/14 13:32:16
+The user kris logged in.    Date: 2018/05/14 13:34:01
+The user kris logged in.    Date: 2018/05/14 13:34:44
