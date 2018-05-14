@@ -339,3 +339,6 @@ The user kris logged in.    Date: 2018/05/14 14:33:55
 >>>>>>> a6f312eec1c2cdeb0fc08ea1d063e925912ab5cf
 The user kris logged in.    Date: 2018/05/14 14:14:37
 >>>>>>> f1349b3c515a37b08054938f5dbffd44b7784417
+The user kris logged in.    Date: 2018/05/14 14:38:56
+The user kris logged in.    Date: 2018/05/14 14:39:21
+The user kris logged in.    Date: 2018/05/14 14:41:34

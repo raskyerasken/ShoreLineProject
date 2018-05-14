@@ -43,7 +43,7 @@ public class FilesConvertionModel {
         treeFiles.add(newFilesAdded);
     }
     
-    ObservableList<TreeItem> getTreeFiles(TreeItem<String> newFilesAdded)
+    ObservableList<TreeItem> getTreeFiles()
     {
         return treeFiles;
     }

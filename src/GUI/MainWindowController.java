@@ -98,10 +98,10 @@ public class MainWindowController implements Initializable
     public void initialize(URL url, ResourceBundle rb) 
     {
         importbtn.setStyle("-fx-background-color: #588fe8;");
-        startTaskThread.setDisable(true);
-        stopTaskThread.setDisable(true);
-        pauseTaskThread.setDisable(true);
-        progressBar.setVisible(false);
+//        startTaskThread.setDisable(true);
+//        stopTaskThread.setDisable(true);
+//        pauseTaskThread.setDisable(true);
+//        progressBar.setVisible(false);
     }
     
     private void activateXmlReader() 
@@ -168,7 +168,7 @@ public class MainWindowController implements Initializable
             fcModel.setFiles(filesAccepted);
 
             
-            TreeItem<String> newFilesAdded = new TreeItem<String>(Calendar.getInstance().getTime().toString());
+            TreeItem<String> newFilesAdded = new TreeItem<String>("file");
             
             for (File acceptedFile : filesAccepted) {
                 TreeItem<String> newlyAdded = new TreeItem<String>(acceptedFile.toString());
@@ -176,6 +176,7 @@ public class MainWindowController implements Initializable
                 
             }
             fcModel.setTreeFiles(newFilesAdded);
+            System.out.println(fcModel.getTreeFiles());
         }
     }
 
