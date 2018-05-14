@@ -54,6 +54,7 @@ import org.xml.sax.SAXException;
 public class MainWindowController implements Initializable 
 {
     
+    LoginDataModel modelData = new LoginDataModel();
     LoginViewController loginID;
     boolean acceptfile = false;
     String[] acceptetFiles = {".xlsx"};
@@ -105,13 +106,14 @@ public class MainWindowController implements Initializable
                     
                     Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
                     java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
-        
-                    updateLog.setUsername(loginID.userNameID.getText());
+                    
+                    
+                    updateLog.setUsername(modelData.getUserLogin());
                     updateLog.setAdjustment("Exported files " + files);
                     updateLog.setDatelog(sqlDate);
                     up.setUpdateLog(updateLog);
                     
-                    System.out.println("writes");
+                    System.out.println("what i am trying to do: "+modelData.getUserLogin().toString());
 
                 }
                 if (!acceptfile) {
@@ -195,6 +197,11 @@ public class MainWindowController implements Initializable
 
     @FXML
     private void adminMenuSelect(ActionEvent event) {
+    }
+
+    void modelData(LoginDataModel modelData) 
+    {
+        this.modelData = modelData;
     }
 
 }

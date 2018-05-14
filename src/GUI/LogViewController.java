@@ -38,6 +38,7 @@ import javafx.scene.layout.AnchorPane;
  */
 public class LogViewController implements Initializable 
 {
+    LoginDataModel loginModel = new LoginDataModel();
     UpdateLogViewModel model = new UpdateLogViewModel();
     public static final ObservableList lines = 
     FXCollections.observableArrayList();

@@ -8,7 +8,6 @@ package GUI;
 import BE.UpdateLog;
 import BLL.BLLManagerUpdateLog;
 import java.sql.SQLException;
-import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -27,11 +26,11 @@ public class UpdateLogViewModel
     
     ObservableList<UpdateLog> getAllLogUpdates() throws SQLException
     {
-        genreToMovies();
+        logListUpdate();
         return updateLogToList;
     }
     
-    void genreToMovies() throws SQLException
+    void logListUpdate() throws SQLException
     { 
         updateLogToList.clear();
         for (UpdateLog updateLog : bllManagerUL.getAllUpdateLogsToList()) 
