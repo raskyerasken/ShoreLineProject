@@ -95,76 +95,90 @@ public class CustomDataWindowController  implements Initializable{
 //    
 
     @FXML
-    private void importMenuSelect(Event event)  {
-        
-             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/MainWindow.fxml"));
+    private void importMenuSelect(Event event)  
+    {
+        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/MainWindow.fxml"));
         Parent root;
-        try {
+        try 
+        {
             root = fxLoader.load();
-                MainWindowController controller = fxLoader.getController();
-        controller.setmodel(fcModel);
-        customDataWindow.getChildren().setAll(root);
-        } catch (IOException ex) {
+            MainWindowController controller = fxLoader.getController();
+            controller.setmodel(fcModel);
+            customDataWindow.getChildren().setAll(root);
+        } 
+        catch (IOException ex) 
+        {
             AlertWindow  alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
         }
     
     }
 
     @FXML
-    private void exportMenuSelect(Event event)  {
-     
-                
-             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/ExportWindow.fxml"));
+    private void exportMenuSelect(Event event)  
+    {
+        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/ExportWindow.fxml"));
         Parent root;
-        try {
+        try 
+        {
             root = fxLoader.load();
             ExportWindowController controller = fxLoader.getController();
-        controller.setmodel(fcModel);
-        customDataWindow.getChildren().setAll(root);
-        } catch (IOException ex) {
+            controller.setmodel(fcModel);
+            customDataWindow.getChildren().setAll(root);
+        }
+        catch (IOException ex) 
+        {
             AlertWindow  alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
         }
+    }
+
+    @FXML
+    private void customDataMenuSelect(Event event) 
+    {
         
     }
 
     @FXML
-    private void customDataMenuSelect(Event event) {
+    private void logMenuSelect(Event event) 
+    {
+        
     }
 
     @FXML
-    private void logMenuSelect(Event event) {
-    }
-
-    @FXML
-    private void adminMenuSelect(ActionEvent event) {
+    private void adminMenuSelect(ActionEvent event) 
+    {
+        
     }
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
-    btnCustumData.setStyle("-fx-background-color: #588fe8;");
-    TreeItem<String> rootItem = new TreeItem<String> ("Inbox");
-   
-      TreeItem<String> hey = new TreeItem<String> ("hey");
+    public void initialize(URL location, ResourceBundle resources) 
+    {
+        btnCustumData.setStyle("-fx-background-color: #588fe8;");
+        TreeItem<String> rootItem = new TreeItem<String> ("Inbox");
+
+        TreeItem<String> hey = new TreeItem<String> ("hey");
         TreeItem<String> hey2 = new TreeItem<String> ("hey2");
-            rootItem.setExpanded(true);
-                for (int i = 1; i < 6; i++) {
-                    TreeItem<String> item = new TreeItem<String> ("Message" + i);            
-                    hey.getChildren().add(item);
+        rootItem.setExpanded(true);
+        for (int i = 1; i < 6; i++) 
+        {
+            TreeItem<String> item = new TreeItem<String> ("Message" + i);            
+            hey.getChildren().add(item);
         }   
                 
-         for (int i = 1; i < 6; i++) {
+        for (int i = 1; i < 6; i++) 
+        {
             TreeItem<String> item = new TreeItem<String> ("Message" + i);            
             hey2.getChildren().add(item);
         }   
          
-         rootItem.getChildren().add(hey);
-         rootItem.getChildren().add(hey2);
-   
-    CustomDataAdded.setRoot(rootItem);
+        rootItem.getChildren().add(hey);
+        rootItem.getChildren().add(hey2);
+
+        CustomDataAdded.setRoot(rootItem);
    }
  
     
 
+<<<<<<< HEAD
     void setmodel(FilesConvertionModel fcModel) throws IOException, FileNotFoundException, ParseException {
     this.fcModel= fcModel;
      TreeItem<String> allFiles = new TreeItem<String> ("All files");
@@ -178,15 +192,33 @@ public class CustomDataWindowController  implements Initializable{
        
     CustomDataSelect.setRoot(allFiles);
     CustomDataSelect.setShowRoot(false);
+=======
+    void setmodel(FilesConvertionModel fcModel) throws IOException, FileNotFoundException, ParseException 
+    {
+        this.fcModel= fcModel;
+        TreeItem<String> allFiles = new TreeItem<String> ("All files");
+        TreeItem<String> hey = new TreeItem<String> (fcModel.getFiles().get(0).getName());
+        ReadingXLSX  XLSX= new ReadingXLSX(fcModel.getFiles().get(0).getAbsolutePath());
+        for (Object columsName : XLSX.getColumsNames()) 
+        {
+            TreeItem<String> item = new TreeItem<String> (columsName.toString());            
+            hey.getChildren().add(item);
+        }
+        allFiles.getChildren().add(hey);
+        CustomDataSelect.setRoot(allFiles);
+        CustomDataSelect.setShowRoot(false);
+>>>>>>> f1349b3c515a37b08054938f5dbffd44b7784417
     }
 
     @FXML
-    private void addCustomData(ActionEvent event) {
+    private void addCustomData(ActionEvent event) 
+    {
+        
     }
 
     @FXML
-    private void removeCustomData(ActionEvent event) {
+    private void removeCustomData(ActionEvent event) 
+    {
+        
     }
-    
-    
 }

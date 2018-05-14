@@ -12,6 +12,9 @@ import BLL.CreateJSONFile;
 import BLL.ReadingXLSX;
 import GUI.Converter.XmlToJava;
 import GUI.Converter.xmlToJSON;
+import GUI.Threading.ShoreLineThreading;
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXProgressBar;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -24,6 +27,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.concurrent.CompletableFuture;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
@@ -33,6 +37,7 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -56,6 +61,9 @@ import org.xml.sax.SAXException;
 public class MainWindowController implements Initializable 
 {
     
+    private ShoreLineThreading threading = null;
+    Parent root;
+    
     LoginDataModel modelData = new LoginDataModel();
     LoginViewController loginID;
     boolean acceptFile = false;
@@ -75,16 +83,32 @@ public class MainWindowController implements Initializable
             = FXCollections.observableArrayList();
     private FilesConvertionModel fcModel;
     private Thread t = null;
+<<<<<<< HEAD
     
     CustomDataWindowController cdwc = new CustomDataWindowController();
+=======
+    @FXML
+    private JFXProgressBar progressBar;
+    @FXML
+    private JFXButton pauseTaskThread;
+    @FXML
+    private JFXButton startTaskThread;
+    @FXML
+    private JFXButton stopTaskThread;
+>>>>>>> f1349b3c515a37b08054938f5dbffd44b7784417
 
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
         importbtn.setStyle("-fx-background-color: #588fe8;");
+        startTaskThread.setDisable(true);
+        stopTaskThread.setDisable(true);
+        pauseTaskThread.setDisable(true);
+        progressBar.setVisible(false);
     }
     
-    private void activateXmlReader() {
+    private void activateXmlReader() 
+    {
 
     }
 
@@ -106,8 +130,10 @@ public class MainWindowController implements Initializable
         
         for (File file : files) 
         {
+            //root.getScene().setCursor(Cursor.WAIT);
             for (String acceptetFile : acceptedFiles) 
             {
+                
                 if (file.getAbsolutePath().endsWith(acceptetFile)) 
                 {
                     filesAccepted.clear();
@@ -116,32 +142,30 @@ public class MainWindowController implements Initializable
                     
                     Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
                     java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
-                    
-                    
+
                     updateLog.setUsername(modelData.getUserLogin());
                     updateLog.setAdjustment("Exported files " + files);
                     updateLog.setDatelog(sqlDate);
+                    
+                    try 
+                    {
+                        up.setUpdateLog(updateLog);
+                    } 
+                    catch (SQLException ex) 
+                    {
+                        Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                     up.setUpdateLog(updateLog);
-//                    
-
-//                    System.out.println("what i am trying to do: "+modelData.getUserLogin());
-//                    
-//                    Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
-//                    java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
-//        
-//                    updateLog.setUsername(loginID.userNameID.getText());
-//                    updateLog.setAdjustment("Exported files " + files);
-//                    updateLog.setDatelog(sqlDate);
-//                    up.setUpdateLog(updateLog);
-//                    
-//                    System.out.println("writes");
-
                 }
                 if (!acceptFile) 
                 {
                     AlertWindow alertWindow
                             = new AlertWindow("File not support yet", null, "This file " + file.getAbsolutePath() + " can be added");
                 }
+//                startTaskThead.setDisable(files.isEmpty());
+//                stopTaskThread.setDisable(files.isEmpty());
+//                pauseTaskThread.setDisable(files.isEmpty());
+//                root.getScene().setCursor(Cursor.DEFAULT);
                 acceptFile=false;
             }
             fcModel.setFiles(filesAccepted);
@@ -159,21 +183,36 @@ public class MainWindowController implements Initializable
     }
 
     @FXML
-    private void startTask(ActionEvent event) {
+    private void startTask(ActionEvent event) 
+    {
+        threading.start();
     }
 
     @FXML
-    private void pauseTask(ActionEvent event) {
+    private void pauseTask(ActionEvent event) 
+    {
+        if (threading.isSuspended())
+        {
+            threading.resume();
+            pauseTaskThread.setText("Pause Slideshow");
+        }
+        else
+        {
+            threading.pause();
+            pauseTaskThread.setText("Resume Slideshow");
+        }
     }
 
     @FXML
-    private void stopTask(ActionEvent event) {
+    private void stopTask(ActionEvent event) 
+    {
+        threading.stop();
     }
 
-    void stageToFront() {
+    void stageToFront() 
+    {
         Stage stage = (Stage) taskField.getScene().getWindow();
         stage.toFront();
-
     }
 
 //
@@ -204,14 +243,18 @@ public class MainWindowController implements Initializable
     }
 
     @FXML
-    private void exportMenuSelect(Event event)  {
-        try {
+    private void exportMenuSelect(Event event)  
+    {
+        try 
+        {
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/ExportWindow.fxml"));
             Parent root = fxLoader.load();
             ExportWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel);
             importWindow.getChildren().setAll(root);
-        } catch (IOException ex) {
+        } 
+        catch (IOException ex) 
+        {
             AlertWindow  alert = new AlertWindow("IOException", null, "IOException");
         }
 
@@ -219,23 +262,29 @@ public class MainWindowController implements Initializable
     }
 
     @FXML
-    private void customDataMenuSelect(Event event) throws FileNotFoundException, ParseException {
+    private void customDataMenuSelect(Event event) throws FileNotFoundException, ParseException 
+    {
      
-        try {
+        try 
+        {
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/CustomDataWindow.fxml"));
             Parent root = fxLoader.load();
             CustomDataWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel);
             importWindow.getChildren().setAll(root);
-        } catch (IOException ex) {
+        } 
+        catch (IOException ex) 
+        {
             AlertWindow  alert = new AlertWindow("IOException", null, "IOException");
         }
         
     }
 
     @FXML
-    private void logMenuSelect(Event event)  {
-        try {
+    private void logMenuSelect(Event event)  
+    {
+        try 
+        {
             Stage newStage = new Stage();
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("LogView.fxml"));
             Parent root = fxLoader.load();
@@ -243,7 +292,9 @@ public class MainWindowController implements Initializable
             newStage.setScene(scene);
             newStage.setResizable(false);
             newStage.showAndWait();
-        } catch (IOException ex) {
+        } 
+        catch (IOException ex) 
+        {
             AlertWindow  alert = new AlertWindow("IOException", null, "IOException");
         }
     }
@@ -259,8 +310,10 @@ public class MainWindowController implements Initializable
     }
    
 
-    void setmodel(FilesConvertionModel fcModel) {
-      this.fcModel=fcModel;
-    taskField.getItems().clear();
-       taskField.setItems(fcModel.getFiles());}
+    void setmodel(FilesConvertionModel fcModel) 
+    {
+        this.fcModel=fcModel;
+        taskField.getItems().clear();
+        taskField.setItems(fcModel.getFiles());
+    }
 }

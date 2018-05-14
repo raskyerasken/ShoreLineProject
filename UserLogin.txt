@@ -303,6 +303,12 @@ The user kris logged in.    Date: 2018/05/14 12:23:35
 The user kris logged in.    Date: 2018/05/14 12:24:02
 The user kris logged in.    Date: 2018/05/14 12:24:46
 The user kris logged in.    Date: 2018/05/14 12:27:16
+<<<<<<< HEAD
+The user kris logged in.    Date: 2018/05/14 12:50:25
+The user kris logged in.    Date: 2018/05/14 13:32:16
+The user kris logged in.    Date: 2018/05/14 13:34:01
+The user kris logged in.    Date: 2018/05/14 13:34:44
+=======
 The user kris logged in.    Date: 2018/05/14 12:33:24
 The user kris logged in.    Date: 2018/05/14 12:37:04
 The user kris logged in.    Date: 2018/05/14 12:40:37
@@ -326,5 +332,10 @@ The user kris logged in.    Date: 2018/05/14 13:19:31
 The user kris logged in.    Date: 2018/05/14 13:20:31
 The user kris logged in.    Date: 2018/05/14 13:29:05
 The user kris logged in.    Date: 2018/05/14 13:29:18
+<<<<<<< HEAD
 The user kris logged in.    Date: 2018/05/14 14:16:05
 The user kris logged in.    Date: 2018/05/14 14:33:55
+=======
+>>>>>>> a6f312eec1c2cdeb0fc08ea1d063e925912ab5cf
+The user kris logged in.    Date: 2018/05/14 14:14:37
+>>>>>>> f1349b3c515a37b08054938f5dbffd44b7784417

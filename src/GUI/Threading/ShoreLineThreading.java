@@ -7,42 +7,37 @@ package GUI.Threading;
 
 import java.security.InvalidParameterException;
 import java.util.List;
-import javafx.scene.image.ImageView;
 
 /**
  *
  * @author ander
  */
-public class ShoreLineThreading 
+public class ShoreLineThreading implements Runnable
 {
     private static final int DEFAULT_TIME_INTERVAL = 3;
     private final String name;
-    private final ImageView viewer;
     private final List<ShoreLineThreadingModel> filesImported;
     private int filesImportedIndex;
     private Thread t = null;
     private boolean suspended;
     private boolean done;
     
-    public ShoreLineThreading(String name, ImageView viewer, List<ShoreLineThreadingModel> filesImported)
+    public ShoreLineThreading(String name, List<ShoreLineThreadingModel> filesImported)
     {
         if (filesImported == null || filesImported.isEmpty())
         {
             throw new InvalidParameterException("No images to show");
         }
         this.name = name;
-        this.viewer = viewer;
         this.filesImported = filesImported;
-        viewer.setImage(filesImported.get(0).getImage());
     }
     
-    //@Override
+    @Override
     public void run()
     {
         while (!done)
         {
             ShoreLineThreadingModel files = filesImported.get(filesImportedIndex++);
-            viewer.setImage(files.getImage());
             filesImportedIndex %= filesImported.size();
 
             long startTime = System.currentTimeMillis();
@@ -110,7 +105,6 @@ public class ShoreLineThreading
         {
             t.interrupt();
         }
-        viewer.setImage(filesImported.get(0).getImage());
     }
 
     public void pause()
