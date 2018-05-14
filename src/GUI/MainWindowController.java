@@ -54,6 +54,7 @@ import org.xml.sax.SAXException;
 public class MainWindowController implements Initializable 
 {
     
+    LoginDataModel modelData = new LoginDataModel();
     LoginViewController loginID;
     boolean acceptfile = false;
     String[] acceptetFiles = {".xlsx"};
@@ -90,7 +91,7 @@ public class MainWindowController implements Initializable
 
 
     @FXML
-    private void importData(ActionEvent event) {
+    private void importData(ActionEvent event) throws SQLException {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Image File");
         fileChooser.setInitialDirectory(new File("..."));
@@ -98,12 +99,26 @@ public class MainWindowController implements Initializable
         UpdateLog updateLog = new UpdateLog();
         BLL.BLLManagerUpdateLog up = new BLLManagerUpdateLog();
         
-        for (File file : files) {
-            for (String acceptetFile : acceptetFiles) {
-                if (file.getAbsolutePath().endsWith(acceptetFile)) {
+        for (File file : files) 
+        {
+            for (String acceptetFile : acceptetFiles) 
+            {
+                if (file.getAbsolutePath().endsWith(acceptetFile)) 
+                {
                     filesAcceptet.clear();
                     filesAcceptet.add(file);
                     acceptfile = true;
+                    
+                    Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
+                    java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
+                    
+                    
+                    updateLog.setUsername(modelData.getUserLogin());
+                    updateLog.setAdjustment("Exported files " + files);
+                    updateLog.setDatelog(sqlDate);
+                    up.setUpdateLog(updateLog);
+                    
+                    System.out.println("what i am trying to do: "+modelData.getUserLogin().toString());
 //                    
 //                    Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
 //                    java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
@@ -116,15 +131,14 @@ public class MainWindowController implements Initializable
 //                    System.out.println("writes");
 
                 }
-                if (!acceptfile) {
-
+                if (!acceptfile) 
+                {
                     AlertWindow alertWindow
                             = new AlertWindow("File not support yet", null, "This file " + file.getAbsolutePath() + " can be added");
                 }
                 acceptfile=false;
             }
             fcModel.setFiles(filesAcceptet);
-     
         }
     }
 
@@ -219,14 +233,18 @@ public class MainWindowController implements Initializable
     }
 
     @FXML
-    private void adminMenuSelect(ActionEvent event) {
+    private void adminMenuSelect(ActionEvent event) 
+    {
+        
     }
-
+    void modelData(LoginDataModel modelData) 
+    {
+        this.modelData = modelData;
+    }
    
 
     void setmodel(FilesConvertionModel fcModel) {
       this.fcModel=fcModel;
     taskField.getItems().clear();
        taskField.setItems(fcModel.getFiles());}
-
 }

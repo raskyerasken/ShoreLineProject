@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -19,6 +20,8 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TreeItem;
+import javafx.scene.control.TreeView;
 import javafx.scene.layout.AnchorPane;
 
 /**
@@ -30,12 +33,18 @@ public class CustomDataWindowController  implements Initializable{
     @FXML
     private Label taskXRun;
     @FXML
-    private ListView<?> CustomDataSelect;
+    private TreeView<?> CustomDataSelect;
     @FXML
     private AnchorPane customDataWindow;
     @FXML
     private Button btnCustumData;
     private FilesConvertionModel fcModel;
+    @FXML
+    private JFXButton addCustomData;
+    @FXML
+    private JFXButton removeCustomData;
+    @FXML
+    private TreeView<?> CustomDataAdded;
 
     @FXML
     private void startTask(ActionEvent event) {
@@ -125,10 +134,32 @@ public class CustomDataWindowController  implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     btnCustumData.setStyle("-fx-background-color: #588fe8;");
+
     }
 
     void setmodel(FilesConvertionModel fcModel) {
     this.fcModel= fcModel;
     
+    }
+
+    @FXML
+    private void addCustomData(ActionEvent event) {
+    }
+
+    @FXML
+    private void removeCustomData(ActionEvent event) {
+    }
+    
+    
+    @FXML
+    private void treeview() 
+    {
+        TreeItem<String> root = new TreeItem<String>("Root Node");
+        root.setExpanded(true);
+        root.getChildren().addAll(
+        new TreeItem<String>("Item 1"),
+        new TreeItem<String>("Item 2"),
+        new TreeItem<String>("Item 3")
+        );
     }
 }
