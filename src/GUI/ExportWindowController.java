@@ -8,8 +8,10 @@ package GUI;
 import BLL.CreateJSONFile;
 import BLL.ReadingXLSX;
 import static GUI.Converter.xmlToJSON.PRETTY_PRINT_INDENT_FACTOR;
+import GUI.Threading.ShoreLineThreading;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
+import com.jfoenix.controls.JFXProgressBar;
 import com.jfoenix.controls.JFXTextField;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -38,8 +40,9 @@ import org.json.JSONObject;
  *
  * @author kasper
  */
-public class ExportWindowController implements Initializable{
-
+public class ExportWindowController implements Initializable
+{
+    private ShoreLineThreading threading = null;
     @FXML
     private Label taskXRun;
     @FXML
@@ -55,7 +58,19 @@ public class ExportWindowController implements Initializable{
     private JFXButton pauseTaskThread;
     @FXML
     private JFXButton stopTaskThread;
-
+    @FXML
+    private JFXProgressBar progressBar;
+    
+    @Override
+    public void initialize(URL location, ResourceBundle resources) 
+    {
+        btnExport.setStyle("-fx-background-color: #588fe8;");
+        progressBar.setVisible(false);
+        startTaskThread.setDisable(true);
+        stopTaskThread.setDisable(true);
+        pauseTaskThread.setDisable(true);
+    }
+    
     @FXML
     private void importData(ActionEvent event) 
     {
@@ -66,19 +81,19 @@ public class ExportWindowController implements Initializable{
     @FXML
     private void startTask(ActionEvent event) 
     {
-        
+        threading.start();
     }
 
     @FXML
     private void pauseTask(ActionEvent event) 
     {
-        
+        threading.pause();
     }
 
     @FXML
     private void stopTask(ActionEvent event) 
     {
-        
+        threading.stop();
     }
 
 
@@ -198,16 +213,11 @@ public class ExportWindowController implements Initializable{
     }
 
     @FXML
-    private void saveData(ActionEvent event) {
+    private void saveData(ActionEvent event)
+    {
+        
     }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-    btnExport.setStyle("-fx-background-color: #588fe8;");
     
-    }
-
-
     void setmodel(FilesConvertionModel fcModel) 
     {
         this.fcModel=fcModel;

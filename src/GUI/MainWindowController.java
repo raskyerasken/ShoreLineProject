@@ -87,7 +87,7 @@ public class MainWindowController implements Initializable
     @FXML
     private JFXButton pauseTaskThread;
     @FXML
-    private JFXButton startTaskThead;
+    private JFXButton startTaskThread;
     @FXML
     private JFXButton stopTaskThread;
 
@@ -95,7 +95,7 @@ public class MainWindowController implements Initializable
     public void initialize(URL url, ResourceBundle rb) 
     {
         importbtn.setStyle("-fx-background-color: #588fe8;");
-        startTaskThead.setDisable(true);
+        startTaskThread.setDisable(true);
         stopTaskThread.setDisable(true);
         pauseTaskThread.setDisable(true);
         progressBar.setVisible(false);
