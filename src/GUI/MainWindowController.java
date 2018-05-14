@@ -57,8 +57,8 @@ public class MainWindowController implements Initializable
     
     LoginDataModel modelData = new LoginDataModel();
     LoginViewController loginID;
-    boolean acceptfile = false;
-    String[] acceptetFiles = {".xlsx"};
+    boolean acceptFile = false;
+    String[] acceptedFiles = {".xlsx"};
     List<File> files;
     @FXML
     private Label taskXRun;
@@ -70,7 +70,7 @@ public class MainWindowController implements Initializable
     private AnchorPane importWindow;
     @FXML
     private Button importbtn;
-    private final ObservableList<File> filesAcceptet
+    private final ObservableList<File> filesAccepted
             = FXCollections.observableArrayList();
     private FilesConvertionModel fcModel;
     private Thread t = null;
@@ -96,20 +96,20 @@ public class MainWindowController implements Initializable
     private void importData(ActionEvent event) throws SQLException {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Image File");
-        fileChooser.setInitialDirectory(new File("..."));
+       // fileChooser.setInitialDirectory(new File("..."));
         files = fileChooser.showOpenMultipleDialog(new Stage());
         UpdateLog updateLog = new UpdateLog();
         BLL.BLLManagerUpdateLog up = new BLLManagerUpdateLog();
         
         for (File file : files) 
         {
-            for (String acceptetFile : acceptetFiles) 
+            for (String acceptetFile : acceptedFiles) 
             {
                 if (file.getAbsolutePath().endsWith(acceptetFile)) 
                 {
-                    filesAcceptet.clear();
-                    filesAcceptet.add(file);
-                    acceptfile = true;
+                    filesAccepted.clear();
+                    filesAccepted.add(file);
+                    acceptFile = true;
                     
                     Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
                     java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
@@ -134,14 +134,14 @@ public class MainWindowController implements Initializable
 //                    System.out.println("writes");
 
                 }
-                if (!acceptfile) 
+                if (!acceptFile) 
                 {
                     AlertWindow alertWindow
                             = new AlertWindow("File not support yet", null, "This file " + file.getAbsolutePath() + " can be added");
                 }
-                acceptfile=false;
+                acceptFile=false;
             }
-            fcModel.setFiles(filesAcceptet);
+            fcModel.setFiles(filesAccepted);
         }
     }
 

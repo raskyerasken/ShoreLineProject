@@ -171,7 +171,7 @@ public class CustomDataWindowController  implements Initializable{
             TreeItem<String> hey = new TreeItem<String> (fcModel.getFiles().get(0).getName());
            ReadingXLSX  XLSX= new ReadingXLSX(fcModel.getFiles().get(0).getAbsolutePath());
             for (Object columsName : XLSX.getColumsNames()) {
-                  TreeItem<String> item = new TreeItem<String> (columsName.toString());            
+            TreeItem<String> item = new TreeItem<String> (columsName.toString());            
             hey.getChildren().add(item);
             }
             allFiles.getChildren().add(hey);
