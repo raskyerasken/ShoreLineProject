@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI.TEST;
+package GUI.Converter;
 
 import java.io.PrintStream;
 import org.xml.sax.ErrorHandler;
