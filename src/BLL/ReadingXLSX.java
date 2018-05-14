@@ -24,6 +24,8 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  *
@@ -99,11 +101,11 @@ public class ReadingXLSX {
 
     }
 
-    public List<JSON> allJSONObjectInFile() throws ParseException, IllegalArgumentException, IllegalAccessException {
-        List<JSON> JSONList = new ArrayList<>();
+    public List<JSONObject> allJSONObjectInFile() throws ParseException, IllegalArgumentException, IllegalAccessException, JSONException, IOException {
+        List<JSONObject> JSONList = new ArrayList<>();
         for (int i = 1; i < row; i++) {
          
-           JSON newJSON = setJSON(i);
+           JSONObject newJSON = setJSONObject(i);
            
            JSONList.add(newJSON);
         }
@@ -151,6 +153,43 @@ public class ReadingXLSX {
                     firstSheet.getRow(i).getCell( ColumNames.indexOf("Normal duration")).toString()));
         newJSON.setPlanning(planning);
         return newJSON;
+    }
+    private JSONObject setJSONObject(int i) throws JSONException, ParseException, IOException
+    {
+         JSONObject Json = new JSONObject();
+          Json.put("siteName", "");
+          Json.put("assetSerialNumber", "0");
+          Json.put("type", firstSheet.getRow(i).getCell( ColumNames.indexOf("Order Type")).toString());
+          Json.put("externalWorkOrderId", firstSheet.getRow(i).getCell( ColumNames.indexOf("Order")).toString());
+          Json.put("systemStatus", firstSheet.getRow(i).getCell( ColumNames.indexOf("System status")).toString());
+          Json.put("userStatus", firstSheet.getRow(i).getCell( ColumNames.indexOf("User status")).toString());
+          Json.put("createdOn", today.getDate()+"-"+today.getMonth()+"-"+(today.getYear()+1900));
+          Json.put("createdBy", "SAP");
+          if(firstSheet.getRow(i).getCell(ColumNames.indexOf("Opr. short text")).toString().isEmpty())
+           {
+               Json.put("name",firstSheet.getRow(i).getCell(ColumNames.indexOf("Description2")).toString());
+           }
+           else{
+           Json.put("name",firstSheet.getRow(i).getCell(ColumNames.indexOf("Opr. short text")).toString());
+           }
+          if(firstSheet.getRow(i).getCell(ColumNames.indexOf("Priority")).toString().isEmpty())
+           {
+            Json.put("priority","Low");
+           }
+           else{
+           Json.put("priority",firstSheet.getRow(i).getCell(ColumNames.indexOf("Priority")).toString());
+           }
+           Json.put("status", "new");
+            JSONObject planning = new JSONObject();
+            planning.put("latestFinishDate",firstSheet.getRow(i).getCell(ColumNames.indexOf("Lat.finish date")).toString());
+            planning.put("earliestStartDate", firstSheet.getRow(i).getCell(ColumNames.indexOf("Earl.start date")).toString());
+            planning.put("latestStartDate", firstSheet.getRow(i).getCell(ColumNames.indexOf("Latest start")).toString());
+            planning.put("estimatedTime",
+                   firstSheet.getRow(i).getCell( ColumNames.indexOf("Normal duration")).toString());
+           Json.put("planning", planning);
+          
+        return Json;
+    
     }
     
 }

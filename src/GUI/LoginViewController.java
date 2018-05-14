@@ -129,6 +129,8 @@ else
         Parent root = fxLoader.load();
         MainWindowController controller = fxLoader.getController();
         controller.modelData(modelData);
+        controller.setmodel(fcModel);
+        
         Scene scene = new Scene(root);
         newStage.setResizable(false);
         newStage.setScene(scene);
