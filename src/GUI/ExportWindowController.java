@@ -7,10 +7,14 @@ package GUI;
 
 import BLL.CreateJSONFile;
 import BLL.ReadingXLSX;
+<<<<<<< HEAD
 import static GUI.Converter.xmlToJSON.PRETTY_PRINT_INDENT_FACTOR;
+=======
+>>>>>>> a6f312eec1c2cdeb0fc08ea1d063e925912ab5cf
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
@@ -103,7 +107,7 @@ public class ExportWindowController implements Initializable{
     }
 
     @FXML
-    private void customDataMenuSelect(Event event) {
+    private void customDataMenuSelect(Event event) throws FileNotFoundException, ParseException {
    
              FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/CustomDataWindow.fxml"));
         Parent root;

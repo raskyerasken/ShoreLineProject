@@ -16,6 +16,7 @@ import GUI.Threading.ShoreLineThreading;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXProgressBar;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
@@ -64,8 +65,8 @@ public class MainWindowController implements Initializable
     
     LoginDataModel modelData = new LoginDataModel();
     LoginViewController loginID;
-    boolean acceptfile = false;
-    String[] acceptetFiles = {".xlsx"};
+    boolean acceptFile = false;
+    String[] acceptedFiles = {".xlsx"};
     List<File> files;
     @FXML
     private Label taskXRun;
@@ -77,7 +78,7 @@ public class MainWindowController implements Initializable
     private AnchorPane importWindow;
     @FXML
     private Button importbtn;
-    private final ObservableList<File> filesAcceptet
+    private final ObservableList<File> filesAccepted
             = FXCollections.observableArrayList();
     private FilesConvertionModel fcModel;
     private Thread t = null;
@@ -116,29 +117,41 @@ public class MainWindowController implements Initializable
     private void importData(ActionEvent event) throws SQLException {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Image File");
-        fileChooser.setInitialDirectory(new File("..."));
+       // fileChooser.setInitialDirectory(new File("..."));
         files = fileChooser.showOpenMultipleDialog(new Stage());
         UpdateLog updateLog = new UpdateLog();
         BLL.BLLManagerUpdateLog up = new BLLManagerUpdateLog();
         
         for (File file : files) 
         {
+<<<<<<< HEAD
             //root.getScene().setCursor(Cursor.WAIT);
             for (String acceptetFile : acceptetFiles) 
+=======
+            for (String acceptetFile : acceptedFiles) 
+>>>>>>> a6f312eec1c2cdeb0fc08ea1d063e925912ab5cf
             {
                 
                 if (file.getAbsolutePath().endsWith(acceptetFile)) 
                 {
+<<<<<<< HEAD
                     filesAcceptet.clear();
                     filesAcceptet.add(file);
                     acceptfile = true;
 
+=======
+                    filesAccepted.clear();
+                    filesAccepted.add(file);
+                    acceptFile = true;
+                    
+>>>>>>> a6f312eec1c2cdeb0fc08ea1d063e925912ab5cf
                     Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
                     java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
 
                     updateLog.setUsername(modelData.getUserLogin());
                     updateLog.setAdjustment("Exported files " + files);
                     updateLog.setDatelog(sqlDate);
+<<<<<<< HEAD
                     try 
                     {
                         up.setUpdateLog(updateLog);
@@ -146,12 +159,30 @@ public class MainWindowController implements Initializable
                     {
                         Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
                     }
+=======
+                    up.setUpdateLog(updateLog);
+//                    
+
+//                    System.out.println("what i am trying to do: "+modelData.getUserLogin());
+//                    
+//                    Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
+//                    java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
+//        
+//                    updateLog.setUsername(loginID.userNameID.getText());
+//                    updateLog.setAdjustment("Exported files " + files);
+//                    updateLog.setDatelog(sqlDate);
+//                    up.setUpdateLog(updateLog);
+//                    
+//                    System.out.println("writes");
+
+>>>>>>> a6f312eec1c2cdeb0fc08ea1d063e925912ab5cf
                 }
-                if (!acceptfile) 
+                if (!acceptFile) 
                 {
                     AlertWindow alertWindow
                             = new AlertWindow("File not support yet", null, "This file " + file.getAbsolutePath() + " can be added");
                 }
+<<<<<<< HEAD
                 acceptfile=false;
                 }
                 fcModel.setFiles(filesAcceptet);
@@ -162,6 +193,11 @@ public class MainWindowController implements Initializable
 //                root.getScene().setCursor(Cursor.DEFAULT);
 
             
+=======
+                acceptFile=false;
+            }
+            fcModel.setFiles(filesAccepted);
+>>>>>>> a6f312eec1c2cdeb0fc08ea1d063e925912ab5cf
         }
     }
 
@@ -245,8 +281,12 @@ public class MainWindowController implements Initializable
     }
 
     @FXML
+<<<<<<< HEAD
     private void customDataMenuSelect(Event event) 
     {
+=======
+    private void customDataMenuSelect(Event event) throws FileNotFoundException, ParseException {
+>>>>>>> a6f312eec1c2cdeb0fc08ea1d063e925912ab5cf
      
         try 
         {
