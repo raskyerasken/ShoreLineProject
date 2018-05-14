@@ -40,6 +40,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.Tab;
+import javafx.scene.control.TreeItem;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
@@ -74,6 +75,8 @@ public class MainWindowController implements Initializable
             = FXCollections.observableArrayList();
     private FilesConvertionModel fcModel;
     private Thread t = null;
+    
+    CustomDataWindowController cdwc = new CustomDataWindowController();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) 
@@ -142,6 +145,16 @@ public class MainWindowController implements Initializable
                 acceptFile=false;
             }
             fcModel.setFiles(filesAccepted);
+
+            
+            TreeItem<String> newFilesAdded = new TreeItem<String>(Calendar.getInstance().getTime().toString());
+            
+            for (File acceptedFile : filesAccepted) {
+                TreeItem<String> newlyAdded = new TreeItem<String>(acceptedFile.toString());
+                newFilesAdded.getChildren().add(newlyAdded);
+                
+            }
+            fcModel.setTreeFiles(newFilesAdded);
         }
     }
 

@@ -326,3 +326,5 @@ The user kris logged in.    Date: 2018/05/14 13:19:31
 The user kris logged in.    Date: 2018/05/14 13:20:31
 The user kris logged in.    Date: 2018/05/14 13:29:05
 The user kris logged in.    Date: 2018/05/14 13:29:18
+The user kris logged in.    Date: 2018/05/14 14:16:05
+The user kris logged in.    Date: 2018/05/14 14:33:55

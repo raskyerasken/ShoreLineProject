@@ -8,7 +8,10 @@ package GUI;
 import BE.UpdateLog;
 import java.io.File;
 import javafx.collections.FXCollections;
+import static javafx.collections.FXCollections.observableList;
 import javafx.collections.ObservableList;
+import javafx.scene.control.TreeItem;
+import javafx.scene.control.TreeView;
 
 /**
  *
@@ -17,6 +20,9 @@ import javafx.collections.ObservableList;
 public class FilesConvertionModel {
  private final ObservableList<File> allFiles 
             = FXCollections.observableArrayList();
+ private final ObservableList<TreeItem> treeFiles
+                = FXCollections.observableArrayList();
+ 
     void setFiles(ObservableList<File> filesAcceptet) {
        
     allFiles.addAll(filesAcceptet);
@@ -30,6 +36,16 @@ public class FilesConvertionModel {
 
     void clearFiles() {
    allFiles.clear();
+    }
+
+    void setTreeFiles(TreeItem<String> newFilesAdded)
+    {
+        treeFiles.add(newFilesAdded);
+    }
+    
+    ObservableList<TreeItem> getTreeFiles(TreeItem<String> newFilesAdded)
+    {
+        return treeFiles;
     }
     
     
