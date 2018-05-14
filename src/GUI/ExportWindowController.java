@@ -11,6 +11,7 @@ import static GUI.TEST.xmlToJSON.PRETTY_PRINT_INDENT_FACTOR;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
@@ -103,7 +104,7 @@ public class ExportWindowController implements Initializable{
     }
 
     @FXML
-    private void customDataMenuSelect(Event event) {
+    private void customDataMenuSelect(Event event) throws FileNotFoundException, ParseException {
    
              FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/CustomDataWindow.fxml"));
         Parent root;

@@ -5,9 +5,14 @@
  */
 package GUI;
 
+import BLL.ReadingXLSX;
 import com.jfoenix.controls.JFXButton;
+import java.awt.Image;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
+import java.text.ParseException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,12 +21,14 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javax.swing.tree.DefaultMutableTreeNode;
 
@@ -34,7 +41,7 @@ public class CustomDataWindowController  implements Initializable{
     @FXML
     private Label taskXRun;
     @FXML
-    private TreeView<?> CustomDataSelect;
+    private TreeView<String> CustomDataSelect;
     @FXML
     private AnchorPane customDataWindow;
     @FXML
@@ -45,8 +52,8 @@ public class CustomDataWindowController  implements Initializable{
     @FXML
     private JFXButton removeCustomData;
     @FXML
-    private TreeView<?> CustomDataAdded;
-
+    private TreeView<String> CustomDataAdded;
+    
     @FXML
     private void startTask(ActionEvent event) {
     }
@@ -135,13 +142,42 @@ public class CustomDataWindowController  implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     btnCustumData.setStyle("-fx-background-color: #588fe8;");
-    DefaultMutableTreeNode top =
-        new DefaultMutableTreeNode("The Java Series");
-    }
+    TreeItem<String> rootItem = new TreeItem<String> ("Inbox");
+   
+      TreeItem<String> hey = new TreeItem<String> ("hey");
+        TreeItem<String> hey2 = new TreeItem<String> ("hey2");
+        rootItem.setExpanded(true);
+        for (int i = 1; i < 6; i++) {
+            TreeItem<String> item = new TreeItem<String> ("Message" + i);            
+            hey.getChildren().add(item);
+        }   
+         for (int i = 1; i < 6; i++) {
+            TreeItem<String> item = new TreeItem<String> ("Message" + i);            
+            hey2.getChildren().add(item);
+        }   
+         
+         rootItem.getChildren().add(hey);
+    rootItem.getChildren().add(hey2);
+   
+    CustomDataAdded.setRoot(rootItem);
+   }
+ 
 
-    void setmodel(FilesConvertionModel fcModel) {
+    void setmodel(FilesConvertionModel fcModel) throws IOException, FileNotFoundException, ParseException {
     this.fcModel= fcModel;
-    
+     TreeItem<String> allFiles = new TreeItem<String> ("All files");
+     
+        
+            TreeItem<String> hey = new TreeItem<String> (fcModel.getFiles().get(0).getName());
+           ReadingXLSX  XLSX= new ReadingXLSX(fcModel.getFiles().get(0).getAbsolutePath());
+            for (Object columsName : XLSX.getColumsNames()) {
+                  TreeItem<String> item = new TreeItem<String> (columsName.toString());            
+            hey.getChildren().add(item);
+            }
+            allFiles.getChildren().add(hey);
+       
+    CustomDataSelect.setRoot(allFiles);
+    CustomDataSelect.setShowRoot(false);
     }
 
     @FXML
