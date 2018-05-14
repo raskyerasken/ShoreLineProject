@@ -10,8 +10,8 @@ import BE.UpdateLog;
 import BLL.BLLManagerUpdateLog;
 import BLL.CreateJSONFile;
 import BLL.ReadingXLSX;
-import GUI.TEST.XmlToJava;
-import GUI.TEST.xmlToJSON;
+import GUI.Converter.XmlToJava;
+import GUI.Converter.xmlToJSON;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -72,6 +72,7 @@ public class MainWindowController implements Initializable
     private final ObservableList<File> filesAcceptet
             = FXCollections.observableArrayList();
     private FilesConvertionModel fcModel;
+    private Thread t = null;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) 
@@ -118,7 +119,7 @@ public class MainWindowController implements Initializable
                     updateLog.setDatelog(sqlDate);
                     up.setUpdateLog(updateLog);
                     
-                    System.out.println("what i am trying to do: "+modelData.getUserLogin().toString());
+                    System.out.println("what i am trying to do: "+modelData.getUserLogin());
 //                    
 //                    Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
 //                    java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
