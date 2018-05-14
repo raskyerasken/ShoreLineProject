@@ -8,11 +8,14 @@ package GUI;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -32,6 +35,7 @@ public class CustomDataWindowController  implements Initializable{
     private AnchorPane customDataWindow;
     @FXML
     private Button btnCustumData;
+    private FilesConvertionModel fcModel;
 
     @FXML
     private void startTask(ActionEvent event) {
@@ -74,15 +78,36 @@ public class CustomDataWindowController  implements Initializable{
 //    
 
     @FXML
-    private void importMenuSelect(Event event) throws IOException {
-              AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/MainWindow.fxml"));
-                customDataWindow.getChildren().setAll(pane);
+    private void importMenuSelect(Event event)  {
+        
+             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/MainWindow.fxml"));
+        Parent root;
+        try {
+            root = fxLoader.load();
+                MainWindowController controller = fxLoader.getController();
+        controller.setmodel(fcModel);
+        customDataWindow.getChildren().setAll(root);
+        } catch (IOException ex) {
+            AlertWindow  alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
+        }
+    
     }
 
     @FXML
-    private void exportMenuSelect(Event event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/ExportWindow.fxml"));
-                customDataWindow.getChildren().setAll(pane);
+    private void exportMenuSelect(Event event)  {
+     
+                
+             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/ExportWindow.fxml"));
+        Parent root;
+        try {
+            root = fxLoader.load();
+            ExportWindowController controller = fxLoader.getController();
+        controller.setmodel(fcModel);
+        customDataWindow.getChildren().setAll(root);
+        } catch (IOException ex) {
+            AlertWindow  alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
+        }
+        
     }
 
     @FXML
@@ -100,5 +125,10 @@ public class CustomDataWindowController  implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     btnCustumData.setStyle("-fx-background-color: #588fe8;");
+    }
+
+    void setmodel(FilesConvertionModel fcModel) {
+    this.fcModel= fcModel;
+    
     }
 }

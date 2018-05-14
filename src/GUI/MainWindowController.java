@@ -71,6 +71,7 @@ public class MainWindowController implements Initializable
     private Button importbtn;
     private final ObservableList<File> filesAcceptet
             = FXCollections.observableArrayList();
+    private FilesConvertionModel fcModel;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) 
@@ -90,7 +91,7 @@ public class MainWindowController implements Initializable
 
 
     @FXML
-    private void importData(ActionEvent event) throws SAXException, IOException, ParseException, IllegalArgumentException, IllegalAccessException, SQLException {
+    private void importData(ActionEvent event) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Image File");
         fileChooser.setInitialDirectory(new File("..."));
@@ -101,8 +102,10 @@ public class MainWindowController implements Initializable
         for (File file : files) {
             for (String acceptetFile : acceptetFiles) {
                 if (file.getAbsolutePath().endsWith(acceptetFile)) {
+                    filesAcceptet.clear();
                     filesAcceptet.add(file);
                     acceptfile = true;
+<<<<<<< HEAD
                     
                     Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
                     java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
@@ -114,6 +117,18 @@ public class MainWindowController implements Initializable
                     up.setUpdateLog(updateLog);
                     
                     System.out.println("what i am trying to do: "+modelData.getUserLogin().toString());
+=======
+//                    
+//                    Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
+//                    java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
+//        
+//                    updateLog.setUsername(loginID.userNameID.getText());
+//                    updateLog.setAdjustment("Exported files " + files);
+//                    updateLog.setDatelog(sqlDate);
+//                    up.setUpdateLog(updateLog);
+//                    
+//                    System.out.println("writes");
+>>>>>>> 177c120ba5303a54d7d6c496806c04a993492939
 
                 }
                 if (!acceptfile) {
@@ -121,8 +136,10 @@ public class MainWindowController implements Initializable
                     AlertWindow alertWindow
                             = new AlertWindow("File not support yet", null, "This file " + file.getAbsolutePath() + " can be added");
                 }
+                acceptfile=false;
             }
-            taskField.setItems((ObservableList<File>) filesAcceptet);
+            fcModel.setFiles(filesAcceptet);
+     
         }
     }
 
@@ -167,41 +184,71 @@ public class MainWindowController implements Initializable
 //    }
 //    
     @FXML
-    private void importMenuSelect(Event event) throws IOException {
+    private void importMenuSelect(Event event) {
 
     }
 
     @FXML
-    private void exportMenuSelect(Event event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/ExportWindow.fxml"));
-        importWindow.getChildren().setAll(pane);
+    private void exportMenuSelect(Event event)  {
+        try {
+            FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/ExportWindow.fxml"));
+            Parent root = fxLoader.load();
+            ExportWindowController controller = fxLoader.getController();
+            controller.setmodel(fcModel);
+            importWindow.getChildren().setAll(root);
+        } catch (IOException ex) {
+            AlertWindow  alert = new AlertWindow("IOException", null, "IOException");
+        }
+
 
     }
 
     @FXML
-    private void customDataMenuSelect(Event event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/CustomDataWindow.fxml"));
-        importWindow.getChildren().setAll(pane);
+    private void customDataMenuSelect(Event event) {
+     
+        try {
+            FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/CustomDataWindow.fxml"));
+            Parent root = fxLoader.load();
+            CustomDataWindowController controller = fxLoader.getController();
+            controller.setmodel(fcModel);
+            importWindow.getChildren().setAll(root);
+        } catch (IOException ex) {
+            AlertWindow  alert = new AlertWindow("IOException", null, "IOException");
+        }
+        
     }
 
     @FXML
-    private void logMenuSelect(Event event) throws IOException {
-        Stage newStage = new Stage();
-        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("LogView.fxml"));
-        Parent root = fxLoader.load();
-        Scene scene = new Scene(root);
-        newStage.setScene(scene);
-        newStage.setResizable(false);
-        newStage.showAndWait();
+    private void logMenuSelect(Event event)  {
+        try {
+            Stage newStage = new Stage();
+            FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("LogView.fxml"));
+            Parent root = fxLoader.load();
+            Scene scene = new Scene(root);
+            newStage.setScene(scene);
+            newStage.setResizable(false);
+            newStage.showAndWait();
+        } catch (IOException ex) {
+            AlertWindow  alert = new AlertWindow("IOException", null, "IOException");
+        }
     }
 
     @FXML
     private void adminMenuSelect(ActionEvent event) {
     }
 
+<<<<<<< HEAD
     void modelData(LoginDataModel modelData) 
     {
         this.modelData = modelData;
     }
+=======
+   
+
+    void setmodel(FilesConvertionModel fcModel) {
+      this.fcModel=fcModel;
+    taskField.getItems().clear();
+       taskField.setItems(fcModel.getFiles());}
+>>>>>>> 177c120ba5303a54d7d6c496806c04a993492939
 
 }

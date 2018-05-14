@@ -6,6 +6,7 @@
 package DAL;
 
 import BE.UpdateLog;
+import GUI.AlertWindow;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -49,7 +50,7 @@ public class DataBaseUpdateLog
         
         catch (SQLServerException ex) 
         {
-            Logger.getLogger(DataBaseUserLogin.class.getName()).log(Level.SEVERE, null, ex);
+             AlertWindow  alert = new AlertWindow("Data base connectiong error", null, "Check you connection to the database");
         }
     }
     
@@ -77,8 +78,7 @@ public class DataBaseUpdateLog
         } 
         catch (SQLException ex) 
         {
-            Logger.getLogger(DataBaseUpdateLog.class.getName()).
-                    log(Level.SEVERE, null, ex);
+          AlertWindow  alert = new AlertWindow("Data base connectiong error", null, "Check you connection to the database");
         }
         return AllupdateLog;
     }

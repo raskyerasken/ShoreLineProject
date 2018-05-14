@@ -167,6 +167,7 @@ The user Jacob logged in.    Date: 2018/05/04 11:27:55
 The user Jacob logged in.    Date: 2018/05/04 11:29:08
 >>>>>>> ac603c994986911ed75605def1356e357a511c25
 The user Jacob logged in.    Date: 2018/05/04 11:34:51
+<<<<<<< HEAD
 The user Jacob logged in.    Date: 2018/05/04 12:20:26
 The user Jacob logged in.    Date: 2018/05/04 12:22:59
 The user kris logged in.    Date: 2018/05/10 11:57:16
@@ -225,3 +226,56 @@ The user kris logged in.    Date: 2018/05/11 22:45:35
 The user kris logged in.    Date: 2018/05/11 22:46:50
 The user kris logged in.    Date: 2018/05/14 11:40:04
 The user kris logged in.    Date: 2018/05/14 11:46:32
+=======
+The user Jacob logged in.    Date: 2018/05/04 11:35:34
+The user Jacob logged in.    Date: 2018/05/04 12:17:26
+The user Jacob logged in.    Date: 2018/05/04 12:22:34
+The user Jacob logged in.    Date: 2018/05/04 12:25:25
+The user Jacob logged in.    Date: 2018/05/04 12:25:52
+The user Jacob logged in.    Date: 2018/05/04 12:26:32
+The user Jacob logged in.    Date: 2018/05/04 12:27:08
+The user Jacob logged in.    Date: 2018/05/04 12:27:43
+The user Jacob logged in.    Date: 2018/05/04 12:28:36
+The user Jacob logged in.    Date: 2018/05/04 12:28:52
+The user Jacob logged in.    Date: 2018/05/04 12:29:16
+The user Jacob logged in.    Date: 2018/05/04 12:29:45
+The user Jacob logged in.    Date: 2018/05/04 12:30:24
+The user Jacob logged in.    Date: 2018/05/04 12:31:02
+The user Jacob logged in.    Date: 2018/05/04 12:31:39
+The user Jacob logged in.    Date: 2018/05/04 12:33:55
+The user Jacob logged in.    Date: 2018/05/04 12:35:01
+The user Jacob logged in.    Date: 2018/05/04 12:36:26
+The user Jacob logged in.    Date: 2018/05/04 12:36:58
+The user Jacob logged in.    Date: 2018/05/04 12:38:02
+The user Jacob logged in.    Date: 2018/05/04 12:39:34
+The user Jacob logged in.    Date: 2018/05/04 12:40:25
+The user Jacob logged in.    Date: 2018/05/04 12:42:39
+The user Jacob logged in.    Date: 2018/05/04 12:43:30
+The user Jacob logged in.    Date: 2018/05/04 12:43:48
+The user Jacob logged in.    Date: 2018/05/04 12:44:15
+The user Jacob logged in.    Date: 2018/05/04 12:44:48
+The user Jacob logged in.    Date: 2018/05/04 12:49:42
+The user Jacob logged in.    Date: 2018/05/04 12:49:57
+The user Jacob logged in.    Date: 2018/05/04 12:50:26
+The user Jacob logged in.    Date: 2018/05/04 12:51:19
+The user Jacob logged in.    Date: 2018/05/08 10:42:57
+The user Jacob logged in.    Date: 2018/05/08 10:47:02
+The user Jacob logged in.    Date: 2018/05/08 10:47:51
+The user Jacob logged in.    Date: 2018/05/08 10:52:57
+The user Jacob logged in.    Date: 2018/05/08 10:54:21
+The user Jacob logged in.    Date: 2018/05/08 10:55:16
+The user Jacob logged in.    Date: 2018/05/08 10:58:40
+The user Jacob logged in.    Date: 2018/05/08 11:01:55
+The user Jacob logged in.    Date: 2018/05/08 11:03:24
+The user Jacob logged in.    Date: 2018/05/08 11:04:02
+The user Jacob logged in.    Date: 2018/05/08 11:08:41
+The user Jacob logged in.    Date: 2018/05/08 11:09:12
+The user Jacob logged in.    Date: 2018/05/08 11:10:14
+The user Jacob logged in.    Date: 2018/05/08 11:12:46
+The user Jacob logged in.    Date: 2018/05/09 08:39:04
+The user Jacob logged in.    Date: 2018/05/09 08:41:02
+The user Jacob logged in.    Date: 2018/05/09 08:41:24
+The user Jacob logged in.    Date: 2018/05/09 08:48:32
+The user Jacob logged in.    Date: 2018/05/09 09:04:06
+The user Jacob logged in.    Date: 2018/05/09 09:04:20
+>>>>>>> 177c120ba5303a54d7d6c496806c04a993492939

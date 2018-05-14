@@ -6,6 +6,7 @@
 package DAL;
 
 import BE.UserLogin;
+import GUI.AlertWindow;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -39,7 +40,7 @@ public class DataBaseUserLogin
         
         catch (SQLServerException ex) 
         {
-            Logger.getLogger(DataBaseUserLogin.class.getName()).log(Level.SEVERE, null, ex);
+             AlertWindow  alert = new AlertWindow("Data base connectiong error", null, "Check you connection to the database");
         }
     }
 
@@ -66,7 +67,7 @@ public class DataBaseUserLogin
         
         catch (SQLServerException ex) 
         {
-            Logger.getLogger(DataBaseUserLogin.class.getName()).log(Level.SEVERE, null, ex);
+          AlertWindow  alert = new AlertWindow("Data base connectiong error", null, "Check you connection to the database");
         }
         return userLogin.getPassword().equals(ul.getPassword());
     }
@@ -93,7 +94,7 @@ public class DataBaseUserLogin
         
         catch (SQLServerException ex) 
         {
-            Logger.getLogger(DataBaseUserLogin.class.getName()).log(Level.SEVERE, null, ex);
+          AlertWindow  alert = new AlertWindow("Data base connectiong error", null, "Check you connection to the database");
         }
         return true;
     }

@@ -5,16 +5,23 @@
  */
 package GUI;
 
+import BLL.CreateJSONFile;
+import BLL.ReadingXLSX;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.text.ParseException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -32,9 +39,10 @@ public class ExportWindowController implements Initializable{
     @FXML
     private AnchorPane exportWindow;
     @FXML
-    private JFXListView<?> taskField;
+    private JFXListView<File> taskField;
     @FXML
     private Button btnExport;
+    private FilesConvertionModel fcModel;
 
     @FXML
     private void importData(ActionEvent event) {
@@ -74,15 +82,36 @@ public class ExportWindowController implements Initializable{
 //    }
 
     @FXML
-    private void importMenuSelect(Event event) throws IOException {
-         AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/MainWindow.fxml"));
-            exportWindow.getChildren().setAll(pane);    
+    private void importMenuSelect(Event event)  {
+    
+            
+             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/MainWindow.fxml"));
+        Parent root;
+        try {
+            root = fxLoader.load();
+              MainWindowController controller = fxLoader.getController();
+        controller.setmodel(fcModel);
+        exportWindow.getChildren().setAll(root);
+        } catch (IOException ex) {
+              AlertWindow  alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
+        }
+      
     }
 
     @FXML
-    private void customDataMenuSelect(Event event) throws IOException {
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/CustomDataWindow.fxml"));
-                exportWindow.getChildren().setAll(pane); 
+    private void customDataMenuSelect(Event event) {
+   
+             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/CustomDataWindow.fxml"));
+        Parent root;
+        try {
+            root = fxLoader.load();
+            CustomDataWindowController controller = fxLoader.getController();
+        controller.setmodel(fcModel);
+        exportWindow.getChildren().setAll(root);
+        } catch (IOException ex) {
+            AlertWindow  alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
+        }
+        
     }
 
     @FXML
@@ -99,6 +128,25 @@ public class ExportWindowController implements Initializable{
 
     @FXML
     private void convertData(ActionEvent event) {
+        
+        for (int i = 0; i < fcModel.getFiles().size(); i++) {
+            try {
+                ReadingXLSX XLSX = new ReadingXLSX(fcModel.getFiles().get(i).getAbsolutePath());
+                XLSX.allRows();
+                XLSX.getColumsNames();
+                CreateJSONFile createJSON = new CreateJSONFile();
+                createJSON.createJSON(XLSX.allJSONObjectInFile(), fcModel.getFiles().get(i).getName());
+            } catch (IOException ex) {
+                AlertWindow  alert = new AlertWindow("IOException", null, "IOException");
+            } catch (ParseException ex) {
+                AlertWindow  alert = new AlertWindow("ParseException", null, "ParseException");
+            } catch (IllegalArgumentException ex) {
+                 AlertWindow  alert = new AlertWindow("IllegalArgumentException", null, "IllegalArgumentException");
+            } catch (IllegalAccessException ex) {
+                  AlertWindow  alert = new AlertWindow("IllegalAccessException", null, "IllegalAccessException");
+            }
+        }
+        fcModel.clearFiles();
     }
 
     @FXML
@@ -107,6 +155,13 @@ public class ExportWindowController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-    btnExport.setStyle("-fx-background-color: #588fe8;");}
+    btnExport.setStyle("-fx-background-color: #588fe8;");
+    
+    }
+
+
+    void setmodel(FilesConvertionModel fcModel) {
+     this.fcModel=fcModel;
+    taskField.setItems(fcModel.getFiles());}
     
 }
