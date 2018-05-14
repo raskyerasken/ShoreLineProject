@@ -46,12 +46,9 @@ import javafx.stage.Stage;
  */
 public class LoginViewController implements Initializable 
 {
-<<<<<<< HEAD
+
     LoginDataModel modelData = new LoginDataModel();
-=======
-    
     FilesConvertionModel fcModel = new FilesConvertionModel();
->>>>>>> 177c120ba5303a54d7d6c496806c04a993492939
     @FXML
     JFXTextField userNameID;
     @FXML
@@ -77,21 +74,17 @@ public class LoginViewController implements Initializable
     }    
     
     @FXML
-    private void login(ActionEvent event) 
+    private void login(ActionEvent event) throws IOException 
     {
-<<<<<<< HEAD
-        
         userLogin.setPassword(userPassword.getText());
         userLogin.setUserName(userNameID.getText());
         
         //java.util.Date utilDate = new java.util.Date();
-=======
         try {
             userLogin.setPassword(userPassword.getText());
             userLogin.setUserName(userNameID.getText());
             
             //java.util.Date utilDate = new java.util.Date();
->>>>>>> 177c120ba5303a54d7d6c496806c04a993492939
 //        Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
 //        java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
         
@@ -129,9 +122,8 @@ else
         }
     }
     
-    private void openMainWindow() 
+    private void openMainWindow() throws IOException 
     {
-<<<<<<< HEAD
         Stage newStage = new Stage();
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
         Parent root = fxLoader.load();
@@ -143,23 +135,6 @@ else
         newStage.show();
         Stage stage = (Stage) userNameID.getScene().getWindow();
         stage.close();
-=======
-        try {
-            Stage newStage = new Stage();
-            FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
-            Parent root = fxLoader.load();
-            MainWindowController controller = fxLoader.getController();
-            controller.setmodel(fcModel);
-            Scene scene = new Scene(root);
-            newStage.setResizable(false);
-            newStage.setScene(scene);
-            newStage.show();
-            Stage stage = (Stage) userNameID.getScene().getWindow();
-            stage.close();
-        } catch (IOException ex) {
-           AlertWindow  alert = new AlertWindow("MainWindow error", null, "It can not show MainWindow view");
-        }
->>>>>>> 177c120ba5303a54d7d6c496806c04a993492939
     }
     
     private void showErrorDialog(String title, String header, String message) 

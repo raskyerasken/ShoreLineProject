@@ -91,7 +91,7 @@ public class MainWindowController implements Initializable
 
 
     @FXML
-    private void importData(ActionEvent event) {
+    private void importData(ActionEvent event) throws SQLException {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Image File");
         fileChooser.setInitialDirectory(new File("..."));
@@ -99,13 +99,15 @@ public class MainWindowController implements Initializable
         UpdateLog updateLog = new UpdateLog();
         BLL.BLLManagerUpdateLog up = new BLLManagerUpdateLog();
         
-        for (File file : files) {
-            for (String acceptetFile : acceptetFiles) {
-                if (file.getAbsolutePath().endsWith(acceptetFile)) {
+        for (File file : files) 
+        {
+            for (String acceptetFile : acceptetFiles) 
+            {
+                if (file.getAbsolutePath().endsWith(acceptetFile)) 
+                {
                     filesAcceptet.clear();
                     filesAcceptet.add(file);
                     acceptfile = true;
-<<<<<<< HEAD
                     
                     Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
                     java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
@@ -117,7 +119,6 @@ public class MainWindowController implements Initializable
                     up.setUpdateLog(updateLog);
                     
                     System.out.println("what i am trying to do: "+modelData.getUserLogin().toString());
-=======
 //                    
 //                    Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
 //                    java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
@@ -128,18 +129,16 @@ public class MainWindowController implements Initializable
 //                    up.setUpdateLog(updateLog);
 //                    
 //                    System.out.println("writes");
->>>>>>> 177c120ba5303a54d7d6c496806c04a993492939
 
                 }
-                if (!acceptfile) {
-
+                if (!acceptfile) 
+                {
                     AlertWindow alertWindow
                             = new AlertWindow("File not support yet", null, "This file " + file.getAbsolutePath() + " can be added");
                 }
                 acceptfile=false;
             }
             fcModel.setFiles(filesAcceptet);
-     
         }
     }
 
@@ -234,21 +233,18 @@ public class MainWindowController implements Initializable
     }
 
     @FXML
-    private void adminMenuSelect(ActionEvent event) {
+    private void adminMenuSelect(ActionEvent event) 
+    {
+        
     }
-
-<<<<<<< HEAD
     void modelData(LoginDataModel modelData) 
     {
         this.modelData = modelData;
     }
-=======
    
 
     void setmodel(FilesConvertionModel fcModel) {
       this.fcModel=fcModel;
     taskField.getItems().clear();
        taskField.setItems(fcModel.getFiles());}
->>>>>>> 177c120ba5303a54d7d6c496806c04a993492939
-
 }
