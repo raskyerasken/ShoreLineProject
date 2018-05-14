@@ -8,6 +8,7 @@ package GUI;
 import BLL.CreateJSONFile;
 import BLL.ReadingXLSX;
 import static GUI.Converter.xmlToJSON.PRETTY_PRINT_INDENT_FACTOR;
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
 import java.io.File;
@@ -48,6 +49,12 @@ public class ExportWindowController implements Initializable{
     @FXML
     private Button btnExport;
     private FilesConvertionModel fcModel;
+    @FXML
+    private JFXButton startTaskThread;
+    @FXML
+    private JFXButton pauseTaskThread;
+    @FXML
+    private JFXButton stopTaskThread;
 
     @FXML
     private void importData(ActionEvent event) 
