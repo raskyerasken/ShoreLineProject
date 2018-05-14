@@ -23,6 +23,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.layout.AnchorPane;
+import javax.swing.tree.DefaultMutableTreeNode;
 
 /**
  *
@@ -134,7 +135,8 @@ public class CustomDataWindowController  implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     btnCustumData.setStyle("-fx-background-color: #588fe8;");
-
+    DefaultMutableTreeNode top =
+        new DefaultMutableTreeNode("The Java Series");
     }
 
     void setmodel(FilesConvertionModel fcModel) {

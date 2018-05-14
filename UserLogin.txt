@@ -298,3 +298,8 @@ The user Jacob logged in.    Date: 2018/05/14 11:13:35
 >>>>>>> 177c120ba5303a54d7d6c496806c04a993492939
 The user kris logged in.    Date: 2018/05/14 12:04:48
 >>>>>>> ea22242dc7a32f597a409aa5b3abe078d2ecaa85
+The user kris logged in.    Date: 2018/05/14 12:19:28
+The user kris logged in.    Date: 2018/05/14 12:23:35
+The user kris logged in.    Date: 2018/05/14 12:24:02
+The user kris logged in.    Date: 2018/05/14 12:24:46
+The user kris logged in.    Date: 2018/05/14 12:27:16
