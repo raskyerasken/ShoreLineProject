@@ -50,20 +50,28 @@ public class ExportWindowController implements Initializable{
     private FilesConvertionModel fcModel;
 
     @FXML
-    private void importData(ActionEvent event) {
+    private void importData(ActionEvent event) 
+    {
+        
     }
 
 
     @FXML
-    private void startTask(ActionEvent event) {
+    private void startTask(ActionEvent event) 
+    {
+        
     }
 
     @FXML
-    private void pauseTask(ActionEvent event) {
+    private void pauseTask(ActionEvent event) 
+    {
+        
     }
 
     @FXML
-    private void stopTask(ActionEvent event) {
+    private void stopTask(ActionEvent event) 
+    {
+        
     }
 
 
@@ -87,78 +95,96 @@ public class ExportWindowController implements Initializable{
 //    }
 
     @FXML
-    private void importMenuSelect(Event event)  {
-    
-            
-             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/MainWindow.fxml"));
+    private void importMenuSelect(Event event)  
+    {
+        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/MainWindow.fxml"));
         Parent root;
-        try {
+        try 
+        {
             root = fxLoader.load();
-              MainWindowController controller = fxLoader.getController();
-        controller.setmodel(fcModel);
-        exportWindow.getChildren().setAll(root);
-        } catch (IOException ex) {
+            MainWindowController controller = fxLoader.getController();
+            controller.setmodel(fcModel);
+            exportWindow.getChildren().setAll(root);
+        } 
+        catch (IOException ex) 
+        {
               AlertWindow  alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
         }
-      
     }
 
     @FXML
-    private void customDataMenuSelect(Event event) throws FileNotFoundException, ParseException {
+    private void customDataMenuSelect(Event event) throws FileNotFoundException, ParseException 
+    {
    
-             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/CustomDataWindow.fxml"));
+        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/CustomDataWindow.fxml"));
         Parent root;
-        try {
+        try 
+        {
             root = fxLoader.load();
             CustomDataWindowController controller = fxLoader.getController();
-        controller.setmodel(fcModel);
-        exportWindow.getChildren().setAll(root);
-        } catch (IOException ex) {
+            controller.setmodel(fcModel);
+            exportWindow.getChildren().setAll(root);
+        } 
+        catch (IOException ex) 
+        {
             AlertWindow  alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
         }
+    }
+
+    @FXML
+    private void logMenuSelect(Event event) 
+    {
         
     }
 
     @FXML
-    private void logMenuSelect(Event event) {
-    }
-
-    @FXML
-    private void exportMenuSelect(ActionEvent event) {
-    }
-
-    @FXML
-    private void adminMenuSelect(ActionEvent event) {
-    }
-
-    @FXML
-    private void convertData(ActionEvent event) throws JSONException {
+    private void exportMenuSelect(ActionEvent event) 
+    {
         
+    }
+
+    @FXML
+    private void adminMenuSelect(ActionEvent event) 
+    {
+        
+    }
+
+    @FXML
+    private void convertData(ActionEvent event) throws JSONException 
+    {
         for (int i = 0; i < fcModel.getFiles().size(); i++) {
-            try {
+            try 
+            {
                 ReadingXLSX XLSX = new ReadingXLSX(fcModel.getFiles().get(i).getAbsolutePath());
                 XLSX.allRows();
                 XLSX.getColumsNames();
                 CreateJSONFile createJSON = new CreateJSONFile();
-                 File file = new File(fcModel.getFiles().get(i).getCanonicalFile()+ ".json");
-        FileWriter fileWriter = new FileWriter(file);
+                File file = new File(fcModel.getFiles().get(i).getCanonicalFile()+ ".json");
+                FileWriter fileWriter = new FileWriter(file);
         
-                for (JSONObject jSONObject : XLSX.allJSONObjectInFile()) {
+                for (JSONObject jSONObject : XLSX.allJSONObjectInFile()) 
+                {
                     fileWriter.write(jSONObject.toString(4));
-                    
-                    
                 }
-         fileWriter.flush();
-        fileWriter.close();
+                fileWriter.flush();
+                fileWriter.close();
                 
-            } catch (IOException ex) {
+            } 
+            catch (IOException ex) 
+            {
                 AlertWindow  alert = new AlertWindow("IOException", null, "IOException");
-            } catch (ParseException ex) {
+            } 
+            catch (ParseException ex) 
+            {
                 AlertWindow  alert = new AlertWindow("ParseException", null, "ParseException");
-            } catch (IllegalArgumentException ex) {
-                 AlertWindow  alert = new AlertWindow("IllegalArgumentException", null, "IllegalArgumentException");
-            } catch (IllegalAccessException ex) {
-                  AlertWindow  alert = new AlertWindow("IllegalAccessException", null, "IllegalAccessException");
+            } 
+            catch (IllegalArgumentException ex) 
+            {
+                AlertWindow  alert = new AlertWindow("IllegalArgumentException", null, "IllegalArgumentException");
+            } 
+            catch (IllegalAccessException ex) 
+            {
+                AlertWindow  alert = new AlertWindow("IllegalAccessException", null, "IllegalAccessException");
             }
         }
         fcModel.clearFiles();
@@ -175,8 +201,10 @@ public class ExportWindowController implements Initializable{
     }
 
 
-    void setmodel(FilesConvertionModel fcModel) {
-     this.fcModel=fcModel;
-    taskField.setItems(fcModel.getFiles());}
+    void setmodel(FilesConvertionModel fcModel) 
+    {
+        this.fcModel=fcModel;
+        taskField.setItems(fcModel.getFiles());
+    }
     
 }
