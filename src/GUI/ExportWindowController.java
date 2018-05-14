@@ -7,9 +7,11 @@ package GUI;
 
 import BLL.CreateJSONFile;
 import BLL.ReadingXLSX;
+import static GUI.TEST.xmlToJSON.PRETTY_PRINT_INDENT_FACTOR;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.text.ParseException;
@@ -27,6 +29,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  *
@@ -127,7 +131,7 @@ public class ExportWindowController implements Initializable{
     }
 
     @FXML
-    private void convertData(ActionEvent event) {
+    private void convertData(ActionEvent event) throws JSONException {
         
         for (int i = 0; i < fcModel.getFiles().size(); i++) {
             try {
@@ -135,7 +139,17 @@ public class ExportWindowController implements Initializable{
                 XLSX.allRows();
                 XLSX.getColumsNames();
                 CreateJSONFile createJSON = new CreateJSONFile();
-                createJSON.createJSON(XLSX.allJSONObjectInFile(), fcModel.getFiles().get(i).getName());
+                 File file = new File(fcModel.getFiles().get(i).getCanonicalFile()+ ".json");
+        FileWriter fileWriter = new FileWriter(file);
+        
+                for (JSONObject jSONObject : XLSX.allJSONObjectInFile()) {
+                    fileWriter.write(jSONObject.toString(4));
+                    
+                    
+                }
+         fileWriter.flush();
+        fileWriter.close();
+                
             } catch (IOException ex) {
                 AlertWindow  alert = new AlertWindow("IOException", null, "IOException");
             } catch (ParseException ex) {
