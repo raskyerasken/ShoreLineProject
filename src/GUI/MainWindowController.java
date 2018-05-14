@@ -119,12 +119,9 @@ public class MainWindowController implements Initializable
                     updateLog.setAdjustment("Exported files " + files);
                     updateLog.setDatelog(sqlDate);
                     up.setUpdateLog(updateLog);
-                    
-<<<<<<< HEAD
-                 
-=======
-                    System.out.println("what i am trying to do: "+modelData.getUserLogin());
->>>>>>> 99f3580e738873cc24517e3cececceaf64686d78
+//                    
+
+//                    System.out.println("what i am trying to do: "+modelData.getUserLogin());
 //                    
 //                    Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
 //                    java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
