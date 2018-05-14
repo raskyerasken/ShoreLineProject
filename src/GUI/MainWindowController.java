@@ -83,10 +83,8 @@ public class MainWindowController implements Initializable
             = FXCollections.observableArrayList();
     private FilesConvertionModel fcModel;
     private Thread t = null;
-<<<<<<< HEAD
     
     CustomDataWindowController cdwc = new CustomDataWindowController();
-=======
     @FXML
     private JFXProgressBar progressBar;
     @FXML
@@ -95,7 +93,6 @@ public class MainWindowController implements Initializable
     private JFXButton startTaskThread;
     @FXML
     private JFXButton stopTaskThread;
->>>>>>> f1349b3c515a37b08054938f5dbffd44b7784417
 
     @Override
     public void initialize(URL url, ResourceBundle rb) 
