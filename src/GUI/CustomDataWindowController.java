@@ -176,21 +176,20 @@ public class CustomDataWindowController  implements Initializable{
         CustomDataAdded.setRoot(rootItem);
    }
  
+    
 
-    void setmodel(FilesConvertionModel fcModel) throws IOException, FileNotFoundException, ParseException 
-    {
-        this.fcModel= fcModel;
-        TreeItem<String> allFiles = new TreeItem<String> ("All files");
-        TreeItem<String> hey = new TreeItem<String> (fcModel.getFiles().get(0).getName());
-        ReadingXLSX  XLSX= new ReadingXLSX(fcModel.getFiles().get(0).getAbsolutePath());
-        for (Object columsName : XLSX.getColumsNames()) 
-        {
-            TreeItem<String> item = new TreeItem<String> (columsName.toString());            
-            hey.getChildren().add(item);
-        }
-        allFiles.getChildren().add(hey);
-        CustomDataSelect.setRoot(allFiles);
-        CustomDataSelect.setShowRoot(false);
+    void setmodel(FilesConvertionModel fcModel) throws IOException, FileNotFoundException, ParseException {
+    this.fcModel= fcModel;
+     TreeItem<String> allFiles = new TreeItem<String> ("All files");
+     
+            for (TreeItem object : fcModel.getTreeFiles()) 
+            {
+                allFiles.getChildren().add(object);
+            }
+       
+    CustomDataSelect.setRoot(allFiles);
+    CustomDataSelect.setShowRoot(false);
+
     }
 
     @FXML
