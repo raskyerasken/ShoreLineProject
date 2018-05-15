@@ -80,22 +80,25 @@ public class LogViewController implements Initializable
     {            
         //Should read the file
         BufferedReader br;
-        try {
-            br = new BufferedReader(new FileReader("UserLogin.txt"));
-             String line = br.readLine();
-                while (line != null)
+        try 
         {
-            lines.add(line);
-            line = br.readLine();
-            LogView.setItems(lines);
+            br = new BufferedReader(new FileReader("UserLogin.txt"));
+            String line = br.readLine();
+            while (line != null)
+            {
+                lines.add(line);
+                line = br.readLine();
+                LogView.setItems(lines);
+            }
+        } 
+        catch (FileNotFoundException ex) 
+        {
+            AlertWindow  alert = new AlertWindow("File not found", null, "Can find file Userlogin");
+        } 
+        catch (IOException ex)
+        {
+            AlertWindow  alert = new AlertWindow("Can not read the file", null, "It can not read the file");
         }
-        } catch (FileNotFoundException ex) {
-               AlertWindow  alert = new AlertWindow("File not found", null, "Can find file Userlogin");
-        } catch (IOException ex) {
-           AlertWindow  alert = new AlertWindow("Can not read the file", null, "It can not read the file");
-        }
-       
-       
     }
     
     private void addItemsToList()
@@ -108,9 +111,10 @@ public class LogViewController implements Initializable
     private void filterTableView() 
     {
         FilteredList<UpdateLog> filteredData;
-        try {
+        try 
+        {
             filteredData = new FilteredList<>(model.getAllLogUpdates(), p -> true);
-             searchTxt.textProperty().addListener((observable, oldValue, newValue) ->
+            searchTxt.textProperty().addListener((observable, oldValue, newValue) ->
         {
             filteredData.setPredicate(updateLog ->
             {

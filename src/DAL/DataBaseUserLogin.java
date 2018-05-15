@@ -60,6 +60,7 @@ public class DataBaseUserLogin
 
             while (rs.next()) 
             {
+              
                 ul.setUserName(rs.getString("Username"));
                 ul.setPassword(rs.getString("Password"));
             }

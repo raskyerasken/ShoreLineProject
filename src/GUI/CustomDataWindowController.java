@@ -182,20 +182,14 @@ public class CustomDataWindowController  implements Initializable{
     this.fcModel= fcModel;
      TreeItem<String> allFiles = new TreeItem<String> ("All files");
      
-        
-            TreeItem<String> hey = new TreeItem<String> (fcModel.getFiles().get(0).getName());
-            for (TreeItem object : fcModel.getTreeFiles(allFiles)) 
+            for (TreeItem object : fcModel.getTreeFiles()) 
             {
-                hey.getChildren().add(object);
+                allFiles.getChildren().add(object);
             }
        
     CustomDataSelect.setRoot(allFiles);
     CustomDataSelect.setShowRoot(false);
 
-    
-        allFiles.getChildren().add(hey);
-        CustomDataSelect.setRoot(allFiles);
-        CustomDataSelect.setShowRoot(false);
     }
 
     @FXML
