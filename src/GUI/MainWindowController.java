@@ -82,7 +82,7 @@ public class MainWindowController implements Initializable
     private final ObservableList<File> filesAccepted
             = FXCollections.observableArrayList();
     private FilesConvertionModel fcModel;
-    private Thread t = null;
+    private final Thread t = null;
     
     CustomDataWindowController cdwc = new CustomDataWindowController();
     @FXML
@@ -101,45 +101,28 @@ public class MainWindowController implements Initializable
 //        startTaskThread.setDisable(true);
 //        stopTaskThread.setDisable(true);
 //        pauseTaskThread.setDisable(true);
+        progressBar.setVisible(false);
 //        progressBar.setVisible(false);
     }
     
-    private void activateXmlReader() 
-    {
-
-    }
-
-    private void importDataClick(MouseEvent event)
-    {
-
-    }
-
-
-
     @FXML
-    private void importData(ActionEvent event) throws SQLException {
+    private void importData(ActionEvent event) throws SQLException 
+    {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Image File");
        // fileChooser.setInitialDirectory(new File("..."));
         files = fileChooser.showOpenMultipleDialog(new Stage());
         UpdateLog updateLog = new UpdateLog();
         BLL.BLLManagerUpdateLog up = new BLLManagerUpdateLog();
-        
-        for (File file : files) 
+        importWindow.getScene().setCursor(Cursor.CLOSED_HAND);
+        CompletableFuture.runAsync(() ->
         {
-            //root.getScene().setCursor(Cursor.WAIT);
-            for (String acceptetFile : acceptedFiles) 
+            for (File file : files) 
             {
-                
-                if (file.getAbsolutePath().endsWith(acceptetFile)) 
+                for (String acceptetFile : acceptedFiles) 
                 {
-                    filesAccepted.clear();
-                    filesAccepted.add(file);
-                    acceptFile = true;
-                    
-                    Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
-                    java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
 
+<<<<<<< HEAD
 //                    updateLog.setUsername(modelData.getUserLogin());
 //                    updateLog.setAdjustment("Exported files " + files);
 //                    updateLog.setDatelog(sqlDate);
@@ -158,13 +141,57 @@ public class MainWindowController implements Initializable
                 {
                     AlertWindow alertWindow
                             = new AlertWindow("File not support yet", null, "This file " + file.getAbsolutePath() + " can be added");
+=======
+                    if (file.getAbsolutePath().endsWith(acceptetFile)) 
+                    {
+                        filesAccepted.clear();
+                        filesAccepted.add(file);
+                        acceptFile = true;
+
+                        Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
+                        java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
+
+                        updateLog.setUsername(modelData.getUserLogin());
+                        updateLog.setAdjustment("Exported files " + files);
+                        updateLog.setDatelog(sqlDate);
+
+                        try 
+                        {
+                            up.setUpdateLog(updateLog);
+                        } 
+                        catch (SQLException ex) 
+                        {
+                            Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                        try 
+                        {
+                            up.setUpdateLog(updateLog);
+                        } 
+                        catch (SQLException ex) 
+                        {
+                            Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
+                    if (!acceptFile) 
+                    {
+                        AlertWindow alertWindow
+                                = new AlertWindow("File not support yet", null, "This file " + file.getAbsolutePath() + " can be added");
+                    }
+                    acceptFile=false;
+>>>>>>> fdb71718ed05cecb5be342ff0dd183e1fe45b517
                 }
-//                startTaskThead.setDisable(files.isEmpty());
-//                stopTaskThread.setDisable(files.isEmpty());
-//                pauseTaskThread.setDisable(files.isEmpty());
-//                root.getScene().setCursor(Cursor.DEFAULT);
-                acceptFile=false;
             }
+        })
+        .thenAcceptAsync((t) ->
+        {
+            System.out.println("what happens");
+//            startTaskThread.setDisable(filesAccepted.isEmpty());
+//            stopTaskThread.setDisable(filesAccepted.isEmpty());
+//            pauseTaskThread.setDisable(filesAccepted.isEmpty());
+            importWindow.getScene().setCursor(Cursor.DEFAULT);
+            System.out.println("Here");
+        });
+        fcModel.setFiles(filesAccepted);
             fcModel.setFiles(filesAccepted);
 
             
@@ -179,6 +206,8 @@ public class MainWindowController implements Initializable
             fcModel.setTreeFiles(newFilesAdded);
             System.out.println(fcModel.getTreeFiles());
     }
+    
+    
 
     @FXML
     private void startTask(ActionEvent event) 
@@ -295,6 +324,16 @@ public class MainWindowController implements Initializable
         {
             AlertWindow  alert = new AlertWindow("IOException", null, "IOException");
         }
+    }
+    
+    private void activateXmlReader() 
+    {
+
+    }
+
+    private void importDataClick(MouseEvent event)
+    {
+
     }
 
     @FXML

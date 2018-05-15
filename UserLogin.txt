@@ -338,10 +338,27 @@ The user kris logged in.    Date: 2018/05/14 14:33:55
 =======
 >>>>>>> a6f312eec1c2cdeb0fc08ea1d063e925912ab5cf
 The user kris logged in.    Date: 2018/05/14 14:14:37
+<<<<<<< HEAD
+The user kris logged in.    Date: 2018/05/15 11:10:34
+The user kris logged in.    Date: 2018/05/15 11:13:47
+The user kris logged in.    Date: 2018/05/15 11:14:28
+The user kris logged in.    Date: 2018/05/15 11:15:30
+The user kris logged in.    Date: 2018/05/15 11:19:08
+The user kris logged in.    Date: 2018/05/15 11:59:06
+The user kris logged in.    Date: 2018/05/15 12:01:25
+The user kris logged in.    Date: 2018/05/15 12:01:57
+The user kris logged in.    Date: 2018/05/15 12:02:29
+The user kris logged in.    Date: 2018/05/15 12:03:16
+The user kris logged in.    Date: 2018/05/15 12:04:12
+The user kris logged in.    Date: 2018/05/15 12:05:20
+The user kris logged in.    Date: 2018/05/15 12:07:10
+The user kris logged in.    Date: 2018/05/15 12:24:27
+=======
 >>>>>>> f1349b3c515a37b08054938f5dbffd44b7784417
 The user kris logged in.    Date: 2018/05/14 14:38:56
 The user kris logged in.    Date: 2018/05/14 14:39:21
 The user kris logged in.    Date: 2018/05/14 14:41:34
+<<<<<<< HEAD
 The user kris logged in.    Date: 2018/05/14 19:21:31
 The user kris logged in.    Date: 2018/05/14 19:22:18
 The user kris logged in.    Date: 2018/05/14 19:24:13
@@ -391,3 +408,6 @@ The user kris logged in.    Date: 2018/05/15 13:07:17
 The user kris logged in.    Date: 2018/05/15 13:33:48
 The user kris logged in.    Date: 2018/05/15 13:37:15
 The user kris logged in.    Date: 2018/05/15 13:38:03
+=======
+>>>>>>> 213f774e5e9d4cee4788a59c0e7fa9ed2342e1e0
+>>>>>>> fdb71718ed05cecb5be342ff0dd183e1fe45b517

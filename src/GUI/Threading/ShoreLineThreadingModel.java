@@ -13,7 +13,7 @@ import javafx.scene.image.Image;
  */
 public class ShoreLineThreadingModel 
 {
-     private static final int DEFAULT_DURATION = 3;
+    private static final int DEFAULT_DURATION = 3;
     private Image filesImported;
     private String title;
     private int duration;
