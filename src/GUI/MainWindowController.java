@@ -30,6 +30,7 @@ import java.util.ResourceBundle;
 import java.util.concurrent.CompletableFuture;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -116,10 +117,25 @@ public class MainWindowController implements Initializable
         BLL.BLLManagerUpdateLog up = new BLLManagerUpdateLog();
         CompletableFuture.runAsync(() ->
         {
+            filesAccepted.clear();
             for (File file : files) 
-            {
-                for (String acceptetFile : acceptedFiles) 
+            {acceptFile = false;
+                for (String acceptedFile : acceptedFiles) {
+                    if(file.getAbsolutePath().endsWith(acceptedFile))
                 {
+                    fcModel.addFile(file);
+                    filesAccepted.add(file);
+                acceptFile= true;
+                }
+                    if (!acceptFile) 
+                {
+                    AlertWindow alertWindow
+                            = new AlertWindow("File not support yet", null, "This file " + file.getAbsolutePath() + " can be added");
+
+                }
+                }
+            }
+           
 //                    updateLog.setUsername(modelData.getUserLogin());
 //                    updateLog.setAdjustment("Exported files " + files);
 //                    updateLog.setDatelog(sqlDate);
@@ -134,53 +150,49 @@ public class MainWindowController implements Initializable
 //                    }
 //                    up.setUpdateLog(updateLog);
                 
-                if (!acceptFile) 
-                {
-                    AlertWindow alertWindow
-                            = new AlertWindow("File not support yet", null, "This file " + file.getAbsolutePath() + " can be added");
+                
+//                    if (acceptetFile.getAbsolutePath().endsWith(acceptetFile)) 
+//                    {
+//                        filesAccepted.clear();
+//                        filesAccepted.add(file);
+//                        
+//                         
+//                        acceptFile = true;
+//
+//                        Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
+//                        java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
+//
+//                        updateLog.setUsername(modelData.getUserLogin());
+//                        updateLog.setAdjustment("Exported files " + files);
+//                        updateLog.setDatelog(sqlDate);
+//
+//                        try 
+//                        {
+//                            up.setUpdateLog(updateLog);
+//                        } 
+//                        catch (SQLException ex) 
+//                        {
+//                            Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
+//                        }
+//                        try 
+//                        {
+//                            up.setUpdateLog(updateLog);
+//                        } 
+//                        catch (SQLException ex) 
+//                        {
+//                            Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
+//                        }
+//                        
+//                    }
+//                    if (!acceptFile) 
+//                    {
+//                        AlertWindow alert = new AlertWindow("File not support yet", null, "This file " + file.getAbsolutePath() + " can be added");
+//                    
+//                    acceptFile=false;
+//                }
+//            }
 
-                    if (file.getAbsolutePath().endsWith(acceptetFile)) 
-                    {
-                        filesAccepted.clear();
-                        filesAccepted.add(file);
-                        fcModel.addFile(file);
-                        acceptFile = true;
-
-                        Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
-                        java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
-
-                        updateLog.setUsername(modelData.getUserLogin());
-                        updateLog.setAdjustment("Exported files " + files);
-                        updateLog.setDatelog(sqlDate);
-
-                        try 
-                        {
-                            up.setUpdateLog(updateLog);
-                        } 
-                        catch (SQLException ex) 
-                        {
-                            Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
-                        }
-                        try 
-                        {
-                            up.setUpdateLog(updateLog);
-                        } 
-                        catch (SQLException ex) 
-                        {
-                            Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
-                        }
-                    }
-                    if (!acceptFile) 
-                    {
-                        AlertWindow alert = new AlertWindow("File not support yet", null, "This file " + file.getAbsolutePath() + " can be added");
-                    
-                    acceptFile=false;
-                }
-            }
-        }}});
         
-        
-        fcModel.setFiles(filesAccepted);
             fcModel.setFiles(filesAccepted);
 
           TreeItem<String> newFilesAdded = new TreeItem<String>("file");
@@ -192,6 +204,7 @@ public class MainWindowController implements Initializable
             }
             fcModel.setTreeFiles(newFilesAdded);
             System.out.println(fcModel.getTreeFiles());  
+        });
          
         }   
     
