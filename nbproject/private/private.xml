@@ -4,7 +4,17 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/AddUserViewController.java</file>
+            <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/BLL/BLLManagerUserLogin.java</file>
+            <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/LoginViewController.java</file>
+            <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/FilesConvertionModel.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/AddUserView.fxml</file>
+            <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/MainWindowController.java</file>
+            <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/BE/JSON.java</file>
+            <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/UpdateLogViewModel.java</file>
+            <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/ExportWindowController.java</file>
+            <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/BLL/CreateJSONFile.java</file>
+            <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/BLL/ReadingXLSX.java</file>
+            <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/CustomDataWindowController.java</file>
         </group>
     </open-files>
 </project-private>

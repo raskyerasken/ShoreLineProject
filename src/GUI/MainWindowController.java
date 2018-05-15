@@ -140,19 +140,19 @@ public class MainWindowController implements Initializable
                     Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
                     java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
 
-                    updateLog.setUsername(modelData.getUserLogin());
-                    updateLog.setAdjustment("Exported files " + files);
-                    updateLog.setDatelog(sqlDate);
-                    
-                    try 
-                    {
-                        up.setUpdateLog(updateLog);
-                    } 
-                    catch (SQLException ex) 
-                    {
-                        Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                    up.setUpdateLog(updateLog);
+//                    updateLog.setUsername(modelData.getUserLogin());
+//                    updateLog.setAdjustment("Exported files " + files);
+//                    updateLog.setDatelog(sqlDate);
+//                    
+//                    try 
+//                    {
+//                        up.setUpdateLog(updateLog);
+//                    } 
+//                    catch (SQLException ex) 
+//                    {
+//                        Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
+//                    }
+//                    up.setUpdateLog(updateLog);
                 }
                 if (!acceptFile) 
                 {
@@ -168,7 +168,8 @@ public class MainWindowController implements Initializable
             fcModel.setFiles(filesAccepted);
 
             
-            TreeItem<String> newFilesAdded = new TreeItem<String>("file");
+         
+        }   TreeItem<String> newFilesAdded = new TreeItem<String>("file");
             
             for (File acceptedFile : filesAccepted) {
                 TreeItem<String> newlyAdded = new TreeItem<String>(acceptedFile.toString());
@@ -177,7 +178,6 @@ public class MainWindowController implements Initializable
             }
             fcModel.setTreeFiles(newFilesAdded);
             System.out.println(fcModel.getTreeFiles());
-        }
     }
 
     @FXML
