@@ -65,5 +65,9 @@ public class FilesConvertionModel {
     void removeFile(File file) {
         allFiles.remove(file);
     }
+
+    void addFile(File file) {
+    allFiles.add(file);
+    }
     
 }

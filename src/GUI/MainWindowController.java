@@ -114,15 +114,12 @@ public class MainWindowController implements Initializable
         files = fileChooser.showOpenMultipleDialog(new Stage());
         UpdateLog updateLog = new UpdateLog();
         BLL.BLLManagerUpdateLog up = new BLLManagerUpdateLog();
-        importWindow.getScene().setCursor(Cursor.CLOSED_HAND);
         CompletableFuture.runAsync(() ->
         {
             for (File file : files) 
             {
                 for (String acceptetFile : acceptedFiles) 
                 {
-
-<<<<<<< HEAD
 //                    updateLog.setUsername(modelData.getUserLogin());
 //                    updateLog.setAdjustment("Exported files " + files);
 //                    updateLog.setDatelog(sqlDate);
@@ -136,16 +133,17 @@ public class MainWindowController implements Initializable
 //                        Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
 //                    }
 //                    up.setUpdateLog(updateLog);
-                }
+                
                 if (!acceptFile) 
                 {
                     AlertWindow alertWindow
                             = new AlertWindow("File not support yet", null, "This file " + file.getAbsolutePath() + " can be added");
-=======
+
                     if (file.getAbsolutePath().endsWith(acceptetFile)) 
                     {
                         filesAccepted.clear();
                         filesAccepted.add(file);
+                        fcModel.addFile(file);
                         acceptFile = true;
 
                         Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
@@ -174,29 +172,18 @@ public class MainWindowController implements Initializable
                     }
                     if (!acceptFile) 
                     {
-                        AlertWindow alertWindow
-                                = new AlertWindow("File not support yet", null, "This file " + file.getAbsolutePath() + " can be added");
-                    }
+                        AlertWindow alert = new AlertWindow("File not support yet", null, "This file " + file.getAbsolutePath() + " can be added");
+                    
                     acceptFile=false;
->>>>>>> fdb71718ed05cecb5be342ff0dd183e1fe45b517
                 }
             }
-        })
-        .thenAcceptAsync((t) ->
-        {
-            System.out.println("what happens");
-//            startTaskThread.setDisable(filesAccepted.isEmpty());
-//            stopTaskThread.setDisable(filesAccepted.isEmpty());
-//            pauseTaskThread.setDisable(filesAccepted.isEmpty());
-            importWindow.getScene().setCursor(Cursor.DEFAULT);
-            System.out.println("Here");
-        });
+        }}});
+        
+        
         fcModel.setFiles(filesAccepted);
             fcModel.setFiles(filesAccepted);
 
-            
-         
-        }   TreeItem<String> newFilesAdded = new TreeItem<String>("file");
+          TreeItem<String> newFilesAdded = new TreeItem<String>("file");
             
             for (File acceptedFile : filesAccepted) {
                 TreeItem<String> newlyAdded = new TreeItem<String>(acceptedFile.toString());
@@ -204,8 +191,10 @@ public class MainWindowController implements Initializable
                 
             }
             fcModel.setTreeFiles(newFilesAdded);
-            System.out.println(fcModel.getTreeFiles());
-    }
+            System.out.println(fcModel.getTreeFiles());  
+         
+        }   
+    
     
     
 
