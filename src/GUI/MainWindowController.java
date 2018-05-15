@@ -82,13 +82,9 @@ public class MainWindowController implements Initializable
     private final ObservableList<File> filesAccepted
             = FXCollections.observableArrayList();
     private FilesConvertionModel fcModel;
-<<<<<<< HEAD
     private final Thread t = null;
-=======
-    private Thread t = null;
     
     CustomDataWindowController cdwc = new CustomDataWindowController();
->>>>>>> 213f774e5e9d4cee4788a59c0e7fa9ed2342e1e0
     @FXML
     private JFXProgressBar progressBar;
     @FXML
@@ -105,11 +101,8 @@ public class MainWindowController implements Initializable
 //        startTaskThread.setDisable(true);
 //        stopTaskThread.setDisable(true);
 //        pauseTaskThread.setDisable(true);
-<<<<<<< HEAD
         progressBar.setVisible(false);
-=======
 //        progressBar.setVisible(false);
->>>>>>> 213f774e5e9d4cee4788a59c0e7fa9ed2342e1e0
     }
     
     @FXML
@@ -167,7 +160,6 @@ public class MainWindowController implements Initializable
                     acceptFile=false;
                 }
             }
-<<<<<<< HEAD
         })
         .thenAcceptAsync((t) ->
         {
@@ -179,7 +171,6 @@ public class MainWindowController implements Initializable
             System.out.println("Here");
         });
         fcModel.setFiles(filesAccepted);
-=======
             fcModel.setFiles(filesAccepted);
 
             
@@ -192,9 +183,8 @@ public class MainWindowController implements Initializable
             }
             fcModel.setTreeFiles(newFilesAdded);
             System.out.println(fcModel.getTreeFiles());
-        }
->>>>>>> 213f774e5e9d4cee4788a59c0e7fa9ed2342e1e0
     }
+    
     
 
     @FXML
