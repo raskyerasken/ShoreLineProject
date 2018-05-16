@@ -50,6 +50,7 @@ public class ReadingXLSX {
 
         workbook = new XSSFWorkbook(inputStream);
         firstSheet = workbook.getSheetAt(0);
+         row = workbook.getNumberOfNames();
     }
 
   
@@ -87,7 +88,7 @@ public class ReadingXLSX {
 
     public String[][] allRows() {
 
-        row = workbook.getNumberOfNames();
+       
         colum = ColumNames.size();
         allRows = new String[row][colum];
         for (int i = 0; i < row; i++) {

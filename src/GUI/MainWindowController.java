@@ -59,12 +59,11 @@ import org.xml.sax.SAXException;
  *
  * @author Jason and Freddy Kruger
  */
-public class MainWindowController implements Initializable 
-{
-    
+public class MainWindowController implements Initializable {
+
     private ShoreLineThreading threading = null;
     Parent root;
-    
+
     LoginDataModel modelData = new LoginDataModel();
     LoginViewController loginID;
     boolean acceptFile = false;
@@ -82,9 +81,11 @@ public class MainWindowController implements Initializable
     private Button importbtn;
     private final ObservableList<File> filesAccepted
             = FXCollections.observableArrayList();
+    private final ObservableList<File> filesNotAccepted
+            = FXCollections.observableArrayList();
     private FilesConvertionModel fcModel;
     private final Thread t = null;
-    
+
     CustomDataWindowController cdwc = new CustomDataWindowController();
     @FXML
     private JFXProgressBar progressBar;
@@ -94,10 +95,10 @@ public class MainWindowController implements Initializable
     private JFXButton startTaskThread;
     @FXML
     private JFXButton stopTaskThread;
-ReadingXLSX XLSX=null;
+    ReadingXLSX XLSX = null;
+
     @Override
-    public void initialize(URL url, ResourceBundle rb) 
-    {
+    public void initialize(URL url, ResourceBundle rb) {
         importbtn.setStyle("-fx-background-color: #588fe8;");
 //        startTaskThread.setDisable(true);
 //        stopTaskThread.setDisable(true);
@@ -105,37 +106,32 @@ ReadingXLSX XLSX=null;
         progressBar.setVisible(false);
 //        progressBar.setVisible(false);
     }
-    
+
     @FXML
-    private void importData(ActionEvent event) throws SQLException 
-    {
+    private void importData(ActionEvent event) throws SQLException {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Image File");
-       // fileChooser.setInitialDirectory(new File("..."));
+        // fileChooser.setInitialDirectory(new File("..."));
         files = fileChooser.showOpenMultipleDialog(new Stage());
         UpdateLog updateLog = new UpdateLog();
         BLL.BLLManagerUpdateLog up = new BLLManagerUpdateLog();
-        CompletableFuture.runAsync(() ->
-        {
+        CompletableFuture.runAsync(()
+                -> {
             filesAccepted.clear();
-            for (File file : files) 
-            {acceptFile = false;
+            for (File file : files) {
+                acceptFile = false;
                 for (String acceptedFile : acceptedFiles) {
-                    if(file.getAbsolutePath().endsWith(acceptedFile))
-                {
-                    fcModel.addFile(file);
-                    filesAccepted.add(file);
-                acceptFile= true;
-                }
-                    if (!acceptFile) 
-                {
-                    AlertWindow alertWindow
-                            = new AlertWindow("File not support yet", null, "This file " + file.getAbsolutePath() + " can be added");
-
-                }
+                    if (file.getAbsolutePath().endsWith(acceptedFile)) {
+                        fcModel.addFile(file);
+                        filesAccepted.add(file);
+                        acceptFile = true;
+                    }
+                    if (!acceptFile) {
+                        filesNotAccepted.add(file);
+                    }
                 }
             }
-           
+
 //                    updateLog.setUsername(modelData.getUserLogin());
 //                    updateLog.setAdjustment("Exported files " + files);
 //                    updateLog.setDatelog(sqlDate);
@@ -149,8 +145,6 @@ ReadingXLSX XLSX=null;
 //                        Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
 //                    }
 //                    up.setUpdateLog(updateLog);
-                
-                
 //                    if (acceptetFile.getAbsolutePath().endsWith(acceptetFile)) 
 //                    {
 //                        filesAccepted.clear();
@@ -191,64 +185,62 @@ ReadingXLSX XLSX=null;
 //                    acceptFile=false;
 //                }
 //            }
+            Platform.runLater(() -> {
+                for (File file : filesNotAccepted) {
+                    AlertWindow alertWindow
+                            = new AlertWindow("File not support yet", null, "This file " + file.getAbsolutePath() + " can be added");
 
-        
-          TreeItem<String> newFilesAdded = new TreeItem<String>("file");
-            
+                }
+
+            });
+
+            TreeItem<String> newFilesAdded = new TreeItem<String>("file");
+
             for (File acceptedFile : filesAccepted) {
-                TreeItem<String> newlyAdded = new TreeItem<String>(acceptedFile.toString());  
+                TreeItem<String> newlyAdded
+                        = new TreeItem<String>(acceptedFile.getName());
                 try {
-                   XLSX = new ReadingXLSX(acceptedFile.getAbsolutePath());
+                    XLSX = new ReadingXLSX(acceptedFile.getAbsolutePath());
                 } catch (IOException ex) {
                     Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (ParseException ex) {
                     Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                for (Object string :XLSX.getColumsNames() ) {
-                   TreeItem<String> colum = new TreeItem<String>(string.toString()); 
-                   
+                for (Object string : XLSX.getColumsNames()) {
+                    TreeItem<String> colum = new TreeItem<String>(string.toString());
+
                     newlyAdded.getChildren().add(colum);
                 }
                 newFilesAdded.getChildren().add(newlyAdded);
-                
+
             }
             fcModel.setTreeFiles(newFilesAdded);
         });
-         
-        }   
-    
-    
-    
+
+    }
 
     @FXML
-    private void startTask(ActionEvent event) 
-    {
+    private void startTask(ActionEvent event) {
         threading.start();
     }
 
     @FXML
-    private void pauseTask(ActionEvent event) 
-    {
-        if (threading.isSuspended())
-        {
+    private void pauseTask(ActionEvent event) {
+        if (threading.isSuspended()) {
             threading.resume();
             pauseTaskThread.setText("Pause Slideshow");
-        }
-        else
-        {
+        } else {
             threading.pause();
             pauseTaskThread.setText("Resume Slideshow");
         }
     }
 
     @FXML
-    private void stopTask(ActionEvent event) 
-    {
+    private void stopTask(ActionEvent event) {
         threading.stop();
     }
 
-    void stageToFront() 
-    {
+    void stageToFront() {
         Stage stage = (Stage) taskField.getScene().getWindow();
         stage.toFront();
     }
@@ -281,48 +273,37 @@ ReadingXLSX XLSX=null;
     }
 
     @FXML
-    private void exportMenuSelect(Event event)  
-    {
-        try 
-        {
+    private void exportMenuSelect(Event event) {
+        try {
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/ExportWindow.fxml"));
             Parent root = fxLoader.load();
             ExportWindowController controller = fxLoader.getController();
-           controller.setmodel(fcModel);
+            controller.setmodel(fcModel);
             importWindow.getChildren().setAll(root);
-        } 
-        catch (IOException ex) 
-        {
-            AlertWindow  alert = new AlertWindow("IOException", null, "IOException");
+        } catch (IOException ex) {
+            AlertWindow alert = new AlertWindow("IOException", null, "IOException");
         }
-
 
     }
 
     @FXML
-    private void customDataMenuSelect(Event event) throws FileNotFoundException, ParseException 
-    {
-     
-        try 
-        {
+    private void customDataMenuSelect(Event event) throws FileNotFoundException, ParseException {
+
+        try {
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/CustomDataWindow.fxml"));
             Parent root = fxLoader.load();
             CustomDataWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel);
             importWindow.getChildren().setAll(root);
-        } 
-        catch (IOException ex) 
-        {
-            AlertWindow  alert = new AlertWindow("IOException", null, "IOException");
+        } catch (IOException ex) {
+            AlertWindow alert = new AlertWindow("IOException", null, "IOException");
         }
-        
+
     }
 
     @FXML
-    private void logMenuSelect(Event event)  
-    {
-        try 
-        {
+    private void logMenuSelect(Event event) {
+        try {
             Stage newStage = new Stage();
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("LogView.fxml"));
             Parent root = fxLoader.load();
@@ -330,37 +311,30 @@ ReadingXLSX XLSX=null;
             newStage.setScene(scene);
             newStage.setResizable(false);
             newStage.showAndWait();
-        } 
-        catch (IOException ex) 
-        {
-            AlertWindow  alert = new AlertWindow("IOException", null, "IOException");
+        } catch (IOException ex) {
+            AlertWindow alert = new AlertWindow("IOException", null, "IOException");
         }
     }
-    
-    private void activateXmlReader() 
-    {
+
+    private void activateXmlReader() {
 
     }
 
-    private void importDataClick(MouseEvent event)
-    {
+    private void importDataClick(MouseEvent event) {
 
     }
 
     @FXML
-    private void adminMenuSelect(ActionEvent event) 
-    {
-        
+    private void adminMenuSelect(ActionEvent event) {
+
     }
-    void modelData(LoginDataModel modelData) 
-    {
+
+    void modelData(LoginDataModel modelData) {
         this.modelData = modelData;
     }
-   
 
-    void setmodel(FilesConvertionModel fcModel) 
-    {
-        this.fcModel=fcModel;
+    void setmodel(FilesConvertionModel fcModel) {
+        this.fcModel = fcModel;
         taskField.getItems().clear();
         taskField.setItems(fcModel.getFiles());
     }

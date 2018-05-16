@@ -175,7 +175,7 @@ public class ExportWindowController implements Initializable {
                         try {
 
                             ReadingXLSX XLSX = new ReadingXLSX(file.getAbsolutePath());
-                            XLSX.allRows();
+                           
                             XLSX.getColumsNames();
                             CreateJSONFile createJSON = new CreateJSONFile();
                             File JsonFile = new File(file.getCanonicalFile() + ".json");
