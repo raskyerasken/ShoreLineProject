@@ -18,6 +18,8 @@ import javafx.scene.input.KeyEvent;
 public class TextFieldTreeCellImpl extends TreeCell<String>{
     private TextField textField;
     
+    MainWindowController mwc = new MainWindowController();
+    
     public TextFieldTreeCellImpl()
     {
         
