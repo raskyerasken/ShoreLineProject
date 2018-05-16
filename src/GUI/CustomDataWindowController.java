@@ -36,7 +36,8 @@ import javax.swing.tree.DefaultMutableTreeNode;
  *
  * @author kasper
  */
-public class CustomDataWindowController  implements Initializable{
+public class CustomDataWindowController  implements Initializable
+{
 
     @FXML
     private Label taskXRun;
@@ -47,57 +48,30 @@ public class CustomDataWindowController  implements Initializable{
     @FXML
     private Button btnCustumData;
     private FilesConvertionModel fcModel;
-    @FXML
-    private JFXButton addCustomData;
-    @FXML
-    private JFXButton removeCustomData;
-    @FXML
     private TreeView<String> CustomDataAdded;
     
     @FXML
-    private void startTask(ActionEvent event) {
+    private void startTask(ActionEvent event) 
+    {
+        
     }
 
     @FXML
-    private void pauseTask(ActionEvent event) {
+    private void pauseTask(ActionEvent event) 
+    {
+        
     }
 
     @FXML
-    private void stopTask(ActionEvent event) {
+    private void stopTask(ActionEvent event) 
+    {
+        
     }
-
-//    @FXML
-//    private void importMenuSelect(Event event) throws IOException {
-//        
-//        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/ImportWindow.fxml"));
-//                customDataWindow.getChildren().setAll(pane);
-//    }
-//
-//    @FXML
-//    private void exportMenuSelect(Event event) throws IOException {
-//        
-//        AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/ExportWindow.fxml"));
-//                customDataWindow.getChildren().setAll(pane);
-//    }
-//
-//    @FXML
-//    private void customDataMenuSelect(Event event) throws IOException {
-//        
-//              
-//    }
-//
-//    @FXML
-//    private void logMenuSelect(Event event) throws IOException {
-//        
-//                AnchorPane pane = FXMLLoader.load(getClass().getResource("/GUI/LogView.fxml"));
-//                customDataWindow.getChildren().setAll(pane);
-//    }
-//    
 
     @FXML
     private void importMenuSelect(Event event)  
     {
-              FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/MainWindow.fxml"));
+        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/MainWindow.fxml"));
         Parent root;
         try 
         {
@@ -169,41 +143,24 @@ public class CustomDataWindowController  implements Initializable{
             TreeItem<String> item = new TreeItem<String> ("Message" + i);            
             hey2.getChildren().add(item);
         }   
-         
         rootItem.getChildren().add(hey);
         rootItem.getChildren().add(hey2);
 
         CustomDataAdded.setRoot(rootItem);
-        
-        
-        
    }
  
     
 
-    void setmodel(FilesConvertionModel fcModel) throws IOException, FileNotFoundException, ParseException {
-    this.fcModel= fcModel;
-     TreeItem<String> allFiles = new TreeItem<String> ("All files");
-     
-            for (TreeItem object : fcModel.getTreeFiles()) 
-            {
-                allFiles.getChildren().add(object);
-            }
-       
-    CustomDataSelect.setRoot(allFiles);
-    CustomDataSelect.setShowRoot(false);
-
-    }
-
-    @FXML
-    private void addCustomData(ActionEvent event) 
+    void setmodel(FilesConvertionModel fcModel) throws IOException, FileNotFoundException, ParseException 
     {
-        
+        this.fcModel= fcModel;
+        TreeItem<String> allFiles = new TreeItem<String> ("All files");
+        for (TreeItem object : fcModel.getTreeFiles()) 
+        {
+            allFiles.getChildren().add(object);
+        }
+        CustomDataSelect.setRoot(allFiles);
+        CustomDataSelect.setShowRoot(false);
     }
 
-    @FXML
-    private void removeCustomData(ActionEvent event) 
-    {
-        
-    }
 }
