@@ -44,12 +44,13 @@ public class ReadingXLSX {
     DateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy");
     Date today = new Date(); 
     
-    public ReadingXLSX(String exString) throws FileNotFoundException, IOException, ParseException {
-        excelFilePath = exString;
+    public ReadingXLSX(String excelPath) throws FileNotFoundException, IOException, ParseException {
+        excelFilePath = excelPath;
         inputStream = new FileInputStream(new File(excelFilePath));
 
         workbook = new XSSFWorkbook(inputStream);
         firstSheet = workbook.getSheetAt(0);
+         row = workbook.getNumberOfNames();
     }
 
   
@@ -87,7 +88,7 @@ public class ReadingXLSX {
 
     public String[][] allRows() {
 
-        row = workbook.getNumberOfNames();
+       
         colum = ColumNames.size();
         allRows = new String[row][colum];
         for (int i = 0; i < row; i++) {

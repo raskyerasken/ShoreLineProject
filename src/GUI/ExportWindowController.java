@@ -132,19 +132,19 @@ public class ExportWindowController implements Initializable {
     @FXML
     private void customDataMenuSelect(Event event) throws FileNotFoundException, ParseException {
 
-//        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/CustomDataWindow.fxml"));
-//        Parent root;
-//        try 
-//        {
-//            root = fxLoader.load();
-//            CustomDataWindowController controller = fxLoader.getController();
-//            controller.setmodel(fcModel);
-//            exportWindow.getChildren().setAll(root);
-//        } 
-//        catch (IOException ex) 
-//        {
-//            AlertWindow  alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
-//        }
+        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/CustomDataWindow.fxml"));
+        Parent root;
+        try 
+        {
+            root = fxLoader.load();
+            CustomDataWindowController controller = fxLoader.getController();
+            controller.setmodel(fcModel);
+            exportWindow.getChildren().setAll(root);
+        } 
+        catch (IOException ex) 
+        {
+            AlertWindow  alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
+        }
     }
 
     @FXML
@@ -161,7 +161,8 @@ public class ExportWindowController implements Initializable {
     private void adminMenuSelect(ActionEvent event) {
 
     }
-
+double ad =0;
+double allsize=0;
     @FXML
     private void convertData(ActionEvent event) throws JSONException {
 
@@ -169,13 +170,14 @@ public class ExportWindowController implements Initializable {
                 .runAsync(()
                         -> {
                     List<File> progressFileList = new ArrayList<File>(fcModel.getFiles());
-                  
+                   ad =0;
+                   allsize= progressFileList.size();
                     for (File file : progressFileList){
 
                         try {
 
                             ReadingXLSX XLSX = new ReadingXLSX(file.getAbsolutePath());
-                            XLSX.allRows();
+                           
                             XLSX.getColumsNames();
                             CreateJSONFile createJSON = new CreateJSONFile();
                             File JsonFile = new File(file.getCanonicalFile() + ".json");
@@ -188,7 +190,8 @@ public class ExportWindowController implements Initializable {
 
                             fileWriter.flush();
                             fileWriter.close();
-
+                          
+ad++;
                         } catch (IOException ex) {
                             AlertWindow alert = new AlertWindow("IOException", null, "IOException");
                         } catch (ParseException ex) {
@@ -204,6 +207,12 @@ public class ExportWindowController implements Initializable {
                         
                         Platform.runLater(() -> {
                             fcModel.removeFile(file);
+                            progressBar.setVisible(true);
+                              progressBar.setProgress(ad/allsize);
+                              if(fcModel.getFiles().isEmpty())
+                        {
+                        progressBar.setVisible(false);
+                        }
                         });
                     }
                 });

@@ -97,7 +97,7 @@ public class CustomDataWindowController  implements Initializable{
     @FXML
     private void importMenuSelect(Event event)  
     {
-        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/MainWindow.fxml"));
+              FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/MainWindow.fxml"));
         Parent root;
         try 
         {
@@ -174,6 +174,9 @@ public class CustomDataWindowController  implements Initializable{
         rootItem.getChildren().add(hey2);
 
         CustomDataAdded.setRoot(rootItem);
+        
+        
+        
    }
  
     

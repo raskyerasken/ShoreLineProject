@@ -5,16 +5,20 @@
         <group>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/AddUserViewController.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/BLL/BLLManagerUserLogin.java</file>
-            <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/LoginViewController.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/FilesConvertionModel.java</file>
+            <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/LogViewController.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/AddUserView.fxml</file>
-            <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/MainWindowController.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/BE/JSON.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/UpdateLogViewModel.java</file>
-            <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/ExportWindowController.java</file>
-            <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/BLL/CreateJSONFile.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/BLL/ReadingXLSX.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/CustomDataWindowController.java</file>
+            <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/LoginViewController.java</file>
+            <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/MainWindowController.java</file>
+            <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/ExportWindowController.java</file>
+            <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/DAL/DataBaseUpdateLog.java</file>
+            <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/BLL/CreateJSONFile.java</file>
+            <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/DAL/DataBaseUserLogin.java</file>
+            <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/DAL/ConnectionManagerSLProject.java</file>
         </group>
     </open-files>
 </project-private>
