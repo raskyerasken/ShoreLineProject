@@ -504,4 +504,10 @@ The user kris logged in.    Date: 2018/05/16 13:19:06
 The user kris logged in.    Date: 2018/05/16 13:19:56
 The user kris logged in.    Date: 2018/05/16 13:21:52
 The user kris logged in.    Date: 2018/05/16 13:24:10
+<<<<<<< HEAD
 The user kris logged in.    Date: 2018/05/16 13:47:48
+=======
+The user kris logged in.    Date: 2018/05/16 13:26:22
+The user kris logged in.    Date: 2018/05/16 13:29:14
+The user kris logged in.    Date: 2018/05/16 13:31:52
+>>>>>>> a0612b3a787e46eb6aa9399bc036c47b5c191829
