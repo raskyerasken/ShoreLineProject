@@ -16,6 +16,7 @@ import java.text.ParseException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -26,6 +27,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TreeCell;
 import javafx.scene.control.TreeItem;
@@ -113,7 +115,7 @@ public class CustomDataWindowController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-//        btnCustumData.setStyle("-fx-background-color: #588fe8;");
+        btnCustumData.setStyle("-fx-background-color: #588fe8;");
 //        TreeItem<String> hey = new TreeItem<String> ("hey");
 //        TreeItem<String> hey2 = new TreeItem<String> ("hey2");
 //        rootItem.setExpanded(true);
@@ -136,21 +138,22 @@ public class CustomDataWindowController implements Initializable {
 
     void setmodel(FilesConvertionModel fcModel) throws IOException, FileNotFoundException, ParseException {
         this.fcModel = fcModel;
-        TreeItem<String> allFiles = new TreeItem<String>("All files");
-        for (TreeItem object : fcModel.getTreeFiles()) {
-            allFiles.getChildren().add(object);
-        }
-        CustomDataSelect.setRoot(allFiles);
-        CustomDataSelect.setShowRoot(false);
+        
+       
+       CustomDataSelect.setRoot(fcModel.getTreeFiles());
+       
         CustomDataSelect.setEditable(true);
-        CustomDataSelect.setCellFactory(
-                new Callback<TreeView<String>, TreeCell<String>>() {
+         CustomDataSelect.setEditable(true);
+        CustomDataSelect.setCellFactory(new Callback<TreeView<String>,TreeCell<String>>(){
             @Override
             public TreeCell<String> call(TreeView<String> p) {
                 return new TextFieldTreeCellImpl();
             }
         });
+      
+ 
 
+        
     }
 
 }

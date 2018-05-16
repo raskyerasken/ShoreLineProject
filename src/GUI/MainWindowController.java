@@ -82,10 +82,10 @@ public class MainWindowController implements Initializable
     @FXML
     private JFXButton pauseTaskThread;
     @FXML
-    private JFXButton startTaskThread;
-    @FXML
     private JFXButton stopTaskThread;
     ReadingXLSX XLSX = null;
+    @FXML
+    private JFXButton startTaskThead;
     
 
 
