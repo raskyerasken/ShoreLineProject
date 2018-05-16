@@ -279,29 +279,35 @@ public class MainWindowController implements Initializable {
     }
 
     @FXML
-    private void exportMenuSelect(Event event) {
-        try {
+    private void exportMenuSelect(Event event) 
+    {
+        try 
+        {
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/ExportWindow.fxml"));
             Parent root = fxLoader.load();
             ExportWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel);
             importWindow.getChildren().setAll(root);
-        } catch (IOException ex) {
+        } 
+        catch (IOException ex) 
+        {
             AlertWindow alert = new AlertWindow("IOException", null, "IOException");
         }
-
     }
 
     @FXML
     private void customDataMenuSelect(Event event) throws FileNotFoundException, ParseException {
 
-        try {
+        try 
+        {
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/CustomDataWindow.fxml"));
             Parent root = fxLoader.load();
             CustomDataWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel);
             importWindow.getChildren().setAll(root);
-        } catch (IOException ex) {
+        } 
+        catch (IOException ex) 
+        {
             AlertWindow alert = new AlertWindow("IOException", null, "IOException");
         }
 

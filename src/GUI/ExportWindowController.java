@@ -160,77 +160,74 @@ public class ExportWindowController implements Initializable
 
     }
 
-
     @FXML
     private void convertData(ActionEvent event) throws JSONException 
     {
-        com = new CompletableFuture()
-                .runAsync(()
-                        -> 
+        com = new CompletableFuture().runAsync
+        (()->{
+            List<File> progressFileList = new ArrayList<File>(fcModel.getFiles());
+            ad = 0;
+            allsize = progressFileList.size();
+            for (File file : progressFileList) 
+            {
+
+                try 
                 {
-                    List<File> progressFileList = new ArrayList<File>(fcModel.getFiles());
-                    ad = 0;
-                    allsize = progressFileList.size();
-                    for (File file : progressFileList) 
+                    threading = Thread.currentThread();
+                    ReadingXLSX XLSX = new ReadingXLSX(file.getAbsolutePath());
+
+                    XLSX.getColumsNames();
+                    CreateJSONFile createJSON = new CreateJSONFile();
+                    File JsonFile = new File(file.getCanonicalFile() + ".json");
+                    FileWriter fileWriter = new FileWriter(JsonFile);
+
+                    for (JSONObject jSONObject : XLSX.allJSONObjectInFile()) 
                     {
+                        fileWriter.write(jSONObject.toString(4));
+                    }
 
-                        try 
-                        {
-                            threading = Thread.currentThread();
-                            ReadingXLSX XLSX = new ReadingXLSX(file.getAbsolutePath());
+                    fileWriter.flush();
+                    fileWriter.close();
 
-                            XLSX.getColumsNames();
-                            CreateJSONFile createJSON = new CreateJSONFile();
-                            File JsonFile = new File(file.getCanonicalFile() + ".json");
-                            FileWriter fileWriter = new FileWriter(JsonFile);
+                    ad++;
+                } 
 
-                            for (JSONObject jSONObject : XLSX.allJSONObjectInFile()) 
-                            {
-                                fileWriter.write(jSONObject.toString(4));
-                            }
-                            
-                            fileWriter.flush();
-                            fileWriter.close();
+                catch (IOException ex) 
+                {
+                    AlertWindow alert = new AlertWindow("IOException", null, "IOException");
+                } 
+                catch (ParseException ex) 
+                {
+                    AlertWindow alert = new AlertWindow("ParseException", null, "ParseException");
+                } 
+                catch (IllegalArgumentException ex) 
+                {
+                    AlertWindow alert = new AlertWindow("IllegalArgumentException", null, "IllegalArgumentException");
+                } 
+                catch (IllegalAccessException ex) 
+                {
+                    AlertWindow alert = new AlertWindow("IllegalAccessException", null, "IllegalAccessException");
+                } 
+                catch (JSONException ex) 
+                {
+                    Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
+                }
 
-                            ad++;
-                        } 
-                        
-                        catch (IOException ex) 
-                        {
-                            AlertWindow alert = new AlertWindow("IOException", null, "IOException");
-                        } 
-                        catch (ParseException ex) 
-                        {
-                            AlertWindow alert = new AlertWindow("ParseException", null, "ParseException");
-                        } 
-                        catch (IllegalArgumentException ex) 
-                        {
-                            AlertWindow alert = new AlertWindow("IllegalArgumentException", null, "IllegalArgumentException");
-                        } 
-                        catch (IllegalAccessException ex) 
-                        {
-                            AlertWindow alert = new AlertWindow("IllegalAccessException", null, "IllegalAccessException");
-                        } 
-                        catch (JSONException ex) 
-                        {
-                            Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
-                        }
-
-                        Platform.runLater(() -> 
-                        {
-                            startTaskThread.setDisable(fcModel.getFiles().isEmpty());
-                            pauseTaskThread.setDisable(fcModel.getFiles().isEmpty());
-                            stopTaskThread.setDisable(fcModel.getFiles().isEmpty());
-                            fcModel.removeFile(file);
-                            progressBar.setVisible(true);
-                            progressBar.setProgress(ad / allsize);
-                            if (fcModel.getFiles().isEmpty()) 
-                            {
-                                progressBar.setVisible(false);
-                            }
-                        });
+                Platform.runLater
+                (() ->{
+                    startTaskThread.setDisable(fcModel.getFiles().isEmpty());
+                    pauseTaskThread.setDisable(fcModel.getFiles().isEmpty());
+                    stopTaskThread.setDisable(fcModel.getFiles().isEmpty());
+                    fcModel.removeFile(file);
+                    progressBar.setVisible(true);
+                    progressBar.setProgress(ad / allsize);
+                    if (fcModel.getFiles().isEmpty()) 
+                    {
+                        progressBar.setVisible(false);
                     }
                 });
+            }
+        });
     }
 
     @FXML
