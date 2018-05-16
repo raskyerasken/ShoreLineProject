@@ -94,7 +94,7 @@ public class MainWindowController implements Initializable
     private JFXButton startTaskThread;
     @FXML
     private JFXButton stopTaskThread;
-
+ReadingXLSX XLSX=null;
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
@@ -193,17 +193,26 @@ public class MainWindowController implements Initializable
 //            }
 
         
-            fcModel.setFiles(filesAccepted);
-
           TreeItem<String> newFilesAdded = new TreeItem<String>("file");
             
             for (File acceptedFile : filesAccepted) {
-                TreeItem<String> newlyAdded = new TreeItem<String>(acceptedFile.toString());
+                TreeItem<String> newlyAdded = new TreeItem<String>(acceptedFile.toString());  
+                try {
+                   XLSX = new ReadingXLSX(acceptedFile.getAbsolutePath());
+                } catch (IOException ex) {
+                    Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ParseException ex) {
+                    Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                for (Object string :XLSX.getColumsNames() ) {
+                   TreeItem<String> colum = new TreeItem<String>(string.toString()); 
+                   
+                    newlyAdded.getChildren().add(colum);
+                }
                 newFilesAdded.getChildren().add(newlyAdded);
                 
             }
             fcModel.setTreeFiles(newFilesAdded);
-            System.out.println(fcModel.getTreeFiles());  
         });
          
         }   
@@ -279,7 +288,7 @@ public class MainWindowController implements Initializable
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/ExportWindow.fxml"));
             Parent root = fxLoader.load();
             ExportWindowController controller = fxLoader.getController();
-            controller.setmodel(fcModel);
+           controller.setmodel(fcModel);
             importWindow.getChildren().setAll(root);
         } 
         catch (IOException ex) 

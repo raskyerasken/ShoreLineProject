@@ -132,19 +132,19 @@ public class ExportWindowController implements Initializable {
     @FXML
     private void customDataMenuSelect(Event event) throws FileNotFoundException, ParseException {
 
-//        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/CustomDataWindow.fxml"));
-//        Parent root;
-//        try 
-//        {
-//            root = fxLoader.load();
-//            CustomDataWindowController controller = fxLoader.getController();
-//            controller.setmodel(fcModel);
-//            exportWindow.getChildren().setAll(root);
-//        } 
-//        catch (IOException ex) 
-//        {
-//            AlertWindow  alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
-//        }
+        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/CustomDataWindow.fxml"));
+        Parent root;
+        try 
+        {
+            root = fxLoader.load();
+            CustomDataWindowController controller = fxLoader.getController();
+            controller.setmodel(fcModel);
+            exportWindow.getChildren().setAll(root);
+        } 
+        catch (IOException ex) 
+        {
+            AlertWindow  alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
+        }
     }
 
     @FXML

@@ -44,8 +44,8 @@ public class ReadingXLSX {
     DateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy");
     Date today = new Date(); 
     
-    public ReadingXLSX(String exString) throws FileNotFoundException, IOException, ParseException {
-        excelFilePath = exString;
+    public ReadingXLSX(String excelPath) throws FileNotFoundException, IOException, ParseException {
+        excelFilePath = excelPath;
         inputStream = new FileInputStream(new File(excelFilePath));
 
         workbook = new XSSFWorkbook(inputStream);
