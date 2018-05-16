@@ -67,7 +67,8 @@ public class ExportWindowController implements Initializable
     private volatile boolean paused = false;
     
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL location, ResourceBundle resources) 
+    {
         btnExport.setStyle("-fx-background-color: #588fe8;");
         setButtonsInvisible();
     }
@@ -165,7 +166,8 @@ public class ExportWindowController implements Initializable
     {
         com = new CompletableFuture()
                 .runAsync(()
-                        -> {
+                        -> 
+                {
                     List<File> progressFileList = new ArrayList<File>(fcModel.getFiles());
                     ad = 0;
                     allsize = progressFileList.size();
