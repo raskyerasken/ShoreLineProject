@@ -117,12 +117,12 @@ public class MainWindowController implements Initializable {
         BLL.BLLManagerUpdateLog up = new BLLManagerUpdateLog();
         CompletableFuture.runAsync(()
                 -> {
-            
+
             for (File file : files) {
                 acceptFile = false;
                 for (String acceptedFile : acceptedFiles) {
                     if (file.getAbsolutePath().endsWith(acceptedFile)) {
-                       
+
                         filesAccepted.add(file);
                         acceptFile = true;
                     }
@@ -185,18 +185,19 @@ public class MainWindowController implements Initializable {
 //                    acceptFile=false;
 //                }
 //            }
-            Platform.runLater(() -> 
-            {
-          
-                        fcModel.AddAllFiles(filesAccepted);
-                for (File file : filesNotAccepted) {
-                    
-                    AlertWindow alertWindow
-                            = new AlertWindow("File not support yet", null, "This file " + file.getAbsolutePath() + " can be added");
+            Platform.runLater(()
+                    -> {
 
+                fcModel.AddAllFiles(filesAccepted);
+                String filesNotAdded = null;
+                for (File file : filesNotAccepted) {
+                        filesNotAdded=filesNotAdded+file.getName()+"\n";
                 }
+                AlertWindow alertWindow
+                        = new AlertWindow("File not support yet", null, "This file " + filesNotAdded + " can be added");
+
                 filesAccepted.clear();
-filesNotAccepted.clear();
+                filesNotAccepted.clear();
             });
 
             TreeItem<String> newFilesAdded = new TreeItem<String>("file");
