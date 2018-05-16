@@ -99,28 +99,14 @@ public class ExportWindowController implements Initializable {
     @FXML
     private void pauseTask(ActionEvent event) 
     {
-        threading.stop();
+        threading.suspend();
     }
 
     @FXML
     private void stopTask(ActionEvent event) 
     {
-//        try 
-//        {
-//            com.get(0, TimeUnit.SECONDS);
-//        } 
-//        catch (InterruptedException ex) 
-//        {
-//            Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
-//        } 
-//        catch (ExecutionException ex) 
-//        {
-//            Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
-//        } 
-//        catch (TimeoutException ex)
-//        {
-//            Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
-//        }
+        threading.stop();
+        progressBar.setVisible(false);
     }
 
 //    @FXML
