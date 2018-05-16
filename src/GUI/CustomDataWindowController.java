@@ -130,8 +130,9 @@ public class CustomDataWindowController  implements Initializable
     public void initialize(URL location, ResourceBundle resources) 
     {
         btnCustumData.setStyle("-fx-background-color: #588fe8;");
-        TreeItem<String> rootItem = new TreeItem<String> ("Inbox");
 
+<<<<<<< HEAD
+=======
         TreeItem<String> hey = new TreeItem<String> ("hey");
         TreeItem<String> hey2 = new TreeItem<String> ("hey2");
         rootItem.setExpanded(true);
@@ -150,6 +151,7 @@ public class CustomDataWindowController  implements Initializable
         rootItem.getChildren().add(hey2);
 
 //        CustomDataAdded.setRoot(rootItem);
+>>>>>>> 450fd074cd0084a2a253e7bacf039a3200046635
    }
  
     
