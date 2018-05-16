@@ -505,12 +505,44 @@ The user kris logged in.    Date: 2018/05/16 13:19:56
 The user kris logged in.    Date: 2018/05/16 13:21:52
 The user kris logged in.    Date: 2018/05/16 13:24:10
 <<<<<<< HEAD
+The user kris logged in.    Date: 2018/05/16 13:34:59
+The user kris logged in.    Date: 2018/05/16 13:35:29
+The user kris logged in.    Date: 2018/05/16 13:40:17
+The user kris logged in.    Date: 2018/05/16 13:40:36
+The user kris logged in.    Date: 2018/05/16 13:42:31
+The user kris logged in.    Date: 2018/05/16 13:43:19
+The user kris logged in.    Date: 2018/05/16 13:45:20
+The user kris logged in.    Date: 2018/05/16 13:48:39
+The user kris logged in.    Date: 2018/05/16 14:01:16
+The user kris logged in.    Date: 2018/05/16 14:02:09
+The user kris logged in.    Date: 2018/05/16 14:02:57
+The user kris logged in.    Date: 2018/05/16 14:03:54
+The user kris logged in.    Date: 2018/05/16 14:04:59
+The user kris logged in.    Date: 2018/05/16 14:05:26
+=======
+<<<<<<< HEAD
 The user kris logged in.    Date: 2018/05/16 13:47:48
 =======
 The user kris logged in.    Date: 2018/05/16 13:26:22
 The user kris logged in.    Date: 2018/05/16 13:29:14
 The user kris logged in.    Date: 2018/05/16 13:31:52
+<<<<<<< HEAD
+The user kris logged in.    Date: 2018/05/16 14:00:57
+=======
 >>>>>>> a0612b3a787e46eb6aa9399bc036c47b5c191829
+<<<<<<< HEAD
 The user kris logged in.    Date: 2018/05/16 14:05:05
 The user kris logged in.    Date: 2018/05/16 14:06:12
 The user kris logged in.    Date: 2018/05/16 14:50:00
+=======
+>>>>>>> eabc837b8adefa80e2fa12a66afebecc4631a5ec
+>>>>>>> a2c9e09f43c2993a00321f43b984bcbeb6e4272a
+The user kris logged in.    Date: 2018/05/16 14:30:11
+The user kris logged in.    Date: 2018/05/16 14:31:27
+The user kris logged in.    Date: 2018/05/16 14:31:46
+The user kris logged in.    Date: 2018/05/16 14:32:28
+The user kris logged in.    Date: 2018/05/16 14:35:53
+The user kris logged in.    Date: 2018/05/16 14:36:34
+The user kris logged in.    Date: 2018/05/16 14:36:58
+The user kris logged in.    Date: 2018/05/16 14:37:23
+>>>>>>> d1da9e230b4caf60acec498bed08d2d66a25ec91
