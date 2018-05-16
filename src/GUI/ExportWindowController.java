@@ -161,7 +161,8 @@ public class ExportWindowController implements Initializable {
     private void adminMenuSelect(ActionEvent event) {
 
     }
-
+double ad =0;
+double allsize=0;
     @FXML
     private void convertData(ActionEvent event) throws JSONException {
 
@@ -169,7 +170,8 @@ public class ExportWindowController implements Initializable {
                 .runAsync(()
                         -> {
                     List<File> progressFileList = new ArrayList<File>(fcModel.getFiles());
-                  
+                   ad =0;
+                   allsize= progressFileList.size();
                     for (File file : progressFileList){
 
                         try {
@@ -188,7 +190,8 @@ public class ExportWindowController implements Initializable {
 
                             fileWriter.flush();
                             fileWriter.close();
-
+                          
+ad++;
                         } catch (IOException ex) {
                             AlertWindow alert = new AlertWindow("IOException", null, "IOException");
                         } catch (ParseException ex) {
@@ -204,6 +207,12 @@ public class ExportWindowController implements Initializable {
                         
                         Platform.runLater(() -> {
                             fcModel.removeFile(file);
+                            progressBar.setVisible(true);
+                              progressBar.setProgress(ad/allsize);
+                              if(fcModel.getFiles().isEmpty())
+                        {
+                        progressBar.setVisible(false);
+                        }
                         });
                     }
                 });
