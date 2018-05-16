@@ -26,10 +26,13 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.TreeCell;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.util.Callback;
 import javax.swing.tree.DefaultMutableTreeNode;
 
 /**
@@ -48,7 +51,7 @@ public class CustomDataWindowController  implements Initializable
     @FXML
     private Button btnCustumData;
     private FilesConvertionModel fcModel;
-    private TreeView<String> CustomDataAdded;
+    private TextField textField;
     
     @FXML
     private void startTask(ActionEvent event) 
@@ -127,8 +130,9 @@ public class CustomDataWindowController  implements Initializable
     public void initialize(URL location, ResourceBundle resources) 
     {
         btnCustumData.setStyle("-fx-background-color: #588fe8;");
-        TreeItem<String> rootItem = new TreeItem<String> ("Inbox");
 
+<<<<<<< HEAD
+=======
         TreeItem<String> hey = new TreeItem<String> ("hey");
         TreeItem<String> hey2 = new TreeItem<String> ("hey2");
         rootItem.setExpanded(true);
@@ -146,7 +150,8 @@ public class CustomDataWindowController  implements Initializable
         rootItem.getChildren().add(hey);
         rootItem.getChildren().add(hey2);
 
-        CustomDataAdded.setRoot(rootItem);
+//        CustomDataAdded.setRoot(rootItem);
+>>>>>>> 450fd074cd0084a2a253e7bacf039a3200046635
    }
  
     
@@ -161,6 +166,22 @@ public class CustomDataWindowController  implements Initializable
         }
         CustomDataSelect.setRoot(allFiles);
         CustomDataSelect.setShowRoot(false);
+        CustomDataSelect.setEditable(true);
+        CustomDataSelect.setCellFactory(
+                new Callback<TreeView<String>, TreeCell<String>>()
+                {
+            @Override
+            public TreeCell<String> call(TreeView<String> p) {
+                return new TextFieldTreeCellImpl();
+            }
+            });
+        
+       
     }
+    
+     
+     
+            
+    }
+    
 
-}

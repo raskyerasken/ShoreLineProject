@@ -72,6 +72,9 @@ public class MainWindowController implements Initializable
             = FXCollections.observableArrayList();
     private FilesConvertionModel fcModel;
     private final Thread t = null;
+    
+    public ObservableList<File> fileNames
+            = FXCollections.observableArrayList();
 
     CustomDataWindowController cdwc = new CustomDataWindowController();
     @FXML
@@ -83,6 +86,8 @@ public class MainWindowController implements Initializable
     @FXML
     private JFXButton stopTaskThread;
     ReadingXLSX XLSX = null;
+    
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -262,5 +267,12 @@ public class MainWindowController implements Initializable
         this.fcModel = fcModel;
         taskField.getItems().clear();
         taskField.setItems(fcModel.getFiles());
+    }
+    
+    public String getTextNames()
+    {
+       fileNames = (ObservableList<File>) fcModel;
+       
+       return fileNames.toString();
     }
 }
