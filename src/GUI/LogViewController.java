@@ -16,8 +16,10 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.Date;
 import java.util.ResourceBundle;
+import java.util.concurrent.CompletableFuture;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -60,10 +62,17 @@ public class LogViewController implements Initializable
     private AnchorPane exportWindow;
     @FXML
     private Label taskXRun;
+    CompletableFuture com;
+    private Thread thread = null;
     
     public void initialize(URL url, ResourceBundle rb) 
     {
-        addItemsToList();
+        com = new CompletableFuture().runAsync(()->{
+            thread = Thread.currentThread();
+            addItemsToList();
+        });
+        
+        Platform.runLater(()->{
         try 
         {
             LogView.setItems((ObservableList<UpdateLog>)model.getAllLogUpdates());
@@ -73,6 +82,8 @@ public class LogViewController implements Initializable
         {
             Logger.getLogger(LogViewController.class.getName()).log(Level.SEVERE, null, ex);
         }
+        });
+
         searchLogView();
     }   
     

@@ -10,25 +10,20 @@
 
 <AnchorPane id="AnchorPane" fx:id="customDataWindow" prefHeight="452.0" prefWidth="571.0" stylesheets="@CSSShoreLines.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.CustomDataWindowController">
     <children>
-      <Label fx:id="taskXRun" layoutX="238.0" layoutY="351.0" text="Task X Running" />
-      <JFXButton layoutX="155.0" layoutY="369.0" onAction="#startTask" text="Start Task" />
-      <JFXButton layoutX="238.0" layoutY="369.0" onAction="#pauseTask" text="Pause Task" />
-      <JFXButton layoutX="335.0" layoutY="369.0" onAction="#stopTask" text="Stop" />
+      <Label fx:id="taskXRun" layoutX="269.0" layoutY="350.0" text="Task X Running" />
+      <JFXButton layoutX="188.0" layoutY="369.0" onAction="#startTask" text="Start Task" />
+      <JFXButton layoutX="272.0" layoutY="369.0" onAction="#pauseTask" text="Pause Task" />
+      <JFXButton layoutX="365.0" layoutY="369.0" onAction="#stopTask" text="Stop" />
       <ImageView fitHeight="67.0" fitWidth="325.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Image/ShoreLineLogo.jpg" />
          </image>
       </ImageView>
-      <JFXButton fx:id="addCustomData" layoutX="286.0" layoutY="149.0" onAction="#addCustomData" text="Add -&gt;" />
-      <JFXButton fx:id="removeCustomData" layoutX="283.0" layoutY="176.0" onAction="#removeCustomData" text="Remove" />
-      <JFXButton layoutX="120.0" layoutY="56.0" text="Add Custom Data" />
-      <JFXButton layoutX="133.0" layoutY="320.0" text="Edit Custom Data" />
-      <TreeView fx:id="CustomDataAdded" layoutX="355.0" layoutY="85.0" prefHeight="235.0" prefWidth="155.0" />
       <Button layoutY="100.0" mnemonicParsing="false" onAction="#importMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Import" />
       <Button layoutY="167.0" mnemonicParsing="false" onAction="#exportMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Export" />
       <Button fx:id="btnCustumData" layoutY="234.0" mnemonicParsing="false" onAction="#customDataMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Custom &#10;   Data" />
       <Button layoutY="300.0" mnemonicParsing="false" onAction="#logMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Log" />
       <Button layoutY="367.0" mnemonicParsing="false" onAction="#adminMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Admin" />
-      <TreeView fx:id="CustomDataSelect" layoutX="133.0" layoutY="86.0" prefHeight="235.0" prefWidth="155.0" />
+      <TreeView fx:id="CustomDataSelect" layoutX="133.0" layoutY="86.0" prefHeight="235.0" prefWidth="367.0" />
     </children>
 </AnchorPane>
