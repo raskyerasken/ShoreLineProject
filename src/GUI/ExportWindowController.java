@@ -23,6 +23,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Platform;
@@ -67,14 +70,17 @@ public class ExportWindowController implements Initializable {
     private JFXButton stopTaskThread;
     @FXML
     private JFXProgressBar progressBar;
-
+    CompletableFuture com;
+    double ad = 0;
+    double allsize = 0; 
+    
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         btnExport.setStyle("-fx-background-color: #588fe8;");
         progressBar.setVisible(false);
         startTaskThread.setDisable(true);
         stopTaskThread.setDisable(true);
-        pauseTaskThread.setDisable(true);
+//        pauseTaskThread.setDisable(true);
     }
 
     @FXML
@@ -83,18 +89,51 @@ public class ExportWindowController implements Initializable {
     }
 
     @FXML
-    private void startTask(ActionEvent event) {
-        threading.start();
+    private void startTask(ActionEvent event) 
+    {
+        
     }
 
     @FXML
-    private void pauseTask(ActionEvent event) {
-//        threading.pause();
+    private void pauseTask(ActionEvent event) 
+    {
+        try 
+        {
+            com.get(50000, TimeUnit.HOURS);
+        } 
+        catch (InterruptedException ex) 
+        {
+            Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+        catch (ExecutionException ex) 
+        {
+            Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+        catch (TimeoutException ex) 
+        {
+            Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML
-    private void stopTask(ActionEvent event) {
-        threading.stop();
+    private void stopTask(ActionEvent event) 
+    {
+//        try 
+//        {
+//            com.get(0, TimeUnit.SECONDS);
+//        } 
+//        catch (InterruptedException ex) 
+//        {
+//            Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
+//        } 
+//        catch (ExecutionException ex) 
+//        {
+//            Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
+//        } 
+//        catch (TimeoutException ex)
+//        {
+//            Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
 //    @FXML
@@ -134,16 +173,13 @@ public class ExportWindowController implements Initializable {
 
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/CustomDataWindow.fxml"));
         Parent root;
-        try 
-        {
+        try {
             root = fxLoader.load();
             CustomDataWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel);
             exportWindow.getChildren().setAll(root);
-        } 
-        catch (IOException ex) 
-        {
-            AlertWindow  alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
+        } catch (IOException ex) {
+            AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
         }
     }
 
@@ -161,37 +197,38 @@ public class ExportWindowController implements Initializable {
     private void adminMenuSelect(ActionEvent event) {
 
     }
-double ad =0;
-double allsize=0;
+
+
     @FXML
     private void convertData(ActionEvent event) throws JSONException {
 
-        CompletableFuture
+        com = new CompletableFuture()
                 .runAsync(()
                         -> {
                     List<File> progressFileList = new ArrayList<File>(fcModel.getFiles());
-                   ad =0;
-                   allsize= progressFileList.size();
-                    for (File file : progressFileList){
+                    ad = 0;
+                    allsize = progressFileList.size();
+                    for (File file : progressFileList) {
 
                         try {
 
                             ReadingXLSX XLSX = new ReadingXLSX(file.getAbsolutePath());
-                           
+
                             XLSX.getColumsNames();
                             CreateJSONFile createJSON = new CreateJSONFile();
                             File JsonFile = new File(file.getCanonicalFile() + ".json");
                             FileWriter fileWriter = new FileWriter(JsonFile);
 
-                            for (JSONObject jSONObject : XLSX.allJSONObjectInFile()) {
+                            for (JSONObject jSONObject : XLSX.allJSONObjectInFile()) 
+                            {
+
                                 fileWriter.write(jSONObject.toString(4));
-
                             }
-
+                            
                             fileWriter.flush();
                             fileWriter.close();
-                          
-ad++;
+
+                            ad++;
                         } catch (IOException ex) {
                             AlertWindow alert = new AlertWindow("IOException", null, "IOException");
                         } catch (ParseException ex) {
@@ -203,16 +240,17 @@ ad++;
                         } catch (JSONException ex) {
                             Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
                         }
-     
-                        
+
                         Platform.runLater(() -> {
+//                            startTaskThread.setDisable(fcModel.getFiles().isEmpty());
+//                            pauseTaskThread.setDisable(fcModel.getFiles().isEmpty());
+
                             fcModel.removeFile(file);
                             progressBar.setVisible(true);
-                              progressBar.setProgress(ad/allsize);
-                              if(fcModel.getFiles().isEmpty())
-                        {
-                        progressBar.setVisible(false);
-                        }
+                            progressBar.setProgress(ad / allsize);
+                            if (fcModel.getFiles().isEmpty()) {
+                                progressBar.setVisible(false);
+                            }
                         });
                     }
                 });
