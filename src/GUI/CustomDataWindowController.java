@@ -71,12 +71,15 @@ public class CustomDataWindowController implements Initializable {
     private void importMenuSelect(Event event) {
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/MainWindow.fxml"));
         Parent root;
-        try {
+        try 
+        {
             root = fxLoader.load();
             MainWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel);
             customDataWindow.getChildren().setAll(root);
-        } catch (IOException ex) {
+        } 
+        catch (IOException ex) 
+        {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
         }
 
@@ -91,7 +94,9 @@ public class CustomDataWindowController implements Initializable {
             ExportWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel);
             customDataWindow.getChildren().setAll(root);
-        } catch (IOException ex) {
+        } 
+        catch (IOException ex) 
+        {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
         }
     }
@@ -134,23 +139,19 @@ public class CustomDataWindowController implements Initializable {
 //        CustomDataAdded.setRoot(rootItem);
     }
 
-    void setmodel(FilesConvertionModel fcModel) throws IOException, FileNotFoundException, ParseException {
+    void setmodel(FilesConvertionModel fcModel) throws IOException, FileNotFoundException, ParseException 
+    {
         this.fcModel = fcModel;
         TreeItem<String> allFiles = new TreeItem<String>("All files");
-        for (TreeItem object : fcModel.getTreeFiles()) {
+        for (TreeItem object : fcModel.getTreeFiles()) 
+        {
             allFiles.getChildren().add(object);
         }
         CustomDataSelect.setRoot(allFiles);
         CustomDataSelect.setShowRoot(false);
         CustomDataSelect.setEditable(true);
-        CustomDataSelect.setCellFactory(
-                new Callback<TreeView<String>, TreeCell<String>>() {
-            @Override
-            public TreeCell<String> call(TreeView<String> p) {
-                return new TextFieldTreeCellImpl();
-            }
-        });
-
+        CustomDataSelect.setCellFactory((TreeView<String> p) 
+                -> new TextFieldTreeCellImpl());
     }
 
 }

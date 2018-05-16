@@ -69,24 +69,28 @@ public class LogViewController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
-        thread = Thread.currentThread();
-        addItemsToList();
-        waitThread();
-        com = new CompletableFuture().runAsync
-        (()->{
-
-            try 
-            {            
-                thread = Thread.currentThread();
-                LogView.setItems((ObservableList<UpdateLog>)model.getAllLogUpdates());
-            } 
-            catch (SQLException ex) 
+        
+        addColumsToTableView();   //get all the colums
+        Thread t = new Thread(() -> 
+        {
+            Platform.runLater(()-> 
             {
-                Logger.getLogger(LogViewController.class.getName()).log(Level.SEVERE, null, ex);
-            }      
+                try 
+                {
+                    LogView.setItems((ObservableList<UpdateLog>)
+                            model.getAllLogUpdates());
+                } 
+                catch (SQLException ex)
+                {
+                    Logger.getLogger(LogViewController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                searchLogView();
+            });
+            
         });
+        t.start();
+        
 
-        searchLogView();
     }   
     
     private void readUserLoginTxt() 
@@ -114,17 +118,7 @@ public class LogViewController implements Initializable
 //        }
     }
     
-    private void waitThread()
-    {
-        try {
-            thread.wait(timeWaitThread);
-            System.out.println("waiting");
-        } catch (InterruptedException ex) {
-            Logger.getLogger(LogViewController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    
-    private void addItemsToList()
+    private void addColumsToTableView()
     {
         userNameTable.setCellValueFactory(new PropertyValueFactory("Username"));
         timeTable.setCellValueFactory(new PropertyValueFactory("Datelog"));
