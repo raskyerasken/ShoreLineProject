@@ -82,10 +82,10 @@ public class MainWindowController implements Initializable
     @FXML
     private JFXButton pauseTaskThread;
     @FXML
-    private JFXButton startTaskThread;
-    @FXML
     private JFXButton stopTaskThread;
     ReadingXLSX XLSX = null;
+    @FXML
+    private JFXButton startTaskThead;
     
 
 
@@ -110,6 +110,7 @@ public class MainWindowController implements Initializable
         CompletableFuture.runAsync(()
                 -> {
 
+               filesAccepted.clear();
             for (File file : files) {
                 acceptFile = false;
                 for (String acceptedFile : acceptedFiles) {
@@ -132,7 +133,6 @@ public class MainWindowController implements Initializable
                         = new AlertWindow("File not support yet", null, "This file " + acceptedFile.getName() + " can be added");
 
                 }
-               
                 filesNotAccepted.clear();
             });
             Date date = new Date();
