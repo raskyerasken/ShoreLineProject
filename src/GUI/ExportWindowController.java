@@ -79,10 +79,7 @@ public class ExportWindowController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         btnExport.setStyle("-fx-background-color: #588fe8;");
-        progressBar.setVisible(false);
-        startTaskThread.setDisable(true);
-        stopTaskThread.setDisable(true);
-//        pauseTaskThread.setDisable(true);
+        setButtonsInvisible();
     }
 
     @FXML
@@ -101,12 +98,20 @@ public class ExportWindowController implements Initializable {
     {
         threading.suspend();
     }
+    
+    private void setButtonsInvisible()
+    {
+        progressBar.setVisible(false);
+        startTaskThread.setDisable(true);
+        stopTaskThread.setDisable(true);
+        pauseTaskThread.setDisable(true);
+    }
 
     @FXML
     private void stopTask(ActionEvent event) 
     {
         threading.stop();
-        progressBar.setVisible(false);
+        setButtonsInvisible();
     }
 
 //    @FXML
@@ -217,7 +222,7 @@ public class ExportWindowController implements Initializable {
                         Platform.runLater(() -> {
                             startTaskThread.setDisable(fcModel.getFiles().isEmpty());
                             pauseTaskThread.setDisable(fcModel.getFiles().isEmpty());
-
+                            stopTaskThread.setDisable(fcModel.getFiles().isEmpty());
                             fcModel.removeFile(file);
                             progressBar.setVisible(true);
                             progressBar.setProgress(ad / allsize);
