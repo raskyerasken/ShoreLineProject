@@ -47,11 +47,6 @@ public class CustomDataWindowController  implements Initializable{
     @FXML
     private Button btnCustumData;
     private FilesConvertionModel fcModel;
-    @FXML
-    private JFXButton addCustomData;
-    @FXML
-    private JFXButton removeCustomData;
-    @FXML
     private TreeView<String> CustomDataAdded;
     
     @FXML
@@ -195,15 +190,4 @@ public class CustomDataWindowController  implements Initializable{
 
     }
 
-    @FXML
-    private void addCustomData(ActionEvent event) 
-    {
-        
-    }
-
-    @FXML
-    private void removeCustomData(ActionEvent event) 
-    {
-        
-    }
 }
