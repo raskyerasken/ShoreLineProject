@@ -69,5 +69,9 @@ public class FilesConvertionModel {
     void addFile(File file) {
     allFiles.add(file);
     }
+
+    void AddAllFiles(ObservableList<File> filesAccepted) {
+    allFiles.addAll(filesAccepted);
+    }
     
 }
