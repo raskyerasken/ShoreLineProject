@@ -56,7 +56,6 @@ public class DataBaseUpdateLog
     
     public List<UpdateLog> getUpdateLog() 
     {
-        
             List<UpdateLog> AllupdateLog 
                 = new ArrayList<>();
         
@@ -66,6 +65,8 @@ public class DataBaseUpdateLog
                     = con.prepareStatement("SELECT * FROM UpdateLog");
             
             ResultSet rs = pstmt.executeQuery();
+            System.out.println("Thread sleep");
+            int MAX_PRIORITY = Thread.MAX_PRIORITY;
             while (rs.next()) 
             {
                 UpdateLog ul = new UpdateLog();
@@ -74,7 +75,6 @@ public class DataBaseUpdateLog
                 ul.setAdjustment(rs.getString("Adjustment"));
                 AllupdateLog.add(ul);
             }
-            
         } 
         catch (SQLException ex) 
         {
