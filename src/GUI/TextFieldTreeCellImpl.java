@@ -55,7 +55,7 @@ public class TextFieldTreeCellImpl extends TreeCell<String>{
         textField.selectAll();
     }
     
-    public void canceledit()
+    public void cancelEdit()
     {
         super.cancelEdit();
         setText((String) getItem());
