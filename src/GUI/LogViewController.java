@@ -64,24 +64,26 @@ public class LogViewController implements Initializable
     private Label taskXRun;
     CompletableFuture com;
     private Thread thread = null;
+    long timeWaitThread = 500;
     
+    @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
-        com = new CompletableFuture().runAsync(()->{
-            thread = Thread.currentThread();
-            addItemsToList();
-        });
-        
-        Platform.runLater(()->{
-        try 
-        {
-            LogView.setItems((ObservableList<UpdateLog>)model.getAllLogUpdates());
-        } 
-        
-        catch (SQLException ex) 
-        {
-            Logger.getLogger(LogViewController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        thread = Thread.currentThread();
+        addItemsToList();
+        waitThread();
+        com = new CompletableFuture().runAsync
+        (()->{
+
+            try 
+            {            
+                thread = Thread.currentThread();
+                LogView.setItems((ObservableList<UpdateLog>)model.getAllLogUpdates());
+            } 
+            catch (SQLException ex) 
+            {
+                Logger.getLogger(LogViewController.class.getName()).log(Level.SEVERE, null, ex);
+            }      
         });
 
         searchLogView();
@@ -90,25 +92,35 @@ public class LogViewController implements Initializable
     private void readUserLoginTxt() 
     {            
         //Should read the file
-        BufferedReader br;
-        try 
-        {
-            br = new BufferedReader(new FileReader("UserLogin.txt"));
-            String line = br.readLine();
-            while (line != null)
-            {
-                lines.add(line);
-                line = br.readLine();
-                LogView.setItems(lines);
-            }
-        } 
-        catch (FileNotFoundException ex) 
-        {
-            AlertWindow  alert = new AlertWindow("File not found", null, "Can find file Userlogin");
-        } 
-        catch (IOException ex)
-        {
-            AlertWindow  alert = new AlertWindow("Can not read the file", null, "It can not read the file");
+//        BufferedReader br;
+//        try 
+//        {
+//            br = new BufferedReader(new FileReader("UserLogin.txt"));
+//            String line = br.readLine();
+//            while (line != null)
+//            {
+//                lines.add(line);
+//                line = br.readLine();
+//                LogView.setItems(lines);
+//            }
+//        } 
+//        catch (FileNotFoundException ex) 
+//        {
+//            AlertWindow  alert = new AlertWindow("File not found", null, "Can find file Userlogin");
+//        } 
+//        catch (IOException ex)
+//        {
+//            AlertWindow  alert = new AlertWindow("Can not read the file", null, "It can not read the file");
+//        }
+    }
+    
+    private void waitThread()
+    {
+        try {
+            thread.wait(timeWaitThread);
+            System.out.println("waiting");
+        } catch (InterruptedException ex) {
+            Logger.getLogger(LogViewController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     

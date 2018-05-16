@@ -163,7 +163,7 @@ public class ExportWindowController implements Initializable
     @FXML
     private void convertData(ActionEvent event) throws JSONException 
     {
-        com = new CompletableFuture().runAsync
+        com = CompletableFuture.runAsync
         (()->{
             List<File> progressFileList = new ArrayList<File>(fcModel.getFiles());
             ad = 0;
