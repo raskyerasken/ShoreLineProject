@@ -8,8 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-<<<<<<< HEAD
-    <jar href="ShoreLine.jar" size="101825" download="eager" />
+    <jar href="ShoreLine.jar" size="102805" download="eager" />
     <jar href="lib/commons-collections4-4.1.jar" size="751238" download="eager" />
     <jar href="lib/java-json.jar" size="84697" download="eager" />
     <jar href="lib/jaxp-api.jar" size="27052" download="eager" />
@@ -19,18 +18,6 @@
     <jar href="lib/poi-ooxml-schemas-3.17.jar" size="5924600" download="eager" />
     <jar href="lib/sqljdbc42.jar" size="891490" download="eager" />
     <jar href="lib/xmlbeans-2.6.0.jar" size="2730866" download="eager" />
-=======
-    <jar href="ShoreLine.jar" size="102525" download="eager" />
-    <jar href="lib\commons-collections4-4.1.jar" size="751238" download="eager" />
-    <jar href="lib\java-json.jar" size="84697" download="eager" />
-    <jar href="lib\jaxp-api.jar" size="27052" download="eager" />
-    <jar href="lib\jfoenix-8.0.1.jar" size="2405715" download="eager" />
-    <jar href="lib\poi-3.17.jar" size="2701171" download="eager" />
-    <jar href="lib\poi-ooxml-3.17.jar" size="1479023" download="eager" />
-    <jar href="lib\poi-ooxml-schemas-3.17.jar" size="5924600" download="eager" />
-    <jar href="lib\sqljdbc42.jar" size="891490" download="eager" />
-    <jar href="lib\xmlbeans-2.6.0.jar" size="2730866" download="eager" />
->>>>>>> d78776a5a33b416c28fdf3edece6ea7d5a0bb32f
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="ShoreLine" >
     <param name="requiredFXVersion" value="8.0+"/>
