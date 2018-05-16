@@ -139,8 +139,12 @@ public class CustomDataWindowController implements Initializable {
     void setmodel(FilesConvertionModel fcModel) throws IOException, FileNotFoundException, ParseException {
         this.fcModel = fcModel;
         
-       
-       CustomDataSelect.setRoot(fcModel.getTreeFiles());
+       TreeItem<String> hey = new TreeItem<String>("hey");
+      
+        for (TreeItem treeFile : fcModel.getTreeFiles()) {
+            hey.getChildren().add(treeFile);
+        }
+       CustomDataSelect.setRoot(hey);
        
         CustomDataSelect.setEditable(true);
          CustomDataSelect.setEditable(true);

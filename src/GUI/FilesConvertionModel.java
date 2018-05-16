@@ -23,7 +23,7 @@ public class FilesConvertionModel {
     
     private ObservableList<File> allFiles
             = FXCollections.observableArrayList();
-    private TreeItem treeFiles;
+    private ObservableList<TreeItem> treeFiles= FXCollections.observableArrayList();
     
     void setFiles(ObservableList<File> filesAcceptet) {
         
@@ -40,10 +40,10 @@ public class FilesConvertionModel {
     }
     
     void setTreeFiles(TreeItem<String> newFilesAdded) {
-        treeFiles=newFilesAdded;
+        treeFiles.add(newFilesAdded);
     }
     
-    TreeItem getTreeFiles() {
+    ObservableList<TreeItem> getTreeFiles() {
         return treeFiles;
     }
     

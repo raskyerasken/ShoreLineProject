@@ -110,6 +110,7 @@ public class MainWindowController implements Initializable
         CompletableFuture.runAsync(()
                 -> {
 
+               filesAccepted.clear();
             for (File file : files) {
                 acceptFile = false;
                 for (String acceptedFile : acceptedFiles) {
@@ -132,7 +133,6 @@ public class MainWindowController implements Initializable
                         = new AlertWindow("File not support yet", null, "This file " + acceptedFile.getName() + " can be added");
 
                 }
-               
                 filesNotAccepted.clear();
             });
             Date date = new Date();
