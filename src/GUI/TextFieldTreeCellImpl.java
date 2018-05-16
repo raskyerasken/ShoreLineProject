@@ -5,9 +5,13 @@
  */
 package GUI;
 
+import javafx.event.Event;
 import javafx.event.EventHandler;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TreeCell;
+import javafx.scene.control.TreeItem;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
@@ -17,12 +21,23 @@ import javafx.scene.input.KeyEvent;
  */
 public class TextFieldTreeCellImpl extends TreeCell<String>{
     private TextField textField;
+    private ContextMenu addMenu = new ContextMenu();
     
     MainWindowController mwc = new MainWindowController();
     
     public TextFieldTreeCellImpl()
     {
-        
+        MenuItem addMenuItem = new MenuItem("Add Class");
+        addMenu.getItems().add(addMenuItem);
+        addMenuItem.setOnAction(new EventHandler() 
+                {
+                    public void handle(Event t) 
+                {
+                    TreeItem newClass =
+                            new TreeItem<String>("new Class");
+                                getTreeItem().getChildren().add(newClass);
+                }
+                });
     }
     
     @Override
@@ -68,6 +83,10 @@ public class TextFieldTreeCellImpl extends TreeCell<String>{
               }
              setText(getString());
              setGraphic(getTreeItem().getGraphic());
+             if ( !getTreeItem().isLeaf()&&getTreeItem().getParent()!=null)
+             {
+                 setContextMenu(addMenu);
+             }
           }   
        }
    }
