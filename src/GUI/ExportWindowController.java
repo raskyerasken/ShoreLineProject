@@ -73,6 +73,8 @@ public class ExportWindowController implements Initializable {
     CompletableFuture com;
     double ad = 0;
     double allsize = 0; 
+    private boolean suspended;
+    private volatile boolean paused = false;
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -91,28 +93,13 @@ public class ExportWindowController implements Initializable {
     @FXML
     private void startTask(ActionEvent event) 
     {
-        
+        threading.getThreadGroup().resume();
     }
 
     @FXML
     private void pauseTask(ActionEvent event) 
     {
-        try 
-        {
-            com.get(50000, TimeUnit.HOURS);
-        } 
-        catch (InterruptedException ex) 
-        {
-            Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
-        } 
-        catch (ExecutionException ex) 
-        {
-            Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
-        } 
-        catch (TimeoutException ex) 
-        {
-            Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        threading.stop();
     }
 
     @FXML
@@ -211,7 +198,7 @@ public class ExportWindowController implements Initializable {
                     for (File file : progressFileList) {
 
                         try {
-
+                            threading = Thread.currentThread();
                             ReadingXLSX XLSX = new ReadingXLSX(file.getAbsolutePath());
 
                             XLSX.getColumsNames();
@@ -242,8 +229,8 @@ public class ExportWindowController implements Initializable {
                         }
 
                         Platform.runLater(() -> {
-//                            startTaskThread.setDisable(fcModel.getFiles().isEmpty());
-//                            pauseTaskThread.setDisable(fcModel.getFiles().isEmpty());
+                            startTaskThread.setDisable(fcModel.getFiles().isEmpty());
+                            pauseTaskThread.setDisable(fcModel.getFiles().isEmpty());
 
                             fcModel.removeFile(file);
                             progressBar.setVisible(true);
