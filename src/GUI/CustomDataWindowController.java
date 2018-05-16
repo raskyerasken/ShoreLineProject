@@ -5,43 +5,32 @@
  */
 package GUI;
 
-import BLL.ReadingXLSX;
-import com.jfoenix.controls.JFXButton;
-import java.awt.Image;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.text.ParseException;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TreeCell;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Callback;
-import javax.swing.tree.DefaultMutableTreeNode;
 
 /**
  *
  * @author kasper
  */
-public class CustomDataWindowController implements Initializable {
+public class CustomDataWindowController implements Initializable 
+{
 
     @FXML
     private Label taskXRun;
@@ -55,22 +44,26 @@ public class CustomDataWindowController implements Initializable {
     private TextField textField;
 
     @FXML
-    private void startTask(ActionEvent event) {
+    private void startTask(ActionEvent event) 
+    {
 
     }
 
     @FXML
-    private void pauseTask(ActionEvent event) {
+    private void pauseTask(ActionEvent event) 
+    {
 
     }
 
     @FXML
-    private void stopTask(ActionEvent event) {
+    private void stopTask(ActionEvent event) 
+    {
 
     }
 
     @FXML
-    private void importMenuSelect(Event event) {
+    private void importMenuSelect(Event event) 
+    {
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/MainWindow.fxml"));
         Parent root;
         try 
@@ -88,10 +81,12 @@ public class CustomDataWindowController implements Initializable {
     }
 
     @FXML
-    private void exportMenuSelect(Event event) {
+    private void exportMenuSelect(Event event) 
+    {
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/ExportWindow.fxml"));
         Parent root;
-        try {
+        try 
+        {
             root = fxLoader.load();
             ExportWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel);
@@ -104,17 +99,20 @@ public class CustomDataWindowController implements Initializable {
     }
 
     @FXML
-    private void customDataMenuSelect(Event event) {
+    private void customDataMenuSelect(Event event) 
+    {
 
     }
 
     @FXML
-    private void logMenuSelect(Event event) {
+    private void logMenuSelect(Event event) 
+    {
 
     }
 
     @FXML
-    private void adminMenuSelect(ActionEvent event) {
+    private void adminMenuSelect(ActionEvent event) 
+    {
 
     }
 
@@ -144,38 +142,29 @@ public class CustomDataWindowController implements Initializable {
     void setmodel(FilesConvertionModel fcModel) throws IOException, FileNotFoundException, ParseException 
     {
         this.fcModel = fcModel;
-<<<<<<< HEAD
         TreeItem<String> allFiles = new TreeItem<String>("All files");
         for (TreeItem object : fcModel.getTreeFiles()) 
         {
             allFiles.getChildren().add(object);
-=======
-        
-       TreeItem<String> hey = new TreeItem<String>("hey");
-      
-        for (TreeItem treeFile : fcModel.getTreeFiles()) {
-            hey.getChildren().add(treeFile);
->>>>>>> 19386d56fe61c82731409d23e30e56b0965f8058
-        }
-       CustomDataSelect.setRoot(hey);
-       
-        CustomDataSelect.setEditable(true);
-<<<<<<< HEAD
-        CustomDataSelect.setCellFactory((TreeView<String> p) 
-                -> new TextFieldTreeCellImpl());
-=======
-         CustomDataSelect.setEditable(true);
-        CustomDataSelect.setCellFactory(new Callback<TreeView<String>,TreeCell<String>>(){
-            @Override
-            public TreeCell<String> call(TreeView<String> p) {
-                return new TextFieldTreeCellImpl();
+            TreeItem<String> hey = new TreeItem<String>("hey");
+
+            for (TreeItem treeFile : fcModel.getTreeFiles()) 
+            {
+                hey.getChildren().add(treeFile);
             }
-        });
-      
- 
+            CustomDataSelect.setRoot(hey);
 
-        
->>>>>>> 19386d56fe61c82731409d23e30e56b0965f8058
+            CustomDataSelect.setEditable(true);
+            CustomDataSelect.setCellFactory((TreeView<String> p)
+                    -> new TextFieldTreeCellImpl());
+            CustomDataSelect.setEditable(true);
+            CustomDataSelect.setCellFactory(new Callback<TreeView<String>, TreeCell<String>>() {
+                @Override
+                public TreeCell<String> call(TreeView<String> p) 
+                {
+                    return new TextFieldTreeCellImpl();
+                }
+            });
+        }
     }
-
 }
