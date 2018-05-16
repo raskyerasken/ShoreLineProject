@@ -25,6 +25,7 @@ import java.sql.Timestamp;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.concurrent.CompletableFuture;
@@ -42,6 +43,7 @@ import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuBar;
@@ -189,20 +191,18 @@ public class MainWindowController implements Initializable {
                     -> {
 
                 fcModel.AddAllFiles(filesAccepted);
-                String filesNotAdded = null;
-                for (File file : filesNotAccepted) {
-                        filesNotAdded=filesNotAdded+file.getName()+"\n";
-                }
-                AlertWindow alertWindow
-                        = new AlertWindow("File not support yet", null, "This file " + filesNotAdded + " can be added");
+                for (File acceptedFile : filesNotAccepted) {
+                     AlertWindow alertWindow
+                        = new AlertWindow("File not support yet", null, "This file " + acceptedFile.getName() + " can be added");
 
-                filesAccepted.clear();
+                }
+               
                 filesNotAccepted.clear();
             });
+  Date date = new Date();
+            TreeItem<String> newFilesAdded = new TreeItem<String>("("+filesAccepted.size()+")"+date.toGMTString());
 
-            TreeItem<String> newFilesAdded = new TreeItem<String>("file");
-
-            for (File acceptedFile : filesAccepted) {
+            File acceptedFile =filesAccepted.get(0);
                 TreeItem<String> newlyAdded
                         = new TreeItem<String>(acceptedFile.getName());
                 try {
@@ -212,14 +212,17 @@ public class MainWindowController implements Initializable {
                 } catch (ParseException ex) {
                     Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                for (Object string : XLSX.getColumsNames()) {
+                for (Object string : XLSX.getColumsNames()) 
+                {CheckBox check = new CheckBox();
+                check.setSelected(true);
                     TreeItem<String> colum = new TreeItem<String>(string.toString());
-
+                    colum.setGraphic(check);
                     newlyAdded.getChildren().add(colum);
+                     
                 }
                 newFilesAdded.getChildren().add(newlyAdded);
 
-            }
+            
             fcModel.setTreeFiles(newFilesAdded);
         });
 
