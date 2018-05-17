@@ -19,19 +19,7 @@ import javafx.scene.input.KeyEvent;
  
         private TextField textField;
         private ContextMenu addMenu = new ContextMenu();
-<<<<<<< HEAD
  
-        public TextFieldTreeCellImpl() {
-            MenuItem addMenuItem = new MenuItem("Add Employee");
-            addMenu.getItems().add(addMenuItem);
-            addMenuItem.setOnAction(new EventHandler() {
-                @Override
-                public void handle(Event event) {
-                  TreeItem newEmployee = 
-                        new TreeItem<String>("New Employee");
-                            getTreeItem().getChildren().add(newEmployee);}
-            });
-=======
         private TreeItem addTree = new TreeItem();
  
         public TextFieldTreeCellImpl() {
@@ -59,10 +47,6 @@ import javafx.scene.input.KeyEvent;
             });
             
             
-            
-            
-            
->>>>>>> d43076ef2b35c32041fafcd89c7e8249a40b1317
         }
  
         @Override
