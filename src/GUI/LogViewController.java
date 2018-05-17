@@ -14,6 +14,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.concurrent.CompletableFuture;
@@ -26,7 +27,10 @@ import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -50,6 +54,7 @@ public class LogViewController implements Initializable
     boolean search = false;
     FilteredList<String> searchData 
             = new FilteredList<>(lines, p -> true);
+    private FilesConvertionModel fcModel;
     @FXML
     private TableView<UpdateLog> LogView;
     @FXML
@@ -59,37 +64,27 @@ public class LogViewController implements Initializable
     @FXML
     private TableColumn<UpdateLog, String> adjustment;
     @FXML
-    private AnchorPane exportWindow;
-    @FXML
-    private Label taskXRun;
+    private TableColumn<UpdateLog, Boolean> error;
     CompletableFuture com;
     private Thread thread = null;
     long timeWaitThread = 500;
+    @FXML
+    private AnchorPane exportWindow;
+    @FXML
+    private Button logMenuSelect;
+
     
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
-        
+        logMenuSelect.setDisable(true);
         addColumsToTableView();   //get all the colums
+        LogView.setItems(model.getUpdateLogToList());
         Thread t = new Thread(() -> 
         {
-            Platform.runLater(()-> 
-            {
-                System.out.println("run later");
-                try 
-                {
-                    LogView.setItems((ObservableList<UpdateLog>)
-                            model.getAllLogUpdates());
-                } 
-                catch (SQLException ex)
-                {
-                    Logger.getLogger(LogViewController.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                searchLogView();
-            });
-            
+            model.logListUpdate();
+            searchLogView();
         });
-        System.out.println("start");
         t.start();
     }   
     
@@ -123,15 +118,14 @@ public class LogViewController implements Initializable
         userNameTable.setCellValueFactory(new PropertyValueFactory("Username"));
         timeTable.setCellValueFactory(new PropertyValueFactory("Datelog"));
         adjustment.setCellValueFactory(new PropertyValueFactory("Adjustment"));
+        error.setCellValueFactory(new PropertyValueFactory("Error"));
     }
     
     private void filterTableView() 
     {
         FilteredList<UpdateLog> filteredData;
-        try 
-        {
-            filteredData = new FilteredList<>(model.getAllLogUpdates(), p -> true);
-            searchTxt.textProperty().addListener((observable, oldValue, newValue) ->
+        filteredData = new FilteredList<>(model.getUpdateLogToList(), p -> true); 
+        searchTxt.textProperty().addListener((observable, oldValue, newValue) ->
         {
             filteredData.setPredicate(updateLog ->
             {
@@ -156,28 +150,18 @@ public class LogViewController implements Initializable
             });
             
         });
-                 // 3. Wrap the FilteredList in a SortedList. 
+        // 3. Wrap the FilteredList in a SortedList. 
         SortedList<UpdateLog> sortedData = new SortedList<>(filteredData);
-
         // 4. Bind the SortedList comparator to the TableView comparator.
         sortedData.comparatorProperty().bind(LogView.comparatorProperty());
-
         // 5. Add sorted (and filtered) data to the table.
-        LogView.setItems(sortedData);
-        } catch (SQLException ex) {
-         AlertWindow  alert = new AlertWindow("SQL exception", null, "Something wrong with the database connection");
-        }
-       
-        
-            
+        LogView.setItems(sortedData);            
     }
     
     private void searchLogView()
     {
         filterTableView();
     }
-
-
     
     private void displayLoginText()
     {
@@ -185,39 +169,67 @@ public class LogViewController implements Initializable
     }
 
     @FXML
-    private void importData(ActionEvent event) {
+    private void importMenuSelect(ActionEvent event) throws IOException 
+    {
+        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/MainWindow.fxml"));
+        Parent root;
+        try 
+        {
+            root = fxLoader.load();
+            MainWindowController controller = fxLoader.getController();
+            controller.setmodel(fcModel);
+            exportWindow.getChildren().setAll(root);
+        } 
+        catch (IOException ex) 
+        {
+            AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
+        }
     }
 
     @FXML
-    private void startTask(ActionEvent event) {
+    private void exportMenuSelect(ActionEvent event) 
+    {
+        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/ExportWindow.fxml"));
+        Parent root;
+        try 
+        {
+            root = fxLoader.load();
+            ExportWindowController controller = fxLoader.getController();
+            controller.setmodel(fcModel);
+            exportWindow.getChildren().setAll(root);
+        } 
+        catch (IOException ex) 
+        {
+            AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
+        }
     }
 
     @FXML
-    private void pauseTask(ActionEvent event) {
+    private void customDataMenuSelect(ActionEvent event) throws FileNotFoundException, ParseException 
+    {
+        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/CustomDataWindow.fxml"));
+        Parent root;
+        try 
+        {
+            root = fxLoader.load();
+            CustomDataWindowController controller = fxLoader.getController();
+            controller.setmodel(fcModel);
+            exportWindow.getChildren().setAll(root);
+        } 
+        catch (IOException ex) 
+        {
+            AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
+        }
     }
 
-    @FXML
-    private void stopTask(ActionEvent event) {
-    }
-
-    @FXML
-    private void importMenuSelect(ActionEvent event) {
-    }
-
-    @FXML
-    private void exportMenuSelect(ActionEvent event) {
-    }
-
-    @FXML
-    private void customDataMenuSelect(ActionEvent event) {
-    }
-
-    @FXML
-    private void logMenuSelect(ActionEvent event) {
-    }
 
     @FXML
     private void adminMenuSelect(ActionEvent event) {
+    }
+
+    void setmodel(FilesConvertionModel fcModel) 
+    {
+        this.fcModel=fcModel;
     }
     
 }

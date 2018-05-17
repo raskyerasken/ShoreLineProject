@@ -12,11 +12,11 @@ import javafx.scene.control.TreeItem;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
-
-    final class TextFieldTreeCellImpl extends TreeCell<String> {
+ final class TextFieldTreeCellImpl extends TreeCell<String> {
  
         private TextField textField;
         private ContextMenu addMenu = new ContextMenu();
+ 
         private TreeItem addTree = new TreeItem();
  
         public TextFieldTreeCellImpl() {
@@ -45,9 +45,6 @@ import javafx.scene.input.KeyEvent;
             });
             
             
-            
-            
-            
         }
  
         @Override
@@ -65,6 +62,7 @@ import javafx.scene.input.KeyEvent;
         @Override
         public void cancelEdit() {
             super.cancelEdit();
+ 
             setText((String) getItem());
             setGraphic(getTreeItem().getGraphic());
         }
@@ -86,6 +84,11 @@ import javafx.scene.input.KeyEvent;
                 } else {
                     setText(getString());
                     setGraphic(getTreeItem().getGraphic());
+                    if (
+                        !getTreeItem().isLeaf()&&getTreeItem().getParent()!= null
+                    ){
+                        setContextMenu(addMenu);
+                    }
                 }
                 
                 if (!getTreeItem().isLeaf()&&getTreeItem().getParent()!=null)
@@ -95,7 +98,7 @@ import javafx.scene.input.KeyEvent;
                         
             }
         }
- 
+        
         private void createTextField() {
             textField = new TextField(getString());
             textField.setOnKeyReleased(new EventHandler<KeyEvent>() {
@@ -108,11 +111,11 @@ import javafx.scene.input.KeyEvent;
                         cancelEdit();
                     }
                 }
-            });
+            });  
+            
         }
  
         private String getString() {
             return getItem() == null ? "" : getItem().toString();
         }
     }
- 

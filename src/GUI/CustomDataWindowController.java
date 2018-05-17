@@ -5,16 +5,19 @@
  */
 package GUI;
 
+import java.awt.Checkbox;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.text.ParseException;
 import java.util.ResourceBundle;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBoxTreeItem;
@@ -44,7 +47,30 @@ public class CustomDataWindowController implements Initializable
     private Button btnCustumData;
     private FilesConvertionModel fcModel;
     private TextField textField;
+    
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        btnCustumData.setDisable(true);
+//        TreeItem<String> hey = new TreeItem<String> ("hey");
+//        TreeItem<String> hey2 = new TreeItem<String> ("hey2");
+//        rootItem.setExpanded(true);
+//        for (int i = 1; i < 6; i++) 
+//        {
+//            TreeItem<String> item = new TreeItem<String> ("Message" + i);            
+//            hey.getChildren().add(item);
+//        }   
+//                
+//        for (int i = 1; i < 6; i++) 
+//        {
+//            TreeItem<String> item = new TreeItem<String> ("Message" + i);            
+//            hey2.getChildren().add(item);
+//        }   
+//        rootItem.getChildren().add(hey);
+//        rootItem.getChildren().add(hey2);
 
+//        CustomDataAdded.setRoot(rootItem);
+    }
+    
     @FXML
     private void startTask(ActionEvent event) 
     {
@@ -100,16 +126,23 @@ public class CustomDataWindowController implements Initializable
         }
     }
 
-    @FXML
-    private void customDataMenuSelect(Event event) 
-    {
-
-    }
 
     @FXML
     private void logMenuSelect(Event event) 
     {
-
+        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/LogView.fxml"));
+        Parent root;
+        try 
+        {
+            root = fxLoader.load();
+            LogViewController controller = fxLoader.getController();
+            controller.setmodel(fcModel);
+            customDataWindow.getChildren().setAll(root);
+        } 
+        catch (IOException ex) 
+        {
+            AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
+        }
     }
 
     @FXML
@@ -118,6 +151,7 @@ public class CustomDataWindowController implements Initializable
 
     }
 
+<<<<<<< HEAD
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         btnCustumData.setStyle("-fx-background-color: #588fe8;");
@@ -135,7 +169,29 @@ public class CustomDataWindowController implements Initializable
                     rootItem.getChildren().add(checkBoxTreeItem);
             
         }
+=======
+
+<<<<<<< HEAD
+=======
+//        CustomDataAdded.setRoot(rootItem);
+>>>>>>> a8301fdb53b1df96cfea4581e544b649a7b57aa1
     }
+    void seePreview ()
+    {
+    if( CustomDataSelect.getRoot()!=null)
+    {
+        ObservableList<TreeItem<String>> JsonItems = CustomDataSelect.getRoot().getChildren().get(0).getChildren().get(0).getChildren();
+        System.out.println(CustomDataSelect.getRoot().getChildren().get(0).getChildren());
+        for (TreeItem<String> JsonItem : JsonItems) {
+//          Node check =  JsonItem.getGraphic();9
+//            System.out.println(check.isDisable());
+            System.out.println(JsonItem.getValue());
+            
+        }
+    
+    }
+    }
+>>>>>>> 4c2342ab71b3555ba2c2812b9d03adea9c0f3c53
 
     void setmodel(FilesConvertionModel fcModel) throws IOException, FileNotFoundException, ParseException 
     {
@@ -150,6 +206,7 @@ public class CustomDataWindowController implements Initializable
             {
                 hey.getChildren().add(treeFile);
             }
+            
             CustomDataSelect.setRoot(hey);
             
             CustomDataSelect.setEditable(true);
@@ -164,5 +221,10 @@ public class CustomDataWindowController implements Initializable
                 }
             });
         }
+    }
+
+    @FXML
+    private void preview(ActionEvent event) {
+             seePreview();
     }
 }
