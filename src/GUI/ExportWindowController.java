@@ -72,6 +72,7 @@ public class ExportWindowController implements Initializable {
     private boolean suspended;
     private volatile boolean paused = false;
     UpdateLog updateLog = new UpdateLog();
+    boolean conversionSuccess;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -160,7 +161,8 @@ public class ExportWindowController implements Initializable {
             List<File> progressFileList = new ArrayList<File>(fcModel.getFiles());
             ad = 0;
             allsize = progressFileList.size();
-            for (File file : progressFileList) {
+            for (File file : progressFileList) 
+            {
 
                 try {
                     threading = Thread.currentThread();
@@ -171,22 +173,21 @@ public class ExportWindowController implements Initializable {
                     File JsonFile = new File(file.getCanonicalFile() + ".json");
                     FileWriter fileWriter = new FileWriter(JsonFile);
 
-                    for (JSONObject jSONObject : XLSX.allJSONObjectInFile()) {
+                    for (JSONObject jSONObject : XLSX.allJSONObjectInFile())
+                    {
                         fileWriter.write(jSONObject.toString(4));
                     }
-                    java.util.Date utilDate = new java.util.Date();
-                    Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
-
-                    java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
-
-                    updateLog.setUsername(modelData.getUserLogin());
-                    updateLog.setDatelog(sqlDate);
-                    updateLog.setError(false);
-                    updateLog.setAdjustment("Did some strange stuff: " + file);
-                    try {
+                    conversionSuccess = false;
+                    addDataToLog();
+                    updateLog.setAdjustment("Converted: " + file);
+                    
+                    try 
+                    {
                         System.out.println("hey");
                         up.setUpdateLog(updateLog);
-                    } catch (SQLException ex) {
+                    } 
+                    catch (SQLException ex) 
+                    {
                         Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     //addToLog();
@@ -195,15 +196,24 @@ public class ExportWindowController implements Initializable {
                     fileWriter.close();
 
                     ad++;
-                } catch (IOException ex) {
+                } catch (IOException ex) 
+                {
                     AlertWindow alert = new AlertWindow("IOException", null, "IOException");
-                } catch (ParseException ex) {
+                } 
+                catch (ParseException ex) 
+                {
                     AlertWindow alert = new AlertWindow("ParseException", null, "ParseException");
-                } catch (IllegalArgumentException ex) {
+                } 
+                catch (IllegalArgumentException ex) 
+                {
                     AlertWindow alert = new AlertWindow("IllegalArgumentException", null, "IllegalArgumentException");
-                } catch (IllegalAccessException ex) {
+                } 
+                catch (IllegalAccessException ex) 
+                {
                     AlertWindow alert = new AlertWindow("IllegalAccessException", null, "IllegalAccessException");
-                } catch (JSONException ex) {
+                } 
+                catch (JSONException ex) 
+                {
                     Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
@@ -223,8 +233,10 @@ public class ExportWindowController implements Initializable {
         });
     }
 
-    private void addToLog() {
-        try {
+    private void addToLog() 
+    {
+        try 
+        {
             java.util.Date utilDate = new java.util.Date();
             Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
             java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
@@ -234,9 +246,21 @@ public class ExportWindowController implements Initializable {
 
             updateLog.setError(suspended);
             up.setUpdateLog(updateLog);
-        } catch (SQLException ex) {
+        } 
+        catch (SQLException ex) 
+        {
             Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    private void addDataToLog()
+    {
+        Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
+        java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
+
+        updateLog.setUsername(modelData.getUserLogin());
+        updateLog.setDatelog(sqlDate);
+        updateLog.setError(conversionSuccess);
     }
 
     @FXML
