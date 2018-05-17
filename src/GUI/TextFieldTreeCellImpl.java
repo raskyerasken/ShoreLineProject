@@ -16,31 +16,31 @@ import javafx.scene.input.KeyEvent;
  
         private TextField textField;
         private ContextMenu addMenu = new ContextMenu();
- 
-        private TreeItem addTree = new TreeItem();
- 
         public TextFieldTreeCellImpl() {
+            
             MenuItem addMenuItem = new MenuItem("add rule");
             addMenu.getItems().add(addMenuItem);
             addMenuItem.setOnAction(new EventHandler()
                     {
                         public void handle(Event t) 
                     {
-                        TreeItem newRule = 
-                                new TreeItem<String>("New Rule");
+                        TreeItem newRule = new TreeItem<String>("New rule");
                                     getTreeItem().getChildren().add(newRule);
                     }
             });
-            
-            TreeItem addTreeItem = new TreeItem("Add Class");
-            addTree.getChildren().add(addTreeItem);
-            addMenuItem.setOnAction(new EventHandler()
+//            
+            MenuItem mumu = new MenuItem("add class");
+            addMenu.getItems().add(mumu);
+            mumu.setOnAction(new EventHandler()
                     {
                 public void handle(Event t) 
                     {
                     TreeItem newClass = 
                             new TreeItem<String>("New Class");
-                            getTreeItem().getChildren().add(addTree);
+                    TreeItem newRule = 
+                            new TreeItem<String>("New Rule");
+                    newClass.getChildren().add(newRule);
+                            getTreeItem().getChildren().add(newClass);
                 }
             });
             
@@ -69,7 +69,7 @@ import javafx.scene.input.KeyEvent;
  
         @Override
         public void updateItem(String item, boolean empty) {
-            super.updateItem(item, empty);
+             super.updateItem(item, empty);
  
             if (empty) {
                 setText(null);
@@ -87,16 +87,13 @@ import javafx.scene.input.KeyEvent;
                     if (
                         !getTreeItem().isLeaf()&&getTreeItem().getParent()!= null
                     ){
+                        
                         setContextMenu(addMenu);
                     }
+//                    
                 }
-                
-                if (!getTreeItem().isLeaf()&&getTreeItem().getParent()!=null)
-                {
-                    setContextMenu(addMenu);
-                }
-                        
             }
+        
         }
         
         private void createTextField() {
