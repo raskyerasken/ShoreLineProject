@@ -5,16 +5,19 @@
  */
 package GUI;
 
+import java.awt.Checkbox;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.text.ParseException;
 import java.util.ResourceBundle;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -138,6 +141,21 @@ public class CustomDataWindowController implements Initializable
 
 //        CustomDataAdded.setRoot(rootItem);
     }
+    void seePreview ()
+    {
+    if( CustomDataSelect.getRoot()!=null)
+    {
+        ObservableList<TreeItem<String>> JsonItems = CustomDataSelect.getRoot().getChildren().get(0).getChildren().get(0).getChildren();
+        System.out.println(CustomDataSelect.getRoot().getChildren().get(0).getChildren());
+        for (TreeItem<String> JsonItem : JsonItems) {
+//          Node check =  JsonItem.getGraphic();9
+//            System.out.println(check.isDisable());
+            System.out.println(JsonItem.getValue());
+            
+        }
+    
+    }
+    }
 
     void setmodel(FilesConvertionModel fcModel) throws IOException, FileNotFoundException, ParseException 
     {
@@ -152,8 +170,9 @@ public class CustomDataWindowController implements Initializable
             {
                 hey.getChildren().add(treeFile);
             }
+            
             CustomDataSelect.setRoot(hey);
-
+            
             CustomDataSelect.setEditable(true);
             CustomDataSelect.setCellFactory((TreeView<String> p)
                     -> new TextFieldTreeCellImpl());
@@ -166,5 +185,10 @@ public class CustomDataWindowController implements Initializable
                 }
             });
         }
+    }
+
+    @FXML
+    private void preview(ActionEvent event) {
+             seePreview();
     }
 }

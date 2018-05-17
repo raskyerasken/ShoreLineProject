@@ -25,5 +25,6 @@
       <Button layoutY="300.0" mnemonicParsing="false" onAction="#logMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Log" />
       <Button layoutY="367.0" mnemonicParsing="false" onAction="#adminMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Admin" />
       <TreeView fx:id="CustomDataSelect" layoutX="133.0" layoutY="86.0" prefHeight="235.0" prefWidth="367.0" />
+      <Button layoutX="433.0" layoutY="36.0" mnemonicParsing="false" onAction="#preview" text="Preview" />
     </children>
 </AnchorPane>
