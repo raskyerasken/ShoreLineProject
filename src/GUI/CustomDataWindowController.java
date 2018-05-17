@@ -17,11 +17,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBoxTreeItem;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TreeCell;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
+import javafx.scene.control.cell.CheckBoxTreeCell;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Callback;
 
@@ -119,24 +121,20 @@ public class CustomDataWindowController implements Initializable
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         btnCustumData.setStyle("-fx-background-color: #588fe8;");
-//        TreeItem<String> hey = new TreeItem<String> ("hey");
-//        TreeItem<String> hey2 = new TreeItem<String> ("hey2");
-//        rootItem.setExpanded(true);
-//        for (int i = 1; i < 6; i++) 
-//        {
-//            TreeItem<String> item = new TreeItem<String> ("Message" + i);            
-//            hey.getChildren().add(item);
-//        }   
-//                
-//        for (int i = 1; i < 6; i++) 
-//        {
-//            TreeItem<String> item = new TreeItem<String> ("Message" + i);            
-//            hey2.getChildren().add(item);
-//        }   
-//        rootItem.getChildren().add(hey);
-//        rootItem.getChildren().add(hey2);
-
-//        CustomDataAdded.setRoot(rootItem);
+        
+        
+        CheckBoxTreeItem<String> rootItem =
+              new CheckBoxTreeItem<String>("view Source Files");
+        rootItem.setExpanded(true);
+        
+        CustomDataSelect.setCellFactory(CheckBoxTreeCell.<String>forTreeView());
+        
+        for (int i = 0; i < 8; i++) {
+           final CheckBoxTreeItem<String> checkBoxTreeItem = 
+                   new CheckBoxTreeItem<String>("Sample" + (i+1));
+                    rootItem.getChildren().add(checkBoxTreeItem);
+            
+        }
     }
 
     void setmodel(FilesConvertionModel fcModel) throws IOException, FileNotFoundException, ParseException 

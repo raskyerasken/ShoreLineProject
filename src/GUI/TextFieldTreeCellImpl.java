@@ -27,7 +27,7 @@ import javafx.scene.input.KeyEvent;
                         public void handle(Event t) 
                     {
                         TreeItem newRule = 
-                                new TreeItem<String>("New Class");
+                                new TreeItem<String>("New Rule");
                                     getTreeItem().getChildren().add(newRule);
                     }
             });
@@ -36,7 +36,8 @@ import javafx.scene.input.KeyEvent;
             addTree.getChildren().add(addTreeItem);
             addMenuItem.setOnAction(new EventHandler()
                     {
-                public void handle(Event t) {
+                public void handle(Event t) 
+                    {
                     TreeItem newClass = 
                             new TreeItem<String>("New Class");
                             getTreeItem().getChildren().add(addTree);

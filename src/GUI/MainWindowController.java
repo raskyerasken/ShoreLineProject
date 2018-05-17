@@ -144,6 +144,8 @@ public class MainWindowController implements Initializable {
             } catch (ParseException ex) {
                 Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
             }
+            
+            
             for (Object string : XLSX.getColumsNames()) {
                 CheckBox check = new CheckBox();
                 check.setSelected(true);
