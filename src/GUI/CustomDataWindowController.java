@@ -46,36 +46,25 @@ public class CustomDataWindowController implements Initializable {
     private Button btnCustumData;
     private FilesConvertionModel fcModel;
     private TextField textField;
-<<<<<<< HEAD
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL location, ResourceBundle resources)
+    {
         btnCustumData.setDisable(true);
-//        TreeItem<String> hey = new TreeItem<String> ("hey");
-//        TreeItem<String> hey2 = new TreeItem<String> ("hey2");
-//        rootItem.setExpanded(true);
-//        for (int i = 1; i < 6; i++) 
-//        {
-//            TreeItem<String> item = new TreeItem<String> ("Message" + i);            
-//            hey.getChildren().add(item);
-//        }   
-//                
-//        for (int i = 1; i < 6; i++) 
-//        {
-//            TreeItem<String> item = new TreeItem<String> ("Message" + i);            
-//            hey2.getChildren().add(item);
-//        }   
-//        rootItem.getChildren().add(hey);
-//        rootItem.getChildren().add(hey2);
-
-//        CustomDataAdded.setRoot(rootItem);
+        CheckBoxTreeItem<String> rootItem =
+              new CheckBoxTreeItem<String>("view Source Files");
+        rootItem.setExpanded(true);
+        
+        CustomDataSelect.setCellFactory(CheckBoxTreeCell.<String>forTreeView());
+        
+        for (int i = 0; i < 8; i++) 
+        {
+           final CheckBoxTreeItem<String> checkBoxTreeItem = 
+                   new CheckBoxTreeItem<String>("Sample" + (i+1));
+                    rootItem.getChildren().add(checkBoxTreeItem);
+        }
     }
-
-=======
     
-    
->>>>>>> 96178e0e2b268dfb056585e4362774bd05295f05
-    @FXML
     private void startTask(ActionEvent event) {
 
     }
@@ -137,30 +126,7 @@ public class CustomDataWindowController implements Initializable {
     private void adminMenuSelect(ActionEvent event) {
 
     }
-<<<<<<< HEAD
-=======
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        btnCustumData.setStyle("-fx-background-color: #588fe8;");
-        
-        
-        CheckBoxTreeItem<String> rootItem =
-              new CheckBoxTreeItem<String>("view Source Files");
-        rootItem.setExpanded(true);
-        
-        CustomDataSelect.setCellFactory(CheckBoxTreeCell.<String>forTreeView());
-        
-        for (int i = 0; i < 8; i++) {
-           final CheckBoxTreeItem<String> checkBoxTreeItem = 
-                   new CheckBoxTreeItem<String>("Sample" + (i+1));
-                    rootItem.getChildren().add(checkBoxTreeItem);
-            
-        }
-
->>>>>>> 96178e0e2b268dfb056585e4362774bd05295f05
-//        CustomDataAdded.setRoot(rootItem);
-
+    
     void seePreview ()
     {
         if( CustomDataSelect.getRoot()!=null)
