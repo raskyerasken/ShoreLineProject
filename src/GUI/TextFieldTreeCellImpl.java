@@ -3,10 +3,8 @@ package GUI;
 
 import javafx.event.Event;
 import javafx.event.EventHandler;
-<<<<<<< HEAD
 =======
 import javafx.event.EventType;
->>>>>>> d43076ef2b35c32041fafcd89c7e8249a40b1317
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
