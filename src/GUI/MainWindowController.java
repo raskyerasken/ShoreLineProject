@@ -237,7 +237,8 @@ public class MainWindowController implements Initializable {
 
     }
 
-    void modelData(LoginDataModel modelData) {
+    void modelData(LoginDataModel modelData) 
+    {
         this.modelData = modelData;
     }
 

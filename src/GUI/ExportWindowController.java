@@ -5,6 +5,8 @@
  */
 package GUI;
 
+import BE.UpdateLog;
+import BLL.BLLManagerUpdateLog;
 import BLL.CreateJSONFile;
 import BLL.ReadingXLSX;
 import com.jfoenix.controls.JFXButton;
@@ -15,8 +17,11 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.concurrent.CompletableFuture;
@@ -41,7 +46,9 @@ import org.json.JSONObject;
  */
 public class ExportWindowController implements Initializable 
 {
-
+    
+    LoginDataModel modelData = new LoginDataModel();
+    BLL.BLLManagerUpdateLog up = new BLLManagerUpdateLog();
     private Thread threading = null;
     @FXML
     private Label taskXRun;
@@ -65,6 +72,7 @@ public class ExportWindowController implements Initializable
     double allsize = 0; 
     private boolean suspended;
     private volatile boolean paused = false;
+    UpdateLog updateLog = new UpdateLog();
     
     @Override
     public void initialize(URL location, ResourceBundle resources) 
@@ -187,7 +195,17 @@ public class ExportWindowController implements Initializable
                     {
                         fileWriter.write(jSONObject.toString(4));
                     }
+                    //addToLog();
+                    java.util.Date utilDate = new java.util.Date();
+                    Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
+                    java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
 
+                    updateLog.setUsername(modelData.getUserLogin());
+                    updateLog.setDatelog(sqlDate);
+                    updateLog.setError(false);
+                    updateLog.setAdjustment("Did some strange stuff: " + JsonFile);
+                    up.setUpdateLog(updateLog);
+                    
                     fileWriter.flush();
                     fileWriter.close();
 
@@ -213,6 +231,8 @@ public class ExportWindowController implements Initializable
                 catch (JSONException ex) 
                 {
                     Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SQLException ex) {
+                    Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
                 Platform.runLater
@@ -230,6 +250,26 @@ public class ExportWindowController implements Initializable
                 });
             }
         });
+    }
+    
+    private void addToLog()
+    {
+        try 
+        {
+            java.util.Date utilDate = new java.util.Date();
+            Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
+            java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
+            
+            updateLog.setUsername(modelData.getUserLogin());
+            updateLog.setDatelog(sqlDate);
+            
+            updateLog.setError(suspended);
+            up.setUpdateLog(updateLog);
+        } 
+        catch (SQLException ex) 
+        {
+            Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML
