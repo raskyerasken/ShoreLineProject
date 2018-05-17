@@ -66,9 +66,7 @@ public class DataBaseUpdateLog
                     = con.prepareStatement("SELECT * FROM UpdateLogs");
             
             ResultSet rs = pstmt.executeQuery();
-            System.out.println("Thread sleep");
-            int MAX_PRIORITY = Thread.MAX_PRIORITY;
-            MAX_PRIORITY = 1;
+            
             while (rs.next()) 
             {
                 UpdateLog ul = new UpdateLog();

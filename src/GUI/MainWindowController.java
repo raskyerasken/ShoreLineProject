@@ -87,13 +87,10 @@ public class MainWindowController implements Initializable {
     private JFXButton startTaskThead;
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        importbtn.setStyle("-fx-background-color: #588fe8;");
-//        startTaskThread.setDisable(true);
-//        stopTaskThread.setDisable(true);
-//        pauseTaskThread.setDisable(true);
+    public void initialize(URL url, ResourceBundle rb) 
+    {
+        importbtn.setDisable(true);
         progressBar.setVisible(false);
-//        progressBar.setVisible(false);
     }
 
     @FXML
@@ -144,6 +141,8 @@ public class MainWindowController implements Initializable {
             } catch (ParseException ex) {
                 Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
             }
+            
+            
             for (Object string : XLSX.getColumsNames()) {
                 CheckBox check = new CheckBox();
                 check.setSelected(true);
@@ -179,10 +178,6 @@ public class MainWindowController implements Initializable {
         stage.toFront();
     }
 
-    @FXML
-    private void importMenuSelect(Event event) {
-
-    }
 
     @FXML
     private void exportMenuSelect(Event event) {
@@ -213,16 +208,18 @@ public class MainWindowController implements Initializable {
     }
 
     @FXML
-    private void logMenuSelect(Event event) {
-        try {
-            Stage newStage = new Stage();
+    private void logMenuSelect(Event event) 
+    {
+        try 
+        {
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("LogView.fxml"));
             Parent root = fxLoader.load();
-            Scene scene = new Scene(root);
-            newStage.setScene(scene);
-            newStage.setResizable(false);
-            newStage.showAndWait();
-        } catch (IOException ex) {
+            LogViewController controller = fxLoader.getController();
+            controller.setmodel(fcModel);
+            importWindow.getChildren().setAll(root);
+        } 
+        catch (IOException ex) 
+        {
             AlertWindow alert = new AlertWindow("IOException", null, "IOException");
         }
     }

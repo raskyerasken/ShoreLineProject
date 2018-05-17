@@ -24,7 +24,11 @@ import javafx.scene.input.KeyEvent;
                         public void handle(Event t) 
                     {
                         TreeItem newRule = 
+<<<<<<< HEAD
                                 new TreeItem<String>("New rule");
+=======
+                                new TreeItem<String>("New Rule");
+>>>>>>> 6f8e86c1b33eec2e13ccafde9d9c05fe870f0dd7
                                     getTreeItem().getChildren().add(newRule);
                     }
             });
@@ -33,7 +37,8 @@ import javafx.scene.input.KeyEvent;
             addMenu.getItems().add(mumu);
             mumu.setOnAction(new EventHandler()
                     {
-                public void handle(Event t) {
+                public void handle(Event t) 
+                    {
                     TreeItem newClass = 
                             new TreeItem<String>("New Class");
                     TreeItem newRule = 

@@ -22,20 +22,17 @@ public class UpdateLogViewModel
     private final ObservableList<UpdateLog> updateLogToList 
             = FXCollections.observableArrayList();
     
-    UpdateLog ul = new UpdateLog();
     
-    ObservableList<UpdateLog> getAllLogUpdates() throws SQLException
+    
+    public void logListUpdate() 
+    { 
+        updateLogToList.setAll(bllManagerUL.getAllUpdateLogsToList());
+        
+    }
+
+    public ObservableList<UpdateLog> getUpdateLogToList() 
     {
-        logListUpdate();
         return updateLogToList;
     }
     
-    void logListUpdate() 
-    { 
-        updateLogToList.clear();
-        for (UpdateLog updateLog : bllManagerUL.getAllUpdateLogsToList()) 
-        {
-            updateLogToList.add(updateLog);
-        }
-    }
 }
