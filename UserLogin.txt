@@ -689,3 +689,4 @@ The user kris logged in.    Date: 2018/05/17 12:08:14
 =======
 >>>>>>> 7ab353bcbc62f3fe60e1d7659e8fd36ee8b625fa
 >>>>>>> b3f1153f6987cb734b48fd5cc7ec396f192f3fe3
+The user kris logged in.    Date: 2018/05/17 12:21:39
