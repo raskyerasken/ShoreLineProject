@@ -42,17 +42,17 @@ import javafx.scene.layout.AnchorPane;
  *
  * @author ander
  */
-public class LogViewController implements Initializable 
-{
-    LoginDataModel loginModel = new LoginDataModel();
+public class LogViewController implements Initializable {
+
+    LoginDataModel modelData;
     UpdateLogViewModel model = new UpdateLogViewModel();
-    public static final ObservableList lines = 
-    FXCollections.observableArrayList();
+    public static final ObservableList lines
+            = FXCollections.observableArrayList();
     int fileLinesNumber = 2;
     @FXML
     private JFXTextField searchTxt;
     boolean search = false;
-    FilteredList<String> searchData 
+    FilteredList<String> searchData
             = new FilteredList<>(lines, p -> true);
     private FilesConvertionModel fcModel;
     @FXML
@@ -73,23 +73,20 @@ public class LogViewController implements Initializable
     @FXML
     private Button logMenuSelect;
 
-    
     @Override
-    public void initialize(URL url, ResourceBundle rb) 
-    {
+    public void initialize(URL url, ResourceBundle rb) {
         logMenuSelect.setDisable(true);
         addColumsToTableView();   //get all the colums
         LogView.setItems(model.getUpdateLogToList());
-        Thread t = new Thread(() -> 
-        {
+        Thread t = new Thread(()
+                -> {
             model.logListUpdate();
             searchLogView();
         });
         t.start();
-    }   
-    
-    private void readUserLoginTxt() 
-    {            
+    }
+
+    private void readUserLoginTxt() {
         //Should read the file
 //        BufferedReader br;
 //        try 
@@ -112,124 +109,109 @@ public class LogViewController implements Initializable
 //            AlertWindow  alert = new AlertWindow("Can not read the file", null, "It can not read the file");
 //        }
     }
-    
-    private void addColumsToTableView()
-    {
+
+    private void addColumsToTableView() {
         userNameTable.setCellValueFactory(new PropertyValueFactory("Username"));
         timeTable.setCellValueFactory(new PropertyValueFactory("Datelog"));
         adjustment.setCellValueFactory(new PropertyValueFactory("Adjustment"));
         error.setCellValueFactory(new PropertyValueFactory("Error"));
     }
-    
-    private void filterTableView() 
-    {
+
+    private void filterTableView() {
         FilteredList<UpdateLog> filteredData;
-        filteredData = new FilteredList<>(model.getUpdateLogToList(), p -> true); 
-        searchTxt.textProperty().addListener((observable, oldValue, newValue) ->
-        {
-            filteredData.setPredicate(updateLog ->
-            {
-                if (newValue == null || newValue.isEmpty()) 
-                {
+        filteredData = new FilteredList<>(model.getUpdateLogToList(), p -> true);
+        searchTxt.textProperty().addListener((observable, oldValue, newValue)
+                -> {
+            filteredData.setPredicate(updateLog
+                    -> {
+                if (newValue == null || newValue.isEmpty()) {
                     return true;
                 }
-                
+
                 String lowerCaseFilter = newValue.toLowerCase();
-                
-                if (updateLog.getUsername().toLowerCase().contains(lowerCaseFilter)) 
-                {
+
+                if (updateLog.getUsername().toLowerCase().contains(lowerCaseFilter)) {
                     return true;
-                }
-                else if (updateLog.getDatelog().toString().contains(lowerCaseFilter)) 
-                {
+                } else if (updateLog.getDatelog().toString().contains(lowerCaseFilter)) {
                     return true; // Filter matches last name.
                 }
-                
+
                 return false;
-                
+
             });
-            
+
         });
         // 3. Wrap the FilteredList in a SortedList. 
         SortedList<UpdateLog> sortedData = new SortedList<>(filteredData);
         // 4. Bind the SortedList comparator to the TableView comparator.
         sortedData.comparatorProperty().bind(LogView.comparatorProperty());
         // 5. Add sorted (and filtered) data to the table.
-        LogView.setItems(sortedData);            
+        LogView.setItems(sortedData);
     }
-    
-    private void searchLogView()
-    {
+
+    private void searchLogView() {
         filterTableView();
     }
-    
-    private void displayLoginText()
-    {
+
+    private void displayLoginText() {
         readUserLoginTxt();
     }
 
     @FXML
-    private void importMenuSelect(ActionEvent event) throws IOException 
-    {
+    private void importMenuSelect(ActionEvent event) throws IOException {
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/MainWindow.fxml"));
         Parent root;
-        try 
-        {
+        try {
             root = fxLoader.load();
             MainWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel);
+            controller.setmodel(modelData);
             exportWindow.getChildren().setAll(root);
-        } 
-        catch (IOException ex) 
-        {
+        } catch (IOException ex) {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
         }
     }
 
     @FXML
-    private void exportMenuSelect(ActionEvent event) 
-    {
+    private void exportMenuSelect(ActionEvent event) {
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/ExportWindow.fxml"));
         Parent root;
-        try 
-        {
+        try {
             root = fxLoader.load();
             ExportWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel);
+            controller.setmodel(modelData);
             exportWindow.getChildren().setAll(root);
-        } 
-        catch (IOException ex) 
-        {
+        } catch (IOException ex) {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
         }
     }
 
     @FXML
-    private void customDataMenuSelect(ActionEvent event) throws FileNotFoundException, ParseException 
-    {
+    private void customDataMenuSelect(ActionEvent event) throws FileNotFoundException, ParseException {
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/CustomDataWindow.fxml"));
         Parent root;
-        try 
-        {
+        try {
             root = fxLoader.load();
             CustomDataWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel);
+            controller.setmodel(modelData);
             exportWindow.getChildren().setAll(root);
-        } 
-        catch (IOException ex) 
-        {
+        } catch (IOException ex) {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
         }
     }
-
 
     @FXML
     private void adminMenuSelect(ActionEvent event) {
     }
 
-    void setmodel(FilesConvertionModel fcModel) 
-    {
-        this.fcModel=fcModel;
+    void setmodel(FilesConvertionModel fcModel) {
+        this.fcModel = fcModel;
     }
-    
+
+    void setmodel(LoginDataModel modelData) {
+        this.modelData = modelData;
+    }
+
 }

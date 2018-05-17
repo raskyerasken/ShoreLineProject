@@ -88,7 +88,7 @@ public class LoginViewController implements Initializable
 //        Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
 //        java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
         
-        modelData.addLoginData(userNameID.getText());
+     
         
 //        updateLog.setAdjustment(userNameID.getText());
 //        updateLog.setDatelog(sqlDate);
@@ -113,6 +113,7 @@ if (ul.getAccess(userLogin))
     }
     
     //System.out.println("User is logged in: " + userLogin.getUserName());
+       modelData.addLoginData(userNameID.getText());
     openMainWindow();
 }
 else

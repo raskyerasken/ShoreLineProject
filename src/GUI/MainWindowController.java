@@ -50,7 +50,7 @@ public class MainWindowController implements Initializable {
 
     Parent root;
 
-    LoginDataModel modelData = new LoginDataModel();
+    LoginDataModel modelData ;
     LoginViewController loginID;
     boolean acceptFile = false;
     String[] acceptedFiles = {".xlsx"};
@@ -95,6 +95,7 @@ public class MainWindowController implements Initializable {
 
     @FXML
     private void importData(ActionEvent event) throws SQLException {
+       
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Image File");
         // fileChooser.setInitialDirectory(new File("..."));
@@ -186,6 +187,7 @@ public class MainWindowController implements Initializable {
             Parent root = fxLoader.load();
             ExportWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel);
+             controller.setmodel(modelData);
             importWindow.getChildren().setAll(root);
         } catch (IOException ex) {
             AlertWindow alert = new AlertWindow("IOException", null, "IOException");
@@ -200,6 +202,7 @@ public class MainWindowController implements Initializable {
             Parent root = fxLoader.load();
             CustomDataWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel);
+            controller.setmodel(modelData);
             importWindow.getChildren().setAll(root);
         } catch (IOException ex) {
             AlertWindow alert = new AlertWindow("IOException", null, "IOException");
@@ -216,6 +219,7 @@ public class MainWindowController implements Initializable {
             Parent root = fxLoader.load();
             LogViewController controller = fxLoader.getController();
             controller.setmodel(fcModel);
+            controller.setmodel(modelData);
             importWindow.getChildren().setAll(root);
         } 
         catch (IOException ex) 
@@ -253,4 +257,8 @@ public class MainWindowController implements Initializable {
 
         return fileNames.toString();
     }
+
+    void setmodel(LoginDataModel modelData) {
+    this.modelData= modelData;}
+
 }

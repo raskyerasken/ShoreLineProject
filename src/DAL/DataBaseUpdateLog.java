@@ -23,52 +23,50 @@ import java.util.logging.Logger;
  *
  * @author ander
  */
-public class DataBaseUpdateLog 
-{
+public class DataBaseUpdateLog {
+
     private ConnectionManagerSLProject cm = new ConnectionManagerSLProject();
-    
-    public void setUpdateLog(UpdateLog updateLog) throws SQLException 
-    {
-        
-        try (Connection con = cm.getConnection()) 
-        {
+
+    public void setUpdateLog(UpdateLog updateLog) throws SQLException {
+
+        try (Connection con = cm.getConnection()) {
+            System.out.println("hey2");
             String sql
                     = "INSERT INTO UpdateLogs"
-                    + "(Username, UploadDate, Adjustment)"
-                    + "VALUES (?, ?, ?)";
-            
+                    + " (Username, UploadDate, Adjustment,Error) "
+                    + "VALUES (?, ?, ?, ?)";
+
             PreparedStatement pstmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             pstmt.setString(1, updateLog.getUsername());
-            pstmt.setTimestamp(2, (java.sql.Timestamp)updateLog.getDatelog());
+            pstmt.setTimestamp(2, (java.sql.Timestamp) updateLog.getDatelog());
             pstmt.setString(3, updateLog.getAdjustment());
-            System.out.println("something");
+            pstmt.setBoolean(4, updateLog.isError());
+
             int affected = pstmt.executeUpdate();
-            if (affected < 1) 
-            {
-                throw new SQLException("Username, adjustments and date not added");
+            if (affected < 1) {
+                throw new SQLException("Movie could not be added");
             }
-        } 
-        
-        catch (SQLServerException ex) 
-        {
-             AlertWindow  alert = new AlertWindow("Data base connectiong error", null, "Check you connection to the database");
+
+            ResultSet rs = pstmt.getGeneratedKeys();
+            if (rs.next()) {
+                updateLog.setId(rs.getInt(1));
+            }
+        } catch (SQLServerException ex) {
+            AlertWindow alert = new AlertWindow("Data base connectiong error", null, "Check you connection to the database");
         }
     }
-    
-    public List<UpdateLog> getUpdateLog() 
-    {
-            List<UpdateLog> AllupdateLog 
+
+    public List<UpdateLog> getUpdateLog() {
+        List<UpdateLog> AllupdateLog
                 = new ArrayList<>();
-        
-        try (Connection con = cm.getConnection()) 
-        {
-            PreparedStatement pstmt 
+
+        try (Connection con = cm.getConnection()) {
+            PreparedStatement pstmt
                     = con.prepareStatement("SELECT * FROM UpdateLogs");
-            
+
             ResultSet rs = pstmt.executeQuery();
-            
-            while (rs.next()) 
-            {
+
+            while (rs.next()) {
                 UpdateLog ul = new UpdateLog();
                 ul.setUsername(rs.getString("Username"));
                 ul.setDatelog(rs.getTimestamp("UploadDate"));
@@ -76,13 +74,10 @@ public class DataBaseUpdateLog
                 ul.setError(rs.getBoolean("Error"));
                 AllupdateLog.add(ul);
             }
-        } 
-        catch (SQLException ex) 
-        {
-          AlertWindow  alert = new AlertWindow("Data base connectiong error", null, "Check you connection to the database");
+        } catch (SQLException ex) {
+            AlertWindow alert = new AlertWindow("Data base connectiong error", null, "Check you connection to the database");
         }
         return AllupdateLog;
     }
-    
-    
+
 }

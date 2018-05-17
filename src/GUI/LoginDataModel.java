@@ -23,11 +23,11 @@ public class LoginDataModel
     BLLManagerUpdateLog bllManager = new BLLManagerUpdateLog();
     String somethingToAdd;
     
-    void addLoginData(String lala)
+    void addLoginData(String user)
     {
-        somethingToAdd = lala;
+        somethingToAdd = user;
        
-        System.out.println("addLoginData: " + lala);
+        System.out.println("addLoginData: " + user);
     }
     
     List getLoginData()

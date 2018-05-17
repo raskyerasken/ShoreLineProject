@@ -44,10 +44,9 @@ import org.json.JSONObject;
  *
  * @author kasper
  */
-public class ExportWindowController implements Initializable 
-{
-    
-    LoginDataModel modelData = new LoginDataModel();
+public class ExportWindowController implements Initializable {
+
+    LoginDataModel modelData;
     BLL.BLLManagerUpdateLog up = new BLLManagerUpdateLog();
     private Thread threading = null;
     @FXML
@@ -69,33 +68,28 @@ public class ExportWindowController implements Initializable
     private JFXProgressBar progressBar;
     CompletableFuture com;
     double ad = 0;
-    double allsize = 0; 
+    double allsize = 0;
     private boolean suspended;
     private volatile boolean paused = false;
     UpdateLog updateLog = new UpdateLog();
-    
+
     @Override
-    public void initialize(URL location, ResourceBundle resources) 
-    {
+    public void initialize(URL location, ResourceBundle resources) {
         btnExport.setDisable(true);
         setButtonsInvisible();
     }
 
-
     @FXML
-    private void startTask(ActionEvent event) 
-    {
+    private void startTask(ActionEvent event) {
         threading.getThreadGroup().resume();
     }
 
     @FXML
-    private void pauseTask(ActionEvent event) 
-    {
+    private void pauseTask(ActionEvent event) {
         threading.suspend();
     }
-    
-    private void setButtonsInvisible()
-    {
+
+    private void setButtonsInvisible() {
         progressBar.setVisible(false);
         startTaskThread.setDisable(true);
         stopTaskThread.setDisable(true);
@@ -103,26 +97,22 @@ public class ExportWindowController implements Initializable
     }
 
     @FXML
-    private void stopTask(ActionEvent event) 
-    {
+    private void stopTask(ActionEvent event) {
         threading.stop();
         setButtonsInvisible();
     }
-    
+
     @FXML
-    private void importMenuSelect(Event event) 
-    {
+    private void importMenuSelect(Event event) {
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/MainWindow.fxml"));
         Parent root;
-        try 
-        {
+        try {
             root = fxLoader.load();
             MainWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel);
+            controller.setmodel(modelData);
             exportWindow.getChildren().setAll(root);
-        } 
-        catch (IOException ex) 
-        {
+        } catch (IOException ex) {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
         }
     }
@@ -132,57 +122,47 @@ public class ExportWindowController implements Initializable
 
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/CustomDataWindow.fxml"));
         Parent root;
-        try 
-        {
+        try {
             root = fxLoader.load();
             CustomDataWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel);
+            controller.setmodel(modelData);
             exportWindow.getChildren().setAll(root);
-        } 
-        catch (IOException ex) 
-        {
+        } catch (IOException ex) {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
         }
     }
 
     @FXML
-    private void logMenuSelect(Event event) 
-    {
+    private void logMenuSelect(Event event) {
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/LogView.fxml"));
         Parent root;
-        try 
-        {
+        try {
             root = fxLoader.load();
             LogViewController controller = fxLoader.getController();
             controller.setmodel(fcModel);
+            controller.setmodel(modelData);
             exportWindow.getChildren().setAll(root);
-        } 
-        catch (IOException ex) 
-        {
+        } catch (IOException ex) {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
         }
     }
 
-
     @FXML
-    private void adminMenuSelect(ActionEvent event) 
-    {
+    private void adminMenuSelect(ActionEvent event) {
 
     }
 
     @FXML
-    private void convertData(ActionEvent event) throws JSONException 
-    {
-        com = CompletableFuture.runAsync
-        (()->{
+    private void convertData(ActionEvent event) throws JSONException {
+        System.out.println(modelData.getUserLogin());
+        com = CompletableFuture.runAsync(() -> {
             List<File> progressFileList = new ArrayList<File>(fcModel.getFiles());
             ad = 0;
             allsize = progressFileList.size();
-            for (File file : progressFileList) 
-            {
+            for (File file : progressFileList) {
 
-                try 
-                {
+                try {
                     threading = Thread.currentThread();
                     ReadingXLSX XLSX = new ReadingXLSX(file.getAbsolutePath());
 
@@ -191,97 +171,86 @@ public class ExportWindowController implements Initializable
                     File JsonFile = new File(file.getCanonicalFile() + ".json");
                     FileWriter fileWriter = new FileWriter(JsonFile);
 
-                    for (JSONObject jSONObject : XLSX.allJSONObjectInFile()) 
-                    {
+                    for (JSONObject jSONObject : XLSX.allJSONObjectInFile()) {
                         fileWriter.write(jSONObject.toString(4));
                     }
-                    //addToLog();
                     java.util.Date utilDate = new java.util.Date();
                     Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
+
                     java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
 
                     updateLog.setUsername(modelData.getUserLogin());
                     updateLog.setDatelog(sqlDate);
                     updateLog.setError(false);
-                    updateLog.setAdjustment("Did some strange stuff: " + JsonFile);
-                    up.setUpdateLog(updateLog);
-                    
+                    updateLog.setAdjustment("Did some strange stuff: " + file);
+                    try {
+                        System.out.println("hey");
+                        up.setUpdateLog(updateLog);
+                    } catch (SQLException ex) {
+                        Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    //addToLog();
+
                     fileWriter.flush();
                     fileWriter.close();
 
                     ad++;
-                } 
-
-                catch (IOException ex) 
-                {
+                } catch (IOException ex) {
                     AlertWindow alert = new AlertWindow("IOException", null, "IOException");
-                } 
-                catch (ParseException ex) 
-                {
+                } catch (ParseException ex) {
                     AlertWindow alert = new AlertWindow("ParseException", null, "ParseException");
-                } 
-                catch (IllegalArgumentException ex) 
-                {
+                } catch (IllegalArgumentException ex) {
                     AlertWindow alert = new AlertWindow("IllegalArgumentException", null, "IllegalArgumentException");
-                } 
-                catch (IllegalAccessException ex) 
-                {
+                } catch (IllegalAccessException ex) {
                     AlertWindow alert = new AlertWindow("IllegalAccessException", null, "IllegalAccessException");
-                } 
-                catch (JSONException ex) 
-                {
-                    Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (SQLException ex) {
+                } catch (JSONException ex) {
                     Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
-                Platform.runLater
-                (() ->{
+                Platform.runLater(() -> {
+
                     startTaskThread.setDisable(fcModel.getFiles().isEmpty());
                     pauseTaskThread.setDisable(fcModel.getFiles().isEmpty());
                     stopTaskThread.setDisable(fcModel.getFiles().isEmpty());
                     fcModel.removeFile(file);
                     progressBar.setVisible(true);
                     progressBar.setProgress(ad / allsize);
-                    if (fcModel.getFiles().isEmpty()) 
-                    {
+                    if (fcModel.getFiles().isEmpty()) {
                         progressBar.setVisible(false);
                     }
                 });
             }
         });
     }
-    
-    private void addToLog()
-    {
-        try 
-        {
+
+    private void addToLog() {
+        try {
             java.util.Date utilDate = new java.util.Date();
             Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
             java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
-            
+
             updateLog.setUsername(modelData.getUserLogin());
             updateLog.setDatelog(sqlDate);
-            
+
             updateLog.setError(suspended);
             up.setUpdateLog(updateLog);
-        } 
-        catch (SQLException ex) 
-        {
+        } catch (SQLException ex) {
             Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     @FXML
-    private void saveData(ActionEvent event) 
-    {
+    private void saveData(ActionEvent event) {
 
     }
 
-    void setmodel(FilesConvertionModel fcModel) 
-    {
+    void setmodel(FilesConvertionModel fcModel) {
         this.fcModel = fcModel;
         taskField.setItems(fcModel.getFiles());
+    }
+
+    void setmodel(LoginDataModel modelData) {
+        this.modelData = modelData;
     }
 
 }

@@ -7,7 +7,9 @@ package BE;
 
 import java.util.Date;
 import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -22,6 +24,19 @@ public class UpdateLog
     private final StringProperty Adjustment = new SimpleStringProperty();
     private final BooleanProperty Error = new SimpleBooleanProperty();
     Date Datelog;
+    private final IntegerProperty id = new SimpleIntegerProperty();
+
+    public int getId() {
+        return id.get();
+    }
+
+    public void setId(int value) {
+        id.set(value);
+    }
+
+    public IntegerProperty idProperty() {
+        return id;
+    }
 
     public boolean isError() 
     {
