@@ -48,28 +48,6 @@ public class CustomDataWindowController implements Initializable
     private FilesConvertionModel fcModel;
     private TextField textField;
     
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        btnCustumData.setDisable(true);
-//        TreeItem<String> hey = new TreeItem<String> ("hey");
-//        TreeItem<String> hey2 = new TreeItem<String> ("hey2");
-//        rootItem.setExpanded(true);
-//        for (int i = 1; i < 6; i++) 
-//        {
-//            TreeItem<String> item = new TreeItem<String> ("Message" + i);            
-//            hey.getChildren().add(item);
-//        }   
-//                
-//        for (int i = 1; i < 6; i++) 
-//        {
-//            TreeItem<String> item = new TreeItem<String> ("Message" + i);            
-//            hey2.getChildren().add(item);
-//        }   
-//        rootItem.getChildren().add(hey);
-//        rootItem.getChildren().add(hey2);
-
-//        CustomDataAdded.setRoot(rootItem);
-    }
     
     @FXML
     private void startTask(ActionEvent event) 
@@ -151,7 +129,6 @@ public class CustomDataWindowController implements Initializable
 
     }
 
-<<<<<<< HEAD
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         btnCustumData.setStyle("-fx-background-color: #588fe8;");
@@ -169,12 +146,8 @@ public class CustomDataWindowController implements Initializable
                     rootItem.getChildren().add(checkBoxTreeItem);
             
         }
-=======
 
-<<<<<<< HEAD
-=======
 //        CustomDataAdded.setRoot(rootItem);
->>>>>>> a8301fdb53b1df96cfea4581e544b649a7b57aa1
     }
     void seePreview ()
     {
@@ -191,7 +164,6 @@ public class CustomDataWindowController implements Initializable
     
     }
     }
->>>>>>> 4c2342ab71b3555ba2c2812b9d03adea9c0f3c53
 
     void setmodel(FilesConvertionModel fcModel) throws IOException, FileNotFoundException, ParseException 
     {
