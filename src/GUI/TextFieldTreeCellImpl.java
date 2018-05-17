@@ -3,6 +3,10 @@ package GUI;
 
 import javafx.event.Event;
 import javafx.event.EventHandler;
+<<<<<<< HEAD
+=======
+import javafx.event.EventType;
+>>>>>>> d43076ef2b35c32041fafcd89c7e8249a40b1317
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
@@ -15,6 +19,7 @@ import javafx.scene.input.KeyEvent;
  
         private TextField textField;
         private ContextMenu addMenu = new ContextMenu();
+<<<<<<< HEAD
  
         public TextFieldTreeCellImpl() {
             MenuItem addMenuItem = new MenuItem("Add Employee");
@@ -26,6 +31,38 @@ import javafx.scene.input.KeyEvent;
                         new TreeItem<String>("New Employee");
                             getTreeItem().getChildren().add(newEmployee);}
             });
+=======
+        private TreeItem addTree = new TreeItem();
+ 
+        public TextFieldTreeCellImpl() {
+            MenuItem addMenuItem = new MenuItem("add rule");
+            addMenu.getItems().add(addMenuItem);
+            addMenuItem.setOnAction(new EventHandler()
+                    {
+                        public void handle(Event t) 
+                    {
+                        TreeItem newRule = 
+                                new TreeItem<String>("New Class");
+                                    getTreeItem().getChildren().add(newRule);
+                    }
+            });
+            
+            TreeItem addTreeItem = new TreeItem("Add Class");
+            addTree.getChildren().add(addTreeItem);
+            addMenuItem.setOnAction(new EventHandler()
+                    {
+                public void handle(Event t) {
+                    TreeItem newClass = 
+                            new TreeItem<String>("New Class");
+                            getTreeItem().getChildren().add(addTree);
+                }
+            });
+            
+            
+            
+            
+            
+>>>>>>> d43076ef2b35c32041fafcd89c7e8249a40b1317
         }
  
         @Override
@@ -71,6 +108,12 @@ import javafx.scene.input.KeyEvent;
                         setContextMenu(addMenu);
                     }
                 }
+                
+                if (!getTreeItem().isLeaf()&&getTreeItem().getParent()!=null)
+                {
+                    setContextMenu(addMenu);
+                }
+                        
             }
         }
         
