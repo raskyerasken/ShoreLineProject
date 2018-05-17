@@ -65,6 +65,7 @@ public class CustomDataWindowController implements Initializable {
         }
     }
     
+    @FXML
     private void startTask(ActionEvent event) {
 
     }

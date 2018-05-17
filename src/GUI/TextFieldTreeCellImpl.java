@@ -17,18 +17,14 @@ import javafx.scene.input.KeyEvent;
         private TextField textField;
         private ContextMenu addMenu = new ContextMenu();
         public TextFieldTreeCellImpl() {
+            
             MenuItem addMenuItem = new MenuItem("add rule");
             addMenu.getItems().add(addMenuItem);
             addMenuItem.setOnAction(new EventHandler()
                     {
                         public void handle(Event t) 
                     {
-                        TreeItem newRule = 
-<<<<<<< HEAD
-                                new TreeItem<String>("New rule");
-=======
-                                new TreeItem<String>("New Rule");
->>>>>>> 6f8e86c1b33eec2e13ccafde9d9c05fe870f0dd7
+                        TreeItem newRule = new TreeItem<String>("New rule");
                                     getTreeItem().getChildren().add(newRule);
                     }
             });
