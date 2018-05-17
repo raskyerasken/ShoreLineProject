@@ -46,9 +46,8 @@ import javafx.stage.Stage;
  *
  * @author Jason and Freddy Kruger
  */
-public class MainWindowController implements Initializable 
-{
-    
+public class MainWindowController implements Initializable {
+
     Parent root;
 
     LoginDataModel modelData = new LoginDataModel();
@@ -72,7 +71,7 @@ public class MainWindowController implements Initializable
             = FXCollections.observableArrayList();
     private FilesConvertionModel fcModel;
     private final Thread t = null;
-    
+
     public ObservableList<File> fileNames
             = FXCollections.observableArrayList();
 
@@ -86,8 +85,6 @@ public class MainWindowController implements Initializable
     ReadingXLSX XLSX = null;
     @FXML
     private JFXButton startTaskThead;
-    
-
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -110,7 +107,7 @@ public class MainWindowController implements Initializable
         CompletableFuture.runAsync(()
                 -> {
 
-               filesAccepted.clear();
+            filesAccepted.clear();
             for (File file : files) {
                 acceptFile = false;
                 for (String acceptedFile : acceptedFiles) {
@@ -129,84 +126,73 @@ public class MainWindowController implements Initializable
 
                 fcModel.AddAllFiles(filesAccepted);
                 for (File acceptedFile : filesNotAccepted) {
-                     AlertWindow alertWindow
-                        = new AlertWindow("File not support yet", null, "This file " + acceptedFile.getName() + " can be added");
-
+                    AlertWindow alertWindow
+                            = new AlertWindow("File not support yet", null, "This file " + acceptedFile.getName() + " can be added");
                 }
                 filesNotAccepted.clear();
             });
             Date date = new Date();
-            TreeItem<String> newFilesAdded = new TreeItem<String>("("+filesAccepted.size()+")"+date.toGMTString());
+            TreeItem<String> newFilesAdded = new TreeItem<String>("(" + filesAccepted.size() + ")" + date.toGMTString());
 
-            File acceptedFile =filesAccepted.get(0);
-                TreeItem<String> newlyAdded
-                        = new TreeItem<String>(acceptedFile.getName());
-                try {
-                    XLSX = new ReadingXLSX(acceptedFile.getAbsolutePath());
-                } catch (IOException ex) {
-                    Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (ParseException ex) {
-                    Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                for (Object string : XLSX.getColumsNames()) 
-                {CheckBox check = new CheckBox();
+            File acceptedFile = filesAccepted.get(0);
+            TreeItem<String> newlyAdded
+                    = new TreeItem<String>(acceptedFile.getName());
+            try {
+                XLSX = new ReadingXLSX(acceptedFile.getAbsolutePath());
+            } catch (IOException ex) {
+                Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ParseException ex) {
+                Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            for (Object string : XLSX.getColumsNames()) {
+                CheckBox check = new CheckBox();
                 check.setSelected(true);
-                    TreeItem<String> colum = new TreeItem<String>(string.toString());
-                    colum.setGraphic(check);
-                    newlyAdded.getChildren().add(colum);
-                     
-                }
-                newFilesAdded.getChildren().add(newlyAdded);
+                TreeItem<String> colum = new TreeItem<String>(string.toString());
+                colum.setGraphic(check);
+                newlyAdded.getChildren().add(colum);
 
-            
+            }
+            newFilesAdded.getChildren().add(newlyAdded);
+
             fcModel.setTreeFiles(newFilesAdded);
         });
 
     }
 
     @FXML
-    private void startTask(ActionEvent event) 
-    {
-        
+    private void startTask(ActionEvent event) {
+
     }
 
     @FXML
-    private void pauseTask(ActionEvent event) 
-    {
-        
+    private void pauseTask(ActionEvent event) {
+
     }
 
     @FXML
-    private void stopTask(ActionEvent event) 
-    {
-        
+    private void stopTask(ActionEvent event) {
+
     }
 
-    void stageToFront() 
-    {
+    void stageToFront() {
         Stage stage = (Stage) taskField.getScene().getWindow();
         stage.toFront();
     }
-    
+
     @FXML
-    private void importMenuSelect(Event event) 
-    {
+    private void importMenuSelect(Event event) {
 
     }
 
     @FXML
-    private void exportMenuSelect(Event event) 
-    {
-        try 
-        {
+    private void exportMenuSelect(Event event) {
+        try {
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/ExportWindow.fxml"));
             Parent root = fxLoader.load();
             ExportWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel);
             importWindow.getChildren().setAll(root);
-        } 
-        catch (IOException ex) 
-        {
+        } catch (IOException ex) {
             AlertWindow alert = new AlertWindow("IOException", null, "IOException");
         }
     }
@@ -214,16 +200,13 @@ public class MainWindowController implements Initializable
     @FXML
     private void customDataMenuSelect(Event event) throws FileNotFoundException, ParseException {
 
-        try 
-        {
+        try {
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/CustomDataWindow.fxml"));
             Parent root = fxLoader.load();
             CustomDataWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel);
             importWindow.getChildren().setAll(root);
-        } 
-        catch (IOException ex) 
-        {
+        } catch (IOException ex) {
             AlertWindow alert = new AlertWindow("IOException", null, "IOException");
         }
 
@@ -239,9 +222,7 @@ public class MainWindowController implements Initializable
             newStage.setScene(scene);
             newStage.setResizable(false);
             newStage.showAndWait();
-        } 
-        catch (IOException ex) 
-        {
+        } catch (IOException ex) {
             AlertWindow alert = new AlertWindow("IOException", null, "IOException");
         }
     }
@@ -268,11 +249,10 @@ public class MainWindowController implements Initializable
         taskField.getItems().clear();
         taskField.setItems(fcModel.getFiles());
     }
-    
-    public String getTextNames()
-    {
-       fileNames = (ObservableList<File>) fcModel;
-       
-       return fileNames.toString();
+
+    public String getTextNames() {
+        fileNames = (ObservableList<File>) fcModel;
+
+        return fileNames.toString();
     }
 }

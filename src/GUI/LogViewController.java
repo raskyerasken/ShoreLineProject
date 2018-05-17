@@ -75,6 +75,7 @@ public class LogViewController implements Initializable
         {
             Platform.runLater(()-> 
             {
+                System.out.println("run later");
                 try 
                 {
                     LogView.setItems((ObservableList<UpdateLog>)
@@ -88,9 +89,8 @@ public class LogViewController implements Initializable
             });
             
         });
+        System.out.println("start");
         t.start();
-        
-
     }   
     
     private void readUserLoginTxt() 

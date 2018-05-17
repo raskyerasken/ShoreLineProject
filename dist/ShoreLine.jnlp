@@ -9,6 +9,9 @@
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
 <<<<<<< HEAD
+    <jar href="ShoreLine.jar" size="108982" download="eager" />
+=======
+<<<<<<< HEAD
     <jar href="ShoreLine.jar" size="106952" download="eager" />
     <jar href="lib/commons-collections4-4.1.jar" size="751238" download="eager" />
     <jar href="lib/java-json.jar" size="84697" download="eager" />
@@ -21,6 +24,7 @@
     <jar href="lib/xmlbeans-2.6.0.jar" size="2730866" download="eager" />
 =======
     <jar href="ShoreLine.jar" size="108633" download="eager" />
+>>>>>>> b3f1153f6987cb734b48fd5cc7ec396f192f3fe3
     <jar href="lib\commons-collections4-4.1.jar" size="751238" download="eager" />
     <jar href="lib\java-json.jar" size="84697" download="eager" />
     <jar href="lib\jaxp-api.jar" size="27052" download="eager" />
