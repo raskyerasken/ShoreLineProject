@@ -3,7 +3,6 @@ package GUI;
 
 import javafx.event.Event;
 import javafx.event.EventHandler;
-=======
 import javafx.event.EventType;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.MenuItem;
