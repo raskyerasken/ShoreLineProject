@@ -32,8 +32,7 @@ import javafx.util.Callback;
  *
  * @author kasper
  */
-public class CustomDataWindowController implements Initializable 
-{
+public class CustomDataWindowController implements Initializable {
 
     @FXML
     private Label taskXRun;
@@ -45,7 +44,7 @@ public class CustomDataWindowController implements Initializable
     private Button btnCustumData;
     private FilesConvertionModel fcModel;
     private TextField textField;
-    
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         btnCustumData.setDisable(true);
@@ -68,108 +67,86 @@ public class CustomDataWindowController implements Initializable
 
 //        CustomDataAdded.setRoot(rootItem);
     }
-    
+
     @FXML
-    private void startTask(ActionEvent event) 
-    {
+    private void startTask(ActionEvent event) {
 
     }
 
     @FXML
-    private void pauseTask(ActionEvent event) 
-    {
+    private void pauseTask(ActionEvent event) {
 
     }
 
     @FXML
-    private void stopTask(ActionEvent event) 
-    {
+    private void stopTask(ActionEvent event) {
 
     }
 
     @FXML
-    private void importMenuSelect(Event event) 
-    {
+    private void importMenuSelect(Event event) {
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/MainWindow.fxml"));
         Parent root;
-        try 
-        {
+        try {
             root = fxLoader.load();
             MainWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel);
             customDataWindow.getChildren().setAll(root);
-        } 
-        catch (IOException ex) 
-        {
+        } catch (IOException ex) {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
         }
 
     }
 
     @FXML
-    private void exportMenuSelect(Event event) 
-    {
+    private void exportMenuSelect(Event event) {
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/ExportWindow.fxml"));
         Parent root;
-        try 
-        {
+        try {
             root = fxLoader.load();
             ExportWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel);
             customDataWindow.getChildren().setAll(root);
-        } 
-        catch (IOException ex) 
-        {
+        } catch (IOException ex) {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
         }
     }
 
-
     @FXML
-    private void logMenuSelect(Event event) 
-    {
+    private void logMenuSelect(Event event) {
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/LogView.fxml"));
         Parent root;
-        try 
-        {
+        try {
             root = fxLoader.load();
             LogViewController controller = fxLoader.getController();
             controller.setmodel(fcModel);
             customDataWindow.getChildren().setAll(root);
-        } 
-        catch (IOException ex) 
-        {
+        } catch (IOException ex) {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
         }
     }
 
     @FXML
-    private void adminMenuSelect(ActionEvent event) 
-    {
+    private void adminMenuSelect(ActionEvent event) {
 
     }
-
-
-<<<<<<< HEAD
-=======
 //        CustomDataAdded.setRoot(rootItem);
-    }
+
     void seePreview ()
     {
-    if( CustomDataSelect.getRoot()!=null)
-    {
-        ObservableList<TreeItem<String>> JsonItems = CustomDataSelect.getRoot().getChildren().get(0).getChildren().get(0).getChildren();
-        System.out.println(CustomDataSelect.getRoot().getChildren().get(0).getChildren());
-        for (TreeItem<String> JsonItem : JsonItems) {
-//          Node check =  JsonItem.getGraphic();9
-//            System.out.println(check.isDisable());
-            System.out.println(JsonItem.getValue());
-            
+        if( CustomDataSelect.getRoot()!=null)
+        {
+            ObservableList<TreeItem<String>> JsonItems = CustomDataSelect.getRoot().getChildren().get(0).getChildren().get(0).getChildren();
+            System.out.println(CustomDataSelect.getRoot().getChildren().get(0).getChildren());
+            for (TreeItem<String> JsonItem : JsonItems) {
+    //          Node check =  JsonItem.getGraphic();9
+    //            System.out.println(check.isDisable());
+                System.out.println(JsonItem.getValue());
+
+            }
+
         }
-    
     }
-    }
->>>>>>> 4c2342ab71b3555ba2c2812b9d03adea9c0f3c53
 
     void setmodel(FilesConvertionModel fcModel) throws IOException, FileNotFoundException, ParseException 
     {
@@ -193,7 +170,7 @@ public class CustomDataWindowController implements Initializable
             CustomDataSelect.setEditable(true);
             CustomDataSelect.setCellFactory(new Callback<TreeView<String>, TreeCell<String>>() {
                 @Override
-                public TreeCell<String> call(TreeView<String> p) 
+        public TreeCell<String> call(TreeView<String> p) 
                 {
                     return new TextFieldTreeCellImpl();
                 }
