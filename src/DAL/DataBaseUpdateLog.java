@@ -32,14 +32,15 @@ public class DataBaseUpdateLog
         try (Connection con = cm.getConnection()) 
         {
             String sql
-                    = "INSERT INTO UpdateLog"
+                    = "INSERT INTO UpdateLogs"
                     + "(Username, UploadDate, Adjustment)"
-                    + "VALUES (?, ?, ?)";
+                    + "VALUES (?, ?, ?, ?)";
 
             PreparedStatement pstmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             pstmt.setString(1, updateLog.getUsername());
             pstmt.setTimestamp(2, (java.sql.Timestamp)updateLog.getDatelog());
             pstmt.setString(3, updateLog.getAdjustment());
+            pstmt.setBoolean(4, updateLog.isError());
             
             int affected = pstmt.executeUpdate();
             if (affected < 1) 
@@ -62,17 +63,19 @@ public class DataBaseUpdateLog
         try (Connection con = cm.getConnection()) 
         {
             PreparedStatement pstmt 
-                    = con.prepareStatement("SELECT * FROM UpdateLog");
+                    = con.prepareStatement("SELECT * FROM UpdateLogs");
             
             ResultSet rs = pstmt.executeQuery();
             System.out.println("Thread sleep");
             int MAX_PRIORITY = Thread.MAX_PRIORITY;
+            MAX_PRIORITY = 1;
             while (rs.next()) 
             {
                 UpdateLog ul = new UpdateLog();
                 ul.setUsername(rs.getString("Username"));
                 ul.setDatelog(rs.getTimestamp("UploadDate"));
                 ul.setAdjustment(rs.getString("Adjustment"));
+                ul.setError(rs.getBoolean("Error"));
                 AllupdateLog.add(ul);
             }
         } 

@@ -6,6 +6,8 @@
 package BE;
 
 import java.util.Date;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -18,8 +20,24 @@ public class UpdateLog
 
     private final StringProperty Username = new SimpleStringProperty();
     private final StringProperty Adjustment = new SimpleStringProperty();
+    private final BooleanProperty Error = new SimpleBooleanProperty();
     Date Datelog;
 
+    public boolean isError() 
+    {
+        return Error.get();
+    }
+
+    public void setError(boolean value) 
+    {
+        Error.set(value);
+    }
+
+    public BooleanProperty ErrorProperty() 
+    {
+        return Error;
+    }
+    
     /**
      * Get the value of Datelog
      *
