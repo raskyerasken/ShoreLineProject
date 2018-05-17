@@ -42,7 +42,30 @@ public class CustomDataWindowController implements Initializable
     private Button btnCustumData;
     private FilesConvertionModel fcModel;
     private TextField textField;
+    
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        btnCustumData.setDisable(true);
+//        TreeItem<String> hey = new TreeItem<String> ("hey");
+//        TreeItem<String> hey2 = new TreeItem<String> ("hey2");
+//        rootItem.setExpanded(true);
+//        for (int i = 1; i < 6; i++) 
+//        {
+//            TreeItem<String> item = new TreeItem<String> ("Message" + i);            
+//            hey.getChildren().add(item);
+//        }   
+//                
+//        for (int i = 1; i < 6; i++) 
+//        {
+//            TreeItem<String> item = new TreeItem<String> ("Message" + i);            
+//            hey2.getChildren().add(item);
+//        }   
+//        rootItem.getChildren().add(hey);
+//        rootItem.getChildren().add(hey2);
 
+//        CustomDataAdded.setRoot(rootItem);
+    }
+    
     @FXML
     private void startTask(ActionEvent event) 
     {
@@ -98,16 +121,23 @@ public class CustomDataWindowController implements Initializable
         }
     }
 
-    @FXML
-    private void customDataMenuSelect(Event event) 
-    {
-
-    }
 
     @FXML
     private void logMenuSelect(Event event) 
     {
-
+        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/LogView.fxml"));
+        Parent root;
+        try 
+        {
+            root = fxLoader.load();
+            LogViewController controller = fxLoader.getController();
+            controller.setmodel(fcModel);
+            customDataWindow.getChildren().setAll(root);
+        } 
+        catch (IOException ex) 
+        {
+            AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
+        }
     }
 
     @FXML
@@ -116,28 +146,7 @@ public class CustomDataWindowController implements Initializable
 
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        btnCustumData.setStyle("-fx-background-color: #588fe8;");
-//        TreeItem<String> hey = new TreeItem<String> ("hey");
-//        TreeItem<String> hey2 = new TreeItem<String> ("hey2");
-//        rootItem.setExpanded(true);
-//        for (int i = 1; i < 6; i++) 
-//        {
-//            TreeItem<String> item = new TreeItem<String> ("Message" + i);            
-//            hey.getChildren().add(item);
-//        }   
-//                
-//        for (int i = 1; i < 6; i++) 
-//        {
-//            TreeItem<String> item = new TreeItem<String> ("Message" + i);            
-//            hey2.getChildren().add(item);
-//        }   
-//        rootItem.getChildren().add(hey);
-//        rootItem.getChildren().add(hey2);
 
-//        CustomDataAdded.setRoot(rootItem);
-    }
 
     void setmodel(FilesConvertionModel fcModel) throws IOException, FileNotFoundException, ParseException 
     {

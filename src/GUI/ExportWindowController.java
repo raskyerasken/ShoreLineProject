@@ -69,15 +69,10 @@ public class ExportWindowController implements Initializable
     @Override
     public void initialize(URL location, ResourceBundle resources) 
     {
-        btnExport.setStyle("-fx-background-color: #588fe8;");
+        btnExport.setDisable(true);
         setButtonsInvisible();
     }
 
-    @FXML
-    private void importData(ActionEvent event) 
-    {
-
-    }
 
     @FXML
     private void startTask(ActionEvent event) 
@@ -145,14 +140,21 @@ public class ExportWindowController implements Initializable
     @FXML
     private void logMenuSelect(Event event) 
     {
-
+        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/LogView.fxml"));
+        Parent root;
+        try 
+        {
+            root = fxLoader.load();
+            LogViewController controller = fxLoader.getController();
+            controller.setmodel(fcModel);
+            exportWindow.getChildren().setAll(root);
+        } 
+        catch (IOException ex) 
+        {
+            AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
+        }
     }
 
-    @FXML
-    private void exportMenuSelect(ActionEvent event) 
-    {
-
-    }
 
     @FXML
     private void adminMenuSelect(ActionEvent event) 
