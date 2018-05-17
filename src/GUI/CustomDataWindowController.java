@@ -153,7 +153,7 @@ public class CustomDataWindowController implements Initializable
                 hey.getChildren().add(treeFile);
             }
             CustomDataSelect.setRoot(hey);
-
+            
             CustomDataSelect.setEditable(true);
             CustomDataSelect.setCellFactory((TreeView<String> p)
                     -> new TextFieldTreeCellImpl());
