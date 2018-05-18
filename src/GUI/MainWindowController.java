@@ -98,7 +98,7 @@ public class MainWindowController implements Initializable {
        
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Image File");
-        // fileChooser.setInitialDirectory(new File("..."));
+        // fileChooser.setInitialDirectory(new File("...")); only for windows
         files = fileChooser.showOpenMultipleDialog(new Stage());
         UpdateLog updateLog = new UpdateLog();
         BLL.BLLManagerUpdateLog up = new BLLManagerUpdateLog();

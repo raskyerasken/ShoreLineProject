@@ -15,36 +15,29 @@ import javafx.collections.ObservableList;
  *
  * @author ander
  */
-public class LoginDataModel 
-{
+public class LoginDataModel {
 
     private final ObservableList<String> loginData
             = FXCollections.observableArrayList();
     BLLManagerUpdateLog bllManager = new BLLManagerUpdateLog();
     String somethingToAdd;
-    
-    void addLoginData(String user)
-    {
+
+    void addLoginData(String user) {
         somethingToAdd = user;
-       
-        System.out.println("addLoginData: " + user);
+
     }
-    
-    List getLoginData()
-    {
+
+    List getLoginData() {
         return loginData;
     }
 
-    public String getUserLogin() 
-    {
+    public String getUserLogin() {
         return somethingToAdd;
     }
 
-    ObservableList<String> setUserLogin(String userLogin) throws SQLException 
-    {
-        //loginData.setAll(bllManager.getAllUpdateLogsToList());
+    ObservableList<String> setUserLogin(String userLogin) throws SQLException {
+
         return loginData;
     }
-
 
 }

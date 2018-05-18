@@ -180,7 +180,6 @@ public class ExportWindowController implements Initializable {
                     
                     try 
                     {
-                        System.out.println("hey");
                         up.setUpdateLog(updateLog);
                     } 
                     catch (SQLException ex) 
@@ -230,10 +229,9 @@ public class ExportWindowController implements Initializable {
         });
     }
 
-    private void addToLog() 
+    private void addToLog() throws SQLException 
     {
-        try 
-        {
+        
             java.util.Date utilDate = new java.util.Date();
             Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
             java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
@@ -243,11 +241,7 @@ public class ExportWindowController implements Initializable {
 
             updateLog.setError(suspended);
             up.setUpdateLog(updateLog);
-        } 
-        catch (SQLException ex) 
-        {
-            Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+       
     }
     
     private void addDataToLog()
