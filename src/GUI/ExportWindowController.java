@@ -194,21 +194,9 @@ public class ExportWindowController implements Initializable {
                     updateLog.setAdjustment("File not support yet: " + file);
 
                     updateLog();
-                } catch (ParseException ex) {
+                } catch (ParseException | IllegalArgumentException | IllegalAccessException | JSONException ex) {
                     updateLog.setError(true);
                     updateLog.setAdjustment("Files Conversion wrong: " + file);
-                    updateLog();
-                } catch (IllegalArgumentException ex) {
-                    updateLog.setError(true);
-                    updateLog.setAdjustment("Files Conversion wrong: " + file);
-                    updateLog();
-                } catch (IllegalAccessException ex) {
-                    updateLog.setError(true);
-                    updateLog.setAdjustment("Files Conversion wrong: " + file);
-                    updateLog();
-                } catch (JSONException ex) {
-                    updateLog.setError(true);
-                    updateLog.setAdjustment("Files conversion wrong: " + file);
                     updateLog();
                 }
 
