@@ -146,8 +146,7 @@ public class MainWindowController implements Initializable {
             
             
             for (Object string : XLSX.getColumsNames()) {
-                CheckBox check = new CheckBox();
-                check.setSelected(true);
+                Label check = new Label("hey");
                 TreeItem<String> colum = new TreeItem<String>(string.toString());
                 colum.setGraphic(check);
                 newlyAdded.getChildren().add(colum);

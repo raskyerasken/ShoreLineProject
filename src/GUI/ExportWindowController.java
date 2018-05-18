@@ -153,14 +153,21 @@ public class ExportWindowController implements Initializable {
 
     }
 
+    private void updateLog() {
+        try {
+            up.setUpdateLog(updateLog);
+        } catch (SQLException ex) {
+            Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
     @FXML
     private void convertData(ActionEvent event) throws JSONException {
         com = CompletableFuture.runAsync(() -> {
             List<File> progressFileList = new ArrayList<File>(fcModel.getFiles());
             filesConvertedCount = 0;
             allsize = progressFileList.size();
-            for (File file : progressFileList) 
-            {
+            for (File file : progressFileList) {
 
                 try {
                     threading = Thread.currentThread();
@@ -170,47 +177,39 @@ public class ExportWindowController implements Initializable {
                     File JsonFile = new File(file.getCanonicalFile() + ".json");
                     FileWriter fileWriter = new FileWriter(JsonFile);
 
-                    for (JSONObject jSONObject : XLSX.allJSONObjectInFile())
-                    {
+                    for (JSONObject jSONObject : XLSX.allJSONObjectInFile()) {
                         fileWriter.write(jSONObject.toString(4));
                     }
                     conversionSuccess = false;
                     addDataToLog();
-                    updateLog.setAdjustment("Converted: " + file);
-                    
-                    try 
-                    {
-                        up.setUpdateLog(updateLog);
-                    } 
-                    catch (SQLException ex) 
-                    {
-                        Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
-                    }
+                    updateLog.setError(false);
+                    updateLog.setAdjustment("Conversion done: " + file);
                     //addToLog();
-
                     fileWriter.flush();
                     fileWriter.close();
 
                     filesConvertedCount++;
-                } catch (IOException ex) 
-                {
-                    AlertWindow alert = new AlertWindow("IOException", null, "IOException");
-                } 
-                catch (ParseException ex) 
-                {
-                    AlertWindow alert = new AlertWindow("ParseException", null, "ParseException");
-                } 
-                catch (IllegalArgumentException ex) 
-                {
-                    AlertWindow alert = new AlertWindow("IllegalArgumentException", null, "IllegalArgumentException");
-                } 
-                catch (IllegalAccessException ex) 
-                {
-                    AlertWindow alert = new AlertWindow("IllegalAccessException", null, "IllegalAccessException");
-                } 
-                catch (JSONException ex) 
-                {
-                    Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IOException ex) {
+                    updateLog.setError(true);
+                    updateLog.setAdjustment("File not support yet: " + file);
+
+                    updateLog();
+                } catch (ParseException ex) {
+                    updateLog.setError(true);
+                    updateLog.setAdjustment("Files Conversion wrong: " + file);
+                    updateLog();
+                } catch (IllegalArgumentException ex) {
+                    updateLog.setError(true);
+                    updateLog.setAdjustment("Files Conversion wrong: " + file);
+                    updateLog();
+                } catch (IllegalAccessException ex) {
+                    updateLog.setError(true);
+                    updateLog.setAdjustment("Files Conversion wrong: " + file);
+                    updateLog();
+                } catch (JSONException ex) {
+                    updateLog.setError(true);
+                    updateLog.setAdjustment("Files conversion wrong: " + file);
+                    updateLog();
                 }
 
                 Platform.runLater(() -> {
@@ -229,23 +228,21 @@ public class ExportWindowController implements Initializable {
         });
     }
 
-    private void addToLog() throws SQLException 
-    {
-        
-            java.util.Date utilDate = new java.util.Date();
-            Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
-            java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
+    private void addToLog() throws SQLException {
 
-            updateLog.setUsername(modelData.getUserLogin());
-            updateLog.setDatelog(sqlDate);
+        java.util.Date utilDate = new java.util.Date();
+        Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
+        java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
 
-            updateLog.setError(suspended);
-            up.setUpdateLog(updateLog);
-       
+        updateLog.setUsername(modelData.getUserLogin());
+        updateLog.setDatelog(sqlDate);
+
+        updateLog.setError(suspended);
+        up.setUpdateLog(updateLog);
+
     }
-    
-    private void addDataToLog()
-    {
+
+    private void addDataToLog() {
         Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
         java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
 
