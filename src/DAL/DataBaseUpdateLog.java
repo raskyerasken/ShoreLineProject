@@ -30,7 +30,6 @@ public class DataBaseUpdateLog {
     public void setUpdateLog(UpdateLog updateLog) throws SQLException {
 
         try (Connection con = cm.getConnection()) {
-            System.out.println("hey2");
             String sql
                     = "INSERT INTO UpdateLogs"
                     + " (Username, UploadDate, Adjustment,Error) "
@@ -44,7 +43,7 @@ public class DataBaseUpdateLog {
 
             int affected = pstmt.executeUpdate();
             if (affected < 1) {
-                throw new SQLException("Movie could not be added");
+                throw new SQLException("UpdateLog could not be added");
             }
 
             ResultSet rs = pstmt.getGeneratedKeys();

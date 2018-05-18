@@ -7,7 +7,6 @@ package GUI;
 
 import BE.UpdateLog;
 import BLL.BLLManagerUpdateLog;
-import BLL.CreateJSONFile;
 import BLL.ReadingXLSX;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
@@ -67,7 +66,7 @@ public class ExportWindowController implements Initializable {
     @FXML
     private JFXProgressBar progressBar;
     CompletableFuture com;
-    double ad = 0;
+    double filesConvertedCount = 0;
     double allsize = 0;
     private boolean suspended;
     private volatile boolean paused = false;
@@ -114,7 +113,7 @@ public class ExportWindowController implements Initializable {
             controller.setmodel(modelData);
             exportWindow.getChildren().setAll(root);
         } catch (IOException ex) {
-            AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
+            AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show ImportView");
         }
     }
 
@@ -130,7 +129,7 @@ public class ExportWindowController implements Initializable {
             controller.setmodel(modelData);
             exportWindow.getChildren().setAll(root);
         } catch (IOException ex) {
-            AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
+            AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show CustumData");
         }
     }
 
@@ -145,7 +144,7 @@ public class ExportWindowController implements Initializable {
             controller.setmodel(modelData);
             exportWindow.getChildren().setAll(root);
         } catch (IOException ex) {
-            AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
+            AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Logmenu");
         }
     }
 
@@ -156,10 +155,9 @@ public class ExportWindowController implements Initializable {
 
     @FXML
     private void convertData(ActionEvent event) throws JSONException {
-        System.out.println(modelData.getUserLogin());
         com = CompletableFuture.runAsync(() -> {
             List<File> progressFileList = new ArrayList<File>(fcModel.getFiles());
-            ad = 0;
+            filesConvertedCount = 0;
             allsize = progressFileList.size();
             for (File file : progressFileList) 
             {
@@ -169,7 +167,6 @@ public class ExportWindowController implements Initializable {
                     ReadingXLSX XLSX = new ReadingXLSX(file.getAbsolutePath());
 
                     XLSX.getColumsNames();
-                    CreateJSONFile createJSON = new CreateJSONFile();
                     File JsonFile = new File(file.getCanonicalFile() + ".json");
                     FileWriter fileWriter = new FileWriter(JsonFile);
 
@@ -195,7 +192,7 @@ public class ExportWindowController implements Initializable {
                     fileWriter.flush();
                     fileWriter.close();
 
-                    ad++;
+                    filesConvertedCount++;
                 } catch (IOException ex) 
                 {
                     AlertWindow alert = new AlertWindow("IOException", null, "IOException");
@@ -224,7 +221,7 @@ public class ExportWindowController implements Initializable {
                     stopTaskThread.setDisable(fcModel.getFiles().isEmpty());
                     fcModel.removeFile(file);
                     progressBar.setVisible(true);
-                    progressBar.setProgress(ad / allsize);
+                    progressBar.setProgress(filesConvertedCount / allsize);
                     if (fcModel.getFiles().isEmpty()) {
                         progressBar.setVisible(false);
                     }
