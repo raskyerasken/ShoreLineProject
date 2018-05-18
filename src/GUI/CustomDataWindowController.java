@@ -50,17 +50,17 @@ public class CustomDataWindowController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         btnCustumData.setDisable(true);
-        CheckBoxTreeItem<String> rootItem
-                = new CheckBoxTreeItem<String>("view Source Files");
-        rootItem.setExpanded(true);
-        
-        CustomDataSelect.setCellFactory(CheckBoxTreeCell.<String>forTreeView());
-        
-        for (int i = 0; i < 8; i++) {
-            final CheckBoxTreeItem<String> checkBoxTreeItem
-                    = new CheckBoxTreeItem<String>("Sample" + (i + 1));
-            rootItem.getChildren().add(checkBoxTreeItem);
-        }
+//        CheckBoxTreeItem<String> rootItem
+//                = new CheckBoxTreeItem<String>("view Source Files");
+//        rootItem.setExpanded(true);
+//        
+//        CustomDataSelect.setCellFactory(CheckBoxTreeCell.<String>forTreeView());
+//        
+//        for (int i = 0; i < 8; i++) {
+//            final CheckBoxTreeItem<String> checkBoxTreeItem
+//                    = new CheckBoxTreeItem<String>("Sample" + (i + 1));
+//            rootItem.getChildren().add(checkBoxTreeItem);
+//        }
     }
     
     @FXML
