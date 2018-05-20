@@ -149,7 +149,7 @@ public class LogViewController implements Initializable
             controller.setmodel(fcModel);
             exportWindow.getChildren().setAll(root);
         } catch (IOException ex) {
-            AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
+            AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show ImoportView");
         }
     }
 
@@ -177,7 +177,7 @@ public class LogViewController implements Initializable
             controller.setmodel(fcModel);
             exportWindow.getChildren().setAll(root);
         } catch (IOException ex) {
-            AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
+            AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show CustomData");
         }
     }
 

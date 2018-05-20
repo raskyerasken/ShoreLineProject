@@ -44,8 +44,7 @@ import javafx.stage.Stage;
  *
  * @author ander
  */
-public class LoginViewController implements Initializable 
-{
+public class LoginViewController implements Initializable {
 
     LoginDataModel modelData = new LoginDataModel();
     FilesConvertionModel fcModel = new FilesConvertionModel();
@@ -62,18 +61,17 @@ public class LoginViewController implements Initializable
     List<String> lines = new ArrayList<String>();
     int rememberMeLineNr = 2;
     private String filePathString = "UserLogin.txt";
-    
-    
+
     /**
      * Initializes the controller class.
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) 
-    {
+    public void initialize(URL url, ResourceBundle rb) {
         rememberMeFunction();
-    }    
-    
+    }
+
     @FXML
+<<<<<<< HEAD
     private void login(ActionEvent event) throws IOException 
     {
         try 
@@ -120,27 +118,79 @@ public class LoginViewController implements Initializable
         MainWindowController controller = fxLoader.getController();
         controller.modelData(modelData);
         controller.setmodel(fcModel);
-        
-        Scene scene = new Scene(root);
-        newStage.setResizable(false);
-        newStage.setScene(scene);
-        newStage.show();
-        Stage stage = (Stage) userNameID.getScene().getWindow();
-        stage.close();
+=======
+    private void login(ActionEvent event) throws IOException {
+        userLogin.setPassword(userPassword.getText());
+        userLogin.setUserName(userNameID.getText());
+
+        //java.util.Date utilDate = new java.util.Date();
+        try {
+            userLogin.setPassword(userPassword.getText());
+            userLogin.setUserName(userNameID.getText());
+
+            //java.util.Date utilDate = new java.util.Date();
+//        Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
+//        java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
+//        updateLog.setAdjustment(userNameID.getText());
+//        updateLog.setDatelog(sqlDate);
+//        up.setUpdateLog(updateLog);
+            if (ul.getAccess(userLogin)) {
+
+                /**
+                 * Writes in to a file if the remember me box is checked, if not
+                 * it writes nothing
+                 */
+                if (rememberUser.isSelected()) {
+                    writeUserLoginTxt();
+                    readUserLoginTxt();
+                    System.out.println("from txt file: " + lines);
+                } else {
+                    writeNothingTxt();
+                }
+
+                //System.out.println("User is logged in: " + userLogin.getUserName());
+                modelData.addLoginData(userNameID.getText());
+                openMainWindow();
+            } else {
+                showErrorDialog("Wrong Password", null, "Please insert correct password");
+            }
+        } catch (SQLException ex) {
+            AlertWindow alert = new AlertWindow("Database connection error", null, "Database connection error, check your connection");
+        }
     }
-    
-    private void showErrorDialog(String title, String header, String message) 
-    {
+
+    private void openMainWindow()   {
+        try {
+            Stage newStage = new Stage();
+            FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
+            Parent root = fxLoader.load();
+            MainWindowController controller = fxLoader.getController();
+            controller.modelData(modelData);
+            controller.setmodel(fcModel);
+            
+            Scene scene = new Scene(root);
+            newStage.setResizable(false);
+            newStage.setScene(scene);
+            newStage.show();
+            Stage stage = (Stage) userNameID.getScene().getWindow();
+            stage.close();
+        } catch (IOException ex) {
+         AlertWindow alert= new AlertWindow("Mainwindow can open", null, "Something wrong in Mainwindow with setmodel or Initializable");
+        }
+>>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        
+    }
+
+    private void showErrorDialog(String title, String header, String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
         alert.setHeaderText(header);
         alert.setContentText(message);
         alert.showAndWait();
     }
-    
+
     //writes the login to a text file that we later can read
-    private void writeUserLoginTxt()
-    {
+    private void writeUserLoginTxt() {
         PrintWriter writer = null;
         try 
         {
@@ -151,6 +201,7 @@ public class LoginViewController implements Initializable
             writer.println(userLogin.getUserName());
             writer.println(userLogin.getPassword());
             writer.close();
+<<<<<<< HEAD
         } 
         catch (FileNotFoundException ex) 
         { 
@@ -166,132 +217,110 @@ public class LoginViewController implements Initializable
         } 
         finally 
         {
+=======
+        } catch (FileNotFoundException ex) {
+            AlertWindow alert = new AlertWindow("File not found", null, "File not found");
+        } catch (UnsupportedEncodingException ex) {
+            AlertWindow alert = new AlertWindow("Unstuppoerted encoding", null, "UnsupportEncoding");
+        } catch (IOException ex) {
+            AlertWindow alert = new AlertWindow("IOException", null, "IO Exception");
+        } finally {
+>>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
             writer.close();
         }
     }
-    
-    private void timeLog() throws FileNotFoundException, UnsupportedEncodingException, IOException
-    {
+
+    private void timeLog() throws FileNotFoundException, UnsupportedEncodingException, IOException {
         File f = new File(filePathString);
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date date = new Date();
 
-        if (f.exists() && !f.isDirectory())
-        {
-            try
-            {
-                String filename= filePathString;
-                FileWriter writer = new FileWriter(filePathString,true);
+        if (f.exists() && !f.isDirectory()) {
+            try {
+                String filename = filePathString;
+                FileWriter writer = new FileWriter(filePathString, true);
                 writer.write("The user " + userLogin.getUserName() + " logged in.    " + "Date: " + dateFormat.format(date));
-                writer.write(System.getProperty( "line.separator" ));
+                writer.write(System.getProperty("line.separator"));
                 writer.close();
+            } catch (IOException ioe) {
+                AlertWindow alert = new AlertWindow("IOException", null, "IOException");
             }
-            
-            catch (IOException ioe)
-            {
-                  AlertWindow  alert = new AlertWindow("IOException", null, "IOException");
-            }
-        }
-        
-        else  
-        {
+        } else {
             PrintWriter writer = new PrintWriter("UserLogin.txt", "UTF-8");
-            writer.println("The user "+ userLogin.getUserName() +" logged in.   " + "Date: " + dateFormat.format(date));
-
-            //writer.println("Date: " + dateFormat.format(date));
-            writer.close(); 
+            writer.println("The user " + userLogin.getUserName() + " logged in.   " + "Date: " + dateFormat.format(date));
+            writer.close();
         }
     }
-    
-    private void writeNothingTxt() 
-    {
+
+    private void writeNothingTxt() {
         PrintWriter writer = null;
         try {
             //writes the user and pw to a txt file, but overwrites it everytime
-            writer = new PrintWriter("UserLog.txt", "UTF-8"); 
+            writer = new PrintWriter("UserLog.txt", "UTF-8");
             writer.println("Remember me is not selected");
             writer.close();
         } catch (FileNotFoundException ex) {
-            AlertWindow  alert = new AlertWindow("FileNotFoundException", null, "FileNotFoundException");
+            AlertWindow alert = new AlertWindow("FileNotFoundException", null, "FileNotFoundException");
         } catch (UnsupportedEncodingException ex) {
-           AlertWindow  alert = new AlertWindow("UnsupportedEncodingException", null, "UnsupportedEncodingException");
+            AlertWindow alert = new AlertWindow("UnsupportedEncodingException", null, "UnsupportedEncodingException");
         } finally {
             writer.close();
         }
     }
-    
+
     //reads the userlogin text file
-    private void readUserLoginTxt() 
-    {            
+    private void readUserLoginTxt() {
         BufferedReader br = null;
         try {
             //Should read the file
             br = new BufferedReader(new FileReader("UserLog.txt"));
             String line = br.readLine();
-            while (line != null)
-            {
+            while (line != null) {
                 lines.add(line);
                 line = br.readLine();
             }
         } catch (FileNotFoundException ex) {
-           AlertWindow  alert = new AlertWindow("FileNotFoundException", null, "FileNotFoundException");
+            AlertWindow alert = new AlertWindow("FileNotFoundException", null, "FileNotFoundException");
         } catch (IOException ex) {
-          AlertWindow  alert = new AlertWindow("IOException", null, "IOException");
+            AlertWindow alert = new AlertWindow("IOException", null, "IOException");
         } finally {
             try {
                 br.close();
             } catch (IOException ex) {
-                AlertWindow  alert = new AlertWindow("IOException", null, "IOException");
+                AlertWindow alert = new AlertWindow("IOException", null, "IOException");
             }
         }
     }
-    
-    private void rememberMeFunction()
-    {
+
+    private void rememberMeFunction() {
         BufferedReader br = null;
-        try 
-        {
+        try {
             br = new BufferedReader(new FileReader("UserLog.txt"));
             String line = br.readLine();
-            while (line != null)
-            {
+            while (line != null) {
                 lines.add(line);
                 line = br.readLine();
             }
-        } 
-        
-        catch (FileNotFoundException ex) 
-        {
-            AlertWindow  alert = new AlertWindow("FileNotFoundException", null, "FileNotFoundException");
-        } 
-        
-        catch (IOException ex) 
-        {
-            AlertWindow  alert = new AlertWindow("IOException", null, "IOException");
-        } 
-        
-        finally 
-        {
-            try 
-            {
+        } catch (FileNotFoundException ex) {
+            AlertWindow alert = new AlertWindow("FileNotFoundException", null, "FileNotFoundException");
+        } catch (IOException ex) {
+            AlertWindow alert = new AlertWindow("IOException", null, "IOException");
+        } finally {
+            try {
                 br.close();
-            } 
-            catch (IOException ex) 
-            {
+            } catch (IOException ex) {
                 Logger.getLogger(LoginViewController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        
-        if (lines.size() > rememberMeLineNr) 
-        {
+
+        if (lines.size() > rememberMeLineNr) {
             rememberUser.setSelected(true);
             userNameID.setText(lines.get(1));
             userPassword.setText(lines.get(2));
         }
     }
-        
-    private void forgotPassword(ActionEvent event) 
-    {
+
+    private void forgotPassword(ActionEvent event) {
         showErrorDialog("You sure?", null, "Well, if yes then that's because you are an idiot.");
     }
 

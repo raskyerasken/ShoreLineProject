@@ -9,6 +9,7 @@ package GUI;
  *
  * @author ander
  */
+<<<<<<< HEAD
 public class LoginDataModel 
 {
     String userNameSavedToString;
@@ -34,4 +35,31 @@ public class LoginDataModel
     {
         return userAccessLevel;
     }
+=======
+public class LoginDataModel {
+
+    private final ObservableList<String> loginData
+            = FXCollections.observableArrayList();
+    BLLManagerUpdateLog bllManager = new BLLManagerUpdateLog();
+    String somethingToAdd;
+
+    void addLoginData(String user) {
+        somethingToAdd = user;
+
+    }
+
+    List getLoginData() {
+        return loginData;
+    }
+
+    public String getUserLogin() {
+        return somethingToAdd;
+    }
+
+    ObservableList<String> setUserLogin(String userLogin) throws SQLException {
+
+        return loginData;
+    }
+
+>>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
 }

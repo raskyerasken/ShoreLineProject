@@ -105,10 +105,15 @@ public class AddUserViewController implements Initializable
                     {
                         showErrorDialog("Username used", null, "Username is already exist");
                     }
+<<<<<<< HEAD
                 } 
                 catch (SQLException ex) 
                 {
                     showErrorDialog("SQL erroe", null, "Chech your database connection");
+=======
+                } catch (SQLException ex) {
+                    showErrorDialog("SQL error", null, "Chech your database connection");
+>>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
                 }
 
             }

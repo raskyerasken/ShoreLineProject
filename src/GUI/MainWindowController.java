@@ -35,6 +35,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.CheckBoxTreeItem;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TreeItem;
@@ -104,7 +105,7 @@ public class MainWindowController implements Initializable
        
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Image File");
-        // fileChooser.setInitialDirectory(new File("..."));
+        // fileChooser.setInitialDirectory(new File("...")); only for windows
         files = fileChooser.showOpenMultipleDialog(new Stage());
         UpdateLog updateLog = new UpdateLog();
         BLL.BLLManagerUpdateLog up = new BLLManagerUpdateLog();
@@ -159,10 +160,15 @@ public class MainWindowController implements Initializable
             }
             
             
+<<<<<<< HEAD
             for (Object string : XLSX.getColumsNames()) 
             {
                 CheckBox check = new CheckBox();
                 check.setSelected(true);
+=======
+            for (Object string : XLSX.getColumsNames()) {
+                Label check = new Label("hey");
+>>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
                 TreeItem<String> colum = new TreeItem<String>(string.toString());
                 colum.setGraphic(check);
                 newlyAdded.getChildren().add(colum);

@@ -20,58 +20,59 @@ import javafx.scene.control.TreeView;
  * @author jacob
  */
 public class FilesConvertionModel {
-    
+
     private ObservableList<File> allFiles
             = FXCollections.observableArrayList();
-    private ObservableList<TreeItem> treeFiles= FXCollections.observableArrayList();
-    
+    private ObservableList<TreeItem> treeFiles = FXCollections.observableArrayList();
+
     void setFiles(ObservableList<File> filesAcceptet) {
-        
+
         allFiles.addAll(filesAcceptet);
-        
+
     }
-    
+
     ObservableList<File> getFiles() {
         return allFiles;
     }
-    
+
     void clearFiles() {
         allFiles.clear();
     }
-    
+
     void setTreeFiles(TreeItem<String> newFilesAdded) {
         treeFiles.add(newFilesAdded);
     }
-    
+
     ObservableList<TreeItem> getTreeFiles() {
         return treeFiles;
     }
-    
+
     File getNextFile() {
         if (allFiles.isEmpty()) {
             return null;
         } else {
-            
+
             File file = allFiles.get(0);
-//            Platform.runLater(() -> {
-//                allFiles.remove(file);
-//            });
-            
+
             return file;
         }
     }
-    
+
     void removeFile(File file) {
         allFiles.remove(file);
     }
 
     void addFile(File file) {
-    allFiles.add(file);
+        allFiles.add(file);
     }
 
+<<<<<<< HEAD
     void AddAllFiles(ObservableList<File> filesAccepted) 
     {
+=======
+    void AddAllFiles(ObservableList<File> filesAccepted) {
+>>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
         allFiles.addAll(filesAccepted);
     }
-    
+
 }

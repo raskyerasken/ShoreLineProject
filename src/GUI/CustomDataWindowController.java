@@ -36,7 +36,11 @@ import javafx.util.Callback;
  * @author kasper
  */
 public class CustomDataWindowController implements Initializable {
+<<<<<<< HEAD
     LoginDataModel modelData;
+=======
+    
+>>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
     @FXML
     private Label taskXRun;
     @FXML
@@ -47,42 +51,46 @@ public class CustomDataWindowController implements Initializable {
     private Button btnCustumData;
     private FilesConvertionModel fcModel;
     private TextField textField;
+<<<<<<< HEAD
     @FXML
     private Button adminButton;
 
+=======
+    
+>>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
     @Override
     public void initialize(URL location, ResourceBundle resources) 
     {
         adminButton.setVisible(false);
         btnCustumData.setDisable(true);
-        CheckBoxTreeItem<String> rootItem
-                = new CheckBoxTreeItem<String>("view Source Files");
-        rootItem.setExpanded(true);
-
-        CustomDataSelect.setCellFactory(CheckBoxTreeCell.<String>forTreeView());
-
-        for (int i = 0; i < 8; i++) {
-            final CheckBoxTreeItem<String> checkBoxTreeItem
-                    = new CheckBoxTreeItem<String>("Sample" + (i + 1));
-            rootItem.getChildren().add(checkBoxTreeItem);
-        }
+//        CheckBoxTreeItem<String> rootItem
+//                = new CheckBoxTreeItem<String>("view Source Files");
+//        rootItem.setExpanded(true);
+//        
+//        CustomDataSelect.setCellFactory(CheckBoxTreeCell.<String>forTreeView());
+//        
+//        for (int i = 0; i < 8; i++) {
+//            final CheckBoxTreeItem<String> checkBoxTreeItem
+//                    = new CheckBoxTreeItem<String>("Sample" + (i + 1));
+//            rootItem.getChildren().add(checkBoxTreeItem);
+//        }
     }
-
+    
     @FXML
     private void startTask(ActionEvent event) {
-
+        
     }
-
+    
     @FXML
     private void pauseTask(ActionEvent event) {
-
+        
     }
-
+    
     @FXML
     private void stopTask(ActionEvent event) {
-
+        
     }
-
+    
     @FXML
     private void importMenuSelect(Event event) throws SQLException 
     {
@@ -94,11 +102,11 @@ public class CustomDataWindowController implements Initializable {
             controller.setmodel(fcModel);
             customDataWindow.getChildren().setAll(root);
         } catch (IOException ex) {
-            AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
+            AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show ImportView");
         }
-
+        
     }
-
+    
     @FXML
     private void exportMenuSelect(Event event) {
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/ExportWindow.fxml"));
@@ -112,7 +120,7 @@ public class CustomDataWindowController implements Initializable {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
         }
     }
-
+    
     @FXML
     private void logMenuSelect(Event event) {
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/LogView.fxml"));
@@ -123,15 +131,15 @@ public class CustomDataWindowController implements Initializable {
             controller.setmodel(fcModel);
             customDataWindow.getChildren().setAll(root);
         } catch (IOException ex) {
-            AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
+            AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show LogView");
         }
     }
-
+    
     @FXML
     private void adminMenuSelect(ActionEvent event) {
-
+        
     }
-
+    
     void seePreview() {
         if (CustomDataSelect.getRoot() != null) {
             ObservableList<TreeItem<String>> JsonItems = CustomDataSelect.getRoot().getChildren().get(0).getChildren().get(0).getChildren();
@@ -140,44 +148,49 @@ public class CustomDataWindowController implements Initializable {
                 //          Node check =  JsonItem.getGraphic();9
                 //            System.out.println(check.isDisable());
                 System.out.println(JsonItem.getValue());
-
+                
             }
-
+            
         }
     }
-
+    
     void setmodel(FilesConvertionModel fcModel) throws IOException, FileNotFoundException, ParseException {
         this.modelData = modelData;
         this.fcModel = fcModel;
         TreeItem<String> allFiles = new TreeItem<String>("All files");
-        for (TreeItem object : fcModel.getTreeFiles()) {
-            allFiles.getChildren().add(object);
-            TreeItem<String> hey = new TreeItem<String>("hey");
-
-            for (TreeItem treeFile : fcModel.getTreeFiles()) {
-                hey.getChildren().add(treeFile);
-            }
-
-            CustomDataSelect.setRoot(hey);
-
-            CustomDataSelect.setEditable(true);
-            CustomDataSelect.setCellFactory((TreeView<String> p)
-                    -> new TextFieldTreeCellImpl());
-            CustomDataSelect.setEditable(true);
-            CustomDataSelect.setCellFactory(new Callback<TreeView<String>, TreeCell<String>>() {
-                @Override
-                public TreeCell<String> call(TreeView<String> p) {
-                    return new TextFieldTreeCellImpl();
-                }
-            });
+        for (TreeItem treeFile : fcModel.getTreeFiles()) {
+            allFiles.getChildren().add(treeFile);
         }
+        
+        CustomDataSelect.setRoot(allFiles);
+        CustomDataSelect.setShowRoot(false);
+        CustomDataSelect.setEditable(true);
+        CustomDataSelect.setCellFactory((TreeView<String> p)
+                -> new TextFieldTreeCellImpl());
+        CustomDataSelect.setEditable(true);
+        CustomDataSelect.setCellFactory(new Callback<TreeView<String>, TreeCell<String>>() {
+            @Override
+            public TreeCell<String> call(TreeView<String> p) {
+                return new TextFieldTreeCellImpl();
+            }
+        });
+        
     }
-
+    
     @FXML
     private void preview(ActionEvent event) {
         seePreview();
     }
+<<<<<<< HEAD
     
 
 
+=======
+    LoginDataModel modelData;
+    
+    void setmodel(LoginDataModel modelData) {
+        this.modelData = modelData;
+    }
+    
+>>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
 }

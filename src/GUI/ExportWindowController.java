@@ -7,7 +7,6 @@ package GUI;
 
 import BE.UpdateLog;
 import BLL.BLLManagerUpdateLog;
-import BLL.CreateJSONFile;
 import BLL.ReadingXLSX;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
@@ -67,7 +66,7 @@ public class ExportWindowController implements Initializable {
     @FXML
     private JFXProgressBar progressBar;
     CompletableFuture com;
-    double ad = 0;
+    double filesConvertedCount = 0;
     double allsize = 0;
     private boolean suspended;
     private volatile boolean paused = false;
@@ -121,7 +120,7 @@ public class ExportWindowController implements Initializable {
             controller.setmodel(fcModel);
             exportWindow.getChildren().setAll(root);
         } catch (IOException ex) {
-            AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
+            AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show ImportView");
         }
     }
 
@@ -137,7 +136,7 @@ public class ExportWindowController implements Initializable {
             controller.setmodel(fcModel);
             exportWindow.getChildren().setAll(root);
         } catch (IOException ex) {
-            AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
+            AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show CustumData");
         }
     }
 
@@ -152,7 +151,7 @@ public class ExportWindowController implements Initializable {
             controller.setmodel(fcModel);
             exportWindow.getChildren().setAll(root);
         } catch (IOException ex) {
-            AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
+            AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Logmenu");
         }
     }
 
@@ -162,54 +161,55 @@ public class ExportWindowController implements Initializable {
 
     }
 
+    private void updateLog() {
+        try {
+            up.setUpdateLog(updateLog);
+        } catch (SQLException ex) {
+            Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
     @FXML
     private void convertData(ActionEvent event) throws JSONException {
-        System.out.println(modelData.getUserLogin());
         com = CompletableFuture.runAsync(() -> {
             List<File> progressFileList = new ArrayList<File>(fcModel.getFiles());
-            ad = 0;
+            filesConvertedCount = 0;
             allsize = progressFileList.size();
-            for (File file : progressFileList) 
-            {
+            for (File file : progressFileList) {
 
                 try {
                     threading = Thread.currentThread();
                     ReadingXLSX XLSX = new ReadingXLSX(file.getAbsolutePath());
 
                     XLSX.getColumsNames();
-                    CreateJSONFile createJSON = new CreateJSONFile();
                     File JsonFile = new File(file.getCanonicalFile() + ".json");
                     FileWriter fileWriter = new FileWriter(JsonFile);
 
-                    for (JSONObject jSONObject : XLSX.allJSONObjectInFile())
-                    {
+                    for (JSONObject jSONObject : XLSX.allJSONObjectInFile()) {
                         fileWriter.write(jSONObject.toString(4));
                     }
                     conversionSuccess = false;
+<<<<<<< HEAD
 
+=======
+                    addDataToLog();
+                    updateLog.setError(false);
+                    updateLog.setAdjustment("Conversion done: " + file);
+                    //addToLog();
+>>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
                     fileWriter.flush();
                     fileWriter.close();
 
-                    ad++;
-                } catch (IOException ex) 
-                {
-                    AlertWindow alert = new AlertWindow("IOException", null, "IOException");
-                } 
-                catch (ParseException ex) 
-                {
-                    AlertWindow alert = new AlertWindow("ParseException", null, "ParseException");
-                } 
-                catch (IllegalArgumentException ex) 
-                {
-                    AlertWindow alert = new AlertWindow("IllegalArgumentException", null, "IllegalArgumentException");
-                } 
-                catch (IllegalAccessException ex) 
-                {
-                    AlertWindow alert = new AlertWindow("IllegalAccessException", null, "IllegalAccessException");
-                } 
-                catch (JSONException ex) 
-                {
-                    Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
+                    filesConvertedCount++;
+                } catch (IOException ex) {
+                    updateLog.setError(true);
+                    updateLog.setAdjustment("File not support yet: " + file);
+
+                    updateLog();
+                } catch (ParseException | IllegalArgumentException | IllegalAccessException | JSONException ex) {
+                    updateLog.setError(true);
+                    updateLog.setAdjustment("Files Conversion wrong: " + file);
+                    updateLog();
                 }
 
                 Platform.runLater(() -> 
@@ -219,9 +219,14 @@ public class ExportWindowController implements Initializable {
                     stopTaskThread.setDisable(fcModel.getFiles().isEmpty());
                     fcModel.removeFile(file);
                     progressBar.setVisible(true);
+<<<<<<< HEAD
                     progressBar.setProgress(ad / allsize);
                     if (fcModel.getFiles().isEmpty()) 
                     {
+=======
+                    progressBar.setProgress(filesConvertedCount / allsize);
+                    if (fcModel.getFiles().isEmpty()) {
+>>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
                         progressBar.setVisible(false);
                     }
                 });
@@ -241,28 +246,21 @@ public class ExportWindowController implements Initializable {
         });          
     }
 
-    private void addToLog() 
-    {
-        try 
-        {
-            java.util.Date utilDate = new java.util.Date();
-            Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
-            java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
+    private void addToLog() throws SQLException {
 
-            updateLog.setUsername(modelData.getUserLogin());
-            updateLog.setDatelog(sqlDate);
+        java.util.Date utilDate = new java.util.Date();
+        Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
+        java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
 
-            updateLog.setError(suspended);
-            up.setUpdateLog(updateLog);
-        } 
-        catch (SQLException ex) 
-        {
-            Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        updateLog.setUsername(modelData.getUserLogin());
+        updateLog.setDatelog(sqlDate);
+
+        updateLog.setError(suspended);
+        up.setUpdateLog(updateLog);
+
     }
-    
-    private void addDataToLog()
-    {
+
+    private void addDataToLog() {
         Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
         java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
 
