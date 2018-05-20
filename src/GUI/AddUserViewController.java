@@ -31,13 +31,8 @@ import javafx.scene.layout.AnchorPane;
  */
 public class AddUserViewController implements Initializable 
 {
-<<<<<<< HEAD
-    
     UserLogin userLogin = new UserLogin();
-=======
-    LoginDataModel modelData = new LoginDataModel();
     UserLogin ul = new UserLogin();
->>>>>>> c56ef3beb4600f008d052638cca2a88479b14f63
     BLLManagerUserLogin bllManagerul = new BLLManagerUserLogin();
     @FXML
     private CheckBox adminAccessLevelChckBox;
@@ -60,10 +55,6 @@ public class AddUserViewController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
-<<<<<<< HEAD
-=======
-        System.out.println(modelData.getUserAccessLevel());
->>>>>>> c56ef3beb4600f008d052638cca2a88479b14f63
     }
 
     @FXML
@@ -74,12 +65,8 @@ public class AddUserViewController implements Initializable
         try {
             root = fxLoader.load();
             MainWindowController controller = fxLoader.getController();
-<<<<<<< HEAD
-            controller.setmodel(fcModel,modelData);
-=======
-            controller.setmodel(fcModel);
-            controller.modelData(modelData);
->>>>>>> c56ef3beb4600f008d052638cca2a88479b14f63
+controller.setmodel(fcModel,modelData);
+
             addUser.getChildren().setAll(root);
         } 
         catch (IOException ex) 
