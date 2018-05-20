@@ -5,46 +5,33 @@
  */
 package GUI;
 
-import BLL.BLLManagerUpdateLog;
-import java.sql.SQLException;
-import java.util.List;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-
 /**
  *
  * @author ander
  */
 public class LoginDataModel 
 {
-
-    private final ObservableList<String> loginData
-            = FXCollections.observableArrayList();
-    BLLManagerUpdateLog bllManager = new BLLManagerUpdateLog();
-    String somethingToAdd;
+    String userNameSavedToString;
+    Boolean userAccessLevel;
     
-    void addLoginData(String user)
+    public void addUserLoginData(String user)
     {
-        somethingToAdd = user;
-       
-        System.out.println("addLoginData: " + user);
-    }
-    
-    List getLoginData()
-    {
-        return loginData;
+        userNameSavedToString = user;
     }
 
     public String getUserLogin() 
     {
-        return somethingToAdd;
+        return userNameSavedToString;
     }
-
-    ObservableList<String> setUserLogin(String userLogin) throws SQLException 
+    
+    public void addAccessLoginData(Boolean user)
     {
-        //loginData.setAll(bllManager.getAllUpdateLogsToList());
-        return loginData;
+        userAccessLevel = user;
+        System.out.println("What is the user "+user);
     }
-
-
+    
+    public Boolean getUserAccessLevel()
+    {
+        return userAccessLevel;
+    }
 }

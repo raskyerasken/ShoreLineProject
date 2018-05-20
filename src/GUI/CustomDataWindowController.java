@@ -9,6 +9,7 @@ import java.awt.Checkbox;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.ResourceBundle;
 import javafx.collections.ObservableList;
@@ -35,7 +36,7 @@ import javafx.util.Callback;
  * @author kasper
  */
 public class CustomDataWindowController implements Initializable {
-
+    LoginDataModel modelData;
     @FXML
     private Label taskXRun;
     @FXML
@@ -46,9 +47,13 @@ public class CustomDataWindowController implements Initializable {
     private Button btnCustumData;
     private FilesConvertionModel fcModel;
     private TextField textField;
+    @FXML
+    private Button adminButton;
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL location, ResourceBundle resources) 
+    {
+        adminButton.setVisible(false);
         btnCustumData.setDisable(true);
         CheckBoxTreeItem<String> rootItem
                 = new CheckBoxTreeItem<String>("view Source Files");
@@ -79,14 +84,14 @@ public class CustomDataWindowController implements Initializable {
     }
 
     @FXML
-    private void importMenuSelect(Event event) {
+    private void importMenuSelect(Event event) throws SQLException 
+    {
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/MainWindow.fxml"));
         Parent root;
         try {
             root = fxLoader.load();
             MainWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel);
-            controller.setmodel(modelData);
             customDataWindow.getChildren().setAll(root);
         } catch (IOException ex) {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
@@ -102,7 +107,6 @@ public class CustomDataWindowController implements Initializable {
             root = fxLoader.load();
             ExportWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel);
-            controller.setmodel(modelData);
             customDataWindow.getChildren().setAll(root);
         } catch (IOException ex) {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
@@ -117,7 +121,6 @@ public class CustomDataWindowController implements Initializable {
             root = fxLoader.load();
             LogViewController controller = fxLoader.getController();
             controller.setmodel(fcModel);
-            controller.setmodel(modelData);
             customDataWindow.getChildren().setAll(root);
         } catch (IOException ex) {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
@@ -144,6 +147,7 @@ public class CustomDataWindowController implements Initializable {
     }
 
     void setmodel(FilesConvertionModel fcModel) throws IOException, FileNotFoundException, ParseException {
+        this.modelData = modelData;
         this.fcModel = fcModel;
         TreeItem<String> allFiles = new TreeItem<String>("All files");
         for (TreeItem object : fcModel.getTreeFiles()) {
@@ -173,10 +177,7 @@ public class CustomDataWindowController implements Initializable {
     private void preview(ActionEvent event) {
         seePreview();
     }
-    LoginDataModel modelData;
+    
 
-    void setmodel(LoginDataModel modelData) {
-        this.modelData = modelData;
-    }
 
 }

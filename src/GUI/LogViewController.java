@@ -6,11 +6,10 @@
 package GUI;
 
 import BE.UpdateLog;
+import BE.UserLogin;
 import static GUI.LogViewController.lines;
 import com.jfoenix.controls.JFXTextField;
-import java.io.BufferedReader;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -18,9 +17,6 @@ import java.text.ParseException;
 import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.concurrent.CompletableFuture;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -31,7 +27,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -42,8 +37,10 @@ import javafx.scene.layout.AnchorPane;
  *
  * @author ander
  */
-public class LogViewController implements Initializable {
+public class LogViewController implements Initializable 
+{
 
+    UserLogin ul = new UserLogin();
     LoginDataModel modelData;
     UpdateLogViewModel model = new UpdateLogViewModel();
     public static final ObservableList lines
@@ -72,9 +69,13 @@ public class LogViewController implements Initializable {
     private AnchorPane exportWindow;
     @FXML
     private Button logMenuSelect;
+    @FXML
+    private Button adminButton;
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL url, ResourceBundle rb) 
+    {
+        adminButton.setVisible(false);
         logMenuSelect.setDisable(true);
         addColumsToTableView();   //get all the colums
         LogView.setItems(model.getUpdateLogToList());
@@ -86,28 +87,9 @@ public class LogViewController implements Initializable {
         t.start();
     }
 
-    private void readUserLoginTxt() {
-        //Should read the file
-//        BufferedReader br;
-//        try 
-//        {
-//            br = new BufferedReader(new FileReader("UserLogin.txt"));
-//            String line = br.readLine();
-//            while (line != null)
-//            {
-//                lines.add(line);
-//                line = br.readLine();
-//                LogView.setItems(lines);
-//            }
-//        } 
-//        catch (FileNotFoundException ex) 
-//        {
-//            AlertWindow  alert = new AlertWindow("File not found", null, "Can find file Userlogin");
-//        } 
-//        catch (IOException ex)
-//        {
-//            AlertWindow  alert = new AlertWindow("Can not read the file", null, "It can not read the file");
-//        }
+    private void readUserLoginTxt() 
+    {
+        
     }
 
     private void addColumsToTableView() {
@@ -158,14 +140,13 @@ public class LogViewController implements Initializable {
     }
 
     @FXML
-    private void importMenuSelect(ActionEvent event) throws IOException {
+    private void importMenuSelect(ActionEvent event) throws IOException, SQLException {
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/MainWindow.fxml"));
         Parent root;
         try {
             root = fxLoader.load();
             MainWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel);
-            controller.setmodel(modelData);
             exportWindow.getChildren().setAll(root);
         } catch (IOException ex) {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
@@ -180,7 +161,6 @@ public class LogViewController implements Initializable {
             root = fxLoader.load();
             ExportWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel);
-            controller.setmodel(modelData);
             exportWindow.getChildren().setAll(root);
         } catch (IOException ex) {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
@@ -195,7 +175,6 @@ public class LogViewController implements Initializable {
             root = fxLoader.load();
             CustomDataWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel);
-            controller.setmodel(modelData);
             exportWindow.getChildren().setAll(root);
         } catch (IOException ex) {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
@@ -206,12 +185,11 @@ public class LogViewController implements Initializable {
     private void adminMenuSelect(ActionEvent event) {
     }
 
-    void setmodel(FilesConvertionModel fcModel) {
+    void setmodel(FilesConvertionModel fcModel) 
+    {
         this.fcModel = fcModel;
-    }
-
-    void setmodel(LoginDataModel modelData) {
         this.modelData = modelData;
     }
+
 
 }

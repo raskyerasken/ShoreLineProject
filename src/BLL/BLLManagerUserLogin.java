@@ -30,7 +30,10 @@ public class BLLManagerUserLogin
         return ul.getAccess(userLogin);
     }
 
-    
+    public boolean getAdminAccess(UserLogin userLogin) throws SQLException 
+    {
+        return ul.getAdminAccess(userLogin);
+    }
     
     public boolean usernameAvaible(String Username) throws SQLException 
     {

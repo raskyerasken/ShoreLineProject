@@ -73,24 +73,31 @@ public class ExportWindowController implements Initializable {
     private volatile boolean paused = false;
     UpdateLog updateLog = new UpdateLog();
     boolean conversionSuccess;
+    @FXML
+    private Button adminButton;
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL location, ResourceBundle resources) 
+    {
         btnExport.setDisable(true);
         setButtonsInvisible();
     }
 
     @FXML
-    private void startTask(ActionEvent event) {
+    private void startTask(ActionEvent event) 
+    {
         threading.getThreadGroup().resume();
     }
 
     @FXML
-    private void pauseTask(ActionEvent event) {
+    private void pauseTask(ActionEvent event) 
+    {
         threading.suspend();
     }
 
-    private void setButtonsInvisible() {
+    private void setButtonsInvisible() 
+    {
+        adminButton.setVisible(false);
         progressBar.setVisible(false);
         startTaskThread.setDisable(true);
         stopTaskThread.setDisable(true);
@@ -98,20 +105,20 @@ public class ExportWindowController implements Initializable {
     }
 
     @FXML
-    private void stopTask(ActionEvent event) {
+    private void stopTask(ActionEvent event) 
+    {
         threading.stop();
         setButtonsInvisible();
     }
 
     @FXML
-    private void importMenuSelect(Event event) {
+    private void importMenuSelect(Event event) throws SQLException {
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/MainWindow.fxml"));
         Parent root;
         try {
             root = fxLoader.load();
             MainWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel);
-            controller.setmodel(modelData);
             exportWindow.getChildren().setAll(root);
         } catch (IOException ex) {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
@@ -127,7 +134,7 @@ public class ExportWindowController implements Initializable {
             root = fxLoader.load();
             CustomDataWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel);
-            controller.setmodel(modelData);
+            controller.setmodel(fcModel);
             exportWindow.getChildren().setAll(root);
         } catch (IOException ex) {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
@@ -135,14 +142,14 @@ public class ExportWindowController implements Initializable {
     }
 
     @FXML
-    private void logMenuSelect(Event event) {
+    private void logMenuSelect(Event event) 
+    {
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/LogView.fxml"));
         Parent root;
         try {
             root = fxLoader.load();
             LogViewController controller = fxLoader.getController();
             controller.setmodel(fcModel);
-            controller.setmodel(modelData);
             exportWindow.getChildren().setAll(root);
         } catch (IOException ex) {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
@@ -150,7 +157,8 @@ public class ExportWindowController implements Initializable {
     }
 
     @FXML
-    private void adminMenuSelect(ActionEvent event) {
+    private void adminMenuSelect(ActionEvent event) 
+    {
 
     }
 
@@ -178,19 +186,6 @@ public class ExportWindowController implements Initializable {
                         fileWriter.write(jSONObject.toString(4));
                     }
                     conversionSuccess = false;
-                    addDataToLog();
-                    updateLog.setAdjustment("Converted: " + file);
-                    
-                    try 
-                    {
-                        System.out.println("hey");
-                        up.setUpdateLog(updateLog);
-                    } 
-                    catch (SQLException ex) 
-                    {
-                        Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                    //addToLog();
 
                     fileWriter.flush();
                     fileWriter.close();
@@ -217,20 +212,33 @@ public class ExportWindowController implements Initializable {
                     Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
-                Platform.runLater(() -> {
-
+                Platform.runLater(() -> 
+                {
                     startTaskThread.setDisable(fcModel.getFiles().isEmpty());
                     pauseTaskThread.setDisable(fcModel.getFiles().isEmpty());
                     stopTaskThread.setDisable(fcModel.getFiles().isEmpty());
                     fcModel.removeFile(file);
                     progressBar.setVisible(true);
                     progressBar.setProgress(ad / allsize);
-                    if (fcModel.getFiles().isEmpty()) {
+                    if (fcModel.getFiles().isEmpty()) 
+                    {
                         progressBar.setVisible(false);
                     }
                 });
+            }          
+            updateLog.setAdjustment("Converted: ");
+            System.out.println(progressFileList);
+            addDataToLog();
+                                try 
+            {
+                System.out.println("hey");
+                up.setUpdateLog(updateLog);
+            } 
+            catch (SQLException ex) 
+            {
+                Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
             }
-        });
+        });          
     }
 
     private void addToLog() 
@@ -268,12 +276,10 @@ public class ExportWindowController implements Initializable {
 
     }
 
-    void setmodel(FilesConvertionModel fcModel) {
+    void setmodel(FilesConvertionModel fcModel) 
+    {
         this.fcModel = fcModel;
         taskField.setItems(fcModel.getFiles());
-    }
-
-    void setmodel(LoginDataModel modelData) {
         this.modelData = modelData;
     }
 

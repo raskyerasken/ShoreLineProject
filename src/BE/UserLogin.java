@@ -21,7 +21,8 @@ public class UserLogin
     private final StringProperty password = new SimpleStringProperty();
     private final StringProperty email = new SimpleStringProperty();
     private final BooleanProperty accessLevel = new SimpleBooleanProperty();
-
+    private final BooleanProperty adminAccess = new SimpleBooleanProperty();
+    
     public boolean isAccessLevel() 
     {
         return accessLevel.get();
@@ -82,5 +83,4 @@ public class UserLogin
     {
         return userName;
     }
-    
 }

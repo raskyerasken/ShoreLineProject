@@ -76,54 +76,43 @@ public class LoginViewController implements Initializable
     @FXML
     private void login(ActionEvent event) throws IOException 
     {
-        userLogin.setPassword(userPassword.getText());
-        userLogin.setUserName(userNameID.getText());
-        
-        //java.util.Date utilDate = new java.util.Date();
-        try {
+        try 
+        {
             userLogin.setPassword(userPassword.getText());
             userLogin.setUserName(userNameID.getText());
             
-            //java.util.Date utilDate = new java.util.Date();
-//        Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
-//        java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
-        
-     
-        
-//        updateLog.setAdjustment(userNameID.getText());
-//        updateLog.setDatelog(sqlDate);
-//        up.setUpdateLog(updateLog);
+            if (ul.getAccess(userLogin))
+            {
 
-if (ul.getAccess(userLogin))
-{
-    
-    /**
-     * Writes in to a file if the remember me box is checked,
-     * if not it writes nothing
-     */
-    if (rememberUser.isSelected())
-    {
-        writeUserLoginTxt();
-        readUserLoginTxt();
-        System.out.println("from txt file: " + lines);
-    }
-    else
-    {
-        writeNothingTxt();
-    }
-    
-    //System.out.println("User is logged in: " + userLogin.getUserName());
-       modelData.addLoginData(userNameID.getText());
-    openMainWindow();
-}
-else
-    showErrorDialog("Wrong Password", null, "Please insert correct password");
-        } catch (SQLException ex) {
-         AlertWindow  alert = new AlertWindow("Database connection error", null, "Database connection error, check your connection");
+                /**
+                 * Writes in to a file if the remember me box is checked,
+                 * if not it writes nothing
+                 */
+                if (rememberUser.isSelected())
+                {
+                    writeUserLoginTxt();
+                    readUserLoginTxt();
+                    System.out.println("from txt file: " + lines);
+                }
+                else
+                {
+                    writeNothingTxt();
+                }
+                modelData.addUserLoginData(userNameID.getText());
+                modelData.addAccessLoginData(ul.getAdminAccess(userLogin));
+                
+                openMainWindow();
+            }
+            else
+                showErrorDialog("Wrong Password", null, "Please insert correct password");
+        } 
+        catch (SQLException ex) 
+        {
+            AlertWindow  alert = new AlertWindow("Database connection error", null, "Database connection error, check your connection");
         }
     }
     
-    private void openMainWindow() throws IOException 
+    private void openMainWindow() throws IOException, SQLException 
     {
         Stage newStage = new Stage();
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
@@ -153,7 +142,8 @@ else
     private void writeUserLoginTxt()
     {
         PrintWriter writer = null;
-        try {
+        try 
+        {
             //writes the user and pw to a txt file, but overwrites it everytime
             writer = new PrintWriter("UserLog.txt", "UTF-8");
             writer.println("The logged in: ");
@@ -161,13 +151,21 @@ else
             writer.println(userLogin.getUserName());
             writer.println(userLogin.getPassword());
             writer.close();
-        } catch (FileNotFoundException ex) { 
+        } 
+        catch (FileNotFoundException ex) 
+        { 
               AlertWindow  alert = new AlertWindow("File not found", null, "File not found");
-        } catch (UnsupportedEncodingException ex) {
+        } 
+        catch (UnsupportedEncodingException ex) 
+        {
              AlertWindow  alert = new AlertWindow("Unstuppoerted encoding", null, "UnsupportEncoding");
-        } catch (IOException ex) {
+        } 
+        catch (IOException ex) 
+        {
               AlertWindow  alert = new AlertWindow("IOException", null, "IO Exception");
-        } finally {
+        } 
+        finally 
+        {
             writer.close();
         }
     }

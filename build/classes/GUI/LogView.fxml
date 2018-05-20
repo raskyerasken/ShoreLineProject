@@ -19,7 +19,7 @@
       <Button layoutY="167.0" mnemonicParsing="false" onAction="#exportMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Export" />
       <Button layoutY="234.0" mnemonicParsing="false" onAction="#customDataMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Custom &#10;   Data" />
       <Button fx:id="logMenuSelect" layoutY="301.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="96.0" text="Log" />
-      <Button layoutY="367.0" mnemonicParsing="false" onAction="#adminMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Admin" />
+      <Button fx:id="adminButton" layoutY="367.0" mnemonicParsing="false" onAction="#adminMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Admin" />
       <TableView fx:id="LogView" layoutX="107.0" layoutY="100.0" prefHeight="260.0" prefWidth="460.0">
          <columns>
             <TableColumn fx:id="userNameTable" prefWidth="100.00000762939453" text="User Name" />

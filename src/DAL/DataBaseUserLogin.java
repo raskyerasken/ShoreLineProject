@@ -72,6 +72,33 @@ public class DataBaseUserLogin
         }
         return userLogin.getPassword().equals(ul.getPassword());
     }
+    
+    public boolean getAdminAccess (UserLogin userLogin) throws SQLException
+    {
+        UserLogin ul = new UserLogin();
+        try (Connection con = cm.getConnection()) 
+        {
+            String query
+                    = "SELECT * FROM UserLogin "
+                    + "WHERE Username LIKE ?";
+
+            PreparedStatement pstmt = con.prepareStatement(query);
+            pstmt.setString(1, userLogin.getUserName());
+
+            ResultSet rs = pstmt.executeQuery();
+
+            while (rs.next()) 
+            {
+                ul.setAccessLevel(rs.getBoolean("Accesslevel"));
+            }
+        } 
+        
+        catch (SQLServerException ex) 
+        {
+          AlertWindow  alert = new AlertWindow("Data base connectiong error", null, "Check you connection to the database");
+        }
+        return ul.isAccessLevel();
+    }
 
     public boolean usernameAvaible(String Username) throws SQLException 
     {

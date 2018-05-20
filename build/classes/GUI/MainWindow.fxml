@@ -26,7 +26,7 @@
       <Button layoutY="167.0" mnemonicParsing="false" onAction="#exportMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Export" />
       <Button layoutY="234.0" mnemonicParsing="false" onAction="#customDataMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Custom &#10;   Data" />
       <Button layoutY="301.0" mnemonicParsing="false" onAction="#logMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Log" />
-      <Button layoutY="369.0" mnemonicParsing="false" onAction="#adminMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Admin" />
+      <Button fx:id="adminButton" layoutY="369.0" mnemonicParsing="false" onAction="#adminMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Admin" />
       <JFXProgressBar fx:id="progressBar" layoutX="106.0" layoutY="403.0" prefHeight="26.0" prefWidth="444.0" />
     </children>
 </AnchorPane>
