@@ -35,12 +35,9 @@ import javafx.util.Callback;
  *
  * @author kasper
  */
-public class CustomDataWindowController implements Initializable {
-<<<<<<< HEAD
+public class CustomDataWindowController implements Initializable 
+{
     LoginDataModel modelData;
-=======
-    
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
     @FXML
     private Label taskXRun;
     @FXML
@@ -51,13 +48,9 @@ public class CustomDataWindowController implements Initializable {
     private Button btnCustumData;
     private FilesConvertionModel fcModel;
     private TextField textField;
-<<<<<<< HEAD
     @FXML
     private Button adminButton;
-
-=======
     
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
     @Override
     public void initialize(URL location, ResourceBundle resources) 
     {
@@ -178,19 +171,12 @@ public class CustomDataWindowController implements Initializable {
     }
     
     @FXML
-    private void preview(ActionEvent event) {
+    private void preview(ActionEvent event) 
+    {
         seePreview();
     }
-<<<<<<< HEAD
-    
-
-
-=======
-    LoginDataModel modelData;
     
     void setmodel(LoginDataModel modelData) {
         this.modelData = modelData;
     }
-    
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
 }

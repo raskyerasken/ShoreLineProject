@@ -170,14 +170,17 @@ public class ExportWindowController implements Initializable {
     }
 
     @FXML
-    private void convertData(ActionEvent event) throws JSONException {
-        com = CompletableFuture.runAsync(() -> {
+    private void convertData(ActionEvent event) throws JSONException 
+    {
+        com = CompletableFuture.runAsync(() -> 
+        {
             List<File> progressFileList = new ArrayList<File>(fcModel.getFiles());
             filesConvertedCount = 0;
             allsize = progressFileList.size();
             for (File file : progressFileList) {
 
-                try {
+                try 
+                {
                     threading = Thread.currentThread();
                     ReadingXLSX XLSX = new ReadingXLSX(file.getAbsolutePath());
 
@@ -185,18 +188,15 @@ public class ExportWindowController implements Initializable {
                     File JsonFile = new File(file.getCanonicalFile() + ".json");
                     FileWriter fileWriter = new FileWriter(JsonFile);
 
-                    for (JSONObject jSONObject : XLSX.allJSONObjectInFile()) {
+                    for (JSONObject jSONObject : XLSX.allJSONObjectInFile()) 
+                    {
                         fileWriter.write(jSONObject.toString(4));
                     }
                     conversionSuccess = false;
-<<<<<<< HEAD
-
-=======
                     addDataToLog();
                     updateLog.setError(false);
                     updateLog.setAdjustment("Conversion done: " + file);
                     //addToLog();
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
                     fileWriter.flush();
                     fileWriter.close();
 
@@ -219,14 +219,9 @@ public class ExportWindowController implements Initializable {
                     stopTaskThread.setDisable(fcModel.getFiles().isEmpty());
                     fcModel.removeFile(file);
                     progressBar.setVisible(true);
-<<<<<<< HEAD
-                    progressBar.setProgress(ad / allsize);
+                    //progressBar.setProgress(ad / allsize);
                     if (fcModel.getFiles().isEmpty()) 
                     {
-=======
-                    progressBar.setProgress(filesConvertedCount / allsize);
-                    if (fcModel.getFiles().isEmpty()) {
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
                         progressBar.setVisible(false);
                     }
                 });

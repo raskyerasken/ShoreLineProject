@@ -71,7 +71,6 @@ public class LoginViewController implements Initializable {
     }
 
     @FXML
-<<<<<<< HEAD
     private void login(ActionEvent event) throws IOException 
     {
         try 
@@ -109,57 +108,9 @@ public class LoginViewController implements Initializable {
             AlertWindow  alert = new AlertWindow("Database connection error", null, "Database connection error, check your connection");
         }
     }
-    
-    private void openMainWindow() throws IOException, SQLException 
+
+    private void openMainWindow() throws SQLException   
     {
-        Stage newStage = new Stage();
-        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
-        Parent root = fxLoader.load();
-        MainWindowController controller = fxLoader.getController();
-        controller.modelData(modelData);
-        controller.setmodel(fcModel);
-=======
-    private void login(ActionEvent event) throws IOException {
-        userLogin.setPassword(userPassword.getText());
-        userLogin.setUserName(userNameID.getText());
-
-        //java.util.Date utilDate = new java.util.Date();
-        try {
-            userLogin.setPassword(userPassword.getText());
-            userLogin.setUserName(userNameID.getText());
-
-            //java.util.Date utilDate = new java.util.Date();
-//        Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
-//        java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
-//        updateLog.setAdjustment(userNameID.getText());
-//        updateLog.setDatelog(sqlDate);
-//        up.setUpdateLog(updateLog);
-            if (ul.getAccess(userLogin)) {
-
-                /**
-                 * Writes in to a file if the remember me box is checked, if not
-                 * it writes nothing
-                 */
-                if (rememberUser.isSelected()) {
-                    writeUserLoginTxt();
-                    readUserLoginTxt();
-                    System.out.println("from txt file: " + lines);
-                } else {
-                    writeNothingTxt();
-                }
-
-                //System.out.println("User is logged in: " + userLogin.getUserName());
-                modelData.addLoginData(userNameID.getText());
-                openMainWindow();
-            } else {
-                showErrorDialog("Wrong Password", null, "Please insert correct password");
-            }
-        } catch (SQLException ex) {
-            AlertWindow alert = new AlertWindow("Database connection error", null, "Database connection error, check your connection");
-        }
-    }
-
-    private void openMainWindow()   {
         try {
             Stage newStage = new Stage();
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
@@ -177,7 +128,6 @@ public class LoginViewController implements Initializable {
         } catch (IOException ex) {
          AlertWindow alert= new AlertWindow("Mainwindow can open", null, "Something wrong in Mainwindow with setmodel or Initializable");
         }
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
         
     }
 
@@ -201,7 +151,6 @@ public class LoginViewController implements Initializable {
             writer.println(userLogin.getUserName());
             writer.println(userLogin.getPassword());
             writer.close();
-<<<<<<< HEAD
         } 
         catch (FileNotFoundException ex) 
         { 
@@ -215,19 +164,6 @@ public class LoginViewController implements Initializable {
         {
               AlertWindow  alert = new AlertWindow("IOException", null, "IO Exception");
         } 
-        finally 
-        {
-=======
-        } catch (FileNotFoundException ex) {
-            AlertWindow alert = new AlertWindow("File not found", null, "File not found");
-        } catch (UnsupportedEncodingException ex) {
-            AlertWindow alert = new AlertWindow("Unstuppoerted encoding", null, "UnsupportEncoding");
-        } catch (IOException ex) {
-            AlertWindow alert = new AlertWindow("IOException", null, "IO Exception");
-        } finally {
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
-            writer.close();
-        }
     }
 
     private void timeLog() throws FileNotFoundException, UnsupportedEncodingException, IOException {

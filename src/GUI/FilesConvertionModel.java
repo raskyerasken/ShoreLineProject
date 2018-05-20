@@ -65,13 +65,8 @@ public class FilesConvertionModel {
     void addFile(File file) {
         allFiles.add(file);
     }
-
-<<<<<<< HEAD
     void AddAllFiles(ObservableList<File> filesAccepted) 
     {
-=======
-    void AddAllFiles(ObservableList<File> filesAccepted) {
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
         allFiles.addAll(filesAccepted);
     }
 
