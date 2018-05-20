@@ -203,7 +203,8 @@ public class MainWindowController implements Initializable
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/ExportWindow.fxml"));
             Parent root = fxLoader.load();
             ExportWindowController controller = fxLoader.getController();
-            controller.setmodel(fcModel);
+            controller.setmodel(fcModel,modelData);
+           
             importWindow.getChildren().setAll(root);
         } 
         catch (IOException ex) 
@@ -220,7 +221,7 @@ public class MainWindowController implements Initializable
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/CustomDataWindow.fxml"));
             Parent root = fxLoader.load();
             CustomDataWindowController controller = fxLoader.getController();
-            controller.setmodel(fcModel);
+            controller.setmodel(fcModel,modelData);
             importWindow.getChildren().setAll(root);
         } 
         catch (IOException ex) 
@@ -237,7 +238,7 @@ public class MainWindowController implements Initializable
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("LogView.fxml"));
             Parent root = fxLoader.load();
             LogViewController controller = fxLoader.getController();
-            controller.setmodel(fcModel);
+            controller.setmodel(fcModel, modelData);
             
             importWindow.getChildren().setAll(root);
         } 
@@ -265,7 +266,7 @@ public class MainWindowController implements Initializable
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("AddUserView.fxml"));
             Parent root = fxLoader.load();
             AddUserViewController controller = fxLoader.getController();
-            controller.setmodel(fcModel);
+            controller.setmodel(fcModel,modelData);
             
             importWindow.getChildren().setAll(root);
         } 
@@ -275,19 +276,6 @@ public class MainWindowController implements Initializable
         }
     }
 
-    void modelData(LoginDataModel modelData) throws SQLException 
-    {
-        this.modelData = modelData;
-        ul.setUserName(modelData.getUserLogin());
-    }
-
-    void setmodel(FilesConvertionModel fcModel) throws SQLException 
-    {
-        this.fcModel = fcModel;
-        taskField.getItems().clear();
-        taskField.setItems(fcModel.getFiles());
-        isUserAdmin();
-    }
 
     public String getTextNames() 
     {
@@ -297,10 +285,21 @@ public class MainWindowController implements Initializable
     
     private void isUserAdmin() throws SQLException
     {
-        System.out.println(bllManagerUL.getAdminAccess(ul));
-        if (bllManagerUL.getAdminAccess(ul) == true) 
+        System.out.println(modelData.getUserAccessLevel());
+        if (modelData.getUserAccessLevel() == true) 
         {
             adminButton.setVisible(true);
         }
     }
+
+
+    void setmodel(FilesConvertionModel fcModel, LoginDataModel modelData) throws SQLException {
+    this.fcModel = fcModel;
+        taskField.getItems().clear();
+        taskField.setItems(fcModel.getFiles());
+        this.modelData = modelData;
+        isUserAdmin();
+        
+        System.out.println("hey"+modelData.getUserAccessLevel());
+        ul.setUserName(modelData.getUserLogin());}
 }

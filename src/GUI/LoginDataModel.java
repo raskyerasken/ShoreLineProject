@@ -27,7 +27,6 @@ public class LoginDataModel
     public void addAccessLoginData(Boolean user)
     {
         userAccessLevel = user;
-        System.out.println("What is the user "+user);
     }
     
     public Boolean getUserAccessLevel()

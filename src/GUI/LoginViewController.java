@@ -116,8 +116,7 @@ public class LoginViewController implements Initializable {
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
             Parent root = fxLoader.load();
             MainWindowController controller = fxLoader.getController();
-            controller.modelData(modelData);
-            controller.setmodel(fcModel);
+            controller.setmodel(fcModel,modelData);
             
             Scene scene = new Scene(root);
             newStage.setResizable(false);

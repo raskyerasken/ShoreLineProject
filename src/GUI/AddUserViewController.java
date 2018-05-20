@@ -31,7 +31,7 @@ import javafx.scene.layout.AnchorPane;
  */
 public class AddUserViewController implements Initializable 
 {
-    LoginDataModel dataModel = new LoginDataModel();
+    
     UserLogin userLogin = new UserLogin();
     BLLManagerUserLogin bllManagerul = new BLLManagerUserLogin();
     @FXML
@@ -47,6 +47,7 @@ public class AddUserViewController implements Initializable
     private FilesConvertionModel fcModel;
     @FXML
     private AnchorPane addUser;
+    private LoginDataModel modelData;
 
     /**
      * Initializes the controller class.
@@ -54,7 +55,6 @@ public class AddUserViewController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
-        System.out.println(dataModel.getUserAccessLevel());
     }
 
     @FXML
@@ -65,8 +65,7 @@ public class AddUserViewController implements Initializable
         try {
             root = fxLoader.load();
             MainWindowController controller = fxLoader.getController();
-            controller.setmodel(fcModel);
-            controller.modelData(dataModel);
+            controller.setmodel(fcModel,modelData);
             addUser.getChildren().setAll(root);
         } 
         catch (IOException ex) 
@@ -130,5 +129,10 @@ public class AddUserViewController implements Initializable
     void setmodel(FilesConvertionModel fcModel) throws SQLException 
     {
         this.fcModel = fcModel;
+    }
+
+    void setmodel(FilesConvertionModel fcModel, LoginDataModel modelData) {
+         this.fcModel = fcModel;
+         this.modelData= modelData;
     }
 }

@@ -949,3 +949,18 @@ The user kris logged in.    Date: 2018/05/18 12:20:58
 The user kris logged in.    Date: 2018/05/18 12:21:26
 The user kris logged in.    Date: 2018/05/18 12:24:30
 >>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+The user kris logged in.    Date: 2018/05/20 21:54:48
+The user billy logged in.    Date: 2018/05/20 21:55:13
+The user Jacob logged in.    Date: 2018/05/20 21:55:32
+The user Jacob logged in.    Date: 2018/05/20 21:59:35
+The user Jacob logged in.    Date: 2018/05/20 21:59:53
+The user Jacob logged in.    Date: 2018/05/20 22:01:01
+The user Jacob logged in.    Date: 2018/05/20 22:01:40
+The user Jacob logged in.    Date: 2018/05/20 22:02:07
+The user Jacob logged in.    Date: 2018/05/20 22:04:23
+The user Jacob logged in.    Date: 2018/05/20 22:04:30
+The user Jacob logged in.    Date: 2018/05/20 22:04:56
+The user Jacob logged in.    Date: 2018/05/20 22:05:28
+The user Jacob logged in.    Date: 2018/05/20 22:06:43
+The user Jacob logged in.    Date: 2018/05/20 22:07:12
+The user Jacob logged in.    Date: 2018/05/20 22:08:01

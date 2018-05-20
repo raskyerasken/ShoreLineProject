@@ -117,7 +117,7 @@ public class ExportWindowController implements Initializable {
         try {
             root = fxLoader.load();
             MainWindowController controller = fxLoader.getController();
-            controller.setmodel(fcModel);
+            controller.setmodel(fcModel,modelData);
             exportWindow.getChildren().setAll(root);
         } catch (IOException ex) {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show ImportView");
@@ -132,8 +132,7 @@ public class ExportWindowController implements Initializable {
         try {
             root = fxLoader.load();
             CustomDataWindowController controller = fxLoader.getController();
-            controller.setmodel(fcModel);
-            controller.setmodel(fcModel);
+            controller.setmodel(fcModel,modelData);
             exportWindow.getChildren().setAll(root);
         } catch (IOException ex) {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show CustumData");
@@ -148,7 +147,7 @@ public class ExportWindowController implements Initializable {
         try {
             root = fxLoader.load();
             LogViewController controller = fxLoader.getController();
-            controller.setmodel(fcModel);
+            controller.setmodel(fcModel,modelData);
             exportWindow.getChildren().setAll(root);
         } catch (IOException ex) {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Logmenu");
@@ -269,9 +268,9 @@ public class ExportWindowController implements Initializable {
 
     }
 
-    void setmodel(FilesConvertionModel fcModel) 
-    {
-        this.fcModel = fcModel;
+
+    void setmodel(FilesConvertionModel fcModel, LoginDataModel modelData) {
+    this.fcModel = fcModel;
         taskField.setItems(fcModel.getFiles());
         this.modelData = modelData;
     }

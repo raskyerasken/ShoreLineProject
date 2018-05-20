@@ -146,7 +146,7 @@ public class LogViewController implements Initializable
         try {
             root = fxLoader.load();
             MainWindowController controller = fxLoader.getController();
-            controller.setmodel(fcModel);
+            controller.setmodel(fcModel,modelData);
             exportWindow.getChildren().setAll(root);
         } catch (IOException ex) {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show ImoportView");
@@ -160,7 +160,7 @@ public class LogViewController implements Initializable
         try {
             root = fxLoader.load();
             ExportWindowController controller = fxLoader.getController();
-            controller.setmodel(fcModel);
+            controller.setmodel(fcModel,modelData);
             exportWindow.getChildren().setAll(root);
         } catch (IOException ex) {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
@@ -174,7 +174,7 @@ public class LogViewController implements Initializable
         try {
             root = fxLoader.load();
             CustomDataWindowController controller = fxLoader.getController();
-            controller.setmodel(fcModel);
+            controller.setmodel(fcModel,modelData);
             exportWindow.getChildren().setAll(root);
         } catch (IOException ex) {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show CustomData");
@@ -185,11 +185,9 @@ public class LogViewController implements Initializable
     private void adminMenuSelect(ActionEvent event) {
     }
 
-    void setmodel(FilesConvertionModel fcModel) 
-    {
-        this.fcModel = fcModel;
-        this.modelData = modelData;
-    }
+    void setmodel(FilesConvertionModel fcModel, LoginDataModel modelData) {
+    this.fcModel = fcModel;
+        this.modelData = modelData; }
 
 
 }

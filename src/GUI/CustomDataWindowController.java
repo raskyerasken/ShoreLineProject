@@ -92,7 +92,7 @@ public class CustomDataWindowController implements Initializable
         try {
             root = fxLoader.load();
             MainWindowController controller = fxLoader.getController();
-            controller.setmodel(fcModel);
+            controller.setmodel(fcModel,modelData);
             customDataWindow.getChildren().setAll(root);
         } catch (IOException ex) {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show ImportView");
@@ -107,7 +107,7 @@ public class CustomDataWindowController implements Initializable
         try {
             root = fxLoader.load();
             ExportWindowController controller = fxLoader.getController();
-            controller.setmodel(fcModel);
+            controller.setmodel(fcModel,modelData);
             customDataWindow.getChildren().setAll(root);
         } catch (IOException ex) {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
@@ -121,7 +121,7 @@ public class CustomDataWindowController implements Initializable
         try {
             root = fxLoader.load();
             LogViewController controller = fxLoader.getController();
-            controller.setmodel(fcModel);
+            controller.setmodel(fcModel,modelData);
             customDataWindow.getChildren().setAll(root);
         } catch (IOException ex) {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show LogView");
@@ -176,7 +176,11 @@ public class CustomDataWindowController implements Initializable
         seePreview();
     }
     
-    void setmodel(LoginDataModel modelData) {
+    
+
+    void setmodel(FilesConvertionModel fcModel, LoginDataModel modelData) {
+  
+    
         this.modelData = modelData;
-    }
+    this.fcModel=fcModel;}
 }
