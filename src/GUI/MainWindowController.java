@@ -266,14 +266,9 @@ public class MainWindowController implements Initializable
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("AddUserView.fxml"));
             Parent root = fxLoader.load();
             AddUserViewController controller = fxLoader.getController();
-<<<<<<< HEAD
+
             controller.setmodel(fcModel,modelData);
-            
-=======
-            controller.setmodel(fcModel);
-            controller.modelData(modelData);
->>>>>>> c56ef3beb4600f008d052638cca2a88479b14f63
-            importWindow.getChildren().setAll(root);
+  importWindow.getChildren().setAll(root);
         } 
         catch (IOException ex) 
         {
@@ -281,8 +276,6 @@ public class MainWindowController implements Initializable
         }
     }
 
-<<<<<<< HEAD
-=======
     void modelData(LoginDataModel modelData) throws SQLException 
     {
         this.modelData = modelData;
@@ -297,7 +290,6 @@ public class MainWindowController implements Initializable
         taskField.setItems(fcModel.getFiles());
         isUserAdmin();
     }
->>>>>>> c56ef3beb4600f008d052638cca2a88479b14f63
 
     public String getTextNames() 
     {
