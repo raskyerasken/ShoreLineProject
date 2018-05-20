@@ -266,7 +266,7 @@ public class MainWindowController implements Initializable
             Parent root = fxLoader.load();
             AddUserViewController controller = fxLoader.getController();
             controller.setmodel(fcModel);
-            
+            controller.modelData(modelData);
             importWindow.getChildren().setAll(root);
         } 
         catch (IOException ex) 
@@ -279,6 +279,7 @@ public class MainWindowController implements Initializable
     {
         this.modelData = modelData;
         ul.setUserName(modelData.getUserLogin());
+        ul.setAccessLevel(modelData.getUserAccessLevel());
     }
 
     void setmodel(FilesConvertionModel fcModel) throws SQLException 

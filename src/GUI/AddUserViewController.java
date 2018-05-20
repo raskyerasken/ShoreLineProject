@@ -31,8 +31,8 @@ import javafx.scene.layout.AnchorPane;
  */
 public class AddUserViewController implements Initializable 
 {
-    LoginDataModel dataModel = new LoginDataModel();
-    UserLogin userLogin = new UserLogin();
+    LoginDataModel modelData = new LoginDataModel();
+    UserLogin ul = new UserLogin();
     BLLManagerUserLogin bllManagerul = new BLLManagerUserLogin();
     @FXML
     private CheckBox adminAccessLevelChckBox;
@@ -54,7 +54,7 @@ public class AddUserViewController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
-        System.out.println(dataModel.getUserAccessLevel());
+        System.out.println(modelData.getUserAccessLevel());
     }
 
     @FXML
@@ -66,7 +66,7 @@ public class AddUserViewController implements Initializable
             root = fxLoader.load();
             MainWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel);
-            controller.modelData(dataModel);
+            controller.modelData(modelData);
             addUser.getChildren().setAll(root);
         } 
         catch (IOException ex) 
@@ -125,6 +125,12 @@ public class AddUserViewController implements Initializable
         alert.setHeaderText(header);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+    
+    void modelData(LoginDataModel modelData) throws SQLException 
+    {
+        this.modelData = modelData;
+        ul.setAccessLevel(modelData.getUserAccessLevel());
     }
     
     void setmodel(FilesConvertionModel fcModel) throws SQLException 
