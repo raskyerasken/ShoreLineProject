@@ -5,6 +5,9 @@
  */
 package GUI;
 
+import GUI.Models.LoginDataModel;
+import GUI.Models.FilesConvertionModel;
+import GUI.Models.UpdateLogViewModel;
 import BE.UpdateLog;
 import BE.UserLogin;
 import static GUI.LogViewController.lines;
@@ -92,29 +95,34 @@ public class LogViewController implements Initializable
         
     }
 
-    private void addColumsToTableView() {
+    private void addColumsToTableView()
+    {
         userNameTable.setCellValueFactory(new PropertyValueFactory("Username"));
         timeTable.setCellValueFactory(new PropertyValueFactory("Datelog"));
         adjustment.setCellValueFactory(new PropertyValueFactory("Adjustment"));
         error.setCellValueFactory(new PropertyValueFactory("Error"));
     }
 
-    private void filterTableView() {
+    private void filterTableView() 
+    {
         FilteredList<UpdateLog> filteredData;
         filteredData = new FilteredList<>(model.getUpdateLogToList(), p -> true);
         searchTxt.textProperty().addListener((observable, oldValue, newValue)
                 -> {
             filteredData.setPredicate(updateLog
                     -> {
-                if (newValue == null || newValue.isEmpty()) {
+                if (newValue == null || newValue.isEmpty()) 
+                {
                     return true;
                 }
 
                 String lowerCaseFilter = newValue.toLowerCase();
 
-                if (updateLog.getUsername().toLowerCase().contains(lowerCaseFilter)) {
+                if (updateLog.getUsername().toLowerCase().contains(lowerCaseFilter)) 
+                {
                     return true;
-                } else if (updateLog.getDatelog().toString().contains(lowerCaseFilter)) {
+                } else if (updateLog.getDatelog().toString().contains(lowerCaseFilter)) 
+                {
                     return true; // Filter matches last name.
                 }
 
@@ -131,63 +139,103 @@ public class LogViewController implements Initializable
         LogView.setItems(sortedData);
     }
 
-    private void searchLogView() {
+    private void searchLogView() 
+    {
         filterTableView();
     }
 
-    private void displayLoginText() {
+    private void displayLoginText() 
+    {
         readUserLoginTxt();
     }
 
     @FXML
-    private void importMenuSelect(ActionEvent event) throws IOException, SQLException {
+    private void importMenuSelect(ActionEvent event) throws IOException, SQLException 
+    {
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/MainWindow.fxml"));
         Parent root;
-        try {
+        try 
+        {
             root = fxLoader.load();
             MainWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel,modelData);
             exportWindow.getChildren().setAll(root);
-        } catch (IOException ex) {
+        } 
+        catch (IOException ex)
+        {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show ImoportView");
         }
     }
 
     @FXML
-    private void exportMenuSelect(ActionEvent event) {
+    private void exportMenuSelect(ActionEvent event) throws SQLException 
+    {
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/ExportWindow.fxml"));
         Parent root;
-        try {
+        try 
+        {
             root = fxLoader.load();
             ExportWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel,modelData);
             exportWindow.getChildren().setAll(root);
-        } catch (IOException ex) {
+        } 
+        catch (IOException ex) 
+        {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
         }
     }
 
     @FXML
-    private void customDataMenuSelect(ActionEvent event) throws FileNotFoundException, ParseException {
+    private void customDataMenuSelect(ActionEvent event) throws FileNotFoundException, ParseException, SQLException 
+    {
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/CustomDataWindow.fxml"));
         Parent root;
-        try {
+        try 
+        {
             root = fxLoader.load();
             CustomDataWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel,modelData);
             exportWindow.getChildren().setAll(root);
-        } catch (IOException ex) {
+        } 
+        catch (IOException ex) 
+        {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show CustomData");
         }
     }
 
     @FXML
-    private void adminMenuSelect(ActionEvent event) {
+    private void adminMenuSelect(ActionEvent event) throws SQLException 
+    {
+        try 
+        {
+            FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("AddUserView.fxml"));
+            Parent root = fxLoader.load();
+            AddUserViewController controller = fxLoader.getController();
+            controller.setmodel(fcModel,modelData);
+            controller.setmodel(fcModel);
+            controller.modelData(modelData);
+            exportWindow.getChildren().setAll(root);
+        } 
+        catch (IOException ex) 
+        {
+            AlertWindow alert = new AlertWindow("IOException", null, "IOException");
+        }
     }
 
-    void setmodel(FilesConvertionModel fcModel, LoginDataModel modelData) {
-    this.fcModel = fcModel;
-        this.modelData = modelData; }
-
+    void setmodel(FilesConvertionModel fcModel, LoginDataModel modelData) throws SQLException 
+    {
+        this.fcModel = fcModel;
+        this.modelData = modelData; 
+        isUserAdmin();
+    }
+    
+    private void isUserAdmin() throws SQLException
+    {
+        System.out.println(modelData.getUserAccessLevel());
+        if (modelData.getUserAccessLevel() == true) 
+        {
+            adminButton.setVisible(true);
+        }
+    }
 
 }

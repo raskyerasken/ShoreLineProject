@@ -5,6 +5,8 @@
  */
 package GUI;
 
+import GUI.Models.LoginDataModel;
+import GUI.Models.FilesConvertionModel;
 import BE.UserLogin;
 import BLL.BLLManagerUserLogin;
 import com.jfoenix.controls.JFXPasswordField;
@@ -13,8 +15,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,13 +31,10 @@ import javafx.scene.layout.AnchorPane;
  */
 public class AddUserViewController implements Initializable 
 {
-<<<<<<< HEAD
     
     UserLogin userLogin = new UserLogin();
-=======
     LoginDataModel modelData = new LoginDataModel();
     UserLogin ul = new UserLogin();
->>>>>>> c56ef3beb4600f008d052638cca2a88479b14f63
     BLLManagerUserLogin bllManagerul = new BLLManagerUserLogin();
     @FXML
     private CheckBox adminAccessLevelChckBox;
@@ -52,7 +49,6 @@ public class AddUserViewController implements Initializable
     private FilesConvertionModel fcModel;
     @FXML
     private AnchorPane addUser;
-    private LoginDataModel modelData;
 
     /**
      * Initializes the controller class.
@@ -60,10 +56,7 @@ public class AddUserViewController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
-<<<<<<< HEAD
-=======
-        System.out.println(modelData.getUserAccessLevel());
->>>>>>> c56ef3beb4600f008d052638cca2a88479b14f63
+        
     }
 
     @FXML
@@ -74,12 +67,9 @@ public class AddUserViewController implements Initializable
         try {
             root = fxLoader.load();
             MainWindowController controller = fxLoader.getController();
-<<<<<<< HEAD
             controller.setmodel(fcModel,modelData);
-=======
             controller.setmodel(fcModel);
             controller.modelData(modelData);
->>>>>>> c56ef3beb4600f008d052638cca2a88479b14f63
             addUser.getChildren().setAll(root);
         } 
         catch (IOException ex) 
@@ -113,6 +103,7 @@ public class AddUserViewController implements Initializable
                     {
                         newUser.setAccessLevel(adminAccessLevelChckBox.isSelected());
                         bllManagerul.createNewUser(newUser);
+                        clearText();
                     } 
                     else 
                     {
@@ -130,6 +121,14 @@ public class AddUserViewController implements Initializable
             }
         }
     }
+    
+    private void clearText()
+    {
+        txtEmail.clear();
+        txtPassword.clear();
+        txtPasswordAgain.clear();
+        txtUsername.clear();
+    }
 
     private void showErrorDialog(String title, String header, String message) 
     {
@@ -144,6 +143,7 @@ public class AddUserViewController implements Initializable
     {
         this.modelData = modelData;
         ul.setAccessLevel(modelData.getUserAccessLevel());
+        System.out.println(modelData.getUserAccessLevel());
     }
     
     void setmodel(FilesConvertionModel fcModel) throws SQLException 
@@ -151,7 +151,8 @@ public class AddUserViewController implements Initializable
         this.fcModel = fcModel;
     }
 
-    void setmodel(FilesConvertionModel fcModel, LoginDataModel modelData) {
+    void setmodel(FilesConvertionModel fcModel, LoginDataModel modelData) 
+    {
          this.fcModel = fcModel;
          this.modelData= modelData;
     }

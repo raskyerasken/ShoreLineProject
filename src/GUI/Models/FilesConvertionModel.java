@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package GUI.Models;
 
 import BE.UpdateLog;
 import java.io.File;
@@ -21,9 +21,9 @@ import javafx.scene.control.TreeView;
  */
 public class FilesConvertionModel {
 
-    private ObservableList<File> allFiles
+    public ObservableList<File> allFiles
             = FXCollections.observableArrayList();
-    private ObservableList<TreeItem> treeFiles = FXCollections.observableArrayList();
+    public ObservableList<TreeItem> treeFiles = FXCollections.observableArrayList();
 
     void setFiles(ObservableList<File> filesAcceptet) {
 
@@ -31,41 +31,46 @@ public class FilesConvertionModel {
 
     }
 
-    ObservableList<File> getFiles() {
+    public ObservableList<File> getFiles() 
+    {
         return allFiles;
     }
 
-    void clearFiles() {
+    public void clearFiles() {
         allFiles.clear();
     }
 
-    void setTreeFiles(TreeItem<String> newFilesAdded) {
+    public void setTreeFiles(TreeItem<String> newFilesAdded) {
         treeFiles.add(newFilesAdded);
     }
 
-    ObservableList<TreeItem> getTreeFiles() {
+    public ObservableList<TreeItem> getTreeFiles() {
         return treeFiles;
     }
 
-    File getNextFile() {
-        if (allFiles.isEmpty()) {
+    public File getNextFile() 
+    {
+        if (allFiles.isEmpty()) 
+        {
             return null;
-        } else {
-
+        } 
+        else 
+        {
             File file = allFiles.get(0);
-
             return file;
         }
     }
 
-    void removeFile(File file) {
+    public void removeFile(File file) 
+    {
         allFiles.remove(file);
     }
 
-    void addFile(File file) {
+    public void addFile(File file) 
+    {
         allFiles.add(file);
     }
-    void AddAllFiles(ObservableList<File> filesAccepted) 
+    public void AddAllFiles(ObservableList<File> filesAccepted) 
     {
         allFiles.addAll(filesAccepted);
     }

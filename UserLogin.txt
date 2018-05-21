@@ -976,3 +976,15 @@ The user kris logged in.    Date: 2018/05/20 21:54:58
 The user kris logged in.    Date: 2018/05/20 21:56:21
 The user kris logged in.    Date: 2018/05/20 21:56:57
 >>>>>>> c56ef3beb4600f008d052638cca2a88479b14f63
+The user Jacob logged in.    Date: 2018/05/20 22:09:57
+The user Jacob logged in.    Date: 2018/05/20 22:10:44
+The user Jacob logged in.    Date: 2018/05/20 22:12:11
+The user Jacob logged in.    Date: 2018/05/20 22:12:24
+The user Jacob logged in.    Date: 2018/05/20 22:16:01
+The user Jacob logged in.    Date: 2018/05/20 22:19:16
+The user Jacob logged in.    Date: 2018/05/20 22:22:20
+The user Jacob logged in.    Date: 2018/05/21 12:40:14
+The user Jacob logged in.    Date: 2018/05/21 12:43:21
+The user Jacob logged in.    Date: 2018/05/21 12:47:34
+The user Jacob logged in.    Date: 2018/05/21 12:54:07
+The user Jacob logged in.    Date: 2018/05/21 13:07:12

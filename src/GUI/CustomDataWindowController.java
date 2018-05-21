@@ -5,6 +5,8 @@
  */
 package GUI;
 
+import GUI.Models.LoginDataModel;
+import GUI.Models.FilesConvertionModel;
 import java.awt.Checkbox;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -101,7 +103,7 @@ public class CustomDataWindowController implements Initializable
     }
     
     @FXML
-    private void exportMenuSelect(Event event) {
+    private void exportMenuSelect(Event event) throws SQLException {
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/ExportWindow.fxml"));
         Parent root;
         try {
@@ -115,7 +117,7 @@ public class CustomDataWindowController implements Initializable
     }
     
     @FXML
-    private void logMenuSelect(Event event) {
+    private void logMenuSelect(Event event) throws SQLException {
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/LogView.fxml"));
         Parent root;
         try {
@@ -129,8 +131,22 @@ public class CustomDataWindowController implements Initializable
     }
     
     @FXML
-    private void adminMenuSelect(ActionEvent event) {
-        
+    private void adminMenuSelect(ActionEvent event) throws SQLException 
+    {
+        try 
+        {
+            FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("AddUserView.fxml"));
+            Parent root = fxLoader.load();
+            AddUserViewController controller = fxLoader.getController();
+            controller.setmodel(fcModel,modelData);
+            controller.setmodel(fcModel);
+            controller.modelData(modelData);
+            customDataWindow.getChildren().setAll(root);
+        } 
+        catch (IOException ex) 
+        {
+            AlertWindow alert = new AlertWindow("IOException", null, "IOException");
+        }
     }
     
     void seePreview() {
@@ -174,13 +190,21 @@ public class CustomDataWindowController implements Initializable
     private void preview(ActionEvent event) 
     {
         seePreview();
+    } 
+    
+    void setmodel(FilesConvertionModel fcModel, LoginDataModel modelData) throws SQLException 
+    {
+        this.modelData = modelData;
+        this.fcModel=fcModel;
+        isUserAdmin();
     }
     
-    
-
-    void setmodel(FilesConvertionModel fcModel, LoginDataModel modelData) {
-  
-    
-        this.modelData = modelData;
-    this.fcModel=fcModel;}
+    private void isUserAdmin() throws SQLException
+    {
+        System.out.println(modelData.getUserAccessLevel());
+        if (modelData.getUserAccessLevel() == true) 
+        {
+            adminButton.setVisible(true);
+        }
+    }
 }

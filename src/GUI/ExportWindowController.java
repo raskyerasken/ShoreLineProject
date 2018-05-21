@@ -5,6 +5,8 @@
  */
 package GUI;
 
+import GUI.Models.LoginDataModel;
+import GUI.Models.FilesConvertionModel;
 import BE.UpdateLog;
 import BLL.BLLManagerUpdateLog;
 import BLL.ReadingXLSX;
@@ -125,7 +127,7 @@ public class ExportWindowController implements Initializable {
     }
 
     @FXML
-    private void customDataMenuSelect(Event event) throws FileNotFoundException, ParseException {
+    private void customDataMenuSelect(Event event) throws FileNotFoundException, ParseException, SQLException {
 
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/CustomDataWindow.fxml"));
         Parent root;
@@ -140,7 +142,7 @@ public class ExportWindowController implements Initializable {
     }
 
     @FXML
-    private void logMenuSelect(Event event) 
+    private void logMenuSelect(Event event) throws SQLException 
     {
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/LogView.fxml"));
         Parent root;
@@ -155,9 +157,22 @@ public class ExportWindowController implements Initializable {
     }
 
     @FXML
-    private void adminMenuSelect(ActionEvent event) 
+    private void adminMenuSelect(ActionEvent event) throws SQLException 
     {
-
+        try 
+        {
+            FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("AddUserView.fxml"));
+            Parent root = fxLoader.load();
+            AddUserViewController controller = fxLoader.getController();
+            controller.setmodel(fcModel,modelData);
+            controller.setmodel(fcModel);
+            controller.modelData(modelData);
+            exportWindow.getChildren().setAll(root);
+        } 
+        catch (IOException ex) 
+        {
+            AlertWindow alert = new AlertWindow("IOException", null, "IOException");
+        }
     }
 
     private void updateLog() {
@@ -176,7 +191,8 @@ public class ExportWindowController implements Initializable {
             List<File> progressFileList = new ArrayList<File>(fcModel.getFiles());
             filesConvertedCount = 0;
             allsize = progressFileList.size();
-            for (File file : progressFileList) {
+            for (File file : progressFileList) 
+            {
 
                 try 
                 {
@@ -200,12 +216,16 @@ public class ExportWindowController implements Initializable {
                     fileWriter.close();
 
                     filesConvertedCount++;
-                } catch (IOException ex) {
+                } 
+                catch (IOException ex) 
+                {
                     updateLog.setError(true);
                     updateLog.setAdjustment("File not support yet: " + file);
 
                     updateLog();
-                } catch (ParseException | IllegalArgumentException | IllegalAccessException | JSONException ex) {
+                } 
+                catch (ParseException | IllegalArgumentException | IllegalAccessException | JSONException ex) 
+                {
                     updateLog.setError(true);
                     updateLog.setAdjustment("Files Conversion wrong: " + file);
                     updateLog();
@@ -269,10 +289,20 @@ public class ExportWindowController implements Initializable {
     }
 
 
-    void setmodel(FilesConvertionModel fcModel, LoginDataModel modelData) {
-    this.fcModel = fcModel;
+    void setmodel(FilesConvertionModel fcModel, LoginDataModel modelData) throws SQLException 
+    {
+        this.fcModel = fcModel;
         taskField.setItems(fcModel.getFiles());
         this.modelData = modelData;
+        isUserAdmin();
     }
-
+    
+    private void isUserAdmin() throws SQLException
+    {
+        System.out.println(modelData.getUserAccessLevel());
+        if (modelData.getUserAccessLevel() == true) 
+        {
+            adminButton.setVisible(true);
+        }
+    }
 }

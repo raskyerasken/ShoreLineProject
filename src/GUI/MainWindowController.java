@@ -5,6 +5,8 @@
  */
 package GUI;
 
+import GUI.Models.LoginDataModel;
+import GUI.Models.FilesConvertionModel;
 import BE.UpdateLog;
 import BE.UserLogin;
 import BLL.BLLManagerUpdateLog;
@@ -96,7 +98,6 @@ public class MainWindowController implements Initializable
         importbtn.setDisable(true);
         progressBar.setVisible(false);
         adminButton.setVisible(false);
-        
     }
 
     @FXML
@@ -196,7 +197,7 @@ public class MainWindowController implements Initializable
 
 
     @FXML
-    private void exportMenuSelect(Event event)
+    private void exportMenuSelect(Event event) throws SQLException
     {
         try 
         {
@@ -214,7 +215,7 @@ public class MainWindowController implements Initializable
     }
 
     @FXML
-    private void customDataMenuSelect(Event event) throws FileNotFoundException, ParseException 
+    private void customDataMenuSelect(Event event) throws FileNotFoundException, ParseException, SQLException 
     {
         try 
         {
@@ -231,7 +232,7 @@ public class MainWindowController implements Initializable
     }
 
     @FXML
-    private void logMenuSelect(Event event) 
+    private void logMenuSelect(Event event) throws SQLException 
     {
         try 
         {
@@ -266,13 +267,9 @@ public class MainWindowController implements Initializable
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("AddUserView.fxml"));
             Parent root = fxLoader.load();
             AddUserViewController controller = fxLoader.getController();
-<<<<<<< HEAD
             controller.setmodel(fcModel,modelData);
-            
-=======
             controller.setmodel(fcModel);
             controller.modelData(modelData);
->>>>>>> c56ef3beb4600f008d052638cca2a88479b14f63
             importWindow.getChildren().setAll(root);
         } 
         catch (IOException ex) 
@@ -281,23 +278,6 @@ public class MainWindowController implements Initializable
         }
     }
 
-<<<<<<< HEAD
-=======
-    void modelData(LoginDataModel modelData) throws SQLException 
-    {
-        this.modelData = modelData;
-        ul.setUserName(modelData.getUserLogin());
-        ul.setAccessLevel(modelData.getUserAccessLevel());
-    }
-
-    void setmodel(FilesConvertionModel fcModel) throws SQLException 
-    {
-        this.fcModel = fcModel;
-        taskField.getItems().clear();
-        taskField.setItems(fcModel.getFiles());
-        isUserAdmin();
-    }
->>>>>>> c56ef3beb4600f008d052638cca2a88479b14f63
 
     public String getTextNames() 
     {
@@ -315,13 +295,30 @@ public class MainWindowController implements Initializable
     }
 
 
-    void setmodel(FilesConvertionModel fcModel, LoginDataModel modelData) throws SQLException {
-    this.fcModel = fcModel;
+    void setmodel(FilesConvertionModel fcModel, LoginDataModel modelData) throws SQLException 
+    {
+        this.fcModel = fcModel;
         taskField.getItems().clear();
         taskField.setItems(fcModel.getFiles());
         this.modelData = modelData;
         isUserAdmin();
         
         System.out.println("hey"+modelData.getUserAccessLevel());
-        ul.setUserName(modelData.getUserLogin());}
+        ul.setUserName(modelData.getUserLogin());
+    }
+    
+        void modelData(LoginDataModel modelData) throws SQLException 
+    {
+        this.modelData = modelData;
+        ul.setUserName(modelData.getUserLogin());
+        ul.setAccessLevel(modelData.getUserAccessLevel());
+    }
+
+    void setmodel(FilesConvertionModel fcModel) throws SQLException 
+    {
+        this.fcModel = fcModel;
+        taskField.getItems().clear();
+        taskField.setItems(fcModel.getFiles());
+        isUserAdmin();
+    }
 }
