@@ -58,27 +58,8 @@ public class AddUserViewController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
-        RequiredFieldValidator validator = new RequiredFieldValidator();
-        txtUsername.getValidators().add(validator);
-        txtEmail.getValidators().add(validator);
-        txtPassword.getValidators().add(validator);
-        txtPasswordAgain.getValidators().add(validator);
-        validator.setMessage("Required to fill in this text field.");
-        txtUsername.focusedProperty().addListener(new ChangeListener<Boolean>() 
-        {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) 
-            {
-                if (oldValue) 
-                {
-                    txtUsername.validate();
-                    txtEmail.validate();
-                    txtPassword.validate();
-                    txtPasswordAgain.validate();
-                }
-            }
-        
-        });
+        validatorMessages();
+        validators();
     }
 
     @FXML
@@ -178,5 +159,75 @@ public class AddUserViewController implements Initializable
     {
          this.fcModel = fcModel;
          this.modelData= modelData;
+    }
+    
+    private void validators()
+    {
+        txtUsername.focusedProperty().addListener(new ChangeListener<Boolean>() 
+        {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) 
+            {
+                if (oldValue) 
+                {
+                    txtUsername.validate();
+                }
+            }
+        });
+        
+        txtEmail.focusedProperty().addListener(new ChangeListener<Boolean>() 
+        {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) 
+            {
+                if (oldValue) 
+                {
+                    txtEmail.validate();
+                }
+            }
+        });
+        
+        txtPassword.focusedProperty().addListener(new ChangeListener<Boolean>() 
+        {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) 
+            {
+                if (oldValue) 
+                {
+                    txtPassword.validate();
+                }
+            }
+        });
+                
+        txtPasswordAgain.focusedProperty().addListener(new ChangeListener<Boolean>() 
+        {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) 
+            {
+                if (oldValue) 
+                {
+                    txtPasswordAgain.validate();
+                }
+            }
+        });
+
+    }
+    
+    private void validatorMessages()
+    {
+        RequiredFieldValidator validator = new RequiredFieldValidator();
+        RequiredFieldValidator validator2 = new RequiredFieldValidator();
+        RequiredFieldValidator validator3 = new RequiredFieldValidator();
+        RequiredFieldValidator validator4 = new RequiredFieldValidator();
+        
+        validator.setMessage("Field input required");
+        validator2.setMessage("Field input required");
+        validator3.setMessage("Field input required");
+        validator4.setMessage("Field input required");
+        
+        txtUsername.getValidators().add(validator);
+        txtEmail.getValidators().add(validator2);
+        txtPassword.getValidators().add(validator3);
+        txtPasswordAgain.getValidators().add(validator4);
     }
 }
