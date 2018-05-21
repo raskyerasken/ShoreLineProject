@@ -95,6 +95,10 @@ public class ExportWindowController implements Initializable {
         ConversionProcessController controller= fxLoader.getController();
         controller.setmodel(fcModel,modelData);
         Scene scene = new Scene(root);
+        newStage.setResizable(false);
+        newStage.setTitle("Conversion Process");
+        newStage.setX(1280);
+        newStage.setY(180);
         newStage.setScene(scene);
         newStage.show();
     }

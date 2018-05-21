@@ -29,10 +29,19 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
+import org.apache.poi.ss.usermodel.Font;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -73,6 +82,7 @@ public class ConversionProcessController implements Initializable
     {
         setButtonsInvisible();
         conversionProgress();
+        
     }    
 
     @FXML
@@ -91,7 +101,21 @@ public class ConversionProcessController implements Initializable
     private void stopTask(ActionEvent event) 
     {
         threading.stop();
-        setButtonsInvisible();
+        closeWindowWhenProcessisDone();
+    }
+    
+    private void closeStage() throws SQLException, IOException
+    {
+        if (conversionSuccess == false) 
+        {
+            
+            FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/ConversionProcess.fxml"));
+            Parent root = fxLoader.load();
+            Scene scene = new Scene(root);
+            System.out.println("wwwww");
+            Stage stage = (Stage) pauseTaskThread.getScene().getWindow();
+            stage.close();
+        }
     }
     
     private void conversionProgress()
@@ -103,7 +127,6 @@ public class ConversionProcessController implements Initializable
             allsize = progressFileList.size();
             for (File file : progressFileList) 
             {
-
                 try 
                 {
                     threading = Thread.currentThread();
@@ -117,14 +140,12 @@ public class ConversionProcessController implements Initializable
                     {
                         fileWriter.write(jSONObject.toString(4));
                     }
-                    conversionSuccess = false;
+                    
                     addDataToLog();
                     updateLog.setError(false);
                     updateLog.setAdjustment("Conversion done: " + file);
-                    //addToLog();
                     fileWriter.flush();
                     fileWriter.close();
-
                     filesConvertedCount++;
                 } 
                 catch (IOException ex) 
@@ -151,11 +172,12 @@ public class ConversionProcessController implements Initializable
                     progressBar.setProgress(filesConvertedCount / allsize);
                     if (fcModel.getFiles().isEmpty()) 
                     {
-                        progressBar.setVisible(false);
+                        setButtonsInvisible();
+                        closeWindowWhenProcessisDone();
                     }
                 });
             }          
-            updateLog.setAdjustment("Converted: ");
+            updateLog.setAdjustment("Converted: " + progressFileList.toString().toUpperCase());
             System.out.println(progressFileList);
             addDataToLog();
                                 try 
@@ -206,5 +228,9 @@ public class ConversionProcessController implements Initializable
         taskField.setItems(fcModel.getFiles());
         this.modelData = modelData;
     }
-    
+    private void closeWindowWhenProcessisDone()
+    {
+        Stage stage = (Stage) pauseTaskThread.getScene().getWindow();
+        stage.close();
+    }
 }
