@@ -267,16 +267,10 @@ public class MainWindowController implements Initializable
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("AddUserView.fxml"));
             Parent root = fxLoader.load();
             AddUserViewController controller = fxLoader.getController();
-<<<<<<< HEAD
             controller.setmodel(fcModel,modelData);
             controller.setmodel(fcModel);
             controller.modelData(modelData);
             importWindow.getChildren().setAll(root);
-=======
-
-            controller.setmodel(fcModel,modelData);
-  importWindow.getChildren().setAll(root);
->>>>>>> 384dcbe80eace81939be02b53012de8b8cb636b8
         } 
         catch (IOException ex) 
         {
@@ -284,8 +278,6 @@ public class MainWindowController implements Initializable
         }
     }
 
-<<<<<<< HEAD
-=======
     void modelData(LoginDataModel modelData) throws SQLException 
     {
         this.modelData = modelData;
@@ -300,7 +292,6 @@ public class MainWindowController implements Initializable
         taskField.setItems(fcModel.getFiles());
         isUserAdmin();
     }
->>>>>>> 384dcbe80eace81939be02b53012de8b8cb636b8
 
     public String getTextNames() 
     {
@@ -328,20 +319,5 @@ public class MainWindowController implements Initializable
         
         System.out.println("hey"+modelData.getUserAccessLevel());
         ul.setUserName(modelData.getUserLogin());
-    }
-    
-        void modelData(LoginDataModel modelData) throws SQLException 
-    {
-        this.modelData = modelData;
-        ul.setUserName(modelData.getUserLogin());
-        ul.setAccessLevel(modelData.getUserAccessLevel());
-    }
-
-    void setmodel(FilesConvertionModel fcModel) throws SQLException 
-    {
-        this.fcModel = fcModel;
-        taskField.getItems().clear();
-        taskField.setItems(fcModel.getFiles());
-        isUserAdmin();
     }
 }

@@ -31,14 +31,9 @@ import javafx.scene.layout.AnchorPane;
  */
 public class AddUserViewController implements Initializable 
 {
-<<<<<<< HEAD
     
     UserLogin userLogin = new UserLogin();
     LoginDataModel modelData = new LoginDataModel();
-=======
-    UserLogin userLogin = new UserLogin();
->>>>>>> 384dcbe80eace81939be02b53012de8b8cb636b8
-    UserLogin ul = new UserLogin();
     BLLManagerUserLogin bllManagerul = new BLLManagerUserLogin();
     @FXML
     private CheckBox adminAccessLevelChckBox;
@@ -60,10 +55,7 @@ public class AddUserViewController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
-<<<<<<< HEAD
         
-=======
->>>>>>> 384dcbe80eace81939be02b53012de8b8cb636b8
     }
 
     @FXML
@@ -74,14 +66,10 @@ public class AddUserViewController implements Initializable
         try {
             root = fxLoader.load();
             MainWindowController controller = fxLoader.getController();
-<<<<<<< HEAD
             controller.setmodel(fcModel,modelData);
             controller.setmodel(fcModel);
             controller.modelData(modelData);
-=======
-controller.setmodel(fcModel,modelData);
-
->>>>>>> 384dcbe80eace81939be02b53012de8b8cb636b8
+            controller.setmodel(fcModel,modelData);
             addUser.getChildren().setAll(root);
         } 
         catch (IOException ex) 
@@ -154,7 +142,7 @@ controller.setmodel(fcModel,modelData);
     void modelData(LoginDataModel modelData) throws SQLException 
     {
         this.modelData = modelData;
-        ul.setAccessLevel(modelData.getUserAccessLevel());
+        userLogin.setAccessLevel(modelData.getUserAccessLevel());
         System.out.println(modelData.getUserAccessLevel());
     }
     
