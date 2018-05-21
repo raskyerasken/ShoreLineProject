@@ -11,10 +11,13 @@ import BE.UserLogin;
 import BLL.BLLManagerUserLogin;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import com.jfoenix.validation.RequiredFieldValidator;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -55,7 +58,27 @@ public class AddUserViewController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
+        RequiredFieldValidator validator = new RequiredFieldValidator();
+        txtUsername.getValidators().add(validator);
+        txtEmail.getValidators().add(validator);
+        txtPassword.getValidators().add(validator);
+        txtPasswordAgain.getValidators().add(validator);
+        validator.setMessage("Required to fill in this text field.");
+        txtUsername.focusedProperty().addListener(new ChangeListener<Boolean>() 
+        {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) 
+            {
+                if (oldValue) 
+                {
+                    txtUsername.validate();
+                    txtEmail.validate();
+                    txtPassword.validate();
+                    txtPasswordAgain.validate();
+                }
+            }
         
+        });
     }
 
     @FXML

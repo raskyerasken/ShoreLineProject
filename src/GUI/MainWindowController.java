@@ -35,6 +35,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.CheckBoxTreeItem;
@@ -62,8 +63,6 @@ public class MainWindowController implements Initializable
     String[] acceptedFiles = {".xlsx"};
     List<File> files;
     @FXML
-    private Label taskXRun;
-    @FXML
     private ListView<File> taskField;
 
     public String selectedDocument = "C:\\Users\\jacob\\Desktop\\Import_data.xlsx";
@@ -80,15 +79,8 @@ public class MainWindowController implements Initializable
     public ObservableList<File> fileNames
             = FXCollections.observableArrayList();
     CustomDataWindowController cdwc = new CustomDataWindowController();
-    @FXML
     private JFXProgressBar progressBar;
-    @FXML
-    private JFXButton pauseTaskThread;
-    @FXML
-    private JFXButton stopTaskThread;
     ReadingXLSX XLSX = null;
-    @FXML
-    private JFXButton startTaskThead;
     @FXML
     private Button adminButton;
 
@@ -96,7 +88,6 @@ public class MainWindowController implements Initializable
     public void initialize(URL url, ResourceBundle rb) 
     {
         importbtn.setDisable(true);
-        progressBar.setVisible(false);
         adminButton.setVisible(false);
     }
 
@@ -171,23 +162,6 @@ public class MainWindowController implements Initializable
 
     }
 
-    @FXML
-    private void startTask(ActionEvent event) 
-    {
-
-    }
-
-    @FXML
-    private void pauseTask(ActionEvent event) 
-    {
-
-    }
-
-    @FXML
-    private void stopTask(ActionEvent event) 
-    {
-
-    }
 
     void stageToFront() 
     {
@@ -205,7 +179,8 @@ public class MainWindowController implements Initializable
             Parent root = fxLoader.load();
             ExportWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel,modelData);
-           
+            
+            Scene scene = new Scene(root);
             importWindow.getChildren().setAll(root);
         } 
         catch (IOException ex) 

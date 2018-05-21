@@ -125,9 +125,8 @@ public class LoginViewController implements Initializable
             controller.setmodel(fcModel,modelData);
             
             Scene scene = new Scene(root);
-            newStage.setResizable(false);
+//            newStage.setResizable(false);
             newStage.setScene(scene);
-            newStage.setFullScreen(true);
             newStage.show();
             Stage stage = (Stage) userNameID.getScene().getWindow();
             stage.close();

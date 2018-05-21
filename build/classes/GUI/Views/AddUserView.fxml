@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="addUser" prefHeight="283.0" prefWidth="317.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AddUserViewController">
+<AnchorPane id="AnchorPane" fx:id="addUser" prefHeight="283.0" prefWidth="317.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AddUserViewController">
    <children>
       <Label layoutX="27.0" layoutY="61.0" text="Username" />
       <Label layoutX="53.0" layoutY="14.0" text="Create account" AnchorPane.leftAnchor="53.0" AnchorPane.rightAnchor="31.0">
@@ -19,12 +19,12 @@
       <Label layoutX="28.0" layoutY="94.0" text="Password" />
       <Label layoutX="27.0" layoutY="131.0" text="Password again" />
       <Label layoutX="27.0" layoutY="169.0" text="Email" />
-      <JFXTextField fx:id="txtUsername" layoutX="137.0" layoutY="57.0" promptText="Username" />
-      <JFXTextField fx:id="txtEmail" layoutX="137.0" layoutY="165.0" promptText="Email" />
+      <JFXTextField fx:id="txtUsername" labelFloat="true" layoutX="137.0" layoutY="57.0" promptText="Username" />
+      <JFXTextField fx:id="txtEmail" labelFloat="true" layoutX="137.0" layoutY="165.0" promptText="Email" />
       <JFXButton layoutX="16.0" layoutY="244.0" onAction="#goBack" text="Go Back" />
       <JFXButton layoutX="190.0" layoutY="244.0" onAction="#CreateAccount" text="Create account" />
-      <JFXPasswordField fx:id="txtPassword" layoutX="137.0" layoutY="90.0" promptText="Password" />
-      <JFXPasswordField fx:id="txtPasswordAgain" layoutX="137.0" layoutY="129.0" promptText="Password" />
+      <JFXPasswordField fx:id="txtPassword" labelFloat="true" layoutX="137.0" layoutY="90.0" promptText="Password" />
+      <JFXPasswordField fx:id="txtPasswordAgain" labelFloat="true" layoutX="137.0" layoutY="129.0" promptText="Password" />
       <JFXCheckBox fx:id="adminAccessLevelChckBox" layoutX="173.0" layoutY="213.0" text="Admin access" />
    </children>
 </AnchorPane>
