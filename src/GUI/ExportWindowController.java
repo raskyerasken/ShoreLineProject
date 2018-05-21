@@ -35,6 +35,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
@@ -84,7 +85,20 @@ public class ExportWindowController implements Initializable {
         btnExport.setDisable(true);
         setButtonsInvisible();
     }
-
+    
+     @FXML
+    private void convertData(ActionEvent event) throws JSONException, SQLException, IOException 
+    {
+        Stage newStage = new Stage();
+        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("ConversionProcess.fxml"));
+        Parent root = fxLoader.load();
+        ConversionProcessController controller= fxLoader.getController();
+        controller.setmodel(fcModel,modelData);
+        Scene scene = new Scene(root);
+        newStage.setScene(scene);
+        newStage.show();
+    }
+    
     @FXML
     private void startTask(ActionEvent event) 
     {
@@ -114,15 +128,19 @@ public class ExportWindowController implements Initializable {
     }
 
     @FXML
-    private void importMenuSelect(Event event) throws SQLException {
+    private void importMenuSelect(Event event) throws SQLException 
+    {
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/MainWindow.fxml"));
         Parent root;
-        try {
+        try 
+        {
             root = fxLoader.load();
             MainWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel,modelData);
             exportWindow.getChildren().setAll(root);
-        } catch (IOException ex) {
+        } 
+        catch (IOException ex) 
+        {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show ImportView");
         }
     }
@@ -132,12 +150,15 @@ public class ExportWindowController implements Initializable {
 
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/CustomDataWindow.fxml"));
         Parent root;
-        try {
+        try 
+        {
             root = fxLoader.load();
             CustomDataWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel,modelData);
             exportWindow.getChildren().setAll(root);
-        } catch (IOException ex) {
+        } 
+        catch (IOException ex) 
+        {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show CustumData");
         }
     }
@@ -147,12 +168,15 @@ public class ExportWindowController implements Initializable {
     {
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/LogView.fxml"));
         Parent root;
-        try {
+        try 
+        {
             root = fxLoader.load();
             LogViewController controller = fxLoader.getController();
             controller.setmodel(fcModel,modelData);
             exportWindow.getChildren().setAll(root);
-        } catch (IOException ex) {
+        } 
+        catch (IOException ex) 
+        {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Logmenu");
         }
     }
@@ -176,16 +200,66 @@ public class ExportWindowController implements Initializable {
         }
     }
 
-    private void updateLog() {
-        try {
+    private void updateLog() 
+    {
+        try 
+        {
             up.setUpdateLog(updateLog);
-        } catch (SQLException ex) {
+        } 
+        catch (SQLException ex)
+        {
             Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
+    private void addToLog() throws SQLException {
+
+        java.util.Date utilDate = new java.util.Date();
+        Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
+        java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
+
+        updateLog.setUsername(modelData.getUserLogin());
+        updateLog.setDatelog(sqlDate);
+
+        updateLog.setError(suspended);
+        up.setUpdateLog(updateLog);
+
+    }
+
+    private void addDataToLog() 
+    {
+        Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
+        java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
+
+        updateLog.setUsername(modelData.getUserLogin());
+        updateLog.setDatelog(sqlDate);
+        updateLog.setError(conversionSuccess);
+    }
+
     @FXML
-    private void convertData(ActionEvent event) throws JSONException 
+    private void saveData(ActionEvent event) {
+
+    }
+
+
+    void setmodel(FilesConvertionModel fcModel, LoginDataModel modelData) throws SQLException 
+    {
+        this.fcModel = fcModel;
+        taskField.setItems(fcModel.getFiles());
+        this.modelData = modelData;
+        isUserAdmin();
+    }
+    
+    private void isUserAdmin() throws SQLException
+    {
+        System.out.println(modelData.getUserAccessLevel());
+        if (modelData.getUserAccessLevel() == true) 
+        {
+            adminButton.setVisible(true);
+        }
+    }
+    
+    private void oldConverter()
     {
         com = CompletableFuture.runAsync(() -> 
         {
@@ -259,51 +333,5 @@ public class ExportWindowController implements Initializable {
                 Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
             }
         });          
-    }
-
-    private void addToLog() throws SQLException {
-
-        java.util.Date utilDate = new java.util.Date();
-        Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
-        java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
-
-        updateLog.setUsername(modelData.getUserLogin());
-        updateLog.setDatelog(sqlDate);
-
-        updateLog.setError(suspended);
-        up.setUpdateLog(updateLog);
-
-    }
-
-    private void addDataToLog() {
-        Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
-        java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
-
-        updateLog.setUsername(modelData.getUserLogin());
-        updateLog.setDatelog(sqlDate);
-        updateLog.setError(conversionSuccess);
-    }
-
-    @FXML
-    private void saveData(ActionEvent event) {
-
-    }
-
-
-    void setmodel(FilesConvertionModel fcModel, LoginDataModel modelData) throws SQLException 
-    {
-        this.fcModel = fcModel;
-        taskField.setItems(fcModel.getFiles());
-        this.modelData = modelData;
-        isUserAdmin();
-    }
-    
-    private void isUserAdmin() throws SQLException
-    {
-        System.out.println(modelData.getUserAccessLevel());
-        if (modelData.getUserAccessLevel() == true) 
-        {
-            adminButton.setVisible(true);
-        }
     }
 }

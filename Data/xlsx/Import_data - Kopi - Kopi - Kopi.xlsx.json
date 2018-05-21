@@ -2,9 +2,9 @@
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "0.0",
-        "latestFinishDate": "10-okt.-2016",
-        "earliestStartDate": "10-okt.-2016",
-        "latestStartDate": "10-okt.-2016"
+        "latestFinishDate": "10-Oct-2016",
+        "earliestStartDate": "10-Oct-2016",
+        "latestStartDate": "10-Oct-2016"
     },
     "userStatus": "ZBNQ PERF RECV ZBCC",
     "createdBy": "SAP",
@@ -14,15 +14,15 @@
     "externalWorkOrderId": "12345678",
     "type": "ZCS5",
     "priority": "Low",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "2.0",
-        "latestFinishDate": "13-jun.-2017",
-        "earliestStartDate": "14-jun.-2017",
-        "latestStartDate": "13-jun.-2017"
+        "latestFinishDate": "13-Jun-2017",
+        "earliestStartDate": "14-Jun-2017",
+        "latestStartDate": "13-Jun-2017"
     },
     "userStatus": "ZBNQ",
     "createdBy": "SAP",
@@ -32,15 +32,15 @@
     "externalWorkOrderId": "12345679",
     "type": "ZCS5",
     "priority": "Low",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "2.0",
-        "latestFinishDate": "13-jun.-2017",
-        "earliestStartDate": "14-jun.-2017",
-        "latestStartDate": "13-jun.-2017"
+        "latestFinishDate": "13-Jun-2017",
+        "earliestStartDate": "14-Jun-2017",
+        "latestStartDate": "13-Jun-2017"
     },
     "userStatus": "ZBNQ",
     "createdBy": "SAP",
@@ -50,15 +50,15 @@
     "externalWorkOrderId": "12345680",
     "type": "ZCS5",
     "priority": "Low",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "2.0",
-        "latestFinishDate": "03-jul.-2017",
-        "earliestStartDate": "03-jul.-2017",
-        "latestStartDate": "03-jul.-2017"
+        "latestFinishDate": "03-Jul-2017",
+        "earliestStartDate": "03-Jul-2017",
+        "latestStartDate": "03-Jul-2017"
     },
     "userStatus": "ZBNQ PERF RFCO",
     "createdBy": "SAP",
@@ -68,15 +68,15 @@
     "externalWorkOrderId": "12345681",
     "type": "ZCS5",
     "priority": "Low",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "2.0",
-        "latestFinishDate": "07-jul.-2017",
-        "earliestStartDate": "07-jul.-2017",
-        "latestStartDate": "07-jul.-2017"
+        "latestFinishDate": "07-Jul-2017",
+        "earliestStartDate": "07-Jul-2017",
+        "latestStartDate": "07-Jul-2017"
     },
     "userStatus": "ZBNQ CLAR PERF ZBMC",
     "createdBy": "SAP",
@@ -86,15 +86,15 @@
     "externalWorkOrderId": "12345682",
     "type": "ZCS5",
     "priority": "Low",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "2.0",
-        "latestFinishDate": "15-jul.-2017",
-        "earliestStartDate": "14-jul.-2017",
-        "latestStartDate": "14-jul.-2017"
+        "latestFinishDate": "15-Jul-2017",
+        "earliestStartDate": "14-Jul-2017",
+        "latestStartDate": "14-Jul-2017"
     },
     "userStatus": "ZBNQ PERF RFCO ZBMC",
     "createdBy": "SAP",
@@ -104,15 +104,15 @@
     "externalWorkOrderId": "12345683",
     "type": "ZCS5",
     "priority": "Low",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "2.0",
-        "latestFinishDate": "15-jul.-2017",
-        "earliestStartDate": "14-jul.-2017",
-        "latestStartDate": "14-jul.-2017"
+        "latestFinishDate": "15-Jul-2017",
+        "earliestStartDate": "14-Jul-2017",
+        "latestStartDate": "14-Jul-2017"
     },
     "userStatus": "ZBNQ PERF RFCO ZBMC",
     "createdBy": "SAP",
@@ -122,15 +122,15 @@
     "externalWorkOrderId": "12345684",
     "type": "ZCS5",
     "priority": "Low",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "2.0",
-        "latestFinishDate": "21-jul.-2017",
-        "earliestStartDate": "21-jul.-2017",
-        "latestStartDate": "21-jul.-2017"
+        "latestFinishDate": "21-Jul-2017",
+        "earliestStartDate": "21-Jul-2017",
+        "latestStartDate": "21-Jul-2017"
     },
     "userStatus": "ZBNQ PERF RFCO ZBMC",
     "createdBy": "SAP",
@@ -140,15 +140,15 @@
     "externalWorkOrderId": "12345685",
     "type": "ZCS5",
     "priority": "2",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "2.0",
-        "latestFinishDate": "25-jul.-2017",
-        "earliestStartDate": "25-jul.-2017",
-        "latestStartDate": "25-jul.-2017"
+        "latestFinishDate": "25-Jul-2017",
+        "earliestStartDate": "25-Jul-2017",
+        "latestStartDate": "25-Jul-2017"
     },
     "userStatus": "ZBNQ CLAR PERF",
     "createdBy": "SAP",
@@ -158,15 +158,15 @@
     "externalWorkOrderId": "12345686",
     "type": "ZCS5",
     "priority": "Low",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "2.0",
-        "latestFinishDate": "31-jul.-2017",
-        "earliestStartDate": "31-jul.-2017",
-        "latestStartDate": "31-jul.-2017"
+        "latestFinishDate": "31-Jul-2017",
+        "earliestStartDate": "31-Jul-2017",
+        "latestStartDate": "31-Jul-2017"
     },
     "userStatus": "ZBNQ PERF RFCO",
     "createdBy": "SAP",
@@ -176,15 +176,15 @@
     "externalWorkOrderId": "12345687",
     "type": "ZCS5",
     "priority": "Low",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "3.0",
-        "latestFinishDate": "07-aug.-2017",
-        "earliestStartDate": "20-jun.-2017",
-        "latestStartDate": "20-jun.-2017"
+        "latestFinishDate": "07-Aug-2017",
+        "earliestStartDate": "20-Jun-2017",
+        "latestStartDate": "20-Jun-2017"
     },
     "userStatus": "ZBNQ CLAR PERF ZBA1 ZBPO",
     "createdBy": "SAP",
@@ -194,15 +194,15 @@
     "externalWorkOrderId": "12345688",
     "type": "ZCS5",
     "priority": "2",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "2.0",
-        "latestFinishDate": "15-aug.-2017",
-        "earliestStartDate": "14-jul.-2017",
-        "latestStartDate": "14-jul.-2017"
+        "latestFinishDate": "15-Aug-2017",
+        "earliestStartDate": "14-Jul-2017",
+        "latestStartDate": "14-Jul-2017"
     },
     "userStatus": "ZBNQ PERF RFCO ZBMC",
     "createdBy": "SAP",
@@ -212,15 +212,15 @@
     "externalWorkOrderId": "12345689",
     "type": "ZCS5",
     "priority": "Low",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "2.0",
-        "latestFinishDate": "15-aug.-2017",
-        "earliestStartDate": "15-aug.-2017",
-        "latestStartDate": "15-aug.-2017"
+        "latestFinishDate": "15-Aug-2017",
+        "earliestStartDate": "15-Aug-2017",
+        "latestStartDate": "15-Aug-2017"
     },
     "userStatus": "ZBNQ PERF RFCO ZBCC",
     "createdBy": "SAP",
@@ -230,15 +230,15 @@
     "externalWorkOrderId": "12345690",
     "type": "ZCS5",
     "priority": "Low",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "0.5",
-        "latestFinishDate": "24-aug.-2017",
-        "earliestStartDate": "24-aug.-2017",
-        "latestStartDate": "24-aug.-2017"
+        "latestFinishDate": "24-Aug-2017",
+        "earliestStartDate": "24-Aug-2017",
+        "latestStartDate": "24-Aug-2017"
     },
     "userStatus": "ZBNQ ZBMC",
     "createdBy": "SAP",
@@ -248,15 +248,15 @@
     "externalWorkOrderId": "12345691",
     "type": "ZCS3",
     "priority": "Low",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "0.0",
-        "latestFinishDate": "25-aug.-2017",
-        "earliestStartDate": "25-aug.-2017",
-        "latestStartDate": "25-aug.-2017"
+        "latestFinishDate": "25-Aug-2017",
+        "earliestStartDate": "25-Aug-2017",
+        "latestStartDate": "25-Aug-2017"
     },
     "userStatus": "ZBNQ PERF RECV RFCO ZBCC",
     "createdBy": "SAP",
@@ -266,15 +266,15 @@
     "externalWorkOrderId": "12345692",
     "type": "ZCS5",
     "priority": "Low",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "2.0",
-        "latestFinishDate": "28-aug.-2017",
-        "earliestStartDate": "28-jun.-2017",
-        "latestStartDate": "28-jun.-2017"
+        "latestFinishDate": "28-Aug-2017",
+        "earliestStartDate": "28-Jun-2017",
+        "latestStartDate": "28-Jun-2017"
     },
     "userStatus": "ZBNQ PERF RFCO ZBMC",
     "createdBy": "SAP",
@@ -284,15 +284,15 @@
     "externalWorkOrderId": "12345693",
     "type": "ZCS5",
     "priority": "1",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "2.0",
-        "latestFinishDate": "29-aug.-2017",
-        "earliestStartDate": "29-aug.-2017",
-        "latestStartDate": "29-aug.-2017"
+        "latestFinishDate": "29-Aug-2017",
+        "earliestStartDate": "29-Aug-2017",
+        "latestStartDate": "29-Aug-2017"
     },
     "userStatus": "ZBNQ PERF RFCO",
     "createdBy": "SAP",
@@ -302,15 +302,15 @@
     "externalWorkOrderId": "12345694",
     "type": "ZCS5",
     "priority": "2",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "2.0",
-        "latestFinishDate": "30-aug.-2017",
-        "earliestStartDate": "30-jun.-2017",
-        "latestStartDate": "30-jun.-2017"
+        "latestFinishDate": "30-Aug-2017",
+        "earliestStartDate": "30-Jun-2017",
+        "latestStartDate": "30-Jun-2017"
     },
     "userStatus": "ZBNQ PERF ZBMC",
     "createdBy": "SAP",
@@ -320,15 +320,15 @@
     "externalWorkOrderId": "12345695",
     "type": "ZCS3",
     "priority": "2",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "2.0",
-        "latestFinishDate": "30-aug.-2017",
-        "earliestStartDate": "30-jun.-2017",
-        "latestStartDate": "30-jun.-2017"
+        "latestFinishDate": "30-Aug-2017",
+        "earliestStartDate": "30-Jun-2017",
+        "latestStartDate": "30-Jun-2017"
     },
     "userStatus": "ZBNQ PERF RFCO ZBMC",
     "createdBy": "SAP",
@@ -338,15 +338,15 @@
     "externalWorkOrderId": "12345696",
     "type": "ZCS3",
     "priority": "2",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "3.0",
-        "latestFinishDate": "31-aug.-2017",
-        "earliestStartDate": "19-aug.-2017",
-        "latestStartDate": "19-aug.-2017"
+        "latestFinishDate": "31-Aug-2017",
+        "earliestStartDate": "19-Aug-2017",
+        "latestStartDate": "19-Aug-2017"
     },
     "userStatus": "ZBNQ PERF RFCO ZBCC",
     "createdBy": "SAP",
@@ -356,15 +356,15 @@
     "externalWorkOrderId": "12345697",
     "type": "ZCS1",
     "priority": "Low",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "3.0",
-        "latestFinishDate": "31-aug.-2017",
-        "earliestStartDate": "19-aug.-2017",
-        "latestStartDate": "19-aug.-2017"
+        "latestFinishDate": "31-Aug-2017",
+        "earliestStartDate": "19-Aug-2017",
+        "latestStartDate": "19-Aug-2017"
     },
     "userStatus": "ZBNQ PERF RFCO ZBCC",
     "createdBy": "SAP",
@@ -374,15 +374,15 @@
     "externalWorkOrderId": "12345698",
     "type": "ZCS1",
     "priority": "Low",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "3.0",
-        "latestFinishDate": "31-aug.-2017",
-        "earliestStartDate": "18-aug.-2017",
-        "latestStartDate": "18-aug.-2017"
+        "latestFinishDate": "31-Aug-2017",
+        "earliestStartDate": "18-Aug-2017",
+        "latestStartDate": "18-Aug-2017"
     },
     "userStatus": "ZBNQ PERF RFCO",
     "createdBy": "SAP",
@@ -392,15 +392,15 @@
     "externalWorkOrderId": "12345699",
     "type": "ZCS1",
     "priority": "Low",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "3.0",
-        "latestFinishDate": "31-aug.-2017",
-        "earliestStartDate": "18-aug.-2017",
-        "latestStartDate": "18-aug.-2017"
+        "latestFinishDate": "31-Aug-2017",
+        "earliestStartDate": "18-Aug-2017",
+        "latestStartDate": "18-Aug-2017"
     },
     "userStatus": "ZBNQ PERF RFCO",
     "createdBy": "SAP",
@@ -410,15 +410,15 @@
     "externalWorkOrderId": "12345700",
     "type": "ZCS1",
     "priority": "Low",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "3.0",
-        "latestFinishDate": "31-aug.-2017",
-        "earliestStartDate": "18-aug.-2017",
-        "latestStartDate": "18-aug.-2017"
+        "latestFinishDate": "31-Aug-2017",
+        "earliestStartDate": "18-Aug-2017",
+        "latestStartDate": "18-Aug-2017"
     },
     "userStatus": "ZBNQ PERF RFCO",
     "createdBy": "SAP",
@@ -428,15 +428,15 @@
     "externalWorkOrderId": "12345701",
     "type": "ZCS1",
     "priority": "Low",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "3.0",
-        "latestFinishDate": "31-aug.-2017",
-        "earliestStartDate": "18-aug.-2017",
-        "latestStartDate": "18-aug.-2017"
+        "latestFinishDate": "31-Aug-2017",
+        "earliestStartDate": "18-Aug-2017",
+        "latestStartDate": "18-Aug-2017"
     },
     "userStatus": "ZBNQ PERF RFCO",
     "createdBy": "SAP",
@@ -446,15 +446,15 @@
     "externalWorkOrderId": "12345702",
     "type": "ZCS1",
     "priority": "Low",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "0.0",
-        "latestFinishDate": "31-aug.-2017",
-        "earliestStartDate": "31-aug.-2017",
-        "latestStartDate": "31-aug.-2017"
+        "latestFinishDate": "31-Aug-2017",
+        "earliestStartDate": "31-Aug-2017",
+        "latestStartDate": "31-Aug-2017"
     },
     "userStatus": "ZBNQ PERF RECV RFCO ZBCC",
     "createdBy": "SAP",
@@ -464,15 +464,15 @@
     "externalWorkOrderId": "12345703",
     "type": "ZCS5",
     "priority": "Low",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "0.0",
-        "latestFinishDate": "31-aug.-2017",
-        "earliestStartDate": "31-aug.-2017",
-        "latestStartDate": "31-aug.-2017"
+        "latestFinishDate": "31-Aug-2017",
+        "earliestStartDate": "31-Aug-2017",
+        "latestStartDate": "31-Aug-2017"
     },
     "userStatus": "ZBNQ PERF RFCO ZBCC",
     "createdBy": "SAP",
@@ -482,15 +482,15 @@
     "externalWorkOrderId": "12345704",
     "type": "ZCS5",
     "priority": "Low",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "2.0",
-        "latestFinishDate": "01-sep.-2017",
-        "earliestStartDate": "24-jul.-2017",
-        "latestStartDate": "24-jul.-2017"
+        "latestFinishDate": "01-Sep-2017",
+        "earliestStartDate": "24-Jul-2017",
+        "latestStartDate": "24-Jul-2017"
     },
     "userStatus": "ZBNQ PERF RFCO ZBCC ZBMC",
     "createdBy": "SAP",
@@ -500,15 +500,15 @@
     "externalWorkOrderId": "12345705",
     "type": "ZCS5",
     "priority": "2",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "1.0",
-        "latestFinishDate": "01-sep.-2017",
-        "earliestStartDate": "27-jul.-2017",
-        "latestStartDate": "27-jul.-2017"
+        "latestFinishDate": "01-Sep-2017",
+        "earliestStartDate": "27-Jul-2017",
+        "latestStartDate": "27-Jul-2017"
     },
     "userStatus": "ZBNQ CLAR PERF RFCO ZBCC ZBMC",
     "createdBy": "SAP",
@@ -518,15 +518,15 @@
     "externalWorkOrderId": "12345706",
     "type": "ZCS5",
     "priority": "3",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "2.0",
-        "latestFinishDate": "01-sep.-2017",
-        "earliestStartDate": "01-sep.-2017",
-        "latestStartDate": "01-sep.-2017"
+        "latestFinishDate": "01-Sep-2017",
+        "earliestStartDate": "01-Sep-2017",
+        "latestStartDate": "01-Sep-2017"
     },
     "userStatus": "ZBNQ PERF RFCO",
     "createdBy": "SAP",
@@ -536,15 +536,15 @@
     "externalWorkOrderId": "12345707",
     "type": "ZCS3",
     "priority": "Low",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "0.5",
-        "latestFinishDate": "01-sep.-2017",
-        "earliestStartDate": "01-sep.-2017",
-        "latestStartDate": "01-sep.-2017"
+        "latestFinishDate": "01-Sep-2017",
+        "earliestStartDate": "01-Sep-2017",
+        "latestStartDate": "01-Sep-2017"
     },
     "userStatus": "ZBNQ PERF RFCO ZBMC",
     "createdBy": "SAP",
@@ -554,15 +554,15 @@
     "externalWorkOrderId": "12345708",
     "type": "ZCS5",
     "priority": "2",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "0.5",
-        "latestFinishDate": "01-sep.-2017",
-        "earliestStartDate": "01-sep.-2017",
-        "latestStartDate": "01-sep.-2017"
+        "latestFinishDate": "01-Sep-2017",
+        "earliestStartDate": "01-Sep-2017",
+        "latestStartDate": "01-Sep-2017"
     },
     "userStatus": "ZBNQ RFCO ZBCC ZBMC",
     "createdBy": "SAP",
@@ -572,15 +572,15 @@
     "externalWorkOrderId": "12345709",
     "type": "ZCS5",
     "priority": "2",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "1.0",
-        "latestFinishDate": "04-sep.-2017",
-        "earliestStartDate": "04-sep.-2017",
-        "latestStartDate": "04-sep.-2017"
+        "latestFinishDate": "04-Sep-2017",
+        "earliestStartDate": "04-Sep-2017",
+        "latestStartDate": "04-Sep-2017"
     },
     "userStatus": "ZBNQ PERF RFCO",
     "createdBy": "SAP",
@@ -590,15 +590,15 @@
     "externalWorkOrderId": "12345710",
     "type": "ZCS5",
     "priority": "2",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "0.0",
-        "latestFinishDate": "18-sep.-2017",
-        "earliestStartDate": "18-sep.-2017",
-        "latestStartDate": "18-sep.-2017"
+        "latestFinishDate": "18-Sep-2017",
+        "earliestStartDate": "18-Sep-2017",
+        "latestStartDate": "18-Sep-2017"
     },
     "userStatus": "ZBNQ PERF RECV ZBCC",
     "createdBy": "SAP",
@@ -608,15 +608,15 @@
     "externalWorkOrderId": "12345711",
     "type": "ZCS5",
     "priority": "Low",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "1.0",
-        "latestFinishDate": "19-sep.-2017",
-        "earliestStartDate": "19-sep.-2017",
-        "latestStartDate": "19-sep.-2017"
+        "latestFinishDate": "19-Sep-2017",
+        "earliestStartDate": "19-Sep-2017",
+        "latestStartDate": "19-Sep-2017"
     },
     "userStatus": "ZBNQ PERF RFCO ZBMC",
     "createdBy": "SAP",
@@ -626,15 +626,15 @@
     "externalWorkOrderId": "12345712",
     "type": "ZCS5",
     "priority": "3",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "3.0",
-        "latestFinishDate": "30-sep.-2017",
-        "earliestStartDate": "25-aug.-2017",
-        "latestStartDate": "25-aug.-2017"
+        "latestFinishDate": "30-Sep-2017",
+        "earliestStartDate": "25-Aug-2017",
+        "latestStartDate": "25-Aug-2017"
     },
     "userStatus": "ZBNQ PERF RFCO ZBCC",
     "createdBy": "SAP",
@@ -644,15 +644,15 @@
     "externalWorkOrderId": "12345713",
     "type": "ZCS1",
     "priority": "Low",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "3.0",
-        "latestFinishDate": "30-sep.-2017",
-        "earliestStartDate": "25-aug.-2017",
-        "latestStartDate": "25-aug.-2017"
+        "latestFinishDate": "30-Sep-2017",
+        "earliestStartDate": "25-Aug-2017",
+        "latestStartDate": "25-Aug-2017"
     },
     "userStatus": "ZBNQ PERF RFCO ZBCC",
     "createdBy": "SAP",
@@ -662,15 +662,15 @@
     "externalWorkOrderId": "12345714",
     "type": "ZCS1",
     "priority": "Low",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "3.0",
-        "latestFinishDate": "30-sep.-2017",
-        "earliestStartDate": "25-aug.-2017",
-        "latestStartDate": "25-aug.-2017"
+        "latestFinishDate": "30-Sep-2017",
+        "earliestStartDate": "25-Aug-2017",
+        "latestStartDate": "25-Aug-2017"
     },
     "userStatus": "ZBNQ PERF RFCO ZBCC",
     "createdBy": "SAP",
@@ -680,15 +680,15 @@
     "externalWorkOrderId": "12345715",
     "type": "ZCS1",
     "priority": "Low",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "3.0",
-        "latestFinishDate": "30-sep.-2017",
-        "earliestStartDate": "25-aug.-2017",
-        "latestStartDate": "25-aug.-2017"
+        "latestFinishDate": "30-Sep-2017",
+        "earliestStartDate": "25-Aug-2017",
+        "latestStartDate": "25-Aug-2017"
     },
     "userStatus": "ZBNQ PERF RFCO ZBCC",
     "createdBy": "SAP",
@@ -698,15 +698,15 @@
     "externalWorkOrderId": "12345716",
     "type": "ZCS1",
     "priority": "Low",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "3.0",
-        "latestFinishDate": "30-sep.-2017",
-        "earliestStartDate": "01-sep.-2017",
-        "latestStartDate": "01-sep.-2017"
+        "latestFinishDate": "30-Sep-2017",
+        "earliestStartDate": "01-Sep-2017",
+        "latestStartDate": "01-Sep-2017"
     },
     "userStatus": "ZBNQ PERF RECV RFCO",
     "createdBy": "SAP",
@@ -716,15 +716,15 @@
     "externalWorkOrderId": "12345717",
     "type": "ZCS1",
     "priority": "Low",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "3.0",
-        "latestFinishDate": "30-sep.-2017",
-        "earliestStartDate": "01-sep.-2017",
-        "latestStartDate": "01-sep.-2017"
+        "latestFinishDate": "30-Sep-2017",
+        "earliestStartDate": "01-Sep-2017",
+        "latestStartDate": "01-Sep-2017"
     },
     "userStatus": "ZBNQ PERF RECV RFCO",
     "createdBy": "SAP",
@@ -734,15 +734,15 @@
     "externalWorkOrderId": "12345718",
     "type": "ZCS1",
     "priority": "Low",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "0.0",
-        "latestFinishDate": "30-sep.-2017",
-        "earliestStartDate": "30-sep.-2017",
-        "latestStartDate": "30-sep.-2017"
+        "latestFinishDate": "30-Sep-2017",
+        "earliestStartDate": "30-Sep-2017",
+        "latestStartDate": "30-Sep-2017"
     },
     "userStatus": "ZBNQ PERF RECV ZBCC",
     "createdBy": "SAP",
@@ -752,15 +752,15 @@
     "externalWorkOrderId": "12345719",
     "type": "ZCS5",
     "priority": "Low",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "0.0",
-        "latestFinishDate": "30-sep.-2017",
-        "earliestStartDate": "30-sep.-2017",
-        "latestStartDate": "30-sep.-2017"
+        "latestFinishDate": "30-Sep-2017",
+        "earliestStartDate": "30-Sep-2017",
+        "latestStartDate": "30-Sep-2017"
     },
     "userStatus": "ZBNQ PERF RFCO ZBCC",
     "createdBy": "SAP",
@@ -770,15 +770,15 @@
     "externalWorkOrderId": "12345720",
     "type": "ZCS5",
     "priority": "Low",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "2.0",
-        "latestFinishDate": "15-okt.-2017",
-        "earliestStartDate": "17-jul.-2017",
-        "latestStartDate": "17-jul.-2017"
+        "latestFinishDate": "15-Oct-2017",
+        "earliestStartDate": "17-Jul-2017",
+        "latestStartDate": "17-Jul-2017"
     },
     "userStatus": "ZBNQ PERF ZBA1 ZBPO",
     "createdBy": "SAP",
@@ -788,15 +788,15 @@
     "externalWorkOrderId": "12345721",
     "type": "ZCS5",
     "priority": "2",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "0.5",
-        "latestFinishDate": "25-okt.-2017",
-        "earliestStartDate": "25-aug.-2017",
-        "latestStartDate": "25-aug.-2017"
+        "latestFinishDate": "25-Oct-2017",
+        "earliestStartDate": "25-Aug-2017",
+        "latestStartDate": "25-Aug-2017"
     },
     "userStatus": "ZBNQ",
     "createdBy": "SAP",
@@ -806,15 +806,15 @@
     "externalWorkOrderId": "12345722",
     "type": "ZCS1",
     "priority": "3",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "2.0",
-        "latestFinishDate": "25-okt.-2017",
-        "earliestStartDate": "25-aug.-2017",
-        "latestStartDate": "25-aug.-2017"
+        "latestFinishDate": "25-Oct-2017",
+        "earliestStartDate": "25-Aug-2017",
+        "latestStartDate": "25-Aug-2017"
     },
     "userStatus": "ZBNQ PERF RFCO",
     "createdBy": "SAP",
@@ -824,15 +824,15 @@
     "externalWorkOrderId": "12345723",
     "type": "ZCS5",
     "priority": "2",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "59.0",
-        "latestFinishDate": "27-okt.-2017",
-        "earliestStartDate": "27-okt.-2017",
-        "latestStartDate": "27-okt.-2017"
+        "latestFinishDate": "27-Oct-2017",
+        "earliestStartDate": "27-Oct-2017",
+        "latestStartDate": "27-Oct-2017"
     },
     "userStatus": "ZBNQ",
     "createdBy": "SAP",
@@ -842,15 +842,15 @@
     "externalWorkOrderId": "12345724",
     "type": "ZCS1",
     "priority": "Low",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "0.0",
-        "latestFinishDate": "27-okt.-2017",
-        "earliestStartDate": "27-okt.-2017",
-        "latestStartDate": "27-okt.-2017"
+        "latestFinishDate": "27-Oct-2017",
+        "earliestStartDate": "27-Oct-2017",
+        "latestStartDate": "27-Oct-2017"
     },
     "userStatus": "ZBNQ",
     "createdBy": "SAP",
@@ -860,15 +860,15 @@
     "externalWorkOrderId": "12345725",
     "type": "ZCS1",
     "priority": "Low",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
         "estimatedTime": "1.0",
-        "latestFinishDate": "06-nov.-2017",
-        "earliestStartDate": "06-sep.-2017",
-        "latestStartDate": "06-sep.-2017"
+        "latestFinishDate": "06-Nov-2017",
+        "earliestStartDate": "06-Sep-2017",
+        "latestStartDate": "06-Sep-2017"
     },
     "userStatus": "ZBNQ",
     "createdBy": "SAP",
@@ -878,6 +878,6 @@
     "externalWorkOrderId": "12345726",
     "type": "ZCS1",
     "priority": "3",
-    "createdOn": "17-4-2018",
+    "createdOn": "21-4-2018",
     "status": "new"
 }
