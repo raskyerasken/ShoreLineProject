@@ -36,7 +36,7 @@ public class AddUserViewController implements Initializable
 {
     
     UserLogin userLogin = new UserLogin();
-    LoginDataModel modelData = new LoginDataModel();
+    LoginDataModel modelData;
     BLLManagerUserLogin bllManagerul = new BLLManagerUserLogin();
     @FXML
     private CheckBox adminAccessLevelChckBox;

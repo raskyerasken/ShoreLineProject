@@ -8,24 +8,23 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" fx:id="customDataWindow" prefHeight="452.0" prefWidth="571.0" stylesheets="@CSSShoreLines.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.CustomDataWindowController">
+<AnchorPane id="AnchorPane" fx:id="customDataWindow" stylesheets="@CSSShoreLines.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.CustomDataWindowController">
     <children>
-      <Label fx:id="taskXRun" layoutX="269.0" layoutY="350.0" text="Task X Running" />
-      <JFXButton layoutX="111.0" layoutY="369.0" onAction="#startTask" text="Start Task" />
-      <JFXButton layoutX="282.0" layoutY="369.0" onAction="#pauseTask" text="Pause Task" />
-      <JFXButton layoutX="514.0" layoutY="369.0" onAction="#stopTask" text="Stop" />
-      <ImageView fitHeight="67.0" fitWidth="325.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+      <Label fx:id="taskXRun" layoutX="269.0" layoutY="350.0" text="Task X Running" AnchorPane.bottomAnchor="85.0" />
+      <JFXButton layoutX="111.0" layoutY="369.0" onAction="#startTask" text="Start Task" AnchorPane.bottomAnchor="58.0" AnchorPane.leftAnchor="111.0" />
+      <JFXButton layoutX="282.0" layoutY="369.0" onAction="#pauseTask" text="Pause Task" AnchorPane.bottomAnchor="58.0" />
+      <JFXButton layoutX="514.0" layoutY="369.0" onAction="#stopTask" text="Stop" AnchorPane.bottomAnchor="58.0" />
+      <ImageView fitHeight="67.0" fitWidth="325.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="2.0">
          <image>
             <Image url="@../Image/ShoreLineLogo.jpg" />
          </image>
       </ImageView>
-      <Button layoutY="100.0" mnemonicParsing="false" onAction="#importMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Import" />
-      <Button layoutY="167.0" mnemonicParsing="false" onAction="#exportMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Export" />
-      <Button fx:id="btnCustumData" layoutY="234.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="96.0" text="Custom &#10;   Data" />
-      <Button layoutY="300.0" mnemonicParsing="false" onAction="#logMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Log" />
-      <Button fx:id="adminButton" layoutY="367.0" mnemonicParsing="false" onAction="#adminMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Admin" />
+      <Button layoutY="100.0" mnemonicParsing="false" onAction="#importMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Import" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="100.0" />
+      <Button layoutY="167.0" mnemonicParsing="false" onAction="#exportMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Export" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="167.0" />
+      <Button fx:id="btnCustumData" layoutY="234.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="96.0" text="Custom &#10;   Data" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="234.0" />
+      <Button layoutY="300.0" mnemonicParsing="false" onAction="#logMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Log" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="300.0" />
+      <Button fx:id="adminButton" layoutY="367.0" mnemonicParsing="false" onAction="#adminMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Admin" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="367.0" />
 
-      <TreeView fx:id="CustomDataSelect" layoutX="133.0" layoutY="86.0" prefHeight="235.0" prefWidth="367.0" />
-      <Button layoutX="433.0" layoutY="36.0" mnemonicParsing="false" onAction="#preview" text="Preview" />
+      <TreeView fx:id="CustomDataSelect" layoutX="133.0" layoutY="86.0" prefHeight="235.0" prefWidth="367.0" AnchorPane.bottomAnchor="131.0" AnchorPane.leftAnchor="133.0" AnchorPane.rightAnchor="71.0" AnchorPane.topAnchor="86.0" />
     </children>
 </AnchorPane>
