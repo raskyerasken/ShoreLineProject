@@ -135,7 +135,7 @@ importWindow.setPrefSize(width, height-65);
             TreeItem<String> newlyAdded
                     = new TreeItem<String>(acceptedFile.getName());
             try {
-                XLSX = new ReadingXLSX(acceptedFile.getAbsolutePath());
+                XLSX = new ReadingXLSX(acceptedFile.getAbsolutePath(),fcModel);
             } catch (IOException ex) {
                 Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
             } catch (ParseException ex) {

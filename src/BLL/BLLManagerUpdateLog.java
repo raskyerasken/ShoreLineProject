@@ -25,6 +25,7 @@ public class BLLManagerUpdateLog
     
     public void setUpdateLog(UpdateLog updateLog) throws SQLException
     {
+       
         ul.setUpdateLog(updateLog);
     }
     

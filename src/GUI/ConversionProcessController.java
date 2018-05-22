@@ -128,10 +128,11 @@ public class ConversionProcessController implements Initializable
             allsize = progressFileList.size();
             for (File file : progressFileList) 
             {
+
                 try 
                 {
                     threading = Thread.currentThread();
-                    ReadingXLSX XLSX = new ReadingXLSX(file.getAbsolutePath());
+                    ReadingXLSX XLSX = new ReadingXLSX(file.getAbsolutePath(),fcModel);
 
                     XLSX.getColumsNames();
                     File JsonFile = new File(file.getCanonicalFile() + ".json");
@@ -141,12 +142,14 @@ public class ConversionProcessController implements Initializable
                     {
                         fileWriter.write(jSONObject.toString(4));
                     }
-                    
+                    conversionSuccess = false;
                     addDataToLog();
                     updateLog.setError(false);
                     updateLog.setAdjustment("Conversion done: " + file);
+                    //addToLog();
                     fileWriter.flush();
                     fileWriter.close();
+
                     filesConvertedCount++;
                 } 
                 catch (IOException ex) 
@@ -173,25 +176,25 @@ public class ConversionProcessController implements Initializable
                     progressBar.setProgress(filesConvertedCount / allsize);
                     if (fcModel.getFiles().isEmpty()) 
                     {
-                        setButtonsInvisible();
+                        progressBar.setVisible(false);
                         closeWindowWhenProcessisDone();
                     }
                 });
             }          
-            updateLog.setAdjustment("Converted: " + progressFileList.toString().toUpperCase());
-            System.out.println(progressFileList);
+            updateLog.setAdjustment("Converted: ");
             addDataToLog();
                                 try 
             {
-                System.out.println("hey");
+                
                 up.setUpdateLog(updateLog);
             } 
             catch (SQLException ex) 
             {
                 Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
             }
-        });
+        });          
     }
+    
     
     private void addDataToLog() 
     {
@@ -208,6 +211,7 @@ public class ConversionProcessController implements Initializable
         try 
         {
             up.setUpdateLog(updateLog);
+            
         } 
         catch (SQLException ex)
         {

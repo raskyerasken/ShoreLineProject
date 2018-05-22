@@ -5,8 +5,12 @@
  */
 package GUI.Models;
 
+
+import BE.JSONCustommize;
 import BE.UpdateLog;
+import BLL.BllManagerCustom;
 import java.io.File;
+import java.sql.SQLException;
 import java.util.List;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -20,8 +24,11 @@ import javafx.scene.control.TreeView;
  * @author jacob
  */
 public class FilesConvertionModel {
-
+    JSONCustommize customClass;
+ BllManagerCustom bllCustom = new BllManagerCustom();
     public ObservableList<File> allFiles
+            = FXCollections.observableArrayList();
+       public ObservableList<JSONCustommize> customJSON
             = FXCollections.observableArrayList();
     public ObservableList<TreeItem> treeFiles = FXCollections.observableArrayList();
 
@@ -29,6 +36,14 @@ public class FilesConvertionModel {
 
         allFiles.addAll(filesAcceptet);
 
+    }
+    public void setCustomClass(JSONCustommize customClass)
+    {
+    this.customClass= customClass;
+    }
+       public JSONCustommize getCustomClass()
+    {
+    return customClass;
     }
 
     public ObservableList<File> getFiles() 
@@ -73,6 +88,19 @@ public class FilesConvertionModel {
     public void AddAllFiles(ObservableList<File> filesAccepted) 
     {
         allFiles.addAll(filesAccepted);
+    }
+
+    public void saveCustom(JSONCustommize custom) throws SQLException {
+    customJSON.add(custom);
+    bllCustom.add(custom);
+    
+    }
+    public ObservableList<JSONCustommize> getCustom()
+    {
+        customJSON.clear();
+        customJSON.addAll(bllCustom.getAllCustom());
+        return customJSON;
+    
     }
 
 }

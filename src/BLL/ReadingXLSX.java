@@ -8,6 +8,7 @@ package BLL;
 import BE.JSONAttributes;
 import BE.JSONCustommize;
 import BE.Planning;
+import GUI.Models.FilesConvertionModel;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -35,7 +36,7 @@ import org.json.JSONObject;
  * @author jacob
  */
 public class ReadingXLSX {
-
+    FilesConvertionModel fcmodel;
     String excelFilePath;
     FileInputStream inputStream;
     int row;
@@ -43,11 +44,12 @@ public class ReadingXLSX {
     String[][] allRows;
     Workbook workbook;
     org.apache.poi.ss.usermodel.Sheet firstSheet;
-    List ColumNames = new ArrayList();
+    ObservableList<String> ColumNames = FXCollections.observableArrayList();
     DateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy");
     Date today = new Date();
 
-    public ReadingXLSX(String excelPath) throws FileNotFoundException, IOException, ParseException {
+    public ReadingXLSX(String excelPath,FilesConvertionModel fcmodel) throws FileNotFoundException, IOException, ParseException {
+        this.fcmodel=fcmodel;
         excelFilePath = excelPath;
         inputStream = new FileInputStream(new File(excelFilePath));
 
@@ -56,7 +58,7 @@ public class ReadingXLSX {
         row = workbook.getNumberOfNames();
     }
 
-    public List getColumsNames() {
+    public ObservableList<String> getColumsNames() {
 
         Iterator<Row> iterator = firstSheet.iterator();
 
@@ -114,24 +116,14 @@ public class ReadingXLSX {
    
     
     private JSONObject setJSONObject(int i) throws JSONException, ParseException, IOException {
-        JSONCustommize custom = new JSONCustommize();
-        
-        custom.setType("Order Type");
-        custom.setExternalWorkOrderId("Order");
-        custom.setStatus("System status");
-        custom.setUserStatus("User status");
-        custom.setName("Opr. short text");
-        custom.setPriority("Priority");
-      custom.setLatestFinishDate("Lat.finish date");
-      custom.setEarlistStartDate("Earl.start date");
-      custom.setLatestStartDate("Latest start");
-      custom.setEstimatedTime("Normal duration");
+        JSONCustommize custom = fcmodel.getCustomClass();
+        System.out.println(custom.getType());
         JSONObject Json = new JSONObject();
         Json.put("siteName", "");
         Json.put("assetSerialNumber", "0");
         Json.put("type", firstSheet.getRow(i).getCell(ColumNames.indexOf(custom.getType())).toString());
         Json.put("externalWorkOrderId", firstSheet.getRow(i).getCell(ColumNames.indexOf(custom.getExternalWorkOrderId())).toString());
-        Json.put("systemStatus", firstSheet.getRow(i).getCell(ColumNames.indexOf(custom.getStatus())).toString());
+        Json.put("systemStatus", firstSheet.getRow(i).getCell(ColumNames.indexOf(custom.getSystemStatus())).toString());
         Json.put("userStatus", firstSheet.getRow(i).getCell(ColumNames.indexOf(custom.getUserStatus())).toString());
         Json.put("createdOn", today.getDate() + "-" + today.getMonth() + "-" + (today.getYear() + 1900));
         Json.put("createdBy", "SAP");

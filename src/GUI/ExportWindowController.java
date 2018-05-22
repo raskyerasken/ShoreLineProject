@@ -5,12 +5,14 @@
  */
 package GUI;
 
+import BE.JSONCustommize;
 import GUI.Models.LoginDataModel;
 import GUI.Models.FilesConvertionModel;
 import BE.UpdateLog;
 import BLL.BLLManagerUpdateLog;
 import BLL.ReadingXLSX;
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXProgressBar;
 import java.io.File;
@@ -78,6 +80,8 @@ public class ExportWindowController implements Initializable {
     boolean conversionSuccess;
     @FXML
     private Button adminButton;
+    @FXML
+    private JFXComboBox<JSONCustommize> combos;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) 
@@ -89,6 +93,7 @@ public class ExportWindowController implements Initializable {
      @FXML
     private void convertData(ActionEvent event) throws JSONException, SQLException, IOException 
     {
+            fcModel.setCustomClass(combos.getSelectionModel().getSelectedItem());
         Stage newStage = new Stage();
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("ConversionProcess.fxml"));
         Parent root = fxLoader.load();
@@ -252,6 +257,8 @@ public class ExportWindowController implements Initializable {
         taskField.setItems(fcModel.getFiles());
         this.modelData = modelData;
         isUserAdmin();
+        combos.setItems(fcModel.getCustom());
+        
     }
     
     private void isUserAdmin() throws SQLException
@@ -276,7 +283,7 @@ public class ExportWindowController implements Initializable {
                 try 
                 {
                     threading = Thread.currentThread();
-                    ReadingXLSX XLSX = new ReadingXLSX(file.getAbsolutePath());
+                    ReadingXLSX XLSX = new ReadingXLSX(file.getAbsolutePath(),fcModel);
 
                     XLSX.getColumsNames();
                     File JsonFile = new File(file.getCanonicalFile() + ".json");

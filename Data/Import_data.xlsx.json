@@ -1,1373 +1,883 @@
 {
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "0.0",
-<<<<<<< HEAD
-        "latestFinishDate": "10-Oct-2016",
-        "earliestStartDate": "10-Oct-2016",
-        "latestStartDate": "10-Oct-2016"
-=======
-        "latestFinishDate": "10-okt.-2016",
-        "earliestStartDate": "10-okt.-2016",
-        "latestStartDate": "10-okt.-2016"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "",
+        "latestFinishDate": "",
+        "earliestStartDate": "",
+        "latestStartDate": ""
     },
-    "userStatus": "ZBNQ PERF RECV ZBCC",
+    "userStatus": "",
     "createdBy": "SAP",
-    "systemStatus": "REL  CCOK NMAT PRC  SETC",
-    "name": "A9B10196358 Retrofit non-phys Fix earth",
+    "systemStatus": "WT DT29 DanTysk (3601210)",
+    "name": "10-okt.-2017",
     "siteName": "",
-    "externalWorkOrderId": "12345678",
-    "type": "ZCS5",
-    "priority": "Low",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678911",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "2.0",
-<<<<<<< HEAD
-        "latestFinishDate": "13-Jun-2017",
-        "earliestStartDate": "14-Jun-2017",
-        "latestStartDate": "13-Jun-2017"
-=======
-        "latestFinishDate": "13-jun.-2017",
-        "earliestStartDate": "14-jun.-2017",
-        "latestStartDate": "13-jun.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "",
+        "latestFinishDate": "",
+        "earliestStartDate": "",
+        "latestStartDate": ""
     },
-    "userStatus": "ZBNQ",
+    "userStatus": "",
     "createdBy": "SAP",
-    "systemStatus": "CRTD MANC NMAT NTUP PRC",
-    "name": "DT56: UPS battery exchange",
+    "systemStatus": "WT DT56 DanTysk (3601237)",
+    "name": "14-jun.-2017",
     "siteName": "",
-    "externalWorkOrderId": "12345679",
-    "type": "ZCS5",
-    "priority": "Low",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678912",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "2.0",
-<<<<<<< HEAD
-        "latestFinishDate": "13-Jun-2017",
-        "earliestStartDate": "14-Jun-2017",
-        "latestStartDate": "13-Jun-2017"
-=======
-        "latestFinishDate": "13-jun.-2017",
-        "earliestStartDate": "14-jun.-2017",
-        "latestStartDate": "13-jun.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "",
+        "latestFinishDate": "",
+        "earliestStartDate": "",
+        "latestStartDate": ""
     },
-    "userStatus": "ZBNQ",
+    "userStatus": "",
     "createdBy": "SAP",
-    "systemStatus": "CRTD MANC NMAT NTUP PRC",
-    "name": "DT35: UPS battery exchange",
+    "systemStatus": "WT DT35 DanTysk (3601216)",
+    "name": "14-jun.-2017",
     "siteName": "",
-    "externalWorkOrderId": "12345680",
-    "type": "ZCS5",
-    "priority": "Low",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678913",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "2.0",
-<<<<<<< HEAD
-        "latestFinishDate": "03-Jul-2017",
-        "earliestStartDate": "03-Jul-2017",
-        "latestStartDate": "03-Jul-2017"
-=======
-        "latestFinishDate": "03-jul.-2017",
-        "earliestStartDate": "03-jul.-2017",
-        "latestStartDate": "03-jul.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "",
+        "latestFinishDate": "",
+        "earliestStartDate": "",
+        "latestStartDate": ""
     },
-    "userStatus": "ZBNQ PERF RFCO",
+    "userStatus": "",
     "createdBy": "SAP",
-    "systemStatus": "REL  CCOK NMAT PRC  SETC",
-    "name": "exchange rubber bellows",
+    "systemStatus": "WT SB18 Sandbank (4000349)",
+    "name": "03-jul.-2017",
     "siteName": "",
-    "externalWorkOrderId": "12345681",
-    "type": "ZCS5",
-    "priority": "Low",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678914",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "2.0",
-<<<<<<< HEAD
-        "latestFinishDate": "07-Jul-2017",
-        "earliestStartDate": "07-Jul-2017",
-        "latestStartDate": "07-Jul-2017"
-=======
-        "latestFinishDate": "07-jul.-2017",
-        "earliestStartDate": "07-jul.-2017",
-        "latestStartDate": "07-jul.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "",
+        "latestFinishDate": "",
+        "earliestStartDate": "",
+        "latestStartDate": ""
     },
-    "userStatus": "ZBNQ CLAR PERF ZBMC",
+    "userStatus": "",
     "createdBy": "SAP",
-    "systemStatus": "REL  PCNF CCOK NMAT PRC  RESA SETC",
-    "name": "SB64 TS Outlet socket in tower",
+    "systemStatus": "WT SB64 Sandbank (4000393)",
+    "name": "07-jul.-2017",
     "siteName": "",
-    "externalWorkOrderId": "12345682",
-    "type": "ZCS5",
-    "priority": "Low",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678911",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "2.0",
-<<<<<<< HEAD
-        "latestFinishDate": "15-Jul-2017",
-        "earliestStartDate": "14-Jul-2017",
-        "latestStartDate": "14-Jul-2017"
-=======
-        "latestFinishDate": "15-jul.-2017",
-        "earliestStartDate": "14-jul.-2017",
-        "latestStartDate": "14-jul.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "",
+        "latestFinishDate": "",
+        "earliestStartDate": "",
+        "latestStartDate": ""
     },
-    "userStatus": "ZBNQ PERF RFCO ZBMC",
+    "userStatus": "",
     "createdBy": "SAP",
-    "systemStatus": "REL  CCOK NMAT PRC  SETC",
-    "name": "Exchange Rubber Bellow",
+    "systemStatus": "WT SB80 Sandbank (4000403)",
+    "name": "14-jul.-2017",
     "siteName": "",
-    "externalWorkOrderId": "12345683",
-    "type": "ZCS5",
-    "priority": "Low",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678912",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "2.0",
-<<<<<<< HEAD
-        "latestFinishDate": "15-Jul-2017",
-        "earliestStartDate": "14-Jul-2017",
-        "latestStartDate": "14-Jul-2017"
-=======
-        "latestFinishDate": "15-jul.-2017",
-        "earliestStartDate": "14-jul.-2017",
-        "latestStartDate": "14-jul.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "",
+        "latestFinishDate": "",
+        "earliestStartDate": "",
+        "latestStartDate": ""
     },
-    "userStatus": "ZBNQ PERF RFCO ZBMC",
+    "userStatus": "",
     "createdBy": "SAP",
-    "systemStatus": "REL  CCOK NMAT PRC  SETC",
-    "name": "Exchange Rubber Bellow",
+    "systemStatus": "WT SB77 Sandbank (4000400)",
+    "name": "14-jul.-2017",
     "siteName": "",
-    "externalWorkOrderId": "12345684",
-    "type": "ZCS5",
-    "priority": "Low",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678913",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "2.0",
-<<<<<<< HEAD
-        "latestFinishDate": "21-Jul-2017",
-        "earliestStartDate": "21-Jul-2017",
-        "latestStartDate": "21-Jul-2017"
-=======
-        "latestFinishDate": "21-jul.-2017",
-        "earliestStartDate": "21-jul.-2017",
-        "latestStartDate": "21-jul.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "2",
+        "latestFinishDate": "",
+        "earliestStartDate": "2",
+        "latestStartDate": "2"
     },
-    "userStatus": "ZBNQ PERF RFCO ZBMC",
+    "userStatus": "2",
     "createdBy": "SAP",
-    "systemStatus": "REL  CCOK NMAT PRC  SETC",
-    "name": "Water Ingress Tower Ligth",
+    "systemStatus": "WT SB58 Sandbank (4000387)",
+    "name": "21-jul.-2017",
     "siteName": "",
-    "externalWorkOrderId": "12345685",
-    "type": "ZCS5",
-    "priority": "2",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678914",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "2.0",
-<<<<<<< HEAD
-        "latestFinishDate": "25-Jul-2017",
-        "earliestStartDate": "25-Jul-2017",
-        "latestStartDate": "25-Jul-2017"
-=======
-        "latestFinishDate": "25-jul.-2017",
-        "earliestStartDate": "25-jul.-2017",
-        "latestStartDate": "25-jul.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "",
+        "latestFinishDate": "",
+        "earliestStartDate": "",
+        "latestStartDate": ""
     },
-    "userStatus": "ZBNQ CLAR PERF",
+    "userStatus": "",
     "createdBy": "SAP",
-    "systemStatus": "REL  CCOK NMAT PRC  SETC",
-    "name": "SB56: broke plugs on Hiab Crane",
+    "systemStatus": "WT SB56 Sandbank (4000385)",
+    "name": "25-jul.-2017",
     "siteName": "",
-    "externalWorkOrderId": "12345686",
-    "type": "ZCS5",
-    "priority": "Low",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678911",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "2.0",
-<<<<<<< HEAD
-        "latestFinishDate": "31-Jul-2017",
-        "earliestStartDate": "31-Jul-2017",
-        "latestStartDate": "31-Jul-2017"
-=======
-        "latestFinishDate": "31-jul.-2017",
-        "earliestStartDate": "31-jul.-2017",
-        "latestStartDate": "31-jul.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "",
+        "latestFinishDate": "",
+        "earliestStartDate": "",
+        "latestStartDate": ""
     },
-    "userStatus": "ZBNQ PERF RFCO",
+    "userStatus": "",
     "createdBy": "SAP",
-    "systemStatus": "REL  CCOK NMAT PRC  SETC",
-    "name": "exchange rubber bellows",
+    "systemStatus": "WT SB77 Sandbank (4000400)",
+    "name": "31-jul.-2017",
     "siteName": "",
-    "externalWorkOrderId": "12345687",
-    "type": "ZCS5",
-    "priority": "Low",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678912",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "3.0",
-<<<<<<< HEAD
-        "latestFinishDate": "07-Aug-2017",
-        "earliestStartDate": "20-Jun-2017",
-        "latestStartDate": "20-Jun-2017"
-=======
-        "latestFinishDate": "07-aug.-2017",
-        "earliestStartDate": "20-jun.-2017",
-        "latestStartDate": "20-jun.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "2",
+        "latestFinishDate": "",
+        "earliestStartDate": "2",
+        "latestStartDate": "2"
     },
-    "userStatus": "ZBNQ CLAR PERF ZBA1 ZBPO",
+    "userStatus": "2",
     "createdBy": "SAP",
-    "systemStatus": "REL  CCOK MSPT PRC  SETC",
-    "name": "Boom Extension on Hiab Crane",
+    "systemStatus": "WT SB44 Sandbank (4000374)",
+    "name": "30-maj-2017",
     "siteName": "",
-    "externalWorkOrderId": "12345688",
-    "type": "ZCS5",
-    "priority": "2",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678913",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "2.0",
-<<<<<<< HEAD
-        "latestFinishDate": "15-Aug-2017",
-        "earliestStartDate": "14-Jul-2017",
-        "latestStartDate": "14-Jul-2017"
-=======
-        "latestFinishDate": "15-aug.-2017",
-        "earliestStartDate": "14-jul.-2017",
-        "latestStartDate": "14-jul.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "",
+        "latestFinishDate": "",
+        "earliestStartDate": "",
+        "latestStartDate": ""
     },
-    "userStatus": "ZBNQ PERF RFCO ZBMC",
+    "userStatus": "",
     "createdBy": "SAP",
-    "systemStatus": "REL  CCOK NMAT PRC  SETC",
-    "name": "Exchange Rubber Bellow",
+    "systemStatus": "WT SB79 Sandbank (4000402)",
+    "name": "14-jul.-2017",
     "siteName": "",
-    "externalWorkOrderId": "12345689",
-    "type": "ZCS5",
-    "priority": "Low",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678914",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "2.0",
-<<<<<<< HEAD
-        "latestFinishDate": "15-Aug-2017",
-        "earliestStartDate": "15-Aug-2017",
-        "latestStartDate": "15-Aug-2017"
-=======
-        "latestFinishDate": "15-aug.-2017",
-        "earliestStartDate": "15-aug.-2017",
-        "latestStartDate": "15-aug.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "",
+        "latestFinishDate": "",
+        "earliestStartDate": "",
+        "latestStartDate": ""
     },
-    "userStatus": "ZBNQ PERF RFCO ZBCC",
+    "userStatus": "",
     "createdBy": "SAP",
-    "systemStatus": "REL  CCOK GMPS NMAT PRC  RESA SETC",
-    "name": "10000 : No connection",
+    "systemStatus": "WT SB15 Sandbank (4000346)",
+    "name": "15-aug.-2017",
     "siteName": "",
-    "externalWorkOrderId": "12345690",
-    "type": "ZCS5",
-    "priority": "Low",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678911",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "0.5",
-<<<<<<< HEAD
-        "latestFinishDate": "24-Aug-2017",
-        "earliestStartDate": "24-Aug-2017",
-        "latestStartDate": "24-Aug-2017"
-=======
-        "latestFinishDate": "24-aug.-2017",
-        "earliestStartDate": "24-aug.-2017",
-        "latestStartDate": "24-aug.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "",
+        "latestFinishDate": "",
+        "earliestStartDate": "",
+        "latestStartDate": ""
     },
-    "userStatus": "ZBNQ ZBMC",
+    "userStatus": "",
     "createdBy": "SAP",
-    "systemStatus": "REL  CCOK NMAT PRC  SETC",
-    "name": "SB39 Remote stop - Owner",
+    "systemStatus": "WT SB39 Sandbank (4000369)",
+    "name": "24-aug.-2017",
     "siteName": "",
-    "externalWorkOrderId": "12345691",
-    "type": "ZCS3",
-    "priority": "Low",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678912",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "0.0",
-<<<<<<< HEAD
-        "latestFinishDate": "25-Aug-2017",
-        "earliestStartDate": "25-Aug-2017",
-        "latestStartDate": "25-Aug-2017"
-=======
-        "latestFinishDate": "25-aug.-2017",
-        "earliestStartDate": "25-aug.-2017",
-        "latestStartDate": "25-aug.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "",
+        "latestFinishDate": "",
+        "earliestStartDate": "",
+        "latestStartDate": ""
     },
-    "userStatus": "ZBNQ PERF RECV RFCO ZBCC",
+    "userStatus": "",
     "createdBy": "SAP",
-    "systemStatus": "REL  CCOK MACM PRC  SETC",
-    "name": "A9B10191123 - Retrofit, yaw software 201",
+    "systemStatus": "WT DT11 DanTysk (3601192)",
+    "name": "10-nov.-2017",
     "siteName": "",
-    "externalWorkOrderId": "12345692",
-    "type": "ZCS5",
-    "priority": "Low",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678913",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "2.0",
-<<<<<<< HEAD
-        "latestFinishDate": "28-Aug-2017",
-        "earliestStartDate": "28-Jun-2017",
-        "latestStartDate": "28-Jun-2017"
-=======
-        "latestFinishDate": "28-aug.-2017",
-        "earliestStartDate": "28-jun.-2017",
-        "latestStartDate": "28-jun.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "1",
+        "latestFinishDate": "",
+        "earliestStartDate": "1",
+        "latestStartDate": "1"
     },
-    "userStatus": "ZBNQ PERF RFCO ZBMC",
+    "userStatus": "1",
     "createdBy": "SAP",
-    "systemStatus": "REL  CCOK NMAT PRC  SETC",
-    "name": "exchange rubber bellows",
+    "systemStatus": "WT SB62 Sandbank (4000391)",
+    "name": "28-jun.-2017",
     "siteName": "",
-    "externalWorkOrderId": "12345693",
-    "type": "ZCS5",
-    "priority": "1",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678914",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "2.0",
-<<<<<<< HEAD
-        "latestFinishDate": "29-Aug-2017",
-        "earliestStartDate": "29-Aug-2017",
-        "latestStartDate": "29-Aug-2017"
-=======
-        "latestFinishDate": "29-aug.-2017",
-        "earliestStartDate": "29-aug.-2017",
-        "latestStartDate": "29-aug.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "2",
+        "latestFinishDate": "",
+        "earliestStartDate": "2",
+        "latestStartDate": "2"
     },
-    "userStatus": "ZBNQ PERF RFCO",
+    "userStatus": "2",
     "createdBy": "SAP",
-    "systemStatus": "REL  CCOK NMAT PRC  SETC",
-    "name": "HIAB Crane: Troubleshooting",
+    "systemStatus": "WT SB01 Sandbank (4000332)",
+    "name": "29-aug.-2017",
     "siteName": "",
-    "externalWorkOrderId": "12345694",
-    "type": "ZCS5",
-    "priority": "2",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678911",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "2.0",
-<<<<<<< HEAD
-        "latestFinishDate": "30-Aug-2017",
-        "earliestStartDate": "30-Jun-2017",
-        "latestStartDate": "30-Jun-2017"
-=======
-        "latestFinishDate": "30-aug.-2017",
-        "earliestStartDate": "30-jun.-2017",
-        "latestStartDate": "30-jun.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "2",
+        "latestFinishDate": "",
+        "earliestStartDate": "2",
+        "latestStartDate": "2"
     },
-    "userStatus": "ZBNQ PERF ZBMC",
+    "userStatus": "2",
     "createdBy": "SAP",
-    "systemStatus": "REL  CCOK NMAT PRC  SETC",
-    "name": "Krima-2439613: Sabik UPS battery replace",
+    "systemStatus": "WT SB22 Sandbank (4000353)",
+    "name": "30-jun.-2017",
     "siteName": "",
-    "externalWorkOrderId": "12345695",
-    "type": "ZCS3",
-    "priority": "2",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678912",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "2.0",
-<<<<<<< HEAD
-        "latestFinishDate": "30-Aug-2017",
-        "earliestStartDate": "30-Jun-2017",
-        "latestStartDate": "30-Jun-2017"
-=======
-        "latestFinishDate": "30-aug.-2017",
-        "earliestStartDate": "30-jun.-2017",
-        "latestStartDate": "30-jun.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "2",
+        "latestFinishDate": "",
+        "earliestStartDate": "2",
+        "latestStartDate": "2"
     },
-    "userStatus": "ZBNQ PERF RFCO ZBMC",
+    "userStatus": "2",
     "createdBy": "SAP",
-    "systemStatus": "REL  CCOK NMAT PRC  SETC",
-    "name": "Krima-2439613: UPS batteries replacement",
+    "systemStatus": "WT SB61 Sandbank (4000390)",
+    "name": "30-jun.-2017",
     "siteName": "",
-    "externalWorkOrderId": "12345696",
-    "type": "ZCS3",
-    "priority": "2",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678913",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "3.0",
-<<<<<<< HEAD
-        "latestFinishDate": "31-Aug-2017",
-        "earliestStartDate": "19-Aug-2017",
-        "latestStartDate": "19-Aug-2017"
-=======
-        "latestFinishDate": "31-aug.-2017",
-        "earliestStartDate": "19-aug.-2017",
-        "latestStartDate": "19-aug.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "",
+        "latestFinishDate": "CRANE",
+        "earliestStartDate": "",
+        "latestStartDate": ""
     },
-    "userStatus": "ZBNQ PERF RFCO ZBCC",
+    "userStatus": "",
     "createdBy": "SAP",
-    "systemStatus": "REL  NMAT SETC",
-    "name": "Crane inspection",
+    "systemStatus": "WT DT78 DanTysk (3601259)",
+    "name": "29-maj-2016",
     "siteName": "",
-    "externalWorkOrderId": "12345697",
-    "type": "ZCS1",
-    "priority": "Low",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678914",
+    "type": "BS01",
+    "priority": "ZSMC",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "3.0",
-<<<<<<< HEAD
-        "latestFinishDate": "31-Aug-2017",
-        "earliestStartDate": "19-Aug-2017",
-        "latestStartDate": "19-Aug-2017"
-=======
-        "latestFinishDate": "31-aug.-2017",
-        "earliestStartDate": "19-aug.-2017",
-        "latestStartDate": "19-aug.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "",
+        "latestFinishDate": "",
+        "earliestStartDate": "",
+        "latestStartDate": ""
     },
-    "userStatus": "ZBNQ PERF RFCO ZBCC",
+    "userStatus": "",
     "createdBy": "SAP",
-    "systemStatus": "REL  NMAT SETC",
-    "name": "3,00_WT-BS01 3601259 Yearly Crane Inspec",
+    "systemStatus": "WT DT78 DanTysk (3601259)",
+    "name": "29-maj-2016",
     "siteName": "",
-    "externalWorkOrderId": "12345698",
-    "type": "ZCS1",
-    "priority": "Low",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678911",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "3.0",
-<<<<<<< HEAD
-        "latestFinishDate": "31-Aug-2017",
-        "earliestStartDate": "18-Aug-2017",
-        "latestStartDate": "18-Aug-2017"
-=======
-        "latestFinishDate": "31-aug.-2017",
-        "earliestStartDate": "18-aug.-2017",
-        "latestStartDate": "18-aug.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "",
+        "latestFinishDate": "LIFT",
+        "earliestStartDate": "",
+        "latestStartDate": ""
     },
-    "userStatus": "ZBNQ PERF RFCO",
+    "userStatus": "",
     "createdBy": "SAP",
-    "systemStatus": "REL  NMAT SETC",
-    "name": "Lift inspection",
+    "systemStatus": "WT DT40 DanTysk (3601221)",
+    "name": "04-sep.-2016",
     "siteName": "",
-    "externalWorkOrderId": "12345699",
-    "type": "ZCS1",
-    "priority": "Low",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678912",
+    "type": "BS01",
+    "priority": "ZSMC",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "3.0",
-<<<<<<< HEAD
-        "latestFinishDate": "31-Aug-2017",
-        "earliestStartDate": "18-Aug-2017",
-        "latestStartDate": "18-Aug-2017"
-=======
-        "latestFinishDate": "31-aug.-2017",
-        "earliestStartDate": "18-aug.-2017",
-        "latestStartDate": "18-aug.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "",
+        "latestFinishDate": "",
+        "earliestStartDate": "",
+        "latestStartDate": ""
     },
-    "userStatus": "ZBNQ PERF RFCO",
+    "userStatus": "",
     "createdBy": "SAP",
-    "systemStatus": "REL  NMAT SETC",
-    "name": "3,00_WT-BS01 3601221 Yearly Lift Inspect",
+    "systemStatus": "WT DT40 DanTysk (3601221)",
+    "name": "04-sep.-2016",
     "siteName": "",
-    "externalWorkOrderId": "12345700",
-    "type": "ZCS1",
-    "priority": "Low",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678913",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "3.0",
-<<<<<<< HEAD
-        "latestFinishDate": "31-Aug-2017",
-        "earliestStartDate": "18-Aug-2017",
-        "latestStartDate": "18-Aug-2017"
-=======
-        "latestFinishDate": "31-aug.-2017",
-        "earliestStartDate": "18-aug.-2017",
-        "latestStartDate": "18-aug.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "",
+        "latestFinishDate": "CRANE",
+        "earliestStartDate": "",
+        "latestStartDate": ""
     },
-    "userStatus": "ZBNQ PERF RFCO",
+    "userStatus": "",
     "createdBy": "SAP",
-    "systemStatus": "REL  NMAT SETC",
-    "name": "Crane inspection",
+    "systemStatus": "WT DT40 DanTysk (3601221)",
+    "name": "04-sep.-2016",
     "siteName": "",
-    "externalWorkOrderId": "12345701",
-    "type": "ZCS1",
-    "priority": "Low",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678914",
+    "type": "BS01",
+    "priority": "ZSMC",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "3.0",
-<<<<<<< HEAD
-        "latestFinishDate": "31-Aug-2017",
-        "earliestStartDate": "18-Aug-2017",
-        "latestStartDate": "18-Aug-2017"
-=======
-        "latestFinishDate": "31-aug.-2017",
-        "earliestStartDate": "18-aug.-2017",
-        "latestStartDate": "18-aug.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "",
+        "latestFinishDate": "",
+        "earliestStartDate": "",
+        "latestStartDate": ""
     },
-    "userStatus": "ZBNQ PERF RFCO",
+    "userStatus": "",
     "createdBy": "SAP",
-    "systemStatus": "REL  NMAT SETC",
-    "name": "3,00_WT-BS01 3601221 Yearly Crane Inspec",
+    "systemStatus": "WT DT40 DanTysk (3601221)",
+    "name": "04-sep.-2016",
     "siteName": "",
-    "externalWorkOrderId": "12345702",
-    "type": "ZCS1",
-    "priority": "Low",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678911",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "0.0",
-<<<<<<< HEAD
-        "latestFinishDate": "31-Aug-2017",
-        "earliestStartDate": "31-Aug-2017",
-        "latestStartDate": "31-Aug-2017"
-=======
-        "latestFinishDate": "31-aug.-2017",
-        "earliestStartDate": "31-aug.-2017",
-        "latestStartDate": "31-aug.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "",
+        "latestFinishDate": "",
+        "earliestStartDate": "",
+        "latestStartDate": ""
     },
-    "userStatus": "ZBNQ PERF RECV RFCO ZBCC",
+    "userStatus": "",
     "createdBy": "SAP",
-    "systemStatus": "REL  CCOK GMPS MACM PRC  RESA SETC",
-    "name": "A9B10170721 Retrofit Power Supply G4",
+    "systemStatus": "WT DT07 DanTysk (3601188)",
+    "name": "10-nov.-2017",
     "siteName": "",
-    "externalWorkOrderId": "12345703",
-    "type": "ZCS5",
-    "priority": "Low",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678912",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "0.0",
-<<<<<<< HEAD
-        "latestFinishDate": "31-Aug-2017",
-        "earliestStartDate": "31-Aug-2017",
-        "latestStartDate": "31-Aug-2017"
-=======
-        "latestFinishDate": "31-aug.-2017",
-        "earliestStartDate": "31-aug.-2017",
-        "latestStartDate": "31-aug.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "",
+        "latestFinishDate": "",
+        "earliestStartDate": "",
+        "latestStartDate": ""
     },
-    "userStatus": "ZBNQ PERF RFCO ZBCC",
+    "userStatus": "",
     "createdBy": "SAP",
-    "systemStatus": "REL  CCOK GMPS NMAT PRC  RESA SETC",
-    "name": "A9B10196140  Retrofit, sign f dehumidifi",
+    "systemStatus": "WT DT07 DanTysk (3601188)",
+    "name": "10-nov.-2017",
     "siteName": "",
-    "externalWorkOrderId": "12345704",
-    "type": "ZCS5",
-    "priority": "Low",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678913",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "2.0",
-<<<<<<< HEAD
-        "latestFinishDate": "01-Sep-2017",
-        "earliestStartDate": "24-Jul-2017",
-        "latestStartDate": "24-Jul-2017"
-=======
-        "latestFinishDate": "01-sep.-2017",
-        "earliestStartDate": "24-jul.-2017",
-        "latestStartDate": "24-jul.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "2",
+        "latestFinishDate": "",
+        "earliestStartDate": "2",
+        "latestStartDate": "2"
     },
-    "userStatus": "ZBNQ PERF RFCO ZBCC ZBMC",
+    "userStatus": "2",
     "createdBy": "SAP",
-    "systemStatus": "REL  CCOK NMAT PRC  SETC",
-    "name": "0 : Damaged fiber optic cable",
+    "systemStatus": "WT SB61 Sandbank (4000390)",
+    "name": "24-jul.-2017",
     "siteName": "",
-    "externalWorkOrderId": "12345705",
-    "type": "ZCS5",
-    "priority": "2",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678914",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "1.0",
-<<<<<<< HEAD
-        "latestFinishDate": "01-Sep-2017",
-        "earliestStartDate": "27-Jul-2017",
-        "latestStartDate": "27-Jul-2017"
-=======
-        "latestFinishDate": "01-sep.-2017",
-        "earliestStartDate": "27-jul.-2017",
-        "latestStartDate": "27-jul.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "3",
+        "latestFinishDate": "",
+        "earliestStartDate": "3",
+        "latestStartDate": "3"
     },
-    "userStatus": "ZBNQ CLAR PERF RFCO ZBCC ZBMC",
+    "userStatus": "3",
     "createdBy": "SAP",
-    "systemStatus": "REL  CCOK NMAT PRC  SETC",
-    "name": "0 : Hiab Crane Slow",
+    "systemStatus": "WT SB27 Sandbank (4000358)",
+    "name": "28-jul.-2017",
     "siteName": "",
-    "externalWorkOrderId": "12345706",
-    "type": "ZCS5",
-    "priority": "3",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678911",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "2.0",
-<<<<<<< HEAD
-        "latestFinishDate": "01-Sep-2017",
-        "earliestStartDate": "01-Sep-2017",
-        "latestStartDate": "01-Sep-2017"
-=======
-        "latestFinishDate": "01-sep.-2017",
-        "earliestStartDate": "01-sep.-2017",
-        "latestStartDate": "01-sep.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "",
+        "latestFinishDate": "",
+        "earliestStartDate": "",
+        "latestStartDate": ""
     },
-    "userStatus": "ZBNQ PERF RFCO",
+    "userStatus": "",
     "createdBy": "SAP",
-    "systemStatus": "REL  CCOK NMAT PRC  SETC",
-    "name": "Switching support Vattenfall",
+    "systemStatus": "WT SB29 Sandbank (4000360)",
+    "name": "01-sep.-2017",
     "siteName": "",
-    "externalWorkOrderId": "12345707",
-    "type": "ZCS3",
-    "priority": "Low",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678912",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "0.5",
-<<<<<<< HEAD
-        "latestFinishDate": "01-Sep-2017",
-        "earliestStartDate": "01-Sep-2017",
-        "latestStartDate": "01-Sep-2017"
-=======
-        "latestFinishDate": "01-sep.-2017",
-        "earliestStartDate": "01-sep.-2017",
-        "latestStartDate": "01-sep.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "2",
+        "latestFinishDate": "",
+        "earliestStartDate": "2",
+        "latestStartDate": "2"
     },
-    "userStatus": "ZBNQ PERF RFCO ZBMC",
+    "userStatus": "2",
     "createdBy": "SAP",
-    "systemStatus": "REL  CCOK NMAT PRC  SETC",
-    "name": "Inspection on Water Ingress",
+    "systemStatus": "WT SB63 Sandbank (4000392)",
+    "name": "01-sep.-2017",
     "siteName": "",
-    "externalWorkOrderId": "12345708",
-    "type": "ZCS5",
-    "priority": "2",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678913",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "0.5",
-<<<<<<< HEAD
-        "latestFinishDate": "01-Sep-2017",
-        "earliestStartDate": "01-Sep-2017",
-        "latestStartDate": "01-Sep-2017"
-=======
-        "latestFinishDate": "01-sep.-2017",
-        "earliestStartDate": "01-sep.-2017",
-        "latestStartDate": "01-sep.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "2",
+        "latestFinishDate": "",
+        "earliestStartDate": "2",
+        "latestStartDate": "2"
     },
-    "userStatus": "ZBNQ RFCO ZBCC ZBMC",
+    "userStatus": "2",
     "createdBy": "SAP",
-    "systemStatus": "REL  CCOK NMAT PRC  SETC",
-    "name": "Inspection on Water Ingress",
+    "systemStatus": "WT SB68 Sandbank (4000397)",
+    "name": "01-sep.-2017",
     "siteName": "",
-    "externalWorkOrderId": "12345709",
-    "type": "ZCS5",
-    "priority": "2",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678914",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "1.0",
-<<<<<<< HEAD
-        "latestFinishDate": "04-Sep-2017",
-        "earliestStartDate": "04-Sep-2017",
-        "latestStartDate": "04-Sep-2017"
-=======
-        "latestFinishDate": "04-sep.-2017",
-        "earliestStartDate": "04-sep.-2017",
-        "latestStartDate": "04-sep.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "2",
+        "latestFinishDate": "",
+        "earliestStartDate": "2",
+        "latestStartDate": "2"
     },
-    "userStatus": "ZBNQ PERF RFCO",
+    "userStatus": "2",
     "createdBy": "SAP",
-    "systemStatus": "REL  CCOK NMAT PRC  SETC",
-    "name": "Inspection on Water Ingress",
+    "systemStatus": "WT SB23 Sandbank (4000354)",
+    "name": "04-sep.-2017",
     "siteName": "",
-    "externalWorkOrderId": "12345710",
-    "type": "ZCS5",
-    "priority": "2",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678911",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "0.0",
-<<<<<<< HEAD
-        "latestFinishDate": "18-Sep-2017",
-        "earliestStartDate": "18-Sep-2017",
-        "latestStartDate": "18-Sep-2017"
-=======
-        "latestFinishDate": "18-sep.-2017",
-        "earliestStartDate": "18-sep.-2017",
-        "latestStartDate": "18-sep.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "",
+        "latestFinishDate": "",
+        "earliestStartDate": "",
+        "latestStartDate": ""
     },
-    "userStatus": "ZBNQ PERF RECV ZBCC",
+    "userStatus": "",
     "createdBy": "SAP",
-    "systemStatus": "REL  CCOK MACM PRC  SETC",
-    "name": "A9B10191123 - Retrofit, yaw software 201",
+    "systemStatus": "WT DT75 DanTysk (3601256)",
+    "name": "10-nov.-2017",
     "siteName": "",
-    "externalWorkOrderId": "12345711",
-    "type": "ZCS5",
-    "priority": "Low",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678912",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "1.0",
-<<<<<<< HEAD
-        "latestFinishDate": "19-Sep-2017",
-        "earliestStartDate": "19-Sep-2017",
-        "latestStartDate": "19-Sep-2017"
-=======
-        "latestFinishDate": "19-sep.-2017",
-        "earliestStartDate": "19-sep.-2017",
-        "latestStartDate": "19-sep.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "3",
+        "latestFinishDate": "",
+        "earliestStartDate": "3",
+        "latestStartDate": "3"
     },
-    "userStatus": "ZBNQ PERF RFCO ZBMC",
+    "userStatus": "3",
     "createdBy": "SAP",
-    "systemStatus": "REL  CCOK NMAT PRC  SETC",
-    "name": "No Connection",
+    "systemStatus": "WT SB63 Sandbank (4000392)",
+    "name": "19-sep.-2017",
     "siteName": "",
-    "externalWorkOrderId": "12345712",
-    "type": "ZCS5",
-    "priority": "3",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678913",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "3.0",
-<<<<<<< HEAD
-        "latestFinishDate": "30-Sep-2017",
-        "earliestStartDate": "25-Aug-2017",
-        "latestStartDate": "25-Aug-2017"
-=======
-        "latestFinishDate": "30-sep.-2017",
-        "earliestStartDate": "25-aug.-2017",
-        "latestStartDate": "25-aug.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "",
+        "latestFinishDate": "CRANE",
+        "earliestStartDate": "",
+        "latestStartDate": ""
     },
-    "userStatus": "ZBNQ PERF RFCO ZBCC",
+    "userStatus": "",
     "createdBy": "SAP",
-    "systemStatus": "REL  NMAT SETC",
-    "name": "Crane inspection",
+    "systemStatus": "WT DT64 DanTysk (3601245)",
+    "name": "08-maj-2016",
     "siteName": "",
-    "externalWorkOrderId": "12345713",
-    "type": "ZCS1",
-    "priority": "Low",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678914",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "3.0",
-<<<<<<< HEAD
-        "latestFinishDate": "30-Sep-2017",
-        "earliestStartDate": "25-Aug-2017",
-        "latestStartDate": "25-Aug-2017"
-=======
-        "latestFinishDate": "30-sep.-2017",
-        "earliestStartDate": "25-aug.-2017",
-        "latestStartDate": "25-aug.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "",
+        "latestFinishDate": "",
+        "earliestStartDate": "",
+        "latestStartDate": ""
     },
-    "userStatus": "ZBNQ PERF RFCO ZBCC",
+    "userStatus": "",
     "createdBy": "SAP",
-    "systemStatus": "REL  NMAT SETC",
-    "name": "3,00_WT-BS01 3601245 Yearly Crane Inspec",
+    "systemStatus": "WT DT64 DanTysk (3601245)",
+    "name": "08-maj-2016",
     "siteName": "",
-    "externalWorkOrderId": "12345714",
-    "type": "ZCS1",
-    "priority": "Low",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678911",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "3.0",
-<<<<<<< HEAD
-        "latestFinishDate": "30-Sep-2017",
-        "earliestStartDate": "25-Aug-2017",
-        "latestStartDate": "25-Aug-2017"
-=======
-        "latestFinishDate": "30-sep.-2017",
-        "earliestStartDate": "25-aug.-2017",
-        "latestStartDate": "25-aug.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "",
+        "latestFinishDate": "TMSE",
+        "earliestStartDate": "",
+        "latestStartDate": ""
     },
-    "userStatus": "ZBNQ PERF RFCO ZBCC",
+    "userStatus": "",
     "createdBy": "SAP",
-    "systemStatus": "REL  NMAT SETC",
-    "name": "Turbine mounted safety equipment",
+    "systemStatus": "WT DT64 DanTysk (3601245)",
+    "name": "08-maj-2016",
     "siteName": "",
-    "externalWorkOrderId": "12345715",
-    "type": "ZCS1",
-    "priority": "Low",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678912",
+    "type": "BS01",
+    "priority": "ZSMC",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "3.0",
-<<<<<<< HEAD
-        "latestFinishDate": "30-Sep-2017",
-        "earliestStartDate": "25-Aug-2017",
-        "latestStartDate": "25-Aug-2017"
-=======
-        "latestFinishDate": "30-sep.-2017",
-        "earliestStartDate": "25-aug.-2017",
-        "latestStartDate": "25-aug.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "",
+        "latestFinishDate": "",
+        "earliestStartDate": "",
+        "latestStartDate": ""
     },
-    "userStatus": "ZBNQ PERF RFCO ZBCC",
+    "userStatus": "",
     "createdBy": "SAP",
-    "systemStatus": "REL  NMAT SETC",
-    "name": "3,00_WT-BS01 3601245 TMSE",
+    "systemStatus": "WT DT64 DanTysk (3601245)",
+    "name": "08-maj-2016",
     "siteName": "",
-    "externalWorkOrderId": "12345716",
-    "type": "ZCS1",
-    "priority": "Low",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678913",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "3.0",
-<<<<<<< HEAD
-        "latestFinishDate": "30-Sep-2017",
-        "earliestStartDate": "01-Sep-2017",
-        "latestStartDate": "01-Sep-2017"
-=======
-        "latestFinishDate": "30-sep.-2017",
-        "earliestStartDate": "01-sep.-2017",
-        "latestStartDate": "01-sep.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "",
+        "latestFinishDate": "CRANE",
+        "earliestStartDate": "",
+        "latestStartDate": ""
     },
-    "userStatus": "ZBNQ PERF RECV RFCO",
+    "userStatus": "",
     "createdBy": "SAP",
-    "systemStatus": "REL  NMAT SETC",
-    "name": "Crane inspection",
+    "systemStatus": "WT DT20 DanTysk (3601201)",
+    "name": "02-okt.-2016",
     "siteName": "",
-    "externalWorkOrderId": "12345717",
-    "type": "ZCS1",
-    "priority": "Low",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678914",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "3.0",
-<<<<<<< HEAD
-        "latestFinishDate": "30-Sep-2017",
-        "earliestStartDate": "01-Sep-2017",
-        "latestStartDate": "01-Sep-2017"
-=======
-        "latestFinishDate": "30-sep.-2017",
-        "earliestStartDate": "01-sep.-2017",
-        "latestStartDate": "01-sep.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "",
+        "latestFinishDate": "",
+        "earliestStartDate": "",
+        "latestStartDate": ""
     },
-    "userStatus": "ZBNQ PERF RECV RFCO",
+    "userStatus": "",
     "createdBy": "SAP",
-    "systemStatus": "REL  NMAT SETC",
-    "name": "3,00_WT-BS01 3601201 Yearly Crane Inspec",
+    "systemStatus": "WT DT20 DanTysk (3601201)",
+    "name": "02-okt.-2016",
     "siteName": "",
-    "externalWorkOrderId": "12345718",
-    "type": "ZCS1",
-    "priority": "Low",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678911",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "0.0",
-<<<<<<< HEAD
-        "latestFinishDate": "30-Sep-2017",
-        "earliestStartDate": "30-Sep-2017",
-        "latestStartDate": "30-Sep-2017"
-=======
-        "latestFinishDate": "30-sep.-2017",
-        "earliestStartDate": "30-sep.-2017",
-        "latestStartDate": "30-sep.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "",
+        "latestFinishDate": "",
+        "earliestStartDate": "",
+        "latestStartDate": ""
     },
-    "userStatus": "ZBNQ PERF RECV ZBCC",
+    "userStatus": "",
     "createdBy": "SAP",
-    "systemStatus": "REL  CCOK MACM PRC  SETC",
-    "name": "A9B10191123 - Retrofit, yaw software 201",
+    "systemStatus": "WT DT12 DanTysk (3601193)",
+    "name": "10-nov.-2017",
     "siteName": "",
-    "externalWorkOrderId": "12345719",
-    "type": "ZCS5",
-    "priority": "Low",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678912",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "0.0",
-<<<<<<< HEAD
-        "latestFinishDate": "30-Sep-2017",
-        "earliestStartDate": "30-Sep-2017",
-        "latestStartDate": "30-Sep-2017"
-=======
-        "latestFinishDate": "30-sep.-2017",
-        "earliestStartDate": "30-sep.-2017",
-        "latestStartDate": "30-sep.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "",
+        "latestFinishDate": "",
+        "earliestStartDate": "",
+        "latestStartDate": ""
     },
-    "userStatus": "ZBNQ PERF RFCO ZBCC",
+    "userStatus": "",
     "createdBy": "SAP",
-    "systemStatus": "REL  CCOK GMPS MACM PRC  RESA SETC",
-    "name": "A9B10196140  Retrofit, sign f dehumidifi",
+    "systemStatus": "WT DT12 DanTysk (3601193)",
+    "name": "10-nov.-2017",
     "siteName": "",
-    "externalWorkOrderId": "12345720",
-    "type": "ZCS5",
-    "priority": "Low",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678913",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "2.0",
-<<<<<<< HEAD
-        "latestFinishDate": "15-Oct-2017",
-        "earliestStartDate": "17-Jul-2017",
-        "latestStartDate": "17-Jul-2017"
-=======
-        "latestFinishDate": "15-okt.-2017",
-        "earliestStartDate": "17-jul.-2017",
-        "latestStartDate": "17-jul.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "2",
+        "latestFinishDate": "",
+        "earliestStartDate": "2",
+        "latestStartDate": "2"
     },
-    "userStatus": "ZBNQ PERF ZBA1 ZBPO",
+    "userStatus": "2",
     "createdBy": "SAP",
-    "systemStatus": "REL  CCOK MACM PRC  SETC",
-    "name": "A# Broken hose holder on pitch stat.tank",
+    "systemStatus": "WT SB32 Sandbank (4000362)",
+    "name": "17-jul.-2017",
     "siteName": "",
-    "externalWorkOrderId": "12345721",
-    "type": "ZCS5",
-    "priority": "2",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678914",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "0.5",
-<<<<<<< HEAD
-        "latestFinishDate": "25-Oct-2017",
-        "earliestStartDate": "25-Aug-2017",
-        "latestStartDate": "25-Aug-2017"
-=======
-        "latestFinishDate": "25-okt.-2017",
-        "earliestStartDate": "25-aug.-2017",
-        "latestStartDate": "25-aug.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "3",
+        "latestFinishDate": "",
+        "earliestStartDate": "3",
+        "latestStartDate": "3"
     },
-    "userStatus": "ZBNQ",
+    "userStatus": "3",
     "createdBy": "SAP",
-    "systemStatus": "REL  NMAT SETC",
-    "name": "TMSE: Exchange Fire Extinguishers",
+    "systemStatus": "WT SB26 Sandbank (4000357)",
+    "name": "29-aug.-2017",
     "siteName": "",
-    "externalWorkOrderId": "12345722",
-    "type": "ZCS1",
-    "priority": "3",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678911",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "2.0",
-<<<<<<< HEAD
-        "latestFinishDate": "25-Oct-2017",
-        "earliestStartDate": "25-Aug-2017",
-        "latestStartDate": "25-Aug-2017"
-=======
-        "latestFinishDate": "25-okt.-2017",
-        "earliestStartDate": "25-aug.-2017",
-        "latestStartDate": "25-aug.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "2",
+        "latestFinishDate": "",
+        "earliestStartDate": "2",
+        "latestStartDate": "2"
     },
-    "userStatus": "ZBNQ PERF RFCO",
+    "userStatus": "2",
     "createdBy": "SAP",
-    "systemStatus": "REL  CCOK NMAT PRC  SETC",
-    "name": "PT100 sensors possible swapped",
+    "systemStatus": "WT SB67 Sandbank (4000396)",
+    "name": "29-aug.-2017",
     "siteName": "",
-    "externalWorkOrderId": "12345723",
-    "type": "ZCS5",
-    "priority": "2",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678912",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "59.0",
-<<<<<<< HEAD
-        "latestFinishDate": "27-Oct-2017",
-        "earliestStartDate": "27-Oct-2017",
-        "latestStartDate": "27-Oct-2017"
-=======
-        "latestFinishDate": "27-okt.-2017",
-        "earliestStartDate": "27-okt.-2017",
-        "latestStartDate": "27-okt.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "",
+        "latestFinishDate": "G4MK3R16",
+        "earliestStartDate": "",
+        "latestStartDate": ""
     },
-    "userStatus": "ZBNQ",
+    "userStatus": "",
     "createdBy": "SAP",
-    "systemStatus": "CRTD MANC NTUP SETC",
-    "name": "Jährlich",
+    "systemStatus": "WT SB76 Sandbank (4000399)",
+    "name": "21-mar.-2017",
     "siteName": "",
-    "externalWorkOrderId": "12345724",
-    "type": "ZCS1",
-    "priority": "Low",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678913",
+    "type": "BS01",
+    "priority": "ZSMC",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "0.0",
-<<<<<<< HEAD
-        "latestFinishDate": "27-Oct-2017",
-        "earliestStartDate": "27-Oct-2017",
-        "latestStartDate": "27-Oct-2017"
-=======
-        "latestFinishDate": "27-okt.-2017",
-        "earliestStartDate": "27-okt.-2017",
-        "latestStartDate": "27-okt.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "",
+        "latestFinishDate": "G4MK3R16",
+        "earliestStartDate": "",
+        "latestStartDate": ""
     },
-    "userStatus": "ZBNQ",
+    "userStatus": "",
     "createdBy": "SAP",
-    "systemStatus": "CRTD MANC NTUP SETC",
-    "name": "12 Monate (nur zur ersten jahreswartung)",
+    "systemStatus": "WT SB76 Sandbank (4000399)",
+    "name": "21-mar.-2017",
     "siteName": "",
-    "externalWorkOrderId": "12345725",
-    "type": "ZCS1",
-    "priority": "Low",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678914",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }{
     "assetSerialNumber": "0",
     "planning": {
-        "estimatedTime": "1.0",
-<<<<<<< HEAD
-        "latestFinishDate": "06-Nov-2017",
-        "earliestStartDate": "06-Sep-2017",
-        "latestStartDate": "06-Sep-2017"
-=======
-        "latestFinishDate": "06-nov.-2017",
-        "earliestStartDate": "06-sep.-2017",
-        "latestStartDate": "06-sep.-2017"
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+        "estimatedTime": "3",
+        "latestFinishDate": "",
+        "earliestStartDate": "3",
+        "latestStartDate": "3"
     },
-    "userStatus": "ZBNQ",
+    "userStatus": "3",
     "createdBy": "SAP",
-    "systemStatus": "REL  NMAT SETC",
-    "name": "TMSE: Echange Fire extinguisher",
+    "systemStatus": "WT SB22 Sandbank (4000353)",
+    "name": "06-sep.-2017",
     "siteName": "",
-    "externalWorkOrderId": "12345726",
-    "type": "ZCS1",
-    "priority": "3",
-<<<<<<< HEAD
-    "createdOn": "17-4-2018",
-=======
-    "createdOn": "18-4-2018",
->>>>>>> 78d5d2fdc5145ad05933cac639b6e9b933aa9097
+    "externalWorkOrderId": "012345678911",
+    "type": "BS01",
+    "priority": "ZMR1",
+    "createdOn": "22-4-2018",
     "status": "new"
 }
