@@ -23,6 +23,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.net.URL;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -40,6 +42,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
+import javax.crypto.BadPaddingException;
+import javax.crypto.Cipher;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.KeyGenerator;
+import javax.crypto.NoSuchPaddingException;
+import javax.crypto.SecretKey;
 
 /**
  * FXML Controller class
@@ -64,19 +72,34 @@ public class LoginViewController implements Initializable
     List<String> lines = new ArrayList<String>();
     int rememberMeLineNr = 2;
     private String filePathString = "UserLogin.txt";
+    
+    private byte[] txt;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) 
-    
     {
-        rememberMeFunction();
+        try {
+            rememberMeFunction();
+        } catch (NoSuchAlgorithmException ex) {
+            Logger.getLogger(LoginViewController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NoSuchPaddingException ex) {
+            Logger.getLogger(LoginViewController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (UnsupportedEncodingException ex) {
+            Logger.getLogger(LoginViewController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InvalidKeyException ex) {
+            Logger.getLogger(LoginViewController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalBlockSizeException ex) {
+            Logger.getLogger(LoginViewController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (BadPaddingException ex) {
+            Logger.getLogger(LoginViewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML
-    private void login(ActionEvent event) throws IOException 
+    private void login(ActionEvent event) throws IOException, NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException 
     {
         try 
         {
@@ -146,20 +169,36 @@ public class LoginViewController implements Initializable
         alert.setContentText(message);
         alert.showAndWait();
     }
-
+    
+    
     //writes the login to a text file that we later can read
-    private void writeUserLoginTxt() 
+    private void writeUserLoginTxt() throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException 
     {
         PrintWriter writer = null;
         try 
         {
+            KeyGenerator keygenerator = KeyGenerator.getInstance("DES");
+            SecretKey myDesKey = keygenerator.generateKey();
+            
+            Cipher desCipher;
+            desCipher = Cipher.getInstance("DES");
+            
+            txt = userLogin.getUserName().getBytes("UTF-8");
+            
+            desCipher.init(Cipher.ENCRYPT_MODE, myDesKey);
+            byte[] textEncrypted = desCipher.doFinal(txt);
+            
             //writes the user and pw to a txt file, but overwrites it everytime
             writer = new PrintWriter("UserLog.txt", "UTF-8");
             writer.println("The logged in: ");
+            
             timeLog();
-            writer.println(userLogin.getUserName());
-            writer.println(userLogin.getPassword());
+            writer.println(txt);
+            writer.println(txt);
             writer.close();
+
+            desCipher.init(Cipher.DECRYPT_MODE, myDesKey);
+            byte[] textDecrypted = desCipher.doFinal(textEncrypted);
         } 
         catch (FileNotFoundException ex) 
         { 
@@ -173,6 +212,7 @@ public class LoginViewController implements Initializable
         {
               AlertWindow  alert = new AlertWindow("IOException", null, "IO Exception");
         } 
+        System.out.println("what is here? "+txt);
     }
 
     private void timeLog() throws FileNotFoundException, UnsupportedEncodingException, IOException 
@@ -225,7 +265,7 @@ public class LoginViewController implements Initializable
     }
 
     //reads the userlogin text file
-    private void readUserLoginTxt() 
+    private void readUserLoginTxt() throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException 
     {
         BufferedReader br = null;
         try 
@@ -233,6 +273,7 @@ public class LoginViewController implements Initializable
             //Should read the file
             br = new BufferedReader(new FileReader("UserLog.txt"));
             String line = br.readLine();
+            
             while (line != null) 
             {
                 lines.add(line);
@@ -260,17 +301,40 @@ public class LoginViewController implements Initializable
         }
     }
 
-    private void rememberMeFunction() 
+    private void rememberMeFunction() throws NoSuchAlgorithmException, NoSuchPaddingException, UnsupportedEncodingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException 
     {
+        
         BufferedReader br = null;
         try 
         {
             br = new BufferedReader(new FileReader("UserLog.txt"));
             String line = br.readLine();
+            
+//            KeyGenerator keygenerator = KeyGenerator.getInstance("DES");
+//            SecretKey myDesKey = keygenerator.generateKey();
+//
+//            Cipher desCipher;
+//            desCipher = Cipher.getInstance("DES");
+//            
+//            txt = br.readLine().getBytes("UTF-8");
+            
             while (line != null) 
             {
+//                desCipher.init(Cipher.DECRYPT_MODE, myDesKey);
+//                byte[] textDecrypted = desCipher.doFinal(txt);
+//                
+//                System.out.println("sadasd");
+                
                 lines.add(line);
                 line = br.readLine();
+            }
+            
+            if (lines.size() > rememberMeLineNr) 
+            {
+                rememberUser.setSelected(true);
+                
+                userNameID.setText(lines.get(1));
+                userPassword.setText(lines.get(2));
             }
         } 
         catch (FileNotFoundException ex) 
@@ -293,17 +357,11 @@ public class LoginViewController implements Initializable
             }
         }
 
-        if (lines.size() > rememberMeLineNr) 
-        {
-            rememberUser.setSelected(true);
-            userNameID.setText(lines.get(1));
-            userPassword.setText(lines.get(2));
-        }
+
     }
 
     private void forgotPassword(ActionEvent event) 
     {
         showErrorDialog("You sure?", null, "Well, if yes then that's because you are an idiot.");
     }
-
 }
