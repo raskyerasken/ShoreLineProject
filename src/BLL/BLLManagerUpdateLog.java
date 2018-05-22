@@ -5,6 +5,7 @@
  */
 package BLL;
 
+import BLLFacade.IBLLManagerUpdateLog;
 import BE.UpdateLog;
 import DAL.DataBaseUpdateLog;
 import java.sql.SQLException;
@@ -14,7 +15,7 @@ import java.util.List;
  *
  * @author ander
  */
-public class BLLManagerUpdateLog
+public class BLLManagerUpdateLog implements IBLLManagerUpdateLog
 {
     DataBaseUpdateLog ul = new DataBaseUpdateLog();
     
