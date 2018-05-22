@@ -5,20 +5,20 @@
  */
 package BLL;
 
+import BLLFacade.IBLLManagerUserLogin;
 import BE.UserLogin;
 import DAL.DataBaseUserLogin;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
 import java.sql.SQLException;
-import javafx.collections.ObservableList;
 
 /**
  *
  * @author ander
  */
-public class BLLManagerUserLogin 
+public class BLLManagerUserLogin implements IBLLManagerUserLogin 
 {
-    DataBaseUserLogin ul = new DataBaseUserLogin();
     
+    DataBaseUserLogin ul = new DataBaseUserLogin();
     
     public void getPassword(UserLogin userLogin) throws SQLServerException, SQLException 
     {

@@ -1060,6 +1060,32 @@ The user Jacob logged in.    Date: 2018/05/21 18:15:19
 The user Jacob logged in.    Date: 2018/05/21 18:17:03
 The user Jacob logged in.    Date: 2018/05/21 18:17:58
 The user Jacob logged in.    Date: 2018/05/21 18:18:41
+<<<<<<< HEAD
+The user Jacob logged in.    Date: 2018/05/21 18:22:17
+The user Jacob logged in.    Date: 2018/05/21 18:59:30
+The user kris logged in.    Date: 2018/05/21 21:48:45
+The user kris logged in.    Date: 2018/05/21 21:49:33
+The user kris logged in.    Date: 2018/05/21 21:50:02
+The user kris logged in.    Date: 2018/05/21 21:52:32
+The user kris logged in.    Date: 2018/05/21 21:53:17
+The user kris logged in.    Date: 2018/05/21 22:02:19
+The user kris logged in.    Date: 2018/05/21 22:03:14
+The user kris logged in.    Date: 2018/05/21 22:12:09
+The user kris logged in.    Date: 2018/05/21 22:18:47
+The user kris logged in.    Date: 2018/05/21 22:26:36
+The user kris logged in.    Date: 2018/05/21 22:28:09
+The user kris logged in.    Date: 2018/05/21 22:30:55
+The user kris logged in.    Date: 2018/05/21 22:47:50
+The user kris logged in.    Date: 2018/05/21 22:48:56
+The user kris logged in.    Date: 2018/05/21 22:50:23
+The user kris logged in.    Date: 2018/05/21 22:50:50
+The user kris logged in.    Date: 2018/05/21 22:52:01
+The user kris logged in.    Date: 2018/05/22 00:14:38
+The user kris logged in.    Date: 2018/05/22 00:19:21
+The user kris logged in.    Date: 2018/05/22 00:27:37
+The user kris logged in.    Date: 2018/05/22 10:54:37
+The user kris logged in.    Date: 2018/05/22 10:55:58
+=======
 The user Jacob logged in.    Date: 2018/05/22 10:13:04
 The user Jacob logged in.    Date: 2018/05/22 10:14:37
 The user Jacob logged in.    Date: 2018/05/22 10:28:33
@@ -1082,6 +1108,7 @@ The user Jacob logged in.    Date: 2018/05/22 11:01:52
 The user Jacob logged in.    Date: 2018/05/22 11:02:10
 The user Jacob logged in.    Date: 2018/05/22 11:02:30
 The user Jacob logged in.    Date: 2018/05/22 11:02:54
+<<<<<<< HEAD
 The user Jacob logged in.    Date: 2018/05/22 11:23:10
 The user Jacob logged in.    Date: 2018/05/22 11:29:29
 The user Jacob logged in.    Date: 2018/05/22 11:29:59
@@ -1128,3 +1155,13 @@ The user Jacob logged in.    Date: 2018/05/22 14:19:54
 The user Jacob logged in.    Date: 2018/05/22 14:22:35
 The user Jacob logged in.    Date: 2018/05/22 14:25:23
 The user Jacob logged in.    Date: 2018/05/22 14:26:06
+=======
+>>>>>>> bcdd6fc92017f9f42c7d00904f919471691814a0
+The user kris logged in.    Date: 2018/05/22 11:08:36
+The user kris logged in.    Date: 2018/05/22 12:19:39
+The user kris logged in.    Date: 2018/05/22 12:27:24
+The user kris logged in.    Date: 2018/05/22 12:34:40
+The user kris logged in.    Date: 2018/05/22 12:34:47
+The user kris logged in.    Date: 2018/05/22 13:18:17
+The user kris logged in.    Date: 2018/05/22 13:21:41
+>>>>>>> 48107b1fc67c533d2319d2fff61a69187975824f

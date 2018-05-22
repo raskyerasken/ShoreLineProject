@@ -13,10 +13,8 @@ import java.sql.Connection;
  *
  * @author ander
  */
-public class ConnectionManagerSLProject 
+public class ConnectionManagerSLProject extends AbstractConnectionManagerSLProject
 {
-    private final SQLServerDataSource ds = new SQLServerDataSource();
-    
     public ConnectionManagerSLProject() 
     {
         ds.setDatabaseName("CS2017B_13_Shoreline");
@@ -26,8 +24,4 @@ public class ConnectionManagerSLProject
         ds.setServerName("10.176.111.31");
     }
     
-    public Connection getConnection() throws SQLServerException
-    {
-        return ds.getConnection();
-    }
 }
