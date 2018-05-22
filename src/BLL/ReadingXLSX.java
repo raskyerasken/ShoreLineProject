@@ -6,6 +6,7 @@
 package BLL;
 
 import BE.JSONAttributes;
+import BE.JSONCustommize;
 import BE.Planning;
 import java.io.File;
 import java.io.FileInputStream;
@@ -111,34 +112,46 @@ public class ReadingXLSX {
         return JSONList;
     }
    
-
+    
     private JSONObject setJSONObject(int i) throws JSONException, ParseException, IOException {
+        JSONCustommize custom = new JSONCustommize();
+        
+        custom.setType("Order Type");
+        custom.setExternalWorkOrderId("Order");
+        custom.setStatus("System status");
+        custom.setUserStatus("User status");
+        custom.setName("Opr. short text");
+        custom.setPriority("Priority");
+      custom.setLatestFinishDate("Lat.finish date");
+      custom.setEarlistStartDate("Earl.start date");
+      custom.setLatestStartDate("Latest start");
+      custom.setEstimatedTime("Normal duration");
         JSONObject Json = new JSONObject();
         Json.put("siteName", "");
         Json.put("assetSerialNumber", "0");
-        Json.put("type", firstSheet.getRow(i).getCell(ColumNames.indexOf("Order Type")).toString());
-        Json.put("externalWorkOrderId", firstSheet.getRow(i).getCell(ColumNames.indexOf("Order")).toString());
-        Json.put("systemStatus", firstSheet.getRow(i).getCell(ColumNames.indexOf("System status")).toString());
-        Json.put("userStatus", firstSheet.getRow(i).getCell(ColumNames.indexOf("User status")).toString());
+        Json.put("type", firstSheet.getRow(i).getCell(ColumNames.indexOf(custom.getType())).toString());
+        Json.put("externalWorkOrderId", firstSheet.getRow(i).getCell(ColumNames.indexOf(custom.getExternalWorkOrderId())).toString());
+        Json.put("systemStatus", firstSheet.getRow(i).getCell(ColumNames.indexOf(custom.getStatus())).toString());
+        Json.put("userStatus", firstSheet.getRow(i).getCell(ColumNames.indexOf(custom.getUserStatus())).toString());
         Json.put("createdOn", today.getDate() + "-" + today.getMonth() + "-" + (today.getYear() + 1900));
         Json.put("createdBy", "SAP");
-        if (firstSheet.getRow(i).getCell(ColumNames.indexOf("Opr. short text")).toString().isEmpty()) {
+        if (firstSheet.getRow(i).getCell(ColumNames.indexOf(custom.getName())).toString().isEmpty()) {
             Json.put("name", firstSheet.getRow(i).getCell(ColumNames.indexOf("Description2")).toString());
         } else {
-            Json.put("name", firstSheet.getRow(i).getCell(ColumNames.indexOf("Opr. short text")).toString());
+            Json.put("name", firstSheet.getRow(i).getCell(ColumNames.indexOf(custom.getName())).toString());
         }
-        if (firstSheet.getRow(i).getCell(ColumNames.indexOf("Priority")).toString().isEmpty()) {
+        if (firstSheet.getRow(i).getCell(ColumNames.indexOf(custom.getPriority())).toString().isEmpty()) {
             Json.put("priority", "Low");
         } else {
-            Json.put("priority", firstSheet.getRow(i).getCell(ColumNames.indexOf("Priority")).toString());
+            Json.put("priority", firstSheet.getRow(i).getCell(ColumNames.indexOf(custom.getPriority())).toString());
         }
         Json.put("status", "new");
         JSONObject planning = new JSONObject();
-        planning.put("latestFinishDate", firstSheet.getRow(i).getCell(ColumNames.indexOf("Lat.finish date")).toString());
-        planning.put("earliestStartDate", firstSheet.getRow(i).getCell(ColumNames.indexOf("Earl.start date")).toString());
-        planning.put("latestStartDate", firstSheet.getRow(i).getCell(ColumNames.indexOf("Latest start")).toString());
+        planning.put("latestFinishDate", firstSheet.getRow(i).getCell(ColumNames.indexOf(custom.getLatestFinishDate())).toString());
+        planning.put("earliestStartDate", firstSheet.getRow(i).getCell(ColumNames.indexOf(custom.getEarlistStartDate())).toString());
+        planning.put("latestStartDate", firstSheet.getRow(i).getCell(ColumNames.indexOf(custom.getLatestStartDate())).toString());
         planning.put("estimatedTime",
-                firstSheet.getRow(i).getCell(ColumNames.indexOf("Normal duration")).toString());
+                firstSheet.getRow(i).getCell(ColumNames.indexOf(custom.getEstimatedTime())).toString());
         Json.put("planning", planning);
 
         return Json;

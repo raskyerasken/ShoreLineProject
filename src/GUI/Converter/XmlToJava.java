@@ -41,7 +41,7 @@ public class XmlToJava extends DefaultHandler {
         XMLReader xmlReader = saxParser.getXMLReader();
         xmlReader.setContentHandler(new XmlToJava());
         xmlReader.parse(convertToFileURL(filename));
-        
+       
        //sets up error handling
        xmlReader.setErrorHandler((ErrorHandler) new MyErrorHandler(System.err));
        
