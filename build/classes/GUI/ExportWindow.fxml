@@ -15,9 +15,9 @@
       <JFXListView fx:id="taskField" layoutX="111.0" layoutY="100.0" prefHeight="246.0" prefWidth="444.0" AnchorPane.bottomAnchor="106.0" AnchorPane.leftAnchor="111.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="100.0" />
       <JFXButton layoutX="168.0" layoutY="64.0" onAction="#convertData" prefHeight="27.0" prefWidth="105.0" text="Convert Data" AnchorPane.leftAnchor="168.0" AnchorPane.topAnchor="64.0" />
       <JFXButton layoutX="299.0" layoutY="64.0" onAction="#saveData" text="Save File" AnchorPane.leftAnchor="299.0" AnchorPane.topAnchor="64.0" />
-      <JFXButton fx:id="startTaskThread" layoutX="111.0" layoutY="369.0" onAction="#startTask" text="Start Task" AnchorPane.bottomAnchor="58.0" AnchorPane.topAnchor="369.0" />
-      <JFXButton fx:id="pauseTaskThread" layoutX="282.0" layoutY="369.0" onAction="#pauseTask" text="Pause Task" AnchorPane.bottomAnchor="58.0" AnchorPane.topAnchor="369.0" />
-      <JFXButton fx:id="stopTaskThread" layoutX="514.0" layoutY="369.0" onAction="#stopTask" text="Stop" AnchorPane.bottomAnchor="58.0" AnchorPane.topAnchor="369.0" />
+      <JFXButton fx:id="startTaskThread" layoutX="111.0" layoutY="369.0" onAction="#startTask" text="Start Task" AnchorPane.bottomAnchor="58.0" />
+      <JFXButton fx:id="pauseTaskThread" layoutX="282.0" layoutY="369.0" onAction="#pauseTask" text="Pause Task" AnchorPane.bottomAnchor="58.0" />
+      <JFXButton fx:id="stopTaskThread" layoutX="514.0" layoutY="369.0" onAction="#stopTask" text="Stop" AnchorPane.bottomAnchor="58.0" />
       <ImageView fitHeight="67.0" fitWidth="325.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="2.0">
          <image>
             <Image url="@../Image/ShoreLineLogo.jpg" />

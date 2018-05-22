@@ -1109,3 +1109,9 @@ The user Jacob logged in.    Date: 2018/05/22 11:02:10
 The user Jacob logged in.    Date: 2018/05/22 11:02:30
 The user Jacob logged in.    Date: 2018/05/22 11:02:54
 >>>>>>> bcdd6fc92017f9f42c7d00904f919471691814a0
+The user kris logged in.    Date: 2018/05/22 11:08:36
+The user kris logged in.    Date: 2018/05/22 12:19:39
+The user kris logged in.    Date: 2018/05/22 12:27:24
+The user kris logged in.    Date: 2018/05/22 12:34:40
+The user kris logged in.    Date: 2018/05/22 12:34:47
+The user kris logged in.    Date: 2018/05/22 13:18:17

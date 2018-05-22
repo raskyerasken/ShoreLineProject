@@ -13,15 +13,12 @@ import java.sql.Connection;
  *
  * @author ander
  */
-public class ConnectionManagerSLProject extends AbstractConnectionManagerSLProject
+class AbstractConnectionManagerSLProject implements IConnectionManager
 {
-    public ConnectionManagerSLProject() 
-    {
-        ds.setDatabaseName("CS2017B_13_Shoreline");
-        ds.setUser("CS2017B_13_java");
-        ds.setPassword("javajava");
-        ds.setPortNumber(1433);
-        ds.setServerName("10.176.111.31");
-    }
+    protected SQLServerDataSource ds = new SQLServerDataSource();
     
+    public Connection getConnection() throws SQLServerException
+    {
+        return ds.getConnection();
+    }
 }

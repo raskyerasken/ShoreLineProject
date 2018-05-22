@@ -73,7 +73,9 @@ public class LoginViewController implements Initializable
     int rememberMeLineNr = 2;
     private String filePathString = "UserLogin.txt";
     
-    private byte[] txt;
+//    byte[] mac;
+//    byte[] txt;
+//    byte[] destination = new byte[txt.length + mac.length];       
 
     /**
      * Initializes the controller class.
@@ -177,28 +179,28 @@ public class LoginViewController implements Initializable
         PrintWriter writer = null;
         try 
         {
-            KeyGenerator keygenerator = KeyGenerator.getInstance("DES");
-            SecretKey myDesKey = keygenerator.generateKey();
-            
-            Cipher desCipher;
-            desCipher = Cipher.getInstance("DES");
-            
-            txt = userLogin.getUserName().getBytes("UTF-8");
-            
-            desCipher.init(Cipher.ENCRYPT_MODE, myDesKey);
-            byte[] textEncrypted = desCipher.doFinal(txt);
+//            KeyGenerator keygenerator = KeyGenerator.getInstance("DES");
+//            SecretKey myDesKey = keygenerator.generateKey();
+//            
+//            Cipher desCipher;
+//            desCipher = Cipher.getInstance("DES");
+//            
+//            txt = userLogin.getUserName().getBytes("UTF-8");
+//            
+//            desCipher.init(Cipher.ENCRYPT_MODE, myDesKey);
+//            byte[] textEncrypted = desCipher.doFinal(txt);
             
             //writes the user and pw to a txt file, but overwrites it everytime
             writer = new PrintWriter("UserLog.txt", "UTF-8");
             writer.println("The logged in: ");
             
             timeLog();
-            writer.println(txt);
-            writer.println(txt);
+            writer.println(userNameID.getText());
+            writer.println(userPassword.getText());
             writer.close();
 
-            desCipher.init(Cipher.DECRYPT_MODE, myDesKey);
-            byte[] textDecrypted = desCipher.doFinal(textEncrypted);
+//            desCipher.init(Cipher.DECRYPT_MODE, myDesKey);
+//            byte[] textDecrypted = desCipher.doFinal(textEncrypted);
         } 
         catch (FileNotFoundException ex) 
         { 
@@ -212,7 +214,6 @@ public class LoginViewController implements Initializable
         {
               AlertWindow  alert = new AlertWindow("IOException", null, "IO Exception");
         } 
-        System.out.println("what is here? "+txt);
     }
 
     private void timeLog() throws FileNotFoundException, UnsupportedEncodingException, IOException 
