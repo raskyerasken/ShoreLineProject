@@ -8,6 +8,8 @@ package GUI;
 import GUI.Models.LoginDataModel;
 import GUI.Models.FilesConvertionModel;
 import java.awt.Checkbox;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
@@ -56,6 +58,10 @@ public class CustomDataWindowController implements Initializable
     @Override
     public void initialize(URL location, ResourceBundle resources) 
     {
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+double width = screenSize.getWidth();
+double height = screenSize.getHeight();
+customDataWindow.setPrefSize(width-25, height-25);
         adminButton.setVisible(false);
         btnCustumData.setDisable(true);
 //        CheckBoxTreeItem<String> rootItem
@@ -186,7 +192,6 @@ public class CustomDataWindowController implements Initializable
         
     }
     
-    @FXML
     private void preview(ActionEvent event) 
     {
         seePreview();

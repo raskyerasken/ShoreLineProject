@@ -9,25 +9,25 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" fx:id="exportWindow" prefHeight="452.0" prefWidth="571.0" stylesheets="@CSSShoreLines.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ExportWindowController">
+<AnchorPane id="AnchorPane" fx:id="exportWindow" prefHeight="768.0" prefWidth="1366.0" stylesheets="@CSSShoreLines.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ExportWindowController">
     <children>
-      <Label fx:id="taskXRun" layoutX="278.0" layoutY="346.0" text="Task X Running" />
-      <JFXListView fx:id="taskField" layoutX="111.0" layoutY="100.0" prefHeight="246.0" prefWidth="444.0" />
-      <JFXButton layoutX="168.0" layoutY="64.0" onAction="#convertData" prefHeight="27.0" prefWidth="105.0" text="Convert Data" />
-      <JFXButton layoutX="299.0" layoutY="64.0" onAction="#saveData" text="Save File" />
-      <JFXButton fx:id="startTaskThread" layoutX="111.0" layoutY="369.0" onAction="#startTask" text="Start Task" />
-      <JFXButton fx:id="pauseTaskThread" layoutX="282.0" layoutY="369.0" onAction="#pauseTask" text="Pause Task" />
-      <JFXButton fx:id="stopTaskThread" layoutX="514.0" layoutY="369.0" onAction="#stopTask" text="Stop" />
-      <ImageView fitHeight="67.0" fitWidth="325.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+      <Label fx:id="taskXRun" layoutX="278.0" layoutY="346.0" text="Task X Running" AnchorPane.bottomAnchor="89.0" AnchorPane.topAnchor="346.0" />
+      <JFXListView fx:id="taskField" layoutX="111.0" layoutY="100.0" prefHeight="246.0" prefWidth="444.0" AnchorPane.bottomAnchor="106.0" AnchorPane.leftAnchor="111.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="100.0" />
+      <JFXButton layoutX="168.0" layoutY="64.0" onAction="#convertData" prefHeight="27.0" prefWidth="105.0" text="Convert Data" AnchorPane.leftAnchor="168.0" AnchorPane.topAnchor="64.0" />
+      <JFXButton layoutX="299.0" layoutY="64.0" onAction="#saveData" text="Save File" AnchorPane.leftAnchor="299.0" AnchorPane.topAnchor="64.0" />
+      <JFXButton fx:id="startTaskThread" layoutX="111.0" layoutY="369.0" onAction="#startTask" text="Start Task" AnchorPane.bottomAnchor="58.0" />
+      <JFXButton fx:id="pauseTaskThread" layoutX="282.0" layoutY="369.0" onAction="#pauseTask" text="Pause Task" AnchorPane.bottomAnchor="58.0" />
+      <JFXButton fx:id="stopTaskThread" layoutX="514.0" layoutY="369.0" onAction="#stopTask" text="Stop" AnchorPane.bottomAnchor="58.0" />
+      <ImageView fitHeight="67.0" fitWidth="325.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="2.0">
          <image>
             <Image url="@../Image/ShoreLineLogo.jpg" />
          </image>
       </ImageView>
-      <Button layoutY="100.0" mnemonicParsing="false" onAction="#importMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Import" />
-      <Button fx:id="btnExport" layoutY="167.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="96.0" text="Export" />
-      <Button layoutY="234.0" mnemonicParsing="false" onAction="#customDataMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Custom &#10;   Data" />
-      <Button layoutY="301.0" mnemonicParsing="false" onAction="#logMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Log" />
-      <Button fx:id="adminButton" layoutY="367.0" mnemonicParsing="false" onAction="#adminMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Admin" />
-      <JFXProgressBar fx:id="progressBar" layoutX="111.0" layoutY="401.0" prefHeight="27.0" prefWidth="444.0" />
+      <Button layoutY="100.0" mnemonicParsing="false" onAction="#importMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Import" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="100.0" />
+      <Button fx:id="btnExport" layoutY="167.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="96.0" text="Export" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="167.0" />
+      <Button layoutY="234.0" mnemonicParsing="false" onAction="#customDataMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Custom &#10;   Data" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="234.0" />
+      <Button layoutY="301.0" mnemonicParsing="false" onAction="#logMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Log" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="301.0" />
+      <Button fx:id="adminButton" layoutY="367.0" mnemonicParsing="false" onAction="#adminMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Admin" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="367.0" />
+      <JFXProgressBar fx:id="progressBar" layoutX="111.0" layoutY="401.0" prefHeight="27.0" prefWidth="444.0" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="111.0" AnchorPane.rightAnchor="16.0" />
     </children>
 </AnchorPane>

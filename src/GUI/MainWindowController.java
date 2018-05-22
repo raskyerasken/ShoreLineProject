@@ -14,6 +14,8 @@ import BLL.BLLManagerUserLogin;
 import BLL.ReadingXLSX;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXProgressBar;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -51,13 +53,13 @@ import javafx.stage.Stage;
  *
  * @author Jason and Freddy Kruger
  */
-public class MainWindowController implements Initializable 
-{
-
+public class MainWindowController implements Initializable {
+ UpdateLog updateLog = new UpdateLog();
+        BLL.BLLManagerUpdateLog up = new BLLManagerUpdateLog();
     Parent root;
     UserLogin ul = new UserLogin();
     BLLManagerUserLogin bllManagerUL = new BLLManagerUserLogin();
-    LoginDataModel modelData ;
+    LoginDataModel modelData;
     LoginViewController loginID;
     boolean acceptFile = false;
     String[] acceptedFiles = {".xlsx"};
@@ -78,53 +80,47 @@ public class MainWindowController implements Initializable
     private final Thread t = null;
     public ObservableList<File> fileNames
             = FXCollections.observableArrayList();
-    CustomDataWindowController cdwc = new CustomDataWindowController();
     private JFXProgressBar progressBar;
     ReadingXLSX XLSX = null;
     @FXML
     private Button adminButton;
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) 
-    {
+    public void initialize(URL url, ResourceBundle rb) {
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+double width = screenSize.getWidth();
+double height = screenSize.getHeight();
+importWindow.setPrefSize(width, height-65);
         importbtn.setDisable(true);
         adminButton.setVisible(false);
     }
 
     @FXML
-    private void importData(ActionEvent event) throws SQLException 
-    {
-       
+    private void importData(ActionEvent event) throws SQLException {
+
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Image File");
         // fileChooser.setInitialDirectory(new File("...")); only for windows
         files = fileChooser.showOpenMultipleDialog(new Stage());
-        UpdateLog updateLog = new UpdateLog();
-        BLL.BLLManagerUpdateLog up = new BLLManagerUpdateLog();
+       
         CompletableFuture.runAsync(()
-                -> 
-        {
+                -> {
 
             filesAccepted.clear();
-            for (File file : files) 
-            {
+            for (File file : files) {
                 acceptFile = false;
-                for (String acceptedFile : acceptedFiles)
-                {
-                    if (file.getAbsolutePath().endsWith(acceptedFile)) 
-                    {
+                for (String acceptedFile : acceptedFiles) {
+                    if (file.getAbsolutePath().endsWith(acceptedFile)) {
                         filesAccepted.add(file);
                         acceptFile = true;
                     }
-                    if (!acceptFile) 
-                    {
+                    if (!acceptFile) {
                         filesNotAccepted.add(file);
                     }
                 }
             }
             Platform.runLater(()
-                    -> 
-            {
+                    -> {
                 fcModel.AddAllFiles(filesAccepted);
                 for (File acceptedFile : filesNotAccepted) {
                     AlertWindow alertWindow
@@ -138,16 +134,11 @@ public class MainWindowController implements Initializable
             File acceptedFile = filesAccepted.get(0);
             TreeItem<String> newlyAdded
                     = new TreeItem<String>(acceptedFile.getName());
-            try 
-            {
+            try {
                 XLSX = new ReadingXLSX(acceptedFile.getAbsolutePath());
-            } 
-            catch (IOException ex) 
-            {
+            } catch (IOException ex) {
                 Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
-            } 
-            catch (ParseException ex) 
-            {
+            } catch (ParseException ex) {
                 Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
             }
             for (Object string : XLSX.getColumsNames()) {
@@ -162,137 +153,109 @@ public class MainWindowController implements Initializable
 
     }
 
-
-    void stageToFront() 
-    {
+    void stageToFront() {
         Stage stage = (Stage) taskField.getScene().getWindow();
         stage.toFront();
     }
 
-
     @FXML
-    private void exportMenuSelect(Event event) throws SQLException
-    {
-        try 
-        {
+    private void exportMenuSelect(Event event) throws SQLException {
+        try {
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/ExportWindow.fxml"));
             Parent root = fxLoader.load();
             ExportWindowController controller = fxLoader.getController();
-            controller.setmodel(fcModel,modelData);
-            
+            controller.setmodel(fcModel, modelData);
+
             Scene scene = new Scene(root);
             importWindow.getChildren().setAll(root);
-        } 
-        catch (IOException ex) 
-        {
+        } catch (IOException ex) {
             AlertWindow alert = new AlertWindow("IOException", null, "IOException");
         }
     }
 
     @FXML
-    private void customDataMenuSelect(Event event) throws FileNotFoundException, ParseException, SQLException 
-    {
-        try 
-        {
+    private void customDataMenuSelect(Event event) throws FileNotFoundException, ParseException, SQLException {
+        try {
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/CustomDataWindow.fxml"));
             Parent root = fxLoader.load();
             CustomDataWindowController controller = fxLoader.getController();
-            controller.setmodel(fcModel,modelData);
+            controller.setmodel(fcModel, modelData);
             importWindow.getChildren().setAll(root);
-        } 
-        catch (IOException ex) 
-        {
+        } catch (IOException ex) {
             AlertWindow alert = new AlertWindow("IOException", null, "IOException");
         }
     }
 
     @FXML
-    private void logMenuSelect(Event event) throws SQLException 
-    {
-        try 
-        {
+    private void logMenuSelect(Event event) throws SQLException {
+        try {
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("LogView.fxml"));
             Parent root = fxLoader.load();
             LogViewController controller = fxLoader.getController();
             controller.setmodel(fcModel, modelData);
-            
+
             importWindow.getChildren().setAll(root);
-        } 
-        catch (IOException ex) 
-        {
+        } catch (IOException ex) {
             AlertWindow alert = new AlertWindow("IOException", null, "IOException");
         }
     }
 
-    private void activateXmlReader() 
-    {
+    private void activateXmlReader() {
 
     }
 
-    private void importDataClick(MouseEvent event) 
-    {
+    private void importDataClick(MouseEvent event) {
 
     }
 
     @FXML
-    private void adminMenuSelect(ActionEvent event) throws SQLException 
-    {
-        try 
-        {
+    private void adminMenuSelect(ActionEvent event) throws SQLException {
+        try {
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("AddUserView.fxml"));
             Parent root = fxLoader.load();
             AddUserViewController controller = fxLoader.getController();
-            controller.setmodel(fcModel,modelData);
+            controller.setmodel(fcModel, modelData);
             controller.setmodel(fcModel);
             controller.modelData(modelData);
             importWindow.getChildren().setAll(root);
-        } 
-        catch (IOException ex) 
-        {
+        } catch (IOException ex) {
             AlertWindow alert = new AlertWindow("IOException", null, "IOException");
         }
     }
 
-    void modelData(LoginDataModel modelData) throws SQLException 
-    {
+    void modelData(LoginDataModel modelData) throws SQLException {
         this.modelData = modelData;
         ul.setUserName(modelData.getUserLogin());
         ul.setAccessLevel(modelData.getUserAccessLevel());
     }
 
-    void setmodel(FilesConvertionModel fcModel) throws SQLException 
-    {
+    void setmodel(FilesConvertionModel fcModel) throws SQLException {
         this.fcModel = fcModel;
         taskField.getItems().clear();
         taskField.setItems(fcModel.getFiles());
         isUserAdmin();
     }
 
-    public String getTextNames() 
-    {
+    public String getTextNames() {
         fileNames = (ObservableList<File>) fcModel;
         return fileNames.toString();
     }
-    
-    private void isUserAdmin() throws SQLException
-    {
+
+    private void isUserAdmin() throws SQLException {
         System.out.println(modelData.getUserAccessLevel());
-        if (modelData.getUserAccessLevel() == true) 
-        {
+        if (modelData.getUserAccessLevel() == true) {
             adminButton.setVisible(true);
         }
     }
 
-
-    void setmodel(FilesConvertionModel fcModel, LoginDataModel modelData) throws SQLException 
-    {
+    void setmodel(FilesConvertionModel fcModel, LoginDataModel modelData) throws SQLException {
         this.fcModel = fcModel;
         taskField.getItems().clear();
         taskField.setItems(fcModel.getFiles());
         this.modelData = modelData;
         isUserAdmin();
-        
-        System.out.println("hey"+modelData.getUserAccessLevel());
+
+        System.out.println("hey" + modelData.getUserAccessLevel());
         ul.setUserName(modelData.getUserLogin());
     }
 }
