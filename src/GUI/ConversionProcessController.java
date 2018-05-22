@@ -181,8 +181,6 @@ public class ConversionProcessController implements Initializable
                     }
                 });
             }          
-            updateLog.setAdjustment("Converted: ");
-            addDataToLog();
                                 try 
             {
                 
