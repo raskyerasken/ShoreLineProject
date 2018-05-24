@@ -10,6 +10,7 @@ import BE.UserLogin;
 import DAL.DataBaseUserLogin;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  *
@@ -19,6 +20,11 @@ public class BLLManagerUserLogin implements IBLLManagerUserLogin
 {
     
     DataBaseUserLogin ul = new DataBaseUserLogin();
+    
+    public List<UserLogin> getUserDataToTableView()
+    {
+        return ul.getUserInformation();
+    }
     
     public void getPassword(UserLogin userLogin) throws SQLServerException, SQLException 
     {

@@ -90,11 +90,6 @@ public class LogViewController implements Initializable
         t.start();
     }
 
-    private void readUserLoginTxt() 
-    {
-        
-    }
-
     private void addColumsToTableView()
     {
         userNameTable.setCellValueFactory(new PropertyValueFactory("Username"));
@@ -108,9 +103,11 @@ public class LogViewController implements Initializable
         FilteredList<UpdateLog> filteredData;
         filteredData = new FilteredList<>(model.getUpdateLogToList(), p -> true);
         searchTxt.textProperty().addListener((observable, oldValue, newValue)
-                -> {
+                -> 
+        {
             filteredData.setPredicate(updateLog
-                    -> {
+                    -> 
+            {
                 if (newValue == null || newValue.isEmpty()) 
                 {
                     return true;
@@ -142,11 +139,6 @@ public class LogViewController implements Initializable
     private void searchLogView() 
     {
         filterTableView();
-    }
-
-    private void displayLoginText() 
-    {
-        readUserLoginTxt();
     }
 
     @FXML

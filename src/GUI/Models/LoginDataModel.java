@@ -5,6 +5,13 @@
  */
 package GUI.Models;
 
+import BE.UpdateLog;
+import BE.UserLogin;
+import BLL.BLLManagerUpdateLog;
+import BLL.BLLManagerUserLogin;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 /**
  *
  * @author ander
@@ -26,6 +33,21 @@ public class LoginDataModel
     }
     String userNameSavedToString;
     Boolean userAccessLevel;
+    
+    private final BLL.BLLManagerUserLogin bllManagerUsr 
+            = new BLLManagerUserLogin();
+    private final ObservableList<UserLogin> userLoginToList 
+            = FXCollections.observableArrayList();
+    
+    public void logListUpdate() 
+    { 
+        userLoginToList.setAll(bllManagerUsr.getUserDataToTableView());
+    }
+
+    public ObservableList<UserLogin> getUserInformationToList() 
+    {
+        return userLoginToList;
+    }
     
     public void addUserLoginData(String user)
     {

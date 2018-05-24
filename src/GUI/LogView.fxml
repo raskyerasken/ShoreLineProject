@@ -8,7 +8,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" fx:id="exportWindow" prefHeight="768.0" prefWidth="1366.0" stylesheets="@CSSShoreLines.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.LogViewController">
+<AnchorPane id="AnchorPane" fx:id="exportWindow" prefHeight="768.0" prefWidth="1366.0" stylesheets="@CSSShoreLines.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.LogViewController">
     <children>
       <ImageView fitHeight="67.0" fitWidth="325.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="2.0">
          <image>
@@ -20,14 +20,13 @@
       <Button layoutY="234.0" mnemonicParsing="false" onAction="#customDataMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Custom &#10;   Data" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="234.0" />
       <Button fx:id="logMenuSelect" layoutY="301.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="96.0" text="Log" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="301.0" />
       <Button fx:id="adminButton" layoutY="367.0" mnemonicParsing="false" onAction="#adminMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Admin" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="367.0" />
-      <TableView fx:id="LogView" layoutX="107.0" layoutY="100.0" prefHeight="260.0" prefWidth="460.0" AnchorPane.bottomAnchor="92.0" AnchorPane.leftAnchor="107.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="100.0">
+      <TableView fx:id="LogView" layoutX="107.0" layoutY="100.0" prefHeight="645.0" prefWidth="1248.0" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="107.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="100.0">
          <columns>
-            <TableColumn fx:id="userNameTable" prefWidth="100.00000762939453" text="User Name" />
-            <TableColumn fx:id="timeTable" prefWidth="107.20001220703125" text="Time" />
-            <TableColumn fx:id="adjustment" maxWidth="500.0" prefWidth="151.99993896484375" text="Action (Not implemented)" />
-            <TableColumn fx:id="error" prefWidth="120.80007934570312" text="Error" />
+            <TableColumn fx:id="userNameTable" prefWidth="167.0" text="User Name" />
+            <TableColumn fx:id="timeTable" prefWidth="231.0" text="Time" />
+            <TableColumn fx:id="adjustment" maxWidth="1021.0" prefWidth="687.0" text="Converted File" />
          </columns>
       </TableView>
-      <JFXTextField fx:id="searchTxt" layoutX="378.0" layoutY="64.0" promptText="Search" AnchorPane.rightAnchor="58.0" />
+      <JFXTextField fx:id="searchTxt" layoutX="1183.0" layoutY="69.0" promptText="Search" AnchorPane.rightAnchor="14.0" />
     </children>
 </AnchorPane>

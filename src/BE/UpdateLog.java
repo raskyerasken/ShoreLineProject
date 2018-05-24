@@ -26,15 +26,18 @@ public class UpdateLog
     Date Datelog;
     private final IntegerProperty id = new SimpleIntegerProperty();
 
-    public int getId() {
+    public int getId() 
+    {
         return id.get();
     }
 
-    public void setId(int value) {
+    public void setId(int value) 
+    {
         id.set(value);
     }
 
-    public IntegerProperty idProperty() {
+    public IntegerProperty idProperty() 
+    {
         return id;
     }
 
