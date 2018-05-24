@@ -29,9 +29,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Platform;
-import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -39,12 +37,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
+<<<<<<< HEAD
 import javafx.stage.WindowEvent;
 import org.apache.poi.ss.usermodel.Font;
 import org.json.JSONArray;
+=======
+>>>>>>> 7ce0c82db0477cd4bc1bc6c349f564af387e8796
 import org.json.JSONException;
 import org.json.JSONObject;
 

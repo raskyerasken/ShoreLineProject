@@ -30,10 +30,17 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.Labeled;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
+import javafx.util.Callback;
 
 /**
  * FXML Controller class
@@ -84,10 +91,57 @@ public class LogViewController implements Initializable
         {
             model.logListUpdate();
             searchLogView();
+            errorColor();
         });
         t.start();
     }
+    
+    private void errorColor()
+    {
+        LogView.setRowFactory(row -> new TableRow<UpdateLog>()
+        {
+            @Override
+            public void updateItem(UpdateLog item, boolean empty)
+            {
+                super.updateItem(item, empty);
 
+                if (item == null || empty) 
+                {
+                    setStyle("");
+                } 
+                else 
+                {
+                    //Now 'item' has all the info of the Person in this row
+                    if (item.isError() == true) 
+                    {
+                        //We apply now the changes in all the cells of the row
+                        for(int i=0; i<getChildren().size();i++)
+                        {
+                            ((Labeled) getChildren().get(i)).setTextFill(Color.RED);
+                        }                        
+                    } 
+                    else 
+                    {
+                        if(getTableView().getSelectionModel().getSelectedItems().contains(item))
+                        {
+                            for(int i=0; i<getChildren().size();i++)
+                            {
+                                ((Labeled) getChildren().get(i)).setTextFill(Color.WHITE);;
+                            }
+                        }
+                        else
+                        {
+                            for(int i=0; i<getChildren().size();i++)
+                            {
+                                ((Labeled) getChildren().get(i)).setTextFill(Color.BLACK);;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+    
     private void addColumsToTableView()
     {
         userNameTable.setCellValueFactory(new PropertyValueFactory("Username"));

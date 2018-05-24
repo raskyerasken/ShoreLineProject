@@ -74,9 +74,14 @@ public class AddUserViewController implements Initializable
     public void initialize(URL url, ResourceBundle rb) 
     {
         addColumsToTableView();
-        createdUserTbl.setItems(modelData.getUserInformationToList());
-        modelData.logListUpdate();
-        searchLogView();
+        Thread t = new Thread(()
+                -> 
+        {
+            createdUserTbl.setItems(modelData.getUserInformationToList());
+            modelData.logListUpdate();
+            searchLogView();
+        });
+        t.start();
         validatorMessages();
         validators();
     }

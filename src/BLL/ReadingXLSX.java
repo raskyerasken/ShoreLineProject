@@ -116,7 +116,8 @@ public class ReadingXLSX {
     }
    
     
-    private JSONObject setJSONObject(int i) throws JSONException, ParseException, IOException {
+    private JSONObject setJSONObject(int i) throws JSONException, ParseException, IOException 
+    {
         JSONCustommize custom = fcmodel.getCustomClass();
         System.out.println(custom.getType());
         JSONObject Json = new JSONObject();
