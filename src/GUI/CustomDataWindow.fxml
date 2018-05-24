@@ -27,7 +27,7 @@
       <Button layoutY="300.0" mnemonicParsing="false" onAction="#logMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Log" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="300.0" />
       <Button fx:id="adminButton" layoutY="367.0" mnemonicParsing="false" onAction="#adminMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Admin" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="367.0" />
       <ListView fx:id="columNameExcel" layoutX="130.0" layoutY="101.0" prefHeight="557.0" prefWidth="263.0" AnchorPane.bottomAnchor="142.0" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="101.0" />
-      <GridPane layoutX="432.0" layoutY="104.0" prefHeight="549.0" prefWidth="726.0" AnchorPane.bottomAnchor="147.0" AnchorPane.leftAnchor="432.0" AnchorPane.rightAnchor="42.0" AnchorPane.topAnchor="104.0">
+      <GridPane fx:id="gridCustom" layoutX="432.0" layoutY="104.0" prefHeight="549.0" prefWidth="726.0" AnchorPane.bottomAnchor="147.0" AnchorPane.leftAnchor="432.0" AnchorPane.rightAnchor="42.0" AnchorPane.topAnchor="104.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -84,9 +84,17 @@
                   <Font name="System Bold" size="36.0" />
                </font>
             </Label>
-            <JFXButton buttonType="RAISED" onAction="#custom" text="latestFinishDate" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <JFXButton buttonType="RAISED" onAction="#custom" text="latestFinishDate" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
             <Label prefHeight="17.0" prefWidth="284.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <JFXButton buttonType="RAISED" onAction="#custom" text="earliestStartDate" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <JFXButton buttonType="RAISED" onAction="#custom" text="earliestStartDate" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
             <Label prefHeight="17.0" prefWidth="284.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
             <JFXButton buttonType="RAISED" onAction="#custom" text="latestStartDate" GridPane.columnIndex="2" GridPane.rowIndex="3">
                <font>
@@ -94,11 +102,15 @@
                </font>
             </JFXButton>
             <Label prefHeight="17.0" prefWidth="284.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-            <JFXButton buttonType="RAISED" onAction="#custom" text="estimatedTime" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <JFXButton buttonType="RAISED" onAction="#custom" text="estimatedTime" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
             <Label prefHeight="17.0" prefWidth="284.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
          </children>
       </GridPane>
-      <JFXComboBox fx:id="comboboxCustom" layoutX="337.0" layoutY="57.0" />
+      <JFXComboBox fx:id="comboboxCustom" layoutX="337.0" layoutY="57.0" onAction="#changeText" />
       <JFXButton buttonType="RAISED" layoutX="775.0" layoutY="32.0" onAction="#save" text="Save" AnchorPane.bottomAnchor="743.0" AnchorPane.rightAnchor="384.0" />
       <TextField fx:id="txtName" layoutX="472.0" layoutY="32.0" promptText="Name of table" />
     </children>

@@ -1182,7 +1182,35 @@ The user kris logged in.    Date: 2018/05/24 12:39:18
 =======
 >>>>>>> 48107b1fc67c533d2319d2fff61a69187975824f
 The user kris logged in.    Date: 2018/05/22 14:28:52
+<<<<<<< HEAD
+The user kris logged in.    Date: 2018/05/22 14:36:32
+The user kris logged in.    Date: 2018/05/22 14:39:01
+The user kris logged in.    Date: 2018/05/22 14:40:25
+The user kris logged in.    Date: 2018/05/23 09:56:33
+The user kris logged in.    Date: 2018/05/23 10:06:15
+The user kris logged in.    Date: 2018/05/23 10:08:37
+The user kris logged in.    Date: 2018/05/23 10:35:44
+The user kris logged in.    Date: 2018/05/23 10:44:19
+The user kris logged in.    Date: 2018/05/23 10:45:20
+The user kris logged in.    Date: 2018/05/23 10:46:04
+The user kris logged in.    Date: 2018/05/23 10:48:31
+The user kris logged in.    Date: 2018/05/23 10:50:04
+The user kris logged in.    Date: 2018/05/23 10:52:18
+The user kris logged in.    Date: 2018/05/23 10:53:42
+The user kris logged in.    Date: 2018/05/23 10:55:39
+The user kris logged in.    Date: 2018/05/23 11:00:25
+The user kris logged in.    Date: 2018/05/23 12:01:11
+The user kris logged in.    Date: 2018/05/23 12:05:42
+The user kris logged in.    Date: 2018/05/23 12:20:26
+The user kasper logged in.    Date: 2018/05/23 12:24:47
+The user Jacob logged in.    Date: 2018/05/23 12:25:01
+The user Jacob logged in.    Date: 2018/05/24 12:38:45
+The user Jacob logged in.    Date: 2018/05/24 12:40:25
+The user Jacob logged in.    Date: 2018/05/24 12:42:16
+The user Jacob logged in.    Date: 2018/05/24 12:43:27
+=======
 >>>>>>> 6879d526dc800ab59a04316ae6640db702256297
+<<<<<<< HEAD
 The user kris logged in.    Date: 2018/05/24 12:41:19
 The user kris logged in.    Date: 2018/05/24 12:43:44
 The user kris logged in.    Date: 2018/05/24 12:47:31
@@ -1194,3 +1222,6 @@ The user kris logged in.    Date: 2018/05/24 12:52:19
 The user kris logged in.    Date: 2018/05/24 12:53:05
 The user kris logged in.    Date: 2018/05/24 12:54:04
 The user kris logged in.    Date: 2018/05/24 12:55:20
+=======
+>>>>>>> d6b30ec997263c500d242845b7e4a20aa7764b2b
+>>>>>>> 5e0f21c81f72a735fcfee2a4983869bf7885dd86
