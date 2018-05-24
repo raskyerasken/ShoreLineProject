@@ -38,12 +38,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-<<<<<<< HEAD
 import javafx.stage.WindowEvent;
 import org.apache.poi.ss.usermodel.Font;
 import org.json.JSONArray;
-=======
->>>>>>> 7ce0c82db0477cd4bc1bc6c349f564af387e8796
 import org.json.JSONException;
 import org.json.JSONObject;
 
