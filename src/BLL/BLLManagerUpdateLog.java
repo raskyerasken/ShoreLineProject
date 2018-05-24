@@ -21,6 +21,7 @@ public class BLLManagerUpdateLog implements IBLLManagerUpdateLog
     
     public void setUpdateLog(UpdateLog updateLog) throws SQLException
     {
+       
         ul.setUpdateLog(updateLog);
     }
     

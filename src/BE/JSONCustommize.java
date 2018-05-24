@@ -27,6 +27,21 @@ public class JSONCustommize {
 
     private String createdBy;
 
+    private String nameTable;
+
+    public String getNameTable() {
+        return nameTable;
+    }
+
+    @Override
+    public String toString() {
+        return  nameTable ;
+    }
+
+    public void setNameTable(String nameTable) {
+        this.nameTable = nameTable;
+    }
+
     private String name;
 
     private String priority;

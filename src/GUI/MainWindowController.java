@@ -141,12 +141,18 @@ public class MainWindowController implements Initializable
             File acceptedFile = filesAccepted.get(0);
             TreeItem<String> newlyAdded
                     = new TreeItem<String>(acceptedFile.getName());
+<<<<<<< HEAD
             try 
             {
                 XLSX = new ReadingXLSX(acceptedFile.getAbsolutePath());
             } 
             catch (IOException ex) 
             {
+=======
+            try {
+                XLSX = new ReadingXLSX(acceptedFile.getAbsolutePath(),fcModel);
+            } catch (IOException ex) {
+>>>>>>> 6879d526dc800ab59a04316ae6640db702256297
                 Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
             } 
             catch (ParseException ex) 

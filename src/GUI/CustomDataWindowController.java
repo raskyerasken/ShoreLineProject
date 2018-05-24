@@ -5,8 +5,11 @@
  */
 package GUI;
 
+import BE.JSONCustommize;
+import BLL.ReadingXLSX;
 import GUI.Models.LoginDataModel;
 import GUI.Models.FilesConvertionModel;
+import com.jfoenix.controls.JFXComboBox;
 import java.awt.Checkbox;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -16,6 +19,8 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -27,12 +32,14 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBoxTreeItem;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TreeCell;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.control.cell.CheckBoxTreeCell;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.util.Callback;
 
 /**
@@ -41,10 +48,8 @@ import javafx.util.Callback;
  */
 public class CustomDataWindowController implements Initializable 
 {
+    JSONCustommize custom = new JSONCustommize();
     LoginDataModel modelData;
-    @FXML
-    private Label taskXRun;
-    @FXML
     private TreeView<String> CustomDataSelect;
     @FXML
     private AnchorPane customDataWindow;
@@ -54,43 +59,22 @@ public class CustomDataWindowController implements Initializable
     private TextField textField;
     @FXML
     private Button adminButton;
+    @FXML
+    private ListView<String> columNameExcel;
+    @FXML
+    private JFXComboBox<JSONCustommize> comboboxCustom;
+    @FXML
+    private TextField txtName;
     
     @Override
     public void initialize(URL location, ResourceBundle resources) 
     {
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-double width = screenSize.getWidth();
-double height = screenSize.getHeight();
-customDataWindow.setPrefSize(width-25, height-25);
+    
         adminButton.setVisible(false);
         btnCustumData.setDisable(true);
-//        CheckBoxTreeItem<String> rootItem
-//                = new CheckBoxTreeItem<String>("view Source Files");
-//        rootItem.setExpanded(true);
-//        
-//        CustomDataSelect.setCellFactory(CheckBoxTreeCell.<String>forTreeView());
-//        
-//        for (int i = 0; i < 8; i++) {
-//            final CheckBoxTreeItem<String> checkBoxTreeItem
-//                    = new CheckBoxTreeItem<String>("Sample" + (i + 1));
-//            rootItem.getChildren().add(checkBoxTreeItem);
-//        }
+//      
     }
     
-    @FXML
-    private void startTask(ActionEvent event) {
-        
-    }
-    
-    @FXML
-    private void pauseTask(ActionEvent event) {
-        
-    }
-    
-    @FXML
-    private void stopTask(ActionEvent event) {
-        
-    }
     
     @FXML
     private void importMenuSelect(Event event) throws SQLException 
@@ -155,53 +139,20 @@ customDataWindow.setPrefSize(width-25, height-25);
         }
     }
     
-    void seePreview() {
-        if (CustomDataSelect.getRoot() != null) {
-            ObservableList<TreeItem<String>> JsonItems = CustomDataSelect.getRoot().getChildren().get(0).getChildren().get(0).getChildren();
-            System.out.println(CustomDataSelect.getRoot().getChildren().get(0).getChildren());
-            for (TreeItem<String> JsonItem : JsonItems) {
-                //          Node check =  JsonItem.getGraphic();9
-                //            System.out.println(check.isDisable());
-                System.out.println(JsonItem.getValue());
-                
-            }
-            
-        }
-    }
+  
     
-    void setmodel(FilesConvertionModel fcModel) throws IOException, FileNotFoundException, ParseException {
-        this.modelData = modelData;
-        this.fcModel = fcModel;
-        TreeItem<String> allFiles = new TreeItem<String>("All files");
-        for (TreeItem treeFile : fcModel.getTreeFiles()) {
-            allFiles.getChildren().add(treeFile);
-        }
-        
-        CustomDataSelect.setRoot(allFiles);
-        CustomDataSelect.setShowRoot(false);
-        CustomDataSelect.setEditable(true);
-        CustomDataSelect.setCellFactory((TreeView<String> p)
-                -> new TextFieldTreeCellImpl());
-        CustomDataSelect.setEditable(true);
-        CustomDataSelect.setCellFactory(new Callback<TreeView<String>, TreeCell<String>>() {
-            @Override
-            public TreeCell<String> call(TreeView<String> p) {
-                return new TextFieldTreeCellImpl();
-            }
-        });
-        
-    }
     
-    private void preview(ActionEvent event) 
-    {
-        seePreview();
-    } 
-    
-    void setmodel(FilesConvertionModel fcModel, LoginDataModel modelData) throws SQLException 
+    void setmodel(FilesConvertionModel fcModel, LoginDataModel modelData) throws SQLException, IOException, FileNotFoundException, ParseException 
     {
         this.modelData = modelData;
         this.fcModel=fcModel;
         isUserAdmin();
+        columNameExcel.getItems().clear();
+        if(!fcModel.getFiles().isEmpty()){
+        ReadingXLSX xlsx = new ReadingXLSX(fcModel.getFiles().get(0).getAbsolutePath(),fcModel);
+        columNameExcel.setItems((ObservableList<String>) xlsx.getColumsNames());
+        }
+        comboboxCustom.setItems(fcModel.getCustom());
     }
     
     private void isUserAdmin() throws SQLException
@@ -211,5 +162,55 @@ customDataWindow.setPrefSize(width-25, height-25);
         {
             adminButton.setVisible(true);
         }
+    }
+
+    @FXML
+    private void custom(ActionEvent event) {
+        Button node = (Button) event.getSource();
+        GridPane grid = (GridPane) node.getParent();
+        int number = grid.getChildren().indexOf(node)+1;
+        
+       Label text= (Label) grid.getChildren().get(
+        grid.getChildren().indexOf(node)+1);
+       if(!columNameExcel.getSelectionModel().isEmpty()){
+           String select = columNameExcel.getSelectionModel().getSelectedItem();
+        text.setText(select);
+        switch(number){
+            case 1: custom.setType(select);
+            break;
+             case 3: custom.setExternalWorkOrderId(select);
+            break;
+             case 5: custom.setSystemStatus(select);
+            break;
+             case 7:  custom.setUserStatus(select);
+            break;
+             case 9:  custom.setName(select);
+            break;
+             case 11: custom.setPriority(select);
+            break;
+            case 14:  custom.setLatestFinishDate(select);
+            break;
+            case 16: custom.setEarlistStartDate(select);
+            break;
+            case 18:  custom.setLatestStartDate(select);
+            break;
+            case 20: custom.setEstimatedTime(select);
+            break;
+            
+                    }
+       
+       }
+    }
+
+    @FXML
+    private void save(ActionEvent event) {
+        if(!txtName.getText().isEmpty()){
+        custom.setNameTable(txtName.getText());
+            try {
+                fcModel.saveCustom(custom);
+            } catch (SQLException ex) {
+                Logger.getLogger(CustomDataWindowController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+}
     }
 }

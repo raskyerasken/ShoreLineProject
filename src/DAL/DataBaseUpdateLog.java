@@ -29,7 +29,6 @@ public class DataBaseUpdateLog
     private ConnectionManagerSLProject cm = new ConnectionManagerSLProject();
 
     public void setUpdateLog(UpdateLog updateLog) throws SQLException {
-
         try (Connection con = cm.getConnection()) {
             String sql
                     = "INSERT INTO UpdateLogs"
