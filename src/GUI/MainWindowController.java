@@ -61,7 +61,7 @@ public class MainWindowController implements Initializable
     LoginDataModel modelData ;
     LoginViewController loginID;
     boolean acceptFile = false;
-    String[] acceptedFiles = {".xlsx"};
+    String[] acceptedFiles = {".xlsx",".csv"};
     List<File> files;
     @FXML
     private ListView<File> taskField;
@@ -118,11 +118,12 @@ public class MainWindowController implements Initializable
                         filesAccepted.add(file);
                         acceptFile = true;
                     }
-                    if (!acceptFile) 
+                   
+                }
+                if (!acceptFile) 
                     {
                         filesNotAccepted.add(file);
                     }
-                }
             }
             Platform.runLater(()
                     -> 

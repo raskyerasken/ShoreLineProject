@@ -8,6 +8,7 @@ package GUI;
 import BE.UpdateLog;
 import BLL.BLLManagerUpdateLog;
 import BLL.ReadingXLSX;
+import BLL.xml;
 import GUI.Models.FilesConvertionModel;
 import GUI.Models.LoginDataModel;
 import com.jfoenix.controls.JFXButton;
@@ -43,6 +44,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import org.apache.poi.ss.usermodel.Font;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -130,18 +132,21 @@ public class ConversionProcessController implements Initializable
             {
 
                 try 
-                {
+                { JSONArray main = new JSONArray();
                     threading = Thread.currentThread();
+                    if(file.getAbsolutePath().endsWith(".xlsx")){
                     ReadingXLSX XLSX = new ReadingXLSX(file.getAbsolutePath(),fcModel);
 
                     XLSX.getColumsNames();
+
                     File JsonFile = new File(file.getCanonicalFile() + ".json");
                     FileWriter fileWriter = new FileWriter(JsonFile);
 
                     for (JSONObject jSONObject : XLSX.allJSONObjectInFile()) 
                     {
-                        fileWriter.write(jSONObject.toString(4));
-                    }
+                        main.put(jSONObject);
+                        
+                    }fileWriter.write(main.toString(4));
                     conversionSuccess = false;
                     addDataToLog();
                     updateLog.setError(false);
@@ -150,7 +155,29 @@ public class ConversionProcessController implements Initializable
                     fileWriter.flush();
                     fileWriter.close();
 
-                    filesConvertedCount++;
+                    filesConvertedCount++;}
+                    
+                    else if(file.getAbsolutePath().endsWith(".csv")){
+                     
+                    xml xmlconvert = new xml(file.getAbsolutePath(),fcModel);
+
+   
+                    File JsonFile = new File(file.getCanonicalFile() + ".json");
+                    FileWriter fileWriter = new FileWriter(JsonFile);
+
+                    for (JSONObject jSONObject : xmlconvert.allJSONObjectInFile()) 
+                    {main.put(jSONObject);
+                        
+                    }fileWriter.write(main.toString(4));
+                    conversionSuccess = false;
+                    addDataToLog();
+                    updateLog.setError(false);
+                    updateLog.setAdjustment("Conversion done: " + file.getName());
+                    //addToLog();
+                    fileWriter.flush();
+                    fileWriter.close();
+
+                    filesConvertedCount++;}
                                        try 
             {
                 
