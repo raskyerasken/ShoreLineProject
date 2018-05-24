@@ -24,6 +24,21 @@ import javafx.scene.control.TreeView;
  * @author jacob
  */
 public class FilesConvertionModel {
+    
+    private static volatile FilesConvertionModel instance;
+
+    public FilesConvertionModel() {}
+
+    public static FilesConvertionModel getInstance(String value) {
+        if (instance == null) {
+            synchronized (FilesConvertionModel.class) {
+                if (instance == null) {
+                    instance = new FilesConvertionModel();
+                }
+            }
+        }
+        return instance;
+    }
     JSONCustommize customClass;
  BllManagerCustom bllCustom = new BllManagerCustom();
     public ObservableList<File> allFiles

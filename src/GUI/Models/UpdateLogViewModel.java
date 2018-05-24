@@ -17,6 +17,20 @@ import javafx.collections.ObservableList;
  */
 public class UpdateLogViewModel 
 {
+    private static volatile UpdateLogViewModel instance;
+
+    public UpdateLogViewModel() {}
+
+    public static UpdateLogViewModel getInstance(String value) {
+        if (instance == null) {
+            synchronized (UpdateLogViewModel.class) {
+                if (instance == null) {
+                    instance = new UpdateLogViewModel();
+                }
+            }
+        }
+        return instance;
+    }
     private final BLL.BLLManagerUpdateLog bllManagerUL 
             = new BLLManagerUpdateLog();
     private final ObservableList<UpdateLog> updateLogToList 

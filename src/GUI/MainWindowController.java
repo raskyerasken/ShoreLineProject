@@ -59,7 +59,7 @@ public class MainWindowController implements Initializable {
     Parent root;
     UserLogin ul = new UserLogin();
     BLLManagerUserLogin bllManagerUL = new BLLManagerUserLogin();
-    LoginDataModel modelData;
+    LoginDataModel modelData ;
     LoginViewController loginID;
     boolean acceptFile = false;
     String[] acceptedFiles = {".xlsx"};

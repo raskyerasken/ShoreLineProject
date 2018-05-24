@@ -145,24 +145,33 @@ public class ConversionProcessController implements Initializable
                     conversionSuccess = false;
                     addDataToLog();
                     updateLog.setError(false);
-                    updateLog.setAdjustment("Conversion done: " + file);
+                    updateLog.setAdjustment("Conversion done: " + file.getName());
                     //addToLog();
                     fileWriter.flush();
                     fileWriter.close();
 
                     filesConvertedCount++;
+                                       try 
+            {
+                
+                up.setUpdateLog(updateLog);
+            } 
+            catch (SQLException ex) 
+            {
+                Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
+            }
                 } 
                 catch (IOException ex) 
                 {
                     updateLog.setError(true);
-                    updateLog.setAdjustment("File not support yet: " + file);
+                    updateLog.setAdjustment("File not support yet: " + file.getName());
 
                     updateLog();
                 } 
                 catch (ParseException | IllegalArgumentException | IllegalAccessException | JSONException ex) 
                 {
                     updateLog.setError(true);
-                    updateLog.setAdjustment("Files Conversion wrong: " + file);
+                    updateLog.setAdjustment("Files Conversion wrong: " + file.getName());
                     updateLog();
                 }
 
@@ -181,15 +190,7 @@ public class ConversionProcessController implements Initializable
                     }
                 });
             }          
-                                try 
-            {
-                
-                up.setUpdateLog(updateLog);
-            } 
-            catch (SQLException ex) 
-            {
-                Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
-            }
+             
         });          
     }
     
