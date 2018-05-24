@@ -23,7 +23,8 @@ import java.util.logging.Logger;
  *
  * @author ander
  */
-public class DataBaseUpdateLog {
+public class DataBaseUpdateLog 
+{
 
     private ConnectionManagerSLProject cm = new ConnectionManagerSLProject();
 
@@ -32,7 +33,7 @@ public class DataBaseUpdateLog {
         try (Connection con = cm.getConnection()) {
             String sql
                     = "INSERT INTO UpdateLogs"
-                    + " (Username, UploadDate, Adjustment,Error) "
+                    + " (Username, UploadDate, Adjustment, Error) "
                     + "VALUES (?, ?, ?, ?)";
 
             PreparedStatement pstmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -55,7 +56,8 @@ public class DataBaseUpdateLog {
         }
     }
 
-    public List<UpdateLog> getUpdateLog() {
+    public List<UpdateLog> getUpdateLog() 
+    {
         List<UpdateLog> AllupdateLog
                 = new ArrayList<>();
 

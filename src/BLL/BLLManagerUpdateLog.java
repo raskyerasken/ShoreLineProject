@@ -19,11 +19,6 @@ public class BLLManagerUpdateLog implements IBLLManagerUpdateLog
 {
     DataBaseUpdateLog ul = new DataBaseUpdateLog();
     
-//    public void getUpdateLog(UpdateLog updateLog) throws SQLException
-//    {
-//        ul.getUpdateLog(updateLog);
-//    }
-    
     public void setUpdateLog(UpdateLog updateLog) throws SQLException
     {
         ul.setUpdateLog(updateLog);

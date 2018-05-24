@@ -12,7 +12,6 @@ import BE.UserLogin;
 import BLL.BLLManagerUpdateLog;
 import BLL.BLLManagerUserLogin;
 import BLL.ReadingXLSX;
-import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXProgressBar;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -39,8 +38,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.CheckBoxTreeItem;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TreeItem;
@@ -53,9 +50,11 @@ import javafx.stage.Stage;
  *
  * @author Jason and Freddy Kruger
  */
-public class MainWindowController implements Initializable {
- UpdateLog updateLog = new UpdateLog();
-        BLL.BLLManagerUpdateLog up = new BLLManagerUpdateLog();
+public class MainWindowController implements Initializable 
+{
+    
+    UpdateLog updateLog = new UpdateLog();
+    BLL.BLLManagerUpdateLog up = new BLLManagerUpdateLog();
     Parent root;
     UserLogin ul = new UserLogin();
     BLLManagerUserLogin bllManagerUL = new BLLManagerUserLogin();
@@ -86,11 +85,12 @@ public class MainWindowController implements Initializable {
     private Button adminButton;
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL url, ResourceBundle rb) 
+    {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-double width = screenSize.getWidth();
-double height = screenSize.getHeight();
-importWindow.setPrefSize(width, height-65);
+        double width = screenSize.getWidth();
+        double height = screenSize.getHeight();
+        importWindow.setPrefSize(width, height-65);
         importbtn.setDisable(true);
         adminButton.setVisible(false);
     }
@@ -104,25 +104,32 @@ importWindow.setPrefSize(width, height-65);
         files = fileChooser.showOpenMultipleDialog(new Stage());
        
         CompletableFuture.runAsync(()
-                -> {
+                -> 
+        {
 
             filesAccepted.clear();
-            for (File file : files) {
+            for (File file : files) 
+            {
                 acceptFile = false;
-                for (String acceptedFile : acceptedFiles) {
-                    if (file.getAbsolutePath().endsWith(acceptedFile)) {
+                for (String acceptedFile : acceptedFiles) 
+                {
+                    if (file.getAbsolutePath().endsWith(acceptedFile)) 
+                    {
                         filesAccepted.add(file);
                         acceptFile = true;
                     }
-                    if (!acceptFile) {
+                    if (!acceptFile) 
+                    {
                         filesNotAccepted.add(file);
                     }
                 }
             }
             Platform.runLater(()
-                    -> {
+                    -> 
+            {
                 fcModel.AddAllFiles(filesAccepted);
-                for (File acceptedFile : filesNotAccepted) {
+                for (File acceptedFile : filesNotAccepted) 
+                {
                     AlertWindow alertWindow
                             = new AlertWindow("File not support yet", null, "This file " + acceptedFile.getName() + " can be added");
                 }
@@ -134,14 +141,20 @@ importWindow.setPrefSize(width, height-65);
             File acceptedFile = filesAccepted.get(0);
             TreeItem<String> newlyAdded
                     = new TreeItem<String>(acceptedFile.getName());
-            try {
+            try 
+            {
                 XLSX = new ReadingXLSX(acceptedFile.getAbsolutePath());
-            } catch (IOException ex) {
+            } 
+            catch (IOException ex) 
+            {
                 Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (ParseException ex) {
+            } 
+            catch (ParseException ex) 
+            {
                 Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
             }
-            for (Object string : XLSX.getColumsNames()) {
+            for (Object string : XLSX.getColumsNames()) 
+            {
                 Label check = new Label("hey");
                 TreeItem<String> colum = new TreeItem<String>(string.toString());
                 colum.setGraphic(check);
@@ -153,14 +166,17 @@ importWindow.setPrefSize(width, height-65);
 
     }
 
-    void stageToFront() {
+    void stageToFront() 
+    {
         Stage stage = (Stage) taskField.getScene().getWindow();
         stage.toFront();
     }
 
     @FXML
-    private void exportMenuSelect(Event event) throws SQLException {
-        try {
+    private void exportMenuSelect(Event event) throws SQLException 
+    {
+        try 
+        {
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/ExportWindow.fxml"));
             Parent root = fxLoader.load();
             ExportWindowController controller = fxLoader.getController();
@@ -168,49 +184,61 @@ importWindow.setPrefSize(width, height-65);
 
             Scene scene = new Scene(root);
             importWindow.getChildren().setAll(root);
-        } catch (IOException ex) {
+        } 
+        catch (IOException ex) 
+        {
             AlertWindow alert = new AlertWindow("IOException", null, "IOException");
         }
     }
 
     @FXML
     private void customDataMenuSelect(Event event) throws FileNotFoundException, ParseException, SQLException {
-        try {
+        try 
+        {
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/CustomDataWindow.fxml"));
             Parent root = fxLoader.load();
             CustomDataWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel, modelData);
             importWindow.getChildren().setAll(root);
-        } catch (IOException ex) {
+        } 
+        catch (IOException ex) 
+        {
             AlertWindow alert = new AlertWindow("IOException", null, "IOException");
         }
     }
 
     @FXML
-    private void logMenuSelect(Event event) throws SQLException {
-        try {
+    private void logMenuSelect(Event event) throws SQLException 
+    {
+        try 
+        {
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("LogView.fxml"));
             Parent root = fxLoader.load();
             LogViewController controller = fxLoader.getController();
             controller.setmodel(fcModel, modelData);
 
             importWindow.getChildren().setAll(root);
-        } catch (IOException ex) {
+        } 
+        catch (IOException ex) 
+        {
             AlertWindow alert = new AlertWindow("IOException", null, "IOException");
         }
     }
 
-    private void activateXmlReader() {
-
+    private void activateXmlReader() 
+    {
+        
     }
 
-    private void importDataClick(MouseEvent event) {
+    private void importDataClick(MouseEvent event) 
+    {
 
     }
 
     @FXML
     private void adminMenuSelect(ActionEvent event) throws SQLException {
-        try {
+        try 
+        {
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("AddUserView.fxml"));
             Parent root = fxLoader.load();
             AddUserViewController controller = fxLoader.getController();
@@ -218,7 +246,9 @@ importWindow.setPrefSize(width, height-65);
             controller.setmodel(fcModel);
             controller.modelData(modelData);
             importWindow.getChildren().setAll(root);
-        } catch (IOException ex) {
+        } 
+        catch (IOException ex) 
+        {
             AlertWindow alert = new AlertWindow("IOException", null, "IOException");
         }
     }

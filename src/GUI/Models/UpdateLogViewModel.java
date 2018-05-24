@@ -22,12 +22,9 @@ public class UpdateLogViewModel
     private final ObservableList<UpdateLog> updateLogToList 
             = FXCollections.observableArrayList();
     
-    
-    
     public void logListUpdate() 
     { 
         updateLogToList.setAll(bllManagerUL.getAllUpdateLogsToList());
-        
     }
 
     public ObservableList<UpdateLog> getUpdateLogToList() 

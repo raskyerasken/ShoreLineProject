@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import BE.UpdateLog;
 import GUI.Models.LoginDataModel;
 import GUI.Models.FilesConvertionModel;
 import BE.UserLogin;
@@ -18,6 +19,8 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -25,6 +28,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
 /**
@@ -36,7 +42,7 @@ public class AddUserViewController implements Initializable
 {
     
     UserLogin userLogin = new UserLogin();
-    LoginDataModel modelData;
+    LoginDataModel modelData = new LoginDataModel();
     BLLManagerUserLogin bllManagerul = new BLLManagerUserLogin();
     @FXML
     private CheckBox adminAccessLevelChckBox;
@@ -51,6 +57,16 @@ public class AddUserViewController implements Initializable
     private FilesConvertionModel fcModel;
     @FXML
     private AnchorPane addUser;
+    @FXML
+    private TableView<UserLogin> createdUserTbl;
+    @FXML
+    private TableColumn<UserLogin, String> userTbl;
+    @FXML
+    private TableColumn<UserLogin, String> emailTbl;
+    @FXML
+    private TableColumn<UserLogin, Boolean> adminTbl;
+    @FXML
+    private JFXTextField search;
 
     /**
      * Initializes the controller class.
@@ -58,16 +74,66 @@ public class AddUserViewController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
+        addColumsToTableView();
+        createdUserTbl.setItems(modelData.getUserInformationToList());
+        modelData.logListUpdate();
+        searchLogView();
         validatorMessages();
         validators();
     }
+    
+    private void addColumsToTableView()
+    {
+        userTbl.setCellValueFactory(new PropertyValueFactory("Username"));
+        emailTbl.setCellValueFactory(new PropertyValueFactory("Email"));
+        adminTbl.setCellValueFactory(new PropertyValueFactory("Accesslevel"));
+    }
+    
+    private void searchLogView() 
+    {
+        FilteredList<UserLogin> filteredData;
+        filteredData = new FilteredList<>(modelData.getUserInformationToList(), p -> true);
+        search.textProperty().addListener((observable, oldValue, newValue)
+                -> 
+        {
+            filteredData.setPredicate(userLogin
+                    -> 
+            {
+                if (newValue == null || newValue.isEmpty()) 
+                {
+                    return true;
+                }
 
+                String lowerCaseFilter = newValue.toLowerCase();
+
+                if (userLogin.getUserName().toLowerCase().contains(lowerCaseFilter)) 
+                {
+                    return true;
+                } else if (userLogin.getEmail().toString().contains(lowerCaseFilter)) 
+                {
+                    return true; // Filter matches last name.
+                }
+
+                return false;
+
+            });
+
+        });
+        // 3. Wrap the FilteredList in a SortedList. 
+        SortedList<UserLogin> sortedData = new SortedList<>(filteredData);
+        // 4. Bind the SortedList comparator to the TableView comparator.
+        sortedData.comparatorProperty().bind(createdUserTbl.comparatorProperty());
+        // 5. Add sorted (and filtered) data to the table.
+        createdUserTbl.setItems(sortedData);
+    }
+    
     @FXML
     private void goBack(ActionEvent event) throws SQLException 
     {
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/MainWindow.fxml"));
         Parent root;
-        try {
+        try 
+        {
             root = fxLoader.load();
             MainWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel,modelData);
@@ -210,7 +276,6 @@ public class AddUserViewController implements Initializable
                 }
             }
         });
-
     }
     
     private void validatorMessages()

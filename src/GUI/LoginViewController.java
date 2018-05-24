@@ -83,21 +83,7 @@ public class LoginViewController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
-        try {
             rememberMeFunction();
-        } catch (NoSuchAlgorithmException ex) {
-            Logger.getLogger(LoginViewController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (NoSuchPaddingException ex) {
-            Logger.getLogger(LoginViewController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (UnsupportedEncodingException ex) {
-            Logger.getLogger(LoginViewController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (InvalidKeyException ex) {
-            Logger.getLogger(LoginViewController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IllegalBlockSizeException ex) {
-            Logger.getLogger(LoginViewController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (BadPaddingException ex) {
-            Logger.getLogger(LoginViewController.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }
 
     @FXML
@@ -174,22 +160,11 @@ public class LoginViewController implements Initializable
     
     
     //writes the login to a text file that we later can read
-    private void writeUserLoginTxt() throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException 
+    private void writeUserLoginTxt() 
     {
         PrintWriter writer = null;
         try 
         {
-//            KeyGenerator keygenerator = KeyGenerator.getInstance("DES");
-//            SecretKey myDesKey = keygenerator.generateKey();
-//            
-//            Cipher desCipher;
-//            desCipher = Cipher.getInstance("DES");
-//            
-//            txt = userLogin.getUserName().getBytes("UTF-8");
-//            
-//            desCipher.init(Cipher.ENCRYPT_MODE, myDesKey);
-//            byte[] textEncrypted = desCipher.doFinal(txt);
-            
             //writes the user and pw to a txt file, but overwrites it everytime
             writer = new PrintWriter("UserLog.txt", "UTF-8");
             writer.println("The logged in: ");
@@ -198,9 +173,6 @@ public class LoginViewController implements Initializable
             writer.println(userNameID.getText());
             writer.println(userPassword.getText());
             writer.close();
-
-//            desCipher.init(Cipher.DECRYPT_MODE, myDesKey);
-//            byte[] textDecrypted = desCipher.doFinal(textEncrypted);
         } 
         catch (FileNotFoundException ex) 
         { 
@@ -266,7 +238,7 @@ public class LoginViewController implements Initializable
     }
 
     //reads the userlogin text file
-    private void readUserLoginTxt() throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException 
+    private void readUserLoginTxt() 
     {
         BufferedReader br = null;
         try 
@@ -302,7 +274,7 @@ public class LoginViewController implements Initializable
         }
     }
 
-    private void rememberMeFunction() throws NoSuchAlgorithmException, NoSuchPaddingException, UnsupportedEncodingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException 
+    private void rememberMeFunction() 
     {
         
         BufferedReader br = null;
@@ -311,21 +283,8 @@ public class LoginViewController implements Initializable
             br = new BufferedReader(new FileReader("UserLog.txt"));
             String line = br.readLine();
             
-//            KeyGenerator keygenerator = KeyGenerator.getInstance("DES");
-//            SecretKey myDesKey = keygenerator.generateKey();
-//
-//            Cipher desCipher;
-//            desCipher = Cipher.getInstance("DES");
-//            
-//            txt = br.readLine().getBytes("UTF-8");
-            
             while (line != null) 
             {
-//                desCipher.init(Cipher.DECRYPT_MODE, myDesKey);
-//                byte[] textDecrypted = desCipher.doFinal(txt);
-//                
-//                System.out.println("sadasd");
-                
                 lines.add(line);
                 line = br.readLine();
             }

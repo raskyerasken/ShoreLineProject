@@ -5,6 +5,7 @@
  */
 package DAL;
 
+import BE.UpdateLog;
 import BE.UserLogin;
 import GUI.AlertWindow;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
@@ -13,8 +14,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -60,7 +61,6 @@ public class DataBaseUserLogin
 
             while (rs.next()) 
             {
-              
                 ul.setUserName(rs.getString("Username"));
                 ul.setPassword(rs.getString("Password"));
             }
@@ -149,5 +149,33 @@ public class DataBaseUserLogin
             }
 
         }
+    }
+
+    public List<UserLogin> getUserInformation() 
+    {
+        List<UserLogin> AllUserLog
+                = new ArrayList<>();
+
+        try (Connection con = cm.getConnection()) 
+        {
+            PreparedStatement pstmt
+                    = con.prepareStatement("SELECT * FROM UserLogin");
+
+            ResultSet rs = pstmt.executeQuery();
+
+            while (rs.next()) 
+            {
+                UserLogin ul = new UserLogin();
+                ul.setUserName(rs.getString("Username"));
+                ul.setEmail(rs.getString("Email"));
+                ul.setAccessLevel(rs.getBoolean("Accesslevel"));
+                AllUserLog.add(ul);
+            }
+        } 
+        catch (SQLException ex) 
+        {
+            AlertWindow alert = new AlertWindow("Data base connectiong error", null, "Check you connection to the database");
+        }
+        return AllUserLog;
     }
 }
