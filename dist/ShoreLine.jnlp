@@ -8,11 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-<<<<<<< HEAD
-    <jar href="ShoreLine.jar" size="121729" download="eager" />
-=======
-    <jar href="ShoreLine.jar" size="122929" download="eager" />
->>>>>>> 6879d526dc800ab59a04316ae6640db702256297
+    <jar href="ShoreLine.jar" size="124881" download="eager" />
     <jar href="lib\commons-collections4-4.1.jar" size="751238" download="eager" />
     <jar href="lib\java-json.jar" size="84697" download="eager" />
     <jar href="lib\jaxp-api.jar" size="27052" download="eager" />

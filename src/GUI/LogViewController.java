@@ -83,7 +83,8 @@ public class LogViewController implements Initializable
         addColumsToTableView();   //get all the colums
         LogView.setItems(model.getUpdateLogToList());
         Thread t = new Thread(()
-                -> {
+                -> 
+        {
             model.logListUpdate();
             searchLogView();
         });
@@ -98,7 +99,7 @@ public class LogViewController implements Initializable
         error.setCellValueFactory(new PropertyValueFactory("Error"));
     }
 
-    private void filterTableView() 
+    private void searchLogView() 
     {
         FilteredList<UpdateLog> filteredData;
         filteredData = new FilteredList<>(model.getUpdateLogToList(), p -> true);
@@ -134,11 +135,6 @@ public class LogViewController implements Initializable
         sortedData.comparatorProperty().bind(LogView.comparatorProperty());
         // 5. Add sorted (and filtered) data to the table.
         LogView.setItems(sortedData);
-    }
-
-    private void searchLogView() 
-    {
-        filterTableView();
     }
 
     @FXML

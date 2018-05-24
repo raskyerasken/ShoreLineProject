@@ -243,8 +243,6 @@ public class MainWindowController implements Initializable
             Parent root = fxLoader.load();
             AddUserViewController controller = fxLoader.getController();
             controller.setmodel(fcModel, modelData);
-            controller.setmodel(fcModel);
-            controller.modelData(modelData);
             importWindow.getChildren().setAll(root);
         } 
         catch (IOException ex) 
@@ -266,7 +264,8 @@ public class MainWindowController implements Initializable
         isUserAdmin();
     }
 
-    public String getTextNames() {
+    public String getTextNames() 
+    {
         fileNames = (ObservableList<File>) fcModel;
         return fileNames.toString();
     }
@@ -278,7 +277,8 @@ public class MainWindowController implements Initializable
         }
     }
 
-    void setmodel(FilesConvertionModel fcModel, LoginDataModel modelData) throws SQLException {
+    void setmodel(FilesConvertionModel fcModel, LoginDataModel modelData) throws SQLException 
+    {
         this.fcModel = fcModel;
         taskField.getItems().clear();
         taskField.setItems(fcModel.getFiles());
