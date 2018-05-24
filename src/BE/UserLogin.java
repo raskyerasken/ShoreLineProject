@@ -16,7 +16,6 @@ import javafx.beans.property.StringProperty;
  */
 public class UserLogin 
 {
-
     private final StringProperty userName = new SimpleStringProperty();
     private final StringProperty password = new SimpleStringProperty();
     private final StringProperty email = new SimpleStringProperty();

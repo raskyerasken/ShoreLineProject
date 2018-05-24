@@ -5,7 +5,6 @@
  */
 package GUI;
 
-import BE.UpdateLog;
 import GUI.Models.LoginDataModel;
 import GUI.Models.FilesConvertionModel;
 import BE.UserLogin;
@@ -84,9 +83,9 @@ public class AddUserViewController implements Initializable
     
     private void addColumsToTableView()
     {
-        userTbl.setCellValueFactory(new PropertyValueFactory("Username"));
+        userTbl.setCellValueFactory(new PropertyValueFactory("UserName"));
         emailTbl.setCellValueFactory(new PropertyValueFactory("Email"));
-        adminTbl.setCellValueFactory(new PropertyValueFactory("Accesslevel"));
+        adminTbl.setCellValueFactory(new PropertyValueFactory("AccessLevel"));
     }
     
     private void searchLogView() 
@@ -137,9 +136,6 @@ public class AddUserViewController implements Initializable
             root = fxLoader.load();
             MainWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel,modelData);
-            controller.setmodel(fcModel);
-            controller.modelData(modelData);
-            controller.setmodel(fcModel,modelData);
             addUser.getChildren().setAll(root);
         } 
         catch (IOException ex) 
@@ -151,28 +147,28 @@ public class AddUserViewController implements Initializable
     @FXML
     private void CreateAccount(ActionEvent event) 
     {
-        UserLogin newUser = new UserLogin();
-        newUser.setEmail(txtEmail.getText());
-        newUser.setPassword(txtPassword.getText());
+        
+        userLogin.setEmail(txtEmail.getText());
+        userLogin.setPassword(txtPassword.getText());
         String passwordAgain = txtPasswordAgain.getText();
-        newUser.setUserName(txtUsername.getText());
-        if (newUser.getEmail().isEmpty()
-                || newUser.getPassword().isEmpty()
+        userLogin.setUserName(txtUsername.getText());
+        if (userLogin.getEmail().isEmpty()
+                || userLogin.getPassword().isEmpty()
                 || passwordAgain.isEmpty()
-                || newUser.getUserName().isEmpty()) 
+                || userLogin.getUserName().isEmpty()) 
         {
             showErrorDialog("Empty fields", null, "Please insert something to each field.");
         } 
         else 
         {
-            if (newUser.getPassword().equals(passwordAgain)) 
+            if (userLogin.getPassword().equals(passwordAgain)) 
             {
                 try 
                 {
-                    if (bllManagerul.usernameAvaible(newUser.getUserName())) 
+                    if (bllManagerul.usernameAvaible(userLogin.getUserName())) 
                     {
-                        newUser.setAccessLevel(adminAccessLevelChckBox.isSelected());
-                        bllManagerul.createNewUser(newUser);
+                        userLogin.setAccessLevel(adminAccessLevelChckBox.isSelected());
+                        bllManagerul.createNewUser(userLogin);
                         clearText();
                     } 
                     else 

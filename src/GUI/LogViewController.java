@@ -65,9 +65,6 @@ public class LogViewController implements Initializable
     private TableColumn<UpdateLog, String> adjustment;
     @FXML
     private TableColumn<UpdateLog, Boolean> error;
-    CompletableFuture com;
-    private Thread thread = null;
-    long timeWaitThread = 500;
     @FXML
     private AnchorPane exportWindow;
     @FXML
