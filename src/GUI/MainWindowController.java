@@ -12,6 +12,7 @@ import BE.UserLogin;
 import BLL.BLLManagerUpdateLog;
 import BLL.BLLManagerUserLogin;
 import BLL.ReadingXLSX;
+import DAL.ConnectionPool.DalException;
 import com.jfoenix.controls.JFXProgressBar;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -57,11 +58,11 @@ public class MainWindowController implements Initializable
     BLL.BLLManagerUpdateLog up = new BLLManagerUpdateLog();
     Parent root;
     UserLogin ul = new UserLogin();
-    BLLManagerUserLogin bllManagerUL = new BLLManagerUserLogin();
+    BLLManagerUserLogin bllManagerUL ;
     LoginDataModel modelData ;
     LoginViewController loginID;
     boolean acceptFile = false;
-    String[] acceptedFiles = {".xlsx"};
+    String[] acceptedFiles = {".xlsx",".csv"};
     List<File> files;
     @FXML
     private ListView<File> taskField;
@@ -87,6 +88,11 @@ public class MainWindowController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
+        try {
+            bllManagerUL = new BLLManagerUserLogin();
+                    } catch (DalException ex) {
+            Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         double width = screenSize.getWidth();
         double height = screenSize.getHeight();
@@ -118,11 +124,12 @@ public class MainWindowController implements Initializable
                         filesAccepted.add(file);
                         acceptFile = true;
                     }
-                    if (!acceptFile) 
+                   
+                }
+                if (!acceptFile) 
                     {
                         filesNotAccepted.add(file);
                     }
-                }
             }
             Platform.runLater(()
                     -> 

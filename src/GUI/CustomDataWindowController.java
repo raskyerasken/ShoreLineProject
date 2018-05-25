@@ -7,6 +7,7 @@ package GUI;
 
 import BE.JSONCustommize;
 import BLL.ReadingXLSX;
+import BLL.xml;
 import GUI.Models.LoginDataModel;
 import GUI.Models.FilesConvertionModel;
 import com.jfoenix.controls.JFXComboBox;
@@ -140,8 +141,14 @@ public class CustomDataWindowController implements Initializable {
         isUserAdmin();
         columNameExcel.getItems().clear();
         if (!fcModel.getFiles().isEmpty()) {
+            if(fcModel.getFiles().get(0).getAbsolutePath().endsWith(".xlsx")){
             ReadingXLSX xlsx = new ReadingXLSX(fcModel.getFiles().get(0).getAbsolutePath(), fcModel);
-            columNameExcel.setItems((ObservableList<String>) xlsx.getColumsNames());
+            columNameExcel.setItems((ObservableList<String>) xlsx.getColumsNames());}
+            else if(fcModel.getFiles().get(0).getAbsolutePath().endsWith(".csv")){
+            xml xmlData = new xml(fcModel.getFiles().get(0).getAbsolutePath(), fcModel);
+            columNameExcel.setItems((ObservableList<String>) xmlData.getTitle());}
+            
+            
         }
         comboboxCustom.setItems(fcModel.getCustom());
     }

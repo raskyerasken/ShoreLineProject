@@ -24,12 +24,10 @@ import java.util.List;
 public class DataBaseUserLogin 
 {
 
-    private ConnectionManagerSLProject cm = new ConnectionManagerSLProject();
 
-    public void setPassword(UserLogin userLogin) throws SQLException 
+    public void setPassword(Connection con,UserLogin userLogin) throws SQLException 
     {
-        try (Connection con = cm.getConnection()) 
-        {
+       
             String sql
                     = "SELECT * FROM UserLogin"
                     + "(Username, Password)"
@@ -37,19 +35,13 @@ public class DataBaseUserLogin
 
             PreparedStatement pstmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
-        } 
-        
-        catch (SQLServerException ex) 
-        {
-             AlertWindow  alert = new AlertWindow("Data base connectiong error", null, "Check you connection to the database");
-        }
+       
     }
 
-    public boolean getAccess(UserLogin userLogin) throws SQLException
+    public boolean getAccess(Connection con,UserLogin userLogin) throws SQLException
     {
         UserLogin ul = new UserLogin();
-        try (Connection con = cm.getConnection()) 
-        {
+     
             String query
                     = "SELECT * FROM UserLogin "
                     + "WHERE Username LIKE ?";
@@ -64,20 +56,14 @@ public class DataBaseUserLogin
                 ul.setUserName(rs.getString("Username"));
                 ul.setPassword(rs.getString("Password"));
             }
-        } 
-        
-        catch (SQLServerException ex) 
-        {
-          AlertWindow  alert = new AlertWindow("Data base connectiong error", null, "Check you connection to the database");
-        }
+       
         return userLogin.getPassword().equals(ul.getPassword());
     }
     
-    public boolean getAdminAccess (UserLogin userLogin) throws SQLException
+    public boolean getAdminAccess (Connection con,UserLogin userLogin) throws SQLException
     {
         UserLogin ul = new UserLogin();
-        try (Connection con = cm.getConnection()) 
-        {
+       
             String query
                     = "SELECT * FROM UserLogin "
                     + "WHERE Username LIKE ?";
@@ -91,20 +77,14 @@ public class DataBaseUserLogin
             {
                 ul.setAccessLevel(rs.getBoolean("Accesslevel"));
             }
-        } 
-        
-        catch (SQLServerException ex) 
-        {
-          AlertWindow  alert = new AlertWindow("Data base connectiong error", null, "Check you connection to the database");
-        }
+       
         return ul.isAccessLevel();
     }
 
-    public boolean usernameAvaible(String Username) throws SQLException 
+    public boolean usernameAvaible(Connection con,String Username) throws SQLException 
     {
         UserLogin ul = new UserLogin();
-        try (Connection con = cm.getConnection()) 
-        {
+       
             String query
                     = "SELECT * FROM UserLogin "
                     + "WHERE Username LIKE ?";
@@ -118,19 +98,12 @@ public class DataBaseUserLogin
             {
                 return false;
             }
-        } 
         
-        catch (SQLServerException ex) 
-        {
-          AlertWindow  alert = new AlertWindow("Data base connectiong error", null, "Check you connection to the database");
-        }
         return true;
     }
 
-    public void createNewUser(UserLogin newUser) throws SQLServerException, SQLException 
+    public void createNewUser(Connection con,UserLogin newUser) throws SQLServerException, SQLException 
     {
-        try (Connection con = cm.getConnection()) 
-        {
             String sql
                     = "INSERT INTO UserLogin "
                     + "(Username, Password, Email, Accesslevel) "
@@ -148,16 +121,15 @@ public class DataBaseUserLogin
                 throw new SQLException("User not added");
             }
 
-        }
+        
     }
 
-    public List<UserLogin> getUserInformation() 
+    public List<UserLogin> getUserInformation(Connection con) throws SQLException 
     {
         List<UserLogin> AllUserLog
                 = new ArrayList<>();
 
-        try (Connection con = cm.getConnection()) 
-        {
+        
             PreparedStatement pstmt
                     = con.prepareStatement("SELECT * FROM UserLogin");
 
@@ -171,11 +143,7 @@ public class DataBaseUserLogin
                 ul.setAccessLevel(rs.getBoolean("Accesslevel"));
                 AllUserLog.add(ul);
             }
-        } 
-        catch (SQLException ex) 
-        {
-            AlertWindow alert = new AlertWindow("Data base connectiong error", null, "Check you connection to the database");
-        }
+       
         return AllUserLog;
     }
 }

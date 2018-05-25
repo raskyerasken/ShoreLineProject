@@ -9,6 +9,7 @@ import GUI.Models.LoginDataModel;
 import GUI.Models.FilesConvertionModel;
 import BE.UserLogin;
 import BLL.BLLManagerUserLogin;
+import DAL.ConnectionPool.DalException;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.validation.RequiredFieldValidator;
@@ -16,6 +17,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.transformation.FilteredList;
@@ -44,8 +47,8 @@ public class AddUserViewController implements Initializable
 {
     
     UserLogin userLogin = new UserLogin();
-    LoginDataModel modelData = new LoginDataModel();
-    BLLManagerUserLogin bllManagerul = new BLLManagerUserLogin();
+    LoginDataModel modelData ;
+    BLLManagerUserLogin bllManagerul ;
     @FXML
     private CheckBox adminAccessLevelChckBox;
     @FXML
@@ -76,13 +79,28 @@ public class AddUserViewController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
+        try {
+            bllManagerul = new BLLManagerUserLogin();
+        } catch (DalException ex) {
+            Logger.getLogger(AddUserViewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         addColumsToTableView();
         Thread t = new Thread(()
                 -> 
         {
             createdUserTbl.setItems(modelData.getUserInformationToList());
+<<<<<<< HEAD
             modelData.logListUpdate();
             errorColor();
+=======
+            try {
+                modelData.logListUpdate();
+            } catch (DalException ex) {
+                Logger.getLogger(AddUserViewController.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(AddUserViewController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+>>>>>>> 5f8d45245c75b8c191c6e3be6a6a04f00eac85fc
             searchLogView();
         });
         t.start();
@@ -154,7 +172,7 @@ public class AddUserViewController implements Initializable
     }
 
     @FXML
-    private void CreateAccount(ActionEvent event) 
+    private void CreateAccount(ActionEvent event) throws DalException, DalException 
     {
         
         userLogin.setEmail(txtEmail.getText());

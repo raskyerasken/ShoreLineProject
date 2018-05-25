@@ -21,6 +21,7 @@ import java.util.Iterator;
 import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -48,9 +49,11 @@ public class ReadingXLSX {
     public ReadingXLSX(String excelPath,FilesConvertionModel fcmodel) throws FileNotFoundException, IOException, ParseException {
         this.fcmodel=fcmodel;
         excelFilePath = excelPath;
+        
         inputStream = new FileInputStream(new File(excelFilePath));
 
-        workbook = new XSSFWorkbook(inputStream);
+        workbook = new XSSFWorkbook(inputStream);;
+        
        
         firstSheet = workbook.getSheetAt(0);
         row = workbook.getNumberOfNames();
