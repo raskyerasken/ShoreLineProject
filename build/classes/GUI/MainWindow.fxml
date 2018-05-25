@@ -7,9 +7,9 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" fx:id="importWindow" stylesheets="@CSSShoreLines.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.MainWindowController">
+<AnchorPane id="AnchorPane" fx:id="importWindow" stylesheets="@CSSShoreLines.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.MainWindowController">
     <children>
-      <JFXListView fx:id="taskField" layoutX="115.0" layoutY="100.0" prefHeight="246.0" prefWidth="444.0" AnchorPane.bottomAnchor="106.0" AnchorPane.leftAnchor="115.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="100.0" />
+      <JFXListView fx:id="taskField" blendMode="SRC_ATOP" cache="true" cacheHint="SPEED" layoutX="115.0" layoutY="100.0" mouseTransparent="true" prefHeight="246.0" prefWidth="444.0" AnchorPane.bottomAnchor="106.0" AnchorPane.leftAnchor="115.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="100.0" />
       <JFXButton layoutX="275.0" layoutY="50.0" onAction="#importData" prefHeight="31.0" prefWidth="158.0" text="Convert Data" AnchorPane.leftAnchor="275.0" AnchorPane.topAnchor="50.0" />
       <ImageView fitHeight="67.0" fitWidth="325.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="2.0">
          <image>
