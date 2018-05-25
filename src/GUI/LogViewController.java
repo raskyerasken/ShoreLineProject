@@ -14,6 +14,7 @@ import static GUI.LogViewController.lines;
 import com.jfoenix.controls.JFXTextField;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import static java.lang.Compiler.disable;
 import java.net.URL;
 import java.sql.SQLException;
 import java.text.ParseException;
@@ -42,10 +43,11 @@ import javafx.scene.paint.Color;
  *
  * @author ander
  */
-public class LogViewController implements Initializable 
+public class LogViewController implements Initializable
 {
 
     UserLogin ul = new UserLogin();
+    UpdateLog updLog = new UpdateLog();
     LoginDataModel modelData;
     UpdateLogViewModel model = new UpdateLogViewModel();
     public static final ObservableList lines
@@ -75,14 +77,14 @@ public class LogViewController implements Initializable
     private Button adminButton;
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) 
+    public void initialize(URL url, ResourceBundle rb)
     {
         adminButton.setVisible(false);
         logMenuSelect.setDisable(true);
         addColumsToTableView();   //get all the colums
         LogView.setItems(model.getUpdateLogToList());
         Thread t = new Thread(()
-                -> 
+                ->
         {
             model.logListUpdate();
             searchLogView();
@@ -90,53 +92,31 @@ public class LogViewController implements Initializable
         });
         t.start();
     }
-    
+
     private void errorColor()
     {
-        LogView.setRowFactory(row -> new TableRow<UpdateLog>()
+        LogView.setRowFactory(tv -> new TableRow<UpdateLog>()
         {
             @Override
             public void updateItem(UpdateLog item, boolean empty)
             {
                 super.updateItem(item, empty);
-
-                if (item == null || empty) 
+                if (item == null)
                 {
                     setStyle("");
-                } 
-                else 
+                }
+                else if (item.isError())
                 {
-                    //Now 'item' has all the info of the user in this row
-                    if (item.isError() == true) 
-                    {System.out.println("(item.isError() == true)");
-                        //We apply now the changes in all the cells of the row
-                        for(int i=0; i<getChildren().size();i++)
-                        {System.out.println("forloop");
-                            ((Labeled) getChildren().get(i)).setTextFill(Color.RED);
-                        }                        
-                    } 
-                    else 
-                    {
-                        if(getTableView().getSelectionModel().getSelectedItems().contains(item))
-                        {
-                            for(int i=0; i<getChildren().size();i++)
-                            {
-                                ((Labeled) getChildren().get(i)).setTextFill(Color.WHITE);;
-                            }
-                        }
-                        else
-                        {
-                            for(int i=0; i<getChildren().size();i++)
-                            {
-                                ((Labeled) getChildren().get(i)).setTextFill(Color.BLACK);;
-                            }
-                        }
-                    }
+                    setStyle("-fx-background-color: tomato;");
+                }
+                else
+                {
+                    setStyle("");
                 }
             }
         });
     }
-    
+
     private void addColumsToTableView()
     {
         userNameTable.setCellValueFactory(new PropertyValueFactory("Username"));
@@ -145,27 +125,28 @@ public class LogViewController implements Initializable
         error.setCellValueFactory(new PropertyValueFactory("Error"));
     }
 
-    private void searchLogView() 
+    private void searchLogView()
     {
         FilteredList<UpdateLog> filteredData;
         filteredData = new FilteredList<>(model.getUpdateLogToList(), p -> true);
         searchTxt.textProperty().addListener((observable, oldValue, newValue)
-                -> 
+                ->
         {
             filteredData.setPredicate(updateLog
-                    -> 
+                    ->
             {
-                if (newValue == null || newValue.isEmpty()) 
+                if (newValue == null || newValue.isEmpty())
                 {
                     return true;
                 }
 
                 String lowerCaseFilter = newValue.toLowerCase();
 
-                if (updateLog.getUsername().toLowerCase().contains(lowerCaseFilter)) 
+                if (updateLog.getUsername().toLowerCase().contains(lowerCaseFilter))
                 {
                     return true;
-                } else if (updateLog.getDatelog().toString().contains(lowerCaseFilter)) 
+                }
+                else if (updateLog.getDatelog().toString().contains(lowerCaseFilter))
                 {
                     return true; // Filter matches last name.
                 }
@@ -184,17 +165,17 @@ public class LogViewController implements Initializable
     }
 
     @FXML
-    private void importMenuSelect(ActionEvent event) throws IOException, SQLException 
+    private void importMenuSelect(ActionEvent event) throws IOException, SQLException
     {
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/MainWindow.fxml"));
         Parent root;
-        try 
+        try
         {
             root = fxLoader.load();
             MainWindowController controller = fxLoader.getController();
-            controller.setmodel(fcModel,modelData);
+            controller.setmodel(fcModel, modelData);
             exportWindow.getChildren().setAll(root);
-        } 
+        }
         catch (IOException ex)
         {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show ImoportView");
@@ -202,71 +183,71 @@ public class LogViewController implements Initializable
     }
 
     @FXML
-    private void exportMenuSelect(ActionEvent event) throws SQLException 
+    private void exportMenuSelect(ActionEvent event) throws SQLException
     {
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/ExportWindow.fxml"));
         Parent root;
-        try 
+        try
         {
             root = fxLoader.load();
             ExportWindowController controller = fxLoader.getController();
-            controller.setmodel(fcModel,modelData);
+            controller.setmodel(fcModel, modelData);
             exportWindow.getChildren().setAll(root);
-        } 
-        catch (IOException ex) 
+        }
+        catch (IOException ex)
         {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
         }
     }
 
     @FXML
-    private void customDataMenuSelect(ActionEvent event) throws FileNotFoundException, ParseException, SQLException 
+    private void customDataMenuSelect(ActionEvent event) throws FileNotFoundException, ParseException, SQLException
     {
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/CustomDataWindow.fxml"));
         Parent root;
-        try 
+        try
         {
             root = fxLoader.load();
             CustomDataWindowController controller = fxLoader.getController();
-            controller.setmodel(fcModel,modelData);
+            controller.setmodel(fcModel, modelData);
             exportWindow.getChildren().setAll(root);
-        } 
-        catch (IOException ex) 
+        }
+        catch (IOException ex)
         {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show CustomData");
         }
     }
 
     @FXML
-    private void adminMenuSelect(ActionEvent event) throws SQLException 
+    private void adminMenuSelect(ActionEvent event) throws SQLException
     {
-        try 
+        try
         {
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("AddUserView.fxml"));
             Parent root = fxLoader.load();
             AddUserViewController controller = fxLoader.getController();
-            controller.setmodel(fcModel,modelData);
+            controller.setmodel(fcModel, modelData);
             controller.setmodel(fcModel);
             controller.modelData(modelData);
             exportWindow.getChildren().setAll(root);
-        } 
-        catch (IOException ex) 
+        }
+        catch (IOException ex)
         {
             AlertWindow alert = new AlertWindow("IOException", null, "IOException");
         }
     }
 
-    void setmodel(FilesConvertionModel fcModel, LoginDataModel modelData) throws SQLException 
+    void setmodel(FilesConvertionModel fcModel, LoginDataModel modelData) throws SQLException
     {
         this.fcModel = fcModel;
-        this.modelData = modelData; 
+        this.modelData = modelData;
         isUserAdmin();
     }
-    
+
     private void isUserAdmin() throws SQLException
     {
         System.out.println(modelData.getUserAccessLevel());
-        if (modelData.getUserAccessLevel() == true) 
+        if (modelData.getUserAccessLevel() == true)
         {
             adminButton.setVisible(true);
         }

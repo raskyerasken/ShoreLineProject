@@ -24,7 +24,8 @@ import org.jdom.input.SAXBuilder;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class xml {
+public class xml
+{
 
     FilesConvertionModel fcmodel;
     List<List<String>> alldata = new ArrayList<>();
@@ -32,7 +33,8 @@ public class xml {
     DateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy");
     Date today = new Date();
 
-    public xml(String absolutePath, FilesConvertionModel fc) throws FileNotFoundException {
+    public xml(String absolutePath, FilesConvertionModel fc) throws FileNotFoundException
+    {
         fcmodel = fc;
         String fileName = absolutePath;
         File file = new File(fileName);
@@ -41,7 +43,8 @@ public class xml {
 
         inputStream = new Scanner(file);
 
-        while (inputStream.hasNext()) {
+        while (inputStream.hasNext())
+        {
             String line = inputStream.next();
             String[] values = line.split(",");
 
@@ -51,16 +54,17 @@ public class xml {
         inputStream.close();
     }
 
-    public ObservableList<String> getTitle() {
-
+    public ObservableList<String> getTitle()
+    {
         return ColumNames;
     }
 
-    public List<JSONObject> allJSONObjectInFile() throws ParseException, IllegalArgumentException, IllegalAccessException, JSONException, IOException {
+    public List<JSONObject> allJSONObjectInFile() throws ParseException, IllegalArgumentException, IllegalAccessException, JSONException, IOException
+    {
         List<JSONObject> JSONList = new ArrayList<>();
         System.out.println(alldata.size());
-        for (int i = 1; i < alldata.size(); i++) {
-
+        for (int i = 1; i < alldata.size(); i++)
+        {
             JSONObject newJSON = setJSONObject(i);
 
             JSONList.add(newJSON);
@@ -68,7 +72,8 @@ public class xml {
         return JSONList;
     }
 
-    private JSONObject setJSONObject(int i) throws JSONException, ParseException, IOException {
+    private JSONObject setJSONObject(int i) throws JSONException, ParseException, IOException
+    {
         JSONCustommize custom = fcmodel.getCustomClass();
         System.out.println("hdsfsdey");
         JSONObject Json = new JSONObject();

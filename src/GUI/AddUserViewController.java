@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import BE.UpdateLog;
 import GUI.Models.LoginDataModel;
 import GUI.Models.FilesConvertionModel;
 import BE.UserLogin;
@@ -43,12 +44,12 @@ import javafx.scene.paint.Color;
  *
  * @author jacob
  */
-public class AddUserViewController implements Initializable 
+public class AddUserViewController implements Initializable
 {
-    
+
     UserLogin userLogin = new UserLogin();
-    LoginDataModel modelData ;
-    BLLManagerUserLogin bllManagerul ;
+    LoginDataModel modelData;
+    BLLManagerUserLogin bllManagerul;
     @FXML
     private CheckBox adminAccessLevelChckBox;
     @FXML
@@ -77,24 +78,32 @@ public class AddUserViewController implements Initializable
      * Initializes the controller class.
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) 
+    public void initialize(URL url, ResourceBundle rb)
     {
-        try {
+        try
+        {
             bllManagerul = new BLLManagerUserLogin();
-        } catch (DalException ex) {
+        }
+        catch (DalException ex)
+        {
             Logger.getLogger(AddUserViewController.class.getName()).log(Level.SEVERE, null, ex);
         }
         addColumsToTableView();
         Thread t = new Thread(()
-                -> 
+                ->
         {
             createdUserTbl.setItems(modelData.getUserInformationToList());
             errorColor();
-            try {
+            try
+            {
                 modelData.logListUpdate();
-            } catch (DalException ex) {
+            }
+            catch (DalException ex)
+            {
                 Logger.getLogger(AddUserViewController.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (SQLException ex) {
+            }
+            catch (SQLException ex)
+            {
                 Logger.getLogger(AddUserViewController.class.getName()).log(Level.SEVERE, null, ex);
             }
             searchLogView();
@@ -103,35 +112,36 @@ public class AddUserViewController implements Initializable
         validatorMessages();
         validators();
     }
-    
+
     private void addColumsToTableView()
     {
-        userTbl.setCellValueFactory(new PropertyValueFactory("userName"));
+        userTbl.setCellValueFactory(new PropertyValueFactory("UserName"));
         emailTbl.setCellValueFactory(new PropertyValueFactory("email"));
         adminTbl.setCellValueFactory(new PropertyValueFactory("accessLevel"));
     }
-    
-    private void searchLogView() 
+
+    private void searchLogView()
     {
         FilteredList<UserLogin> filteredData;
         filteredData = new FilteredList<>(modelData.getUserInformationToList(), p -> true);
         search.textProperty().addListener((observable, oldValue, newValue)
-                -> 
+                ->
         {
             filteredData.setPredicate(userLogin
-                    -> 
+                    ->
             {
-                if (newValue == null || newValue.isEmpty()) 
+                if (newValue == null || newValue.isEmpty())
                 {
                     return true;
                 }
 
                 String lowerCaseFilter = newValue.toLowerCase();
 
-                if (userLogin.getUserName().toLowerCase().contains(lowerCaseFilter)) 
+                if (userLogin.getUserName().toLowerCase().contains(lowerCaseFilter))
                 {
                     return true;
-                } else if (userLogin.getEmail().toString().contains(lowerCaseFilter)) 
+                }
+                else if (userLogin.getEmail().toString().contains(lowerCaseFilter))
                 {
                     return true; // Filter matches last name.
                 }
@@ -148,29 +158,29 @@ public class AddUserViewController implements Initializable
         // 5. Add sorted (and filtered) data to the table.
         createdUserTbl.setItems(sortedData);
     }
-    
+
     @FXML
-    private void goBack(ActionEvent event) throws SQLException 
+    private void goBack(ActionEvent event) throws SQLException
     {
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/MainWindow.fxml"));
         Parent root;
-        try 
+        try
         {
             root = fxLoader.load();
             MainWindowController controller = fxLoader.getController();
-            controller.setmodel(fcModel,modelData);
+            controller.setmodel(fcModel, modelData);
             addUser.getChildren().setAll(root);
-        } 
-        catch (IOException ex) 
+        }
+        catch (IOException ex)
         {
             AlertWindow alert = new AlertWindow("MainWindow error", null, "It can show Exportview");
         }
     }
 
     @FXML
-    private void CreateAccount(ActionEvent event) throws DalException, DalException 
+    private void CreateAccount(ActionEvent event) throws DalException, DalException
     {
-        
+
         userLogin.setEmail(txtEmail.getText());
         userLogin.setPassword(txtPassword.getText());
         String passwordAgain = txtPasswordAgain.getText();
@@ -178,39 +188,39 @@ public class AddUserViewController implements Initializable
         if (userLogin.getEmail().isEmpty()
                 || userLogin.getPassword().isEmpty()
                 || passwordAgain.isEmpty()
-                || userLogin.getUserName().isEmpty()) 
+                || userLogin.getUserName().isEmpty())
         {
             showErrorDialog("Empty fields", null, "Please insert something to each field.");
-        } 
-        else 
+        }
+        else
         {
-            if (userLogin.getPassword().equals(passwordAgain)) 
+            if (userLogin.getPassword().equals(passwordAgain))
             {
-                try 
+                try
                 {
-                    if (bllManagerul.usernameAvaible(userLogin.getUserName())) 
+                    if (bllManagerul.usernameAvaible(userLogin.getUserName()))
                     {
                         userLogin.setAccessLevel(adminAccessLevelChckBox.isSelected());
                         bllManagerul.createNewUser(userLogin);
                         clearText();
-                    } 
-                    else 
+                    }
+                    else
                     {
                         showErrorDialog("Username used", null, "Username is already exist");
                     }
-                } 
-                catch (SQLException ex) 
+                }
+                catch (SQLException ex)
                 {
                     showErrorDialog("SQL erroe", null, "Chech your database connection");
-                } 
+                }
             }
-            else 
+            else
             {
                 showErrorDialog("Password does not match", null, "It has to be the same password in password and password again.");
             }
         }
     }
-    
+
     private void clearText()
     {
         txtEmail.clear();
@@ -219,7 +229,7 @@ public class AddUserViewController implements Initializable
         txtUsername.clear();
     }
 
-    private void showErrorDialog(String title, String header, String message) 
+    private void showErrorDialog(String title, String header, String message)
     {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
@@ -227,135 +237,113 @@ public class AddUserViewController implements Initializable
         alert.setContentText(message);
         alert.showAndWait();
     }
-    
-    void modelData(LoginDataModel modelData) throws SQLException 
+
+    void modelData(LoginDataModel modelData) throws SQLException
     {
         this.modelData = modelData;
         userLogin.setAccessLevel(modelData.getUserAccessLevel());
         System.out.println(modelData.getUserAccessLevel());
     }
-    
-    void setmodel(FilesConvertionModel fcModel) throws SQLException 
+
+    void setmodel(FilesConvertionModel fcModel) throws SQLException
     {
         this.fcModel = fcModel;
     }
 
-    void setmodel(FilesConvertionModel fcModel, LoginDataModel modelData) 
+    void setmodel(FilesConvertionModel fcModel, LoginDataModel modelData)
     {
-         this.fcModel = fcModel;
-         this.modelData= modelData;
+        this.fcModel = fcModel;
+        this.modelData = modelData;
     }
-    
+
     private void validators()
     {
-        txtUsername.focusedProperty().addListener(new ChangeListener<Boolean>() 
+        txtUsername.focusedProperty().addListener(new ChangeListener<Boolean>()
         {
             @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) 
+            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue)
             {
-                if (oldValue) 
+                if (oldValue)
                 {
                     txtUsername.validate();
                 }
             }
         });
-        
-        txtEmail.focusedProperty().addListener(new ChangeListener<Boolean>() 
+
+        txtEmail.focusedProperty().addListener(new ChangeListener<Boolean>()
         {
             @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) 
+            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue)
             {
-                if (oldValue) 
+                if (oldValue)
                 {
                     txtEmail.validate();
                 }
             }
         });
-        
-        txtPassword.focusedProperty().addListener(new ChangeListener<Boolean>() 
+
+        txtPassword.focusedProperty().addListener(new ChangeListener<Boolean>()
         {
             @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) 
+            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue)
             {
-                if (oldValue) 
+                if (oldValue)
                 {
                     txtPassword.validate();
                 }
             }
         });
-                
-        txtPasswordAgain.focusedProperty().addListener(new ChangeListener<Boolean>() 
+
+        txtPasswordAgain.focusedProperty().addListener(new ChangeListener<Boolean>()
         {
             @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) 
+            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue)
             {
-                if (oldValue) 
+                if (oldValue)
                 {
                     txtPasswordAgain.validate();
                 }
             }
         });
     }
-    
+
     private void validatorMessages()
     {
         RequiredFieldValidator validator = new RequiredFieldValidator();
         RequiredFieldValidator validator2 = new RequiredFieldValidator();
         RequiredFieldValidator validator3 = new RequiredFieldValidator();
         RequiredFieldValidator validator4 = new RequiredFieldValidator();
-        
+
         validator.setMessage("Field input required");
         validator2.setMessage("Field input required");
         validator3.setMessage("Field input required");
         validator4.setMessage("Field input required");
-        
+
         txtUsername.getValidators().add(validator);
         txtEmail.getValidators().add(validator2);
         txtPassword.getValidators().add(validator3);
         txtPasswordAgain.getValidators().add(validator4);
     }
-    
+
     private void errorColor()
     {
-        createdUserTbl.setRowFactory(Callback -> new TableRow<UserLogin>()
-        {   
-            
+        createdUserTbl.setRowFactory(tv -> new TableRow<UserLogin>()
+        {
+            @Override
             public void updateItem(UserLogin item, boolean empty)
             {
                 super.updateItem(item, empty);
-
-                if (item == null || empty) 
+                if (item == null)
                 {
                     setStyle("");
-                } 
-                else 
+                }
+                else if (item.isAccessLevel())
                 {
-                    //Now 'item' has all the info of the Person in this row
-                    if (item.isAccessLevel() == true) 
-                    {
-                        //We apply now the changes in all the cells of the row
-                        for(int i=0; i<getChildren().size();i++)
-                        {
-                            ((Labeled) getChildren().get(i)).setTextFill(Color.GREEN);
-                        }                        
-                    } 
-                    else 
-                    {
-                        if(getTableView().getSelectionModel().getSelectedItems().contains(item))
-                        {
-                            for(int i=0; i<getChildren().size();i++)
-                            {
-                                ((Labeled) getChildren().get(i)).setTextFill(Color.ORANGE);;
-                            }
-                        }
-                        else
-                        {
-                            for(int i=0; i<getChildren().size();i++)
-                            {
-                                ((Labeled) getChildren().get(i)).setTextFill(Color.BLACK);;
-                            }
-                        }
-                    }
+                    setStyle("-fx-background-color: lime;");
+                }
+                else
+                {
+                    setStyle("");
                 }
             }
         });

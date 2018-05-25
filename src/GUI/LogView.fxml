@@ -20,7 +20,7 @@
       <Button layoutY="234.0" mnemonicParsing="false" onAction="#customDataMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Custom &#10;   Data" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="234.0" />
       <Button fx:id="logMenuSelect" layoutY="301.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="96.0" text="Log" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="301.0" />
       <Button fx:id="adminButton" layoutY="367.0" mnemonicParsing="false" onAction="#adminMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Admin" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="367.0" />
-      <TableView fx:id="LogView" layoutX="107.0" layoutY="100.0" prefHeight="645.0" prefWidth="1248.0" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="107.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="100.0">
+      <TableView fx:id="LogView" layoutX="107.0" layoutY="100.0" prefHeight="645.0" prefWidth="1248.0" stylesheets="@Styles.css" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="107.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="100.0">
          <columns>
             <TableColumn fx:id="userNameTable" prefWidth="167.0" text="User Name" />
             <TableColumn fx:id="timeTable" prefWidth="231.0" text="Time" />
