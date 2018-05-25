@@ -89,28 +89,8 @@ public class AddUserViewController implements Initializable
             Logger.getLogger(AddUserViewController.class.getName()).log(Level.SEVERE, null, ex);
         }
         addColumsToTableView();
-        Thread t = new Thread(()
-                ->
-        {
-            createdUserTbl.setItems(modelData.getUserInformationToList());
-            errorColor();
-            try
-            {
-                modelData.logListUpdate();
-            }
-            catch (DalException ex)
-            {
-                Logger.getLogger(AddUserViewController.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            catch (SQLException ex)
-            {
-                Logger.getLogger(AddUserViewController.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            searchLogView();
-        });
-        t.start();
-        validatorMessages();
-        validators();
+//        
+         
     }
 
     private void addColumsToTableView()
@@ -238,22 +218,34 @@ public class AddUserViewController implements Initializable
         alert.showAndWait();
     }
 
-    void modelData(LoginDataModel modelData) throws SQLException
-    {
-        this.modelData = modelData;
-        userLogin.setAccessLevel(modelData.getUserAccessLevel());
-        System.out.println(modelData.getUserAccessLevel());
-    }
-
-    void setmodel(FilesConvertionModel fcModel) throws SQLException
-    {
-        this.fcModel = fcModel;
-    }
 
     void setmodel(FilesConvertionModel fcModel, LoginDataModel modelData)
     {
         this.fcModel = fcModel;
         this.modelData = modelData;
+        userLogin.setAccessLevel(modelData.getUserAccessLevel());
+        setTable();
+    }
+    public void setTable ()
+    {
+       createdUserTbl.setItems(modelData.getUserInformationToList());
+            errorColor();
+            try
+            {
+                modelData.logListUpdate();
+            }
+            catch (DalException ex)
+            {
+                Logger.getLogger(AddUserViewController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            catch (SQLException ex)
+            {
+                Logger.getLogger(AddUserViewController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            searchLogView();
+       
+        validatorMessages();
+        validators();
     }
 
     private void validators()

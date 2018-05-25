@@ -127,8 +127,6 @@ public class CustomDataWindowController implements Initializable {
             Parent root = fxLoader.load();
             AddUserViewController controller = fxLoader.getController();
             controller.setmodel(fcModel, modelData);
-            controller.setmodel(fcModel);
-            controller.modelData(modelData);
             customDataWindow.getChildren().setAll(root);
         } catch (IOException ex) {
             AlertWindow alert = new AlertWindow("IOException", null, "IOException");

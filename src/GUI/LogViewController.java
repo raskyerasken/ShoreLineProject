@@ -227,8 +227,6 @@ public class LogViewController implements Initializable
             Parent root = fxLoader.load();
             AddUserViewController controller = fxLoader.getController();
             controller.setmodel(fcModel, modelData);
-            controller.setmodel(fcModel);
-            controller.modelData(modelData);
             exportWindow.getChildren().setAll(root);
         }
         catch (IOException ex)
