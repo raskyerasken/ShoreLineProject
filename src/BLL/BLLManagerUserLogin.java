@@ -7,6 +7,9 @@ package BLL;
 
 import BLLFacade.IBLLManagerUserLogin;
 import BE.UserLogin;
+import DAL.ConnectionPool.ConnectionPool;
+import DAL.ConnectionPool.DalException;
+import DAL.ConnectionPool.PooledUserloginDaoController;
 import DAL.DataBaseUserLogin;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
 import java.sql.SQLException;
@@ -18,37 +21,40 @@ import java.util.List;
  */
 public class BLLManagerUserLogin implements IBLLManagerUserLogin 
 {
-    
-    DataBaseUserLogin ul = new DataBaseUserLogin();
-    
-    public List<UserLogin> getUserDataToTableView()
-    {
-        return ul.getUserInformation();
+PooledUserloginDaoController pmdcUL;
+    public BLLManagerUserLogin() throws DalException { 
+         pmdcUL= new PooledUserloginDaoController(new ConnectionPool());
     }
+   
     
-    public void getPassword(UserLogin userLogin) throws SQLServerException, SQLException 
+    public List<UserLogin> getUserDataToTableView() throws DalException, SQLException
     {
-        ul.setPassword(userLogin);
-    }
-
-    public boolean getAccess(UserLogin userLogin) throws SQLException 
-    {
-        return ul.getAccess(userLogin);
-    }
-
-    public boolean getAdminAccess(UserLogin userLogin) throws SQLException 
-    {
-        return ul.getAdminAccess(userLogin);
+        return pmdcUL.getUserInformation();
     }
     
-    public boolean usernameAvaible(String Username) throws SQLException 
+    public void getPassword(UserLogin userLogin) throws SQLServerException, SQLException, DalException 
     {
-        return ul.usernameAvaible(Username); 
+        pmdcUL.setPassword(userLogin);
+    }
+
+    public boolean getAccess(UserLogin userLogin) throws SQLException, DalException 
+    {
+        return pmdcUL.getAccess(userLogin);
+    }
+
+    public boolean getAdminAccess(UserLogin userLogin) throws SQLException, DalException 
+    {
+        return pmdcUL.getAdminAccess(userLogin);
+    }
+    
+    public boolean usernameAvaible(String Username) throws SQLException, DalException 
+    {
+        return pmdcUL.usernameAvaible(Username); 
     }
 
 
-    public void createNewUser(UserLogin newUser) throws SQLException 
+    public void createNewUser(UserLogin newUser) throws SQLException, SQLServerException, DalException 
     {
-        ul.createNewUser(newUser);
+        pmdcUL.createNewUser(newUser);
     }
 }

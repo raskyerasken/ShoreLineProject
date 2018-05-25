@@ -11,6 +11,7 @@ import BE.UpdateLog;
 import BE.UserLogin;
 import BLL.BLLManagerUpdateLog;
 import BLL.BLLManagerUserLogin;
+import DAL.ConnectionPool.DalException;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
@@ -57,7 +58,7 @@ import javax.crypto.SecretKey;
 public class LoginViewController implements Initializable 
 {
 
-    LoginDataModel modelData = new LoginDataModel();
+    LoginDataModel modelData ;
     FilesConvertionModel fcModel = new FilesConvertionModel();
     @FXML
     JFXTextField userNameID;
@@ -65,7 +66,7 @@ public class LoginViewController implements Initializable
     public JFXPasswordField userPassword;
     @FXML
     private JFXCheckBox rememberUser;
-    BLL.BLLManagerUserLogin ul = new BLLManagerUserLogin();
+    BLL.BLLManagerUserLogin ul ;
     BLL.BLLManagerUpdateLog up = new BLLManagerUpdateLog();
     UpdateLog updateLog = new UpdateLog();
     UserLogin userLogin = new UserLogin();
@@ -82,12 +83,22 @@ public class LoginViewController implements Initializable
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) 
-    {
+    {  
+        try {
+            modelData= new LoginDataModel();
+        } catch (DalException ex) {
+            Logger.getLogger(LoginViewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                try {
+        ul = new BLLManagerUserLogin();
+        } catch (DalException ex) {
+            Logger.getLogger(LoginViewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
             rememberMeFunction();
     }
 
     @FXML
-    private void login(ActionEvent event) throws IOException, NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException 
+    private void login(ActionEvent event) throws IOException, NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException, DalException 
     {
         try 
         {
