@@ -19,7 +19,6 @@ import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.Date;
 import java.util.ResourceBundle;
-import java.util.concurrent.CompletableFuture;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -31,16 +30,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Labeled;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Text;
-import javafx.util.Callback;
 
 /**
  * FXML Controller class
@@ -111,12 +106,12 @@ public class LogViewController implements Initializable
                 } 
                 else 
                 {
-                    //Now 'item' has all the info of the Person in this row
+                    //Now 'item' has all the info of the user in this row
                     if (item.isError() == true) 
-                    {
+                    {System.out.println("(item.isError() == true)");
                         //We apply now the changes in all the cells of the row
-                        for(int i=0; i<getChildren().size();i++)
-                        {
+                        for(int i=0; i<LogView.getItems().size();i++)
+                        {System.out.println("forloop");
                             ((Labeled) getChildren().get(i)).setTextFill(Color.RED);
                         }                        
                     } 

@@ -93,6 +93,7 @@ public class MainWindowController implements Initializable
         importWindow.setPrefSize(width, height-65);
         importbtn.setDisable(true);
         adminButton.setVisible(false);
+        taskField.setVisible(false);
     }
 
     @FXML
@@ -106,7 +107,6 @@ public class MainWindowController implements Initializable
         CompletableFuture.runAsync(()
                 -> 
         {
-
             filesAccepted.clear();
             for (File file : files) 
             {
@@ -162,6 +162,7 @@ public class MainWindowController implements Initializable
             }
             newFilesAdded.getChildren().add(newlyAdded);
             fcModel.setTreeFiles(newFilesAdded);
+            taskField.setVisible(true);
         });
 
     }

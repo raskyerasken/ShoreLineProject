@@ -27,10 +27,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.Labeled;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 
 /**
  * FXML Controller class
@@ -79,6 +82,7 @@ public class AddUserViewController implements Initializable
         {
             createdUserTbl.setItems(modelData.getUserInformationToList());
             modelData.logListUpdate();
+            errorColor();
             searchLogView();
         });
         t.start();
@@ -88,9 +92,9 @@ public class AddUserViewController implements Initializable
     
     private void addColumsToTableView()
     {
-        userTbl.setCellValueFactory(new PropertyValueFactory("UserName"));
-        emailTbl.setCellValueFactory(new PropertyValueFactory("Email"));
-        adminTbl.setCellValueFactory(new PropertyValueFactory("AccessLevel"));
+        userTbl.setCellValueFactory(new PropertyValueFactory("userName"));
+        emailTbl.setCellValueFactory(new PropertyValueFactory("email"));
+        adminTbl.setCellValueFactory(new PropertyValueFactory("accessLevel"));
     }
     
     private void searchLogView() 
@@ -295,5 +299,51 @@ public class AddUserViewController implements Initializable
         txtEmail.getValidators().add(validator2);
         txtPassword.getValidators().add(validator3);
         txtPasswordAgain.getValidators().add(validator4);
+    }
+    
+    private void errorColor()
+    {
+        createdUserTbl.setRowFactory(Callback -> new TableRow<UserLogin>()
+        {   
+            
+            public void updateItem(UserLogin item, boolean empty)
+            {
+                super.updateItem(item, empty);
+
+                if (item == null || empty) 
+                {
+                    setStyle("");
+                } 
+                else 
+                {
+                    //Now 'item' has all the info of the Person in this row
+                    if (item.isAccessLevel() == true) 
+                    {
+                        //We apply now the changes in all the cells of the row
+                        for(int i=0; i<getChildren().size();i++)
+                        {
+                            ((Labeled) getChildren().get(i)).setTextFill(Color.GREEN);
+                        }                        
+                    } 
+                    else 
+                    {
+                        if(getTableView().getSelectionModel().getSelectedItems().contains(item))
+                        {
+                            for(int i=0; i<getChildren().size();i++)
+                            {
+                                ((Labeled) getChildren().get(i)).setTextFill(Color.ORANGE);;
+                            }
+                        }
+                        else
+                        {
+                            for(int i=0; i<getChildren().size();i++)
+                            {
+                                ((Labeled) getChildren().get(i)).setTextFill(Color.BLACK);;
+                            }
+                        }
+                    }
+                }
+            }
+        });
     }
 }
