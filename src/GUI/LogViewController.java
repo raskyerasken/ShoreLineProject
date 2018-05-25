@@ -110,7 +110,7 @@ public class LogViewController implements Initializable
                     if (item.isError() == true) 
                     {System.out.println("(item.isError() == true)");
                         //We apply now the changes in all the cells of the row
-                        for(int i=0; i<LogView.getItems().size();i++)
+                        for(int i=0; i<getChildren().size();i++)
                         {System.out.println("forloop");
                             ((Labeled) getChildren().get(i)).setTextFill(Color.RED);
                         }                        

@@ -89,10 +89,7 @@ public class AddUserViewController implements Initializable
                 -> 
         {
             createdUserTbl.setItems(modelData.getUserInformationToList());
-<<<<<<< HEAD
-            modelData.logListUpdate();
             errorColor();
-=======
             try {
                 modelData.logListUpdate();
             } catch (DalException ex) {
@@ -100,7 +97,6 @@ public class AddUserViewController implements Initializable
             } catch (SQLException ex) {
                 Logger.getLogger(AddUserViewController.class.getName()).log(Level.SEVERE, null, ex);
             }
->>>>>>> 5f8d45245c75b8c191c6e3be6a6a04f00eac85fc
             searchLogView();
         });
         t.start();
