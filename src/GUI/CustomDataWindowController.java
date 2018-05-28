@@ -11,9 +11,6 @@ import BLL.xml;
 import GUI.Models.LoginDataModel;
 import GUI.Models.FilesConvertionModel;
 import com.jfoenix.controls.JFXComboBox;
-import java.awt.Checkbox;
-import java.awt.Dimension;
-import java.awt.Toolkit;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
@@ -28,22 +25,16 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBoxTreeItem;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.scene.control.TreeCell;
-import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
-import javafx.scene.control.cell.CheckBoxTreeCell;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import javafx.util.Callback;
 
 /**
  *
@@ -286,5 +277,23 @@ public class CustomDataWindowController implements Initializable
             }
 
         }
+    }
+
+    @FXML
+    private void logOut(ActionEvent event) throws IOException
+    {
+        Stage stage = (Stage) adminButton.getScene().getWindow();
+        stage.close();
+
+        Stage newStage = new Stage();
+        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("LoginView.fxml"));
+        Parent root = fxLoader.load();
+        LoginViewController controller = fxLoader.getController();
+        Scene scene = new Scene(root);
+        newStage.setResizable(false);
+        newStage.setAlwaysOnTop(true);
+        newStage.setTitle("Login Window");
+        newStage.setScene(scene);
+        newStage.show();
     }
 }

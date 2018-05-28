@@ -235,4 +235,22 @@ public class ExportWindowController implements Initializable
         }
     }
 
+    @FXML
+    private void logOut(ActionEvent event) throws IOException
+    {
+        Stage stage = (Stage) adminButton.getScene().getWindow();
+        stage.close();
+
+        Stage newStage = new Stage();
+        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("LoginView.fxml"));
+        Parent root = fxLoader.load();
+        LoginViewController controller = fxLoader.getController();
+        Scene scene = new Scene(root);
+        newStage.setResizable(false);
+        newStage.setAlwaysOnTop(true);
+        newStage.setTitle("Login Window");
+        newStage.setScene(scene);
+        newStage.show();
+    }
+
 }

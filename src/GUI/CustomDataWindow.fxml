@@ -7,6 +7,9 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -22,11 +25,61 @@
             <Image url="@../Image/ShoreLineLogo.jpg" />
          </image>
       </ImageView>
-      <Button layoutY="100.0" mnemonicParsing="false" onAction="#importMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Import" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="100.0" />
-      <Button layoutY="167.0" mnemonicParsing="false" onAction="#exportMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Export" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="167.0" />
-      <Button fx:id="btnCustumData" layoutY="234.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="96.0" text="Custom &#10;   Data" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="234.0" />
-      <Button layoutY="300.0" mnemonicParsing="false" onAction="#logMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Log" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="300.0" />
-      <Button fx:id="adminButton" layoutY="367.0" mnemonicParsing="false" onAction="#adminMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Admin" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="367.0" />
+      <Button layoutY="100.0" mnemonicParsing="false" onAction="#importMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Import" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="100.0">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#36e2ff" />
+               </light>
+            </Lighting>
+         </effect></Button>
+      <Button layoutY="167.0" mnemonicParsing="false" onAction="#exportMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Export" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="167.0">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#36e2ff" />
+               </light>
+            </Lighting>
+         </effect></Button>
+      <Button fx:id="btnCustumData" layoutY="234.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="96.0" text="Custom &#10;   Data" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="234.0">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#36e2ff" />
+               </light>
+            </Lighting>
+         </effect></Button>
+      <Button layoutY="300.0" mnemonicParsing="false" onAction="#logMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Log" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="300.0">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#36e2ff" />
+               </light>
+            </Lighting>
+         </effect></Button>
+      <Button fx:id="adminButton" layoutY="367.0" mnemonicParsing="false" onAction="#adminMenuSelect" prefHeight="67.0" prefWidth="96.0" text="Admin" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="367.0">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#36e2ff" />
+               </light>
+            </Lighting>
+         </effect></Button>
       <ListView fx:id="columNameExcel" layoutX="130.0" layoutY="130.0" prefHeight="594.0" prefWidth="263.0" AnchorPane.bottomAnchor="76.0" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="130.0" />
       <GridPane fx:id="gridCustom" layoutX="432.0" layoutY="158.0" prefHeight="549.0" prefWidth="726.0" AnchorPane.bottomAnchor="93.0" AnchorPane.leftAnchor="432.0" AnchorPane.rightAnchor="42.0" AnchorPane.topAnchor="158.0">
         <columnConstraints>
@@ -51,6 +104,16 @@
                <rotationAxis>
                   <Point3D x="4.0" y="6.0" z="7.0" />
                </rotationAxis>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="#36e2ff" />
+                     </light>
+                  </Lighting>
+               </effect>
             </JFXButton>
             <Label prefHeight="17.0" prefWidth="444.0" GridPane.columnIndex="1" />
             <JFXButton buttonType="RAISED" onAction="#custom" prefHeight="39.0" prefWidth="266.0" text="externalWorkOrderId" GridPane.rowIndex="1">
@@ -60,6 +123,16 @@
                <rotationAxis>
                   <Point3D x="4.0" y="6.0" z="7.0" />
                </rotationAxis>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="#36e2ff" />
+                     </light>
+                  </Lighting>
+               </effect>
             </JFXButton>
             <Label prefHeight="17.0" prefWidth="284.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <JFXButton buttonType="RAISED" onAction="#custom" prefHeight="39.0" prefWidth="279.0" text="systemStatus" GridPane.rowIndex="2">
@@ -69,6 +142,16 @@
                <rotationAxis>
                   <Point3D x="4.0" y="6.0" z="7.0" />
                </rotationAxis>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="#36e2ff" />
+                     </light>
+                  </Lighting>
+               </effect>
             </JFXButton>
             <Label prefHeight="17.0" prefWidth="442.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <JFXButton buttonType="RAISED" onAction="#custom" prefHeight="39.0" prefWidth="308.0" text="userStatus" GridPane.rowIndex="3">
@@ -78,6 +161,16 @@
                <rotationAxis>
                   <Point3D x="4.0" y="6.0" z="7.0" />
                </rotationAxis>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="#36e2ff" />
+                     </light>
+                  </Lighting>
+               </effect>
             </JFXButton>
             <Label prefHeight="17.0" prefWidth="442.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <JFXButton buttonType="RAISED" onAction="#custom" prefHeight="39.0" prefWidth="294.0" text="name" GridPane.rowIndex="4">
@@ -87,6 +180,16 @@
                <rotationAxis>
                   <Point3D x="4.0" y="6.0" z="7.0" />
                </rotationAxis>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="#36e2ff" />
+                     </light>
+                  </Lighting>
+               </effect>
             </JFXButton>
             <Label prefHeight="17.0" prefWidth="442.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <JFXButton buttonType="RAISED" onAction="#custom" prefHeight="39.0" prefWidth="353.0" text="priority" GridPane.rowIndex="5">
@@ -96,6 +199,16 @@
                <rotationAxis>
                   <Point3D x="4.0" y="6.0" z="7.0" />
                </rotationAxis>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="#36e2ff" />
+                     </light>
+                  </Lighting>
+               </effect>
             </JFXButton>
             <Label prefHeight="17.0" prefWidth="442.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <JFXButton buttonType="RAISED" onAction="#custom" prefHeight="39.0" prefWidth="330.0" text="latestFinishDate" GridPane.columnIndex="2">
@@ -105,6 +218,16 @@
                <rotationAxis>
                   <Point3D x="4.0" y="6.0" z="7.0" />
                </rotationAxis>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="#36e2ff" />
+                     </light>
+                  </Lighting>
+               </effect>
             </JFXButton>
             <Label prefHeight="17.0" prefWidth="284.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
             <JFXButton buttonType="RAISED" onAction="#custom" prefHeight="39.0" prefWidth="303.0" text="earliestStartDate" GridPane.columnIndex="2" GridPane.rowIndex="1">
@@ -114,6 +237,16 @@
                <rotationAxis>
                   <Point3D x="4.0" y="6.0" z="7.0" />
                </rotationAxis>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="#36e2ff" />
+                     </light>
+                  </Lighting>
+               </effect>
             </JFXButton>
             <Label prefHeight="17.0" prefWidth="284.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
             <JFXButton buttonType="RAISED" onAction="#custom" prefHeight="39.0" prefWidth="306.0" text="latestStartDate" GridPane.columnIndex="2" GridPane.rowIndex="2">
@@ -123,6 +256,16 @@
                <rotationAxis>
                   <Point3D x="4.0" y="6.0" z="7.0" />
                </rotationAxis>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="#36e2ff" />
+                     </light>
+                  </Lighting>
+               </effect>
             </JFXButton>
             <Label prefHeight="17.0" prefWidth="284.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
             <JFXButton buttonType="RAISED" onAction="#custom" prefHeight="39.0" prefWidth="297.0" text="estimatedTime" GridPane.columnIndex="2" GridPane.rowIndex="3">
@@ -132,11 +275,21 @@
                <rotationAxis>
                   <Point3D x="4.0" y="6.0" z="7.0" />
                </rotationAxis>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="#36e2ff" />
+                     </light>
+                  </Lighting>
+               </effect>
             </JFXButton>
             <Label prefHeight="17.0" prefWidth="284.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
          </children>
       </GridPane>
-      <JFXComboBox fx:id="comboboxCustom" labelFloat="true" layoutX="432.0" layoutY="100.0" onAction="#changeText" prefHeight="31.0" prefWidth="187.0" promptText="Select Customized Data" />
+      <JFXComboBox fx:id="comboboxCustom" focusColor="#36e2ff" labelFloat="true" layoutX="432.0" layoutY="100.0" onAction="#changeText" prefHeight="31.0" prefWidth="187.0" promptText="Select Customized Data" unFocusColor="#24bdc3" />
       <JFXButton buttonType="RAISED" layoutX="318.0" layoutY="100.0" onAction="#save" prefHeight="31.0" prefWidth="75.0" ripplerFill="#d00c0c" text="Save" AnchorPane.bottomAnchor="669.0" AnchorPane.rightAnchor="807.0" />
       <TextField fx:id="txtName" layoutX="130.0" layoutY="100.0" promptText="Name of table" />
       <Label layoutX="548.0" layoutY="14.0" text="Customize">
@@ -144,5 +297,17 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
+      <Button layoutX="1021.0" layoutY="724.0" mnemonicParsing="false" onAction="#logOut" prefHeight="31.0" prefWidth="168.0" text="Logout">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#36e2ff" />
+               </light>
+            </Lighting>
+         </effect>
+      </Button>
     </children>
 </AnchorPane>

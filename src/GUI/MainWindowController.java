@@ -83,7 +83,6 @@ public class MainWindowController implements Initializable
     private final Thread t = null;
     public ObservableList<File> fileNames
             = FXCollections.observableArrayList();
-    private JFXProgressBar progressBar;
     ReadingXLSX XLSX = null;
     @FXML
     private Button adminButton;
@@ -106,7 +105,6 @@ public class MainWindowController implements Initializable
         importWindow.setPrefSize(width, height - 65);
         importbtn.setDisable(true);
         adminButton.setVisible(false);
-        taskField.setVisible(false);
     }
 
     @FXML
@@ -265,5 +263,23 @@ public class MainWindowController implements Initializable
         isUserAdmin();
 
         ul.setUserName(modelData.getUserLogin());
+    }
+
+    @FXML
+    private void logOut(ActionEvent event) throws IOException
+    {
+        Stage stage = (Stage) adminButton.getScene().getWindow();
+        stage.close();
+        
+        Stage newStage = new Stage();
+        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("LoginView.fxml"));
+        Parent root = fxLoader.load();
+        LoginViewController controller = fxLoader.getController();
+        Scene scene = new Scene(root);
+        newStage.setResizable(false);
+        newStage.setAlwaysOnTop(true);
+        newStage.setTitle("Login Window");
+        newStage.setScene(scene);
+        newStage.show();
     }
 }
