@@ -27,6 +27,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
@@ -70,7 +71,7 @@ public class AddUserViewController implements Initializable
     @FXML
     private JFXTextField search;
     @FXML
-    private JFXButton cancel;
+    private Button cancel;
 
     /**
      * Initializes the controller class.
