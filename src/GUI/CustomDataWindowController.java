@@ -30,6 +30,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBoxTreeItem;
 import javafx.scene.control.Label;
@@ -41,13 +42,15 @@ import javafx.scene.control.TreeView;
 import javafx.scene.control.cell.CheckBoxTreeCell;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 import javafx.util.Callback;
 
 /**
  *
  * @author kasper
  */
-public class CustomDataWindowController implements Initializable {
+public class CustomDataWindowController implements Initializable
+{
 
     JSONCustommize custom = new JSONCustommize();
     LoginDataModel modelData;
@@ -70,7 +73,8 @@ public class CustomDataWindowController implements Initializable {
     private GridPane gridCustom;
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL location, ResourceBundle resources)
+    {
 
         adminButton.setVisible(false);
         btnCustumData.setDisable(true);
@@ -78,98 +82,123 @@ public class CustomDataWindowController implements Initializable {
     }
 
     @FXML
-    private void importMenuSelect(Event event) throws SQLException {
+    private void importMenuSelect(Event event) throws SQLException
+    {
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/MainWindow.fxml"));
         Parent root;
-        try {
+        try
+        {
             root = fxLoader.load();
             MainWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel, modelData);
             customDataWindow.getChildren().setAll(root);
-        } catch (IOException ex) {
+        }
+        catch (IOException ex)
+        {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show ImportView");
         }
 
     }
 
     @FXML
-    private void exportMenuSelect(Event event) throws SQLException {
+    private void exportMenuSelect(Event event) throws SQLException
+    {
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/ExportWindow.fxml"));
         Parent root;
-        try {
+        try
+        {
             root = fxLoader.load();
             ExportWindowController controller = fxLoader.getController();
             controller.setmodel(fcModel, modelData);
             customDataWindow.getChildren().setAll(root);
-        } catch (IOException ex) {
+        }
+        catch (IOException ex)
+        {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Exportview");
         }
     }
 
     @FXML
-    private void logMenuSelect(Event event) throws SQLException {
+    private void logMenuSelect(Event event) throws SQLException
+    {
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/LogView.fxml"));
         Parent root;
-        try {
+        try
+        {
             root = fxLoader.load();
             LogViewController controller = fxLoader.getController();
             controller.setmodel(fcModel, modelData);
             customDataWindow.getChildren().setAll(root);
-        } catch (IOException ex) {
+        }
+        catch (IOException ex)
+        {
             AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show LogView");
         }
     }
 
     @FXML
-    private void adminMenuSelect(ActionEvent event) throws SQLException {
-        try {
-            FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("AddUserView.fxml"));
-            Parent root = fxLoader.load();
-            AddUserViewController controller = fxLoader.getController();
-            controller.setmodel(fcModel, modelData);
-            customDataWindow.getChildren().setAll(root);
-        } catch (IOException ex) {
-            AlertWindow alert = new AlertWindow("IOException", null, "IOException");
-        }
+    private void adminMenuSelect(ActionEvent event) throws SQLException, IOException
+    {
+        Stage newStage = new Stage();
+        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("AddUserView.fxml"));
+        Parent root = fxLoader.load();
+        AddUserViewController controller = fxLoader.getController();
+        controller.setmodel(fcModel, modelData);
+        Scene scene = new Scene(root);
+        newStage.setResizable(false);
+        newStage.setAlwaysOnTop(true);
+        newStage.setTitle("Admin Window");
+        newStage.setScene(scene);
+        newStage.show();
     }
 
-    void setmodel(FilesConvertionModel fcModel, LoginDataModel modelData) throws SQLException, IOException, FileNotFoundException, ParseException {
+    void setmodel(FilesConvertionModel fcModel, LoginDataModel modelData) throws SQLException, IOException, FileNotFoundException, ParseException
+    {
         this.modelData = modelData;
         this.fcModel = fcModel;
         isUserAdmin();
         columNameExcel.getItems().clear();
-        if (!fcModel.getFiles().isEmpty()) {
-            if(fcModel.getFiles().get(0).getAbsolutePath().endsWith(".xlsx")){
-            ReadingXLSX xlsx = new ReadingXLSX(fcModel.getFiles().get(0).getAbsolutePath(), fcModel);
-            columNameExcel.setItems((ObservableList<String>) xlsx.getColumsNames());}
-            else if(fcModel.getFiles().get(0).getAbsolutePath().endsWith(".csv")){
-            xml xmlData = new xml(fcModel.getFiles().get(0).getAbsolutePath(), fcModel);
-            columNameExcel.setItems((ObservableList<String>) xmlData.getTitle());}
-            
-            
+        if (!fcModel.getFiles().isEmpty())
+        {
+            if (fcModel.getFiles().get(0).getAbsolutePath().endsWith(".xlsx"))
+            {
+                ReadingXLSX xlsx = new ReadingXLSX(fcModel.getFiles().get(0).getAbsolutePath(), fcModel);
+                columNameExcel.setItems((ObservableList<String>) xlsx.getColumsNames());
+            }
+            else if (fcModel.getFiles().get(0).getAbsolutePath().endsWith(".csv"))
+            {
+                xml xmlData = new xml(fcModel.getFiles().get(0).getAbsolutePath(), fcModel);
+                columNameExcel.setItems((ObservableList<String>) xmlData.getTitle());
+            }
+
         }
         comboboxCustom.setItems(fcModel.getCustom());
     }
 
-    private void isUserAdmin() throws SQLException {
+    private void isUserAdmin() throws SQLException
+    {
         System.out.println(modelData.getUserAccessLevel());
-        if (modelData.getUserAccessLevel() == true) {
+        if (modelData.getUserAccessLevel() == true)
+        {
             adminButton.setVisible(true);
         }
     }
 
     @FXML
-    private void custom(ActionEvent event) {
+    private void custom(ActionEvent event)
+    {
         Button node = (Button) event.getSource();
         GridPane grid = (GridPane) node.getParent();
         int number = grid.getChildren().indexOf(node) + 1;
 
         Label text = (Label) grid.getChildren().get(
                 grid.getChildren().indexOf(node) + 1);
-        if (!columNameExcel.getSelectionModel().isEmpty()) {
+        if (!columNameExcel.getSelectionModel().isEmpty())
+        {
             String select = columNameExcel.getSelectionModel().getSelectedItem();
             text.setText(select);
-            switch (number) {
+            switch (number)
+            {
                 case 1:
                     custom.setType(select);
                     break;
@@ -207,24 +236,32 @@ public class CustomDataWindowController implements Initializable {
     }
 
     @FXML
-    private void save(ActionEvent event) {
-        if (!txtName.getText().isEmpty()) {
+    private void save(ActionEvent event)
+    {
+        if (!txtName.getText().isEmpty())
+        {
             custom.setNameTable(txtName.getText());
-            try {
+            try
+            {
                 fcModel.saveCustom(custom);
-            } catch (SQLException ex) {
+            }
+            catch (SQLException ex)
+            {
                 Logger.getLogger(CustomDataWindowController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
 
     @FXML
-    private void changeText(ActionEvent event) {
-        
-        if (!comboboxCustom.getSelectionModel().isEmpty()) {
+    private void changeText(ActionEvent event)
+    {
+
+        if (!comboboxCustom.getSelectionModel().isEmpty())
+        {
             custom = comboboxCustom.getSelectionModel().getSelectedItem();
 
-            for (int i = 0; i < 21; i++) {
+            for (int i = 0; i < 21; i++)
+            {
                 Label text = (Label) gridCustom.getChildren().get(1);
                 text.setText(custom.getType());
                 Label text1 = (Label) gridCustom.getChildren().get(3);

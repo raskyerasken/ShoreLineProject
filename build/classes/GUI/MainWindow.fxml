@@ -10,7 +10,7 @@
 <AnchorPane id="AnchorPane" fx:id="importWindow" stylesheets="@CSSShoreLines.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.MainWindowController">
     <children>
       <JFXListView fx:id="taskField" blendMode="SRC_ATOP" cache="true" cacheHint="SPEED" layoutX="115.0" layoutY="100.0" mouseTransparent="true" prefHeight="246.0" prefWidth="444.0" AnchorPane.bottomAnchor="106.0" AnchorPane.leftAnchor="115.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="100.0" />
-      <JFXButton layoutX="275.0" layoutY="50.0" onAction="#importData" prefHeight="31.0" prefWidth="158.0" text="Convert Data" AnchorPane.leftAnchor="275.0" AnchorPane.topAnchor="50.0" />
+      <JFXButton buttonType="RAISED" layoutX="115.0" layoutY="69.0" onAction="#importData" prefHeight="31.0" prefWidth="209.0" text="Import Files for Conversion" AnchorPane.leftAnchor="115.0" AnchorPane.topAnchor="69.0" />
       <ImageView fitHeight="67.0" fitWidth="325.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="2.0">
          <image>
             <Image url="@../Image/ShoreLineLogo.jpg" />

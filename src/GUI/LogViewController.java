@@ -29,6 +29,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Labeled;
 import javafx.scene.control.TableColumn;
@@ -37,6 +38,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -219,20 +221,19 @@ public class LogViewController implements Initializable
     }
 
     @FXML
-    private void adminMenuSelect(ActionEvent event) throws SQLException
+    private void adminMenuSelect(ActionEvent event) throws SQLException, IOException
     {
-        try
-        {
-            FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("AddUserView.fxml"));
-            Parent root = fxLoader.load();
-            AddUserViewController controller = fxLoader.getController();
-            controller.setmodel(fcModel, modelData);
-            exportWindow.getChildren().setAll(root);
-        }
-        catch (IOException ex)
-        {
-            AlertWindow alert = new AlertWindow("IOException", null, "IOException");
-        }
+        Stage newStage = new Stage();
+        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("AddUserView.fxml"));
+        Parent root = fxLoader.load();
+        AddUserViewController controller = fxLoader.getController();
+        controller.setmodel(fcModel, modelData);
+        Scene scene = new Scene(root);
+        newStage.setResizable(false);
+        newStage.setAlwaysOnTop(true);
+        newStage.setTitle("Admin Window");
+        newStage.setScene(scene);
+        newStage.show();
     }
 
     void setmodel(FilesConvertionModel fcModel, LoginDataModel modelData) throws SQLException

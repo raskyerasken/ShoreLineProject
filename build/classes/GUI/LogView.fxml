@@ -28,6 +28,6 @@
             <TableColumn fx:id="error" prefWidth="75.0" text="Error" />
          </columns>
       </TableView>
-      <JFXTextField fx:id="searchTxt" layoutX="1183.0" layoutY="69.0" promptText="Search" AnchorPane.rightAnchor="14.0" />
+      <JFXTextField fx:id="searchTxt" labelFloat="true" layoutX="1186.0" layoutY="60.0" promptText="Search Table" AnchorPane.rightAnchor="11.0" />
     </children>
 </AnchorPane>
