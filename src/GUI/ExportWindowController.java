@@ -117,7 +117,7 @@ public class ExportWindowController implements Initializable
         }
         catch (IOException ex)
         {
-            AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show ImportView");
+            AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can't show ImportView");
         }
     }
 
@@ -136,7 +136,7 @@ public class ExportWindowController implements Initializable
         }
         catch (IOException ex)
         {
-            AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show CustumData");
+            AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can't show CustumData");
         }
     }
 
@@ -154,7 +154,7 @@ public class ExportWindowController implements Initializable
         }
         catch (IOException ex)
         {
-            AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can show Logmenu");
+            AlertWindow alert = new AlertWindow("ExportWindow error", null, "It can't show Logmenu");
         }
     }
 
@@ -272,14 +272,39 @@ public class ExportWindowController implements Initializable
                 catch (IOException ex)
                 {
                     updateLog.setError(true);
-                    updateLog.setAdjustment("File not support yet: " + file);
+                    updateLog.setAdjustment("File is not support yet: " + file);
 
                     updateLog();
                 }
-                catch (ParseException | IllegalArgumentException | IllegalAccessException | JSONException ex)
+                
+                catch (IllegalArgumentException ex)
                 {
                     updateLog.setError(true);
-                    updateLog.setAdjustment("Files Conversion wrong: " + file);
+                    updateLog.setAdjustment("Illegal or inappropriate argument: ");
+
+                    updateLog();
+                }
+                
+                catch (ParseException ex)
+                {
+                    updateLog.setError(true);
+                    updateLog.setAdjustment("Parse Exception: ");
+
+                    updateLog();
+                }
+                
+                catch (IllegalAccessException ex)
+                {
+                    updateLog.setError(true);
+                    updateLog.setAdjustment("Illegal Access Exception: ");
+
+                    updateLog();
+                }
+                
+                catch (JSONException ex)
+                {
+                    updateLog.setError(true);
+                    updateLog.setAdjustment("Wrong File type Converted: " + file);
                     updateLog();
                 }
 

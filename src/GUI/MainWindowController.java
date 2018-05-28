@@ -145,7 +145,7 @@ public class MainWindowController implements Initializable
                 for (File acceptedFile : filesNotAccepted)
                 {
                     AlertWindow alertWindow
-                            = new AlertWindow("File not support yet", null, "This file " + acceptedFile.getName() + " can be added");
+                            = new AlertWindow("File is not support yet", null, "This file " + "" + acceptedFile.getName() + "" + " cannot be added");
                 }
                 filesNotAccepted.clear();
             });
