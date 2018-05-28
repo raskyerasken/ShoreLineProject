@@ -29,7 +29,7 @@ public class FilesConvertionModel {
 
     public FilesConvertionModel() {}
 
-    public static FilesConvertionModel getInstance(String value) {
+    public static FilesConvertionModel getInstance() {
         if (instance == null) {
             synchronized (FilesConvertionModel.class) {
                 if (instance == null) {

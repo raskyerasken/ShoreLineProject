@@ -9,6 +9,7 @@ import BE.UpdateLog;
 import BE.UserLogin;
 import BLL.BLLManagerUpdateLog;
 import BLL.BLLManagerUserLogin;
+import BLLFacade.IBLLManagerUserLogin;
 import DAL.ConnectionPool.DalException;
 import java.sql.SQLException;
 import javafx.collections.FXCollections;
@@ -22,10 +23,10 @@ public class LoginDataModel
 {  private static volatile LoginDataModel instance;
 
     public LoginDataModel() throws DalException {
-    bllManagerUsr= new BLLManagerUserLogin();
+    bllManagerUsr=BLLManagerUserLogin.getInstance();
     }
 
-    public static LoginDataModel getInstance(String value) throws DalException {
+    public static LoginDataModel getInstance() throws DalException   {
          
         if (instance == null) {
             synchronized (LoginDataModel.class) {
@@ -39,7 +40,7 @@ public class LoginDataModel
     String userNameSavedToString;
     Boolean userAccessLevel;
     
-    private final BLL.BLLManagerUserLogin bllManagerUsr;
+    private final IBLLManagerUserLogin bllManagerUsr ;
            
     private final ObservableList<UserLogin> userLoginToList 
             = FXCollections.observableArrayList();

@@ -59,7 +59,7 @@ public class LoginViewController implements Initializable
 {
 
     LoginDataModel modelData ;
-    FilesConvertionModel fcModel = new FilesConvertionModel();
+    FilesConvertionModel fcModel ;
     @FXML
     JFXTextField userNameID;
     @FXML
@@ -85,7 +85,10 @@ public class LoginViewController implements Initializable
     public void initialize(URL url, ResourceBundle rb) 
     {  
         try {
-            modelData= new LoginDataModel();
+            modelData= LoginDataModel.getInstance();
+            fcModel= FilesConvertionModel.getInstance();
+            
+            
         } catch (DalException ex) {
             Logger.getLogger(LoginViewController.class.getName()).log(Level.SEVERE, null, ex);
         }

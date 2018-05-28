@@ -5,11 +5,17 @@
  */
 package BLLFacade;
 
+import BE.UpdateLog;
+import java.sql.SQLException;
+import java.util.List;
+
 /**
  *
  * @author ander
  */
 public interface IBLLManagerUpdateLog 
 {
-    //something goes in here but dno what
+     public void setUpdateLog(UpdateLog updateLog) throws SQLException;
+    
+     public List<UpdateLog> getAllUpdateLogsToList();
 }

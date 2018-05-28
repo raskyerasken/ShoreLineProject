@@ -7,6 +7,7 @@ package GUI.Models;
 
 import BE.UpdateLog;
 import BLL.BLLManagerUpdateLog;
+import BLLFacade.IBLLManagerUpdateLog;
 import java.sql.SQLException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -19,9 +20,12 @@ public class UpdateLogViewModel
 {
     private static volatile UpdateLogViewModel instance;
 
-    public UpdateLogViewModel() {}
+    public UpdateLogViewModel() {
+    bllManagerUL = BLLManagerUpdateLog.getInstance();
+    
+   }
 
-    public static UpdateLogViewModel getInstance(String value) {
+    public static UpdateLogViewModel getInstance() {
         if (instance == null) {
             synchronized (UpdateLogViewModel.class) {
                 if (instance == null) {
@@ -31,8 +35,7 @@ public class UpdateLogViewModel
         }
         return instance;
     }
-    private final BLL.BLLManagerUpdateLog bllManagerUL 
-            = new BLLManagerUpdateLog();
+    private final IBLLManagerUpdateLog bllManagerUL ;
     private final ObservableList<UpdateLog> updateLogToList 
             = FXCollections.observableArrayList();
     

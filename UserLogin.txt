@@ -1392,3 +1392,8 @@ The user kris logged in.    Date: 2018/05/25 11:36:34
 The user kris logged in.    Date: 2018/05/25 11:37:24
 The user kris logged in.    Date: 2018/05/25 11:37:39
 The user kris logged in.    Date: 2018/05/25 11:38:36
+The user kris logged in.    Date: 2018/05/28 15:13:29
+The user kris logged in.    Date: 2018/05/28 15:13:29
+The user kris logged in.    Date: 2018/05/28 15:15:34
+The user kris logged in.    Date: 2018/05/28 15:17:54
+The user kris logged in.    Date: 2018/05/28 15:27:42

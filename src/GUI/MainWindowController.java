@@ -55,7 +55,7 @@ public class MainWindowController implements Initializable
 {
     
     UpdateLog updateLog = new UpdateLog();
-    BLL.BLLManagerUpdateLog up = new BLLManagerUpdateLog();
+    BLL.BLLManagerUpdateLog up ;
     Parent root;
     UserLogin ul = new UserLogin();
     BLLManagerUserLogin bllManagerUL ;
@@ -88,6 +88,7 @@ public class MainWindowController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
+        up.getInstance();
         try {
             bllManagerUL = new BLLManagerUserLogin();
                     } catch (DalException ex) {

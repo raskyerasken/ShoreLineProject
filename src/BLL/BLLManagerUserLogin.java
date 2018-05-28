@@ -10,6 +10,7 @@ import BE.UserLogin;
 import DAL.ConnectionPool.ConnectionPool;
 import DAL.ConnectionPool.DalException;
 import DAL.ConnectionPool.PooledUserloginDaoController;
+import DAL.DataBaseUpdateLog;
 import DAL.DataBaseUserLogin;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
 import java.sql.SQLException;
@@ -22,10 +23,21 @@ import java.util.List;
 public class BLLManagerUserLogin implements IBLLManagerUserLogin 
 {
 PooledUserloginDaoController pmdcUL;
+private static BLLManagerUserLogin INSTANCE;;
     public BLLManagerUserLogin() throws DalException { 
          pmdcUL= new PooledUserloginDaoController(new ConnectionPool());
     }
    
+        
+    
+     public synchronized static BLLManagerUserLogin getInstance() throws DalException
+    {
+        if (INSTANCE == null)
+        {
+            INSTANCE = new BLLManagerUserLogin();
+        }
+        return INSTANCE;
+    }
     
     public List<UserLogin> getUserDataToTableView() throws DalException, SQLException
     {
