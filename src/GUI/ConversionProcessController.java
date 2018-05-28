@@ -111,7 +111,6 @@ public class ConversionProcessController implements Initializable
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/ConversionProcess.fxml"));
             Parent root = fxLoader.load();
             Scene scene = new Scene(root);
-            System.out.println("wwwww");
             Stage stage = (Stage) pauseTaskThread.getScene().getWindow();
             stage.close();
         }

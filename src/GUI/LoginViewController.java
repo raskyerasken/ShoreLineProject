@@ -322,8 +322,4 @@ public class LoginViewController implements Initializable
 
     }
 
-    private void forgotPassword(ActionEvent event)
-    {
-        showErrorDialog("You sure?", null, "Well, if yes then that's because you are an idiot.");
-    }
 }

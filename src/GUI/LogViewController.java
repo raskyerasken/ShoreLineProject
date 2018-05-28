@@ -245,7 +245,6 @@ public class LogViewController implements Initializable
 
     private void isUserAdmin() throws SQLException
     {
-        System.out.println(modelData.getUserAccessLevel());
         if (modelData.getUserAccessLevel() == true)
         {
             adminButton.setVisible(true);

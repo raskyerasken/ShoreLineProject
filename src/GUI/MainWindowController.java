@@ -150,43 +150,11 @@ public class MainWindowController implements Initializable
                 }
                 filesNotAccepted.clear();
             });
-            Date date = new Date();
-            TreeItem<String> newFilesAdded = new TreeItem<String>("(" + filesAccepted.size() + ")" + date.toGMTString());
-
-            File acceptedFile = filesAccepted.get(0);
-            TreeItem<String> newlyAdded
-                    = new TreeItem<String>(acceptedFile.getName());
-            try
-            {
-                XLSX = new ReadingXLSX(acceptedFile.getAbsolutePath(), fcModel);
-            }
-            catch (IOException ex)
-            {
-                Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            catch (ParseException ex)
-            {
-                Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            for (Object string : XLSX.getColumsNames())
-            {
-                Label check = new Label("hey");
-                TreeItem<String> colum = new TreeItem<String>(string.toString());
-                colum.setGraphic(check);
-                newlyAdded.getChildren().add(colum);
-            }
-            newFilesAdded.getChildren().add(newlyAdded);
-            fcModel.setTreeFiles(newFilesAdded);
-            taskField.setVisible(true);
+         
         });
 
     }
 
-    void stageToFront()
-    {
-        Stage stage = (Stage) taskField.getScene().getWindow();
-        stage.toFront();
-    }
 
     @FXML
     private void exportMenuSelect(Event event) throws SQLException
@@ -242,15 +210,6 @@ public class MainWindowController implements Initializable
         }
     }
 
-    private void activateXmlReader()
-    {
-
-    }
-
-    private void importDataClick(MouseEvent event)
-    {
-
-    }
 
     @FXML
     private void adminMenuSelect(ActionEvent event) throws SQLException, IOException
@@ -291,7 +250,6 @@ public class MainWindowController implements Initializable
 
     private void isUserAdmin() throws SQLException
     {
-        System.out.println(modelData.getUserAccessLevel());
         if (modelData.getUserAccessLevel() == true)
         {
             adminButton.setVisible(true);
@@ -306,7 +264,6 @@ public class MainWindowController implements Initializable
         this.modelData = modelData;
         isUserAdmin();
 
-        System.out.println("hey" + modelData.getUserAccessLevel());
         ul.setUserName(modelData.getUserLogin());
     }
 }
