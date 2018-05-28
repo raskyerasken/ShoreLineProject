@@ -5,16 +5,15 @@
  */
 package GUI;
 
-import BE.UpdateLog;
 import GUI.Models.LoginDataModel;
 import GUI.Models.FilesConvertionModel;
 import BE.UserLogin;
 import BLL.BLLManagerUserLogin;
 import DAL.ConnectionPool.DalException;
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.validation.RequiredFieldValidator;
-import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -26,18 +25,15 @@ import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.CheckBox;
-import javafx.scene.control.Labeled;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -73,6 +69,8 @@ public class AddUserViewController implements Initializable
     private TableColumn<UserLogin, Boolean> adminTbl;
     @FXML
     private JFXTextField search;
+    @FXML
+    private JFXButton cancel;
 
     /**
      * Initializes the controller class.
@@ -89,8 +87,6 @@ public class AddUserViewController implements Initializable
             Logger.getLogger(AddUserViewController.class.getName()).log(Level.SEVERE, null, ex);
         }
         addColumsToTableView();
-//        
-         
     }
 
     private void addColumsToTableView()
@@ -137,24 +133,6 @@ public class AddUserViewController implements Initializable
         sortedData.comparatorProperty().bind(createdUserTbl.comparatorProperty());
         // 5. Add sorted (and filtered) data to the table.
         createdUserTbl.setItems(sortedData);
-    }
-
-    @FXML
-    private void goBack(ActionEvent event) throws SQLException
-    {
-        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/MainWindow.fxml"));
-        Parent root;
-        try
-        {
-            root = fxLoader.load();
-            MainWindowController controller = fxLoader.getController();
-            controller.setmodel(fcModel, modelData);
-            addUser.getChildren().setAll(root);
-        }
-        catch (IOException ex)
-        {
-            AlertWindow alert = new AlertWindow("MainWindow error", null, "It can show Exportview");
-        }
     }
 
     @FXML
@@ -218,7 +196,6 @@ public class AddUserViewController implements Initializable
         alert.showAndWait();
     }
 
-
     void setmodel(FilesConvertionModel fcModel, LoginDataModel modelData)
     {
         this.fcModel = fcModel;
@@ -226,24 +203,25 @@ public class AddUserViewController implements Initializable
         userLogin.setAccessLevel(modelData.getUserAccessLevel());
         setTable();
     }
-    public void setTable ()
+
+    public void setTable()
     {
-       createdUserTbl.setItems(modelData.getUserInformationToList());
-            errorColor();
-            try
-            {
-                modelData.logListUpdate();
-            }
-            catch (DalException ex)
-            {
-                Logger.getLogger(AddUserViewController.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            catch (SQLException ex)
-            {
-                Logger.getLogger(AddUserViewController.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            searchLogView();
-       
+        createdUserTbl.setItems(modelData.getUserInformationToList());
+        errorColor();
+        try
+        {
+            modelData.logListUpdate();
+        }
+        catch (DalException ex)
+        {
+            Logger.getLogger(AddUserViewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        catch (SQLException ex)
+        {
+            Logger.getLogger(AddUserViewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        searchLogView();
+
         validatorMessages();
         validators();
     }
@@ -339,5 +317,12 @@ public class AddUserViewController implements Initializable
                 }
             }
         });
+    }
+
+    @FXML
+    private void cancel(ActionEvent event)
+    {
+        Stage stage = (Stage) cancel.getScene().getWindow();
+        stage.close();
     }
 }
