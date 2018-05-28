@@ -7,34 +7,111 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" fx:id="addUser" prefHeight="442.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AddUserViewController">
    <children>
-      <Label layoutX="28.0" layoutY="73.0" text="Username" AnchorPane.leftAnchor="28.0" AnchorPane.topAnchor="73.0" />
+      <Label layoutX="28.0" layoutY="73.0" text="Username" AnchorPane.leftAnchor="28.0" AnchorPane.topAnchor="73.0">
+         <effect>
+            <DropShadow />
+         </effect></Label>
       <Label layoutX="136.0" layoutY="14.0" prefHeight="40.0" prefWidth="220.0" text="Create account" AnchorPane.leftAnchor="136.0" AnchorPane.rightAnchor="669.0" AnchorPane.topAnchor="14.0">
          <font>
             <Font size="28.0" />
          </font>
       </Label>
-      <Label layoutX="26.0" layoutY="142.0" text="Password" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="142.0" />
-      <Label layoutX="25.0" layoutY="208.0" text="Password again" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="208.0" />
-      <Label layoutX="25.0" layoutY="272.0" text="Email" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="272.0" />
-      <JFXTextField fx:id="txtUsername" labelFloat="true" layoutX="157.0" layoutY="68.0" prefHeight="31.0" prefWidth="177.0" promptText="Username" AnchorPane.leftAnchor="157.0" AnchorPane.rightAnchor="691.0" AnchorPane.topAnchor="68.0" />
-      <JFXTextField fx:id="txtEmail" labelFloat="true" layoutX="157.0" layoutY="267.0" prefHeight="31.0" prefWidth="177.0" promptText="Email" AnchorPane.leftAnchor="157.0" AnchorPane.rightAnchor="691.0" AnchorPane.topAnchor="267.0" />
-      <JFXButton fx:id="cancel" buttonType="RAISED" layoutX="270.0" layoutY="377.0" onAction="#cancel" text="Cancel" AnchorPane.leftAnchor="270.0" AnchorPane.topAnchor="377.0" />
-      <JFXButton buttonType="RAISED" layoutX="35.0" layoutY="377.0" onAction="#CreateAccount" text="Create account" AnchorPane.rightAnchor="905.0" AnchorPane.topAnchor="377.0" />
-      <JFXPasswordField fx:id="txtPassword" labelFloat="true" layoutX="157.0" layoutY="136.0" prefHeight="31.0" prefWidth="177.0" promptText="Password" AnchorPane.leftAnchor="157.0" AnchorPane.rightAnchor="691.0" AnchorPane.topAnchor="136.0" />
-      <JFXPasswordField fx:id="txtPasswordAgain" labelFloat="true" layoutX="157.0" layoutY="203.0" prefHeight="31.0" prefWidth="177.0" promptText="Password" AnchorPane.leftAnchor="157.0" AnchorPane.rightAnchor="691.0" AnchorPane.topAnchor="203.0" />
-      <JFXCheckBox fx:id="adminAccessLevelChckBox" layoutX="217.0" layoutY="322.0" text="Admin access" AnchorPane.rightAnchor="691.0" AnchorPane.topAnchor="322.0" />
+      <Label layoutX="26.0" layoutY="142.0" text="Password" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="142.0">
+         <effect>
+            <DropShadow />
+         </effect></Label>
+      <Label layoutX="25.0" layoutY="208.0" text="Password again" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="208.0">
+         <effect>
+            <DropShadow />
+         </effect></Label>
+      <Label layoutX="25.0" layoutY="272.0" text="Email" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="272.0">
+         <effect>
+            <DropShadow />
+         </effect></Label>
+      <JFXTextField fx:id="txtUsername" focusColor="#36e2ff" labelFloat="true" layoutX="157.0" layoutY="68.0" prefHeight="31.0" prefWidth="177.0" promptText="Username" unFocusColor="#0f77c6" AnchorPane.leftAnchor="157.0" AnchorPane.rightAnchor="691.0" AnchorPane.topAnchor="68.0">
+         <effect>
+            <InnerShadow>
+               <input>
+                  <DropShadow />
+               </input>
+            </InnerShadow>
+         </effect></JFXTextField>
+      <JFXTextField fx:id="txtEmail" focusColor="#36e2ff" labelFloat="true" layoutX="157.0" layoutY="267.0" prefHeight="31.0" prefWidth="177.0" promptText="Email" unFocusColor="#1a78c9" AnchorPane.leftAnchor="157.0" AnchorPane.rightAnchor="691.0" AnchorPane.topAnchor="267.0">
+         <effect>
+            <InnerShadow>
+               <input>
+                  <DropShadow />
+               </input>
+            </InnerShadow>
+         </effect></JFXTextField>
+      <JFXButton fx:id="cancel" buttonType="RAISED" layoutX="270.0" layoutY="377.0" onAction="#cancel" text="Cancel" AnchorPane.leftAnchor="270.0" AnchorPane.topAnchor="377.0">
+         <effect>
+            <InnerShadow>
+               <input>
+                  <DropShadow />
+               </input>
+            </InnerShadow>
+         </effect></JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="35.0" layoutY="377.0" onAction="#CreateAccount" text="Create account" AnchorPane.rightAnchor="905.0" AnchorPane.topAnchor="377.0">
+         <effect>
+            <InnerShadow>
+               <input>
+                  <DropShadow />
+               </input>
+            </InnerShadow>
+         </effect></JFXButton>
+      <JFXPasswordField fx:id="txtPassword" focusColor="#36e2ff" labelFloat="true" layoutX="157.0" layoutY="136.0" prefHeight="31.0" prefWidth="177.0" promptText="Password" unFocusColor="#1774bc" AnchorPane.leftAnchor="157.0" AnchorPane.rightAnchor="691.0" AnchorPane.topAnchor="136.0">
+         <effect>
+            <InnerShadow>
+               <input>
+                  <DropShadow />
+               </input>
+            </InnerShadow>
+         </effect></JFXPasswordField>
+      <JFXPasswordField fx:id="txtPasswordAgain" focusColor="#36e2ff" labelFloat="true" layoutX="157.0" layoutY="203.0" prefHeight="31.0" prefWidth="177.0" promptText="Password" unFocusColor="#1b63ae" AnchorPane.leftAnchor="157.0" AnchorPane.rightAnchor="691.0" AnchorPane.topAnchor="203.0">
+         <effect>
+            <InnerShadow>
+               <input>
+                  <DropShadow />
+               </input>
+            </InnerShadow>
+         </effect></JFXPasswordField>
+      <JFXCheckBox fx:id="adminAccessLevelChckBox" layoutX="217.0" layoutY="322.0" text="Admin access" AnchorPane.rightAnchor="691.0" AnchorPane.topAnchor="322.0">
+         <effect>
+            <InnerShadow>
+               <input>
+                  <DropShadow />
+               </input>
+            </InnerShadow>
+         </effect></JFXCheckBox>
       <TableView fx:id="createdUserTbl" layoutX="401.0" layoutY="53.0" prefHeight="374.0" prefWidth="504.0">
         <columns>
           <TableColumn id="userName" fx:id="userTbl" prefWidth="174.99996948242188" text="User Name" />
           <TableColumn fx:id="emailTbl" prefWidth="170.0" text="Email" />
             <TableColumn fx:id="adminTbl" prefWidth="197.0" text="Admin Access" />
         </columns>
+         <effect>
+            <InnerShadow>
+               <input>
+                  <DropShadow />
+               </input>
+            </InnerShadow>
+         </effect>
       </TableView>
-      <JFXTextField fx:id="search" labelFloat="true" layoutX="401.0" layoutY="18.0" promptText="Search" />
+      <JFXTextField fx:id="search" labelFloat="true" layoutX="401.0" layoutY="18.0" promptText="Search">
+         <effect>
+            <DropShadow>
+               <input>
+                  <InnerShadow />
+               </input>
+            </DropShadow>
+         </effect></JFXTextField>
    </children>
 </AnchorPane>
