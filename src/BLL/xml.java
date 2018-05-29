@@ -75,7 +75,6 @@ public class xml
     private JSONObject setJSONObject(int i) throws JSONException, ParseException, IOException
     {
         JSONCustommize custom = fcmodel.getCustomClass();
-        System.out.println("hdsfsdey");
         JSONObject Json = new JSONObject();
         Json.put("siteName", "");
         Json.put("assetSerialNumber", "0");
