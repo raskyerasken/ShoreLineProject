@@ -1,883 +1,933 @@
-{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+[
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
     },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}{
-    "assetSerialNumber": "0",
-    "planning": {
-        "estimatedTime": "DE",
-        "latestFinishDate": "DE",
-        "earliestStartDate": "DE",
-        "latestStartDate": "DE"
-    },
-    "userStatus": "DE",
-    "createdBy": "SAP",
-    "systemStatus": "DE",
-    "name": "DE",
-    "siteName": "",
-    "externalWorkOrderId": "DE",
-    "type": "DE",
-    "priority": "DE",
-    "createdOn": "24-4-2018",
-    "status": "new"
-}
+    {
+        "assetSerialNumber": "0",
+        "planning": {
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
+        },
+        "userStatus": "BS01",
+        "createdBy": "SAP",
+        "systemStatus": "BS01",
+        "name": "BS01",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "BS01",
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
+        "status": "new"
+    }
+]

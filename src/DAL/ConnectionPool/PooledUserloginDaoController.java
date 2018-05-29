@@ -87,7 +87,7 @@ public class PooledUserloginDaoController
         try
         {
             Connection con = conPool.checkOut();
-            dbul.createNewUser((Connection) conPool,newUser);
+            dbul.createNewUser( con,newUser);
             conPool.checkIn(con);
         } catch (SQLException ex)
         {

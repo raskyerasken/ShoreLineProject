@@ -2,1733 +2,932 @@
     {
         "assetSerialNumber": "0",
         "planning": {
-            "estimatedTime": "",
-<<<<<<< HEAD
-            "latestFinishDate": "",
-            "earliestStartDate": "",
-            "latestStartDate": ""
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT DT29 DanTysk (3601210)",
-        "name": "10-okt.-2017",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678911",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "latestFinishDate": "10-Oct-2016",
-            "earliestStartDate": "10-Oct-2016",
-            "latestStartDate": "10-Oct-2016"
-        },
-        "userStatus": "10-Oct-2017",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "040",
-        "type": "12345678",
-        "priority": "0.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-            "estimatedTime": "",
-<<<<<<< HEAD
-            "latestFinishDate": "",
-            "earliestStartDate": "",
-            "latestStartDate": ""
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT DT56 DanTysk (3601237)",
-        "name": "14-jun.-2017",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678912",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "latestFinishDate": "14-Jun-2018",
-            "earliestStartDate": "",
-            "latestStartDate": "13-Jun-2017"
-        },
-        "userStatus": "14-Jun-2017",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "040",
-        "type": "12345679",
-        "priority": "4.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-            "estimatedTime": "",
-<<<<<<< HEAD
-            "latestFinishDate": "",
-            "earliestStartDate": "",
-            "latestStartDate": ""
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT DT35 DanTysk (3601216)",
-        "name": "14-jun.-2017",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678913",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "latestFinishDate": "14-Jun-2018",
-            "earliestStartDate": "",
-            "latestStartDate": "13-Jun-2017"
-        },
-        "userStatus": "14-Jun-2017",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "040",
-        "type": "12345680",
-        "priority": "4.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-            "estimatedTime": "",
-<<<<<<< HEAD
-            "latestFinishDate": "",
-            "earliestStartDate": "",
-            "latestStartDate": ""
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT SB18 Sandbank (4000349)",
-        "name": "03-jul.-2017",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678914",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "latestFinishDate": "03-Jul-2017",
-            "earliestStartDate": "03-Jul-2017",
-            "latestStartDate": "03-Jul-2017"
-        },
-        "userStatus": "03-Jul-2017",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "040",
-        "type": "12345681",
-        "priority": "6.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-<<<<<<< HEAD
-            "estimatedTime": "",
-            "latestFinishDate": "",
-            "earliestStartDate": "",
-            "latestStartDate": ""
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT SB64 Sandbank (4000393)",
-        "name": "07-jul.-2017",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678911",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "estimatedTime": "07-Jul-2017",
-            "latestFinishDate": "07-Jul-2017",
-            "earliestStartDate": "07-Jul-2017",
-            "latestStartDate": "07-Jul-2017"
-        },
-        "userStatus": "07-Jul-2017",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "040",
-        "type": "12345682",
-        "priority": "4.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-            "estimatedTime": "",
-<<<<<<< HEAD
-            "latestFinishDate": "",
-            "earliestStartDate": "",
-            "latestStartDate": ""
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT SB80 Sandbank (4000403)",
-        "name": "14-jul.-2017",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678912",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "latestFinishDate": "14-Jul-2017",
-            "earliestStartDate": "15-Jul-2017",
-            "latestStartDate": "15-Jul-2017"
-        },
-        "userStatus": "14-Jul-2017",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "040",
-        "type": "12345683",
-        "priority": "6.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-            "estimatedTime": "",
-<<<<<<< HEAD
-            "latestFinishDate": "",
-            "earliestStartDate": "",
-            "latestStartDate": ""
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT SB77 Sandbank (4000400)",
-        "name": "14-jul.-2017",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678913",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "latestFinishDate": "14-Jul-2017",
-            "earliestStartDate": "15-Jul-2017",
-            "latestStartDate": "15-Jul-2017"
-        },
-        "userStatus": "14-Jul-2017",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "040",
-        "type": "12345684",
-        "priority": "6.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-<<<<<<< HEAD
-            "estimatedTime": "2",
-            "latestFinishDate": "",
-            "earliestStartDate": "2",
-            "latestStartDate": "2"
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "2",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT SB58 Sandbank (4000387)",
-        "name": "21-jul.-2017",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678914",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "estimatedTime": "",
-            "latestFinishDate": "21-Jul-2017",
-            "earliestStartDate": "21-Jul-2017",
-            "latestStartDate": "21-Jul-2017"
-        },
-        "userStatus": "21-Jul-2017",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "040",
-        "type": "12345685",
-        "priority": "6.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-            "estimatedTime": "",
-<<<<<<< HEAD
-            "latestFinishDate": "",
-            "earliestStartDate": "",
-            "latestStartDate": ""
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT SB56 Sandbank (4000385)",
-        "name": "25-jul.-2017",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678911",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "latestFinishDate": "25-Jul-2017",
-            "earliestStartDate": "25-Jul-2017",
-            "latestStartDate": "25-Jul-2017"
-        },
-        "userStatus": "25-Jul-2017",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "040",
-        "type": "12345686",
-        "priority": "6.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-            "estimatedTime": "",
-<<<<<<< HEAD
-            "latestFinishDate": "",
-            "earliestStartDate": "",
-            "latestStartDate": ""
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT SB77 Sandbank (4000400)",
-        "name": "31-jul.-2017",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678912",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "latestFinishDate": "31-Jul-2017",
-            "earliestStartDate": "31-Jul-2017",
-            "latestStartDate": "31-Jul-2017"
-        },
-        "userStatus": "31-Jul-2017",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "040",
-        "type": "12345687",
-        "priority": "6.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-<<<<<<< HEAD
-            "estimatedTime": "2",
-            "latestFinishDate": "",
-            "earliestStartDate": "2",
-            "latestStartDate": "2"
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "2",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT SB44 Sandbank (4000374)",
-        "name": "30-maj-2017",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678913",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "estimatedTime": "",
-            "latestFinishDate": "20-Jun-2017",
-            "earliestStartDate": "07-Aug-2017",
-            "latestStartDate": "07-Aug-2017"
-        },
-        "userStatus": "30-May-2017",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "040",
-        "type": "12345688",
-        "priority": "6.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-            "estimatedTime": "",
-<<<<<<< HEAD
-            "latestFinishDate": "",
-            "earliestStartDate": "",
-            "latestStartDate": ""
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT SB79 Sandbank (4000402)",
-        "name": "14-jul.-2017",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678914",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "latestFinishDate": "14-Jul-2017",
-            "earliestStartDate": "15-Aug-2017",
-            "latestStartDate": "15-Aug-2017"
-        },
-        "userStatus": "14-Jul-2017",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "040",
-        "type": "12345689",
-        "priority": "6.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-            "estimatedTime": "",
-<<<<<<< HEAD
-            "latestFinishDate": "",
-            "earliestStartDate": "",
-            "latestStartDate": ""
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT SB15 Sandbank (4000346)",
-        "name": "15-aug.-2017",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678911",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "latestFinishDate": "15-Aug-2017",
-            "earliestStartDate": "15-Aug-2017",
-            "latestStartDate": "15-Aug-2017"
-        },
-        "userStatus": "15-Aug-2017",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "040",
-        "type": "12345690",
-        "priority": "4.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-            "estimatedTime": "",
-<<<<<<< HEAD
-            "latestFinishDate": "",
-            "earliestStartDate": "",
-            "latestStartDate": ""
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT SB39 Sandbank (4000369)",
-        "name": "24-aug.-2017",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678912",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "latestFinishDate": "24-Aug-2017",
-            "earliestStartDate": "24-Aug-2017",
-            "latestStartDate": "24-Aug-2017"
-        },
-        "userStatus": "24-Aug-2017",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "030",
-        "type": "12345691",
-        "priority": "1.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-            "estimatedTime": "",
-<<<<<<< HEAD
-            "latestFinishDate": "",
-            "earliestStartDate": "",
-            "latestStartDate": ""
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT DT11 DanTysk (3601192)",
-        "name": "10-nov.-2017",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678913",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "latestFinishDate": "25-Aug-2017",
-            "earliestStartDate": "25-Aug-2017",
-            "latestStartDate": "25-Aug-2017"
-        },
-        "userStatus": "10-Nov-2017",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "040",
-        "type": "12345692",
-        "priority": "0.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-<<<<<<< HEAD
-            "estimatedTime": "1",
-            "latestFinishDate": "",
-            "earliestStartDate": "1",
-            "latestStartDate": "1"
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "1",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT SB62 Sandbank (4000391)",
-        "name": "28-jun.-2017",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678914",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "estimatedTime": "",
-            "latestFinishDate": "28-Jun-2017",
-            "earliestStartDate": "28-Aug-2017",
-            "latestStartDate": "28-Aug-2017"
-        },
-        "userStatus": "28-Jun-2017",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "040",
-        "type": "12345693",
-        "priority": "4.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-<<<<<<< HEAD
-            "estimatedTime": "2",
-            "latestFinishDate": "",
-            "earliestStartDate": "2",
-            "latestStartDate": "2"
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "2",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT SB01 Sandbank (4000332)",
-        "name": "29-aug.-2017",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678911",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "estimatedTime": "",
-            "latestFinishDate": "29-Aug-2017",
-            "earliestStartDate": "29-Aug-2017",
-            "latestStartDate": "29-Aug-2017"
-        },
-        "userStatus": "29-Aug-2017",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "040",
-        "type": "12345694",
-        "priority": "2.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-<<<<<<< HEAD
-            "estimatedTime": "2",
-            "latestFinishDate": "",
-            "earliestStartDate": "2",
-            "latestStartDate": "2"
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "2",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT SB22 Sandbank (4000353)",
-        "name": "30-jun.-2017",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678912",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "estimatedTime": "",
-            "latestFinishDate": "30-Jun-2017",
-            "earliestStartDate": "30-Aug-2017",
-            "latestStartDate": "30-Aug-2017"
-        },
-        "userStatus": "30-Jun-2017",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "030",
-        "type": "12345695",
-        "priority": "4.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-<<<<<<< HEAD
-            "estimatedTime": "2",
-            "latestFinishDate": "",
-            "earliestStartDate": "2",
-            "latestStartDate": "2"
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "2",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT SB61 Sandbank (4000390)",
-        "name": "30-jun.-2017",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678913",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "estimatedTime": "",
-            "latestFinishDate": "30-Jun-2017",
-            "earliestStartDate": "30-Aug-2017",
-            "latestStartDate": "30-Aug-2017"
-        },
-        "userStatus": "30-Jun-2017",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "030",
-        "type": "12345696",
-        "priority": "4.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-            "estimatedTime": "",
-<<<<<<< HEAD
-            "latestFinishDate": "CRANE",
-            "earliestStartDate": "",
-            "latestStartDate": ""
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT DT78 DanTysk (3601259)",
-        "name": "29-maj-2016",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678914",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZSMC",
-        "createdOn": "28-4-2018",
-=======
-            "latestFinishDate": "19-Aug-2017",
-            "earliestStartDate": "31-Aug-2017",
-            "latestStartDate": "31-Aug-2017"
-        },
-        "userStatus": "29-May-2016",
-        "createdBy": "SAP",
-        "systemStatus": "1",
-        "name": "ZSMC",
-        "siteName": "",
-        "externalWorkOrderId": "020",
-        "type": "12345697",
-        "priority": "3.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-            "estimatedTime": "",
-<<<<<<< HEAD
-            "latestFinishDate": "",
-            "earliestStartDate": "",
-            "latestStartDate": ""
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT DT78 DanTysk (3601259)",
-        "name": "29-maj-2016",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678911",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "latestFinishDate": "19-Aug-2017",
-            "earliestStartDate": "31-Aug-2017",
-            "latestStartDate": "31-Aug-2017"
-        },
-        "userStatus": "29-May-2016",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "020",
-        "type": "12345698",
-        "priority": "3.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-            "estimatedTime": "",
-<<<<<<< HEAD
-            "latestFinishDate": "LIFT",
-            "earliestStartDate": "",
-            "latestStartDate": ""
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT DT40 DanTysk (3601221)",
-        "name": "04-sep.-2016",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678912",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZSMC",
-        "createdOn": "28-4-2018",
-=======
-            "latestFinishDate": "18-Aug-2017",
-            "earliestStartDate": "31-Aug-2017",
-            "latestStartDate": "31-Aug-2017"
-        },
-        "userStatus": "04-Sep-2016",
-        "createdBy": "SAP",
-        "systemStatus": "1",
-        "name": "ZSMC",
-        "siteName": "",
-        "externalWorkOrderId": "020",
-        "type": "12345699",
-        "priority": "3.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-            "estimatedTime": "",
-<<<<<<< HEAD
-            "latestFinishDate": "",
-            "earliestStartDate": "",
-            "latestStartDate": ""
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT DT40 DanTysk (3601221)",
-        "name": "04-sep.-2016",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678913",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "latestFinishDate": "18-Aug-2017",
-            "earliestStartDate": "31-Aug-2017",
-            "latestStartDate": "31-Aug-2017"
-        },
-        "userStatus": "04-Sep-2016",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "020",
-        "type": "12345700",
-        "priority": "3.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-            "estimatedTime": "",
-<<<<<<< HEAD
-            "latestFinishDate": "CRANE",
-            "earliestStartDate": "",
-            "latestStartDate": ""
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT DT40 DanTysk (3601221)",
-        "name": "04-sep.-2016",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678914",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZSMC",
-        "createdOn": "28-4-2018",
-=======
-            "latestFinishDate": "18-Aug-2017",
-            "earliestStartDate": "31-Aug-2017",
-            "latestStartDate": "31-Aug-2017"
-        },
-        "userStatus": "04-Sep-2016",
-        "createdBy": "SAP",
-        "systemStatus": "1",
-        "name": "ZSMC",
-        "siteName": "",
-        "externalWorkOrderId": "020",
-        "type": "12345701",
-        "priority": "3.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-            "estimatedTime": "",
-<<<<<<< HEAD
-            "latestFinishDate": "",
-            "earliestStartDate": "",
-            "latestStartDate": ""
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT DT40 DanTysk (3601221)",
-        "name": "04-sep.-2016",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678911",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "latestFinishDate": "18-Aug-2017",
-            "earliestStartDate": "31-Aug-2017",
-            "latestStartDate": "31-Aug-2017"
-        },
-        "userStatus": "04-Sep-2016",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "020",
-        "type": "12345702",
-        "priority": "3.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-            "estimatedTime": "",
-<<<<<<< HEAD
-            "latestFinishDate": "",
-            "earliestStartDate": "",
-            "latestStartDate": ""
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT DT07 DanTysk (3601188)",
-        "name": "10-nov.-2017",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678912",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "latestFinishDate": "31-Aug-2017",
-            "earliestStartDate": "31-Aug-2017",
-            "latestStartDate": "31-Aug-2017"
-        },
-        "userStatus": "10-Nov-2017",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "040",
-        "type": "12345703",
-        "priority": "0.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-            "estimatedTime": "",
-<<<<<<< HEAD
-            "latestFinishDate": "",
-            "earliestStartDate": "",
-            "latestStartDate": ""
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT DT07 DanTysk (3601188)",
-        "name": "10-nov.-2017",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678913",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "latestFinishDate": "31-Aug-2017",
-            "earliestStartDate": "31-Aug-2017",
-            "latestStartDate": "31-Aug-2017"
-        },
-        "userStatus": "10-Nov-2017",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "040",
-        "type": "12345704",
-        "priority": "0.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-<<<<<<< HEAD
-            "estimatedTime": "2",
-            "latestFinishDate": "",
-            "earliestStartDate": "2",
-            "latestStartDate": "2"
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "2",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT SB61 Sandbank (4000390)",
-        "name": "24-jul.-2017",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678914",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "estimatedTime": "",
-            "latestFinishDate": "24-Jul-2017",
-            "earliestStartDate": "01-Sep-2017",
-            "latestStartDate": "01-Sep-2017"
-        },
-        "userStatus": "24-Jul-2017",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "040",
-        "type": "12345705",
-        "priority": "4.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-<<<<<<< HEAD
-            "estimatedTime": "3",
-            "latestFinishDate": "",
-            "earliestStartDate": "3",
-            "latestStartDate": "3"
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "3",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT SB27 Sandbank (4000358)",
-        "name": "28-jul.-2017",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678911",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "estimatedTime": "",
-            "latestFinishDate": "27-Jul-2017",
-            "earliestStartDate": "01-Sep-2017",
-            "latestStartDate": "01-Sep-2017"
-        },
-        "userStatus": "28-Jul-2017",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "040",
-        "type": "12345706",
-        "priority": "2.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-            "estimatedTime": "",
-<<<<<<< HEAD
-            "latestFinishDate": "",
-            "earliestStartDate": "",
-            "latestStartDate": ""
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT SB29 Sandbank (4000360)",
-        "name": "01-sep.-2017",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678912",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "latestFinishDate": "01-Sep-2017",
-            "earliestStartDate": "01-Sep-2017",
-            "latestStartDate": "01-Sep-2017"
-        },
-        "userStatus": "01-Sep-2017",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "030",
-        "type": "12345707",
-        "priority": "2.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-<<<<<<< HEAD
-            "estimatedTime": "2",
-            "latestFinishDate": "",
-            "earliestStartDate": "2",
-            "latestStartDate": "2"
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "2",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT SB63 Sandbank (4000392)",
-        "name": "01-sep.-2017",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678913",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "estimatedTime": "",
-            "latestFinishDate": "01-Sep-2017",
-            "earliestStartDate": "01-Sep-2017",
-            "latestStartDate": "01-Sep-2017"
-        },
-        "userStatus": "01-Sep-2017",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "040",
-        "type": "12345708",
-        "priority": "1.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-<<<<<<< HEAD
-            "estimatedTime": "2",
-            "latestFinishDate": "",
-            "earliestStartDate": "2",
-            "latestStartDate": "2"
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "2",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT SB68 Sandbank (4000397)",
-        "name": "01-sep.-2017",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678914",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "estimatedTime": "",
-            "latestFinishDate": "01-Sep-2017",
-            "earliestStartDate": "01-Sep-2017",
-            "latestStartDate": "01-Sep-2017"
-        },
-        "userStatus": "01-Sep-2017",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "040",
-        "type": "12345709",
-        "priority": "1.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-<<<<<<< HEAD
-            "estimatedTime": "2",
-            "latestFinishDate": "",
-            "earliestStartDate": "2",
-            "latestStartDate": "2"
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "2",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT SB23 Sandbank (4000354)",
-        "name": "04-sep.-2017",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678911",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "estimatedTime": "",
-            "latestFinishDate": "04-Sep-2017",
-            "earliestStartDate": "04-Sep-2017",
-            "latestStartDate": "04-Sep-2017"
-        },
-        "userStatus": "04-Sep-2017",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "040",
-        "type": "12345710",
-        "priority": "2.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-            "estimatedTime": "",
-<<<<<<< HEAD
-            "latestFinishDate": "",
-            "earliestStartDate": "",
-            "latestStartDate": ""
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT DT75 DanTysk (3601256)",
-        "name": "10-nov.-2017",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678912",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "latestFinishDate": "18-Sep-2017",
-            "earliestStartDate": "18-Sep-2017",
-            "latestStartDate": "18-Sep-2017"
-        },
-        "userStatus": "10-Nov-2017",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "040",
-        "type": "12345711",
-        "priority": "0.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-<<<<<<< HEAD
-            "estimatedTime": "3",
-            "latestFinishDate": "",
-            "earliestStartDate": "3",
-            "latestStartDate": "3"
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "3",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT SB63 Sandbank (4000392)",
-        "name": "19-sep.-2017",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678913",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "estimatedTime": "",
-            "latestFinishDate": "19-Sep-2017",
-            "earliestStartDate": "19-Sep-2017",
-            "latestStartDate": "19-Sep-2017"
-        },
-        "userStatus": "19-Sep-2017",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "040",
-        "type": "12345712",
-        "priority": "2.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-            "estimatedTime": "",
-<<<<<<< HEAD
-            "latestFinishDate": "CRANE",
-            "earliestStartDate": "",
-            "latestStartDate": ""
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT DT64 DanTysk (3601245)",
-        "name": "08-maj-2016",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678914",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "latestFinishDate": "25-Aug-2017",
-            "earliestStartDate": "30-Sep-2017",
-            "latestStartDate": "30-Sep-2017"
-        },
-        "userStatus": "08-May-2016",
-        "createdBy": "SAP",
-        "systemStatus": "1",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "020",
-        "type": "12345713",
-        "priority": "3.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-            "estimatedTime": "",
-<<<<<<< HEAD
-            "latestFinishDate": "",
-            "earliestStartDate": "",
-            "latestStartDate": ""
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT DT64 DanTysk (3601245)",
-        "name": "08-maj-2016",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678911",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "latestFinishDate": "25-Aug-2017",
-            "earliestStartDate": "30-Sep-2017",
-            "latestStartDate": "30-Sep-2017"
-        },
-        "userStatus": "08-May-2016",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "020",
-        "type": "12345714",
-        "priority": "3.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-            "estimatedTime": "",
-<<<<<<< HEAD
-            "latestFinishDate": "TMSE",
-            "earliestStartDate": "",
-            "latestStartDate": ""
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT DT64 DanTysk (3601245)",
-        "name": "08-maj-2016",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678912",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZSMC",
-        "createdOn": "28-4-2018",
-=======
-            "latestFinishDate": "25-Aug-2017",
-            "earliestStartDate": "30-Sep-2017",
-            "latestStartDate": "30-Sep-2017"
-        },
-        "userStatus": "08-May-2016",
-        "createdBy": "SAP",
-        "systemStatus": "1",
-        "name": "ZSMC",
-        "siteName": "",
-        "externalWorkOrderId": "020",
-        "type": "12345715",
-        "priority": "3.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-            "estimatedTime": "",
-<<<<<<< HEAD
-            "latestFinishDate": "",
-            "earliestStartDate": "",
-            "latestStartDate": ""
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT DT64 DanTysk (3601245)",
-        "name": "08-maj-2016",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678913",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "latestFinishDate": "25-Aug-2017",
-            "earliestStartDate": "30-Sep-2017",
-            "latestStartDate": "30-Sep-2017"
-        },
-        "userStatus": "08-May-2016",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "020",
-        "type": "12345716",
-        "priority": "3.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-            "estimatedTime": "",
-<<<<<<< HEAD
-            "latestFinishDate": "CRANE",
-            "earliestStartDate": "",
-            "latestStartDate": ""
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT DT20 DanTysk (3601201)",
-        "name": "02-okt.-2016",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678914",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "latestFinishDate": "01-Sep-2017",
-            "earliestStartDate": "30-Sep-2017",
-            "latestStartDate": "30-Sep-2017"
-        },
-        "userStatus": "02-Oct-2016",
-        "createdBy": "SAP",
-        "systemStatus": "1",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "020",
-        "type": "12345717",
-        "priority": "3.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-            "estimatedTime": "",
-<<<<<<< HEAD
-            "latestFinishDate": "",
-            "earliestStartDate": "",
-            "latestStartDate": ""
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT DT20 DanTysk (3601201)",
-        "name": "02-okt.-2016",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678911",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "latestFinishDate": "01-Sep-2017",
-            "earliestStartDate": "30-Sep-2017",
-            "latestStartDate": "30-Sep-2017"
-        },
-        "userStatus": "02-Oct-2016",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "020",
-        "type": "12345718",
-        "priority": "3.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-            "estimatedTime": "",
-<<<<<<< HEAD
-            "latestFinishDate": "",
-            "earliestStartDate": "",
-            "latestStartDate": ""
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT DT12 DanTysk (3601193)",
-        "name": "10-nov.-2017",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678912",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "latestFinishDate": "30-Sep-2017",
-            "earliestStartDate": "30-Sep-2017",
-            "latestStartDate": "30-Sep-2017"
-        },
-        "userStatus": "10-Nov-2017",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "040",
-        "type": "12345719",
-        "priority": "0.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-            "estimatedTime": "",
-<<<<<<< HEAD
-            "latestFinishDate": "",
-            "earliestStartDate": "",
-            "latestStartDate": ""
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT DT12 DanTysk (3601193)",
-        "name": "10-nov.-2017",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678913",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "latestFinishDate": "30-Sep-2017",
-            "earliestStartDate": "30-Sep-2017",
-            "latestStartDate": "30-Sep-2017"
-        },
-        "userStatus": "10-Nov-2017",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "040",
-        "type": "12345720",
-        "priority": "0.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-<<<<<<< HEAD
-            "estimatedTime": "2",
-            "latestFinishDate": "",
-            "earliestStartDate": "2",
-            "latestStartDate": "2"
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "2",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT SB32 Sandbank (4000362)",
-        "name": "17-jul.-2017",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678914",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "estimatedTime": "",
-            "latestFinishDate": "17-Jul-2017",
-            "earliestStartDate": "15-Oct-2017",
-            "latestStartDate": "15-Oct-2017"
-        },
-        "userStatus": "17-Jul-2017",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "040",
-        "type": "12345721",
-        "priority": "4.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-<<<<<<< HEAD
-            "estimatedTime": "3",
-            "latestFinishDate": "",
-            "earliestStartDate": "3",
-            "latestStartDate": "3"
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "3",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT SB26 Sandbank (4000357)",
-        "name": "29-aug.-2017",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678911",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "estimatedTime": "",
-            "latestFinishDate": "25-Aug-2017",
-            "earliestStartDate": "25-Oct-2017",
-            "latestStartDate": "25-Oct-2017"
-        },
-        "userStatus": "29-Aug-2017",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "020",
-        "type": "12345722",
-        "priority": "0.5",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-<<<<<<< HEAD
-            "estimatedTime": "2",
-            "latestFinishDate": "",
-            "earliestStartDate": "2",
-            "latestStartDate": "2"
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "2",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT SB67 Sandbank (4000396)",
-        "name": "29-aug.-2017",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678912",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "estimatedTime": "",
-            "latestFinishDate": "25-Aug-2017",
-            "earliestStartDate": "25-Oct-2017",
-            "latestStartDate": "25-Oct-2017"
-        },
-        "userStatus": "29-Aug-2017",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "040",
-        "type": "12345723",
-        "priority": "4.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-            "estimatedTime": "",
-<<<<<<< HEAD
-            "latestFinishDate": "G4MK3R16",
-            "earliestStartDate": "",
-            "latestStartDate": ""
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT SB76 Sandbank (4000399)",
-        "name": "21-mar.-2017",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678913",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZSMC",
-        "createdOn": "28-4-2018",
-=======
-            "latestFinishDate": "27-Oct-2017",
-            "earliestStartDate": "",
-            "latestStartDate": "27-Oct-2017"
-        },
-        "userStatus": "21-Mar-2017",
-        "createdBy": "SAP",
-        "systemStatus": "1",
-        "name": "ZSMC",
-        "siteName": "",
-        "externalWorkOrderId": "020",
-        "type": "12345724",
-        "priority": "118.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-            "estimatedTime": "",
-<<<<<<< HEAD
-            "latestFinishDate": "G4MK3R16",
-            "earliestStartDate": "",
-            "latestStartDate": ""
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT SB76 Sandbank (4000399)",
-        "name": "21-mar.-2017",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678914",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "latestFinishDate": "27-Oct-2017",
-            "earliestStartDate": "",
-            "latestStartDate": "27-Oct-2017"
-        },
-        "userStatus": "21-Mar-2017",
-        "createdBy": "SAP",
-        "systemStatus": "1",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "020",
-        "type": "12345725",
-        "priority": "0.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     },
     {
         "assetSerialNumber": "0",
         "planning": {
-<<<<<<< HEAD
-            "estimatedTime": "3",
-            "latestFinishDate": "",
-            "earliestStartDate": "3",
-            "latestStartDate": "3"
+            "estimatedTime": "BS01",
+            "latestFinishDate": "BS01",
+            "earliestStartDate": "BS01",
+            "latestStartDate": "BS01"
         },
-        "userStatus": "3",
+        "userStatus": "BS01",
         "createdBy": "SAP",
-        "systemStatus": "WT SB22 Sandbank (4000353)",
-        "name": "06-sep.-2017",
+        "systemStatus": "BS01",
+        "name": "BS01",
         "siteName": "",
-        "externalWorkOrderId": "012345678911",
+        "externalWorkOrderId": "BS01",
         "type": "BS01",
-        "priority": "ZMR1",
-        "createdOn": "28-4-2018",
-=======
-            "estimatedTime": "",
-            "latestFinishDate": "06-Sep-2017",
-            "earliestStartDate": "06-Nov-2017",
-            "latestStartDate": "06-Nov-2017"
-        },
-        "userStatus": "06-Sep-2017",
-        "createdBy": "SAP",
-        "systemStatus": "",
-        "name": "ZMR1",
-        "siteName": "",
-        "externalWorkOrderId": "020",
-        "type": "12345726",
-        "priority": "1.0",
-        "createdOn": "25-4-2018",
->>>>>>> 482985be5b70cf9f4c3a114088b95fc39e489593
+        "priority": "BS01",
+        "createdOn": "29-4-2018",
         "status": "new"
     }
 ]
