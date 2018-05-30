@@ -114,18 +114,8 @@ public class ConversionProcessController implements Initializable
             stage.close();
         }
     }
-    
-    private void conversionProgress()
-    {
-        com = CompletableFuture.runAsync(() -> 
-        {
-            List<File> progressFileList = new ArrayList<File>(fcModel.getFiles());
-            filesConvertedCount = 0;
-            allsize = progressFileList.size();
-            for (File file : progressFileList) 
-            {
-
-                try 
+    public void convertfile (File file)
+    { try 
                 { JSONArray main = new JSONArray();
                     threading = Thread.currentThread();
                     if(file.getAbsolutePath().endsWith(".xlsx")){
@@ -193,7 +183,19 @@ public class ConversionProcessController implements Initializable
                     updateLog.setError(true);
                     updateLog.setAdjustment("Files Conversion wrong: " + file.getName());
                     updateLog();
-                }
+                }}
+    
+    private void conversionProgress()
+    {
+        com = CompletableFuture.runAsync(() -> 
+        {
+            List<File> progressFileList = new ArrayList<File>(fcModel.getFiles());
+            filesConvertedCount = 0;
+            allsize = progressFileList.size();
+            for (File file : progressFileList) 
+            {
+
+                convertfile(file);
 
                 Platform.runLater(() -> 
                 {
