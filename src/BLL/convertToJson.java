@@ -1,6 +1,8 @@
 package BLL;
 
 import BE.JSONCustommize;
+import DAL.ReadDataCSV;
+import DAL.ReadDataXLSX;
 import GUI.Models.FilesConvertionModel;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -24,45 +26,53 @@ import org.jdom.input.SAXBuilder;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class xml
+public class convertToJson
 {
 
     FilesConvertionModel fcmodel;
     List<List<String>> alldata = new ArrayList<>();
-    ObservableList<String> ColumNames;
     DateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy");
     Date today = new Date();
+   String fileName;
 
-    public xml(String absolutePath, FilesConvertionModel fc) throws FileNotFoundException
+    public convertToJson(String absolutePath, FilesConvertionModel fc) throws FileNotFoundException
     {
         fcmodel = fc;
-        String fileName = absolutePath;
-        File file = new File(fileName);
-
-        Scanner inputStream;
-
-        inputStream = new Scanner(file);
-
-        while (inputStream.hasNext())
-        {
-            String line = inputStream.next();
-            String[] values = line.split(",");
-
-            alldata.add(Arrays.asList(values));
-        }
-        ColumNames = FXCollections.observableArrayList(alldata.get(0));;
-        inputStream.close();
+         fileName = absolutePath;
+        
+    }
+     public ObservableList<String> getTitleXLSX () throws FileNotFoundException, IOException, ParseException
+    {
+       ReadDataXLSX XLSX = new ReadDataXLSX(fileName, fcmodel); 
+    return XLSX.getColumsNames();
     }
 
-    public ObservableList<String> getTitle()
+    public List<JSONObject> allJSONObjectInFileXLSX() throws ParseException, IllegalArgumentException, IllegalAccessException, JSONException, IOException
     {
-        return ColumNames;
-    }
-
-    public List<JSONObject> allJSONObjectInFile() throws ParseException, IllegalArgumentException, IllegalAccessException, JSONException, IOException
-    {
+         ReadDataXLSX XLSX = new ReadDataXLSX(fileName, fcmodel);
         List<JSONObject> JSONList = new ArrayList<>();
-        System.out.println(alldata.size());
+      alldata= XLSX.getAllData();
+        for (int i = 1; i < alldata.size(); i++)
+        {
+            JSONObject newJSON = setJSONObject(i);
+
+            JSONList.add(newJSON);
+        }
+        return JSONList;
+    }
+    
+    public ObservableList<String> getTitleCSV () throws FileNotFoundException
+    {
+       ReadDataCSV csv = new ReadDataCSV(fileName, fcmodel); 
+    return csv.getTitle();
+    }
+
+    public List<JSONObject> allJSONObjectInFileCSV() throws ParseException, IllegalArgumentException, IllegalAccessException, JSONException, IOException
+    {
+         ReadDataCSV csv = new ReadDataCSV(fileName, fcmodel);
+         alldata=csv.getAllData();
+        List<JSONObject> JSONList = new ArrayList<>();
+      
         for (int i = 1; i < alldata.size(); i++)
         {
             JSONObject newJSON = setJSONObject(i);

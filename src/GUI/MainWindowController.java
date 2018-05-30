@@ -11,7 +11,6 @@ import BE.UpdateLog;
 import BE.UserLogin;
 import BLL.BLLManagerUpdateLog;
 import BLL.BLLManagerUserLogin;
-import BLL.ReadingXLSX;
 import DAL.ConnectionPool.DalException;
 import com.jfoenix.controls.JFXProgressBar;
 import java.awt.Dimension;
@@ -83,7 +82,6 @@ public class MainWindowController implements Initializable
     private final Thread t = null;
     public ObservableList<File> fileNames
             = FXCollections.observableArrayList();
-    ReadingXLSX XLSX = null;
     @FXML
     private Button adminButton;
 

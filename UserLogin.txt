@@ -1457,3 +1457,10 @@ The user kris logged in.    Date: 2018/05/29 14:29:26
 =======
 The user kris logged in.    Date: 2018/05/29 14:26:05
 >>>>>>> 7d8127d7ee72800e5d934caa9e4a9dbc3cea16d6
+The user kris logged in.    Date: 2018/05/30 10:10:35
+The user kris logged in.    Date: 2018/05/30 10:14:11
+The user kris logged in.    Date: 2018/05/30 10:14:47
+The user kris logged in.    Date: 2018/05/30 10:18:02
+The user kris logged in.    Date: 2018/05/30 10:28:17
+The user kris logged in.    Date: 2018/05/30 10:34:09
+The user kris logged in.    Date: 2018/05/30 10:37:55
