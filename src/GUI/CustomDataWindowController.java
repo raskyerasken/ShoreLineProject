@@ -6,8 +6,7 @@
 package GUI;
 
 import BE.JSONCustommize;
-import BLL.ReadingXLSX;
-import BLL.xml;
+import BLL.convertToJson;
 import GUI.Models.LoginDataModel;
 import GUI.Models.FilesConvertionModel;
 import com.jfoenix.controls.JFXComboBox;
@@ -153,13 +152,13 @@ public class CustomDataWindowController implements Initializable
         {
             if (fcModel.getFiles().get(0).getAbsolutePath().endsWith(".xlsx"))
             {
-                ReadingXLSX xlsx = new ReadingXLSX(fcModel.getFiles().get(0).getAbsolutePath(), fcModel);
-                columNameExcel.setItems((ObservableList<String>) xlsx.getColumsNames());
+                convertToJson xlsx = new convertToJson(fcModel.getFiles().get(0).getAbsolutePath(), fcModel);
+                columNameExcel.setItems((ObservableList<String>) xlsx.getTitleXLSX());
             }
             else if (fcModel.getFiles().get(0).getAbsolutePath().endsWith(".csv"))
             {
-                xml xmlData = new xml(fcModel.getFiles().get(0).getAbsolutePath(), fcModel);
-                columNameExcel.setItems((ObservableList<String>) xmlData.getTitle());
+                convertToJson csvData = new convertToJson(fcModel.getFiles().get(0).getAbsolutePath(), fcModel);
+                columNameExcel.setItems((ObservableList<String>) csvData.getTitleCSV());
             }
 
         }
@@ -208,16 +207,16 @@ public class CustomDataWindowController implements Initializable
                 case 11:
                     custom.setPriority(select);
                     break;
-                case 14:
+                case 13:
                     custom.setLatestFinishDate(select);
                     break;
-                case 16:
+                case 15:
                     custom.setEarlistStartDate(select);
                     break;
-                case 18:
+                case 17:
                     custom.setLatestStartDate(select);
                     break;
-                case 20:
+                case 19:
                     custom.setEstimatedTime(select);
                     break;
 
@@ -265,13 +264,13 @@ public class CustomDataWindowController implements Initializable
                 text4.setText(custom.getName());
                 Label text5 = (Label) gridCustom.getChildren().get(11);
                 text5.setText(custom.getPriority());
-                Label text6 = (Label) gridCustom.getChildren().get(14);
+                Label text6 = (Label) gridCustom.getChildren().get(13);
                 text6.setText(custom.getLatestFinishDate());
-                Label text7 = (Label) gridCustom.getChildren().get(16);
+                Label text7 = (Label) gridCustom.getChildren().get(15);
                 text7.setText(custom.getEarlistStartDate());
-                Label text8 = (Label) gridCustom.getChildren().get(18);
+                Label text8 = (Label) gridCustom.getChildren().get(17);
                 text8.setText(custom.getLatestStartDate());
-                Label text9 = (Label) gridCustom.getChildren().get(20);
+                Label text9 = (Label) gridCustom.getChildren().get(19);
                 text9.setText(custom.getEstimatedTime());
 
             }

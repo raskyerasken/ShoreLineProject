@@ -7,8 +7,7 @@ package GUI;
 
 import BE.UpdateLog;
 import BLL.BLLManagerUpdateLog;
-import BLL.ReadingXLSX;
-import BLL.xml;
+import BLL.convertToJson;
 import GUI.Models.FilesConvertionModel;
 import GUI.Models.LoginDataModel;
 import com.jfoenix.controls.JFXButton;
@@ -130,14 +129,13 @@ public class ConversionProcessController implements Initializable
                 { JSONArray main = new JSONArray();
                     threading = Thread.currentThread();
                     if(file.getAbsolutePath().endsWith(".xlsx")){
-                    ReadingXLSX XLSX = new ReadingXLSX(file.getAbsolutePath(),fcModel);
+                    convertToJson XLSX = new convertToJson(file.getAbsolutePath(),fcModel);
 
-                    XLSX.getColumsNames();
 
                     File JsonFile = new File(file.getCanonicalFile() + ".json");
                     FileWriter fileWriter = new FileWriter(JsonFile);
 
-                    for (JSONObject jSONObject : XLSX.allJSONObjectInFile()) 
+                    for (JSONObject jSONObject : XLSX.allJSONObjectInFileXLSX()) 
                     {
                         main.put(jSONObject);
                         
@@ -154,13 +152,13 @@ public class ConversionProcessController implements Initializable
                     
                     else if(file.getAbsolutePath().endsWith(".csv")){
                      
-                    xml xmlconvert = new xml(file.getAbsolutePath(),fcModel);
+                    convertToJson xmlconvert = new convertToJson(file.getAbsolutePath(),fcModel);
 
    
                     File JsonFile = new File(file.getCanonicalFile() + ".json");
                     FileWriter fileWriter = new FileWriter(JsonFile);
 
-                    for (JSONObject jSONObject : xmlconvert.allJSONObjectInFile()) 
+                    for (JSONObject jSONObject : xmlconvert.allJSONObjectInFileCSV()) 
                     {main.put(jSONObject);
                         
                     }fileWriter.write(main.toString(4));
