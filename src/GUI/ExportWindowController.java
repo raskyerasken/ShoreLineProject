@@ -185,31 +185,6 @@ public class ExportWindowController implements Initializable
         }
     }
 
-    private void addToLog() throws SQLException
-    {
-
-        java.util.Date utilDate = new java.util.Date();
-        Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
-        java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
-
-        updateLog.setUsername(modelData.getUserLogin());
-        updateLog.setDatelog(sqlDate);
-
-        updateLog.setError(suspended);
-        up.setUpdateLog(updateLog);
-
-    }
-
-    private void addDataToLog()
-    {
-        Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
-        java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
-
-        updateLog.setUsername(modelData.getUserLogin());
-        updateLog.setDatelog(sqlDate);
-        updateLog.setError(conversionSuccess);
-    }
-
     @FXML
     private void saveData(ActionEvent event)
     {
