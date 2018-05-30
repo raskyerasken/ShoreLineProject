@@ -92,11 +92,7 @@
       </TableView>
       <JFXTextField fx:id="searchTxt" focusColor="#36e2ff" labelFloat="true" layoutX="1180.0" layoutY="54.0" promptText="Search Table" unFocusColor="#2a62da" AnchorPane.rightAnchor="17.0">
          <effect>
-            <DropShadow>
-               <input>
-                  <InnerShadow />
-               </input>
-            </DropShadow>
+            <InnerShadow />
          </effect></JFXTextField>
       <Button layoutX="1183.0" layoutY="699.0" mnemonicParsing="false" onAction="#logOut" prefHeight="31.0" prefWidth="169.0" text="Logout" AnchorPane.bottomAnchor="38.0" AnchorPane.rightAnchor="14.0">
          <effect>
