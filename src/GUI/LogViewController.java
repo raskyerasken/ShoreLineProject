@@ -14,7 +14,6 @@ import static GUI.LogViewController.lines;
 import com.jfoenix.controls.JFXTextField;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import static java.lang.Compiler.disable;
 import java.net.URL;
 import java.sql.SQLException;
 import java.text.ParseException;
@@ -31,13 +30,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Labeled;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 /**
@@ -52,8 +49,10 @@ public class LogViewController implements Initializable
     UpdateLog updLog = new UpdateLog();
     LoginDataModel modelData;
     UpdateLogViewModel model = new UpdateLogViewModel();
+    
     public static final ObservableList lines
             = FXCollections.observableArrayList();
+    
     int fileLinesNumber = 2;
     @FXML
     private JFXTextField searchTxt;
@@ -62,7 +61,7 @@ public class LogViewController implements Initializable
             = new FilteredList<>(lines, p -> true);
     private FilesConvertionModel fcModel;
     @FXML
-    private TableView<UpdateLog> LogView;
+    private TableView<UpdateLog> logView;
     @FXML
     private TableColumn<UpdateLog, String> userNameTable;
     @FXML
@@ -84,7 +83,7 @@ public class LogViewController implements Initializable
         adminButton.setVisible(false);
         logMenuSelect.setDisable(true);
         addColumsToTableView();   //get all the colums
-        LogView.setItems(model.getUpdateLogToList());
+        logView.setItems(model.getUpdateLogToList());
         Thread t = new Thread(()
                 ->
         {
@@ -97,7 +96,7 @@ public class LogViewController implements Initializable
 
     private void errorColor()
     {
-        LogView.setRowFactory(tv -> new TableRow<UpdateLog>()
+        logView.setRowFactory(tv -> new TableRow<UpdateLog>()
         {
             @Override
             public void updateItem(UpdateLog item, boolean empty)
@@ -161,9 +160,9 @@ public class LogViewController implements Initializable
         // 3. Wrap the FilteredList in a SortedList. 
         SortedList<UpdateLog> sortedData = new SortedList<>(filteredData);
         // 4. Bind the SortedList comparator to the TableView comparator.
-        sortedData.comparatorProperty().bind(LogView.comparatorProperty());
+        sortedData.comparatorProperty().bind(logView.comparatorProperty());
         // 5. Add sorted (and filtered) data to the table.
-        LogView.setItems(sortedData);
+        logView.setItems(sortedData);
     }
 
     @FXML

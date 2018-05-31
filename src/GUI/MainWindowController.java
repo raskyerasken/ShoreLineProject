@@ -9,10 +9,8 @@ import GUI.Models.LoginDataModel;
 import GUI.Models.FilesConvertionModel;
 import BE.UpdateLog;
 import BE.UserLogin;
-import BLL.BLLManagerUpdateLog;
 import BLL.BLLManagerUserLogin;
 import DAL.ConnectionPool.DalException;
-import com.jfoenix.controls.JFXProgressBar;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.io.File;
@@ -21,7 +19,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.text.ParseException;
-import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.concurrent.CompletableFuture;
@@ -38,17 +35,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.control.TreeItem;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 /**
  *
- * @author Jason and Freddy Kruger
+ * @author 
  */
 public class MainWindowController implements Initializable
 {
@@ -61,6 +55,7 @@ public class MainWindowController implements Initializable
     LoginDataModel modelData;
     LoginViewController loginID;
     boolean acceptFile = false;
+    
     String[] acceptedFiles =
     {
         ".xlsx", ".csv"
@@ -74,14 +69,17 @@ public class MainWindowController implements Initializable
     private AnchorPane importWindow;
     @FXML
     private Button importbtn;
+    
     private final ObservableList<File> filesAccepted
             = FXCollections.observableArrayList();
+    
     private final ObservableList<File> filesNotAccepted
             = FXCollections.observableArrayList();
-    private FilesConvertionModel fcModel;
-    private final Thread t = null;
+    
+    private FilesConvertionModel fcModel;    
     public ObservableList<File> fileNames
             = FXCollections.observableArrayList();
+    
     @FXML
     private Button adminButton;
 
@@ -114,7 +112,7 @@ public class MainWindowController implements Initializable
         // fileChooser.setInitialDirectory(new File("...")); only for windows
         files = fileChooser.showOpenMultipleDialog(new Stage());
 
-        CompletableFuture.runAsync(()
+        CompletableFuture.runAsync(() //starts the threadding 
                 ->
         {
             filesAccepted.clear();
@@ -152,7 +150,7 @@ public class MainWindowController implements Initializable
     }
 
 
-    @FXML
+    @FXML //Loads exportMenu scene
     private void exportMenuSelect(Event event) throws SQLException
     {
         try
@@ -171,7 +169,7 @@ public class MainWindowController implements Initializable
         }
     }
 
-    @FXML
+    @FXML //Loads CustomData scene
     private void customDataMenuSelect(Event event) throws FileNotFoundException, ParseException, SQLException
     {
         try
@@ -188,7 +186,7 @@ public class MainWindowController implements Initializable
         }
     }
 
-    @FXML
+    @FXML //Loads the log view
     private void logMenuSelect(Event event) throws SQLException
     {
         try
@@ -207,7 +205,7 @@ public class MainWindowController implements Initializable
     }
 
 
-    @FXML
+    @FXML //loads the admin view
     private void adminMenuSelect(ActionEvent event) throws SQLException, IOException
     {
         Stage newStage = new Stage();
@@ -263,7 +261,7 @@ public class MainWindowController implements Initializable
         ul.setUserName(modelData.getUserLogin());
     }
 
-    @FXML
+    @FXML //logs the user out and returns you to the login screen
     private void logOut(ActionEvent event) throws IOException
     {
         Stage stage = (Stage) adminButton.getScene().getWindow();

@@ -37,8 +37,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
-import org.apache.poi.ss.usermodel.Font;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -60,9 +58,6 @@ public class ConversionProcessController implements Initializable
     @FXML
     private JFXButton stopTaskThread;
     @FXML
-    private Label taskXRun;
-    @FXML
-    private AnchorPane ConversionProcess;
     CompletableFuture com;
     double filesConvertedCount = 0;
     double allsize = 0;

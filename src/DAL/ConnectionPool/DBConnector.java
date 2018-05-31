@@ -7,10 +7,8 @@ package DAL.ConnectionPool;
 
 import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.sql.Connection;
-import java.util.Properties;
 import javax.activation.DataSource;
 
 /**

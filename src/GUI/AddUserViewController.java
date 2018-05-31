@@ -10,7 +10,6 @@ import GUI.Models.FilesConvertionModel;
 import BE.UserLogin;
 import BLL.BLLManagerUserLogin;
 import DAL.ConnectionPool.DalException;
-import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.validation.RequiredFieldValidator;
@@ -58,8 +57,6 @@ public class AddUserViewController implements Initializable
     @FXML
     private JFXPasswordField txtPasswordAgain;
     private FilesConvertionModel fcModel;
-    @FXML
-    private AnchorPane addUser;
     @FXML
     private TableView<UserLogin> createdUserTbl;
     @FXML
