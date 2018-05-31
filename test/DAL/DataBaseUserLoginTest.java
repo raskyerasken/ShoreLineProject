@@ -28,7 +28,7 @@ public class DataBaseUserLoginTest {
     @Test
     public void testGetAccess() throws Exception {
         System.out.println("getAccess");
-         ConnectionManagerSLProject cm = new ConnectionManagerSLProject();
+        ConnectionManagerSLProject cm = new ConnectionManagerSLProject();
         Connection con = cm.getConnection();
         UserLogin userLogin = new UserLogin();
         userLogin.setUserName("Jacob");

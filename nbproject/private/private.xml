@@ -10,13 +10,11 @@
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/DAL/ConnectionPool/ConnectionPool.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/AlertWindow.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/BE/JSONCustommize.java</file>
-            <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/BLL/ReadingXLSX.java</file>
-            <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/BLL/xml.java</file>
+            <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/DAL/IConnectionManager.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/CustomDataWindowController.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/Main/ShoreLine.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/DAL/ConnectionPool/ObjectPool.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/DAL/ConnectionPool/DalException.java</file>
-            <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/test/NewClass.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/ConversionProcessController.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/BLL/BLLManagerUpdateLog.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/LogView.fxml</file>
@@ -32,6 +30,7 @@
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/AddUserViewController.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/LogViewController.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/BLL/BllManagerCustom.java</file>
+            <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/test/DAL/DataBaseUserLoginTest.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/LoginView.fxml</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/Models/UpdateLogViewModel.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/DAL/ConnectionPool/DBConnector.java</file>
