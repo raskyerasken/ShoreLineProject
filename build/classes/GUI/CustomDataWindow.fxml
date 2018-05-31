@@ -300,11 +300,7 @@
       </GridPane>
       <JFXComboBox fx:id="comboboxCustom" focusColor="#36e2ff" labelFloat="true" layoutX="432.0" layoutY="100.0" onAction="#changeText" prefHeight="31.0" prefWidth="187.0" promptText="Select Customized Data" unFocusColor="#24bdc3">
          <effect>
-            <InnerShadow>
-               <input>
-                  <DropShadow />
-               </input>
-            </InnerShadow>
+            <InnerShadow />
          </effect></JFXComboBox>
       <TextField fx:id="txtName" layoutX="130.0" layoutY="100.0" promptText="Name of table">
          <effect>

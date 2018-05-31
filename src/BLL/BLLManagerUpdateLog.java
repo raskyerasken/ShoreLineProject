@@ -38,4 +38,5 @@ public class BLLManagerUpdateLog implements IBLLManagerUpdateLog
     {
         return ul.getUpdateLog();
     }
+    
 }
