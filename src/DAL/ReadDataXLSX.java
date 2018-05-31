@@ -82,7 +82,9 @@ public class ReadDataXLSX {
 
         return ColumNames;
     }
-
+/*
+   read a xlsx file and convert it to  List<List<String>>
+    */
     public List<List<String>> getAllData() {
 
         colum = ColumNames.size();

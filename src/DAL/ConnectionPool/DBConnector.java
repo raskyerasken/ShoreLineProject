@@ -18,7 +18,6 @@ import javax.activation.DataSource;
 public class DBConnector
 {
 
-    
     private final SQLServerDataSource ds = new SQLServerDataSource();
 
     public DBConnector() throws IOException

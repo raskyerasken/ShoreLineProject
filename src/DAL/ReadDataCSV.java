@@ -26,7 +26,9 @@ public class ReadDataCSV {
     FilesConvertionModel fcmodel;
     List<List<String>> alldata = new ArrayList<>();
     ObservableList<String> ColumNames;
-
+/*
+    reading CSV file and it to a  List<List<String>>
+    */
     public ReadDataCSV(String absolutePath, FilesConvertionModel fc) throws FileNotFoundException
     {
         fcmodel = fc;

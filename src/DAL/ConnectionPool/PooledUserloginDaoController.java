@@ -12,16 +12,16 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-/**
- *
- * @author pgn
- */
+
 public class PooledUserloginDaoController
 {
 
     private final ConnectionPool conPool;
     private final DataBaseUserLogin dbul;
 
+    /*
+    Taking from MechaChatApp
+    */
     public PooledUserloginDaoController(ConnectionPool conPool)
     {
         this.conPool = conPool;

@@ -141,7 +141,9 @@ public class CustomDataWindowController implements Initializable
         newStage.setScene(scene);
         newStage.show();
     }
-
+ /*
+    Set list view and models 
+     */
     void setmodel(FilesConvertionModel fcModel, LoginDataModel modelData) throws SQLException, IOException, FileNotFoundException, ParseException
     {
         this.modelData = modelData;
@@ -167,12 +169,15 @@ public class CustomDataWindowController implements Initializable
 
     private void isUserAdmin() throws SQLException
     {
-        System.out.println(modelData.getUserAccessLevel());
+        
         if (modelData.getUserAccessLevel() == true)
         {
             adminButton.setVisible(true);
         }
     }
+     /*
+   Set the value form the specific buttom
+     */
 
     @FXML
     private void custom(ActionEvent event)
@@ -224,7 +229,9 @@ public class CustomDataWindowController implements Initializable
 
         }
     }
-
+ /*
+    Save the customization
+     */
     @FXML
     private void save(ActionEvent event)
     {
@@ -241,7 +248,9 @@ public class CustomDataWindowController implements Initializable
             }
         }
     }
-
+ /*
+ Set the texxt for the customization they select in the drop down
+     */
     @FXML
     private void changeText(ActionEvent event)
     {

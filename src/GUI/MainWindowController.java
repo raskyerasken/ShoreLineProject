@@ -95,14 +95,16 @@ public class MainWindowController implements Initializable
         {
             Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize(); // for screen size
         double width = screenSize.getWidth();
         double height = screenSize.getHeight();
         importWindow.setPrefSize(width, height - 65);
         importbtn.setDisable(true);
         adminButton.setVisible(false);
     }
-
+ /*
+    import files to the list view
+     */
     @FXML
     private void importData(ActionEvent event) throws SQLException
     {
@@ -187,21 +189,16 @@ public class MainWindowController implements Initializable
     }
 
     @FXML //Loads the log view
-    private void logMenuSelect(Event event) throws SQLException
+    private void logMenuSelect(Event event) throws SQLException, IOException
     {
-        try
-        {
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("LogView.fxml"));
             Parent root = fxLoader.load();
             LogViewController controller = fxLoader.getController();
             controller.setmodel(fcModel, modelData);
 
             importWindow.getChildren().setAll(root);
-        }
-        catch (IOException ex)
-        {
-            AlertWindow alert = new AlertWindow("IOException", null, "IOException");
-        }
+        
+      
     }
 
 

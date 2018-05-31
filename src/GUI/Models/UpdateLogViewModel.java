@@ -24,7 +24,9 @@ public class UpdateLogViewModel
     bllManagerUL = BLLManagerUpdateLog.getInstance();
     
    }
-
+ /*
+   only create one model
+     */
     public static UpdateLogViewModel getInstance() {
         if (instance == null) {
             synchronized (UpdateLogViewModel.class) {
@@ -46,6 +48,7 @@ public class UpdateLogViewModel
 
     public ObservableList<UpdateLog> getUpdateLogToList() 
     {
+        
         return updateLogToList;
     }
     

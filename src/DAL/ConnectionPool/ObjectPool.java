@@ -8,10 +8,10 @@ package DAL.ConnectionPool;
 import java.util.Enumeration;
 import java.util.Hashtable;
 
-/**
- *
- * @author pgn
- */
+
+    /*
+    Taking from MechaChatApp
+    */
 abstract class ObjectPool<T>
 {
 

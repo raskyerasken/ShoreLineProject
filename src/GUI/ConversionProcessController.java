@@ -46,8 +46,7 @@ import org.json.JSONObject;
  *
  * @author ander
  */
-public class ConversionProcessController implements Initializable 
-{
+public class ConversionProcessController implements Initializable {
 
     @FXML
     private JFXListView<File> taskField;
@@ -69,39 +68,40 @@ public class ConversionProcessController implements Initializable
     UpdateLog updateLog = new UpdateLog();
     LoginDataModel modelData;
     BLL.BLLManagerUpdateLog up = new BLLManagerUpdateLog();
-    
+
     @Override
-    public void initialize(URL url, ResourceBundle rb) 
-    {
+    public void initialize(URL url, ResourceBundle rb) {
         setButtonsInvisible();
         conversionProgress();
-        
-    }    
 
+    }
+
+    /*
+    Start thread
+     */
     @FXML
-    private void startTask(ActionEvent event) 
-    {
+    private void startTask(ActionEvent event) {
         threading.resume();
     }
-
+ /*
+    Pause thread
+     */
     @FXML
-    private void pauseTask(ActionEvent event) 
-    {
+    private void pauseTask(ActionEvent event) {
         threading.suspend();
     }
-
+ /*
+    Stop thread
+     */
     @FXML
-    private void stopTask(ActionEvent event) 
-    {
+    private void stopTask(ActionEvent event) {
         threading.stop();
         closeWindowWhenProcessisDone();
     }
-    
-    private void closeStage() throws SQLException, IOException
-    {
-        if (conversionSuccess == false) 
-        {
-            
+
+    private void closeStage() throws SQLException, IOException {
+        if (conversionSuccess == false) {
+
             FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/GUI/ConversionProcess.fxml"));
             Parent root = fxLoader.load();
             Scene scene = new Scene(root);
@@ -109,111 +109,104 @@ public class ConversionProcessController implements Initializable
             stage.close();
         }
     }
-    public void convertfile (File file)
-    { try 
-                { JSONArray main = new JSONArray();
-                    threading = Thread.currentThread();
-                    if(file.getAbsolutePath().endsWith(".xlsx")){
-                    convertToJson XLSX = new convertToJson(file.getAbsolutePath(),fcModel);
+     /*
+    convert list<jsonObject> to json file
+    */
+    public void convertfile(File file) {
+        try {
+            JSONArray main = new JSONArray();
+            threading = Thread.currentThread();
+            if (file.getAbsolutePath().endsWith(".xlsx")) {
+                convertToJson XLSX = new convertToJson(file.getAbsolutePath(), fcModel);
 
+                File JsonFile = new File(file.getCanonicalFile() + ".json");
+                FileWriter fileWriter = new FileWriter(JsonFile);
 
-                    File JsonFile = new File(file.getCanonicalFile() + ".json");
-                    FileWriter fileWriter = new FileWriter(JsonFile);
+                for (JSONObject jSONObject : XLSX.allJSONObjectInFileXLSX()) {
+                    main.put(jSONObject);
 
-                    for (JSONObject jSONObject : XLSX.allJSONObjectInFileXLSX()) 
-                    {
-                        main.put(jSONObject);
-                        
-                    }fileWriter.write(main.toString(4));
-                    conversionSuccess = false;
-                    addDataToLog();
-                    updateLog.setError(false);
-                    updateLog.setAdjustment("Conversion done: " + file.getName());
-                    //addToLog();
-                    fileWriter.flush();
-                    fileWriter.close();
+                }
+                fileWriter.write(main.toString(4));
+                conversionSuccess = false;
+                addDataToLog();
+                updateLog.setError(false);
+                updateLog.setAdjustment("Conversion done: " + file.getName());
+                //addToLog();
+                fileWriter.flush();
+                fileWriter.close();
 
-                    filesConvertedCount++;}
-                    
-                    else if(file.getAbsolutePath().endsWith(".csv")){
-                     
-                    convertToJson xmlconvert = new convertToJson(file.getAbsolutePath(),fcModel);
+                filesConvertedCount++;
+            } else if (file.getAbsolutePath().endsWith(".csv")) {
 
-   
-                    File JsonFile = new File(file.getCanonicalFile() + ".json");
-                    FileWriter fileWriter = new FileWriter(JsonFile);
+                convertToJson xmlconvert = new convertToJson(file.getAbsolutePath(), fcModel);
 
-                    for (JSONObject jSONObject : xmlconvert.allJSONObjectInFileCSV()) 
-                    {main.put(jSONObject);
-                        
-                    }fileWriter.write(main.toString(4));
-                    conversionSuccess = false;
-                    addDataToLog();
-                    updateLog.setError(false);
-                    updateLog.setAdjustment("Conversion done: " + file.getName());
-                    //addToLog();
-                    fileWriter.flush();
-                    fileWriter.close();
+                File JsonFile = new File(file.getCanonicalFile() + ".json");
+                FileWriter fileWriter = new FileWriter(JsonFile);
 
-                    filesConvertedCount++;}
-                                       try 
-            {
-                
+                for (JSONObject jSONObject : xmlconvert.allJSONObjectInFileCSV()) {
+                    main.put(jSONObject);
+
+                }
+                fileWriter.write(main.toString(4));
+                conversionSuccess = false;
+                addDataToLog();
+                updateLog.setError(false);
+                updateLog.setAdjustment("Conversion done: " + file.getName());
+                //addToLog();
+                fileWriter.flush();
+                fileWriter.close();
+
+                filesConvertedCount++;
+            }
+            try {
+
                 up.setUpdateLog(updateLog);
-            } 
-            catch (SQLException ex) 
-            {
+            } catch (SQLException ex) {
                 Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
             }
-                } 
-                catch (IOException ex) 
-                {
-                    updateLog.setError(true);
-                    updateLog.setAdjustment("File not support yet: " + file.getName());
+        } catch (IOException ex) {
+            updateLog.setError(true);
+            updateLog.setAdjustment("File not support yet: " + file.getName());
 
-                    updateLog();
-                } 
-                catch (ParseException | IllegalArgumentException | IllegalAccessException | JSONException ex) 
-                {
-                    updateLog.setError(true);
-                    updateLog.setAdjustment("Files Conversion wrong: " + file.getName());
-                    updateLog();
-                }}
-    
-    private void conversionProgress()
-    {
-        com = CompletableFuture.runAsync(() -> 
-        {
+            updateLog();
+        } catch (ParseException | IllegalArgumentException | IllegalAccessException | JSONException ex) {
+            updateLog.setError(true);
+            updateLog.setAdjustment("Files Conversion wrong: " + file.getName());
+            updateLog();
+        }
+    }
+ /*
+    Thread for conversion to json file
+     */
+    private void conversionProgress() {
+        com = CompletableFuture.runAsync(()
+                -> {
             List<File> progressFileList = new ArrayList<File>(fcModel.getFiles());
             filesConvertedCount = 0;
             allsize = progressFileList.size();
-            for (File file : progressFileList) 
-            {
+            for (File file : progressFileList) {
 
                 convertfile(file);
 
-                Platform.runLater(() -> 
-                {
+                Platform.runLater(()
+                        -> {
                     startTaskThread.setDisable(fcModel.getFiles().isEmpty());
                     pauseTaskThread.setDisable(fcModel.getFiles().isEmpty());
                     stopTaskThread.setDisable(fcModel.getFiles().isEmpty());
                     fcModel.removeFile(file);
                     progressBar.setVisible(true);
                     progressBar.setProgress(filesConvertedCount / allsize);
-                    if (fcModel.getFiles().isEmpty()) 
-                    {
+                    if (fcModel.getFiles().isEmpty()) {
                         progressBar.setVisible(false);
                         closeWindowWhenProcessisDone();
                     }
                 });
-            }          
-             
-        });          
+            }
+
+        });
     }
-    
-    
-    private void addDataToLog() 
-    {
+
+    private void addDataToLog() {
         Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
         java.sql.Timestamp sqlDate = new java.sql.Timestamp(currentTimestamp.getTime());
 
@@ -221,36 +214,30 @@ public class ConversionProcessController implements Initializable
         updateLog.setDatelog(sqlDate);
         updateLog.setError(conversionSuccess);
     }
-    
-    private void updateLog() 
-    {
-        try 
-        {
+
+    private void updateLog() {
+        try {
             up.setUpdateLog(updateLog);
-            
-        } 
-        catch (SQLException ex)
-        {
+
+        } catch (SQLException ex) {
             Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    private void setButtonsInvisible() 
-    {
+
+    private void setButtonsInvisible() {
         progressBar.setVisible(false);
         startTaskThread.setDisable(true);
         stopTaskThread.setDisable(true);
         pauseTaskThread.setDisable(true);
     }
 
-    void setmodel(FilesConvertionModel fcModel, LoginDataModel modelData) 
-    {
+    void setmodel(FilesConvertionModel fcModel, LoginDataModel modelData) {
         this.fcModel = fcModel;
         taskField.setItems(fcModel.getFiles());
         this.modelData = modelData;
     }
-    private void closeWindowWhenProcessisDone()
-    {
+
+    private void closeWindowWhenProcessisDone() {
         Stage stage = (Stage) pauseTaskThread.getScene().getWindow();
         stage.close();
     }

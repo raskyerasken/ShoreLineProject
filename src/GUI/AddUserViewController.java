@@ -94,6 +94,9 @@ public class AddUserViewController implements Initializable
         adminTbl.setCellValueFactory(new PropertyValueFactory("accessLevel"));
     }
 
+    /*
+    Taking from soucemaking
+    */
     private void searchLogView()
     {
         FilteredList<UserLogin> filteredData;
@@ -274,7 +277,9 @@ public class AddUserViewController implements Initializable
             }
         });
     }
-
+/*
+    Send the message "thsi fields input required
+    */
     private void validatorMessages()
     {
         RequiredFieldValidator validator = new RequiredFieldValidator();

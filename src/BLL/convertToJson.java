@@ -31,12 +31,15 @@ public class convertToJson
          fileName = absolutePath;
         
     }
+    
      public ObservableList<String> getTitleXLSX () throws FileNotFoundException, IOException, ParseException
     {
        ReadDataXLSX XLSX = new ReadDataXLSX(fileName, fcmodel); 
     return XLSX.getColumsNames();
     }
-
+/*
+     return a lost of Json object xlsx
+     */
     public List<JSONObject> allJSONObjectInFileXLSX() throws ParseException, IllegalArgumentException, IllegalAccessException, JSONException, IOException
     {
          ReadDataXLSX XLSX = new ReadDataXLSX(fileName, fcmodel);
@@ -71,7 +74,9 @@ public class convertToJson
         }
         return JSONList;
     }
-
+    /*
+    Set each JsonObject 
+    */
     private JSONObject setJSONObject(int i) throws JSONException, ParseException, IOException
     {
         JSONCustommize custom = fcmodel.getCustomClass();

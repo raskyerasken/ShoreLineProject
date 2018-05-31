@@ -25,7 +25,9 @@ public class LoginDataModel
     public LoginDataModel() throws DalException {
     bllManagerUsr=BLLManagerUserLogin.getInstance();
     }
-
+ /*
+   only create one model
+     */
     public static LoginDataModel getInstance() throws DalException   {
          
         if (instance == null) {

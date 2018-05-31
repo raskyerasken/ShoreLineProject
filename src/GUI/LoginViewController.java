@@ -87,7 +87,9 @@ public class LoginViewController implements Initializable
         }
         rememberMeFunction();
     }
-
+ /*
+    Check if password and username match in the database
+     */
     @FXML
     private void login(ActionEvent event) throws DalException
     {
@@ -185,7 +187,9 @@ public class LoginViewController implements Initializable
             AlertWindow alert = new AlertWindow("IOException", null, "IO Exception");
         }
     }
-
+ /*
+    Save who login to a txt file
+     */
     private void timeLog() throws FileNotFoundException, UnsupportedEncodingException, IOException
     {
         File f = new File(filePathString);
@@ -214,7 +218,9 @@ public class LoginViewController implements Initializable
             writer.close();
         }
     }
-
+ /*
+  Wrtite nothing to txt file if remember me is not on 
+     */
     private void writeNothingTxt()
     {
         PrintWriter writer = null;
@@ -275,7 +281,9 @@ public class LoginViewController implements Initializable
             }
         }
     }
-
+ /*
+    save username and password to txt file if remember me are on.
+     */
     private void rememberMeFunction()
     {
 

@@ -19,7 +19,10 @@ public class BLLManagerUpdateLog implements IBLLManagerUpdateLog
 {
         private static BLLManagerUpdateLog INSTANCE;
     DataBaseUpdateLog ul = new DataBaseUpdateLog();
-    
+    /*
+    So their only can be created one, so allway you classe.getInstance,
+    instead on new class
+    */
      public synchronized static BLLManagerUpdateLog getInstance()
     {
         if (INSTANCE == null)

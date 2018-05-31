@@ -61,8 +61,6 @@ public class LogViewController implements Initializable
             = new FilteredList<>(lines, p -> true);
     private FilesConvertionModel fcModel;
     @FXML
-    private TableView<UpdateLog> logView;
-    @FXML
     private TableColumn<UpdateLog, String> userNameTable;
     @FXML
     private TableColumn<UpdateLog, Date> timeTable;
@@ -76,6 +74,8 @@ public class LogViewController implements Initializable
     private Button logMenuSelect;
     @FXML
     private Button adminButton;
+    @FXML
+    private TableView<UpdateLog> LogView;
 
     @Override
     public void initialize(URL url, ResourceBundle rb)
@@ -83,20 +83,22 @@ public class LogViewController implements Initializable
         adminButton.setVisible(false);
         logMenuSelect.setDisable(true);
         addColumsToTableView();   //get all the colums
-        logView.setItems(model.getUpdateLogToList());
+        LogView.setItems(model.getUpdateLogToList());
         Thread t = new Thread(()
                 ->
-        {
+        { errorColor();
             model.logListUpdate();
+            
             searchLogView();
-            errorColor();
         });
         t.start();
     }
-
+ /*
+   Set color for error message
+     */
     private void errorColor()
     {
-        logView.setRowFactory(tv -> new TableRow<UpdateLog>()
+        LogView.setRowFactory(tv -> new TableRow<UpdateLog>()
         {
             @Override
             public void updateItem(UpdateLog item, boolean empty)
@@ -125,7 +127,9 @@ public class LogViewController implements Initializable
         adjustment.setCellValueFactory(new PropertyValueFactory("Adjustment"));
         error.setCellValueFactory(new PropertyValueFactory("Error"));
     }
-
+ /*
+   Taking from Sourcemaking
+     */
     private void searchLogView()
     {
         FilteredList<UpdateLog> filteredData;
@@ -160,9 +164,9 @@ public class LogViewController implements Initializable
         // 3. Wrap the FilteredList in a SortedList. 
         SortedList<UpdateLog> sortedData = new SortedList<>(filteredData);
         // 4. Bind the SortedList comparator to the TableView comparator.
-        sortedData.comparatorProperty().bind(logView.comparatorProperty());
+        sortedData.comparatorProperty().bind(LogView.comparatorProperty());
         // 5. Add sorted (and filtered) data to the table.
-        logView.setItems(sortedData);
+        LogView.setItems(sortedData);
     }
 
     @FXML

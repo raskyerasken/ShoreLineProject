@@ -5,10 +5,10 @@
  */
 package DAL.ConnectionPool;
 
-/**
- *
- * @author pgn
- */
+
+    /*
+    Taking from MechaChatApp
+    */
 public class DalException extends Exception
 {
 

@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author pgn
+ * Taking from MechaChatApp
  */
 public class ConnectionPool extends ObjectPool<Connection>
 {

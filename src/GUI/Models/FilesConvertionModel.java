@@ -28,7 +28,9 @@ public class FilesConvertionModel {
     private static volatile FilesConvertionModel instance;
 
     public FilesConvertionModel() {}
-
+ /*
+   only create one model
+     */
     public static FilesConvertionModel getInstance() {
         if (instance == null) {
             synchronized (FilesConvertionModel.class) {
