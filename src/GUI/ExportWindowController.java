@@ -10,18 +10,14 @@ import GUI.Models.LoginDataModel;
 import GUI.Models.FilesConvertionModel;
 import BE.UpdateLog;
 import BLL.BLLManagerUpdateLog;
-import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXListView;
-import com.jfoenix.controls.JFXProgressBar;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 import java.text.ParseException;
-import java.util.Calendar;
 import java.util.ResourceBundle;
 import java.util.concurrent.CompletableFuture;
 import java.util.logging.Level;
@@ -58,15 +54,9 @@ public class ExportWindowController implements Initializable
     @FXML
     private Button btnExport;
     private FilesConvertionModel fcModel;
-    private JFXButton startTaskThread;
-    private JFXButton pauseTaskThread;
-    private JFXButton stopTaskThread;
-    private JFXProgressBar progressBar;
     CompletableFuture com;
     double filesConvertedCount = 0;
     double allsize = 0;
-    private boolean suspended;
-    private volatile boolean paused = false;
     UpdateLog updateLog = new UpdateLog();
     boolean conversionSuccess;
     @FXML
