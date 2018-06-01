@@ -7,9 +7,15 @@ package BLL;
 
 import BLLFacade.IBLLManagerUpdateLog;
 import BE.UpdateLog;
+import DAL.ConnectionPool.ConnectionPool;
+import DAL.ConnectionPool.DalException;
+import DAL.ConnectionPool.PooledUserloginDaoController;
+import DAL.ConnectionPool.PoolledUpdateLog;
 import DAL.DataBaseUpdateLog;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -17,13 +23,17 @@ import java.util.List;
  */
 public class BLLManagerUpdateLog implements IBLLManagerUpdateLog
 {
+    PoolledUpdateLog pmdcUL;
         private static BLLManagerUpdateLog INSTANCE;
-    DataBaseUpdateLog ul = new DataBaseUpdateLog();
+        
+        public BLLManagerUpdateLog() throws DalException { 
+         pmdcUL= new PoolledUpdateLog(new ConnectionPool());
+    }
     /*
     So their only can be created one, so allway you classe.getInstance,
     instead on new class
     */
-     public synchronized static BLLManagerUpdateLog getInstance()
+     public synchronized static BLLManagerUpdateLog getInstance() throws DalException
     {
         if (INSTANCE == null)
         {
@@ -34,12 +44,21 @@ public class BLLManagerUpdateLog implements IBLLManagerUpdateLog
     public void setUpdateLog(UpdateLog updateLog) throws SQLException
     {
        
-        ul.setUpdateLog(updateLog);
+        try {
+            pmdcUL.setUpdateLog(updateLog);
+        } catch (DalException ex) {
+            Logger.getLogger(BLLManagerUpdateLog.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     public List<UpdateLog> getAllUpdateLogsToList()
     {
-        return ul.getUpdateLog();
+        try {
+            return pmdcUL.getUpdateLog();
+        } catch (DalException ex) {
+            Logger.getLogger(BLLManagerUpdateLog.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
     }
     
 }

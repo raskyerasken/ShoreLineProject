@@ -3,16 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/CSSShoreLines.css</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/BLL/BLLManagerUserLogin.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/AddUserView.fxml</file>
+            <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/DAL/ReadDataCSV.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/Models/FilesConvertionModel.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/DAL/ConnectionPool/PooledUserloginDaoController.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/DAL/ConnectionPool/ConnectionPool.java</file>
+            <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/DAL/ReadDataXLSX.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/AlertWindow.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/BE/JSONCustommize.java</file>
+            <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/BLL/convertToJson.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/DAL/IConnectionManager.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/CustomDataWindowController.java</file>
-            <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/Main/ShoreLine.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/DAL/ConnectionPool/ObjectPool.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/DAL/ConnectionPool/DalException.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/ConversionProcessController.java</file>
