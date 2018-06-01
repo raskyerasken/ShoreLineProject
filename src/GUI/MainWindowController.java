@@ -87,7 +87,11 @@ public class MainWindowController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-        up.getInstance();
+        try {
+            up.getInstance();
+        } catch (DalException ex) {
+            Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         try
         {
             bllManagerUL = BLLManagerUserLogin.getInstance();

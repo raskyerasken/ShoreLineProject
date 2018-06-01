@@ -8,6 +8,7 @@ package GUI.Models;
 import BE.UpdateLog;
 import BLL.BLLManagerUpdateLog;
 import BLLFacade.IBLLManagerUpdateLog;
+import DAL.ConnectionPool.DalException;
 import java.sql.SQLException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -20,14 +21,14 @@ public class UpdateLogViewModel
 {
     private static volatile UpdateLogViewModel instance;
 
-    public UpdateLogViewModel() {
+    public UpdateLogViewModel() throws DalException {
     bllManagerUL = BLLManagerUpdateLog.getInstance();
     
    }
  /*
    only create one model
      */
-    public static UpdateLogViewModel getInstance() {
+    public static UpdateLogViewModel getInstance() throws DalException {
         if (instance == null) {
             synchronized (UpdateLogViewModel.class) {
                 if (instance == null) {
