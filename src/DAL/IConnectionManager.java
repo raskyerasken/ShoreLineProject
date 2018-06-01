@@ -12,7 +12,7 @@ import java.sql.Connection;
  *
  * @author ander
  */
-interface IConnectionManager 
+interface IConnectionManager
 {
     Connection getConnection() throws SQLServerException;
 }

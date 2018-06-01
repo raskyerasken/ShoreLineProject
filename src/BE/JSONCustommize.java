@@ -9,7 +9,8 @@ package BE;
  *
  * @author jacob
  */
-public class JSONCustommize {
+public class JSONCustommize
+{
 
     private String siteName;
 
@@ -29,16 +30,19 @@ public class JSONCustommize {
 
     private String nameTable;
 
-    public String getNameTable() {
+    public String getNameTable()
+    {
         return nameTable;
     }
 
     @Override
-    public String toString() {
-        return  nameTable ;
+    public String toString()
+    {
+        return nameTable;
     }
 
-    public void setNameTable(String nameTable) {
+    public void setNameTable(String nameTable)
+    {
         this.nameTable = nameTable;
     }
 
@@ -47,53 +51,59 @@ public class JSONCustommize {
     private String priority;
 
     private String status;
-    
+
     private String latestFinishDate;
     private String earlistStartDate;
     private String latestStartDate;
     private String estimatedTime;
 
-    public String getEstimatedTime() {
+    public String getEstimatedTime()
+    {
         return estimatedTime;
     }
 
-    public void setEstimatedTime(String estimatedTime) {
+    public void setEstimatedTime(String estimatedTime)
+    {
         this.estimatedTime = estimatedTime;
     }
 
-
-    public String getLatestStartDate() {
+    public String getLatestStartDate()
+    {
         return latestStartDate;
     }
 
-    public void setLatestStartDate(String latestStartDate) {
+    public void setLatestStartDate(String latestStartDate)
+    {
         this.latestStartDate = latestStartDate;
     }
 
-
-    public String getEarlistStartDate() {
+    public String getEarlistStartDate()
+    {
         return earlistStartDate;
     }
 
-    public void setEarlistStartDate(String earlistStartDate) {
+    public void setEarlistStartDate(String earlistStartDate)
+    {
         this.earlistStartDate = earlistStartDate;
     }
 
-
-    public String getLatestFinishDate() {
+    public String getLatestFinishDate()
+    {
         return latestFinishDate;
     }
 
-    public void setLatestFinishDate(String latestFinishDate) {
+    public void setLatestFinishDate(String latestFinishDate)
+    {
         this.latestFinishDate = latestFinishDate;
     }
 
-
-    public String getStatus() {
+    public String getStatus()
+    {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(String status)
+    {
         this.status = status;
     }
 
@@ -102,7 +112,8 @@ public class JSONCustommize {
      *
      * @return the value of priority
      */
-    public String getPriority() {
+    public String getPriority()
+    {
         return priority;
     }
 
@@ -111,7 +122,8 @@ public class JSONCustommize {
      *
      * @param priority new value of priority
      */
-    public void setPriority(String priority) {
+    public void setPriority(String priority)
+    {
         this.priority = priority;
     }
 
@@ -120,7 +132,8 @@ public class JSONCustommize {
      *
      * @return the value of name
      */
-    public String getName() {
+    public String getName()
+    {
         return name;
     }
 
@@ -129,7 +142,8 @@ public class JSONCustommize {
      *
      * @param name new value of name
      */
-    public void setName(String name) {
+    public void setName(String name)
+    {
         this.name = name;
     }
 
@@ -138,7 +152,8 @@ public class JSONCustommize {
      *
      * @return the value of createdBy
      */
-    public String getCreatedBy() {
+    public String getCreatedBy()
+    {
         return createdBy;
     }
 
@@ -147,47 +162,58 @@ public class JSONCustommize {
      *
      * @param createdBy new value of createdBy
      */
-    public void setCreatedBy(String createdBy) {
+    public void setCreatedBy(String createdBy)
+    {
         this.createdBy = createdBy;
     }
 
-    public String getCreatedOn() {
+    public String getCreatedOn()
+    {
         return createdOn;
     }
 
-    public void setCreatedOn(String createdOn) {
+    public void setCreatedOn(String createdOn)
+    {
         this.createdOn = createdOn;
     }
 
-    public String getUserStatus() {
+    public String getUserStatus()
+    {
         return userStatus;
     }
 
-    public void setUserStatus(String userStatus) {
+    public void setUserStatus(String userStatus)
+    {
         this.userStatus = userStatus;
     }
 
-    public String getSystemStatus() {
+    public String getSystemStatus()
+    {
         return systemStatus;
     }
 
-    public void setSystemStatus(String systemStatus) {
+    public void setSystemStatus(String systemStatus)
+    {
         this.systemStatus = systemStatus;
     }
 
-    public String getExternalWorkOrderId() {
+    public String getExternalWorkOrderId()
+    {
         return externalWorkOrderId;
     }
 
-    public void setExternalWorkOrderId(String externalWorkOrderId) {
+    public void setExternalWorkOrderId(String externalWorkOrderId)
+    {
         this.externalWorkOrderId = externalWorkOrderId;
     }
 
-    public String getType() {
+    public String getType()
+    {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(String type)
+    {
         this.type = type;
     }
 
@@ -196,7 +222,8 @@ public class JSONCustommize {
      *
      * @return the value of assertSerialNumber
      */
-    public String getAssertSerialNumber() {
+    public String getAssertSerialNumber()
+    {
         return assertSerialNumber;
     }
 
@@ -205,7 +232,8 @@ public class JSONCustommize {
      *
      * @param assertSerialNumber new value of assertSerialNumber
      */
-    public void setAssertSerialNumber(String assertSerialNumber) {
+    public void setAssertSerialNumber(String assertSerialNumber)
+    {
         this.assertSerialNumber = assertSerialNumber;
     }
 
@@ -214,7 +242,8 @@ public class JSONCustommize {
      *
      * @return the value of siteName
      */
-    public String getSiteName() {
+    public String getSiteName()
+    {
         return siteName;
     }
 
@@ -223,7 +252,8 @@ public class JSONCustommize {
      *
      * @param siteName new value of siteName
      */
-    public void setSiteName(String siteName) {
+    public void setSiteName(String siteName)
+    {
         this.siteName = siteName;
     }
 

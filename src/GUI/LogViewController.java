@@ -35,6 +35,7 @@ import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
@@ -128,7 +129,7 @@ public class LogViewController implements Initializable
         error.setCellValueFactory(new PropertyValueFactory("Error"));
     }
  /*
-   Taking from Sourcemaking
+   Taken from Code Makery
      */
     private void searchLogView()
     {
@@ -235,6 +236,7 @@ public class LogViewController implements Initializable
         newStage.setResizable(false);
         newStage.setAlwaysOnTop(true);
         newStage.setTitle("Admin Window");
+        newStage.initModality(Modality.APPLICATION_MODAL);
         newStage.setScene(scene);
         newStage.show();
     }
