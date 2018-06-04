@@ -38,7 +38,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
@@ -215,7 +214,6 @@ public class MainWindowController implements Initializable
         newStage.setResizable(false);
         newStage.setAlwaysOnTop(true);
         newStage.setTitle("Admin Window");
-        newStage.initModality(Modality.APPLICATION_MODAL);
         newStage.setScene(scene);
         newStage.show();
     }

@@ -4,16 +4,11 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : Apr 24, 2018, 2:55:47 PM
+    Created on : May 25, 2018, 11:25:30 AM
     Author     : ander
 */
 
-#AnchorPane
+.table-row-cell:disabled 
 {
-    -fx-background-color: white;
-}
-
-#MenuBar
-{
-    -fx-background-color: #588fe8;
+    -fx-background-color:red ;
 }

@@ -17,15 +17,13 @@ import java.util.List;
  */
 public class BLLManagerUpdateLog implements IBLLManagerUpdateLog
 {
-
-    private static BLLManagerUpdateLog INSTANCE;
+        private static BLLManagerUpdateLog INSTANCE;
     DataBaseUpdateLog ul = new DataBaseUpdateLog();
-
     /*
     So their only can be created one, so allway you classe.getInstance,
     instead on new class
-     */
-    public synchronized static BLLManagerUpdateLog getInstance()
+    */
+     public synchronized static BLLManagerUpdateLog getInstance()
     {
         if (INSTANCE == null)
         {
@@ -33,16 +31,15 @@ public class BLLManagerUpdateLog implements IBLLManagerUpdateLog
         }
         return INSTANCE;
     }
-
     public void setUpdateLog(UpdateLog updateLog) throws SQLException
     {
-
+       
         ul.setUpdateLog(updateLog);
     }
-
+    
     public List<UpdateLog> getAllUpdateLogsToList()
     {
         return ul.getUpdateLog();
     }
-
+    
 }

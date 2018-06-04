@@ -13,10 +13,9 @@ import java.util.List;
  *
  * @author ander
  */
-public interface IBLLManagerUpdateLog
+public interface IBLLManagerUpdateLog 
 {
-
-    public void setUpdateLog(UpdateLog updateLog) throws SQLException;
-
-    public List<UpdateLog> getAllUpdateLogsToList();
+     public void setUpdateLog(UpdateLog updateLog) throws SQLException;
+    
+     public List<UpdateLog> getAllUpdateLogsToList();
 }

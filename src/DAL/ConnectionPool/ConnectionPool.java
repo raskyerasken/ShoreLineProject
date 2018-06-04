@@ -28,8 +28,7 @@ public class ConnectionPool extends ObjectPool<Connection>
         try
         {
             dbConnector = new DBConnector();
-        }
-        catch (IOException ex)
+        } catch (IOException ex)
         {
             throw new DalException("Error creating connection pool to database", ex);
         }
@@ -37,13 +36,12 @@ public class ConnectionPool extends ObjectPool<Connection>
     }
 
     @Override
-    public void expire(Connection o)
+    public void expire(Connection o) 
     {
         try
         {
             o.close();
-        }
-        catch (SQLException ex)
+        } catch (SQLException ex)
         {
             ex.printStackTrace();
         }
@@ -55,8 +53,7 @@ public class ConnectionPool extends ObjectPool<Connection>
         try
         {
             return !o.isClosed();
-        }
-        catch (SQLException ex)
+        } catch (SQLException ex)
         {
             ex.printStackTrace();
             return false;
@@ -64,20 +61,16 @@ public class ConnectionPool extends ObjectPool<Connection>
     }
 
     @Override
-    protected Connection create()
+    protected Connection create() 
     {
         try
         {
             return dbConnector.getConnection();
-        }
-        catch (SQLServerException ex)
+        } catch (SQLServerException ex)
         {
-            try
-            {
+            try {
                 throw new DalException(ex.getMessage(), ex);
-            }
-            catch (DalException ex1)
-            {
+            } catch (DalException ex1) {
                 Logger.getLogger(ConnectionPool.class.getName()).log(Level.SEVERE, null, ex1);
             }
         }

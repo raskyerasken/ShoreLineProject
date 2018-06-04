@@ -23,29 +23,28 @@ public class convertToJson
     List<List<String>> alldata = new ArrayList<>();
     DateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy");
     Date today = new Date();
-    String fileName;
+   String fileName;
 
     public convertToJson(String absolutePath, FilesConvertionModel fc) throws FileNotFoundException
     {
         fcmodel = fc;
-        fileName = absolutePath;
-
+         fileName = absolutePath;
+        
     }
-
-    public ObservableList<String> getTitleXLSX() throws FileNotFoundException, IOException, ParseException
+    
+     public ObservableList<String> getTitleXLSX () throws FileNotFoundException, IOException, ParseException
     {
-        ReadDataXLSX XLSX = new ReadDataXLSX(fileName, fcmodel);
-        return XLSX.getColumsNames();
+       ReadDataXLSX XLSX = new ReadDataXLSX(fileName, fcmodel); 
+    return XLSX.getColumsNames();
     }
-
-    /*
+/*
      return a lost of Json object xlsx
      */
     public List<JSONObject> allJSONObjectInFileXLSX() throws ParseException, IllegalArgumentException, IllegalAccessException, JSONException, IOException
     {
-        ReadDataXLSX XLSX = new ReadDataXLSX(fileName, fcmodel);
+         ReadDataXLSX XLSX = new ReadDataXLSX(fileName, fcmodel);
         List<JSONObject> JSONList = new ArrayList<>();
-        alldata = XLSX.getAllData();
+      alldata= XLSX.getAllData();
         for (int i = 1; i < alldata.size(); i++)
         {
             JSONObject newJSON = setJSONObject(i);
@@ -54,19 +53,19 @@ public class convertToJson
         }
         return JSONList;
     }
-
-    public ObservableList<String> getTitleCSV() throws FileNotFoundException
+    
+    public ObservableList<String> getTitleCSV () throws FileNotFoundException
     {
-        ReadDataCSV csv = new ReadDataCSV(fileName, fcmodel);
-        return csv.getTitle();
+       ReadDataCSV csv = new ReadDataCSV(fileName, fcmodel); 
+    return csv.getTitle();
     }
 
     public List<JSONObject> allJSONObjectInFileCSV() throws ParseException, IllegalArgumentException, IllegalAccessException, JSONException, IOException
     {
-        ReadDataCSV csv = new ReadDataCSV(fileName, fcmodel);
-        alldata = csv.getAllData();
+         ReadDataCSV csv = new ReadDataCSV(fileName, fcmodel);
+         alldata=csv.getAllData();
         List<JSONObject> JSONList = new ArrayList<>();
-
+      
         for (int i = 1; i < alldata.size(); i++)
         {
             JSONObject newJSON = setJSONObject(i);
@@ -75,10 +74,9 @@ public class convertToJson
         }
         return JSONList;
     }
-
     /*
     Set each JsonObject 
-     */
+    */
     private JSONObject setJSONObject(int i) throws JSONException, ParseException, IOException
     {
         JSONCustommize custom = fcmodel.getCustomClass();

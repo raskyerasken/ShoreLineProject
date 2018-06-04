@@ -15,8 +15,7 @@ import java.sql.Connection;
  */
 public class ConnectionManagerSLProject extends AbstractConnectionManagerSLProject
 {
-
-    public ConnectionManagerSLProject()
+    public ConnectionManagerSLProject() 
     {
         ds.setDatabaseName("CS2017B_13_Shoreline");
         ds.setUser("CS2017B_13_java");
@@ -24,5 +23,5 @@ public class ConnectionManagerSLProject extends AbstractConnectionManagerSLProje
         ds.setPortNumber(1433);
         ds.setServerName("10.176.111.31");
     }
-
+    
 }

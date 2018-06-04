@@ -9,9 +9,9 @@ import java.util.Enumeration;
 import java.util.Hashtable;
 
 
-/*
+    /*
     Taking from MechaChatApp
- */
+    */
 abstract class ObjectPool<T>
 {
 
@@ -48,14 +48,12 @@ abstract class ObjectPool<T>
                     unlocked.remove(t);
                     expire(t);
                     t = null;
-                }
-                else if (validate(t))
+                } else if (validate(t))
                 {
                     unlocked.remove(t);
                     locked.put(t, now);
                     return (t);
-                }
-                else
+                } else
                 {
                     // object failed validation
                     unlocked.remove(t);

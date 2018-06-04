@@ -15,18 +15,18 @@ import java.util.List;
  *
  * @author ander
  */
-public interface IBLLManagerUserLogin
+public interface IBLLManagerUserLogin 
 {
-
-    public List<UserLogin> getUserDataToTableView() throws DalException, SQLException;
-
-    public void getPassword(UserLogin userLogin) throws SQLServerException, SQLException, DalException;
-
-    public boolean getAccess(UserLogin userLogin) throws SQLException, DalException;
-
-    public boolean getAdminAccess(UserLogin userLogin) throws SQLException, DalException;
-
-    public boolean usernameAvaible(String Username) throws SQLException, DalException;
-
-    public void createNewUser(UserLogin newUser) throws SQLException, SQLServerException, DalException;
+  public List<UserLogin> getUserDataToTableView() throws DalException, SQLException;
+  
+  
+   public void getPassword(UserLogin userLogin) throws SQLServerException, SQLException, DalException ;
+   
+   public boolean getAccess(UserLogin userLogin) throws SQLException, DalException ;
+   
+    public boolean getAdminAccess(UserLogin userLogin) throws SQLException, DalException ;
+    
+        public boolean usernameAvaible(String Username) throws SQLException, DalException ;
+        
+         public void createNewUser(UserLogin newUser) throws SQLException, SQLServerException, DalException ;
 }

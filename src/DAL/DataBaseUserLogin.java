@@ -21,121 +21,129 @@ import java.util.List;
  *
  * @author ander
  */
-public class DataBaseUserLogin
+public class DataBaseUserLogin 
 {
 
-    public void setPassword(Connection con, UserLogin userLogin) throws SQLException
+
+    public void setPassword(Connection con,UserLogin userLogin) throws SQLException 
     {
-        String sql
-                = "SELECT * FROM UserLogin"
-                + "(Username, Password)"
-                + "VALUES (?, ?, ?, ?)";
+       
+            String sql
+                    = "SELECT * FROM UserLogin"
+                    + "(Username, Password)"
+                    + "VALUES (?, ?, ?, ?)";
 
-        PreparedStatement pstmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement pstmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
+       
     }
 
-    public boolean getAccess(Connection con, UserLogin userLogin) throws SQLException
+    public boolean getAccess(Connection con,UserLogin userLogin) throws SQLException
     {
         UserLogin ul = new UserLogin();
+     
+            String query
+                    = "SELECT * FROM UserLogin "
+                    + "WHERE Username LIKE ?";
 
-        String query
-                = "SELECT * FROM UserLogin "
-                + "WHERE Username LIKE ?";
+            PreparedStatement pstmt = con.prepareStatement(query);
+            pstmt.setString(1, userLogin.getUserName());
 
-        PreparedStatement pstmt = con.prepareStatement(query);
-        pstmt.setString(1, userLogin.getUserName());
+            ResultSet rs = pstmt.executeQuery();
 
-        ResultSet rs = pstmt.executeQuery();
-
-        while (rs.next())
-        {
-            ul.setUserName(rs.getString("Username"));
-            ul.setPassword(rs.getString("Password"));
-        }
-
+            while (rs.next()) 
+            {
+                ul.setUserName(rs.getString("Username"));
+                ul.setPassword(rs.getString("Password"));
+            }
+       
         return userLogin.getPassword().equals(ul.getPassword());
     }
-
-    public boolean getAdminAccess(Connection con, UserLogin userLogin) throws SQLException
+    
+    public boolean getAdminAccess (Connection con,UserLogin userLogin) throws SQLException
     {
         UserLogin ul = new UserLogin();
+       
+            String query
+                    = "SELECT * FROM UserLogin "
+                    + "WHERE Username LIKE ?";
 
-        String query
-                = "SELECT * FROM UserLogin "
-                + "WHERE Username LIKE ?";
+            PreparedStatement pstmt = con.prepareStatement(query);
+            pstmt.setString(1, userLogin.getUserName());
 
-        PreparedStatement pstmt = con.prepareStatement(query);
-        pstmt.setString(1, userLogin.getUserName());
+            ResultSet rs = pstmt.executeQuery();
 
-        ResultSet rs = pstmt.executeQuery();
-
-        while (rs.next())
-        {
-            ul.setAccessLevel(rs.getBoolean("Accesslevel"));
-        }
-
+            while (rs.next()) 
+            {
+                ul.setAccessLevel(rs.getBoolean("Accesslevel"));
+            }
+       
         return ul.isAccessLevel();
     }
 
-    public boolean usernameAvaible(Connection con, String Username) throws SQLException
+    public boolean usernameAvaible(Connection con,String Username) throws SQLException 
     {
         UserLogin ul = new UserLogin();
+       
+            String query
+                    = "SELECT * FROM UserLogin "
+                    + "WHERE Username LIKE ?";
 
-        String query
-                = "SELECT * FROM UserLogin "
-                + "WHERE Username LIKE ?";
+            PreparedStatement pstmt = con.prepareStatement(query);
+            pstmt.setString(1, Username);
 
-        PreparedStatement pstmt = con.prepareStatement(query);
-        pstmt.setString(1, Username);
+            ResultSet rs = pstmt.executeQuery();
 
-        ResultSet rs = pstmt.executeQuery();
-
-        while (rs.next())
-        {
-            return false;
-        }
-
+            while (rs.next()) 
+            {
+                return false;
+            }
+        
         return true;
     }
 
-    public void createNewUser(Connection con, UserLogin newUser) throws SQLServerException, SQLException
+    public void createNewUser(Connection con,UserLogin newUser) throws SQLServerException, SQLException 
     {
-        String sql
-                = "INSERT INTO UserLogin "
-                + "(Username, Password, Email, Accesslevel) "
-                + "VALUES(?,?,?,?)";
+            String sql
+                    = "INSERT INTO UserLogin "
+                    + "(Username, Password, Email, Accesslevel) "
+                    + "VALUES(?,?,?,?)";
 
-        PreparedStatement pstmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-        pstmt.setString(1, newUser.getUserName());
-        pstmt.setString(2, newUser.getPassword());
-        pstmt.setString(3, newUser.getEmail());
-        pstmt.setBoolean(4, newUser.isAccessLevel());
+            PreparedStatement pstmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            pstmt.setString(1, newUser.getUserName());
+            pstmt.setString(2, newUser.getPassword());
+            pstmt.setString(3, newUser.getEmail());
+            pstmt.setBoolean(4, newUser.isAccessLevel());
 
-        int affected = pstmt.executeUpdate();
-        if (affected < 1)
-        {
-            throw new SQLException("User not added");
-        }
+            int affected = pstmt.executeUpdate();
+            if (affected < 1) 
+            {
+                throw new SQLException("User not added");
+            }
+
+        
     }
 
-    public List<UserLogin> getUserInformation(Connection con) throws SQLException
+    public List<UserLogin> getUserInformation(Connection con) throws SQLException 
     {
         List<UserLogin> AllUserLog
                 = new ArrayList<>();
-        PreparedStatement pstmt
-                = con.prepareStatement("SELECT * FROM UserLogin");
 
-        ResultSet rs = pstmt.executeQuery();
+        
+            PreparedStatement pstmt
+                    = con.prepareStatement("SELECT * FROM UserLogin");
 
-        while (rs.next())
-        {
-            UserLogin ul = new UserLogin();
-            ul.setUserName(rs.getString("Username"));
-            ul.setEmail(rs.getString("Email"));
-            ul.setAccessLevel(rs.getBoolean("Accesslevel"));
-            AllUserLog.add(ul);
-        }
+            ResultSet rs = pstmt.executeQuery();
+
+            while (rs.next()) 
+            {
+                UserLogin ul = new UserLogin();
+                ul.setUserName(rs.getString("Username"));
+                ul.setEmail(rs.getString("Email"));
+                ul.setAccessLevel(rs.getBoolean("Accesslevel"));
+                AllUserLog.add(ul);
+            }
+       
         return AllUserLog;
     }
 }
