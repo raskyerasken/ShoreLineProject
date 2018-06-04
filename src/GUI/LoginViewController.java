@@ -59,6 +59,7 @@ public class LoginViewController implements Initializable
     @FXML
     private JFXCheckBox rememberUser;
     BLL.BLLManagerUserLogin ul;
+    BLL.BLLManagerUpdateLog up = new BLLManagerUpdateLog();
     UpdateLog updateLog = new UpdateLog();
     UserLogin userLogin = new UserLogin();
     List<String> lines = new ArrayList<String>();

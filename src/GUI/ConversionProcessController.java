@@ -8,7 +8,6 @@ package GUI;
 import BE.UpdateLog;
 import BLL.BLLManagerUpdateLog;
 import BLL.convertToJson;
-import DAL.ConnectionPool.DalException;
 import GUI.Models.FilesConvertionModel;
 import GUI.Models.LoginDataModel;
 import com.jfoenix.controls.JFXButton;
@@ -68,15 +67,10 @@ public class ConversionProcessController implements Initializable {
     boolean conversionSuccess;
     UpdateLog updateLog = new UpdateLog();
     LoginDataModel modelData;
-    BLL.BLLManagerUpdateLog up ;
+    BLL.BLLManagerUpdateLog up = new BLLManagerUpdateLog();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        try {
-            up=BLLManagerUpdateLog.getInstance();
-        } catch (DalException ex) {
-            Logger.getLogger(ConversionProcessController.class.getName()).log(Level.SEVERE, null, ex);
-        }
         setButtonsInvisible();
         conversionProgress();
 

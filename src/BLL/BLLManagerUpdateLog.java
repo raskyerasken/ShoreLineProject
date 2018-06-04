@@ -7,15 +7,9 @@ package BLL;
 
 import BLLFacade.IBLLManagerUpdateLog;
 import BE.UpdateLog;
-import DAL.ConnectionPool.ConnectionPool;
-import DAL.ConnectionPool.DalException;
-import DAL.ConnectionPool.PooledUserloginDaoController;
-import DAL.ConnectionPool.PoolledUpdateLog;
 import DAL.DataBaseUpdateLog;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -23,7 +17,6 @@ import java.util.logging.Logger;
  */
 public class BLLManagerUpdateLog implements IBLLManagerUpdateLog
 {
-<<<<<<< HEAD
 
     private static BLLManagerUpdateLog INSTANCE;
     DataBaseUpdateLog ul = new DataBaseUpdateLog();
@@ -33,19 +26,6 @@ public class BLLManagerUpdateLog implements IBLLManagerUpdateLog
     instead on new class
      */
     public synchronized static BLLManagerUpdateLog getInstance()
-=======
-    PoolledUpdateLog pmdcUL;
-        private static BLLManagerUpdateLog INSTANCE;
-        
-        public BLLManagerUpdateLog() throws DalException { 
-         pmdcUL= new PoolledUpdateLog(new ConnectionPool());
-    }
-    /*
-    So their only can be created one, so allway you classe.getInstance,
-    instead on new class
-    */
-     public synchronized static BLLManagerUpdateLog getInstance() throws DalException
->>>>>>> 87cfc633d5c2481c12f8a920afecb9583dbe9234
     {
         if (INSTANCE == null)
         {
@@ -56,27 +36,13 @@ public class BLLManagerUpdateLog implements IBLLManagerUpdateLog
 
     public void setUpdateLog(UpdateLog updateLog) throws SQLException
     {
-<<<<<<< HEAD
 
         ul.setUpdateLog(updateLog);
-=======
-       
-        try {
-            pmdcUL.setUpdateLog(updateLog);
-        } catch (DalException ex) {
-            Logger.getLogger(BLLManagerUpdateLog.class.getName()).log(Level.SEVERE, null, ex);
-        }
->>>>>>> 87cfc633d5c2481c12f8a920afecb9583dbe9234
     }
 
     public List<UpdateLog> getAllUpdateLogsToList()
     {
-        try {
-            return pmdcUL.getUpdateLog();
-        } catch (DalException ex) {
-            Logger.getLogger(BLLManagerUpdateLog.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return null;
+        return ul.getUpdateLog();
     }
 
 }
