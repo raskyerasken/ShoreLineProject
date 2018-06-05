@@ -9,6 +9,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 78bfc66... Revert "Merge branch 'master' of https://github.com/raskyerasken/ShoreLineProject"
             <file>file:/W:/Skóli/ShoreLineProject/src/GUI/MainWindowController.java</file>
@@ -16,18 +17,18 @@
             <file>file:/W:/Skóli/ShoreLineProject/src/GUI/AddUserViewController.java</file>
 =======
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/CSSShoreLines.css</file>
+=======
+>>>>>>> parent of 87cfc63... asd
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/BLL/BLLManagerUserLogin.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/AddUserView.fxml</file>
-            <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/DAL/ReadDataCSV.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/Models/FilesConvertionModel.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/DAL/ConnectionPool/PooledUserloginDaoController.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/DAL/ConnectionPool/ConnectionPool.java</file>
-            <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/DAL/ReadDataXLSX.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/AlertWindow.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/BE/JSONCustommize.java</file>
-            <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/BLL/convertToJson.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/DAL/IConnectionManager.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/CustomDataWindowController.java</file>
+<<<<<<< HEAD
 =======
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/BLL/BLLManagerUserLogin.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/AddUserView.fxml</file>
@@ -40,6 +41,9 @@
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/CustomDataWindowController.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/Main/ShoreLine.java</file>
 >>>>>>> parent of 72296a0... sad
+=======
+            <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/Main/ShoreLine.java</file>
+>>>>>>> parent of 87cfc63... asd
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/DAL/ConnectionPool/ObjectPool.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/DAL/ConnectionPool/DalException.java</file>
             <file>file:/C:/Users/jacob/Desktop/skrivebord/ShoreLineProject/src/GUI/ConversionProcessController.java</file>

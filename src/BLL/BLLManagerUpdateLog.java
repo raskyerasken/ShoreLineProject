@@ -23,6 +23,7 @@ public class BLLManagerUpdateLog implements IBLLManagerUpdateLog
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 73e3942... Revert "sad"
 =======
@@ -45,15 +46,15 @@ public class BLLManagerUpdateLog implements IBLLManagerUpdateLog
 <<<<<<< HEAD
 =======
     PoolledUpdateLog pmdcUL;
+=======
+>>>>>>> parent of 87cfc63... asd
         private static BLLManagerUpdateLog INSTANCE;
-        
-        public BLLManagerUpdateLog() throws DalException { 
-         pmdcUL= new PoolledUpdateLog(new ConnectionPool());
-    }
+    DataBaseUpdateLog ul = new DataBaseUpdateLog();
     /*
     So their only can be created one, so allway you classe.getInstance,
     instead on new class
     */
+<<<<<<< HEAD
      public synchronized static BLLManagerUpdateLog getInstance() throws DalException
 >>>>>>> 87cfc633d5c2481c12f8a920afecb9583dbe9234
 <<<<<<< HEAD
@@ -79,6 +80,9 @@ public class BLLManagerUpdateLog implements IBLLManagerUpdateLog
 >>>>>>> parent of 72296a0... sad
 =======
 >>>>>>> parent of 47ef2f3... Merge branch 'master' of https://github.com/raskyerasken/ShoreLineProject
+=======
+     public synchronized static BLLManagerUpdateLog getInstance()
+>>>>>>> parent of 87cfc63... asd
     {
         if (INSTANCE == null)
         {
@@ -103,10 +107,13 @@ public class BLLManagerUpdateLog implements IBLLManagerUpdateLog
 
 =======
        
+<<<<<<< HEAD
 >>>>>>> parent of 72296a0... sad
 =======
 
 >>>>>>> parent of 47ef2f3... Merge branch 'master' of https://github.com/raskyerasken/ShoreLineProject
+=======
+>>>>>>> parent of 87cfc63... asd
         ul.setUpdateLog(updateLog);
     }
     
