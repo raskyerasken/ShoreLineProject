@@ -44,7 +44,6 @@ public class ExportWindowController implements Initializable
 {
 
     LoginDataModel modelData;
-    BLL.BLLManagerUpdateLog up = new BLLManagerUpdateLog();
     private Thread threading = null;
     @FXML
     private Label taskXRun;
@@ -158,18 +157,6 @@ public class ExportWindowController implements Initializable
         newStage.initModality(Modality.APPLICATION_MODAL);
         newStage.setScene(scene);
         newStage.show();
-    }
-
-    private void updateLog()
-    {
-        try
-        {
-            up.setUpdateLog(updateLog);
-        }
-        catch (SQLException ex)
-        {
-            Logger.getLogger(ExportWindowController.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }
 
     @FXML
