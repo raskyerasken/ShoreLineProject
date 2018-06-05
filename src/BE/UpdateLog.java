@@ -17,7 +17,7 @@ import javafx.beans.property.StringProperty;
  *
  * @author jacob
  */
-public class UpdateLog
+public class UpdateLog 
 {
 
     private final StringProperty Username = new SimpleStringProperty();
@@ -26,67 +26,68 @@ public class UpdateLog
     Date Datelog;
     private final IntegerProperty id = new SimpleIntegerProperty();
 
-    public int getId()
+    public int getId() 
     {
         return id.get();
     }
 
-    public void setId(int value)
+    public void setId(int value) 
     {
         id.set(value);
     }
 
-    public IntegerProperty idProperty()
+    public IntegerProperty idProperty() 
     {
         return id;
     }
 
-    public boolean isError()
+    public boolean isError() 
     {
         return Error.get();
     }
 
-    public void setError(boolean value)
+    public void setError(boolean value) 
     {
         Error.set(value);
     }
 
-    public BooleanProperty ErrorProperty()
+    public BooleanProperty ErrorProperty() 
     {
         return Error;
     }
-
+    
     /**
      * Get the value of Datelog
      *
      * @return the value of Datelog
      */
-    public Date getDatelog()
+    public Date getDatelog() 
     {
         return Datelog;
     }
-
+    
     public void setDatelog(Date Datelog)
     {
         this.Datelog = Datelog;
     }
-
-    public String getAdjustment()
+    
+    public String getAdjustment() 
     {
         return Adjustment.get();
     }
 
-    public void setAdjustment(String value)
+    public void setAdjustment(String value) 
     {
         Adjustment.set(value);
     }
 
-    public StringProperty AdjustmentProperty()
+    public StringProperty AdjustmentProperty() 
     {
         return Adjustment;
     }
-
-    public String getUsername()
+    
+    
+    public String getUsername() 
     {
         return Username.get();
     }
@@ -96,9 +97,9 @@ public class UpdateLog
         Username.set(value);
     }
 
-    public StringProperty UsernameProperty()
+    public StringProperty UsernameProperty() 
     {
         return Username;
     }
-
+    
 }

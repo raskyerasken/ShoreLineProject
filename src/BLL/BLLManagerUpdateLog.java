@@ -21,6 +21,7 @@ public class BLLManagerUpdateLog implements IBLLManagerUpdateLog
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 73e3942... Revert "sad"
 =======
@@ -63,6 +64,15 @@ public class BLLManagerUpdateLog implements IBLLManagerUpdateLog
 >>>>>>> parent of 78bfc66... Revert "Merge branch 'master' of https://github.com/raskyerasken/ShoreLineProject"
 =======
 >>>>>>> parent of 47ef2f3... Merge branch 'master' of https://github.com/raskyerasken/ShoreLineProject
+=======
+        private static BLLManagerUpdateLog INSTANCE;
+    DataBaseUpdateLog ul = new DataBaseUpdateLog();
+    /*
+    So their only can be created one, so allway you classe.getInstance,
+    instead on new class
+    */
+     public synchronized static BLLManagerUpdateLog getInstance()
+>>>>>>> parent of 72296a0... sad
     {
         if (INSTANCE == null)
         {
@@ -70,9 +80,9 @@ public class BLLManagerUpdateLog implements IBLLManagerUpdateLog
         }
         return INSTANCE;
     }
-
     public void setUpdateLog(UpdateLog updateLog) throws SQLException
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -84,12 +94,15 @@ public class BLLManagerUpdateLog implements IBLLManagerUpdateLog
 =======
 >>>>>>> parent of 47ef2f3... Merge branch 'master' of https://github.com/raskyerasken/ShoreLineProject
 
+=======
+       
+>>>>>>> parent of 72296a0... sad
         ul.setUpdateLog(updateLog);
     }
-
+    
     public List<UpdateLog> getAllUpdateLogsToList()
     {
         return ul.getUpdateLog();
     }
-
+    
 }
