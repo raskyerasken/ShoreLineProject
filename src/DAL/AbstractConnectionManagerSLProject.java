@@ -15,8 +15,9 @@ import java.sql.Connection;
  */
 class AbstractConnectionManagerSLProject implements IConnectionManager
 {
+
     protected SQLServerDataSource ds = new SQLServerDataSource();
-    
+
     public Connection getConnection() throws SQLServerException
     {
         return ds.getConnection();

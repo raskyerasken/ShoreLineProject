@@ -6,9 +6,9 @@
 package DAL.ConnectionPool;
 
 
-    /*
+/*
     Taking from MechaChatApp
-    */
+ */
 public class DalException extends Exception
 {
 

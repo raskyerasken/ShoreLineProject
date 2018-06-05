@@ -33,6 +33,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.TreeView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
@@ -138,6 +139,7 @@ public class CustomDataWindowController implements Initializable
         newStage.setResizable(false);
         newStage.setAlwaysOnTop(true);
         newStage.setTitle("Admin Window");
+        newStage.initModality(Modality.APPLICATION_MODAL);
         newStage.setScene(scene);
         newStage.show();
     }

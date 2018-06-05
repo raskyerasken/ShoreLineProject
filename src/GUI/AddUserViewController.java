@@ -69,6 +69,8 @@ public class AddUserViewController implements Initializable
     private JFXTextField search;
     @FXML
     private Button cancel;
+    @FXML
+    private AnchorPane addUser;
 
     /**
      * Initializes the controller class.

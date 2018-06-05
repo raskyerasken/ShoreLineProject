@@ -32,6 +32,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.json.JSONException;
 
@@ -154,6 +155,7 @@ public class ExportWindowController implements Initializable
         newStage.setResizable(false);
         newStage.setAlwaysOnTop(true);
         newStage.setTitle("Admin Window");
+        newStage.initModality(Modality.APPLICATION_MODAL);
         newStage.setScene(scene);
         newStage.show();
     }
