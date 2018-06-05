@@ -1482,10 +1482,13 @@ The user kris logged in.    Date: 2018/05/31 14:37:14
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 73e3942... Revert "sad"
 =======
 >>>>>>> parent of 78bfc66... Revert "Merge branch 'master' of https://github.com/raskyerasken/ShoreLineProject"
+=======
+>>>>>>> parent of 47ef2f3... Merge branch 'master' of https://github.com/raskyerasken/ShoreLineProject
 The user kris logged in.    Date: 2018/05/31 23:57:02
 The user kris logged in.    Date: 2018/05/31 23:58:00
 The user kris logged in.    Date: 2018/06/01 00:02:46
@@ -1503,6 +1506,7 @@ The user kris logged in.    Date: 2018/06/01 01:38:33
 The user kris logged in.    Date: 2018/06/01 01:59:23
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 The user kris logged in.    Date: 2018/06/01 09:56:22
 >>>>>>> 87cfc633d5c2481c12f8a920afecb9583dbe9234
@@ -1513,3 +1517,5 @@ The user kris logged in.    Date: 2018/06/01 09:56:22
 The user kris logged in.    Date: 2018/06/01 09:56:22
 >>>>>>> 87cfc633d5c2481c12f8a920afecb9583dbe9234
 >>>>>>> parent of 78bfc66... Revert "Merge branch 'master' of https://github.com/raskyerasken/ShoreLineProject"
+=======
+>>>>>>> parent of 47ef2f3... Merge branch 'master' of https://github.com/raskyerasken/ShoreLineProject

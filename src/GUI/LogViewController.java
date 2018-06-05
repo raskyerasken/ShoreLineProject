@@ -10,7 +10,6 @@ import GUI.Models.FilesConvertionModel;
 import GUI.Models.UpdateLogViewModel;
 import BE.UpdateLog;
 import BE.UserLogin;
-import DAL.ConnectionPool.DalException;
 import static GUI.LogViewController.lines;
 import com.jfoenix.controls.JFXTextField;
 import java.io.FileNotFoundException;
@@ -20,8 +19,6 @@ import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.Date;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -52,7 +49,7 @@ public class LogViewController implements Initializable
     UserLogin ul = new UserLogin();
     UpdateLog updLog = new UpdateLog();
     LoginDataModel modelData;
-    UpdateLogViewModel model ;
+    UpdateLogViewModel model = new UpdateLogViewModel();
     
     public static final ObservableList lines
             = FXCollections.observableArrayList();
@@ -84,11 +81,6 @@ public class LogViewController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-        try {
-            model= UpdateLogViewModel.getInstance();
-        } catch (DalException ex) {
-            Logger.getLogger(LogViewController.class.getName()).log(Level.SEVERE, null, ex);
-        }
         adminButton.setVisible(false);
         logMenuSelect.setDisable(true);
         addColumsToTableView();   //get all the colums
