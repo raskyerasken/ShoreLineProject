@@ -9,10 +9,14 @@
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <jar href="ShoreLine.jar" size="433999" download="eager" />
 =======
     <jar href="ShoreLine.jar" size="426952" download="eager" />
 >>>>>>> 87cfc633d5c2481c12f8a920afecb9583dbe9234
+=======
+    <jar href="ShoreLine.jar" size="433999" download="eager" />
+>>>>>>> parent of 73e3942... Revert "sad"
     <jar href="lib\commons-collections4-4.1.jar" size="751238" download="eager" />
     <jar href="lib\java-json.jar" size="84697" download="eager" />
     <jar href="lib\jaxp-api.jar" size="27052" download="eager" />

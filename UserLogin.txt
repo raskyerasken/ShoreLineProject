@@ -1480,6 +1480,9 @@ The user kris logged in.    Date: 2018/05/31 14:35:51
 The user kris logged in.    Date: 2018/05/31 14:36:40
 The user kris logged in.    Date: 2018/05/31 14:37:14
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 73e3942... Revert "sad"
 The user kris logged in.    Date: 2018/05/31 23:57:02
 The user kris logged in.    Date: 2018/05/31 23:58:00
 The user kris logged in.    Date: 2018/06/01 00:02:46
@@ -1495,6 +1498,9 @@ The user kris logged in.    Date: 2018/06/01 01:36:52
 The user kris logged in.    Date: 2018/06/01 01:37:21
 The user kris logged in.    Date: 2018/06/01 01:38:33
 The user kris logged in.    Date: 2018/06/01 01:59:23
+<<<<<<< HEAD
 =======
 The user kris logged in.    Date: 2018/06/01 09:56:22
 >>>>>>> 87cfc633d5c2481c12f8a920afecb9583dbe9234
+=======
+>>>>>>> parent of 73e3942... Revert "sad"

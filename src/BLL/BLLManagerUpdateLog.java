@@ -24,10 +24,14 @@ import java.util.logging.Logger;
 public class BLLManagerUpdateLog implements IBLLManagerUpdateLog
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 73e3942... Revert "sad"
 
     private static BLLManagerUpdateLog INSTANCE;
     DataBaseUpdateLog ul = new DataBaseUpdateLog();
 
+<<<<<<< HEAD
     /*
     So their only can be created one, so allway you classe.getInstance,
     instead on new class
@@ -46,6 +50,13 @@ public class BLLManagerUpdateLog implements IBLLManagerUpdateLog
     */
      public synchronized static BLLManagerUpdateLog getInstance() throws DalException
 >>>>>>> 87cfc633d5c2481c12f8a920afecb9583dbe9234
+=======
+    /*
+    So their only can be created one, so allway you classe.getInstance,
+    instead on new class
+     */
+    public synchronized static BLLManagerUpdateLog getInstance()
+>>>>>>> parent of 73e3942... Revert "sad"
     {
         if (INSTANCE == null)
         {
@@ -57,6 +68,9 @@ public class BLLManagerUpdateLog implements IBLLManagerUpdateLog
     public void setUpdateLog(UpdateLog updateLog) throws SQLException
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 73e3942... Revert "sad"
 
         ul.setUpdateLog(updateLog);
 =======
