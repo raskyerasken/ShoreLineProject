@@ -22,10 +22,13 @@ public class BLLManagerUpdateLog implements IBLLManagerUpdateLog
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 73e3942... Revert "sad"
 =======
 >>>>>>> parent of 78bfc66... Revert "Merge branch 'master' of https://github.com/raskyerasken/ShoreLineProject"
+=======
+>>>>>>> parent of 47ef2f3... Merge branch 'master' of https://github.com/raskyerasken/ShoreLineProject
 =======
 >>>>>>> parent of 47ef2f3... Merge branch 'master' of https://github.com/raskyerasken/ShoreLineProject
 
@@ -38,6 +41,7 @@ public class BLLManagerUpdateLog implements IBLLManagerUpdateLog
     instead on new class
      */
     public synchronized static BLLManagerUpdateLog getInstance()
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
     PoolledUpdateLog pmdcUL;
@@ -73,6 +77,8 @@ public class BLLManagerUpdateLog implements IBLLManagerUpdateLog
     */
      public synchronized static BLLManagerUpdateLog getInstance()
 >>>>>>> parent of 72296a0... sad
+=======
+>>>>>>> parent of 47ef2f3... Merge branch 'master' of https://github.com/raskyerasken/ShoreLineProject
     {
         if (INSTANCE == null)
         {
@@ -82,6 +88,7 @@ public class BLLManagerUpdateLog implements IBLLManagerUpdateLog
     }
     public void setUpdateLog(UpdateLog updateLog) throws SQLException
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -97,6 +104,9 @@ public class BLLManagerUpdateLog implements IBLLManagerUpdateLog
 =======
        
 >>>>>>> parent of 72296a0... sad
+=======
+
+>>>>>>> parent of 47ef2f3... Merge branch 'master' of https://github.com/raskyerasken/ShoreLineProject
         ul.setUpdateLog(updateLog);
     }
     
