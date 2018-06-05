@@ -25,8 +25,11 @@ public class BLLManagerUpdateLog implements IBLLManagerUpdateLog
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 73e3942... Revert "sad"
+=======
+>>>>>>> parent of 78bfc66... Revert "Merge branch 'master' of https://github.com/raskyerasken/ShoreLineProject"
 
     private static BLLManagerUpdateLog INSTANCE;
     DataBaseUpdateLog ul = new DataBaseUpdateLog();
@@ -50,6 +53,7 @@ public class BLLManagerUpdateLog implements IBLLManagerUpdateLog
     */
      public synchronized static BLLManagerUpdateLog getInstance() throws DalException
 >>>>>>> 87cfc633d5c2481c12f8a920afecb9583dbe9234
+<<<<<<< HEAD
 =======
     /*
     So their only can be created one, so allway you classe.getInstance,
@@ -57,6 +61,8 @@ public class BLLManagerUpdateLog implements IBLLManagerUpdateLog
      */
     public synchronized static BLLManagerUpdateLog getInstance()
 >>>>>>> parent of 73e3942... Revert "sad"
+=======
+>>>>>>> parent of 78bfc66... Revert "Merge branch 'master' of https://github.com/raskyerasken/ShoreLineProject"
     {
         if (INSTANCE == null)
         {
@@ -69,8 +75,11 @@ public class BLLManagerUpdateLog implements IBLLManagerUpdateLog
     {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 73e3942... Revert "sad"
+=======
+>>>>>>> parent of 78bfc66... Revert "Merge branch 'master' of https://github.com/raskyerasken/ShoreLineProject"
 
         ul.setUpdateLog(updateLog);
 =======
