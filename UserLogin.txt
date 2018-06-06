@@ -1531,3 +1531,5 @@ The user kris logged in.    Date: 2018/06/01 09:56:22
 >>>>>>> parent of 47ef2f3... Merge branch 'master' of https://github.com/raskyerasken/ShoreLineProject
 =======
 >>>>>>> parent of 87cfc63... asd
+The user kris logged in.    Date: 2018/06/06 14:53:21
+The user kris logged in.    Date: 2018/06/06 14:54:30
